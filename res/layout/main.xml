@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:background="@drawable/bg_matterhorn"
+	android:gravity="top">
+	<ViewSwitcher android:id="@+id/viewSwitcher_Homepage_Logo"
+		android:layout_width="fill_parent" android:layout_marginTop="5dip"
+		android:layout_height="100dip">
+		<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:stretchColumns="1" android:layout_gravity="center">
+			<TableRow android:layout_height="wrap_content"
+				android:layout_width="fill_parent" android:id="@+id/tableRow1"
+				android:baselineAligned="true">
+				<ImageView android:layout_height="wrap_content"
+					android:src="@drawable/jukebox_48x48" android:id="@+id/ImageViewSelectedStation"
+					android:layout_width="wrap_content" android:layout_gravity="right"
+					android:layout_marginLeft="5dip" />
+				<ImageView android:layout_height="wrap_content"
+					android:src="@drawable/button_camera_40x40" android:id="@+id/ImageViewWebcam"
+					android:layout_width="wrap_content" android:layout_gravity="center" />
+				<ImageView android:layout_height="wrap_content"
+					android:src="@drawable/button_email_40x40" android:id="@+id/ImageViewMail"
+					android:layout_width="wrap_content" android:layout_gravity="center" />
+			</TableRow>
+			<TableRow android:layout_height="wrap_content"
+				android:layout_width="fill_parent" android:id="@+id/tableRow2"
+				android:baselineAligned="true">
+				<TextView android:layout_width="wrap_content"
+					android:textStyle="bold" android:layout_height="wrap_content"
+					android:textColor="#008EBA" android:text="@string/homepage"
+					android:id="@+id/textView_Homepage" android:layout_marginTop="5dip"
+					android:layout_gravity="right" android:layout_marginLeft="5dip" />
+				<TextView android:textStyle="bold" android:textColor="#008EBA"
+					android:text="Webcam" android:id="@+id/textView_Webcam"
+					android:layout_height="wrap_content" android:layout_width="wrap_content"
+					android:layout_gravity="center" />
+				<TextView android:textStyle="bold" android:textColor="#008EBA"
+					android:text="Mail" android:id="@+id/textViewMail"
+					android:layout_height="wrap_content" android:layout_width="wrap_content"
+					android:layout_gravity="center" />
+			</TableRow>
+		</TableLayout>
+	</ViewSwitcher>
+
+	<LinearLayout android:orientation="horizontal"
+		android:layout_gravity="center" android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:id="@+id/linearLayout_Button">
+		<ToggleButton android:text="@string/play" android:textOn=" "
+			android:layout_gravity="center" android:layout_width="wrap_content"
+			android:id="@+id/toggleButtonPlayStop" android:textOff=" "
+			android:background="@drawable/button_blue_play"
+			android:layout_height="wrap_content" />
+		<ToggleButton android:text="@string/record"
+			android:textOn=" " android:layout_width="wrap_content" android:id="@+id/toggleButtonRecordStop"
+			android:textOff=" " android:background="@drawable/button_blue_record"
+			android:layout_height="wrap_content" />
+	</LinearLayout>
+	<ViewSwitcher android:layout_gravity="center"
+		android:layout_height="wrap_content" android:layout_width="wrap_content"
+		android:id="@+id/viewSwitcher_SongTicker">
+		<android.webkit.WebView android:clickable="false"
+			android:longClickable="false" android:focusable="false"
+			android:focusableInTouchMode="false" android:layout_gravity="center"
+			android:id="@+id/webkitWebViewRadioProgramm" android:layout_width="300dip"
+			android:layout_height="80dip" android:scrollbars="vertical" />
+	</ViewSwitcher>
+	<ImageView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:layout_gravity="center"
+		android:clickable="true" android:id="@+id/imageViewReload"
+		android:src="@drawable/button_reload_32x32" />
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:ads="http://schemas.android.com/apk/res/com.rothconsulting.android.radiorec"
+		android:orientation="vertical" android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:id="@+id/mainLayout">
+		<com.google.ads.AdView android:id="@+id/adView"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER" />
+	</LinearLayout>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RadioRec+</string>
+    <string name="radiorec">RadioRec+</string>
+    <string name="networkNotAvailable">Netzwerk nicht verfügbar!</string>
+    <string name="internetadresseNichtErreichbar">Internetadresse nicht erreichbar!</string>
+    <string name="kannNichtAufSdCardSchreiben">Kann nicht auf SD Card schreiben...!</string>
+    <string name="aufnahmeUnterbrochen">Aufnahme unterbrochen...!</string>
+    <string name="verbindeInternet">Ist das Internet verbunden...?? Falls ja, dann ist der Radio Stream momentan nicht erreichbar.</string>
+    <string name="homepage">Homepage</string>
+    <string name="willstDuWeiterHoeren">Willst du das Radio im Hintergrund weiter hören/aufnehmen oder soll ich den Live Stream inkl. Aufnahme beenden?</string>
+    <string name="wegDamit">Weg damit</string>
+    <string name="weiterHoeren">Weiter hören/aufnehmen</string>
+    <string name="onAir">On-Air...</string>
+    <string name="duBistOnline128">Online mit guter Qualität!</string>
+    <string name="duBistOnline56">Online mit niedriger Qualität!</string>
+    <string name="settings">Einstellungen</string> 
+    <string name="info">Info</string>
+    <string name="info_copyright"> (c) 2011 by Koni</string>
+    <string name="ende">Ende</string>
+    <string name="record">Aufnahme</string>
+    <string name="play">Play</string>
+    <string name="zurueck">Zurück</string>
+    <string name="email_androider">androider@wolke7.net</string>
+</resources>
