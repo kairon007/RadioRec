@@ -302,7 +302,7 @@
 				android:textSize="15dip" android:layout_gravity="left|center_vertical" />
 		</TableRow>
 		<TableRow android:layout_height="wrap_content"
-			android:layout_width="fill_parent" android:id="@+id/tableRow1">
+			android:layout_width="fill_parent" android:id="@+id/tableRowArgovia">
 			<ImageView android:layout_width="wrap_content" android:id="@+id/imageViewRadioArgovia"
 				android:layout_height="wrap_content" android:src="@drawable/logo_radio_argovia_40x40"
 				android:layout_marginLeft="2dip" />
@@ -312,7 +312,7 @@
 				android:textSize="15dip" android:layout_gravity="left|center_vertical" />
 		</TableRow>
 		<TableRow android:layout_height="wrap_content"
-			android:layout_width="fill_parent" android:id="@+id/tableRow1">
+			android:layout_width="fill_parent" android:id="@+id/tableRowArgoviaHitmix">
 			<ImageView android:layout_width="wrap_content" android:id="@+id/imageViewRadioArgoviaHitmix"
 				android:layout_height="wrap_content" android:src="@drawable/logo_radio_argovia_40x40"
 				android:layout_marginLeft="2dip" />
@@ -322,7 +322,7 @@
 				android:textSize="15dip" android:layout_gravity="left|center_vertical" />
 		</TableRow>
 		<TableRow android:layout_height="wrap_content"
-			android:layout_width="fill_parent" android:id="@+id/tableRow1">
+			android:layout_width="fill_parent" android:id="@+id/tableRowArgoviaClassicRock">
 			<ImageView android:layout_width="wrap_content" android:id="@+id/imageViewRadioArgoviaClassicRock"
 				android:layout_height="wrap_content" android:src="@drawable/logo_radio_argovia_40x40"
 				android:layout_marginLeft="2dip" />
@@ -332,7 +332,7 @@
 				android:textSize="15dip" android:layout_gravity="left|center_vertical" />
 		</TableRow>
 		<TableRow android:layout_height="wrap_content"
-			android:layout_width="fill_parent" android:id="@+id/tableRow1">
+			android:layout_width="fill_parent" android:id="@+id/tableRow105">
 			<ImageView android:layout_width="wrap_content" android:id="@+id/imageViewRadio105"
 				android:layout_height="wrap_content" android:src="@drawable/logo_radio_105_60x40"
 				android:layout_marginLeft="2dip" />

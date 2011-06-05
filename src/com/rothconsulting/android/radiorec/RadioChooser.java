@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TableRow;
 
 public class RadioChooser extends Activity {
 
@@ -394,7 +395,16 @@ public class RadioChooser extends Activity {
 			}
 		});
 		// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)
-		if (Build.VERSION.SDK_INT >= 8) {
+		if (Build.VERSION.SDK_INT < 8) {
+			final TableRow tableRowRadioArgovia = (TableRow) findViewById(R.id.tableRowArgovia);
+			tableRowRadioArgovia.setVisibility(View.INVISIBLE);
+			final TableRow tableRowRadioArgoviaHitmix = (TableRow) findViewById(R.id.tableRowArgoviaHitmix);
+			tableRowRadioArgoviaHitmix.setVisibility(View.INVISIBLE);
+			final TableRow tableRowRadioArgoviaClassicRock = (TableRow) findViewById(R.id.tableRowArgoviaClassicRock);
+			tableRowRadioArgoviaClassicRock.setVisibility(View.INVISIBLE);
+			final TableRow tableRowRadio105 = (TableRow) findViewById(R.id.tableRow105);
+			tableRowRadio105.setVisibility(View.INVISIBLE);
+		} else {
 			final ImageView imageViewRadioArgovia = (ImageView) findViewById(R.id.imageViewRadioArgovia);
 			imageViewRadioArgovia
 					.setOnClickListener(new View.OnClickListener() {
