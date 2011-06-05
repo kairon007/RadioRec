@@ -6,8 +6,6 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.npr.android.news.StreamProxy;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -196,8 +194,6 @@ public class RadioPlayer extends Activity {
 
 		progressDialog.setTitle(SELECTED_STATION);
 		progressDialog.show();
-
-		StreamProxy streamProxy = new StreamProxy();
 
 		Thread threadDoStartPlay = new Thread() {
 			@Override
