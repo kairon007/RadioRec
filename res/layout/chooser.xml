@@ -313,6 +313,26 @@
 		</TableRow>
 		<TableRow android:layout_height="wrap_content"
 			android:layout_width="fill_parent" android:id="@+id/tableRow1">
+			<ImageView android:layout_width="wrap_content" android:id="@+id/imageViewRadioArgoviaHitmix"
+				android:layout_height="wrap_content" android:src="@drawable/logo_radio_105_60x40"
+				android:layout_marginLeft="2dip" />
+			<TextView android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:id="@+id/TextViewRadioArgoviaHitmix"
+				android:layout_margin="5dip" android:text="@string/radio_argovia_hitmix"
+				android:textSize="15dip" android:layout_gravity="left|center_vertical" />
+		</TableRow>
+		<TableRow android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:id="@+id/tableRow1">
+			<ImageView android:layout_width="wrap_content" android:id="@+id/imageViewRadioArgoviaClassicRock"
+				android:layout_height="wrap_content" android:src="@drawable/logo_radio_105_60x40"
+				android:layout_marginLeft="2dip" />
+			<TextView android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:id="@+id/TextViewRadioArgoviaClassicRock"
+				android:layout_margin="5dip" android:text="@string/radio_argovia_classic_rock"
+				android:textSize="15dip" android:layout_gravity="left|center_vertical" />
+		</TableRow>
+		<TableRow android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:id="@+id/tableRow1">
 			<ImageView android:layout_width="wrap_content" android:id="@+id/imageViewRadio105"
 				android:layout_height="wrap_content" android:src="@drawable/logo_radio_105_60x40"
 				android:layout_marginLeft="2dip" />

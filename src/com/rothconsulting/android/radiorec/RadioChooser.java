@@ -408,6 +408,32 @@ public class RadioChooser extends Activity {
 							finalTaks();
 						}
 					});
+			final ImageView imageViewRadioArgoviaHitmix = (ImageView) findViewById(R.id.imageViewRadioArgoviaHitmix);
+			imageViewRadioArgoviaHitmix
+					.setOnClickListener(new View.OnClickListener() {
+						public void onClick(View v) {
+							RadioPlayer.SELECTED_STATION_ICON = R.drawable.logo_radio_argovia_40x40;
+							RadioPlayer.URL_LIVE_STREAM = Constants.URL_LIVE_STREAM_RADIO_ARGOVIA_HITMIX;
+							RadioPlayer.URL_HOMEPAGE = Constants.URL_HOMEPAGE_RADIO_ARGOVIA;
+							RadioPlayer.SELECTED_STATION = getString(R.string.radio_argovia_hitmix);
+							RadioPlayer.URL_WEBCAM = Constants.URL_WEBCAM_RADIO_ARGOVIA;
+							RadioPlayer.URL_CONTACT = Constants.URL_CONTACT_RADIO_ARGOVIA;
+							finalTaks();
+						}
+					});
+			final ImageView imageViewRadioArgoviaClassicRock = (ImageView) findViewById(R.id.imageViewRadioArgoviaClassicRock);
+			imageViewRadioArgoviaClassicRock
+					.setOnClickListener(new View.OnClickListener() {
+						public void onClick(View v) {
+							RadioPlayer.SELECTED_STATION_ICON = R.drawable.logo_radio_argovia_40x40;
+							RadioPlayer.URL_LIVE_STREAM = Constants.URL_LIVE_STREAM_RADIO_ARGOVIA_CLASSIC_ROCK;
+							RadioPlayer.URL_HOMEPAGE = Constants.URL_HOMEPAGE_RADIO_ARGOVIA;
+							RadioPlayer.SELECTED_STATION = getString(R.string.radio_argovia_classic_rock);
+							RadioPlayer.URL_WEBCAM = Constants.URL_WEBCAM_RADIO_ARGOVIA;
+							RadioPlayer.URL_CONTACT = Constants.URL_CONTACT_RADIO_ARGOVIA;
+							finalTaks();
+						}
+					});
 			final ImageView imageViewRadio105 = (ImageView) findViewById(R.id.imageViewRadio105);
 			imageViewRadio105.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
