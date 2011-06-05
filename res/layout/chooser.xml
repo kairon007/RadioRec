@@ -301,6 +301,26 @@
 				android:layout_margin="5dip" android:text="@string/radio_basel"
 				android:textSize="15dip" android:layout_gravity="left|center_vertical" />
 		</TableRow>
+		<TableRow android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:id="@+id/tableRow1">
+			<ImageView android:layout_width="wrap_content" android:id="@+id/imageViewRadioArgovia"
+				android:layout_height="wrap_content" android:src="@drawable/logo_radio_argovia_40x40"
+				android:layout_marginLeft="2dip" />
+			<TextView android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:id="@+id/TextViewRadioArgovia"
+				android:layout_margin="5dip" android:text="@string/radio_argovia"
+				android:textSize="15dip" android:layout_gravity="left|center_vertical" />
+		</TableRow>
+		<TableRow android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:id="@+id/tableRow1">
+			<ImageView android:layout_width="wrap_content" android:id="@+id/imageViewRadio105"
+				android:layout_height="wrap_content" android:src="@drawable/logo_radio_105_60x40"
+				android:layout_marginLeft="2dip" />
+			<TextView android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:id="@+id/TextViewRadio105"
+				android:layout_margin="5dip" android:text="@string/radio_105"
+				android:textSize="15dip" android:layout_gravity="left|center_vertical" />
+		</TableRow>
 
 		<Button android:layout_margin="30dip" android:id="@+id/buttonZurueck"
 			android:layout_height="wrap_content" android:layout_width="wrap_content"

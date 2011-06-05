@@ -195,5 +195,19 @@ public class Constants {
 	public static final String RADIO_ARGOVIA = "Radio Argovia";
 	public static final String URL_LIVE_STREAM_RADIO_ARGOVIA = "http://argovia.mp3.green.ch";
 	public static final String URL_HOMEPAGE_RADIO_ARGOVIA = "http://www.argovia.ch";
+	public static final String URL_WEBCAM_RADIO_ARGOVIA = "http://www.argovia.ch/live/";
+	public static final String URL_CONTACT_RADIO_ARGOVIA = "http://www.argovia.ch/miniwin-jukes.php";
+
+	public static final String RADIO_ARGOVIA_HITMIX = "Radio Argovia Hitmix";
+	public static final String URL_LIVE_STREAM_RADIO_ARGOVIA_HITMIX = "http://shoutcast.argovia.ch:8095";
+
+	public static final String RADIO_ARGOVIA_CLASSIC_ROCK = "Radio Argovia Classic Rock";
+	public static final String URL_LIVE_STREAM_RADIO_ARGOVIA_CLASSIC_ROCK = "http://shoutcast.argovia.ch:8090";
+
+	public static final String RADIO_105 = "Radio 105";
+	public static final String URL_LIVE_STREAM_RADIO_105 = "http://212.40.5.105:7000";
+	public static final String URL_HOMEPAGE_RADIO_105 = "http://www.105.ch";
+	public static final String URL_WEBCAM_RADIO_105 = "";
+	public static final String URL_CONTACT_RADIO_105 = "";
 
 }

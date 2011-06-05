@@ -28,4 +28,8 @@
     <string name="radio_neo1">Radio neo 1</string>
     <string name="radio_neozwei">Radio neo zwei</string>
     <string name="radio_basel">Radio Basel</string>
+    <string name="radio_argovia">Radio Argovia</string>
+    <string name="radio_argovia_hitmix">Radio Argovia Hitmix</string>
+    <string name="radio_argovia_classic_rock">Radio Argovia Classic Rock</string>
+    <string name="radio_105">Radio 105</string>
 </resources>

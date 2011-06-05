@@ -2,6 +2,7 @@ package com.rothconsulting.android.radiorec;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -392,6 +393,35 @@ public class RadioChooser extends Activity {
 				finalTaks();
 			}
 		});
+		// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)
+		if (Build.VERSION.SDK_INT >= 8) {
+			final ImageView imageViewRadioArgovia = (ImageView) findViewById(R.id.imageViewRadioArgovia);
+			imageViewRadioArgovia
+					.setOnClickListener(new View.OnClickListener() {
+						public void onClick(View v) {
+							RadioPlayer.SELECTED_STATION_ICON = R.drawable.logo_radio_argovia_40x40;
+							RadioPlayer.URL_LIVE_STREAM = Constants.URL_LIVE_STREAM_RADIO_ARGOVIA;
+							RadioPlayer.URL_HOMEPAGE = Constants.URL_HOMEPAGE_RADIO_ARGOVIA;
+							RadioPlayer.SELECTED_STATION = getString(R.string.radio_argovia);
+							RadioPlayer.URL_WEBCAM = Constants.URL_WEBCAM_RADIO_ARGOVIA;
+							RadioPlayer.URL_CONTACT = Constants.URL_CONTACT_RADIO_ARGOVIA;
+							finalTaks();
+						}
+					});
+			final ImageView imageViewRadio105 = (ImageView) findViewById(R.id.imageViewRadio105);
+			imageViewRadio105.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					RadioPlayer.SELECTED_STATION_ICON = R.drawable.logo_radio_105_60x40;
+					RadioPlayer.URL_LIVE_STREAM = Constants.URL_LIVE_STREAM_RADIO_105;
+					RadioPlayer.URL_HOMEPAGE = Constants.URL_HOMEPAGE_RADIO_105;
+					RadioPlayer.SELECTED_STATION = getString(R.string.radio_105);
+					RadioPlayer.URL_WEBCAM = Constants.URL_WEBCAM_RADIO_105;
+					RadioPlayer.URL_CONTACT = Constants.URL_CONTACT_RADIO_105;
+					finalTaks();
+				}
+			});
+		}
+
 	}
 
 	// ------------------------------------------------------------
