@@ -210,4 +210,19 @@ public class Constants {
 	public static final String URL_WEBCAM_RADIO_105 = "";
 	public static final String URL_CONTACT_RADIO_105 = "";
 
+	public static final String RADIO_FM1 = "Radio FM1";
+	public static final String URL_LIVE_STREAM_RADIO_FM1 = "http://radiofm1.ice.infomaniak.ch:80/radiofm1-128.mp3";
+	public static final String URL_HOMEPAGE_RADIO_FM1 = "http://mobile.radiofm1.ch";
+	public static final String URL_WEBCAM_RADIO_FM1 = "http://www.radiofm1.ch/index.php?article_id=323";
+	public static final String URL_CONTACT_RADIO_FM1 = "http://www.radiofm1.ch/index.php?article_id=285";
+
+	public static final String RADIO_ANTENNE_BAYERN = "Radio Antenne Bayern";
+	public static final String URL_LIVE_STREAM_RADIO_ANTENNE_BAYERN = "http://mp3.webradio.antenne.de:80";
+	public static final String URL_HOMEPAGE_RADIO_ANTENNE_BAYERN = "http://www.antenne.de";
+	public static final String URL_WEBCAM_RADIO_ANTENNE_BAYERN = "http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360/";
+	public static final String URL_CONTACT_RADIO_ANTENNE_BAYERN = "";
+
+	public static final String RADIO_ANTENNE_CHILLOUT = "Radio Antenne Chillout";
+	public static final String URL_LIVE_STREAM_RADIO_ANTENNE_CHILLOUT = "http://mp3channels.webradio.antenne.de/chillout";
+
 }

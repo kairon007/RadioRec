@@ -341,6 +341,36 @@
 				android:layout_margin="5dip" android:text="@string/radio_105"
 				android:textSize="15dip" android:layout_gravity="left|center_vertical" />
 		</TableRow>
+		<TableRow android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:id="@+id/tableRow1">
+			<ImageView android:layout_width="wrap_content" android:id="@+id/imageViewRadioFM1"
+				android:layout_height="wrap_content" android:src="@drawable/logo_radio_fm1_42x40"
+				android:layout_marginLeft="2dip" />
+			<TextView android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:id="@+id/TextViewRadioFM1"
+				android:layout_margin="5dip" android:text="@string/radio_fm1"
+				android:textSize="15dip" android:layout_gravity="left|center_vertical" />
+		</TableRow>
+		<TableRow android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:id="@+id/tableRow1">
+			<ImageView android:layout_width="wrap_content" android:id="@+id/imageViewRadioAntenneBayern"
+				android:layout_height="wrap_content" android:src="@drawable/logo_radio_antenne_bayern_79x40"
+				android:layout_marginLeft="2dip" />
+			<TextView android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:id="@+id/TextViewRadioAntenneBayern"
+				android:layout_margin="5dip" android:text="@string/radio_antenne_bayern"
+				android:textSize="15dip" android:layout_gravity="left|center_vertical" />
+		</TableRow>
+		<TableRow android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:id="@+id/tableRow1">
+			<ImageView android:layout_width="wrap_content" android:id="@+id/imageViewRadioAntenneChillout"
+				android:layout_height="wrap_content" android:src="@drawable/logo_radio_antenne_bayern_79x40"
+				android:layout_marginLeft="2dip" />
+			<TextView android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:id="@+id/TextViewRadioAntenneChillout"
+				android:layout_margin="5dip" android:text="@string/radio_antenne_chillout"
+				android:textSize="15dip" android:layout_gravity="left|center_vertical" />
+		</TableRow>
 
 		<Button android:layout_margin="30dip" android:id="@+id/buttonZurueck"
 			android:layout_height="wrap_content" android:layout_width="wrap_content"

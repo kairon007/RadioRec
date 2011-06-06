@@ -397,12 +397,16 @@ public class RadioChooser extends Activity {
 		// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)
 		if (Build.VERSION.SDK_INT < 8) {
 			final TableRow tableRowRadioArgovia = (TableRow) findViewById(R.id.tableRowArgovia);
+			tableRowRadioArgovia.removeAllViews();
 			tableRowRadioArgovia.setVisibility(View.INVISIBLE);
 			final TableRow tableRowRadioArgoviaHitmix = (TableRow) findViewById(R.id.tableRowArgoviaHitmix);
+			tableRowRadioArgoviaHitmix.removeAllViews();
 			tableRowRadioArgoviaHitmix.setVisibility(View.INVISIBLE);
 			final TableRow tableRowRadioArgoviaClassicRock = (TableRow) findViewById(R.id.tableRowArgoviaClassicRock);
+			tableRowRadioArgoviaClassicRock.removeAllViews();
 			tableRowRadioArgoviaClassicRock.setVisibility(View.INVISIBLE);
 			final TableRow tableRowRadio105 = (TableRow) findViewById(R.id.tableRow105);
+			tableRowRadio105.removeAllViews();
 			tableRowRadio105.setVisibility(View.INVISIBLE);
 		} else {
 			final ImageView imageViewRadioArgovia = (ImageView) findViewById(R.id.imageViewRadioArgovia);
@@ -457,7 +461,44 @@ public class RadioChooser extends Activity {
 				}
 			});
 		}
-
+		final ImageView imageViewRadioFM1 = (ImageView) findViewById(R.id.imageViewRadioFM1);
+		imageViewRadioFM1.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				RadioPlayer.SELECTED_STATION_ICON = R.drawable.logo_radio_fm1_42x40;
+				RadioPlayer.URL_LIVE_STREAM = Constants.URL_LIVE_STREAM_RADIO_FM1;
+				RadioPlayer.URL_HOMEPAGE = Constants.URL_HOMEPAGE_RADIO_FM1;
+				RadioPlayer.SELECTED_STATION = getString(R.string.radio_fm1);
+				RadioPlayer.URL_WEBCAM = Constants.URL_WEBCAM_RADIO_FM1;
+				RadioPlayer.URL_CONTACT = Constants.URL_CONTACT_RADIO_FM1;
+				finalTaks();
+			}
+		});
+		final ImageView imageViewRadioAntenneBayern = (ImageView) findViewById(R.id.imageViewRadioAntenneBayern);
+		imageViewRadioAntenneBayern
+				.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						RadioPlayer.SELECTED_STATION_ICON = R.drawable.logo_radio_antenne_bayern_79x40;
+						RadioPlayer.URL_LIVE_STREAM = Constants.URL_LIVE_STREAM_RADIO_ANTENNE_BAYERN;
+						RadioPlayer.URL_HOMEPAGE = Constants.URL_HOMEPAGE_RADIO_ANTENNE_BAYERN;
+						RadioPlayer.SELECTED_STATION = getString(R.string.radio_antenne_bayern);
+						RadioPlayer.URL_WEBCAM = Constants.URL_WEBCAM_RADIO_ANTENNE_BAYERN;
+						RadioPlayer.URL_CONTACT = Constants.URL_CONTACT_RADIO_ANTENNE_BAYERN;
+						finalTaks();
+					}
+				});
+		final ImageView imageViewRadioAntenneChillout = (ImageView) findViewById(R.id.imageViewRadioAntenneChillout);
+		imageViewRadioAntenneChillout
+				.setOnClickListener(new View.OnClickListener() {
+					public void onClick(View v) {
+						RadioPlayer.SELECTED_STATION_ICON = R.drawable.logo_radio_antenne_bayern_79x40;
+						RadioPlayer.URL_LIVE_STREAM = Constants.URL_LIVE_STREAM_RADIO_ANTENNE_CHILLOUT;
+						RadioPlayer.URL_HOMEPAGE = Constants.URL_HOMEPAGE_RADIO_ANTENNE_BAYERN;
+						RadioPlayer.SELECTED_STATION = getString(R.string.radio_antenne_chillout);
+						RadioPlayer.URL_WEBCAM = Constants.URL_WEBCAM_RADIO_ANTENNE_BAYERN;
+						RadioPlayer.URL_CONTACT = Constants.URL_CONTACT_RADIO_ANTENNE_BAYERN;
+						finalTaks();
+					}
+				});
 	}
 
 	// ------------------------------------------------------------
