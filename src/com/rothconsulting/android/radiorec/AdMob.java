@@ -19,8 +19,7 @@ public class AdMob {
 		Log.d(TAG, "adView=" + adView);
 		// Lookup your LinearLayout assuming it’s been given
 		// the attribute android:id="@+id/mainLayout"
-		LinearLayout layout = (LinearLayout) context
-				.findViewById(R.id.mainLayout);
+		LinearLayout layout = (LinearLayout) context.findViewById(R.id.mail);
 		// Add the adView to it
 		layout.addView(adView);
 		// Initiate a generic request to load it with an ad

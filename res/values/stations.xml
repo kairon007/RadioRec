@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="station_names">
+        <item>Radio 32</item>
+		<item>Radio 32 Goldies</item>
+		<item>Radio Capital FM</item>
+		<item>Radio RaBe</item>
+		<item>Radio 24</item>
+		<item>Radio 24 Rock</item>
+		<item>Radio DRS1</item>
+		<item>Radio DRS2</item>
+		<item>Radio DRS3</item>
+		<item>Radio DRS4 News</item>
+		<item>Radio DRS Virus</item>
+		<item>Radio Hoch2</item>
+		<item>Radio Energy Bern</item>
+		<item>Radio Energy Zürich</item>
+		<item>Radio Energy Swiss</item>
+		<item>Radio Swiss Classic</item>
+		<item>Radio Swiss Jazz</item>
+		<item>Radio Swiss Pop</item>
+		<item>Radio 1</item>
+		<item>Radio Zürisee</item>
+		<item>Radio Pilatus</item>
+		<item>Radio BeO</item>
+		<item>Radio Top</item>
+		<item>Radio Top Two</item>
+		<item>Radio 20 Minuten</item>
+		<item>Radio neo 1</item>
+		<item>Radio neo zwei</item>
+		<item>Radio Basel</item>
+		<item>Radio Argovia</item>
+		<item>Radio Argovia Hitmix</item>
+		<item>Radio Argovia Classic Rock</item>
+		<item>Radio 105</item>
+		<item>Radio FM1</item>
+		<item>Radio Antenne Bayern</item>
+		<item>Radio Antenne Chillout</item>
+		<item>Radio Toxic FM</item>
+		<item>Radio X</item>
+		<item>Radio Kanal K</item>
+    </string-array>
+    <array name="station_logos">
+        <item>@drawable/radio_32</item>
+		<item>@drawable/radio_32_goldies</item>
+		<item>@drawable/radio_capital_fm</item>
+		<item>@drawable/radio_rabe</item>
+		<item>@drawable/radio_24</item>
+		<item>@drawable/radio_24</item>
+		<item>@drawable/radio_drs_1</item>
+		<item>@drawable/radio_drs_2</item>
+		<item>@drawable/radio_drs_3</item>
+		<item>@drawable/radio_drs_4_news</item>
+		<item>@drawable/radio_drs_virus</item>
+		<item>@drawable/radio_hoch_2</item>
+		<item>@drawable/radio_energy_bern</item>
+		<item>@drawable/radio_energy_zurich</item>
+		<item>@drawable/radio_energy_swiss</item>
+		<item>@drawable/radio_swiss_classic</item>
+		<item>@drawable/radio_swiss_jazz</item>
+		<item>@drawable/radio_swiss_pop</item>
+		<item>@drawable/radio_1</item>
+		<item>@drawable/radio_zuerichsee</item>
+		<item>@drawable/radio_pilatus</item>
+		<item>@drawable/radio_beo</item>
+		<item>@drawable/radio_top</item>
+		<item>@drawable/radio_top_two</item>
+		<item>@drawable/radio_20_min</item>
+		<item>@drawable/radio_neo_1</item>
+		<item>@drawable/radio_neo_2</item>
+		<item>@drawable/radio_basel</item>
+		<item>@drawable/radio_argovia</item>
+		<item>@drawable/radio_argovia_hitmix</item>
+		<item>@drawable/radio_argovia</item>
+		<item>@drawable/radio_105</item>
+		<item>@drawable/radio_fm_1</item>
+		<item>@drawable/radio_antenne_bayern</item>
+		<item>@drawable/radio_antenne_chillout</item>
+		<item>@drawable/radio_toxic_fm</item>
+		<item>@drawable/radio_x</item>
+		<item>@drawable/radio_kanal_k</item>
+    </array>
+    <string-array name="station_streams">
+        <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
+		<item>http://radio32-stream.customer.solnet.ch:8100/radio32goldies</item>
+		<item>http://capitalfm.ice.infomaniak.ch/capitalfm-high.mp3</item>
+		<item>http://stream.rabe.ch:8000/livestream/rabe-mid.mp3</item>
+		<item>http://live.radio24.ch/radio24</item>
+		<item>http://live.radio24.ch:80/radio24Rock</item>
+		<item>http://glb-stream12.streamserver.ch/2/drs1/mp3_128</item>
+		<item>http://glb-stream12.streamserver.ch/2/drs2/mp3_128</item>
+		<item>http://glb-stream12.streamserver.ch/2/drs3/mp3_128</item>
+		<item>http://glb-stream12.streamserver.ch/2/drs4news/mp3_128</item>
+		<item>http://glb-stream12.streamserver.ch/2/drsvirus/mp3_128</item>
+		<item>http://stream1.radiohoch2.ch:80/web</item>
+		<item>http://energybern.ice.infomaniak.ch:80/energybern-high.mp3</item>
+		<item>http://energyzuerich.ice.infomaniak.ch:80/energyzuerich-high.mp3</item>
+		<item>http://energyswiss.ice.infomaniak.ch:80/energyswiss-high.mp3</item>
+		<item>http://glb-stream12.streamserver.ch/2/rsc_de/mp3_128</item>
+		<item>http://glb-stream12.streamserver.ch/2/rsj/mp3_128</item>
+		<item>http://glb-stream12.streamserver.ch/2/rsp/mp3_128</item>
+		<item>http://stream.radio1.ch:8000/128k</item>
+		<item>http://mp3.radio.ch:80/radiozuerisee128k</item>
+		<item>http://media.radiopilatus.ch:80/iphone.mp3</item>
+		<item>http://87.237.169.123:8000/radiobeo.mp3</item>
+		<item>http://icecast.radiotop.ch:8000/radiotop</item>
+		<item>http://icecast.radiotop.ch:8000/toptwo</item>
+		<item>http://s1.radio.tilllate.com:8080/20min_ger</item>
+		<item>http://stream-02.neo1.ch:80/neo1</item>
+		<item>http://stream-02.neo1.ch:80/neo2</item>
+		<item>http://stream3.radiobasel.ch:8000/rb13</item>
+		<item>http://argovia.mp3.green.ch</item>
+		<item>http://shoutcast.argovia.ch:8095</item>
+		<item>http://shoutcast.argovia.ch:8090</item>
+		<item>http://212.40.5.105:7000</item>
+		<item>http://radiofm1.ice.infomaniak.ch:80/radiofm1-128.mp3</item>
+		<item>http://mp3.webradio.antenne.de:80</item>
+		<item>http://mp3channels.webradio.antenne.de/chillout</item>
+		<item>http://toxicfm.ice.infomaniak.ch:80/toxicfm-128.mp3</item>
+		<item>http://mp3.radiox.ch/standard.mp3</item>
+		<item>http://82.197.165.150</item>
+    </string-array>
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@drawable/bg_port">
+	<Spinner android:layout_height="wrap_content" android:layout_marginTop="4dp"
+		android:layout_width="fill_parent" android:id="@+id/stations" />
+	<LinearLayout android:layout_width="fill_parent"
+		android:orientation="horizontal" android:layout_height="wrap_content">
+		<TextView android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:id="@+id/homepage"
+			android:drawableTop="@drawable/ic_menu_globe" android:text="Homepage"
+			android:gravity="center" android:layout_margin="4dp"
+			android:layout_weight="1" />
+		<TextView android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:id="@+id/webcam"
+			android:drawableTop="@drawable/ic_menu_camera" android:text="Webcam"
+			android:gravity="center" android:layout_margin="4dp"
+			android:layout_weight="1" />
+		<TextView android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:id="@+id/mail"
+			android:drawableTop="@drawable/ic_menu_send" android:text="Mail"
+			android:gravity="center" android:layout_margin="4dp"
+			android:layout_weight="1" />
+	</LinearLayout>
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:id="@+id/ticker"
+		android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever"
+		android:scrollHorizontally="true" android:singleLine="true"
+		android:focusable="true" android:focusableInTouchMode="true"
+		android:text="Ticker... Buffering... Playing: SomeSong by SomeArtist..."
+		android:gravity="center" android:layout_margin="2dp" />
+	<ImageView android:layout_height="wrap_content" android:src="@drawable/icon"
+		android:id="@+id/logo" android:layout_width="fill_parent"
+		android:layout_weight="1" android:scaleType="centerInside" />
+	<LinearLayout android:layout_margin="4dp"
+		android:layout_height="wrap_content" android:layout_width="match_parent"
+		android:orientation="horizontal">
+		<ImageButton android:layout_weight="1"
+			android:layout_height="wrap_content" android:src="@drawable/backward"
+			android:layout_width="wrap_content" android:id="@+id/back" />
+		<ImageButton android:layout_weight="1"
+			android:layout_height="wrap_content" android:src="@drawable/play"
+			android:layout_width="wrap_content" android:id="@+id/play" />
+		<ImageButton android:layout_weight="1"
+			android:layout_height="wrap_content" android:src="@drawable/record"
+			android:layout_width="wrap_content" android:id="@+id/rec" />
+		<ImageButton android:layout_weight="1"
+			android:layout_height="wrap_content" android:src="@drawable/forward"
+			android:layout_width="wrap_content" android:id="@+id/fwd" />
+	</LinearLayout>
+</LinearLayout>

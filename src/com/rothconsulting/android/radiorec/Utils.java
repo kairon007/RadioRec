@@ -1,5 +1,6 @@
 package com.rothconsulting.android.radiorec;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -11,7 +12,7 @@ public class Utils {
 
 	private static final String TAG = Utils.class.getSimpleName();
 
-	public static boolean isNetworkAvailable(Context context) {
+	protected static boolean isNetworkAvailable(Context context) {
 		ConnectivityManager connectivity = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		if (connectivity != null) {
@@ -29,10 +30,20 @@ public class Utils {
 		return false;
 	}
 
-	public static void resumeProgressBarAnimation(ProgressBar pb) {
+	protected static void resumeProgressBarAnimation(ProgressBar pb) {
 		if (pb.getVisibility() == View.VISIBLE) {
 			pb.setVisibility(View.INVISIBLE);
 			pb.setVisibility(View.VISIBLE);
 		}
 	}
+
+	protected static ProgressDialog prepareProgressDialog(Context context) {
+		ProgressDialog progressDialog = new ProgressDialog(context);
+		progressDialog.setCancelable(true);
+		progressDialog.setMessage("Loading...");
+		progressDialog.setTitle(R.string.app_name);
+		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		return progressDialog;
+	}
+
 }
