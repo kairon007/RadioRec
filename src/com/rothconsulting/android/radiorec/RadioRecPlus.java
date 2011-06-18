@@ -1,6 +1,10 @@
 package com.rothconsulting.android.radiorec;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import android.app.Activity;
@@ -9,6 +13,7 @@ import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -43,6 +48,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	ImageView logo;
 	ImageButton back, fwd;
 	RadioPlayer radioPlayer;
+	RadioRecorder radioRecorder;
+	AsyncTask<URL, Integer, Long> recordTask;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -168,16 +175,23 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.rec:
 			recording = !recording;
+			if (recording) {
+				doStartRecording();
+			}
 			((ImageButton) v).setImageResource(recording ? R.drawable.record_on
 					: R.drawable.record);
+			if (!recording) {
+				doStopRecording();
+			}
 			break;
 		case R.id.fwd:
 			if (stations.getSelectedItemPosition() < list.size() - 1) {
 				stations.setSelection(stations.getSelectedItemPosition() + 1);
 				Log.d(TAG, "fwd");
-				onItemSelected(null, null, stations.getSelectedItemPosition(),
-						stations.getSelectedItemPosition());
-				// changeStation();
+				// onItemSelected(null, null,
+				// stations.getSelectedItemPosition(),
+				// stations.getSelectedItemPosition());
+				changeStation();
 			}
 			break;
 		}
@@ -224,10 +238,76 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		editor.commit();
 	}
 
+	private void getPreferences() {
+		// Restore preferences
+		SharedPreferences settings = getSharedPreferences(
+				Constants.PREFERENCES_FILE, 0);
+		Log.d(TAG, "SELECTED_STATION vorher: " + SELECTED_STATION);
+		Log.d(TAG, "URL_CONTACT vorher: " + URL_CONTACT);
+		SELECTED_STATION = settings.getString(Constants.SELECTED_STATION,
+				SELECTED_STATION);
+		URL_LIVE_STREAM = settings.getString(Constants.SELECTED_STATION_STREAM,
+				URL_LIVE_STREAM);
+		URL_HOMEPAGE = settings.getString(Constants.SELECTED_STATION_HOMEPAGE,
+				URL_HOMEPAGE);
+		URL_WEBCAM = settings.getString(Constants.SELECTED_STATION_WEBCAM,
+				URL_WEBCAM);
+		URL_CONTACT = settings.getString(Constants.SELECTED_STATION_CONTACT,
+				URL_CONTACT);
+		Log.d(TAG, "SELECTED_STATION nachher: " + SELECTED_STATION);
+		Log.d(TAG, "URL_CONTACT nachher: " + URL_CONTACT);
+	}
+
 	private RadioPlayer getRadioPlayer() {
 		if (radioPlayer == null) {
 			radioPlayer = new RadioPlayer();
 		}
 		return radioPlayer;
+	}
+
+	private boolean doStartRecording() {
+		Log.d(TAG, "startRecording");
+
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd_HHmmss");
+		String dateTime = formatter.format(new Date());
+
+		URL inputUrl = null;
+		URL outputUrl = null;
+
+		try {
+			inputUrl = new URL(URL_LIVE_STREAM);
+		} catch (MalformedURLException e) {
+			Utils.getNotifInstance(this, RadioRecPlus.class)
+					.showStatusBarNotificationError(
+							R.string.internetadresseNichtErreichbar);
+		}
+
+		try {
+			outputUrl = new URL("file:///sdcard/RadioRecorder/"
+					+ SELECTED_STATION.replaceAll(" ", "") + "-" + dateTime
+					+ ".mp3");
+		} catch (MalformedURLException e) {
+			Utils.getNotifInstance(this, RadioRecPlus.class)
+					.showStatusBarNotificationError(
+							R.string.kannNichtAufSdCardSchreiben);
+		}
+
+		Utils.getNotifInstance(this, RadioRecPlus.class)
+				.showStatusBarNotificationRecording();
+		recordTask = new RadioRecorder(this, this.getIntent()).execute(
+				inputUrl, outputUrl);
+		Log.d(TAG, "*********** isRadioRecording2=" + recording);
+
+		return recording;
+	}
+
+	private void doStopRecording() {
+		if (recordTask != null) {
+			recordTask.cancel(true);
+			Utils.getNotifInstance(this, RadioRecPlus.class)
+					.hideStatusBarNotification(
+							Constants.NOTIFICATION_ID_RECORDING);
+			recording = false;
+		}
 	}
 }

@@ -2,6 +2,7 @@ package com.rothconsulting.android.radiorec;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
@@ -46,4 +47,8 @@ public class Utils {
 		return progressDialog;
 	}
 
+	protected static Notifications getNotifInstance(Context context,
+			Class<?> clss) {
+		return new Notifications(context, new Intent(context, clss));
+	}
 }
