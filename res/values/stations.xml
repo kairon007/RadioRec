@@ -39,6 +39,7 @@
 		<item>Radio Toxic FM</item>
 		<item>Radio X</item>
 		<item>Radio Kanal K</item>
+		<item>Radio Seefunk</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -79,6 +80,7 @@
 		<item>@drawable/radio_toxic_fm</item>
 		<item>@drawable/radio_x</item>
 		<item>@drawable/radio_kanal_k</item>
+		<item>@drawable/radio_seefunk</item>
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -119,5 +121,6 @@
 		<item>http://toxicfm.ice.infomaniak.ch:80/toxicfm-128.mp3</item>
 		<item>http://mp3.radiox.ch/standard.mp3</item>
 		<item>http://82.197.165.150</item>
+		<item>http://webradio.radio-seefunk.de:8000</item>
     </string-array>
 </resources>

@@ -58,6 +58,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 		firstStart = true;
+		getPreferences();
 		// get components and register clicks
 		stations = (Spinner) findViewById(R.id.stations);
 		logo = (ImageView) findViewById(R.id.logo);
@@ -164,7 +165,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			if (stations.getSelectedItemPosition() > 0) {
 				stations.setSelection(stations.getSelectedItemPosition() - 1);
 				Log.d(TAG, "back");
-				changeStation();
 			}
 			break;
 		case R.id.play:
@@ -188,10 +188,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			if (stations.getSelectedItemPosition() < list.size() - 1) {
 				stations.setSelection(stations.getSelectedItemPosition() + 1);
 				Log.d(TAG, "fwd");
-				// onItemSelected(null, null,
-				// stations.getSelectedItemPosition(),
-				// stations.getSelectedItemPosition());
-				changeStation();
 			}
 			break;
 		}
@@ -216,6 +212,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Log.d(TAG, "*********** Stream=" + map.get("stream"));
 		SELECTED_STATION = "" + map.get("name");
 		URL_LIVE_STREAM = "" + map.get("stream");
+
 		if (!firstStart && playing) {
 			getRadioPlayer().doStartPlay(this);
 		} else {
