@@ -132,9 +132,9 @@ public class RadioPlayer extends Activity {
 					Log.d(TAG,
 							"IllegalStateException 1: "
 									+ context
-											.getString(R.string.networkNotAvailable));
+											.getString(R.string.internetadresseNichtErreichbar));
 					getNotifInstance(context).showStatusBarNotificationError(
-							R.string.networkNotAvailable);
+							R.string.internetadresseNichtErreichbar);
 					Log.d(TAG, "cause=" + e.getCause());
 					if (e.getStackTrace() != null
 							&& e.getStackTrace().length >= 2)

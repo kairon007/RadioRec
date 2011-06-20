@@ -131,7 +131,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		case -2:
 			Log.i(TAG, "exit");
 			getRadioPlayer().doStopPlay(this);
-			// doStopRecording();
+			doStopRecording();
 			finish();
 			break;
 		}
