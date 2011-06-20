@@ -34,13 +34,15 @@
 			android:layout_width="wrap_content" android:layout_gravity="center"
 			android:gravity="center"
 			android:text="Folgende Frage wurde mir gestellt: Wieviel Daten werden verbraucht beim Radio hören mit RadioRec+ ?? "
-			android:id="@+id/textViewDatenverbrauchFrage" android:layout_marginLeft="10dip"
-			android:layout_marginRight="10dip" android:layout_marginTop="20dip" android:textColor="#FFFFFF"/>
+			android:id="@+id/textViewDatenverbrauchFrage"
+			android:layout_marginLeft="10dip" android:layout_marginRight="10dip"
+			android:layout_marginTop="20dip" android:textColor="#FFFFFF" />
 		<TextView android:layout_height="wrap_content"
 			android:layout_width="wrap_content" android:layout_gravity="center"
 			android:gravity="center"
 			android:text="Antwort: Knapp 60MB/Std. Die Radio-Sender streamen mit 128kbps. Daraus rechnet sich der Verbrauch folgendermassen: 128'000 Bit/s : 8 = 16'000 Byte/s. Das entspricht 57.6 MB/Stunde (16'000x3200 : 1'000'000). Tipp: Verwende WLAN, dann ist der Datenverbrauch kein Thema :-)"
-			android:id="@+id/textViewDatenverbrauchAntwort" android:layout_marginLeft="10dip" android:textColor="#FFFFFF"
+			android:id="@+id/textViewDatenverbrauchAntwort"
+			android:layout_marginLeft="10dip" android:textColor="#FFFFFF"
 			android:layout_marginRight="10dip" android:layout_marginTop="2dip" />
 		<Button android:layout_margin="30dip" android:id="@+id/buttonZurueck"
 			android:layout_height="wrap_content" android:layout_width="fill_parent"

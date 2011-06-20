@@ -14,6 +14,7 @@ import android.content.res.TypedArray;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -35,12 +36,12 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	static final String TAG = "RadioRecPlus";
 
 	// Default Constants
-	protected static String SELECTED_STATION = Constants.RADIO_32;
-	protected static String URL_LIVE_STREAM = Constants.URL_LIVE_STREAM_RADIO_32;
-	protected static String URL_HOMEPAGE = Constants.URL_HOMEPAGE_RADIO_32;
-	protected static String URL_WEBCAM = Constants.URL_WEBCAM_RADIO_32;
-	protected static String URL_CONTACT = Constants.URL_CONTACT_RADIO_32;
-	protected static String URL_SONGTICKER = "";
+	protected static String SELECTED_STATION;
+	protected static String URL_LIVE_STREAM;
+	protected static String URL_HOMEPAGE;
+	protected static String URL_WEBCAM;
+	protected static String URL_CONTACT;
+	protected static String URL_SONGTICKER;
 
 	boolean playing, recording, firstStart;
 	Spinner stations;
@@ -83,15 +84,26 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				R.array.station_logos);
 		String[] streams = getResources().getStringArray(
 				R.array.station_streams);
+		String[] homepages = getResources().getStringArray(
+				R.array.station_homepages);
+		String[] webcams = getResources().getStringArray(
+				R.array.station_webcams);
+		String[] contact = getResources().getStringArray(
+				R.array.station_contact);
 
 		for (int i = 0; i < names.length; i++) {
+			// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)
+			if (Build.VERSION.SDK_INT < 8
+					&& Constants.getIgnoreList().containsKey(names[i])) {
+				continue;
+			}
 			HashMap<String, Object> m = new HashMap<String, Object>();
 			m.put("name", names[i]);
 			m.put("icon", logos.getResourceId(i, R.id.logo));
 			m.put("stream", streams[i]);
-			m.put("homepage", "");
-			m.put("webcam", "");
-			m.put("mail", "");
+			m.put("homepage", homepages[i]);
+			m.put("webcam", webcams[i]);
+			m.put("email", contact[i]);
 			list.add(m);
 		}
 		// apply list to spinner
@@ -212,7 +224,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Log.d(TAG, "*********** Stream=" + map.get("stream"));
 		SELECTED_STATION = "" + map.get("name");
 		URL_LIVE_STREAM = "" + map.get("stream");
-
+		URL_HOMEPAGE = "" + map.get("homepage");
+		URL_WEBCAM = "" + map.get("webcam");
+		URL_CONTACT = "" + map.get("email");
 		if (!firstStart && playing) {
 			getRadioPlayer().doStartPlay(this);
 		} else {
@@ -307,4 +321,5 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			recording = false;
 		}
 	}
+
 }

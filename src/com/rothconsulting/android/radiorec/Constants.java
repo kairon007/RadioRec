@@ -1,5 +1,7 @@
 package com.rothconsulting.android.radiorec;
 
+import java.util.Hashtable;
+
 /**
  * URL_ICON<br>
  * URL_LIVE_STREAM<br>
@@ -9,6 +11,25 @@ package com.rothconsulting.android.radiorec;
  */
 
 public class Constants {
+
+	/**
+	 * Shoutcast streams work only with Andorid 2.2 an later. Shoutcast streams
+	 * will be ignored for older Android levels.
+	 * 
+	 * @return
+	 */
+	public static final Hashtable<String, String> getIgnoreList() {
+		Hashtable<String, String> ignoreList = new Hashtable<String, String>();
+		ignoreList.put("Radio 105", "Radio 105");
+		ignoreList.put("Radio Antenne Bayern", "Radio Antenne Bayern");
+		ignoreList.put("Radio Kanal K", "Radio Kanal K");
+		ignoreList.put("Radio Seefunk", "Radio Seefunk");
+		ignoreList.put("Radio Argovia", "Radio Argovia");
+		ignoreList.put("Radio Argovia Hitmix", "Radio Argovia Hitmix");
+		ignoreList.put("Radio Argovia Classic Rock",
+				"Radio Argovia Classic Rock");
+		return ignoreList;
+	}
 
 	public static String PREFERENCES_FILE = "RadioRecPrefs";
 	public static final String SELECTED_STATION = "MySelectedStation";
