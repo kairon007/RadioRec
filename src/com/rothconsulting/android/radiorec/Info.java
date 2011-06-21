@@ -58,7 +58,7 @@ public class Info extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.infomenu, menu);
+		inflater.inflate(R.menu.backmenu, menu);
 		return true;
 	}
 
