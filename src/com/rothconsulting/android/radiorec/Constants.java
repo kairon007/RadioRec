@@ -19,6 +19,7 @@ public class Constants {
 		ignoreList.put(RADIO_ARGOVIA, RADIO_ARGOVIA);
 		ignoreList.put(RADIO_ARGOVIA_HITMIX, RADIO_ARGOVIA_HITMIX);
 		ignoreList.put(RADIO_ARGOVIA_CLASSIC_ROCK, RADIO_ARGOVIA_CLASSIC_ROCK);
+		ignoreList.put(RADIO_INSIDE, RADIO_INSIDE);
 		return ignoreList;
 	}
 
