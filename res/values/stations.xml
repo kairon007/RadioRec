@@ -40,6 +40,7 @@
 		<item>Radio X</item>
 		<item>Radio Kanal K</item>
 		<item>Radio Seefunk</item>
+		<item>Radio Inside</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -81,6 +82,7 @@
 		<item>@drawable/radio_x</item>
 		<item>@drawable/radio_kanal_k</item>
 		<item>@drawable/radio_seefunk</item>
+		<item>@drawable/radio_inside</item>
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -122,6 +124,7 @@
 		<item>http://mp3.radiox.ch/standard.mp3</item>
 		<item>http://82.197.165.150</item>
 		<item>http://webradio.radio-seefunk.de:8000</item>
+		<item>http://rs43.stream24.org:8310/;stream0.238134464714676.mp3</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -163,6 +166,7 @@
 		<item>http://www.radiox.ch</item>
 		<item>http://www.kanalk.ch</item>
 		<item>http://www.radio-seefunk.de</item>
+		<item>http://www.radioinside.ch</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -204,46 +208,48 @@
 		<item> </item>
 		<item> </item>
 		<item> </item>
+		<item>http://radioinside.ch/~kamera/studio1.jpg</item>
     </string-array>
     <string-array name="station_contact">
-        <item>http://www.radio32.ch</item>
-		<item>http://www.goldies.ch</item>
-		<item>http://www.capitalfm.ch</item>
-		<item>http://www.rabe.ch</item>
-		<item>http://www.radio24.ch</item>
-		<item>http://www.radio24.ch</item>
-		<item>http://www.drs1.ch</item>
-		<item>http://www.drs2.ch</item>
-		<item>http://www.drs3.ch</item>
-		<item>http://www.drs4news.ch</item>
-		<item>http://www.virus.ch</item>
-		<item>http://www.radiohoch2.ch</item>
-		<item>http://www.energy.ch/bern</item>
-		<item>http://www.energy.ch/zuerich</item>
+        <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
+		<item>http://www.radio32.ch/?id=685&amp;rub=124</item>
+		<item>http://capitalfm.ch/kontakt.html</item>
+		<item>http://www.rabe.ch/ueber-uns/kontakt.html</item>
+		<item>http://www.radio24.ch/service/standard/Kontakt/story/17621407</item>
+		<item>http://www.radio24.ch/service/standard/Kontakt/story/17621407</item>
+		<item>http://www.drs1.ch/www/de/drs1/meine-meinung/mail-ins-studio.html?sSender=drs1</item>
+		<item>http://www.drs2.ch/www/de/drs2/meine-meinung/radiofon.html</item>
+		<item>http://www.drs3.ch/www/de/drs3/meine-meinung/mail-ins-studio.html?sSender=drs3</item>
+		<item>http://www.drs4news.ch/www/de/drs4/meine-meinung/mail-ins-studio.html</item>
+		<item>http://www.virus.ch/virus/kontakt</item>
+		<item>http://radiohoch2.ch/contact</item>
+		<item>http://www.energy.ch/bern/inside/kontakt</item>
+		<item>http://www.energy.ch/zurich/inside/kontakt</item>
 		<item>http://www.energy.ch/webradios</item>
-		<item>http://www.radioswissclassic.ch</item>
-		<item>http://www.radioswissjazz.ch</item>
-		<item>http://www.radioswisspop.ch</item>
-		<item>http://www.radio1.ch</item>
-		<item>http://www.radio.ch</item>
-		<item>http://www.radiopilatus.ch</item>
-		<item>http://www.radiobeo.ch</item>
-		<item>http://www.toponline.ch</item>
-		<item>http://www.toponline.ch/toptwo</item>
-		<item>http://www.20min.ch/radio/radio.tmpl</item>
-		<item>http://www.neo1.ch</item>
-		<item>http://www.neozwei.ch</item>
-		<item>http://www.radiobasel.ch</item>
-		<item>http://www.argovia.ch</item>
-		<item>http://www.argovia.ch</item>
-		<item>http://www.argovia.ch</item>
-		<item>http://www.105.ch</item>
-		<item>http://www.radiofm1.ch</item>
-		<item>http://www.antenne.de</item>
-		<item>http://www.antenne.de</item>
-		<item>http://www.toxicfm.ch</item>
+		<item>http://www.radioswissclassic.ch/de/feedback</item>
+		<item>http://www.radioswissjazz.ch/de/feedback</item>
+		<item>http://www.radioswisspop.ch/de/feedback</item>
+		<item>studio@radio1.ch</item>
+		<item>http://www.radio.ch/de/kontakt/mail-ins-studio/</item>
+		<item>http://mobile.radiopilatus.ch/kontakt.php</item>
+		<item>sendestudio@radiobeo.ch</item>
+		<item>studiofeedback@radiotop.ch</item>
+		<item>studiofeedback@radiotop.ch</item>
+		<item>feedback@20minuten.ch</item>
+		<item>http://www.neo1.ch/studiomail.html</item>
+		<item>http://www.neozwei.ch/index.php?id=314</item>
+		<item>http://radiobasel.ch/kontakt?cid=Studio</item>
+		<item>http://www.argovia.ch/miniwin-jukes.phpch</item>
+		<item>http://www.argovia.ch/miniwin-jukes.php</item>
+		<item>http://www.argovia.ch/miniwin-jukes.php</item>
+		<item>http://www.105.ch/channels/105-fm/?article=65#top</item>
+		<item>http://www.radiofm1.ch/index.php?article_id=285</item>
+		<item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
+		<item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
+		<item>studio@toxic.fm</item>
 		<item>http://www.radiox.ch/service/wuko</item>
-		<item>http://www.kanalk.ch</item>
-		<item>http://www.radio-seefunk.de</item>
+		<item>http://kanalk.ch/Infopool/Kontakt/tabid/166/Default.aspx</item>
+		<item>http://www.radio-seefunk.de/default.aspx?ID=11550</item>
+		<item>http://www.radioinside.ch/index.php/studiomail</item>
     </string-array>
 </resources>

@@ -23,7 +23,8 @@ public class WebTool {
 	 * @param radioStation
 	 * @return
 	 */
-	protected static String getSongticker(String radioStation) {
+	protected static String getSongticker(String radioStation,
+			String urlHomepage) {
 
 		String result = new String(
 				"<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /></head><body><center>");
@@ -34,12 +35,12 @@ public class WebTool {
 		if (radioStation != null) {
 
 			if (radioStation.equalsIgnoreCase(Constants.RADIO_32)) {
-				result += getAktuellerSong(Constants.URL_HOMEPAGE_RADIO_32,
-						Constants.URL_HOMEPAGE_RADIO_32, "nowplaying", "</div>");
+				result += getAktuellerSong(urlHomepage, urlHomepage,
+						"nowplaying", "</div>");
 			} else if (radioStation
 					.equalsIgnoreCase(Constants.RADIO_32_GOLDIES)) {
 				result += getAktuellerSong("http://www.radio32.ch/?rub=124",
-						Constants.URL_HOMEPAGE_RADIO_32, "nowplaying", "</div>");
+						urlHomepage, "nowplaying", "</div>");
 			} else if (radioStation
 					.equalsIgnoreCase(Constants.RADIO_CAPITAL_FM)) {
 
@@ -47,10 +48,9 @@ public class WebTool {
 				result = new String(
 						"<html><head><style>.hidden {display:none;}</style></head><body><center>");
 
-				result += getAktuellerSong(Constants.URL_HOMEPAGE_CAPITALFM,
-						Constants.URL_HOMEPAGE_CAPITALFM,
+				result += getAktuellerSong(urlHomepage, urlHomepage,
 						"summary=\"Capital FM Airplay\">", "</table>");
-			} else if (radioStation.equalsIgnoreCase(Constants.RADIO_24)) {
+			} else if (radioStation.equalsIgnoreCase("Radio 24")) {
 				// result += getAktuellerSong(
 				// "http://www.radio24.ch/player/index.html",
 				// Constants.URL_HOMEPAGE_RADIO_24, "headerBottomRight",
