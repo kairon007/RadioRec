@@ -45,7 +45,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	boolean playing, recording, firstStart;
 	Spinner stations;
-	ArrayList<HashMap<String, Object>> list;
+	ArrayList<HashMap<String, Object>> stationList;
 	ImageView logo;
 	ImageButton back, fwd;
 	RadioPlayer radioPlayer;
@@ -78,7 +78,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			logo.setImageBitmap(Images.addReflection(BitmapFactory
 					.decodeResource(getResources(), R.drawable.radio_32), 0));
 			// construct list of maps for the spinner (DropDown-Selector)
-			list = new ArrayList<HashMap<String, Object>>();
+			stationList = new ArrayList<HashMap<String, Object>>();
 			// Get all the sources: name, logo, stream, homepage, webcam, mail.
 			String[] names = getResources().getStringArray(
 					R.array.station_names);
@@ -106,10 +106,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				m.put("homepage", homepages[i]);
 				m.put("webcam", webcams[i]);
 				m.put("email", contact[i]);
-				list.add(m);
+				stationList.add(m);
 			}
 			// apply list to spinner
-			SimpleAdapter adapter = new SimpleAdapter(this, list,
+			SimpleAdapter adapter = new SimpleAdapter(this, stationList,
 					R.layout.listitem, new String[] { "icon", "name" },
 					new int[] { R.id.option_icon, R.id.option_text });
 			stations.setAdapter(adapter);
@@ -201,7 +201,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			}
 			break;
 		case R.id.fwd:
-			if (stations.getSelectedItemPosition() < list.size() - 1) {
+			if (stations.getSelectedItemPosition() < stationList.size() - 1) {
 				stations.setSelection(stations.getSelectedItemPosition() + 1);
 				Log.d(TAG, "fwd");
 			}
@@ -221,7 +221,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	private void changeStation() {
 		int index = stations.getSelectedItemPosition();
-		HashMap<String, Object> map = list.get(index);
+		HashMap<String, Object> map = stationList.get(index);
 		logo.setImageBitmap(Images.addReflection(
 				BitmapFactory.decodeResource(getResources(),
 						(Integer) map.get("icon")), 0));
@@ -243,7 +243,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			getRadioPlayer().doStopPlay(this);
 		}
 		back.setEnabled(index > 0);
-		fwd.setEnabled(index < list.size() - 1);
+		fwd.setEnabled(index < stationList.size() - 1);
 		storePreferences();
 	}
 

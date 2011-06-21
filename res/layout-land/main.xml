@@ -30,13 +30,13 @@
 					android:gravity="center" android:layout_margin="4dp"
 					android:layout_weight="1" />
 			</LinearLayout>
-			<TextView android:layout_height="wrap_content"
+			<!-- TextView android:layout_height="wrap_content"
 				android:layout_width="fill_parent" android:id="@+id/ticker"
 				android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever"
 				android:scrollHorizontally="true" android:singleLine="true"
 				android:focusable="true" android:focusableInTouchMode="true"
 				android:text="Ticker... Buffering... Playing: SomeSong by SomeArtist..."
-				android:gravity="center" android:layout_margin="2dp" />
+				android:gravity="center" android:layout_margin="2dp" / -->
 			<LinearLayout android:layout_margin="4dp"
 				android:layout_height="wrap_content" android:layout_width="match_parent"
 				android:orientation="horizontal">
