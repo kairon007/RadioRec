@@ -28,6 +28,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 public class RadioRecPlus extends Activity implements OnClickListener,
@@ -226,6 +227,12 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		URL_LIVE_STREAM = "" + map.get("stream");
 		URL_HOMEPAGE = "" + map.get("homepage");
 		URL_WEBCAM = "" + map.get("webcam");
+		final TextView textViewWebcam = (TextView) findViewById(R.id.webcam);
+		if (URL_WEBCAM == null || URL_WEBCAM.trim().equals("")){
+			textViewWebcam.setVisibility(View.INVISIBLE);
+		} else {
+			textViewWebcam.setVisibility(View.VISIBLE);
+		}
 		URL_CONTACT = "" + map.get("email");
 		if (!firstStart && playing) {
 			getRadioPlayer().doStartPlay(this);

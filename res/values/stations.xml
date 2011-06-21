@@ -165,45 +165,45 @@
 		<item>http://www.radio-seefunk.de</item>
     </string-array>
     <string-array name="station_webcams">
-        <item>http://www.radio32.ch</item>
-		<item>http://www.goldies.ch</item>
-		<item>http://www.capitalfm.ch</item>
-		<item>http://www.rabe.ch</item>
-		<item>http://www.radio24.ch</item>
-		<item>http://www.radio24.ch</item>
-		<item>http://www.drs1.ch</item>
-		<item>http://www.drs2.ch</item>
-		<item>http://www.drs3.ch</item>
-		<item>http://www.drs4news.ch</item>
-		<item>http://www.virus.ch</item>
-		<item>http://www.radiohoch2.ch</item>
-		<item>http://www.energy.ch/bern</item>
-		<item>http://www.energy.ch/zuerich</item>
-		<item>http://www.energy.ch/webradios</item>
-		<item>http://www.radioswissclassic.ch</item>
-		<item>http://www.radioswissjazz.ch</item>
-		<item>http://www.radioswisspop.ch</item>
-		<item>http://www.radio1.ch</item>
-		<item>http://www.radio.ch</item>
-		<item>http://www.radiopilatus.ch</item>
-		<item>http://www.radiobeo.ch</item>
-		<item>http://www.toponline.ch</item>
-		<item>http://www.toponline.ch/toptwo</item>
-		<item>http://www.20min.ch/radio/radio.tmpl</item>
-		<item>http://www.neo1.ch</item>
-		<item>http://www.neozwei.ch</item>
-		<item>http://www.radiobasel.ch</item>
-		<item>http://www.argovia.ch</item>
-		<item>http://www.argovia.ch</item>
-		<item>http://www.argovia.ch</item>
-		<item>http://www.105.ch</item>
-		<item>http://www.radiofm1.ch</item>
-		<item>http://www.antenne.de</item>
-		<item>http://www.antenne.de</item>
-		<item>http://www.toxicfm.ch</item>
-		<item>http://www.radiox.ch</item>
-		<item>http://www.kanalk.ch</item>
-		<item>http://www.radio-seefunk.de</item>
+        <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
+		<item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
+		<item> </item>
+		<item> </item>
+		<item>http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&amp;width=700&amp;quality=80</item>
+		<item>http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&amp;width=700&amp;quality=80</item>
+		<item>http://www.drs1.ch/import/webcam/drs1/webdrs1d.jpg?1304112148912</item>
+		<item> </item>
+		<item>http://www.drs3.ch/import/webcam/drs3/webdrs3b.jpg</item>
+		<item> </item>
+		<item>http://www.drs.ch/import/webcam/virus/virus2.jpg?1304112781446</item>
+		<item>http://webcam.radiohoch2.ch/webcam_big.php</item>
+		<item> </item>
+		<item> </item>
+		<item> </item>
+		<item> </item>
+		<item> </item>
+		<item> </item>
+		<item>http://www.radio1.ch/fileadmin/radio1/images/team/player_default.jpg</item>
+		<item>http://live.radiozurisee.divio.ch//media/external/data_upload/CAM1/SR1_CAM1.jpg</item>
+		<item>http://mobile.radiopilatus.ch</item>
+		<item>http://www.radiobeo.ch/webcam/current.jpg</item>
+		<item>http://static-mm.toponline.ch/webcam/cam_640.jpg</item>
+		<item>http://static-mm.toponline.ch/webcam/cam_640.jpg</item>
+		<item> </item>
+		<item>http://www.neo1.ch/index.php?eID=tx_cms_showpic&amp;file=fileadmin%2Fuser_upload%2Fwebcam%2Fwebcam.jpg&amp;width=600&amp;height=600&amp;bodyTag=%3Cbody%3E&amp;wrap=%3Ca%20href%3D%22javascript%3Aclose%28%29%3B%22%3E|%3C%2Fa%3E&amp;md5=5c37496f531ef25f6800e14b7c52bf20</item>
+		<item>http://www.neo1.ch/index.php?eID=tx_cms_showpic&amp;file=fileadmin%2Fuser_upload%2Fwebcam%2Fwebcam.jpg&amp;width=600&amp;height=600&amp;bodyTag=%3Cbody%3E&amp;wrap=%3Ca%20href%3D%22javascript%3Aclose%28%29%3B%22%3E|%3C%2Fa%3E&amp;md5=5c37496f531ef25f6800e14b7c52bf20</item>
+		<item>http://radiobasel.ch/webcam/studio2.jpg</item>
+		<item>http://www.argovia.ch/live/</item>
+		<item>http://www.argovia.ch/live/</item>
+		<item>http://www.argovia.ch/live/</item>
+		<item> </item>
+		<item>http://www.radiofm1.ch/index.php?article_id=323</item>
+		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
+		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
+		<item> </item>
+		<item> </item>
+		<item> </item>
+		<item> </item>
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch</item>
@@ -242,7 +242,7 @@
 		<item>http://www.antenne.de</item>
 		<item>http://www.antenne.de</item>
 		<item>http://www.toxicfm.ch</item>
-		<item>http://www.radiox.ch</item>
+		<item>http://www.radiox.ch/service/wuko</item>
 		<item>http://www.kanalk.ch</item>
 		<item>http://www.radio-seefunk.de</item>
     </string-array>
