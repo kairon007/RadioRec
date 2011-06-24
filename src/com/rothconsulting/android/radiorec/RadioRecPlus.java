@@ -55,66 +55,66 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		if (!playing) {
-			super.onCreate(savedInstanceState);
-			requestWindowFeature(Window.FEATURE_NO_TITLE);
-			setContentView(R.layout.main);
-			firstStart = true;
-			getPreferences();
-			// get components and register clicks
-			stations = (Spinner) findViewById(R.id.stations);
-			logo = (ImageView) findViewById(R.id.logo);
-			((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
-			((TextView) findViewById(R.id.webcam)).setOnClickListener(this);
-			((TextView) findViewById(R.id.mail)).setOnClickListener(this);
-			back = ((ImageButton) findViewById(R.id.back));
-			back.setOnClickListener(this);
-			back.setEnabled(false);
-			((ImageButton) findViewById(R.id.play)).setOnClickListener(this);
-			((ImageButton) findViewById(R.id.rec)).setOnClickListener(this);
-			fwd = ((ImageButton) findViewById(R.id.fwd));
-			fwd.setOnClickListener(this);
-			// set first image
-			logo.setImageBitmap(Images.addReflection(BitmapFactory
-					.decodeResource(getResources(), R.drawable.radio_32), 0));
-			// construct list of maps for the spinner (DropDown-Selector)
-			stationList = new ArrayList<HashMap<String, Object>>();
-			// Get all the sources: name, logo, stream, homepage, webcam, mail.
-			String[] names = getResources().getStringArray(
-					R.array.station_names);
-			TypedArray logos = getResources().obtainTypedArray(
-					R.array.station_logos);
-			String[] streams = getResources().getStringArray(
-					R.array.station_streams);
-			String[] homepages = getResources().getStringArray(
-					R.array.station_homepages);
-			String[] webcams = getResources().getStringArray(
-					R.array.station_webcams);
-			String[] contact = getResources().getStringArray(
-					R.array.station_contact);
+		// if (!playing) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.main);
+		firstStart = true;
+		getPreferences();
 
-			for (int i = 0; i < names.length; i++) {
-				// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)
-				if (Build.VERSION.SDK_INT < 8
-						&& Constants.getIgnoreList().contains(names[i])) {
-					continue;
-				}
-				HashMap<String, Object> m = new HashMap<String, Object>();
-				m.put("name", names[i]);
-				m.put("icon", logos.getResourceId(i, R.id.logo));
-				m.put("stream", streams[i]);
-				m.put("homepage", homepages[i]);
-				m.put("webcam", webcams[i]);
-				m.put("email", contact[i]);
-				stationList.add(m);
+		// get components and register clicks
+		stations = (Spinner) findViewById(R.id.stations);
+		logo = (ImageView) findViewById(R.id.logo);
+		((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
+		((TextView) findViewById(R.id.webcam)).setOnClickListener(this);
+		((TextView) findViewById(R.id.mail)).setOnClickListener(this);
+		back = ((ImageButton) findViewById(R.id.back));
+		back.setOnClickListener(this);
+		back.setEnabled(false);
+		((ImageButton) findViewById(R.id.play)).setOnClickListener(this);
+		((ImageButton) findViewById(R.id.rec)).setOnClickListener(this);
+		fwd = ((ImageButton) findViewById(R.id.fwd));
+		fwd.setOnClickListener(this);
+		// set first image
+		logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
+				getResources(), R.drawable.radio_32), 0));
+		// construct list of maps for the spinner (DropDown-Selector)
+		stationList = new ArrayList<HashMap<String, Object>>();
+		// Get all the sources: name, logo, stream, homepage, webcam, mail.
+		String[] names = getResources().getStringArray(R.array.station_names);
+		TypedArray logos = getResources().obtainTypedArray(
+				R.array.station_logos);
+		String[] streams = getResources().getStringArray(
+				R.array.station_streams);
+		String[] homepages = getResources().getStringArray(
+				R.array.station_homepages);
+		String[] webcams = getResources().getStringArray(
+				R.array.station_webcams);
+		String[] contact = getResources().getStringArray(
+				R.array.station_contact);
+
+		for (int i = 0; i < names.length; i++) {
+			// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)
+			if (Build.VERSION.SDK_INT < 8
+					&& Constants.getIgnoreList().contains(names[i])) {
+				continue;
 			}
+			HashMap<String, Object> m = new HashMap<String, Object>();
+			m.put("name", names[i]);
+			m.put("icon", logos.getResourceId(i, R.id.logo));
+			m.put("stream", streams[i]);
+			m.put("homepage", homepages[i]);
+			m.put("webcam", webcams[i]);
+			m.put("email", contact[i]);
+			stationList.add(m);
+
 			// apply list to spinner
 			SimpleAdapter adapter = new SimpleAdapter(this, stationList,
 					R.layout.listitem, new String[] { "icon", "name" },
 					new int[] { R.id.option_icon, R.id.option_text });
 			stations.setAdapter(adapter);
 			stations.setOnItemSelectedListener(this);
-
+			// }
 		}
 	}
 
