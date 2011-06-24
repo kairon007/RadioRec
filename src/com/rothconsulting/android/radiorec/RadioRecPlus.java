@@ -96,7 +96,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			for (int i = 0; i < names.length; i++) {
 				// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)
 				if (Build.VERSION.SDK_INT < 8
-						&& Constants.getIgnoreList().containsKey(names[i])) {
+						&& Constants.getIgnoreList().contains(names[i])) {
 					continue;
 				}
 				HashMap<String, Object> m = new HashMap<String, Object>();

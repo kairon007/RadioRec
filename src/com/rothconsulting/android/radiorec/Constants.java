@@ -1,6 +1,7 @@
 package com.rothconsulting.android.radiorec;
 
-import java.util.Hashtable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Constants {
 
@@ -10,16 +11,16 @@ public class Constants {
 	 * 
 	 * @return
 	 */
-	public static final Hashtable<String, String> getIgnoreList() {
-		Hashtable<String, String> ignoreList = new Hashtable<String, String>();
-		ignoreList.put(RADIO_105, RADIO_105);
-		ignoreList.put(RADIO_ANTENNE_BAYERN, RADIO_ANTENNE_BAYERN);
-		ignoreList.put(RADIO_KANAL_K, RADIO_KANAL_K);
-		ignoreList.put(RADIO_SEEFUNK, RADIO_SEEFUNK);
-		ignoreList.put(RADIO_ARGOVIA, RADIO_ARGOVIA);
-		ignoreList.put(RADIO_ARGOVIA_HITMIX, RADIO_ARGOVIA_HITMIX);
-		ignoreList.put(RADIO_ARGOVIA_CLASSIC_ROCK, RADIO_ARGOVIA_CLASSIC_ROCK);
-		ignoreList.put(RADIO_INSIDE, RADIO_INSIDE);
+	public static final List<String> getIgnoreList() {
+		List<String> ignoreList = new ArrayList<String>();
+		ignoreList.add(RADIO_105);
+		ignoreList.add(RADIO_ANTENNE_BAYERN);
+		ignoreList.add(RADIO_KANAL_K);
+		ignoreList.add(RADIO_SEEFUNK);
+		ignoreList.add(RADIO_ARGOVIA);
+		ignoreList.add(RADIO_ARGOVIA_HITMIX);
+		ignoreList.add(RADIO_ARGOVIA_CLASSIC_ROCK);
+		ignoreList.add(RADIO_INSIDE);
 		return ignoreList;
 	}
 
@@ -77,5 +78,6 @@ public class Constants {
 	public static final String RADIO_X = "Radio X";
 	public static final String RADIO_SEEFUNK = "Radio Seefunk";
 	public static final String RADIO_INSIDE = "Radio Inside";
-
+	public static final String RADIO_FREIBURG = "Radio Freiburg";
+	public static final String RADIO_LIECHSTENSTEIN = "Radio Liechtenstein";
 }
