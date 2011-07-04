@@ -8,6 +8,9 @@ import java.util.Date;
 import java.util.HashMap;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
@@ -17,6 +20,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,7 +40,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	static final String TAG = "RadioRecPlus";
 
 	// Default Constants
-	protected static String SELECTED_STATION;
+	protected static int SELECTED_STATION_INDEX;
+	protected static String SELECTED_STATION_NAME;
 	protected static String URL_LIVE_STREAM;
 	protected static String URL_HOMEPAGE;
 	protected static String URL_WEBCAM;
@@ -126,6 +131,66 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	}
 
 	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			if (playing) {
+				showDialog(Constants.PRESS_BACK_BUTTON);
+				return true;
+			} else {
+				getRadioPlayer().doStopPlay(this);
+				doStopRecording();
+				finish();
+			}
+		}
+		Utils.getNotifInstance(this, RadioRecPlus.class)
+				.hideStatusBarNotification(
+						Constants.NOTIFICATION_ID_ERROR_CONNECTION);
+		return super.onKeyDown(keyCode, event);
+	}
+
+	@Override
+	protected Dialog onCreateDialog(int id) {
+		switch (id) {
+		case Constants.PRESS_BACK_BUTTON:
+			final AlertDialog.Builder closeWindowBuilder = new AlertDialog.Builder(
+					this);
+			closeWindowBuilder
+					.setMessage(
+							this.getResources().getString(
+									R.string.willstDuWeiterHoeren))
+					.setCancelable(true)
+					.setPositiveButton(
+							this.getResources().getString(R.string.wegDamit),
+							new DialogInterface.OnClickListener() {
+								public void onClick(
+										final DialogInterface dialog,
+										final int id) {
+									getRadioPlayer().doStopPlay(
+											getApplicationContext());
+									doStopRecording();
+									finish();
+								}
+							})
+					.setNegativeButton(
+							this.getResources()
+									.getString(R.string.weiterHoeren),
+							new DialogInterface.OnClickListener() {
+								public void onClick(
+										final DialogInterface dialog,
+										final int id) {
+									moveTaskToBack(true);
+									// Move the task containing this activity to
+									// the back of the activity stack. The
+									// activity’s order within the task is
+									// unchanged.
+								}
+							});
+			return closeWindowBuilder.create();
+		}
+		return null;
+	}
+
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case -1:
@@ -179,7 +244,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.back:
 			if (stations.getSelectedItemPosition() > 0) {
+				back.setEnabled(false);
 				stations.setSelection(stations.getSelectedItemPosition() - 1);
+				SELECTED_STATION_INDEX = stations.getSelectedItemPosition();
 				Log.d(TAG, "back");
 			}
 			break;
@@ -202,7 +269,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.fwd:
 			if (stations.getSelectedItemPosition() < stationList.size() - 1) {
+				fwd.setEnabled(false);
 				stations.setSelection(stations.getSelectedItemPosition() + 1);
+				SELECTED_STATION_INDEX = stations.getSelectedItemPosition();
 				Log.d(TAG, "fwd");
 			}
 			break;
@@ -213,6 +282,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			long arg3) {
 		Log.d(TAG, "onItemSelected(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
 				+ arg3 + ")");
+		arg0.setSelection(SELECTED_STATION_INDEX);
 		changeStation();
 	}
 
@@ -220,13 +290,14 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	}
 
 	private void changeStation() {
-		int index = stations.getSelectedItemPosition();
+		// int index = stations.getSelectedItemPosition();
+		int index = SELECTED_STATION_INDEX;
 		HashMap<String, Object> map = stationList.get(index);
 		logo.setImageBitmap(Images.addReflection(
 				BitmapFactory.decodeResource(getResources(),
 						(Integer) map.get("icon")), 0));
 		Log.d(TAG, "*********** Stream=" + map.get("stream"));
-		SELECTED_STATION = "" + map.get("name");
+		SELECTED_STATION_NAME = "" + map.get("name");
 		URL_LIVE_STREAM = "" + map.get("stream");
 		URL_HOMEPAGE = "" + map.get("homepage");
 		URL_WEBCAM = "" + map.get("webcam");
@@ -251,7 +322,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		SharedPreferences settings = getSharedPreferences(
 				Constants.PREFERENCES_FILE, 0);
 		SharedPreferences.Editor editor = settings.edit();
-		editor.putString(Constants.SELECTED_STATION, SELECTED_STATION);
+		editor.putInt(Constants.SELECTED_STATION_INDEX, SELECTED_STATION_INDEX);
+		editor.putString(Constants.SELECTED_STATION_NAME, SELECTED_STATION_NAME);
 		editor.putString(Constants.SELECTED_STATION_STREAM, URL_LIVE_STREAM);
 		editor.putString(Constants.SELECTED_STATION_HOMEPAGE, URL_HOMEPAGE);
 		editor.putString(Constants.SELECTED_STATION_WEBCAM, URL_WEBCAM);
@@ -263,10 +335,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// Restore preferences
 		SharedPreferences settings = getSharedPreferences(
 				Constants.PREFERENCES_FILE, 0);
-		Log.d(TAG, "SELECTED_STATION vorher: " + SELECTED_STATION);
-		Log.d(TAG, "URL_CONTACT vorher: " + URL_CONTACT);
-		SELECTED_STATION = settings.getString(Constants.SELECTED_STATION,
-				SELECTED_STATION);
+		Log.d(TAG, "SELECTED_STATION_NAME vorher: " + SELECTED_STATION_NAME);
+		Log.d(TAG, "SELECTED_STATION_INDEX vorher: " + SELECTED_STATION_INDEX);
+		SELECTED_STATION_NAME = settings.getString(
+				Constants.SELECTED_STATION_NAME, SELECTED_STATION_NAME);
 		URL_LIVE_STREAM = settings.getString(Constants.SELECTED_STATION_STREAM,
 				URL_LIVE_STREAM);
 		URL_HOMEPAGE = settings.getString(Constants.SELECTED_STATION_HOMEPAGE,
@@ -275,8 +347,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				URL_WEBCAM);
 		URL_CONTACT = settings.getString(Constants.SELECTED_STATION_CONTACT,
 				URL_CONTACT);
-		Log.d(TAG, "SELECTED_STATION nachher: " + SELECTED_STATION);
-		Log.d(TAG, "URL_CONTACT nachher: " + URL_CONTACT);
+		Log.d(TAG, "SELECTED_STATION_NAME nachher: " + SELECTED_STATION_NAME);
+		Log.d(TAG, "SELECTED_STATION_INDEX nachher: " + SELECTED_STATION_INDEX);
 	}
 
 	private RadioPlayer getRadioPlayer() {
@@ -305,8 +377,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 		try {
 			outputUrl = new URL("file:///sdcard/RadioRecorder/"
-					+ SELECTED_STATION.replaceAll(" ", "") + "-" + dateTime
-					+ ".mp3");
+					+ SELECTED_STATION_NAME.replaceAll(" ", "") + "-"
+					+ dateTime + ".mp3");
 		} catch (MalformedURLException e) {
 			Utils.getNotifInstance(this, RadioRecPlus.class)
 					.showStatusBarNotificationError(

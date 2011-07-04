@@ -29,16 +29,17 @@ public class RadioPlayer extends Activity {
 		createThread(context);
 		Log.d(TAG, "prepareProgressDialog");
 		progressDialog = Utils.prepareProgressDialog(context);
-		progressDialog.setTitle(RadioRecPlus.SELECTED_STATION);
+		progressDialog.setTitle(RadioRecPlus.SELECTED_STATION_NAME);
 		Log.d(TAG, "progressDialog.show()");
 		progressDialog.show();
 		Log.d(TAG, "--- threadDoStartPlay.start()");
 		threadDoStartPlay.start();
-		if (mediaPlayer != null) {
-			Log.d(TAG, "*********** isRadioRunning2=" + mediaPlayer.isPlaying());
-		} else {
-			Log.d(TAG, "*********** isRadioRunning2=false");
-		}
+		// if (mediaPlayer != null) {
+		// Log.d(TAG, "*********** isRadioRunning2=" +
+		// mediaPlayer.isPlaying());
+		// } else {
+		// Log.d(TAG, "*********** isRadioRunning2=false");
+		// }
 	}
 
 	protected void doStopPlay(Context context) {
@@ -65,6 +66,13 @@ public class RadioPlayer extends Activity {
 						"Ich will stoppen aber der mediaPlayer ist null!! Macht nix!");
 			}
 
+		} catch (IllegalStateException e) {
+			Log.d(TAG, "Exception at doStopPlay -> IllegalStateException");
+			Log.d(TAG, "cause=" + e.getCause());
+			Log.d(TAG, "message=" + e.getMessage());
+			Log.d(TAG, "e.getStackTrace()[0]=" + e.getStackTrace()[0]);
+			Log.d(TAG, "e.getStackTrace()[1]=" + e.getStackTrace()[1]);
+		} finally {
 			Log.d(TAG,
 					"hideStatusBarNotification NOTIFICATION_ID_RADIO_IS_PLAYING");
 			getNotifInstance(context).hideStatusBarNotification(
@@ -73,13 +81,6 @@ public class RadioPlayer extends Activity {
 					"hideStatusBarNotification NOTIFICATION_ID_ERROR_CONNECTION");
 			getNotifInstance(context).hideStatusBarNotification(
 					Constants.NOTIFICATION_ID_ERROR_CONNECTION);
-		} catch (IllegalStateException e) {
-
-			Log.d(TAG, "Exception at doStopPlay -> IllegalStateException");
-			Log.d(TAG, "cause=" + e.getCause());
-			Log.d(TAG, "message=" + e.getMessage());
-			Log.d(TAG, "e.getStackTrace()[0]=" + e.getStackTrace()[0]);
-			Log.d(TAG, "e.getStackTrace()[1]=" + e.getStackTrace()[1]);
 
 		}
 	}
@@ -105,9 +106,9 @@ public class RadioPlayer extends Activity {
 					mediaPlayer.start();
 					getNotifInstance(context)
 							.showStatusBarNotificationIsRunning();
-					Log.d(TAG,
-							"*********** isRadioRunning1="
-									+ mediaPlayer.isPlaying());
+					// Log.d(TAG,
+					// "*********** isRadioRunning1="
+					// + mediaPlayer.isPlaying());
 
 					// Thread threadSongTicker = new Thread() {
 					// @Override
@@ -140,7 +141,6 @@ public class RadioPlayer extends Activity {
 							&& e.getStackTrace().length >= 2)
 						Log.d(TAG, "getStackTrace[0]" + e.getStackTrace()[0]);
 					Log.d(TAG, "getStackTrace[1]" + e.getStackTrace()[1]);
-
 					doStopPlay(context);
 				} catch (IOException e) {
 					Log.d(TAG,
@@ -151,7 +151,7 @@ public class RadioPlayer extends Activity {
 							R.string.internetadresseNichtErreichbar);
 					doStopPlay(context);
 				} finally {
-
+					Log.d(TAG, "createThread in finally");
 					if (mediaPlayer == null || !mediaPlayer.isPlaying()) {
 						getNotifInstance(context)
 								.showStatusBarNotificationError(
@@ -162,6 +162,5 @@ public class RadioPlayer extends Activity {
 				progressDialog.dismiss();
 			}
 		};
-
 	}
 }

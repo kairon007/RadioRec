@@ -43,7 +43,7 @@ public class Webcam extends Activity {
 		threadShowWebcam.start();
 
 		TextView radiostation = (TextView) findViewById(R.id.textViewWebcamRadioStation);
-		radiostation.setText(RadioRecPlus.SELECTED_STATION);
+		radiostation.setText(RadioRecPlus.SELECTED_STATION_NAME);
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
@@ -132,7 +132,7 @@ public class Webcam extends Activity {
 		progressDialog.setCancelable(true);
 		progressDialog.setMessage("Loading...");
 		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		progressDialog.setTitle("Webcam " + RadioRecPlus.SELECTED_STATION);
+		progressDialog.setTitle("Webcam " + RadioRecPlus.SELECTED_STATION_NAME);
 		progressDialog.show();
 		return progressDialog;
 	}

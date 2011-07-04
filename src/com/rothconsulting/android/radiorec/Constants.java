@@ -25,7 +25,8 @@ public class Constants {
 	}
 
 	public static String PREFERENCES_FILE = "RadioRecPrefs";
-	public static final String SELECTED_STATION = "MySelectedStation";
+	public static final String SELECTED_STATION_INDEX = "MySelectedStationIndex";
+	public static final String SELECTED_STATION_NAME = "MySelectedStationName";
 	public static final String SELECTED_STATION_ICON = "MySelectedStationIcon";
 	public static final String SELECTED_STATION_HOMEPAGE = "MySelectedStationHomepage";
 	public static final String SELECTED_STATION_STREAM = "MySelectedStationStream";
