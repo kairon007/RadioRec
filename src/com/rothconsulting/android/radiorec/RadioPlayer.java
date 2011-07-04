@@ -81,7 +81,6 @@ public class RadioPlayer extends Activity {
 					"hideStatusBarNotification NOTIFICATION_ID_ERROR_CONNECTION");
 			getNotifInstance(context).hideStatusBarNotification(
 					Constants.NOTIFICATION_ID_ERROR_CONNECTION);
-
 		}
 	}
 

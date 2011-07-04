@@ -282,7 +282,15 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			long arg3) {
 		Log.d(TAG, "onItemSelected(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
 				+ arg3 + ")");
+		Log.d(TAG, "getSelectedItemPosition1=" + arg0.getSelectedItemPosition());
+		Log.d(TAG, "SELECTED_STATION_INDEX1=" + SELECTED_STATION_INDEX);
+		if (arg0.getSelectedItemPosition() != SELECTED_STATION_INDEX) {
+			SELECTED_STATION_INDEX = arg0.getSelectedItemPosition();
+		}
 		arg0.setSelection(SELECTED_STATION_INDEX);
+		Log.d(TAG, "getSelectedItemPosition2=" + arg0.getSelectedItemPosition());
+		Log.d(TAG, "SELECTED_STATION_INDEX2=" + SELECTED_STATION_INDEX);
+
 		changeStation();
 	}
 
