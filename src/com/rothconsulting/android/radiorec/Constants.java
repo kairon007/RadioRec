@@ -21,6 +21,7 @@ public class Constants {
 		ignoreList.add(RADIO_ARGOVIA_HITMIX);
 		ignoreList.add(RADIO_ARGOVIA_CLASSIC_ROCK);
 		ignoreList.add(RADIO_INSIDE);
+		ignoreList.add(RADIO_STADTFILTER);
 		return ignoreList;
 	}
 
@@ -81,4 +82,5 @@ public class Constants {
 	public static final String RADIO_INSIDE = "Radio Inside";
 	public static final String RADIO_FREIBURG = "Radio Freiburg";
 	public static final String RADIO_LIECHSTENSTEIN = "Radio Liechtenstein";
+	public static final String RADIO_STADTFILTER = "Radio Stadtfilter";
 }

@@ -96,8 +96,8 @@ public class RadioPlayer extends Activity {
 					mediaPlayer = new MediaPlayer();
 					Log.d(TAG, "reset()");
 					mediaPlayer.reset();
-					mediaPlayer.setDataSource(RadioRecPlus.URL_LIVE_STREAM);
 					Log.d(TAG, "URL: " + RadioRecPlus.URL_LIVE_STREAM);
+					mediaPlayer.setDataSource(RadioRecPlus.URL_LIVE_STREAM);
 					mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 					Log.d(TAG, "prepare()");
 					mediaPlayer.prepare();
