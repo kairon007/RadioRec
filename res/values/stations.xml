@@ -47,6 +47,7 @@
 		<item>Radio FM1 Melody</item>
 		<item>Radio soma.fm - S.o.Goa</item>
 		<item>Radio Stadtfilter</item>
+		<item>Radio LoRa</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -95,6 +96,7 @@
 		<item>@drawable/radio_fm1_melody</item>
 		<item>@drawable/radio_somafm_sgoa</item>
 		<item>@drawable/radio_stadtfilter</item>
+		<item>@drawable/radio_lora</item>
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -143,6 +145,7 @@
 		<item>http://fm1melody.ice.infomaniak.ch/fm1melody-128.mp3</item>
 		<item>http://ice.somafm.com/suburbsofgoa</item>
 		<item>http://stream.stadtfilter.net:8000/</item>
+		<item>http://h1788467.stratoserver.net:8100</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -191,6 +194,7 @@
 		<item>http://www.fm1melody.ch</item>
 		<item>http://www.somafm.com</item>
 		<item>http://www.stadtfilter.ch</item>
+		<item>http://www.lora.ch</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -239,6 +243,7 @@
 		<item> </item>
 		<item> </item>
 		<item> </item>
+		<item> </item>		
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
@@ -287,5 +292,6 @@
 		<item>http://www.fm1melody.ch/index.php?article_id=20</item>
 		<item>http://somafm.com/contact/</item>
 		<item>http://www.stadtfilter.ch/StadtfilterKontakt/Kontakt</item>
+		<item>http://lora.ch/ueberuns/kontakt</item>		
     </string-array>
 </resources>
