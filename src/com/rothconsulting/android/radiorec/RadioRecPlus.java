@@ -66,7 +66,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		setContentView(R.layout.main);
 		firstStart = true;
 		getPreferences();
-
 		// get components and register clicks
 		stations = (Spinner) findViewById(R.id.stations);
 		logo = (ImageView) findViewById(R.id.logo);
@@ -81,8 +80,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		fwd = ((ImageButton) findViewById(R.id.fwd));
 		fwd.setOnClickListener(this);
 		// set first image
+		// logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
+		// getResources(), R.drawable.radio_32), 0));
 		logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
-				getResources(), R.drawable.radio_32), 0));
+				getResources(), SELECTED_STATION_INDEX), 0));
 		// construct list of maps for the spinner (DropDown-Selector)
 		stationList = new ArrayList<HashMap<String, Object>>();
 		// Get all the sources: name, logo, stream, homepage, webcam, mail.
@@ -101,7 +102,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		for (int i = 0; i < names.length; i++) {
 			// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)
 			if (Build.VERSION.SDK_INT < 8
-					&& Constants.getIgnoreList().contains(names[i])) {
+					&& Constants.getIgnoreListKleinerAndroid22().contains(
+							names[i])) {
+				continue;
+			}
+			if (Build.VERSION.SDK_INT == 8
+					&& Constants.getIgnoreListGleichAndroid22().contains(
+							names[i])) {
 				continue;
 			}
 			HashMap<String, Object> m = new HashMap<String, Object>();
@@ -345,6 +352,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				Constants.PREFERENCES_FILE, 0);
 		Log.d(TAG, "SELECTED_STATION_NAME vorher: " + SELECTED_STATION_NAME);
 		Log.d(TAG, "SELECTED_STATION_INDEX vorher: " + SELECTED_STATION_INDEX);
+		SELECTED_STATION_INDEX = settings.getInt(
+				Constants.SELECTED_STATION_INDEX, SELECTED_STATION_INDEX);
 		SELECTED_STATION_NAME = settings.getString(
 				Constants.SELECTED_STATION_NAME, SELECTED_STATION_NAME);
 		URL_LIVE_STREAM = settings.getString(Constants.SELECTED_STATION_STREAM,

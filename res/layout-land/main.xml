@@ -2,8 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:background="@drawable/bg_land">
-	<Spinner android:layout_height="wrap_content" android:layout_marginTop="4dp"
-		android:layout_width="fill_parent" android:id="@+id/stations" />
+	<Spinner android:layout_height="wrap_content"
+		android:layout_marginTop="4dp" android:layout_width="fill_parent"
+		android:id="@+id/stations" />
 	<LinearLayout android:layout_height="wrap_content"
 		android:layout_width="match_parent" android:orientation="horizontal">
 		<ImageView android:layout_height="fill_parent" android:src="@drawable/icon"
@@ -30,13 +31,20 @@
 					android:gravity="center" android:layout_margin="4dp"
 					android:layout_weight="1" />
 			</LinearLayout>
-			<!-- TextView android:layout_height="wrap_content"
-				android:layout_width="fill_parent" android:id="@+id/ticker"
-				android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever"
-				android:scrollHorizontally="true" android:singleLine="true"
-				android:focusable="true" android:focusableInTouchMode="true"
-				android:text="Ticker... Buffering... Playing: SomeSong by SomeArtist..."
-				android:gravity="center" android:layout_margin="2dp" / -->
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:ads="http://schemas.android.com/apk/res/com.rothconsulting.android.radiorec"
+				android:orientation="vertical" android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:id="@+id/mainLayout">
+				<com.google.ads.AdView android:id="@+id/adView"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER" />
+			</LinearLayout>
+			<!-- TextView android:layout_height="wrap_content" android:layout_width="fill_parent" 
+				android:id="@+id/ticker" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" 
+				android:scrollHorizontally="true" android:singleLine="true" android:focusable="true" 
+				android:focusableInTouchMode="true" android:text="Ticker... Buffering... 
+				Playing: SomeSong by SomeArtist..." android:gravity="center" android:layout_margin="2dp" 
+				/ -->
 			<LinearLayout android:layout_margin="4dp"
 				android:layout_height="wrap_content" android:layout_width="match_parent"
 				android:orientation="horizontal">

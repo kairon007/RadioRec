@@ -11,7 +11,7 @@ public class Constants {
 	 * 
 	 * @return
 	 */
-	public static final List<String> getIgnoreList() {
+	public static final List<String> getIgnoreListKleinerAndroid22() {
 		List<String> ignoreList = new ArrayList<String>();
 		ignoreList.add(RADIO_105);
 		ignoreList.add(RADIO_ANTENNE_BAYERN);
@@ -22,6 +22,18 @@ public class Constants {
 		ignoreList.add(RADIO_ARGOVIA_CLASSIC_ROCK);
 		ignoreList.add(RADIO_INSIDE);
 		ignoreList.add(RADIO_STADTFILTER);
+		ignoreList.add(RADIO_LORA);
+		return ignoreList;
+	}
+
+	/**
+	 * Android 2.2 has problems playing Icecast streams. They will be ignored.
+	 * 
+	 * @return
+	 */
+	public static final List<String> getIgnoreListGleichAndroid22() {
+		List<String> ignoreList = new ArrayList<String>();
+		ignoreList.add(RADIO_PILATUS);
 		return ignoreList;
 	}
 
@@ -83,4 +95,5 @@ public class Constants {
 	public static final String RADIO_FREIBURG = "Radio Freiburg";
 	public static final String RADIO_LIECHSTENSTEIN = "Radio Liechtenstein";
 	public static final String RADIO_STADTFILTER = "Radio Stadtfilter";
+	public static final String RADIO_LORA = "Radio LoRa";
 }

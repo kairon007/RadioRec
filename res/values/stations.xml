@@ -21,7 +21,7 @@
 		<item>Radio Swiss Pop</item>
 		<item>Radio 1</item>
 		<item>Radio Zürisee</item>
-		<!-- item>Radio Pilatus</item-->
+		<item>Radio Pilatus</item>
 		<item>Radio BeO</item>
 		<item>Radio Top</item>
 		<item>Radio Top Two</item>
@@ -70,7 +70,7 @@
 		<item>@drawable/radio_swiss_pop</item>
 		<item>@drawable/radio_1</item>
 		<item>@drawable/radio_zuerichsee</item>
-		<!-- item>@drawable/radio_pilatus</item-->
+		<item>@drawable/radio_pilatus</item>
 		<item>@drawable/radio_beo</item>
 		<item>@drawable/radio_top</item>
 		<item>@drawable/radio_top_two</item>
@@ -119,7 +119,7 @@
 		<item>http://glb-stream12.streamserver.ch/2/rsp/mp3_128</item>
 		<item>http://stream.radio1.ch:8000/128k</item>
 		<item>http://mp3.radio.ch:80/radiozuerisee128k</item>
-		<!-- item>http://media.radiopilatus.ch/pilatus128</item-->
+		<item>http://media.radiopilatus.ch:80/iphone.mp3</item>
 		<item>http://87.237.169.123:8000/radiobeo.mp3</item>
 		<item>http://icecast.radiotop.ch:8000/radiotop</item>
 		<item>http://icecast.radiotop.ch:8000/toptwo</item>
@@ -168,7 +168,7 @@
 		<item>http://www.radioswisspop.ch</item>
 		<item>http://www.radio1.ch</item>
 		<item>http://www.radio.ch</item>
-		<!-- item>http://www.radiopilatus.ch</item-->
+		<item>http://www.radiopilatus.ch</item>
 		<item>http://www.radiobeo.ch</item>
 		<item>http://www.toponline.ch</item>
 		<item>http://www.toponline.ch/toptwo</item>
@@ -217,7 +217,7 @@
 		<item> </item>
 		<item>http://www.radio1.ch/fileadmin/radio1/images/team/player_default.jpg</item>
 		<item>http://live.radiozurisee.divio.ch//media/external/data_upload/CAM1/SR1_CAM1.jpg</item>
-		<!-- item>http://mobile.radiopilatus.ch</item-->
+		<item>http://mobile.radiopilatus.ch</item>
 		<item>http://www.radiobeo.ch/webcam/current.jpg</item>
 		<item>http://static-mm.toponline.ch/webcam/cam_640.jpg</item>
 		<item>http://static-mm.toponline.ch/webcam/cam_640.jpg</item>
@@ -266,7 +266,7 @@
 		<item>http://www.radioswisspop.ch/de/feedback</item>
 		<item>studio@radio1.ch</item>
 		<item>http://www.radio.ch/de/kontakt/mail-ins-studio/</item>
-		<!-- item>http://mobile.radiopilatus.ch/kontakt.php</item-->
+		<item>http://mobile.radiopilatus.ch/kontakt.php</item>
 		<item>sendestudio@radiobeo.ch</item>
 		<item>studiofeedback@radiotop.ch</item>
 		<item>studiofeedback@radiotop.ch</item>
