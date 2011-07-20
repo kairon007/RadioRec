@@ -82,6 +82,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// set first image
 		// logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
 		// getResources(), R.drawable.radio_32), 0));
+		if (SELECTED_STATION_INDEX == -1) {
+			SELECTED_STATION_INDEX = R.drawable.radio_32;
+		}
+		Log.d(TAG, "Image=" + SELECTED_STATION_NAME);
+		Log.d(TAG, "Index=" + SELECTED_STATION_INDEX);
 		logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
 				getResources(), SELECTED_STATION_INDEX), 0));
 		// construct list of maps for the spinner (DropDown-Selector)
@@ -308,6 +313,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// int index = stations.getSelectedItemPosition();
 		int index = SELECTED_STATION_INDEX;
 		HashMap<String, Object> map = stationList.get(index);
+		Log.d(TAG, "Image=" + SELECTED_STATION_NAME);
 		logo.setImageBitmap(Images.addReflection(
 				BitmapFactory.decodeResource(getResources(),
 						(Integer) map.get("icon")), 0));
@@ -353,7 +359,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Log.d(TAG, "SELECTED_STATION_NAME vorher: " + SELECTED_STATION_NAME);
 		Log.d(TAG, "SELECTED_STATION_INDEX vorher: " + SELECTED_STATION_INDEX);
 		SELECTED_STATION_INDEX = settings.getInt(
-				Constants.SELECTED_STATION_INDEX, SELECTED_STATION_INDEX);
+				Constants.SELECTED_STATION_INDEX, -1);
 		SELECTED_STATION_NAME = settings.getString(
 				Constants.SELECTED_STATION_NAME, SELECTED_STATION_NAME);
 		URL_LIVE_STREAM = settings.getString(Constants.SELECTED_STATION_STREAM,

@@ -23,6 +23,11 @@ public class Constants {
 		ignoreList.add(RADIO_INSIDE);
 		ignoreList.add(RADIO_STADTFILTER);
 		ignoreList.add(RADIO_LORA);
+		ignoreList.add(RADIO_KAISEREGG);
+		ignoreList.add(RADIO_SUNSHINE);
+		ignoreList.add(RADIO_DJRADIO);
+		ignoreList.add(RADIO_LOUNGE_RADIO);
+
 		return ignoreList;
 	}
 
@@ -96,4 +101,9 @@ public class Constants {
 	public static final String RADIO_LIECHSTENSTEIN = "Radio Liechtenstein";
 	public static final String RADIO_STADTFILTER = "Radio Stadtfilter";
 	public static final String RADIO_LORA = "Radio LoRa";
+	public static final String RADIO_KAISEREGG = "Radio Kaiseregg";
+	public static final String RADIO_SUNSHINE = "Radio Sunshine";
+	public static final String RADIO_DJRADIO = "Radio DJ Radio";
+	public static final String RADIO_LOUNGE_RADIO = "Radio Lounge Radio";
+
 }

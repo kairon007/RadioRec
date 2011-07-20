@@ -46,7 +46,7 @@ public class Images {
 		canvas.drawRect(0, height, width, height + reflectionGap, deafaultPaint);
 		// Draw in the reflection
 		canvas.drawBitmap(reflectionImage, 0, height + reflectionGap, null);
-
+		reflectionImage.recycle();
 		// Create a shader that is a linear gradient that covers the reflection
 		Paint paint = new Paint();
 		LinearGradient shader = new LinearGradient(0,
