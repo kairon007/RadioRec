@@ -41,6 +41,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	// Default Constants
 	protected static int SELECTED_STATION_INDEX;
+	protected static int SELECTED_STATION_ICON;
 	protected static String SELECTED_STATION_NAME;
 	protected static String URL_LIVE_STREAM;
 	protected static String URL_HOMEPAGE;
@@ -80,15 +81,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		fwd = ((ImageButton) findViewById(R.id.fwd));
 		fwd.setOnClickListener(this);
 		// set first image
-		// logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
-		// getResources(), R.drawable.radio_32), 0));
-		if (SELECTED_STATION_INDEX == -1) {
-			SELECTED_STATION_INDEX = R.drawable.radio_32;
-		}
-		Log.d(TAG, "Image=" + SELECTED_STATION_NAME);
-		Log.d(TAG, "Index=" + SELECTED_STATION_INDEX);
 		logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
-				getResources(), SELECTED_STATION_INDEX), 0));
+				getResources(), SELECTED_STATION_ICON), 0));
 		// construct list of maps for the spinner (DropDown-Selector)
 		stationList = new ArrayList<HashMap<String, Object>>();
 		// Get all the sources: name, logo, stream, homepage, webcam, mail.
@@ -103,6 +97,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				R.array.station_webcams);
 		String[] contact = getResources().getStringArray(
 				R.array.station_contact);
+
+		Log.d(TAG, "Icon=" + SELECTED_STATION_ICON);
+		Log.d(TAG, "Name=" + SELECTED_STATION_NAME);
+		Log.d(TAG, "Index=" + SELECTED_STATION_INDEX);
 
 		for (int i = 0; i < names.length; i++) {
 			// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)
@@ -296,10 +294,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				+ arg3 + ")");
 		Log.d(TAG, "getSelectedItemPosition1=" + arg0.getSelectedItemPosition());
 		Log.d(TAG, "SELECTED_STATION_INDEX1=" + SELECTED_STATION_INDEX);
-		if (arg0.getSelectedItemPosition() != SELECTED_STATION_INDEX) {
+		if (firstStart) {
+			Log.d(TAG,
+					"firstStart -> arg0.setSelection(SELECTED_STATION_INDEX)");
+			arg0.setSelection(SELECTED_STATION_INDEX);
+		} else {
 			SELECTED_STATION_INDEX = arg0.getSelectedItemPosition();
 		}
-		arg0.setSelection(SELECTED_STATION_INDEX);
 		Log.d(TAG, "getSelectedItemPosition2=" + arg0.getSelectedItemPosition());
 		Log.d(TAG, "SELECTED_STATION_INDEX2=" + SELECTED_STATION_INDEX);
 
@@ -312,12 +313,16 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private void changeStation() {
 		// int index = stations.getSelectedItemPosition();
 		int index = SELECTED_STATION_INDEX;
+		if (index < 0) {
+			index = 0;
+		}
 		HashMap<String, Object> map = stationList.get(index);
 		Log.d(TAG, "Image=" + SELECTED_STATION_NAME);
-		logo.setImageBitmap(Images.addReflection(
-				BitmapFactory.decodeResource(getResources(),
-						(Integer) map.get("icon")), 0));
+		SELECTED_STATION_ICON = (Integer) map.get("icon");
+		logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
+				getResources(), SELECTED_STATION_ICON), 0));
 		Log.d(TAG, "*********** Stream=" + map.get("stream"));
+
 		SELECTED_STATION_NAME = "" + map.get("name");
 		URL_LIVE_STREAM = "" + map.get("stream");
 		URL_HOMEPAGE = "" + map.get("homepage");
@@ -334,6 +339,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		} else {
 			getRadioPlayer().doStopPlay(this);
 		}
+		firstStart = false;
 		back.setEnabled(index > 0);
 		fwd.setEnabled(index < stationList.size() - 1);
 		storePreferences();
@@ -344,6 +350,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				Constants.PREFERENCES_FILE, 0);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.putInt(Constants.SELECTED_STATION_INDEX, SELECTED_STATION_INDEX);
+		editor.putInt(Constants.SELECTED_STATION_ICON, SELECTED_STATION_ICON);
 		editor.putString(Constants.SELECTED_STATION_NAME, SELECTED_STATION_NAME);
 		editor.putString(Constants.SELECTED_STATION_STREAM, URL_LIVE_STREAM);
 		editor.putString(Constants.SELECTED_STATION_HOMEPAGE, URL_HOMEPAGE);

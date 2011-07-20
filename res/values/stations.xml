@@ -53,6 +53,8 @@
 		<item>Radio Tropic</item>
 		<item>Radio DJ Radio</item>
 		<item>Radio Lounge Radio</item>
+		<item>Radio SwissGroove</item>
+		<item>Radio RSI Rete 3</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -107,6 +109,8 @@
 		<item>@drawable/radio_tropic</item>
 		<item>@drawable/radio_djradio</item>
 		<item>@drawable/radio_loungeradio</item>
+		<item>@drawable/radio_swissgroove</item>
+		<item>@drawable/radio_rete3</item>
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -161,6 +165,8 @@
 		<item>http://tropic.ice.infomaniak.ch:80/tropic-high.mp3</item>
 		<item>http://streamplus16.leonex.de:17130</item>
 		<item>http://ch3.streamhosting.ch:8080</item>
+		<item>http://stream3134.init7.net:80</item>
+		<item>http://glb-stream12.streamserver.ch/1/retetre/mp3_128</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -215,6 +221,8 @@
 		<item>http://www.radio-tropic.ch</item>
 		<item>http://www.djradio.ch</item>
 		<item>http://www.lounge-radio.com</item>
+		<item>http://www.swissgroove.ch</item>
+		<item>http://retetre.rtsi.ch</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -268,7 +276,9 @@
 		<item>http://www.sunshine.ch/data/webcam/studio2.jpg</item>
 		<item> </item>
 		<item> </item>
-		<item></item>
+		<item> </item>
+		<item> </item>		
+		<item> </item>
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
@@ -323,5 +333,7 @@
 		<item>http://radio-tropic.ch/contact</item>
 		<item>http://www.djradio.ch/kontakt</item>
 		<item>http://www.lounge-radio.com/index.php?option=com_contact&amp;Itemid=42</item>
+		<item>http://www.swissgroove.ch/index.php?content=main&amp;id=17</item>
+		<item>http://retetre.rtsi.ch/index.php?option=com_contact&amp;catid=12&amp;Itemid=30</item>
     </string-array>
 </resources>
