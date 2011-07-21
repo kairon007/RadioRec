@@ -16,6 +16,7 @@
 		<item>Radio Energy Bern</item>
 		<item>Radio Energy Zürich</item>
 		<item>Radio Energy Swiss</item>
+		<item>Radio Energy Charts</item>
 		<item>Radio Swiss Classic</item>
 		<item>Radio Swiss Jazz</item>
 		<item>Radio Swiss Pop</item>
@@ -55,6 +56,8 @@
 		<item>Radio Lounge Radio</item>
 		<item>Radio SwissGroove</item>
 		<item>Radio RSI Rete 3</item>
+		<item>Radio Rock Nation</item>
+		<item>Radio 3fach</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -72,6 +75,7 @@
 		<item>@drawable/radio_energy_bern</item>
 		<item>@drawable/radio_energy_zurich</item>
 		<item>@drawable/radio_energy_swiss</item>
+		<item>@drawable/radio_energy_charts</item>
 		<item>@drawable/radio_swiss_classic</item>
 		<item>@drawable/radio_swiss_jazz</item>
 		<item>@drawable/radio_swiss_pop</item>
@@ -111,6 +115,8 @@
 		<item>@drawable/radio_loungeradio</item>
 		<item>@drawable/radio_swissgroove</item>
 		<item>@drawable/radio_rete3</item>
+		<item>@drawable/radio_rocknation</item>
+		<item>@drawable/radio_3fach</item>
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -128,6 +134,7 @@
 		<item>http://energybern.ice.infomaniak.ch:80/energybern-high.mp3</item>
 		<item>http://energyzuerich.ice.infomaniak.ch:80/energyzuerich-high.mp3</item>
 		<item>http://energyswiss.ice.infomaniak.ch:80/energyswiss-high.mp3</item>
+		<item>http://broadcast.infomaniak.net/energycharts-high.mp3</item>
 		<item>http://glb-stream12.streamserver.ch/2/rsc_de/mp3_128</item>
 		<item>http://glb-stream12.streamserver.ch/2/rsj/mp3_128</item>
 		<item>http://glb-stream12.streamserver.ch/2/rsp/mp3_128</item>
@@ -167,6 +174,8 @@
 		<item>http://ch3.streamhosting.ch:8080</item>
 		<item>http://stream3134.init7.net:80</item>
 		<item>http://glb-stream12.streamserver.ch/1/retetre/mp3_128</item>
+		<item>http://105-stream-02.datacomm.ch:8000/rocknation</item>
+		<item>http://94.126.18.195:8000</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -183,6 +192,7 @@
 		<item>http://www.radiohoch2.ch</item>
 		<item>http://www.energy.ch/bern</item>
 		<item>http://www.energy.ch/zuerich</item>
+		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.radioswissclassic.ch</item>
 		<item>http://www.radioswissjazz.ch</item>
@@ -223,6 +233,8 @@
 		<item>http://www.lounge-radio.com</item>
 		<item>http://www.swissgroove.ch</item>
 		<item>http://retetre.rtsi.ch</item>
+		<item>http://www.rocknation.ch</item>
+		<item>http://www.3fach.ch</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -237,6 +249,7 @@
 		<item> </item>
 		<item>http://www.drs.ch/import/webcam/virus/virus2.jpg?1304112781446</item>
 		<item>http://webcam.radiohoch2.ch/webcam_big.php</item>
+		<item> </item>
 		<item> </item>
 		<item> </item>
 		<item> </item>
@@ -279,6 +292,8 @@
 		<item> </item>
 		<item> </item>		
 		<item> </item>
+		<item> </item>
+		<item>http://webcam.3fach.ch:8080/axis-cgi/mjpg/video.cgi</item>
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
@@ -295,6 +310,7 @@
 		<item>http://radiohoch2.ch/contact</item>
 		<item>http://www.energy.ch/bern/inside/kontakt</item>
 		<item>http://www.energy.ch/zurich/inside/kontakt</item>
+		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.radioswissclassic.ch/de/feedback</item>
 		<item>http://www.radioswissjazz.ch/de/feedback</item>
@@ -335,5 +351,7 @@
 		<item>http://www.lounge-radio.com/index.php?option=com_contact&amp;Itemid=42</item>
 		<item>http://www.swissgroove.ch/index.php?content=main&amp;id=17</item>
 		<item>http://retetre.rtsi.ch/index.php?option=com_contact&amp;catid=12&amp;Itemid=30</item>
+		<item>info@rocknation.ch</item>
+		<item>http://www.3fach.ch/index.php?id=2</item>
     </string-array>
 </resources>

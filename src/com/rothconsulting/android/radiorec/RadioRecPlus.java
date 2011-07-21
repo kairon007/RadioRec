@@ -81,8 +81,16 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		fwd = ((ImageButton) findViewById(R.id.fwd));
 		fwd.setOnClickListener(this);
 		// set first image
-		logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
-				getResources(), SELECTED_STATION_ICON), 0));
+		if (SELECTED_STATION_ICON == 0x0) {
+			SELECTED_STATION_ICON = R.drawable.radio_32;
+		}
+		try {
+			logo.setImageBitmap(Images.addReflection(BitmapFactory
+					.decodeResource(getResources(), SELECTED_STATION_ICON), 0));
+		} catch (Exception e) {
+			logo.setImageBitmap(Images.addReflection(BitmapFactory
+					.decodeResource(getResources(), R.drawable.radio_32), 0));
+		}
 		// construct list of maps for the spinner (DropDown-Selector)
 		stationList = new ArrayList<HashMap<String, Object>>();
 		// Get all the sources: name, logo, stream, homepage, webcam, mail.
