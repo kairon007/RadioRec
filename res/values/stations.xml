@@ -8,6 +8,8 @@
 		<item>Radio 24</item>
 		<item>Radio 24 Rock</item>
 		<item>Radio DRS1</item>
+		<item>Radio DRS1 AG/SO</item>
+		<item>Radio DRS1 BE/FR/VS</item>
 		<item>Radio DRS2</item>
 		<item>Radio DRS3</item>
 		<item>Radio DRS4 News</item>
@@ -35,6 +37,7 @@
 		<item>Radio Argovia Classic Rock</item>
 		<item>Radio 105</item>
 		<item>Radio FM1</item>
+		<item>Radio FM1 Melody</item>
 		<item>Radio Antenne Bayern</item>
 		<item>Radio Antenne Chillout</item>
 		<item>Radio Toxic FM</item>
@@ -45,7 +48,6 @@
 		<item>Radio Freiburg</item>
 		<item>Radio Liechtenstein</item>
 		<item>Radio Couleur 3</item>
-		<item>Radio FM1 Melody</item>
 		<item>Radio soma.fm - S.o.Goa</item>
 		<item>Radio Stadtfilter</item>
 		<item>Radio LoRa</item>
@@ -67,6 +69,8 @@
 		<item>@drawable/radio_24</item>
 		<item>@drawable/radio_24_rock</item>
 		<item>@drawable/radio_drs_1</item>
+		<item>@drawable/radio_drs_1_ag_so</item>		
+		<item>@drawable/radio_drs_1_be_fr_vs</item>		
 		<item>@drawable/radio_drs_2</item>
 		<item>@drawable/radio_drs_3</item>
 		<item>@drawable/radio_drs_4_news</item>
@@ -94,6 +98,7 @@
 		<item>@drawable/radio_argovia</item>
 		<item>@drawable/radio_105</item>
 		<item>@drawable/radio_fm_1</item>
+		<item>@drawable/radio_fm1_melody</item>
 		<item>@drawable/radio_antenne_bayern</item>
 		<item>@drawable/radio_antenne_chillout</item>
 		<item>@drawable/radio_toxic_fm</item>
@@ -104,7 +109,6 @@
 		<item>@drawable/radio_fr</item>
 		<item>@drawable/radio_li</item>
 		<item>@drawable/radio_couleur3</item>
-		<item>@drawable/radio_fm1_melody</item>
 		<item>@drawable/radio_somafm_sgoa</item>
 		<item>@drawable/radio_stadtfilter</item>
 		<item>@drawable/radio_lora</item>
@@ -126,6 +130,8 @@
 		<item>http://live.radio24.ch/radio24</item>
 		<item>http://live.radio24.ch:80/radio24Rock</item>
 		<item>http://glb-stream12.streamserver.ch/2/drs1/mp3_128</item>
+		<item>http://glb-stream12.streamserver.ch/1/regi_ag_so/mp3_128</item>
+		<item>http://glb-stream12.streamserver.ch/1/regi_be_fr_vs/mp3_128</item>
 		<item>http://glb-stream12.streamserver.ch/2/drs2/mp3_128</item>
 		<item>http://glb-stream12.streamserver.ch/2/drs3/mp3_128</item>
 		<item>http://glb-stream12.streamserver.ch/2/drs4news/mp3_128</item>
@@ -153,6 +159,7 @@
 		<item>http://shoutcast.argovia.ch:8090</item>
 		<item>http://212.40.5.105:7000</item>
 		<item>http://radiofm1.ice.infomaniak.ch:80/radiofm1-128.mp3</item>
+		<item>http://fm1melody.ice.infomaniak.ch/fm1melody-128.mp3</item>
 		<item>http://mp3.webradio.antenne.de:80</item>
 		<item>http://mp3channels.webradio.antenne.de/chillout</item>
 		<item>http://toxicfm.ice.infomaniak.ch:80/toxicfm-128.mp3</item>
@@ -163,7 +170,6 @@
 		<item>http://radiofreiburg.ice.infomaniak.ch:80/radiofreiburg-high.mp3</item>
 		<item>http://live.radiol.li:8000/live</item>
 		<item>http://broadcast.infomaniak.ch/rsr-couleur3-high.mp3</item>
-		<item>http://fm1melody.ice.infomaniak.ch/fm1melody-128.mp3</item>
 		<item>http://ice.somafm.com/suburbsofgoa</item>
 		<item>http://stream.stadtfilter.net:8000/</item>
 		<item>http://h1788467.stratoserver.net:8100</item>
@@ -185,6 +191,8 @@
 		<item>http://www.radio24.ch</item>
 		<item>http://www.radio24.ch</item>
 		<item>http://www.drs1.ch</item>
+		<item>http://www.drs1.ch/www/de/drs1/nachrichten/regional/aargau-solothurn.html</item>
+		<item>http://www.drs1.ch/www/de/drs1/nachrichten/regional/bern-freiburg-wallis.html</item>
 		<item>http://www.drs2.ch</item>
 		<item>http://www.drs3.ch</item>
 		<item>http://www.drs4news.ch</item>
@@ -212,6 +220,7 @@
 		<item>http://www.argovia.ch</item>
 		<item>http://www.105.ch</item>
 		<item>http://www.radiofm1.ch</item>
+		<item>http://www.fm1melody.ch</item>
 		<item>http://www.antenne.de</item>
 		<item>http://www.antenne.de</item>
 		<item>http://www.toxicfm.ch</item>
@@ -222,7 +231,6 @@
 		<item>http://www.radiofr.ch/de</item>
 		<item>http://www.radio.li</item>
 		<item>http://www.couleur3.ch</item>
-		<item>http://www.fm1melody.ch</item>
 		<item>http://www.somafm.com</item>
 		<item>http://www.stadtfilter.ch</item>
 		<item>http://www.lora.ch</item>
@@ -243,7 +251,9 @@
 		<item> </item>
 		<item>http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&amp;width=700&amp;quality=80</item>
 		<item>http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&amp;width=700&amp;quality=80</item>
-		<item>http://www.drs1.ch/import/webcam/drs1/webdrs1d.jpg?1304112148912</item>
+		<item>http://www.drs1.ch/import/webcam/drs1/webdrs1d.jpg</item>
+		<item>http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg</item>
+		<item>http://www.drs1.ch/import/webcam/drs1/webdrs1c.jpg</item>
 		<item> </item>
 		<item>http://www.drs3.ch/import/webcam/drs3/webdrs3b.jpg</item>
 		<item> </item>
@@ -271,9 +281,9 @@
 		<item>http://www.argovia.ch/live/</item>
 		<item> </item>
 		<item>http://www.radiofm1.ch/index.php?article_id=323</item>
-		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
-		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
 		<item> </item>
+		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
+		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
 		<item> </item>
 		<item> </item>
 		<item> </item>
@@ -302,10 +312,12 @@
 		<item>http://www.rabe.ch/ueber-uns/kontakt.html</item>
 		<item>http://www.radio24.ch/service/standard/Kontakt/story/17621407</item>
 		<item>http://www.radio24.ch/service/standard/Kontakt/story/17621407</item>
-		<item>http://www.drs1.ch/www/de/drs1/meine-meinung/mail-ins-studio.html?sSender=drs1</item>
-		<item>http://www.drs2.ch/www/de/drs2/meine-meinung/radiofon.html</item>
-		<item>http://www.drs3.ch/www/de/drs3/meine-meinung/mail-ins-studio.html?sSender=drs3</item>
-		<item>http://www.drs4news.ch/www/de/drs4/meine-meinung/mail-ins-studio.html</item>
+		<item>http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html</item>
+		<item>http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html</item>
+		<item>http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html</item>
+		<item>http://www.drs2.ch/www/de/drs2/kontakt/kundendienst.html</item>
+		<item>http://www.drs3.ch/www/de/drs3/kontakt/mail-ins-studio.html</item>
+		<item>http://www.drs4news.ch/www/de/drs4/kontakt/mail-ins-studio.html</item>
 		<item>http://www.virus.ch/virus/kontakt</item>
 		<item>http://radiohoch2.ch/contact</item>
 		<item>http://www.energy.ch/bern/inside/kontakt</item>
@@ -330,6 +342,7 @@
 		<item>http://www.argovia.ch/miniwin-jukes.php</item>
 		<item>http://www.105.ch/channels/105-fm/?article=65#top</item>
 		<item>http://www.radiofm1.ch/index.php?article_id=285</item>
+		<item>http://www.fm1melody.ch/index.php?article_id=20</item>
 		<item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
 		<item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
 		<item>studio@toxic.fm</item>
@@ -340,7 +353,6 @@
 		<item>http://www.radiofr.ch/de/kontakt.html</item>
 		<item>http://www.radio.li/hoererservice/mein-musikwunsch.html?type=3</item>
 		<item>http://www.rsr.ch/#/corporate/contact/?contact=couleur3</item>
-		<item>http://www.fm1melody.ch/index.php?article_id=20</item>
 		<item>http://somafm.com/contact/</item>
 		<item>http://www.stadtfilter.ch/StadtfilterKontakt/Kontakt</item>
 		<item>http://lora.ch/ueberuns/kontakt</item>	
