@@ -29,6 +29,8 @@ public class Constants {
 		ignoreList.add(RADIO_LOUNGE_RADIO);
 		ignoreList.add(RADIO_SWISS_GROOVE);
 		ignoreList.add(RADIO_3FACH);
+		ignoreList.add(RADIO_COUNTRY_RADIO);
+		ignoreList.add(RADIO_FCB_LIVE_RADIO);
 		return ignoreList;
 	}
 
@@ -108,5 +110,8 @@ public class Constants {
 	public static final String RADIO_LOUNGE_RADIO = "Radio Lounge Radio";
 	public static final String RADIO_SWISS_GROOVE = "Radio SwissGroove";
 	public static final String RADIO_3FACH = "Radio 3fach";
+	public static final String RADIO_COUNTRY_RADIO = "Radio Country Radio";
+	public static final String RADIO_GLORIA = "Radio GLoria";
+	public static final String RADIO_FCB_LIVE_RADIO = "Radio FC Basel Live Radio";
 
 }
