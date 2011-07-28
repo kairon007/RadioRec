@@ -63,7 +63,7 @@
 		<item>Radio Country Radio</item>
 		<item>Radio Life Channel</item>
 		<item>Radio Gloria</item>
-		<item>Radio YB Gelb-Schwarz</item>
+		<item>Radio Gelb-Schwarz YB</item>
 		<item>Radio FC Basel Live Radio</item>
     </string-array>
     <array name="station_logos">
@@ -327,7 +327,7 @@
 		<item></item>
 		<item></item>
 		<item></item>
-		<item></item>
+		<item>http://data.bkw-fmb.ch/opd/camPics/Stade-de-suisse.jpg</item>
 		<item></item>
     </string-array>
     <string-array name="station_contact">

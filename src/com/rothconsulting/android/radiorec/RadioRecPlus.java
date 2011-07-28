@@ -204,6 +204,24 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 								}
 							});
 			return closeWindowBuilder.create();
+
+		case Constants.LIVE_STREAM_STATION:
+			final AlertDialog.Builder liveStreamWindowBuilder = new AlertDialog.Builder(
+					this);
+			liveStreamWindowBuilder
+					.setMessage(this.getResources().getString(R.string.nurLive))
+					.setCancelable(true)
+					.setPositiveButton(
+							this.getResources().getString(R.string.ok),
+							new DialogInterface.OnClickListener() {
+								public void onClick(
+										final DialogInterface dialog,
+										final int id) {
+									return;
+								}
+							});
+			return liveStreamWindowBuilder.create();
+
 		}
 		return null;
 	}
@@ -324,7 +342,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		if (index < 0) {
 			index = 0;
 		}
-		HashMap<String, Object> map = stationList.get(index);
+		HashMap<String, Object> map = null;
+		try {
+			map = stationList.get(index);
+		} catch (Exception e) {
+			index = 0;
+			map = stationList.get(index);
+		}
 		Log.d(TAG, "Image=" + SELECTED_STATION_NAME);
 		SELECTED_STATION_ICON = (Integer) map.get("icon");
 		logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
@@ -342,7 +366,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			textViewWebcam.setVisibility(View.VISIBLE);
 		}
 		URL_CONTACT = "" + map.get("email");
+
 		if (!firstStart && playing) {
+			if (Constants.getLiveStreamStations().contains(
+					SELECTED_STATION_NAME)) {
+				Log.d(TAG, "------ ist Radio Gelb-Schwarz");
+				showDialog(Constants.LIVE_STREAM_STATION);
+			}
 			getRadioPlayer().doStartPlay(this);
 		} else {
 			getRadioPlayer().doStopPlay(this);

@@ -45,6 +45,18 @@ public class Constants {
 		return ignoreList;
 	}
 
+	/**
+	 * Only working while live broadcasting.
+	 * 
+	 * @return
+	 */
+	public static final List<String> getLiveStreamStations() {
+		List<String> liveStreamStationList = new ArrayList<String>();
+		liveStreamStationList.add(RADIO_GELB_SCHWARZ);
+		liveStreamStationList.add(RADIO_FCB_LIVE_RADIO);
+		return liveStreamStationList;
+	}
+
 	public static String PREFERENCES_FILE = "RadioRecPrefs";
 	public static final String SELECTED_STATION_INDEX = "MySelectedStationIndex";
 	public static final String SELECTED_STATION_NAME = "MySelectedStationName";
@@ -58,6 +70,7 @@ public class Constants {
 	public static final int NOTIFICATION_ID_RECORDING = 2;
 	public static final int NOTIFICATION_ID_ERROR_CONNECTION = 3;
 	public static final int PRESS_BACK_BUTTON = 10;
+	public static final int LIVE_STREAM_STATION = 11;
 
 	public static String ADMOB_PUBLISHER_ID = "a14dc9885936cd9";
 
@@ -111,7 +124,8 @@ public class Constants {
 	public static final String RADIO_SWISS_GROOVE = "Radio SwissGroove";
 	public static final String RADIO_3FACH = "Radio 3fach";
 	public static final String RADIO_COUNTRY_RADIO = "Radio Country Radio";
-	public static final String RADIO_GLORIA = "Radio GLoria";
+	public static final String RADIO_GLORIA = "Radio Gloria";
+	public static final String RADIO_GELB_SCHWARZ = "Radio Gelb-Schwarz YB";
 	public static final String RADIO_FCB_LIVE_RADIO = "Radio FC Basel Live Radio";
 
 }
