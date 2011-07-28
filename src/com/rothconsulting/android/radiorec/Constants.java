@@ -54,6 +54,7 @@ public class Constants {
 		List<String> liveStreamStationList = new ArrayList<String>();
 		liveStreamStationList.add(RADIO_GELB_SCHWARZ);
 		liveStreamStationList.add(RADIO_FCB_LIVE_RADIO);
+		liveStreamStationList.add(RADIO_FC_ZUERICH);
 		return liveStreamStationList;
 	}
 
@@ -127,5 +128,6 @@ public class Constants {
 	public static final String RADIO_GLORIA = "Radio Gloria";
 	public static final String RADIO_GELB_SCHWARZ = "Radio Gelb-Schwarz YB";
 	public static final String RADIO_FCB_LIVE_RADIO = "Radio FC Basel Live Radio";
+	public static final String RADIO_FC_ZUERICH = "Radio FC Zürich";
 
 }

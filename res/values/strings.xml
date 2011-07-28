@@ -17,6 +17,6 @@
     <string name="ende">Ende</string>
     <string name="zurueck">Zurück</string>
     <string name="email_androider">androider@wolke7.net</string>
-    <string name="nurLive">INFO: Dieses Radio sendet nur wenn eine Live-Übertragung ist!</string>
+    <string name="nurLive">Dieses Radio sendet nur wenn eine Live-Übertragung ist! Informiere dich auf der Homepage wann die nächsten Live-Übertragungen sind.</string>
     <string name="ok">OK</string>
 </resources>

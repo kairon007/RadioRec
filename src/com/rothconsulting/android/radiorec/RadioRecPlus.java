@@ -206,22 +206,24 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			return closeWindowBuilder.create();
 
 		case Constants.LIVE_STREAM_STATION:
-			final AlertDialog.Builder liveStreamWindowBuilder = new AlertDialog.Builder(
-					this);
-			liveStreamWindowBuilder
-					.setMessage(this.getResources().getString(R.string.nurLive))
-					.setCancelable(true)
-					.setPositiveButton(
-							this.getResources().getString(R.string.ok),
-							new DialogInterface.OnClickListener() {
-								public void onClick(
-										final DialogInterface dialog,
-										final int id) {
-									return;
-								}
-							});
-			return liveStreamWindowBuilder.create();
 
+			// prepare the alert box
+			AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
+			// set the title to display
+			alertbox.setTitle("Info");
+			// set the message to display
+			alertbox.setMessage(this.getResources().getString(R.string.nurLive));
+			// set a positive/yes button and create a listener
+			alertbox.setPositiveButton(
+					this.getResources().getString(R.string.ok),
+					new DialogInterface.OnClickListener() {
+						// do something when the button is clicked
+						public void onClick(DialogInterface arg0, int arg1) {
+							return;
+						}
+					});
+			// display box
+			alertbox.show();
 		}
 		return null;
 	}
