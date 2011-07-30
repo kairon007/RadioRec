@@ -198,7 +198,7 @@
 		<item>http://mp3.lifechannel.ch/LC128</item>
 		<item>http://live-two.dmd2.ch:8080/radiogloria_lo</item>
 		<item>http://radiogelb-schwarz.ice.infomaniak.ch:80/radiogelbschwarz.mp3</item>
-		<item>http://vs149165.vserver.de:8000</item>
+		<item>http://195.49.27.25:8000</item>
 		<item>http://stream.fcz.ch:8000/fcz01</item>
     </string-array>
     <string-array name="station_homepages">
