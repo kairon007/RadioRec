@@ -109,6 +109,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Log.d(TAG, "Icon=" + SELECTED_STATION_ICON);
 		Log.d(TAG, "Name=" + SELECTED_STATION_NAME);
 		Log.d(TAG, "Index=" + SELECTED_STATION_INDEX);
+		// AdMob.showAd(this);
 
 		for (int i = 0; i < names.length; i++) {
 			// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)

@@ -22,6 +22,14 @@
 			android:gravity="center" android:layout_margin="4dp"
 			android:layout_weight="1" />
 	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+	android:orientation="vertical" android:gravity="center" android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:id="@+id/mainLayout">
+	<com.google.ads.AdView android:id="@+id/adView"
+		android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center"
+		ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER" ads:loadAdOnCreate="true" />
+	</LinearLayout>
 	<!-- TextView android:layout_height="wrap_content"
 		android:layout_width="fill_parent" android:id="@+id/ticker"
 		android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever"
