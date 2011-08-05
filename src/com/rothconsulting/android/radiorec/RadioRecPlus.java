@@ -84,12 +84,18 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		if (SELECTED_STATION_ICON == 0x0) {
 			SELECTED_STATION_ICON = R.drawable.radio_32;
 		}
+		// avoiding OutOfMemory
+		// http://stackoverflow.com/questions/477572/android-strange-out-of-memory-issue
+		BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inTempStorage = new byte[16 * 1024];
 		try {
 			logo.setImageBitmap(Images.addReflection(BitmapFactory
-					.decodeResource(getResources(), SELECTED_STATION_ICON), 0));
+					.decodeResource(getResources(), SELECTED_STATION_ICON,
+							options), 0));
 		} catch (Exception e) {
 			logo.setImageBitmap(Images.addReflection(BitmapFactory
-					.decodeResource(getResources(), R.drawable.radio_32), 0));
+					.decodeResource(getResources(), R.drawable.radio_32,
+							options), 0));
 		}
 		// construct list of maps for the spinner (DropDown-Selector)
 		stationList = new ArrayList<HashMap<String, Object>>();
@@ -354,8 +360,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 		Log.d(TAG, "Image=" + SELECTED_STATION_NAME);
 		SELECTED_STATION_ICON = (Integer) map.get("icon");
+		// avoiding OutOfMemory
+		// http://stackoverflow.com/questions/477572/android-strange-out-of-memory-issue
+		BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inTempStorage = new byte[16 * 1024];
+
 		logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
-				getResources(), SELECTED_STATION_ICON), 0));
+				getResources(), SELECTED_STATION_ICON, options), 0));
 		Log.d(TAG, "*********** Stream=" + map.get("stream"));
 
 		SELECTED_STATION_NAME = "" + map.get("name");

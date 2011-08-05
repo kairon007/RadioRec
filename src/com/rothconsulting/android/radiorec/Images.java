@@ -29,12 +29,19 @@ public class Images {
 
 		// Create a Bitmap with the flip matix applied to it.
 		// We only want the bottom half of the image
-		Bitmap reflectionImage = Bitmap.createBitmap(originalImage, 0,
-				height / 2, width, height / 2, matrix, false);
-
+		Bitmap reflectionImage;
 		// Create a new bitmap with same width but taller to fit reflection
-		Bitmap bitmapWithReflection = Bitmap.createBitmap(width,
-				(height + height / 2), Config.ARGB_8888);
+		Bitmap bitmapWithReflection;
+		try {
+			reflectionImage = Bitmap.createBitmap(originalImage, 0, height / 2,
+					width, height / 2, matrix, false);
+
+			bitmapWithReflection = Bitmap.createBitmap(width,
+					(height + height / 2), Config.ARGB_8888);
+		} catch (Exception e) {
+			// Devices with low memory can crash at "createBitmap(...)"
+			return originalImage;
+		}
 
 		// Create a new Canvas with the bitmap that's big enough for
 		// the image plus gap plus reflection
