@@ -67,6 +67,10 @@
 		<item>Radio FC Basel Live Radio</item>
 		<item>Radio FC Zürich</item>
 		<item>Backstage Radio</item>
+		<item>Radio Rottu Oberwallis</item>		
+		<item>Radio Monte Carlo</item>
+		<item>Radio RaSa</item>		
+		<item>Radio Blind Power</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -135,6 +139,10 @@
 		<item>@drawable/radio_fcb_live_radio</item>
 		<item>@drawable/radio_fc_zuerich</item>
 		<item>@drawable/radio_backstage_radio</item>
+		<item>@drawable/radio_rro</item>
+		<item>@drawable/radio_monte_carlo</item>
+		<item>@drawable/radio_rasa</item>		
+		<item>@drawable/radio_blindpower</item>		
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -203,6 +211,10 @@
 		<item>http://195.49.27.25:8000</item>
 		<item>http://stream.fcz.ch:8000/fcz01</item>
 		<item>http://broadcast.infomaniak.ch/backstageradio-high.mp3</item>
+		<item>http://stream.rro.ch/shoutcast/radiostation2.stream/media_25716.mp3?wowzasessionid=1443574765</item>
+		<item>http://212.40.13.22:11000</item>
+		<item>http://s7.pop-stream.de:7830</item>	
+		<item>http://www.dmd2.net/sc/pl/rbp/radioblindpower.m3u</item>	
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -271,6 +283,10 @@
 		<item>http://www.fcbliveradio.ch</item>
 		<item>http://www.fcz.ch/radio</item>
 		<item>http://www.backstageradio.ch</item>
+		<item>http://www.rro.ch</item>
+		<item>http://www.radiomontecarlo.ch</item>
+		<item>http://www.rasa.ch</item>		
+		<item>http://www.radioblindpower.ch</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -339,6 +355,10 @@
 		<item></item>
 		<item></item>
 		<item></item>
+		<item></item>
+		<item></item>		
+		<item></item>		
+		<item></item>		
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
@@ -406,6 +426,10 @@
 		<item>rgs@im-stadion.ch</item>
 		<item>http://www.fcbliveradio.ch/index.php?option=com_contact&amp;view=category&amp;catid=12&amp;Itemid=53</item>
 		<item>http://www.fcz.ch/tv/fcz_radio_kontakt.htm</item>
-		<item>https://www.facebook.com/apps/application.php?id=194482473899008</item>
+		<item>http://www.facebook.com/apps/application.php?id=194482473899008</item>
+		<item>http://www.rro.ch/cms/?page=kontakt</item>
+		<item>info@radiomontecarlo.ch</item>
+		<item>http://www.rasa.ch/feedback.php</item>
+		<item>http://www.radioblindpower.ch/studio/studiomail.php</item>
     </string-array>
 </resources>
