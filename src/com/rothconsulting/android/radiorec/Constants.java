@@ -31,6 +31,12 @@ public class Constants {
 		ignoreList.add(RADIO_3FACH);
 		ignoreList.add(RADIO_COUNTRY_RADIO);
 		ignoreList.add(RADIO_FCB_LIVE_RADIO);
+		ignoreList.add(RADIO_BACKSTAGE_RADIO);
+		ignoreList.add(RADIO_RRO);
+		ignoreList.add(RADIO_MONTE_CARLO);
+		ignoreList.add(RADIO_RASA);
+		ignoreList.add(RADIO_BLIND_RADIO);
+
 		return ignoreList;
 	}
 
@@ -129,5 +135,9 @@ public class Constants {
 	public static final String RADIO_GELB_SCHWARZ = "Radio Gelb-Schwarz YB";
 	public static final String RADIO_FCB_LIVE_RADIO = "Radio FC Basel Live Radio";
 	public static final String RADIO_FC_ZUERICH = "Radio FC Zürich";
-
+	public static final String RADIO_BACKSTAGE_RADIO = "Backstage Radio";
+	public static final String RADIO_RRO = "Radio Rottu Oberwallis";
+	public static final String RADIO_MONTE_CARLO = "Radio Monte Carlo";
+	public static final String RADIO_RASA = "Radio RaSa";
+	public static final String RADIO_BLIND_RADIO = "Radio Blind Power";
 }
