@@ -73,6 +73,7 @@
 		<item>Radio Blind Power</item>
 		<item>Radio Sine-Music</item>
 		<item>Radio Kingston Hot</item>
+		<item>Radio Central</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -147,6 +148,7 @@
 		<item>@drawable/radio_blindpower</item>		
 		<item>@drawable/radio_sinemusic</item>
 		<item>@drawable/radio_kingston_hot</item>
+		<item>@drawable/radio_central</item>
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -221,6 +223,7 @@
 		<item>http://www.dmd2.net/sc/pl/rbp/radioblindpower.m3u</item>	
 		<item>http://stream.laut.fm/sine-music</item>
 		<item>http://www.kingstonhot.de/shows/KingstonHotRadio110811.mp3</item>
+		<item>http://central128.mp3.green.ch</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -295,6 +298,7 @@
 		<item>http://www.radioblindpower.ch</item>
 		<item>http://www.sine-music.de</item>
 		<item>http://www.kingstonhot.de</item>
+		<item>http://www.radiocenral.ch</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -369,6 +373,7 @@
 		<item></item>		
 		<item></item>	
 		<item></item>	
+		<item>http://www.radiocentral.ch/data/WebCam/brunnen.jpg</item>
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
@@ -443,5 +448,6 @@
 		<item>http://www.radioblindpower.ch/studio/studiomail.php</item>
 		<item>http://www.sine-music.de/?page_id=679</item>
 		<item>http://34073.speechbox.de</item>
+		<item>http://www.radiocentral.ch/dynasite.cfm?dsmid=77268</item>
     </string-array>
 </resources>

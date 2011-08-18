@@ -35,8 +35,9 @@ public class Constants {
 		ignoreList.add(RADIO_RRO);
 		ignoreList.add(RADIO_MONTE_CARLO);
 		ignoreList.add(RADIO_RASA);
-		ignoreList.add(RADIO_BLIND_RADIO);
+		ignoreList.add(RADIO_BLIND_POWER);
 		ignoreList.add(RADIO_SINE_MUSIC);
+		ignoreList.add(RADIO_CENTRAL);
 		return ignoreList;
 	}
 
@@ -139,6 +140,7 @@ public class Constants {
 	public static final String RADIO_RRO = "Radio Rottu Oberwallis";
 	public static final String RADIO_MONTE_CARLO = "Radio Monte Carlo";
 	public static final String RADIO_RASA = "Radio RaSa";
-	public static final String RADIO_BLIND_RADIO = "Radio Blind Power";
+	public static final String RADIO_BLIND_POWER = "Radio Blind Power";
 	public static final String RADIO_SINE_MUSIC = "Radio Sine-Music";
+	public static final String RADIO_CENTRAL = "Radio Central";
 }
