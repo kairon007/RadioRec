@@ -217,10 +217,10 @@
 		<item>http://195.49.27.25:8000</item>
 		<item>http://stream.fcz.ch:8000/fcz01</item>
 		<item>http://broadcast.infomaniak.ch/backstageradio-high.mp3</item>
-		<item>http://stream.rro.ch/shoutcast/radiostation2.stream/media_25716.mp3?wowzasessionid=1443574765</item>
+		<item>http://stream.rro.ch/shoutcast/radiostation2.stream/playlist.m3u8</item>
 		<item>http://212.40.13.22:11000</item>
 		<item>http://s7.pop-stream.de:7830</item>	
-		<item>http://www.dmd2.net/sc/pl/rbp/radioblindpower.m3u</item>	
+		<item>http://live-two.dmd2.ch:8080/rbp_hi</item>	
 		<item>http://stream.laut.fm/sine-music</item>
 		<item>http://www.kingstonhot.de/shows/KingstonHotRadio110811.mp3</item>
 		<item>http://central128.mp3.green.ch</item>
