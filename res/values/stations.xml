@@ -72,6 +72,7 @@
 		<item>Radio RaSa</item>		
 		<item>Radio Blind Power</item>
 		<item>Radio Sine-Music</item>
+		<item>Radio Kingston Hot</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -145,6 +146,7 @@
 		<item>@drawable/radio_rasa</item>		
 		<item>@drawable/radio_blindpower</item>		
 		<item>@drawable/radio_sinemusic</item>
+		<item>@drawable/radio_kingston_hot</item>
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -218,6 +220,7 @@
 		<item>http://s7.pop-stream.de:7830</item>	
 		<item>http://www.dmd2.net/sc/pl/rbp/radioblindpower.m3u</item>	
 		<item>http://stream.laut.fm/sine-music</item>
+		<item>http://www.kingstonhot.de/shows/KingstonHotRadio110811.mp3</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -291,6 +294,7 @@
 		<item>http://www.rasa.ch</item>		
 		<item>http://www.radioblindpower.ch</item>
 		<item>http://www.sine-music.de</item>
+		<item>http://www.kingstonhot.de</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -363,7 +367,8 @@
 		<item></item>		
 		<item></item>		
 		<item></item>		
-		<item></item>		
+		<item></item>	
+		<item></item>	
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
@@ -437,5 +442,6 @@
 		<item>http://www.rasa.ch/feedback.php</item>
 		<item>http://www.radioblindpower.ch/studio/studiomail.php</item>
 		<item>http://www.sine-music.de/?page_id=679</item>
+		<item>http://34073.speechbox.de</item>
     </string-array>
 </resources>
