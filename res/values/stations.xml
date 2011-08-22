@@ -77,6 +77,7 @@
 		<item>Radio Central Rock</item>
 		<item>Radio Central Swiss</item>
 		<item>Radio Eviva</item>
+		<item>Radio Grischa</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -155,6 +156,7 @@
 		<item>@drawable/radio_central_rock</item>
 		<item>@drawable/radio_central_swiss</item>
 		<item>@drawable/radio_eviva</item>
+		<item>@drawable/radio_grischa</item>
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -223,7 +225,7 @@
 		<item>http://195.49.27.25:8000</item>
 		<item>http://stream.fcz.ch:8000/fcz01</item>
 		<item>http://broadcast.infomaniak.ch/backstageradio-high.mp3</item>
-		<item>httplive://stream.rro.ch/shoutcast/radiostation2.stream/playlist.m3u8</item>
+		<item>http://stream.rro.ch/shoutcast/radiostation2.stream/playlist.m3u8</item>
 		<item>http://212.40.13.22:11000</item>
 		<item>http://s7.pop-stream.de:7830</item>	
 		<item>http://live-two.dmd2.ch:8080/rbp_hi</item>	
@@ -233,6 +235,7 @@
 		<item>http://sp7128.mp3.green.ch</item>
 		<item>http://sp3128.mp3.green.ch</item>
 		<item>http://eviva128.mp3.green.ch</item>
+		<item>http://grischa.mp3.green.ch</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -311,6 +314,7 @@
 		<item>http://www.radiocenral.ch</item>
 		<item>http://www.radiocenral.ch</item>
 		<item>http://www.eviva.ch</item>
+		<item>http://www.radiogrischa.ch</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -389,6 +393,7 @@
 		<item>http://www.radiocentral.ch/data/WebCam/brunnen.jpg</item>
 		<item>http://www.radiocentral.ch/data/WebCam/brunnen.jpg</item>
 		<item>http://www.radiocentral.ch/data/WebCam/brunnen.jpg</item>
+		<item></item>
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
@@ -467,5 +472,6 @@
 		<item>http://www.radiocentral.ch/dynasite.cfm?dsmid=77268</item>
 		<item>http://www.radiocentral.ch/dynasite.cfm?dsmid=77268</item>
 		<item>http://eviva.ch/dynasite.cfm?dsmid=78524</item>
+		<item>http://www.radiogrischa.ch/adresseanfahrt</item>
     </string-array>
 </resources>
