@@ -78,6 +78,7 @@
 		<item>Radio Central Swiss</item>
 		<item>Radio Eviva</item>
 		<item>Radio Grischa</item>
+		<item>Radio sunshine-live</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -157,6 +158,7 @@
 		<item>@drawable/radio_central_swiss</item>
 		<item>@drawable/radio_eviva</item>
 		<item>@drawable/radio_grischa</item>
+		<item>@drawable/radio_sunshinelive</item>
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -236,6 +238,7 @@
 		<item>http://sp3128.mp3.green.ch</item>
 		<item>http://eviva128.mp3.green.ch</item>
 		<item>http://grischa.mp3.green.ch</item>
+		<item>http://edge.download.newmedia.nacamar.net/sltokens/flashplayer/stream-mp3-player.php?stream=sunshinelive/livestream.mp3</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -315,6 +318,7 @@
 		<item>http://www.radiocenral.ch</item>
 		<item>http://www.eviva.ch</item>
 		<item>http://www.radiogrischa.ch</item>
+		<item>http://www.sunshine-live.de</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -394,6 +398,7 @@
 		<item>http://www.radiocentral.ch/data/WebCam/brunnen.jpg</item>
 		<item>http://www.radiocentral.ch/data/WebCam/brunnen.jpg</item>
 		<item>http://www.radiogrischa.ch/sites/default/files/webcams/studio_1.jpg</item>
+		<item></item>
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
@@ -473,5 +478,6 @@
 		<item>http://www.radiocentral.ch/dynasite.cfm?dsmid=77268</item>
 		<item>http://eviva.ch/dynasite.cfm?dsmid=78524</item>
 		<item>http://www.radiogrischa.ch/adresseanfahrt</item>
+		<item>http://www.sunshine-live.de/pop-ups/mail-ins-studio/</item>
     </string-array>
 </resources>
