@@ -238,7 +238,7 @@
 		<item>http://sp3128.mp3.green.ch</item>
 		<item>http://eviva128.mp3.green.ch</item>
 		<item>http://grischa.mp3.green.ch</item>
-		<item>http://edge.download.newmedia.nacamar.net/sltokens/flashplayer/stream-mp3-player.php?stream=sunshinelive/livestream.mp3</item>
+		<item>http://62.27.47.15/sunshinelive/livestream.mp3</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>

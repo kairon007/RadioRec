@@ -29,7 +29,7 @@ public class Images {
 
 		// Create a Bitmap with the flip matix applied to it.
 		// We only want the bottom half of the image
-		Bitmap reflectionImage;
+		Bitmap reflectionImage = null;
 		// Create a new bitmap with same width but taller to fit reflection
 		Bitmap bitmapWithReflection;
 		try {
@@ -40,7 +40,8 @@ public class Images {
 					(height + height / 2), Config.ARGB_8888);
 		} catch (Exception e) {
 			// Devices with low memory can crash at "createBitmap(...)"
-			return originalImage;
+			bitmapWithReflection = Bitmap.createBitmap(width / 2,
+					(height + height / 4), Config.ARGB_8888);
 		}
 
 		// Create a new Canvas with the bitmap that's big enough for

@@ -151,7 +151,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(0, -1, 0, "Info").setIcon(R.drawable.ic_menu_info_details);
-		menu.add(0, -2, 0, "Beenden").setIcon(R.drawable.ic_menu_exit);
+		menu.add(0, -2, 0, "Spende").setIcon(R.drawable.ic_menu_globe);
+		menu.add(0, -3, 0, "Beenden").setIcon(R.drawable.ic_menu_exit);
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -243,6 +244,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			this.startActivity(new Intent(this, Info.class));
 			break;
 		case -2:
+			Log.i(TAG, "spende");
+			this.startActivity(new Intent(this, Donate.class));
+			break;
+		case -3:
 			Log.i(TAG, "exit");
 			getRadioPlayer().doStopPlay(this);
 			doStopRecording();
