@@ -13,7 +13,7 @@
 				android:textSize="15dip" android:layout_margin="10dip"
 				android:id="@+id/textViewDonateText" />
 			<ImageButton android:src="@drawable/paypal_donate_cc_lg"
-				android:id="@+id/paypalImageButton" android:layout_width="match_parent"
+				android:id="@+id/paypalImageButton" android:layout_width="fill_parent"
 				android:layout_margin="30dip" android:background="@android:color/transparent"
 				android:layout_height="wrap_content" android:layout_weight="0.20" />
 			<Button android:layout_margin="30dip" android:id="@+id/buttonZurueck"

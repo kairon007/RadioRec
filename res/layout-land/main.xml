@@ -6,12 +6,12 @@
 		android:layout_marginTop="4dp" android:layout_width="fill_parent"
 		android:id="@+id/stations" />
 	<LinearLayout android:layout_height="wrap_content"
-		android:layout_width="match_parent" android:orientation="horizontal">
+		android:layout_width="fill_parent" android:orientation="horizontal">
 		<ImageView android:layout_height="fill_parent" android:src="@drawable/icon"
 			android:id="@+id/logo" android:layout_width="fill_parent"
 			android:layout_weight="1" android:scaleType="centerInside" />
 		<LinearLayout android:layout_height="wrap_content"
-			android:layout_weight="1" android:layout_width="match_parent"
+			android:layout_weight="1" android:layout_width="fill_parent"
 			android:orientation="vertical">
 			<LinearLayout android:layout_width="fill_parent"
 				android:orientation="horizontal" android:layout_height="wrap_content">
@@ -46,7 +46,7 @@
 				Playing: SomeSong by SomeArtist..." android:gravity="center" android:layout_margin="2dp" 
 				/ -->
 			<LinearLayout android:layout_margin="4dp"
-				android:layout_height="wrap_content" android:layout_width="match_parent"
+				android:layout_height="wrap_content" android:layout_width="fill_parent"
 				android:orientation="horizontal">
 				<ImageButton android:layout_weight="1"
 					android:layout_height="wrap_content" android:src="@drawable/play"
@@ -56,7 +56,7 @@
 					android:layout_width="wrap_content" android:id="@+id/rec" />
 			</LinearLayout>
 			<LinearLayout android:layout_margin="4dp"
-				android:layout_height="wrap_content" android:layout_width="match_parent"
+				android:layout_height="wrap_content" android:layout_width="fill_parent"
 				android:orientation="horizontal">
 				<ImageButton android:layout_weight="1"
 					android:layout_height="wrap_content" android:src="@drawable/backward"

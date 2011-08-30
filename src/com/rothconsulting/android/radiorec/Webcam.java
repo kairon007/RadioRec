@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
 import android.util.Log;
@@ -63,7 +64,9 @@ public class Webcam extends Activity {
 			WebView myWebView = new WebView(this);
 			myWebView = (WebView) findViewById(R.id.webkitWebViewWebCam);
 			myWebView.setWebChromeClient(new WebChromeClient());
-			myWebView.setScrollbarFadingEnabled(true);
+			if (Build.VERSION.SDK_INT >= 5) {
+				myWebView.setScrollbarFadingEnabled(true);
+			}
 			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setInitialScale(80);
 			myWebView.getSettings().setJavaScriptEnabled(true);

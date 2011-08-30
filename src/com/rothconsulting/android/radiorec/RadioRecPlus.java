@@ -379,7 +379,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		URL_HOMEPAGE = "" + map.get("homepage");
 		URL_WEBCAM = "" + map.get("webcam");
 		final TextView textViewWebcam = (TextView) findViewById(R.id.webcam);
-		if (URL_WEBCAM == null || URL_WEBCAM.trim().equals("")) {
+		if (Build.VERSION.SDK_INT < 5 || URL_WEBCAM == null
+				|| URL_WEBCAM.trim().equals("")) {
 			textViewWebcam.setVisibility(View.INVISIBLE);
 		} else {
 			textViewWebcam.setVisibility(View.VISIBLE);

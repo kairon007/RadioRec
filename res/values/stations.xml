@@ -40,6 +40,8 @@
 		<item>Radio FM1 Melody</item>
 		<item>Radio Antenne Bayern</item>
 		<item>Radio Antenne Chillout</item>
+		<item>Radio Bayern 1</item>
+		<item>Radio Bayern 3</item>
 		<item>Radio Toxic FM</item>
 		<item>Radio X</item>
 		<item>Radio Kanal K</item>
@@ -120,6 +122,8 @@
 		<item>@drawable/radio_fm1_melody</item>
 		<item>@drawable/radio_antenne_bayern</item>
 		<item>@drawable/radio_antenne_chillout</item>
+		<item>@drawable/radio_bayern1</item>
+		<item>@drawable/radio_bayern3</item>
 		<item>@drawable/radio_toxic_fm</item>
 		<item>@drawable/radio_x</item>
 		<item>@drawable/radio_kanal_k</item>
@@ -200,6 +204,8 @@
 		<item>http://fm1melody.ice.infomaniak.ch/fm1melody-128.mp3</item>
 		<item>http://mp3.webradio.antenne.de:80</item>
 		<item>http://mp3channels.webradio.antenne.de/chillout</item>
+		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w10b</item>
+		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w12b</item>
 		<item>http://toxicfm.ice.infomaniak.ch:80/toxicfm-128.mp3</item>
 		<item>http://mp3.radiox.ch/standard.mp3</item>
 		<item>http://82.197.165.150</item>
@@ -280,6 +286,8 @@
 		<item>http://www.fm1melody.ch</item>
 		<item>http://www.antenne.de</item>
 		<item>http://www.antenne.de</item>
+		<item>http://www.bayern1.de</item>
+		<item>http://www.bayern3.de</item>
 		<item>http://www.toxicfm.ch</item>
 		<item>http://www.radiox.ch</item>
 		<item>http://www.kanalk.ch</item>
@@ -360,6 +368,8 @@
 		<item> </item>
 		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
 		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
+		<item>http://www.br-online.de/content/import/webcams/bayern1/cam2_pult.jpg</item>
+		<item>http://www.br-online.de/content/import/webcams/bayern3/cam7_gast.jpg</item>
 		<item> </item>
 		<item> </item>
 		<item> </item>
@@ -440,6 +450,8 @@
 		<item>http://www.fm1melody.ch/index.php?article_id=20</item>
 		<item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
 		<item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
+		<item>http://www.br-online.de/bayern1/kontakt/kontakt-bayern1-mail-ID1203955361656.xml?_requestid=168772</item>
+		<item>http://www.br-online.de/bayern3/kontakt/kontakt-impressum-copyright-ID1195052108234.xml?_requestid=130461</item>
 		<item>studio@toxic.fm</item>
 		<item>http://www.radiox.ch/service/wuko</item>
 		<item>http://kanalk.ch/Infopool/Kontakt/tabid/166/Default.aspx</item>

@@ -41,7 +41,7 @@
 		ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER" ads:loadAdOnCreate="true" />
 	</LinearLayout>
 	<LinearLayout android:layout_margin="4dp"
-		android:layout_height="wrap_content" android:layout_width="match_parent"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
 		android:orientation="horizontal">
 		<ImageButton android:layout_weight="1"
 			android:layout_height="wrap_content" android:src="@drawable/backward"
