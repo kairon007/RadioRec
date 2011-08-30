@@ -63,6 +63,7 @@ public class Webcam extends Activity {
 				&& Utils.isNetworkAvailable(this)) {
 			WebView myWebView = new WebView(this);
 			myWebView = (WebView) findViewById(R.id.webkitWebViewWebCam);
+			WebView.enablePlatformNotifications();
 			myWebView.setWebChromeClient(new WebChromeClient());
 			if (Build.VERSION.SDK_INT >= 5) {
 				myWebView.setScrollbarFadingEnabled(true);
