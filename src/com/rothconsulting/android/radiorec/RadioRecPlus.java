@@ -63,6 +63,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	public void onCreate(Bundle savedInstanceState) {
 		// if (!playing) {
 		super.onCreate(savedInstanceState);
+		if (Build.VERSION.SDK_INT < 7) {
+			getApplicationContext().deleteDatabase("webview.db");
+			getApplicationContext().deleteDatabase("webviewCache.db");
+		}
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 		firstStart = true;
