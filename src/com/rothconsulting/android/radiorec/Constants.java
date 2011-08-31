@@ -15,6 +15,7 @@ public class Constants {
 		List<String> ignoreList = new ArrayList<String>();
 		ignoreList.add(RADIO_105);
 		ignoreList.add(RADIO_ANTENNE_BAYERN);
+		ignoreList.add(RADIO_ANTENNE_ROCK);
 		ignoreList.add(RADIO_KANAL_K);
 		ignoreList.add(RADIO_SEEFUNK);
 		ignoreList.add(RADIO_ARGOVIA);
@@ -30,7 +31,9 @@ public class Constants {
 		ignoreList.add(RADIO_SWISS_GROOVE);
 		ignoreList.add(RADIO_3FACH);
 		ignoreList.add(RADIO_COUNTRY_RADIO);
+		ignoreList.add(RADIO_GELB_SCHWARZ);
 		ignoreList.add(RADIO_FCB_LIVE_RADIO);
+		ignoreList.add(RADIO_FC_ZUERICH);
 		ignoreList.add(RADIO_BACKSTAGE_RADIO);
 		ignoreList.add(RADIO_RRO);
 		ignoreList.add(RADIO_MONTE_CARLO);
@@ -43,6 +46,7 @@ public class Constants {
 		ignoreList.add(RADIO_EVIVA);
 		ignoreList.add(RADIO_GRISCHA);
 		ignoreList.add(RADIO_SUNSHINE_LIVE);
+		ignoreList.add(RADIO_OE3);
 		return ignoreList;
 	}
 
@@ -121,6 +125,7 @@ public class Constants {
 	public static final String RADIO_105 = "Radio 105";
 	public static final String RADIO_FM1 = "Radio FM1";
 	public static final String RADIO_ANTENNE_BAYERN = "Radio Antenne Bayern";
+	public static final String RADIO_ANTENNE_ROCK = "Radio Antenne Rock";
 	public static final String RADIO_KANAL_K = "Radio Kanal K";
 	public static final String RADIO_TOXIC_FM = "Radio Toxic FM";
 	public static final String RADIO_X = "Radio X";
@@ -153,4 +158,5 @@ public class Constants {
 	public static final String RADIO_EVIVA = "Radio Eviva";
 	public static final String RADIO_GRISCHA = "Radio Grischa";
 	public static final String RADIO_SUNSHINE_LIVE = "Radio sunshine-live";
+	public static final String RADIO_OE3 = "Radio Ö3";
 }
