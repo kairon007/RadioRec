@@ -119,7 +119,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Log.d(TAG, "Icon=" + SELECTED_STATION_ICON);
 		Log.d(TAG, "Name=" + SELECTED_STATION_NAME);
 		Log.d(TAG, "Index=" + SELECTED_STATION_INDEX);
-		// AdMob.showAd(this);
+		AdMob.showAd(this);
 
 		for (int i = 0; i < names.length; i++) {
 			// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)
@@ -155,8 +155,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(0, -1, 0, "Info").setIcon(R.drawable.ic_menu_info_details);
-		menu.add(0, -2, 0, "Spende").setIcon(R.drawable.ic_menu_globe);
-		menu.add(0, -3, 0, "Beenden").setIcon(R.drawable.ic_menu_exit);
+		menu.add(0, -2, 0, "Spende").setIcon(R.drawable.ic_menu_agenda);
+		menu.add(0, -3, 0, "Settings").setIcon(R.drawable.ic_menu_preferences);
+		menu.add(0, -4, 0, "Beenden").setIcon(R.drawable.ic_menu_exit);
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -252,6 +253,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			this.startActivity(new Intent(this, Donate.class));
 			break;
 		case -3:
+			Log.i(TAG, "einstellungen");
+			this.startActivity(new Intent(this, Settings.class));
+			break;
+		case -4:
 			Log.i(TAG, "exit");
 			getRadioPlayer().doStopPlay(this);
 			doStopRecording();

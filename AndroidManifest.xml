@@ -24,6 +24,7 @@
 		<activity android:name="Info" />
 		<activity android:name="Webcam" />
 		<activity android:name="Donate" />
+		<activity android:name="Settings" />
 	</application>
 </manifest>
 

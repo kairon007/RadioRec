@@ -34,10 +34,10 @@
 			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 				xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
 				android:orientation="vertical" android:layout_width="fill_parent" android:gravity="center"
-				android:layout_height="fill_parent" android:id="@+id/mainLayout">
+				android:layout_height="fill_parent" android:id="@+id/adsLayout">
 				<com.google.ads.AdView android:id="@+id/adView"
 					android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center"
-					ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER" ads:loadAdOnCreate="true"/>
+					ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER" ads:loadAdOnCreate="false"/>
 			</LinearLayout>
 			<!-- TextView android:layout_height="wrap_content" android:layout_width="fill_parent" 
 				android:id="@+id/ticker" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" 

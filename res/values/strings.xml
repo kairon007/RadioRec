@@ -20,5 +20,7 @@
     <string name="nurLive">Dieses Radio sendet nur wenn eine Live-Übertragung ist! Informiere dich auf der Homepage wann die nächsten Live-Übertragungen sind.</string>
     <string name="ok">OK</string>
     <string name="donate">Spende</string>
-    <string name="donateText">Haben sie RadioRec+ schon ein paar mal verwendet? \nGefällt ihnen RadioRec+ ? \nFalls sie dies mit "ja" beantworten, würde ich mich über eine Spende von ihnen freuen.</string>
+    <string name="donateText">Haben sie RadioRec+ schon ein paar mal verwendet? \nGefällt ihnen RadioRec+ ? \nFalls sie dies mit "ja" beantworten, würde ich mich über eine Spende von ihnen freuen. \n\nVielen Dank!</string>
+    <string name="save">Speichern</string>
+    <string name="antiAds">Anti-Werbung Schlüssel</string>
 </resources>

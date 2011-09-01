@@ -6,19 +6,18 @@
 		android:layout_height="wrap_content">
 		<LinearLayout android:layout_width="fill_parent"
 			android:orientation="vertical" android:scrollbars="vertical"
-			android:weightSum="1" android:layout_height="218dp" android:layout_gravity="center">
+			android:weightSum="1" android:layout_height="218dp">
 			<TextView android:layout_height="wrap_content"
-				android:layout_width="fill_parent" android:layout_gravity="center"
-				android:text="@string/donateText" android:textColor="#FFFFFF"
+				android:layout_width="wrap_content" android:layout_gravity="center"
+				android:text="@string/antiAds" android:textColor="#FFFFFF"
 				android:textSize="15dip" android:layout_margin="10dip"
-				android:id="@+id/textViewDonateText" />
-			<ImageButton android:src="@drawable/paypal_donate_cc_lg"
-				android:id="@+id/paypalImageButton" android:layout_width="fill_parent"
-				android:layout_margin="30dip" android:background="@android:color/transparent"
-				android:layout_height="wrap_content" android:layout_weight="0.20" />
-			<Button android:layout_margin="10dip" android:id="@+id/buttonZurueck"
+				android:id="@+id/textViewAntiAds" />
+			<Button android:layout_margin="30dip" android:id="@+id/buttonSave"
 				android:layout_height="wrap_content" android:layout_width="fill_parent"
-				android:text="@string/zurueck" android:layout_gravity="center" />
+				android:text="@string/save" android:layout_gravity="left" />
+			<Button android:layout_margin="30dip" android:id="@+id/buttonZurueck"
+				android:layout_height="wrap_content" android:layout_width="fill_parent"
+				android:text="@string/zurueck" android:layout_gravity="left" />
 		</LinearLayout>
 	</ScrollView>
 </LinearLayout>
