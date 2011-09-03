@@ -48,6 +48,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	protected static String URL_WEBCAM;
 	protected static String URL_CONTACT;
 	protected static String URL_SONGTICKER;
+	protected static String ANTI_ADS_KEY;
 
 	boolean playing, recording, firstStart;
 	Spinner stations;
@@ -116,10 +117,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		String[] contact = getResources().getStringArray(
 				R.array.station_contact);
 
+		AdMob.showRemoveAds(this);
+
 		Log.d(TAG, "Icon=" + SELECTED_STATION_ICON);
 		Log.d(TAG, "Name=" + SELECTED_STATION_NAME);
 		Log.d(TAG, "Index=" + SELECTED_STATION_INDEX);
-		AdMob.showAd(this);
 
 		for (int i = 0; i < names.length; i++) {
 			// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)
@@ -360,7 +362,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	}
 
 	private void changeStation() {
-		// int index = stations.getSelectedItemPosition();
 		int index = SELECTED_STATION_INDEX;
 		if (index < 0) {
 			index = 0;
@@ -423,6 +424,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		editor.putString(Constants.SELECTED_STATION_HOMEPAGE, URL_HOMEPAGE);
 		editor.putString(Constants.SELECTED_STATION_WEBCAM, URL_WEBCAM);
 		editor.putString(Constants.SELECTED_STATION_CONTACT, URL_CONTACT);
+		editor.putString(Constants.ANTI_ADS_KEY, ANTI_ADS_KEY);
 		editor.commit();
 	}
 
@@ -444,6 +446,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				URL_WEBCAM);
 		URL_CONTACT = settings.getString(Constants.SELECTED_STATION_CONTACT,
 				URL_CONTACT);
+		ANTI_ADS_KEY = settings.getString(Constants.ANTI_ADS_KEY, ANTI_ADS_KEY);
 		Log.d(TAG, "SELECTED_STATION_NAME nachher: " + SELECTED_STATION_NAME);
 		Log.d(TAG, "SELECTED_STATION_INDEX nachher: " + SELECTED_STATION_INDEX);
 	}

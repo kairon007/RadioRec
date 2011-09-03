@@ -74,7 +74,7 @@ public class Constants {
 		return liveStreamStationList;
 	}
 
-	public static String PREFERENCES_FILE = "RadioRecPrefs";
+	public static final String PREFERENCES_FILE = "RadioRecPrefs";
 	public static final String SELECTED_STATION_INDEX = "MySelectedStationIndex";
 	public static final String SELECTED_STATION_NAME = "MySelectedStationName";
 	public static final String SELECTED_STATION_ICON = "MySelectedStationIcon";
@@ -82,6 +82,7 @@ public class Constants {
 	public static final String SELECTED_STATION_STREAM = "MySelectedStationStream";
 	public static final String SELECTED_STATION_WEBCAM = "MySelectedStationWebcam";
 	public static final String SELECTED_STATION_CONTACT = "MySelectedStationContact";
+	public static final String ANTI_ADS_KEY = "MyAntiAdsKey";
 
 	public static final int NOTIFICATION_ID_RADIO_IS_PLAYING = 1;
 	public static final int NOTIFICATION_ID_RECORDING = 2;
