@@ -19,6 +19,9 @@
 		<item>Radio Energy Zürich</item>
 		<item>Radio Energy Swiss</item>
 		<item>Radio Energy Charts</item>
+		<item>Radio Energy 80s</item>
+		<item>Radio Energy 90s</item>
+		<item>Radio Energy Italy</item>
 		<item>Radio Swiss Classic</item>
 		<item>Radio Swiss Jazz</item>
 		<item>Radio Swiss Pop</item>
@@ -103,6 +106,9 @@
 		<item>@drawable/radio_energy_zurich</item>
 		<item>@drawable/radio_energy_swiss</item>
 		<item>@drawable/radio_energy_charts</item>
+		<item>@drawable/radio_energy_80s</item>
+		<item>@drawable/radio_energy_90s</item>
+		<item>@drawable/radio_energy_italy</item>
 		<item>@drawable/radio_swiss_classic</item>
 		<item>@drawable/radio_swiss_jazz</item>
 		<item>@drawable/radio_swiss_pop</item>
@@ -187,6 +193,9 @@
 		<item>http://energyzuerich.ice.infomaniak.ch:80/energyzuerich-high.mp3</item>
 		<item>http://energyswiss.ice.infomaniak.ch:80/energyswiss-high.mp3</item>
 		<item>http://broadcast.infomaniak.net/energycharts-high.mp3</item>
+		<item>http://energy80s.ice.infomaniak.ch:80/energy80s-high.mp3</item>
+		<item>http://energy90s.ice.infomaniak.ch:80/energy90s-high.mp3</item>
+		<item>http://energyitaly.ice.infomaniak.ch:80/energyitaly-high.mp3</item>
 		<item>http://glb-stream12.streamserver.ch/2/rsc_de/mp3_128</item>
 		<item>http://glb-stream12.streamserver.ch/2/rsj/mp3_128</item>
 		<item>http://glb-stream12.streamserver.ch/2/rsp/mp3_128</item>
@@ -269,6 +278,9 @@
 		<item>http://www.radiohoch2.ch</item>
 		<item>http://www.energy.ch/bern</item>
 		<item>http://www.energy.ch/zuerich</item>
+		<item>http://www.energy.ch/webradios</item>
+		<item>http://www.energy.ch/webradios</item>
+		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.radioswissclassic.ch</item>
@@ -358,6 +370,9 @@
 		<item> </item>
 		<item> </item>
 		<item> </item>
+		<item> </item>
+		<item> </item>
+		<item> </item>
 		<item>http://www.radio1.ch/fileadmin/radio1/images/team/player_default.jpg</item>
 		<item>http://live.radiozurisee.divio.ch//media/external/data_upload/CAM1/SR1_CAM1.jpg</item>
 		<item>http://mobile.radiopilatus.ch</item>
@@ -437,6 +452,9 @@
 		<item>http://radiohoch2.ch/contact</item>
 		<item>http://www.energy.ch/bern/inside/kontakt</item>
 		<item>http://www.energy.ch/zurich/inside/kontakt</item>
+		<item>http://www.energy.ch/webradios</item>
+		<item>http://www.energy.ch/webradios</item>
+		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.radioswissclassic.ch/de/feedback</item>
