@@ -22,33 +22,35 @@
 				android:layout_margin="5dip" />
 			<TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:layout_gravity="center"
-				android:id="@+id/textViewInfo" android:layout_margin="10dip"
-				android:gravity="center"
-				android:text='Beim aufnehmen werden die Dateien auf die SD-Card gespeichert.\nDu findest sie im Verzeichnis "Radio Recorder".' />
+				android:id="@+id/textViewInfoSDCard" android:layout_margin="10dip"
+				android:gravity="center" android:text="@string/infoSDCard" />
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+				android:orientation="vertical" android:gravity="center"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:id="@+id/adsLayout">
+				<com.google.ads.AdView android:id="@+id/adView"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:gravity="center" ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER"
+					ads:loadAdOnCreate="false" />
+			</LinearLayout>
+			<TextView android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:gravity="center"
+				android:layout_gravity="center" android:id="@+id/textViewFeatureEmail"
+				android:layout_marginTop="5dip" android:text="@string/infoFeatureEmail" />
 			<TextView android:layout_height="wrap_content"
 				android:layout_width="wrap_content" android:layout_gravity="center"
-				android:gravity="center"
-				android:text="Fehlt dir ein Sender oder ein Feature. Schreib mir einfach ein E-Mail."
-				android:id="@+id/textViewFeature" android:layout_marginLeft="10dip"
-				android:layout_marginRight="10dip" android:layout_marginTop="10dip" />
-			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:layout_gravity="center"
-				android:id="@+id/textViewEmail" android:layout_marginTop="5dip"
-				android:text="@string/email_androider" />
-			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:layout_gravity="center"
-				android:gravity="center"
-				android:text="Folgende Frage wurde mir gestellt: Wieviel Daten werden verbraucht beim Radio hören mit RadioRec+ ?? "
+				android:gravity="center" android:text="@string/infoDatenverbrauchFrage"
 				android:id="@+id/textViewDatenverbrauchFrage"
 				android:layout_marginLeft="10dip" android:layout_marginRight="10dip"
 				android:layout_marginTop="20dip" android:textColor="#FFFFFF" />
 			<TextView android:layout_height="wrap_content"
 				android:layout_width="wrap_content" android:layout_gravity="center"
-				android:gravity="center"
-				android:text="Antwort: Knapp 60MB/Std. Die Radio-Sender streamen mit 128kbps. Daraus rechnet sich der Verbrauch folgendermassen: 128'000 Bit/s : 8 = 16'000 Byte/s. Das entspricht 57.6 MB/Stunde (16'000x3200 : 1'000'000). Tipp: Verwende WLAN, dann ist der Datenverbrauch kein Thema :-)"
+				android:gravity="center" android:text="@string/infoDatenverbrauchAntwort"
 				android:id="@+id/textViewDatenverbrauchAntwort"
 				android:layout_marginLeft="10dip" android:textColor="#FFFFFF"
-				android:layout_marginRight="10dip" android:layout_marginTop="2dip" />
+				android:layout_marginRight="10dip" android:layout_marginTop="2dip"
+				android:layout_marginBottom="40dip" />
 			<Button android:layout_margin="30dip" android:id="@+id/buttonZurueck"
 				android:layout_height="wrap_content" android:layout_width="fill_parent"
 				android:text="@string/zurueck" android:layout_gravity="left" />

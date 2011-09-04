@@ -12,7 +12,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -71,7 +70,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 		firstStart = true;
-		getPreferences();
+		Utils.getPreferences(this);
 		// get components and register clicks
 		stations = (Spinner) findViewById(R.id.stations);
 		logo = (ImageView) findViewById(R.id.logo);
@@ -408,45 +407,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		firstStart = false;
 		back.setEnabled(index > 0);
 		fwd.setEnabled(index < stationList.size() - 1);
-		storePreferences();
-	}
-
-	private void storePreferences() {
-		SharedPreferences settings = getSharedPreferences(
-				Constants.PREFERENCES_FILE, 0);
-		SharedPreferences.Editor editor = settings.edit();
-		editor.putInt(Constants.SELECTED_STATION_INDEX, SELECTED_STATION_INDEX);
-		editor.putInt(Constants.SELECTED_STATION_ICON, SELECTED_STATION_ICON);
-		editor.putString(Constants.SELECTED_STATION_NAME, SELECTED_STATION_NAME);
-		editor.putString(Constants.SELECTED_STATION_STREAM, URL_LIVE_STREAM);
-		editor.putString(Constants.SELECTED_STATION_HOMEPAGE, URL_HOMEPAGE);
-		editor.putString(Constants.SELECTED_STATION_WEBCAM, URL_WEBCAM);
-		editor.putString(Constants.SELECTED_STATION_CONTACT, URL_CONTACT);
-		editor.putString(Constants.ANTI_ADS_KEY, ANTI_ADS_KEY);
-		editor.commit();
-	}
-
-	private void getPreferences() {
-		// Restore preferences
-		SharedPreferences settings = getSharedPreferences(
-				Constants.PREFERENCES_FILE, 0);
-		Log.d(TAG, "SELECTED_STATION_NAME vorher: " + SELECTED_STATION_NAME);
-		Log.d(TAG, "SELECTED_STATION_INDEX vorher: " + SELECTED_STATION_INDEX);
-		SELECTED_STATION_INDEX = settings.getInt(
-				Constants.SELECTED_STATION_INDEX, -1);
-		SELECTED_STATION_NAME = settings.getString(
-				Constants.SELECTED_STATION_NAME, SELECTED_STATION_NAME);
-		URL_LIVE_STREAM = settings.getString(Constants.SELECTED_STATION_STREAM,
-				URL_LIVE_STREAM);
-		URL_HOMEPAGE = settings.getString(Constants.SELECTED_STATION_HOMEPAGE,
-				URL_HOMEPAGE);
-		URL_WEBCAM = settings.getString(Constants.SELECTED_STATION_WEBCAM,
-				URL_WEBCAM);
-		URL_CONTACT = settings.getString(Constants.SELECTED_STATION_CONTACT,
-				URL_CONTACT);
-		ANTI_ADS_KEY = settings.getString(Constants.ANTI_ADS_KEY, ANTI_ADS_KEY);
-		Log.d(TAG, "SELECTED_STATION_NAME nachher: " + SELECTED_STATION_NAME);
-		Log.d(TAG, "SELECTED_STATION_INDEX nachher: " + SELECTED_STATION_INDEX);
+		Utils.storePreferences(this);
 	}
 
 	private RadioPlayer getRadioPlayer() {

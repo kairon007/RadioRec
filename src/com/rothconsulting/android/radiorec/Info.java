@@ -19,6 +19,8 @@ public class Info extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.info);
 
+		AdMob.showRemoveAds(this);
+
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
@@ -26,14 +28,7 @@ public class Info extends Activity {
 			}
 		});
 
-		final TextView emailText = (TextView) findViewById(R.id.textViewEmail);
-		emailText.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				startEmailActivity();
-			}
-		});
-
-		final TextView featureText = (TextView) findViewById(R.id.textViewFeature);
+		final TextView featureText = (TextView) findViewById(R.id.textViewFeatureEmail);
 		featureText.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				startEmailActivity();
@@ -61,6 +56,9 @@ public class Info extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.backmenu, menu);
+		menu.add(0, R.id.donate, 0,
+				this.getResources().getString(R.string.donate)).setIcon(
+				R.drawable.ic_menu_agenda);
 		return true;
 	}
 
@@ -69,6 +67,9 @@ public class Info extends Activity {
 		switch (item.getItemId()) {
 		case R.id.zurueck:
 			finish();
+			return true;
+		case R.id.donate:
+			this.startActivity(new Intent(this, Donate.class));
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

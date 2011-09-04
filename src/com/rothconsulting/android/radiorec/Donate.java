@@ -21,6 +21,8 @@ public class Donate extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.donate);
 
+		AdMob.showRemoveAds(this);
+
 		final ImageButton paypalButton = (ImageButton) findViewById(R.id.paypalImageButton);
 		paypalButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
