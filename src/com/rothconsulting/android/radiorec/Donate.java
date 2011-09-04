@@ -45,11 +45,14 @@ public class Donate extends Activity {
 					editor.putString(Constants.ANTI_ADS_KEY,
 							RadioRecPlus.ANTI_ADS_KEY);
 					editor.commit();
-					Toast.makeText(Donate.this,
-							"DANKE!!! " + edittext.getText(), Toast.LENGTH_LONG)
+					Toast.makeText(
+							Donate.this,
+							getResources().getString(R.string.danke)
+									+ edittext.getText(), Toast.LENGTH_LONG)
 							.show();
 				} else
-					Toast.makeText(Donate.this, "Keine Eingabe ??",
+					Toast.makeText(Donate.this,
+							getResources().getString(R.string.keineEingabe),
 							Toast.LENGTH_LONG).show();
 			}
 		});

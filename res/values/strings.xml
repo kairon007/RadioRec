@@ -19,9 +19,11 @@
     <string name="email_androider">androider@wolke7.net</string>
     <string name="nurLive">Dieses Radio sendet nur wenn eine Live-Übertragung ist! Informiere dich auf der Homepage wann die nächsten Live-Übertragungen sind.</string>
     <string name="ok">OK</string>
-    <string name="donate">Spende</string>
+    <string name="donate">Spende Werbefrei</string>
     <string name="donateText">Haben sie RadioRec+ schon ein paar mal verwendet? \nGefällt ihnen RadioRec+ ? \nFalls sie dies mit "ja" beantworten, würde ich mich über eine Spende von ihnen freuen. \n\nVielen Dank!</string>
     <string name="save">Speichern</string>
-    <string name="antiAds">Schon gespendet? Wenn dir die App gefällt oder dich die Werbung nervt, kannst du gerne etwas spenden. Alle Spender die CHF/EUR 2.00 oder mehr spenden erhalten einen persönlichen \'Anti-Werbung Schlüssel\'. \nSo kannst du RadioRec+ ohne Werbung geniessen!</string>
+    <string name="antiAds">Schon gespendet? Wenn dir die App gefällt oder dich die Werbung nervt, kannst du gerne etwas spenden. Alle Spender die CHF/EUR 2.00 oder mehr spenden erhalten einen persönlichen \'Anti-Werbung Schlüssel\'. So kannst du RadioRec+ ohne Werbung geniessen! Beim Spenden bitte E-Mail-Adresse angeben.</string>
     <string name="antiAdsKeyHere">Nach dem Spenden solltest du innerhalb ein paar Tage einen \'Anti-Werbung Schlüssel\' von mir erhalten. Falls der Schlüssel nicht bei dir eintrifft, schreib mir einfach ein E-Mail.\n\nAnti-Werbung Schlüssel hier eingeben und Speichern.</string>
+	<string name="keineEingabe">Keine Eingabe ??</string>
+	<string name="danke">Danke !!!</string>
 </resources>

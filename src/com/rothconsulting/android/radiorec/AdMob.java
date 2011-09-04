@@ -13,7 +13,7 @@ public class AdMob {
 	private final static String TAG = "AdMob";
 
 	public static void showRemoveAds(Activity context) {
-		if (hasValidKey()) {
+		if (Utils.hasValidKey()) {
 			LinearLayout layout = (LinearLayout) context
 					.findViewById(R.id.adsLayout);
 			layout.removeAllViews();
@@ -32,13 +32,4 @@ public class AdMob {
 			adView.loadAd(new AdRequest());
 		}
 	}
-
-	private static boolean hasValidKey() {
-		String key = RadioRecPlus.ANTI_ADS_KEY;
-		if (key != null && key.startsWith("rR+") && key.endsWith("so@p")) {
-			return true;
-		}
-		return false;
-	}
-
 }

@@ -51,4 +51,13 @@ public class Utils {
 			Class<?> clss) {
 		return new Notifications(context, new Intent(context, clss));
 	}
+
+	protected static boolean hasValidKey() {
+		String key = RadioRecPlus.ANTI_ADS_KEY;
+		if (key != null && key.startsWith("rR+") && key.endsWith("so@p")) {
+			return true;
+		}
+		return false;
+	}
+
 }
