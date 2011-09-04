@@ -2,6 +2,7 @@ package com.rothconsulting.android.radiorec;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,7 +10,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class Donate extends Activity {
 
@@ -25,6 +28,29 @@ public class Donate extends Activity {
 				intentHomepage.setData(Uri
 						.parse("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RTHRLLC6NV4NN"));
 				startActivity(intentHomepage);
+			}
+		});
+
+		final EditText edittext = (EditText) findViewById(R.id.editTextAntiAdsKey);
+
+		final Button saveButton = (Button) findViewById(R.id.buttonSave);
+		saveButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				RadioRecPlus.ANTI_ADS_KEY = "" + edittext.getText();
+				if (RadioRecPlus.ANTI_ADS_KEY != null
+						&& !RadioRecPlus.ANTI_ADS_KEY.trim().equals("")) {
+					SharedPreferences settings = getSharedPreferences(
+							Constants.PREFERENCES_FILE, 0);
+					SharedPreferences.Editor editor = settings.edit();
+					editor.putString(Constants.ANTI_ADS_KEY,
+							RadioRecPlus.ANTI_ADS_KEY);
+					editor.commit();
+					Toast.makeText(Donate.this,
+							"DANKE!!! " + edittext.getText(), Toast.LENGTH_LONG)
+							.show();
+				} else
+					Toast.makeText(Donate.this, "Keine Eingabe ??",
+							Toast.LENGTH_LONG).show();
 			}
 		});
 
