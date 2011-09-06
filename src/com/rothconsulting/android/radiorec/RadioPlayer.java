@@ -19,7 +19,10 @@ public class RadioPlayer extends Activity {
 	ProgressDialog progressDialog;
 
 	private Notifications getNotifInstance(Context context) {
-		return new Notifications(context, new Intent(context, Donate.class));
+		Intent intent = new Intent(context, Donate.class);
+		intent.putExtra(Constants.FROM_NOTIFICATION,
+				Constants.FROM_NOTIFICATION);
+		return new Notifications(context, intent);
 	}
 
 	protected void doStartPlay(final Context context) {

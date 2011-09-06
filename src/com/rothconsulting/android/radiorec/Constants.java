@@ -90,6 +90,8 @@ public class Constants {
 	public static final int PRESS_BACK_BUTTON = 10;
 	public static final int LIVE_STREAM_STATION = 11;
 
+	public static final String FROM_NOTIFICATION = "fromNotification";
+
 	public static String ADMOB_PUBLISHER_ID = "a14dc9885936cd9";
 
 	public static final String RADIO_DRS1 = "Radio DRS1";

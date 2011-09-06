@@ -62,6 +62,7 @@ public class Webcam extends Activity {
 				&& !RadioRecPlus.URL_WEBCAM.equals("")
 				&& Utils.isNetworkAvailable(this)) {
 			WebView myWebView = new WebView(this);
+			myWebView.clearCache(Boolean.TRUE);
 			myWebView = (WebView) findViewById(R.id.webkitWebViewWebCam);
 			WebView.enablePlatformNotifications();
 			myWebView.setWebChromeClient(new WebChromeClient());

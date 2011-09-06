@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -16,10 +18,34 @@ import android.widget.Toast;
 
 public class Donate extends Activity {
 
+	private static final String TAG = "Donate";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.donate);
+		Intent fromIntent = getIntent();
+		Log.d(TAG, "fromIntent=" + fromIntent);
+		// if it comes from the notification and isDonator go to the main screen
+		if (fromIntent != null) {
+			Bundle extraBundle = fromIntent.getExtras();
+			if (extraBundle != null
+					&& extraBundle.getString(Constants.FROM_NOTIFICATION) != null
+					&& extraBundle.getString(Constants.FROM_NOTIFICATION)
+							.equals(Constants.FROM_NOTIFICATION)
+					&& Utils.hasValidKey()) {
+				Log.d(TAG, "*** finish (fromNotification und validKey)");
+				finish();
+			} else {
+				Log.d(TAG,
+						"*** not fromNotification or not validKey) validKey="
+								+ Utils.hasValidKey());
+			}
+		}
+
+		// hide keyboard
+		getWindow().setSoftInputMode(
+				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
 		AdMob.showRemoveAds(this);
 
