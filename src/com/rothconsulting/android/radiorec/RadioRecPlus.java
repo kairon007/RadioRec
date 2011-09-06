@@ -435,7 +435,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 
 		try {
-			outputUrl = new URL("file:///sdcard/RadioRecorder/"
+			outputUrl = new URL("file:///" + Constants.SAVE_DIRECTORY + "/"
 					+ SELECTED_STATION_NAME.replaceAll(" ", "") + "-"
 					+ dateTime + ".mp3");
 		} catch (MalformedURLException e) {

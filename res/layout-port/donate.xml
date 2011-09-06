@@ -7,6 +7,9 @@
 		<LinearLayout android:layout_width="fill_parent"
 			android:orientation="vertical" android:scrollbars="vertical"
 			android:weightSum="1" android:layout_height="218dp">
+			<EditText android:focusable="true"
+				android:focusableInTouchMode="true" android:layout_width="1px"
+				android:layout_height="1px" />
 			<TextView android:layout_height="wrap_content"
 				android:layout_width="wrap_content" android:gravity="center"
 				android:layout_gravity="center" android:text="@string/antiAds"
@@ -24,9 +27,7 @@
 				android:id="@+id/textViewAntiAdsKeyHere" />
 			<EditText android:layout_width="fill_parent"
 				android:layout_marginLeft="30dip" android:layout_marginRight="30dip"
-				android:layout_height="wrap_content" android:id="@+id/editTextAntiAdsKey">
-				<requestFocus />
-			</EditText>
+				android:layout_height="wrap_content" android:id="@+id/editTextAntiAdsKey" />
 			<Button android:layout_marginLeft="30dip"
 				android:layout_marginRight="30dip" android:id="@+id/buttonSave"
 				android:layout_height="wrap_content" android:layout_width="fill_parent"

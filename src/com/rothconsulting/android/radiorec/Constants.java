@@ -90,6 +90,7 @@ public class Constants {
 	public static final int PRESS_BACK_BUTTON = 10;
 	public static final int LIVE_STREAM_STATION = 11;
 
+	public static final String SAVE_DIRECTORY = "sdcard/RadioRecorder";
 	public static final String FROM_NOTIFICATION = "fromNotification";
 
 	public static String ADMOB_PUBLISHER_ID = "a14dc9885936cd9";

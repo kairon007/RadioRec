@@ -45,7 +45,8 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 		bytesReadTmp = 0;
 
 		try {
-			File radioRecorderDirectory = new File("/sdcard/RadioRecorder/");
+			File radioRecorderDirectory = new File("/"
+					+ Constants.SAVE_DIRECTORY + "/");
 			radioRecorderDirectory.mkdirs();
 
 			inputStream = urls[0].openStream();

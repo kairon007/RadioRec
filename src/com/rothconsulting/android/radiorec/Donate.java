@@ -75,9 +75,9 @@ public class Donate extends Activity {
 					editor.commit();
 					Toast.makeText(
 							Donate.this,
-							getResources().getString(R.string.danke)
-									+ edittext.getText(), Toast.LENGTH_LONG)
-							.show();
+							getResources().getString(R.string.danke) + " ("
+									+ edittext.getText() + ")",
+							Toast.LENGTH_LONG).show();
 				} else
 					Toast.makeText(Donate.this,
 							getResources().getString(R.string.keineEingabe),
