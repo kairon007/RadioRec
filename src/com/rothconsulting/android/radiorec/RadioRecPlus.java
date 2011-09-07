@@ -38,17 +38,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	static final String TAG = "RadioRecPlus";
 
-	// Default Constants
-	protected static int SELECTED_STATION_INDEX;
-	protected static int SELECTED_STATION_ICON;
-	protected static String SELECTED_STATION_NAME;
-	protected static String URL_LIVE_STREAM;
-	protected static String URL_HOMEPAGE;
-	protected static String URL_WEBCAM;
-	protected static String URL_CONTACT;
-	protected static String URL_SONGTICKER;
-	protected static String ANTI_ADS_KEY;
-
 	boolean playing, recording, firstStart;
 	Spinner stations;
 	ArrayList<HashMap<String, Object>> stationList;
@@ -85,8 +74,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		fwd = ((ImageButton) findViewById(R.id.fwd));
 		fwd.setOnClickListener(this);
 		// set first image
-		if (SELECTED_STATION_ICON == 0x0) {
-			SELECTED_STATION_ICON = R.drawable.radio_32;
+		if (Constants.THE_SELECTED_STATION_ICON == 0x0) {
+			Constants.THE_SELECTED_STATION_ICON = R.drawable.radio_32;
 		}
 		// avoiding OutOfMemory
 		// http://stackoverflow.com/questions/477572/android-strange-out-of-memory-issue
@@ -94,8 +83,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		options.inTempStorage = new byte[16 * 1024];
 		try {
 			logo.setImageBitmap(Images.addReflection(BitmapFactory
-					.decodeResource(getResources(), SELECTED_STATION_ICON,
-							options), 0));
+					.decodeResource(getResources(),
+							Constants.THE_SELECTED_STATION_ICON, options), 0));
 		} catch (Exception e) {
 			logo.setImageBitmap(Images.addReflection(BitmapFactory
 					.decodeResource(getResources(), R.drawable.radio_32,
@@ -118,9 +107,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 		AdMob.showRemoveAds(this);
 
-		Log.d(TAG, "Icon=" + SELECTED_STATION_ICON);
-		Log.d(TAG, "Name=" + SELECTED_STATION_NAME);
-		Log.d(TAG, "Index=" + SELECTED_STATION_INDEX);
+		Log.d(TAG, "Icon=" + Constants.THE_SELECTED_STATION_ICON);
+		Log.d(TAG, "Name=" + Constants.THE_SELECTED_STATION_NAME);
+		Log.d(TAG, "Index=" + Constants.SELECTED_STATION_INDEX);
 
 		for (int i = 0; i < names.length; i++) {
 			// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)
@@ -159,6 +148,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				.setIcon(R.drawable.ic_menu_info_details);
 		menu.add(0, -2, 0, this.getResources().getString(R.string.donate))
 				.setIcon(R.drawable.ic_menu_agenda);
+		menu.add(0, -3, 0, this.getResources().getString(R.string.settings))
+				.setIcon(R.drawable.ic_menu_preferences);
 		menu.add(0, -4, 0, this.getResources().getString(R.string.ende))
 				.setIcon(R.drawable.ic_menu_exit);
 		return super.onCreateOptionsMenu(menu);
@@ -255,6 +246,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			Log.i(TAG, "spende");
 			this.startActivity(new Intent(this, Donate.class));
 			break;
+		case -3:
+			Log.i(TAG, "settings");
+			this.startActivity(new Intent(this, Settings.class));
+			break;
 		case -4:
 			Log.i(TAG, "exit");
 			getRadioPlayer().doStopPlay(this);
@@ -272,8 +267,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		case R.id.homepage:
 			Log.i(TAG, "homepage");
 			Intent intentHomepage = new Intent(Intent.ACTION_VIEW);
-			if (URL_HOMEPAGE != null && !URL_HOMEPAGE.equals("")) {
-				intentHomepage.setData(Uri.parse(URL_HOMEPAGE));
+			if (Constants.THE_URL_HOMEPAGE != null
+					&& !Constants.THE_URL_HOMEPAGE.equals("")) {
+				intentHomepage.setData(Uri.parse(Constants.THE_URL_HOMEPAGE));
 				startActivity(intentHomepage);
 			}
 			break;
@@ -284,16 +280,16 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.mail:
 			Log.i(TAG, "mail");
-			if (URL_CONTACT.startsWith("http")) {
+			if (Constants.THE_URL_CONTACT.startsWith("http")) {
 				Intent emailIntent = new Intent(Intent.ACTION_VIEW);
-				emailIntent.setData(Uri.parse(URL_CONTACT));
+				emailIntent.setData(Uri.parse(Constants.THE_URL_CONTACT));
 				startActivity(emailIntent);
 			} else {
 				Intent emailIntent = new Intent(
 						android.content.Intent.ACTION_SEND);
 				emailIntent.setType("plain/text");
 				emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
-						new String[] { URL_CONTACT });
+						new String[] { Constants.THE_URL_CONTACT });
 				emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,
 						"Mein Wunsch");
 				emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "");
@@ -304,7 +300,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			if (stations.getSelectedItemPosition() > 0) {
 				back.setEnabled(false);
 				stations.setSelection(stations.getSelectedItemPosition() - 1);
-				SELECTED_STATION_INDEX = stations.getSelectedItemPosition();
+				Constants.THE_SELECTED_STATION_INDEX = stations
+						.getSelectedItemPosition();
 				Log.d(TAG, "back");
 			}
 			break;
@@ -329,7 +326,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			if (stations.getSelectedItemPosition() < stationList.size() - 1) {
 				fwd.setEnabled(false);
 				stations.setSelection(stations.getSelectedItemPosition() + 1);
-				SELECTED_STATION_INDEX = stations.getSelectedItemPosition();
+				Constants.THE_SELECTED_STATION_INDEX = stations
+						.getSelectedItemPosition();
 				Log.d(TAG, "fwd");
 			}
 			break;
@@ -341,16 +339,19 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Log.d(TAG, "onItemSelected(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
 				+ arg3 + ")");
 		Log.d(TAG, "getSelectedItemPosition1=" + arg0.getSelectedItemPosition());
-		Log.d(TAG, "SELECTED_STATION_INDEX1=" + SELECTED_STATION_INDEX);
+		Log.d(TAG, "SELECTED_STATION_INDEX1="
+				+ Constants.SELECTED_STATION_INDEX);
 		if (firstStart) {
 			Log.d(TAG,
 					"firstStart -> arg0.setSelection(SELECTED_STATION_INDEX)");
-			arg0.setSelection(SELECTED_STATION_INDEX);
+			arg0.setSelection(Constants.THE_SELECTED_STATION_INDEX);
 		} else {
-			SELECTED_STATION_INDEX = arg0.getSelectedItemPosition();
+			Constants.THE_SELECTED_STATION_INDEX = arg0
+					.getSelectedItemPosition();
 		}
 		Log.d(TAG, "getSelectedItemPosition2=" + arg0.getSelectedItemPosition());
-		Log.d(TAG, "SELECTED_STATION_INDEX2=" + SELECTED_STATION_INDEX);
+		Log.d(TAG, "SELECTED_STATION_INDEX2="
+				+ Constants.SELECTED_STATION_INDEX);
 
 		changeStation();
 	}
@@ -359,7 +360,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	}
 
 	private void changeStation() {
-		int index = SELECTED_STATION_INDEX;
+		int index = Constants.THE_SELECTED_STATION_INDEX;
 		if (index < 0) {
 			index = 0;
 		}
@@ -370,33 +371,34 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			index = 0;
 			map = stationList.get(index);
 		}
-		Log.d(TAG, "Image=" + SELECTED_STATION_NAME);
-		SELECTED_STATION_ICON = (Integer) map.get("icon");
+		Log.d(TAG, "Image=" + Constants.THE_SELECTED_STATION_NAME);
+		Constants.THE_SELECTED_STATION_ICON = (Integer) map.get("icon");
 		// avoiding OutOfMemory
 		// http://stackoverflow.com/questions/477572/android-strange-out-of-memory-issue
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inTempStorage = new byte[16 * 1024];
 
 		logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
-				getResources(), SELECTED_STATION_ICON, options), 0));
+				getResources(), Constants.THE_SELECTED_STATION_ICON, options),
+				0));
 		Log.d(TAG, "*********** Stream=" + map.get("stream"));
 
-		SELECTED_STATION_NAME = "" + map.get("name");
-		URL_LIVE_STREAM = "" + map.get("stream");
-		URL_HOMEPAGE = "" + map.get("homepage");
-		URL_WEBCAM = "" + map.get("webcam");
+		Constants.THE_SELECTED_STATION_NAME = "" + map.get("name");
+		Constants.THE_URL_LIVE_STREAM = "" + map.get("stream");
+		Constants.THE_URL_HOMEPAGE = "" + map.get("homepage");
+		Constants.THE_URL_WEBCAM = "" + map.get("webcam");
 		final TextView textViewWebcam = (TextView) findViewById(R.id.webcam);
-		if (Build.VERSION.SDK_INT < 5 || URL_WEBCAM == null
-				|| URL_WEBCAM.trim().equals("")) {
+		if (Build.VERSION.SDK_INT < 5 || Constants.THE_URL_WEBCAM == null
+				|| Constants.THE_URL_WEBCAM.trim().equals("")) {
 			textViewWebcam.setVisibility(View.INVISIBLE);
 		} else {
 			textViewWebcam.setVisibility(View.VISIBLE);
 		}
-		URL_CONTACT = "" + map.get("email");
+		Constants.THE_URL_CONTACT = "" + map.get("email");
 
 		if (!firstStart && playing) {
 			if (Constants.getLiveStreamStations().contains(
-					SELECTED_STATION_NAME)) {
+					Constants.THE_SELECTED_STATION_NAME)) {
 				Log.d(TAG, "------ ist Radio Gelb-Schwarz");
 				showDialog(Constants.LIVE_STREAM_STATION);
 			}
@@ -427,7 +429,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		URL outputUrl = null;
 
 		try {
-			inputUrl = new URL(URL_LIVE_STREAM);
+			inputUrl = new URL(Constants.THE_URL_LIVE_STREAM);
 		} catch (MalformedURLException e) {
 			Utils.getNotifInstance(this, RadioRecPlus.class)
 					.showStatusBarNotificationError(
@@ -435,9 +437,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 
 		try {
-			outputUrl = new URL("file:///" + Constants.SAVE_DIRECTORY + "/"
-					+ SELECTED_STATION_NAME.replaceAll(" ", "") + "-"
-					+ dateTime + ".mp3");
+			outputUrl = new URL("file:///" + Constants.THE_SD_CARD_PATH + "/"
+					+ Constants.THE_SELECTED_STATION_NAME.replaceAll(" ", "")
+					+ "-" + dateTime + ".mp3");
 		} catch (MalformedURLException e) {
 			Utils.getNotifInstance(this, RadioRecPlus.class)
 					.showStatusBarNotificationError(

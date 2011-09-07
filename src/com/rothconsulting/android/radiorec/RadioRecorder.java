@@ -11,6 +11,7 @@ package com.rothconsulting.android.radiorec;
  *
  */
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,7 +47,7 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 
 		try {
 			File radioRecorderDirectory = new File("/"
-					+ Constants.SAVE_DIRECTORY + "/");
+					+ Constants.THE_SD_CARD_PATH + "/");
 			radioRecorderDirectory.mkdirs();
 
 			inputStream = urls[0].openStream();
@@ -75,12 +76,14 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 				Notifications not = new Notifications(this.context, intent);
 				not.showStatusBarNotificationError(R.string.aufnahmeUnterbrochen);
 			}
-
+		} catch (FileNotFoundException fnfe) {
+			Notifications not = new Notifications(this.context, intent);
+			not.showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
+			fnfe.printStackTrace();
 		} catch (IOException e) {
 			Notifications not = new Notifications(this.context, intent);
 			not.showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
 			e.printStackTrace();
-
 		} finally {
 			try {
 				if (inputStream != null) {
@@ -90,6 +93,10 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 					fileOutputStream.flush();
 					fileOutputStream.close();
 				}
+			} catch (FileNotFoundException fnfe) {
+				Notifications not = new Notifications(this.context, intent);
+				not.showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
+				fnfe.printStackTrace();
 			} catch (IOException e) {
 				Notifications not = new Notifications(this.context, intent);
 				not.showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);

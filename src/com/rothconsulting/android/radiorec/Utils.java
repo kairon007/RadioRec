@@ -54,7 +54,7 @@ public class Utils {
 	}
 
 	protected static boolean hasValidKey() {
-		String key = RadioRecPlus.ANTI_ADS_KEY;
+		String key = Constants.THE_ANTI_ADS_KEY;
 		if (key != null && key.startsWith("rR+") && key.endsWith("so@p")) {
 			return true;
 		}
@@ -66,20 +66,21 @@ public class Utils {
 				Constants.PREFERENCES_FILE, 0);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.putInt(Constants.SELECTED_STATION_INDEX,
-				RadioRecPlus.SELECTED_STATION_INDEX);
+				Constants.THE_SELECTED_STATION_INDEX);
 		editor.putInt(Constants.SELECTED_STATION_ICON,
-				RadioRecPlus.SELECTED_STATION_ICON);
+				Constants.THE_SELECTED_STATION_ICON);
 		editor.putString(Constants.SELECTED_STATION_NAME,
-				RadioRecPlus.SELECTED_STATION_NAME);
+				Constants.THE_SELECTED_STATION_NAME);
 		editor.putString(Constants.SELECTED_STATION_STREAM,
-				RadioRecPlus.URL_LIVE_STREAM);
+				Constants.THE_URL_LIVE_STREAM);
 		editor.putString(Constants.SELECTED_STATION_HOMEPAGE,
-				RadioRecPlus.URL_HOMEPAGE);
+				Constants.THE_URL_HOMEPAGE);
 		editor.putString(Constants.SELECTED_STATION_WEBCAM,
-				RadioRecPlus.URL_WEBCAM);
+				Constants.THE_URL_WEBCAM);
 		editor.putString(Constants.SELECTED_STATION_CONTACT,
-				RadioRecPlus.URL_CONTACT);
-		editor.putString(Constants.ANTI_ADS_KEY, RadioRecPlus.ANTI_ADS_KEY);
+				Constants.THE_URL_CONTACT);
+		editor.putString(Constants.ANTI_ADS_KEY, Constants.THE_ANTI_ADS_KEY);
+		editor.putString(Constants.SD_CARD_PATH, Constants.THE_SD_CARD_PATH);
 		editor.commit();
 	}
 
@@ -87,30 +88,24 @@ public class Utils {
 		// Restore preferences
 		SharedPreferences settings = context.getSharedPreferences(
 				Constants.PREFERENCES_FILE, 0);
-		Log.d(TAG, "SELECTED_STATION_NAME vorher: "
-				+ RadioRecPlus.SELECTED_STATION_NAME);
-		Log.d(TAG, "SELECTED_STATION_INDEX vorher: "
-				+ RadioRecPlus.SELECTED_STATION_INDEX);
-		RadioRecPlus.SELECTED_STATION_INDEX = settings.getInt(
+		Constants.THE_SELECTED_STATION_INDEX = settings.getInt(
 				Constants.SELECTED_STATION_INDEX, -1);
-		RadioRecPlus.SELECTED_STATION_NAME = settings.getString(
+		Constants.THE_SELECTED_STATION_NAME = settings.getString(
 				Constants.SELECTED_STATION_NAME,
-				RadioRecPlus.SELECTED_STATION_NAME);
-		RadioRecPlus.URL_LIVE_STREAM = settings
-				.getString(Constants.SELECTED_STATION_STREAM,
-						RadioRecPlus.URL_LIVE_STREAM);
-		RadioRecPlus.URL_HOMEPAGE = settings.getString(
-				Constants.SELECTED_STATION_HOMEPAGE, RadioRecPlus.URL_HOMEPAGE);
-		RadioRecPlus.URL_WEBCAM = settings.getString(
-				Constants.SELECTED_STATION_WEBCAM, RadioRecPlus.URL_WEBCAM);
-		RadioRecPlus.URL_CONTACT = settings.getString(
-				Constants.SELECTED_STATION_CONTACT, RadioRecPlus.URL_CONTACT);
-		RadioRecPlus.ANTI_ADS_KEY = settings.getString(Constants.ANTI_ADS_KEY,
-				RadioRecPlus.ANTI_ADS_KEY);
-		Log.d(TAG, "SELECTED_STATION_NAME nachher: "
-				+ RadioRecPlus.SELECTED_STATION_NAME);
-		Log.d(TAG, "SELECTED_STATION_INDEX nachher: "
-				+ RadioRecPlus.SELECTED_STATION_INDEX);
+				Constants.THE_SELECTED_STATION_NAME);
+		Constants.THE_URL_LIVE_STREAM = settings.getString(
+				Constants.SELECTED_STATION_STREAM,
+				Constants.THE_URL_LIVE_STREAM);
+		Constants.THE_URL_HOMEPAGE = settings
+				.getString(Constants.SELECTED_STATION_HOMEPAGE,
+						Constants.THE_URL_HOMEPAGE);
+		Constants.THE_URL_WEBCAM = settings.getString(
+				Constants.SELECTED_STATION_WEBCAM, Constants.THE_URL_WEBCAM);
+		Constants.THE_URL_CONTACT = settings.getString(
+				Constants.SELECTED_STATION_CONTACT, Constants.THE_URL_CONTACT);
+		Constants.THE_ANTI_ADS_KEY = settings.getString(Constants.ANTI_ADS_KEY,
+				Constants.THE_ANTI_ADS_KEY);
+		Constants.THE_SD_CARD_PATH = settings.getString(Constants.SD_CARD_PATH,
+				Constants.DEFAULT_SD_CARD_PATH);
 	}
-
 }

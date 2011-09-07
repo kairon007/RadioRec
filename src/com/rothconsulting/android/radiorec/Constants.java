@@ -83,6 +83,21 @@ public class Constants {
 	public static final String SELECTED_STATION_WEBCAM = "MySelectedStationWebcam";
 	public static final String SELECTED_STATION_CONTACT = "MySelectedStationContact";
 	public static final String ANTI_ADS_KEY = "MyAntiAdsKey";
+	public static final String SD_CARD_PATH = "MySdCardPath";
+
+	// Default Constants
+	protected static int THE_SELECTED_STATION_INDEX;
+	protected static int THE_SELECTED_STATION_ICON;
+	protected static String THE_SELECTED_STATION_NAME;
+	protected static String THE_URL_LIVE_STREAM;
+	protected static String THE_URL_HOMEPAGE;
+	protected static String THE_URL_WEBCAM;
+	protected static String THE_URL_CONTACT;
+	protected static String THE_URL_SONGTICKER;
+	protected static String THE_ANTI_ADS_KEY;
+	protected static String THE_SD_CARD_PATH;
+
+	public static final String DEFAULT_SD_CARD_PATH = "sdcard/RadioRecorder";
 
 	public static final int NOTIFICATION_ID_RADIO_IS_PLAYING = 1;
 	public static final int NOTIFICATION_ID_RECORDING = 2;
@@ -90,7 +105,6 @@ public class Constants {
 	public static final int PRESS_BACK_BUTTON = 10;
 	public static final int LIVE_STREAM_STATION = 11;
 
-	public static final String SAVE_DIRECTORY = "sdcard/RadioRecorder";
 	public static final String FROM_NOTIFICATION = "fromNotification";
 
 	public static String ADMOB_PUBLISHER_ID = "a14dc9885936cd9";

@@ -22,7 +22,13 @@ public class Notifications {
 		CharSequence tickerText = context.getString(errorRessourceString);
 
 		CharSequence contentTitle = context.getString(errorRessourceString);
-		CharSequence contentText = context.getString(R.string.verbindeInternet);
+		CharSequence contentText = "";
+
+		if (errorRessourceString == R.string.kannNichtAufSdCardSchreiben) {
+			contentText = context.getString(R.string.isSdCardKorrekt);
+		} else {
+			contentText = context.getString(R.string.verbindeInternet);
+		}
 
 		showStatusBarNotification(icon, tickerText, contentTitle, contentText,
 				Constants.NOTIFICATION_ID_ERROR_CONNECTION, -1);
@@ -32,13 +38,13 @@ public class Notifications {
 
 		int icon = R.drawable.jukebox_48x48;
 		CharSequence tickerText = context.getString(R.string.onAir) + " "
-				+ RadioRecPlus.SELECTED_STATION_NAME;
+				+ Constants.THE_SELECTED_STATION_NAME;
 
 		// int notificationFlags = Notification.FLAG_ONGOING_EVENT;
 
 		CharSequence contentTitle = context.getString(R.string.radiorec);
 		CharSequence contentText = context.getString(R.string.onAir) + " "
-				+ RadioRecPlus.SELECTED_STATION_NAME;
+				+ Constants.THE_SELECTED_STATION_NAME;
 
 		showStatusBarNotification(icon, tickerText, contentTitle, contentText,
 				Constants.NOTIFICATION_ID_RADIO_IS_PLAYING, -1);
@@ -49,13 +55,13 @@ public class Notifications {
 
 		int icon = R.drawable.record_on;
 		CharSequence tickerText = "Recording... "
-				+ RadioRecPlus.SELECTED_STATION_NAME;
+				+ Constants.THE_SELECTED_STATION_NAME;
 
 		// int notificationFlags = Notification.FLAG_ONGOING_EVENT;
 
 		CharSequence contentTitle = "Recording...";
 		CharSequence contentText = "Recording "
-				+ RadioRecPlus.SELECTED_STATION_NAME;
+				+ Constants.THE_SELECTED_STATION_NAME;
 
 		showStatusBarNotification(icon, tickerText, contentTitle, contentText,
 				Constants.NOTIFICATION_ID_RECORDING, -1);

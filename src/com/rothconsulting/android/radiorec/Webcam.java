@@ -44,7 +44,7 @@ public class Webcam extends Activity {
 		threadShowWebcam.start();
 
 		TextView radiostation = (TextView) findViewById(R.id.textViewWebcamRadioStation);
-		radiostation.setText(RadioRecPlus.SELECTED_STATION_NAME);
+		radiostation.setText(Constants.THE_SELECTED_STATION_NAME);
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
@@ -57,9 +57,9 @@ public class Webcam extends Activity {
 
 	private void showWebCam() {
 
-		Log.d(TAG, "RadioPlayer.URL_WEBCAM=" + RadioRecPlus.URL_WEBCAM);
-		if (RadioRecPlus.URL_WEBCAM != null
-				&& !RadioRecPlus.URL_WEBCAM.equals("")
+		Log.d(TAG, "RadioPlayer.URL_WEBCAM=" + Constants.THE_URL_WEBCAM);
+		if (Constants.THE_URL_WEBCAM != null
+				&& !Constants.THE_URL_WEBCAM.equals("")
 				&& Utils.isNetworkAvailable(this)) {
 			WebView myWebView = new WebView(this);
 			myWebView.clearCache(Boolean.TRUE);
@@ -73,7 +73,7 @@ public class Webcam extends Activity {
 			myWebView.setInitialScale(80);
 			myWebView.getSettings().setJavaScriptEnabled(true);
 
-			myWebView.loadUrl(RadioRecPlus.URL_WEBCAM);
+			myWebView.loadUrl(Constants.THE_URL_WEBCAM);
 
 			myWebView.setBackgroundColor(0);
 			myWebView.setWebViewClient(new MyWebViewClient());
@@ -137,7 +137,7 @@ public class Webcam extends Activity {
 		progressDialog.setCancelable(true);
 		progressDialog.setMessage("Loading...");
 		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		progressDialog.setTitle("Webcam " + RadioRecPlus.SELECTED_STATION_NAME);
+		progressDialog.setTitle("Webcam " + Constants.THE_SELECTED_STATION_NAME);
 		progressDialog.show();
 		return progressDialog;
 	}

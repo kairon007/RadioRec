@@ -64,14 +64,14 @@ public class Donate extends Activity {
 		final Button saveButton = (Button) findViewById(R.id.buttonSave);
 		saveButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				RadioRecPlus.ANTI_ADS_KEY = "" + edittext.getText();
-				if (RadioRecPlus.ANTI_ADS_KEY != null
-						&& !RadioRecPlus.ANTI_ADS_KEY.trim().equals("")) {
+				Constants.THE_ANTI_ADS_KEY = "" + edittext.getText();
+				if (Constants.THE_ANTI_ADS_KEY != null
+						&& !Constants.THE_ANTI_ADS_KEY.trim().equals("")) {
 					SharedPreferences settings = getSharedPreferences(
 							Constants.PREFERENCES_FILE, 0);
 					SharedPreferences.Editor editor = settings.edit();
 					editor.putString(Constants.ANTI_ADS_KEY,
-							RadioRecPlus.ANTI_ADS_KEY);
+							Constants.THE_ANTI_ADS_KEY);
 					editor.commit();
 					Toast.makeText(
 							Donate.this,

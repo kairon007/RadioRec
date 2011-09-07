@@ -31,7 +31,7 @@ public class RadioPlayer extends Activity {
 		createThread(context);
 		Log.d(TAG, "prepareProgressDialog");
 		progressDialog = Utils.prepareProgressDialog(context);
-		progressDialog.setTitle(RadioRecPlus.SELECTED_STATION_NAME);
+		progressDialog.setTitle(Constants.THE_SELECTED_STATION_NAME);
 		Log.d(TAG, "progressDialog.show()");
 		progressDialog.show();
 		Log.d(TAG, "--- threadDoStartPlay.start()");
@@ -98,8 +98,8 @@ public class RadioPlayer extends Activity {
 					mediaPlayer = new MediaPlayer();
 					Log.d(TAG, "reset()");
 					mediaPlayer.reset();
-					Log.d(TAG, "URL: " + RadioRecPlus.URL_LIVE_STREAM);
-					mediaPlayer.setDataSource(RadioRecPlus.URL_LIVE_STREAM);
+					Log.d(TAG, "URL: " + Constants.THE_URL_LIVE_STREAM);
+					mediaPlayer.setDataSource(Constants.THE_URL_LIVE_STREAM);
 					mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 					Log.d(TAG, "prepare()");
 					mediaPlayer.prepare();
