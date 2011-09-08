@@ -1,6 +1,7 @@
 package com.rothconsulting.android.radiorec;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
@@ -22,8 +23,6 @@ public class Settings extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings);
-
-		WifiManager.WifiLock wifiLock = null;
 
 		// hide keyboard
 		getWindow().setSoftInputMode(
@@ -65,27 +64,38 @@ public class Settings extends Activity {
 			}
 		});
 
-		final CheckBox checkBoxWifiOn = (CheckBox) findViewById(R.id.checkBoxWifiEin);
-		// WifiManager wifiManager = (WifiManager)
-		// getSystemService(Context.WIFI_SERVICE);
-		// if (wifiManager != null) {
-		// wifiLock = wifiManager.createWifiLock("RadioRec+ wifi lock");
-		// }
-		// if (checkBoxWifiOn.isChecked()) {
-		// if (wifiManager != null) {
-		// wifiLock.acquire();
-		// Toast.makeText(this,
-		// getResources().getString(R.string.wifiLockOn),
-		// Toast.LENGTH_LONG).show();
-		// }
-		// } else {
-		// if (wifiManager != null) {
-		// wifiLock.release();
-		// Toast.makeText(this,
-		// getResources().getString(R.string.wifiLockOff),
-		// Toast.LENGTH_LONG).show();
-		// }
-		// }
+		final CheckBox checkBoxWifiOnOff = (CheckBox) findViewById(R.id.checkBoxWifiEin);
+		checkBoxWifiOnOff.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				WifiManager.WifiLock wifiLock = null;
+				WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+				if (wifiManager != null) {
+					wifiLock = wifiManager
+							.createWifiLock("RadioRec+ wifi lock");
+				}
+				doWifiStuff(checkBoxWifiOnOff, wifiManager, wifiLock);
+			}
+		});
+
+	}
+
+	private void doWifiStuff(CheckBox checkBoxWifiOnOff,
+			WifiManager wifiManager, WifiManager.WifiLock wifiLock) {
+		if (checkBoxWifiOnOff.isChecked()) {
+			if (wifiManager != null) {
+				wifiLock.acquire();
+				Toast.makeText(this,
+						getResources().getString(R.string.wifiLockOn),
+						Toast.LENGTH_LONG).show();
+			}
+		} else {
+			if (wifiManager != null) {
+				wifiLock.release();
+				Toast.makeText(this,
+						getResources().getString(R.string.wifiLockOff),
+						Toast.LENGTH_LONG).show();
+			}
+		}
 	}
 
 	// ------------------------------------------------------------
