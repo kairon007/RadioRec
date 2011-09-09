@@ -1,10 +1,13 @@
 package com.rothconsulting.android.radiorec;
 
 import android.app.Activity;
+import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.ClipboardManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,6 +22,8 @@ import android.widget.Toast;
 public class Donate extends Activity {
 
 	private static final String TAG = "Donate";
+	/** Bitcoin key. */
+	private static final String BITCOIN_KEY = "1LvQe3ARrdKeMrzxkFn1MW3YrvbQKZsq5P";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +54,20 @@ public class Donate extends Activity {
 
 		AdMob.showRemoveAds(this);
 
-		final ImageButton paypalButton = (ImageButton) findViewById(R.id.paypalImageButton);
-		paypalButton.setOnClickListener(new View.OnClickListener() {
+		final ImageButton buttonPayPal = (ImageButton) findViewById(R.id.imageButtonPaypal);
+		buttonPayPal.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				Intent intentHomepage = new Intent(Intent.ACTION_VIEW);
 				intentHomepage.setData(Uri
 						.parse("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RTHRLLC6NV4NN"));
 				startActivity(intentHomepage);
+			}
+		});
+
+		final ImageButton paypalButton = (ImageButton) findViewById(R.id.imageButtonBitcoin);
+		paypalButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				donateBitcoin();
 			}
 		});
 
@@ -91,6 +103,37 @@ public class Donate extends Activity {
 				finish();
 			}
 		});
+	}
+
+	private void donateBitcoin() {
+		final Builder b = new Builder(this);
+		b.setCancelable(true);
+		b.setTitle(R.string.donate_bitcoin);
+		String s = this.getString(R.string.donate_bitcoin_text);
+		s += "\n\n" + BITCOIN_KEY;
+		b.setMessage(s);
+		b.setPositiveButton(android.R.string.ok, null);
+		b.setNeutralButton(R.string.copy_to_clipboard,
+				new DialogInterface.OnClickListener() {
+					public void onClick(final DialogInterface dialog,
+							final int which) {
+						ClipboardManager cbm = (ClipboardManager) //
+						getSystemService(CLIPBOARD_SERVICE);
+						cbm.setText(BITCOIN_KEY);
+					}
+				});
+		final Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("bitcoin:"
+				+ BITCOIN_KEY));
+		if (i.resolveActivity(this.getPackageManager()) != null) {
+			b.setNegativeButton(R.string.send_now,
+					new DialogInterface.OnClickListener() {
+						public void onClick(final DialogInterface dialog,
+								final int which) {
+							startActivity(i);
+						}
+					});
+		}
+		b.show();
 	}
 
 	// ------------------------------------------------------------

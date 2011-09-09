@@ -15,8 +15,13 @@
 				android:layout_gravity="center" android:text="@string/antiAds"
 				android:textColor="#FFFFFF" android:textSize="15dip"
 				android:layout_margin="10dip" android:id="@+id/textViewAntiAds" />
-			<ImageButton android:src="@drawable/paypal_donate_cc_lg"
-				android:id="@+id/paypalImageButton" android:layout_gravity="center"
+			<ImageButton android:src="@drawable/button_paypal_donate_cc_lg"
+				android:id="@+id/imageButtonPaypal" android:layout_gravity="center"
+				android:layout_width="fill_parent" android:layout_margin="5dip"
+				android:background="@android:color/transparent"
+				android:layout_height="wrap_content" android:layout_weight="0.20" />
+			<ImageButton android:src="@drawable/button_bitcoin"
+				android:id="@+id/imageButtonBitcoin" android:layout_gravity="center"
 				android:layout_width="fill_parent" android:layout_margin="5dip"
 				android:background="@android:color/transparent"
 				android:layout_height="wrap_content" android:layout_weight="0.20" />

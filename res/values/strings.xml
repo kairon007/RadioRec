@@ -37,4 +37,8 @@
 	<string name="wifiEingeschaltetLassen">WiFi immer eingeschaltet lassen?</string>
 	<string name="wifiLockOn">WiFi lock ein.</string>
 	<string name="wifiLockOff">WiFi lock aus.</string>
+	<string name="donate_bitcoin">Bitcoin Spende</string>
+	<string name="donate_bitcoin_text">Sende einfach ein paar BTC an die unten stehende Adresse und gib mir per E-Mail Bescheid.</string>
+	<string name="copy_to_clipboard">In die Zwischenablage kopieren</string>
+	<string name="send_now">Jetzt senden</string>
 </resources>
