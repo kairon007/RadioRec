@@ -24,21 +24,26 @@
     <string name="donate">Spenden/Werbefrei</string>
     <string name="donateText">Haben sie RadioRec+ schon ein paar mal verwendet? \nGefällt ihnen RadioRec+ ? \nFalls sie dies mit "ja" beantworten, würde ich mich über eine Spende von ihnen freuen. \n\nVielen Dank!</string>
     <string name="save">Speichern</string>
-    <string name="antiAds">Schon gespendet? Diese App ist gratis und wird immer gratis bleiben! Wenn dir die App gefällt oder dich die Werbung nervt, kannst du gerne etwas spenden. Alle Spender die CHF/EUR 2.00 oder mehr spenden erhalten einen persönlichen \'Anti-Werbung Schlüssel\'. So kannst du RadioRec+ ohne Werbung geniessen! Beim Spenden bitte E-Mail-Adresse angeben.</string>
+    <string name="antiAdsText">Schon gespendet? Diese App ist gratis und wird immer gratis bleiben! Wenn dir die App gefällt oder dich die Werbung nervt, kannst du gerne etwas spenden. Alle Spender die CHF/EUR 2.00 oder mehr spenden erhalten einen persönlichen \'Anti-Werbung Schlüssel\'. So kannst du RadioRec+ ohne Werbung geniessen! Beim Spenden bitte E-Mail-Adresse angeben.</string>
     <string name="antiAdsKeyHere">Nach dem Spenden solltest du innerhalb ein paar Tage einen \'Anti-Werbung Schlüssel\' von mir erhalten. Falls der Schlüssel nicht bei dir eintrifft, schreib mir einfach ein E-Mail.\n\nAnti-Werbung Schlüssel hier eingeben und Speichern.</string>
 	<string name="keineEingabe">Keine Eingabe ??</string>
 	<string name="danke">Danke !!!</string>
-	<string name="infoSDCard">Beim aufnehmen werden die Dateien auf die SD-Card gespeichert.\nDu findest sie im Verzeichnis "RadioRecorder".</string>
+	<string name="infoSDCard">Beim aufnehmen werden die Dateien auf die SD-Card gespeichert.\nDu findest sie standardmässig im Verzeichnis "RadioRecorder". In den Einstellungen kannst du diesen Pfad ändern.</string>
 	<string name="infoFeatureEmail">Fehlt dir ein Sender, ein Feature oder hast du sonst Anregungen? Klick auf folgende E-Mail-Adresse und teile mir dein Anligen mit. \n\n---  androider@wolke7.net  ---</string>
 	<string name="infoDatenverbrauchFrage">Folgende Frage wurde mir gestellt: Wieviel Daten werden verbraucht beim Radio hören mit RadioRec+ ?? </string>
 	<string name="infoDatenverbrauchAntwort">Antwort: Knapp 60MB/Std. Die Radio-Sender streamen mit 128kbps. Daraus rechnet sich der Verbrauch folgendermassen: 128\'000 Bit/s : 8 = 16\'000 Byte/s. Das entspricht 57.6 MB/Stunde (16\'000x3200 : 1\'000\'000). Tipp: Verwende WLAN, dann ist der Datenverbrauch kein Thema :-)</string>
-	<string name="sdcardPath">Standardmässig werden die MP3 Aufnahmen auf die SD-Card mit dem Pfad \"sdcard/RadioRecorder\" gespeichert. \nAuf Wunsch kann dieser Pfad hier angepasst werden. \nVorsicht: Pfad muss exakt stimmen!</string>
+	<string name="speicherOrt">Speicher-Ort</string>
+	<string name="sdcardPath">Standardmässig werden die MP3 Aufnahmen auf die SD-Card mit dem Pfad \n \"sdcard/RadioRecorder\" \ngespeichert. Auf Wunsch kann dieser Pfad hier angepasst werden. \nVorsicht: Pfad zum Speichermedium muss exakt stimmen!</string>
 	<string name="reset">Zurücksetzen</string>
 	<string name="wifiEingeschaltetLassen">WiFi immer eingeschaltet lassen?</string>
+	<string name="wifiVorsicht">Mit dieser Option wird dein Wireless nicht in den Standby modus gehen wenn sich z.B. dein Bildschirm ausschaltet. Vorsicht: Wenn WiFi immer eingeschaltet ist wird dein Akku mehr belastet. Schalte es hier wieder aus wenn dein Wireless nicht immer Standby sein soll.</string>
+	<string name="wifi">WiFi</string>
 	<string name="wifiLockOn">WiFi lock ein.</string>
 	<string name="wifiLockOff">WiFi lock aus.</string>
-	<string name="donate_bitcoin">Bitcoin Spende</string>
+	<string name="donate_paypal_cc">Spende mit PayPal oder Keditkarte</string>
+	<string name="donate_bitcoin">Spende mit Bitcoin</string>
 	<string name="donate_bitcoin_text">Sende einfach ein paar BTC an die unten stehende Adresse und gib mir per E-Mail Bescheid.</string>
 	<string name="copy_to_clipboard">In die Zwischenablage kopieren</string>
 	<string name="send_now">Jetzt senden</string>
+	<string name="antiWerbungKey">Anti-Werbung Schlüssel</string>
 </resources>

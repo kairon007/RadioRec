@@ -23,7 +23,7 @@ public class Donate extends Activity {
 
 	private static final String TAG = "Donate";
 	/** Bitcoin key. */
-	private static final String BITCOIN_KEY = "1LvQe3ARrdKeMrzxkFn1MW3YrvbQKZsq5P";
+	private static final String BITCOIN_KEY = "1ErTn1kvjprJ9pC6AZKDyDoYLLWtWjaKWR";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
