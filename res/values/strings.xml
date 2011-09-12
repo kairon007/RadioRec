@@ -46,4 +46,23 @@
 	<string name="copy_to_clipboard">In die Zwischenablage kopieren</string>
 	<string name="send_now">Jetzt senden</string>
 	<string name="antiWerbungKey">Anti-Werbung Schlüssel</string>
+	<string name="donate_normal">Normale Spende (2.00)</string>
+	<string name="donate_normal_plus">Normale Spende PLUS! (5.00)</string>
+	<string name="donate_bronze">Bronze Spende (10.00)</string>
+	<string name="donate_silver">Silber Spende (20.00)</string>
+	<string name="donate_gold">Gold Spende (50.00)</string>
+    <string name="billing_not_supported_title">Can\'t make purchases</string>
+    <string name="billing_not_supported_message">The Market billing service is not available at this time.  You can continue to use this app but you won\'t be able to make purchases.</string>
+    <string name="cannot_connect_title">Can\'t connect to Market</string>
+    <string name="cannot_connect_message">This app cannot connect to Market. Your version of Market may be out of date. You can continue to use this app but you won\'t be able to make purchases.</string>
+    <string name="help_url" formatted="false">http://market.android.com/support/bin/answer.py?answer=1050566&amp;hl=%lang%&amp;dl=%region%</string>
+    <string name="learn_more">Learn more</string>
+    <string name="restoring_transactions">Restoring transactions</string>
+	<string name="select">Auswahl</string>	
+	<string name="donate_options">Spende Möglichkeiten</string>	
+	<string name="edit_payload">Edit Payload</string>	
+    <string name="edit_payload_title">Edit the developer payload associated with this purchase</string>
+    <string name="edit_payload_accept">Set</string>
+    <string name="edit_payload_clear">No Payload</string>
+	
 </resources>
