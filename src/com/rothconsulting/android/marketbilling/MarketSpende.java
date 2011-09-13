@@ -78,7 +78,6 @@ public class MarketSpende extends Activity implements OnClickListener,
 
 	private BillingService mBillingService;
 	private Button mBuyButton;
-	private Button mEditPayloadButton;
 	private TextView mLogTextView;
 	private Spinner mSelectItemSpinner;
 	private ListView mOwnedItemsTable;
@@ -125,7 +124,6 @@ public class MarketSpende extends Activity implements OnClickListener,
 			if (supported) {
 				restoreDatabase();
 				mBuyButton.setEnabled(true);
-				mEditPayloadButton.setEnabled(true);
 			} else {
 				showDialog(DIALOG_BILLING_NOT_SUPPORTED_ID);
 			}
@@ -216,9 +214,9 @@ public class MarketSpende extends Activity implements OnClickListener,
 
 	/** An array of product list entries for the products that can be purchased. */
 	private static final CatalogEntry[] CATALOG = new CatalogEntry[] {
-			new CatalogEntry("donate_normal", R.string.donate_normal,
-					Managed.UNMANAGED),
 			new CatalogEntry("donate_normal_plus", R.string.donate_normal_plus,
+					Managed.UNMANAGED),
+			new CatalogEntry("donate_normal", R.string.donate_normal,
 					Managed.UNMANAGED),
 			new CatalogEntry("donate_bronze", R.string.donate_bronze,
 					Managed.UNMANAGED),
@@ -368,10 +366,6 @@ public class MarketSpende extends Activity implements OnClickListener,
 		mBuyButton.setEnabled(false);
 		mBuyButton.setOnClickListener(this);
 
-		mEditPayloadButton = (Button) findViewById(R.id.payload_edit_button);
-		mEditPayloadButton.setEnabled(false);
-		mEditPayloadButton.setOnClickListener(this);
-
 		mSelectItemSpinner = (Spinner) findViewById(R.id.item_choices);
 		mCatalogAdapter = new CatalogAdapter(this, CATALOG);
 		mSelectItemSpinner.setAdapter(mCatalogAdapter);
@@ -468,54 +462,13 @@ public class MarketSpende extends Activity implements OnClickListener,
 	 * Called when a button is pressed.
 	 */
 	public void onClick(View v) {
-		if (v == mBuyButton) {
-			if (Consts.DEBUG) {
-				Log.d(TAG, "buying: " + mItemName + " sku: " + mSku);
-			}
-			if (!mBillingService.requestPurchase(mSku, mPayloadContents)) {
-				showDialog(DIALOG_BILLING_NOT_SUPPORTED_ID);
-			}
-		} else if (v == mEditPayloadButton) {
-			showPayloadEditDialog();
-		}
-	}
 
-	/**
-	 * Displays the dialog used to edit the payload dialog.
-	 */
-	private void showPayloadEditDialog() {
-		AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-		final View view = View.inflate(this, R.layout.edit_payload, null);
-		final TextView payloadText = (TextView) view
-				.findViewById(R.id.payload_text);
-		if (mPayloadContents != null) {
-			payloadText.setText(mPayloadContents);
+		if (Consts.DEBUG) {
+			Log.d(TAG, "buying: " + mItemName + " sku: " + mSku);
 		}
-
-		dialog.setView(view);
-		dialog.setPositiveButton(R.string.edit_payload_accept,
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						mPayloadContents = payloadText.getText().toString();
-					}
-				});
-		dialog.setNegativeButton(R.string.edit_payload_clear,
-				new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int which) {
-						if (dialog != null) {
-							mPayloadContents = null;
-							dialog.cancel();
-						}
-					}
-				});
-		dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-			public void onCancel(DialogInterface dialog) {
-				if (dialog != null) {
-					dialog.cancel();
-				}
-			}
-		});
-		dialog.show();
+		if (!mBillingService.requestPurchase(mSku, mPayloadContents)) {
+			showDialog(DIALOG_BILLING_NOT_SUPPORTED_ID);
+		}
 	}
 
 	/**

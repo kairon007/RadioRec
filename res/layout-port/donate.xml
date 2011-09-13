@@ -23,6 +23,14 @@
 				android:layout_width="fill_parent" android:layout_margin="5dip"
 				android:background="@android:color/transparent"
 				android:layout_height="wrap_content" android:layout_weight="0.20" />
+			<TextView android:text="@string/donate_android_market" android:id="@+id/textViewTitleAndroidMarket"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:background="#0000A0" android:textStyle="bold" android:gravity="center" />
+			<ImageButton android:src="@drawable/button_android_market"
+				android:id="@+id/imageButtonAndroidMarket" android:layout_gravity="center"
+				android:layout_width="fill_parent" android:layout_margin="5dip"
+				android:background="@android:color/transparent"
+				android:layout_height="wrap_content" android:layout_weight="0.20" />
 			<TextView android:text="@string/donate_bitcoin" android:gravity="center" android:id="@+id/textViewTitleBitcoin"
 				android:layout_width="fill_parent" android:layout_height="wrap_content"
 				android:background="#0000A0" android:textStyle="bold" />

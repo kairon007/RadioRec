@@ -30,7 +30,7 @@
 		<activity android:name="Webcam" />
 		<activity android:name="Settings" />
 		<activity android:name="Donate" />
-		<activity android:name="MarketSpende" />
+		<activity android:name="com.rothconsulting.android.marketbilling.MarketSpende" />
 
 		<service android:name="BillingService" />
 

@@ -44,22 +44,12 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/buy_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/donate" />
         <Spinner
             android:id="@+id/item_choices"
             android:layout_width="0dip"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:prompt="@string/select" />
-        <Button
-            android:id="@+id/payload_edit_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/edit_payload" />
     </LinearLayout>
 
     <ScrollView
@@ -72,4 +62,5 @@
             android:bufferType="spannable"
             android:textColor="@android:color/black" />
     </ScrollView>
+    <Button android:id="@+id/buy_button" android:layout_width="wrap_content" android:text="@string/donate" android:layout_height="wrap_content"></Button>
 </LinearLayout>

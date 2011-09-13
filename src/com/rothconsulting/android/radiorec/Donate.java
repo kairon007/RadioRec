@@ -19,6 +19,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.rothconsulting.android.marketbilling.MarketSpende;
+
 public class Donate extends Activity {
 
 	private static final String TAG = "Donate";
@@ -64,10 +66,18 @@ public class Donate extends Activity {
 			}
 		});
 
-		final ImageButton paypalButton = (ImageButton) findViewById(R.id.imageButtonBitcoin);
-		paypalButton.setOnClickListener(new View.OnClickListener() {
+		final ImageButton buttonBitcoin = (ImageButton) findViewById(R.id.imageButtonBitcoin);
+		buttonBitcoin.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				donateBitcoin();
+			}
+		});
+
+		final ImageButton buttonAndroidMarket = (ImageButton) findViewById(R.id.imageButtonAndroidMarket);
+		final Intent intentSpende = new Intent(this, MarketSpende.class);
+		buttonAndroidMarket.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				startActivity(intentSpende);
 			}
 		});
 
