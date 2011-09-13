@@ -4,8 +4,8 @@ package com.rothconsulting.android.marketbilling;
 
 import com.rothconsulting.android.marketbilling.BillingService.RequestPurchase;
 import com.rothconsulting.android.marketbilling.BillingService.RestoreTransactions;
-import com.rothconsulting.android.marketbilling.Consts.PurchaseState;
-import com.rothconsulting.android.marketbilling.Consts.ResponseCode;
+import com.rothconsulting.android.marketbilling.Constants.PurchaseState;
+import com.rothconsulting.android.marketbilling.Constants.ResponseCode;
 
 import android.app.PendingIntent;
 import android.content.Context;
@@ -73,7 +73,7 @@ public class ResponseHandler {
      */
     public static void buyPageIntentResponse(PendingIntent pendingIntent, Intent intent) {
         if (sPurchaseObserver == null) {
-            if (Consts.DEBUG) {
+            if (Constants.DEBUG) {
                 Log.d(TAG, "UI is not running");
             }
             return;

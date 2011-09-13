@@ -50,8 +50,9 @@ import android.widget.Toast;
 
 import com.rothconsulting.android.marketbilling.BillingService.RequestPurchase;
 import com.rothconsulting.android.marketbilling.BillingService.RestoreTransactions;
-import com.rothconsulting.android.marketbilling.Consts.PurchaseState;
-import com.rothconsulting.android.marketbilling.Consts.ResponseCode;
+import com.rothconsulting.android.marketbilling.Constants.PurchaseState;
+import com.rothconsulting.android.marketbilling.Constants.ResponseCode;
+import com.rothconsulting.android.radiorec.AdMob;
 import com.rothconsulting.android.radiorec.R;
 
 /**
@@ -89,7 +90,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 	/**
 	 * The developer payload that is sent with subsequent purchase requests.
 	 */
-	private String mPayloadContents = null;
+	private final String mPayloadContents = null;
 
 	private static final int DIALOG_CANNOT_CONNECT_ID = 1;
 	private static final int DIALOG_BILLING_NOT_SUPPORTED_ID = 2;
@@ -118,7 +119,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 
 		@Override
 		public void onBillingSupported(boolean supported) {
-			if (Consts.DEBUG) {
+			if (Constants.DEBUG) {
 				Log.i(TAG, "supported: " + supported);
 			}
 			if (supported) {
@@ -133,7 +134,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 		public void onPurchaseStateChange(PurchaseState purchaseState,
 				String itemId, int quantity, long purchaseTime,
 				String developerPayload) {
-			if (Consts.DEBUG) {
+			if (Constants.DEBUG) {
 				Log.i(TAG, "onPurchaseStateChange() itemId: " + itemId + " "
 						+ purchaseState);
 			}
@@ -155,23 +156,23 @@ public class MarketSpende extends Activity implements OnClickListener,
 		@Override
 		public void onRequestPurchaseResponse(RequestPurchase request,
 				ResponseCode responseCode) {
-			if (Consts.DEBUG) {
+			if (Constants.DEBUG) {
 				Log.d(TAG, request.mProductId + ": " + responseCode);
 			}
 			if (responseCode == ResponseCode.RESULT_OK) {
-				if (Consts.DEBUG) {
+				if (Constants.DEBUG) {
 					Log.i(TAG, "purchase was successfully sent to server");
 				}
 				logProductActivity(request.mProductId,
 						"sending purchase request");
 			} else if (responseCode == ResponseCode.RESULT_USER_CANCELED) {
-				if (Consts.DEBUG) {
+				if (Constants.DEBUG) {
 					Log.i(TAG, "user canceled purchase");
 				}
 				logProductActivity(request.mProductId,
 						"dismissed purchase dialog");
 			} else {
-				if (Consts.DEBUG) {
+				if (Constants.DEBUG) {
 					Log.i(TAG, "purchase failed");
 				}
 				logProductActivity(request.mProductId,
@@ -183,7 +184,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 		public void onRestoreTransactionsResponse(RestoreTransactions request,
 				ResponseCode responseCode) {
 			if (responseCode == ResponseCode.RESULT_OK) {
-				if (Consts.DEBUG) {
+				if (Constants.DEBUG) {
 					Log.d(TAG, "completed RestoreTransactions request");
 				}
 				// Update the shared preferences so that we don't perform
@@ -193,7 +194,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 				edit.putBoolean(DB_INITIALIZED, true);
 				edit.commit();
 			} else {
-				if (Consts.DEBUG) {
+				if (Constants.DEBUG) {
 					Log.d(TAG, "RestoreTransactions error: " + responseCode);
 				}
 			}
@@ -233,6 +234,8 @@ public class MarketSpende extends Activity implements OnClickListener,
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.donate_market);
+
+		AdMob.showRemoveAds(this);
 
 		mHandler = new Handler();
 		mSpendePurchaseObserver = new SpendePurchaseObserver(mHandler);
@@ -314,7 +317,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 
 	private Dialog createDialog(int titleId, int messageId) {
 		String helpUrl = replaceLanguageAndRegion(getString(R.string.help_url));
-		if (Consts.DEBUG) {
+		if (Constants.DEBUG) {
 			Log.i(TAG, helpUrl);
 		}
 		final Uri helpUri = Uri.parse(helpUrl);
@@ -362,7 +365,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 	private void setupWidgets() {
 		mLogTextView = (TextView) findViewById(R.id.log);
 
-		mBuyButton = (Button) findViewById(R.id.buy_button);
+		mBuyButton = (Button) findViewById(R.id.donate_button);
 		mBuyButton.setEnabled(false);
 		mBuyButton.setOnClickListener(this);
 
@@ -463,7 +466,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 	 */
 	public void onClick(View v) {
 
-		if (Consts.DEBUG) {
+		if (Constants.DEBUG) {
 			Log.d(TAG, "buying: " + mItemName + " sku: " + mSku);
 		}
 		if (!mBillingService.requestPurchase(mSku, mPayloadContents)) {

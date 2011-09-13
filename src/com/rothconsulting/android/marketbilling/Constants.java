@@ -20,7 +20,7 @@ package com.rothconsulting.android.marketbilling;
  * This class holds global constants that are used throughout the application to
  * support in-app billing.
  */
-public class Consts {
+public class Constants {
 	// The response codes for a request, defined by Android Market.
 	public enum ResponseCode {
 		RESULT_OK, RESULT_USER_CANCELED, RESULT_SERVICE_UNAVAILABLE, RESULT_BILLING_UNAVAILABLE, RESULT_ITEM_UNAVAILABLE, RESULT_DEVELOPER_ERROR, RESULT_ERROR;
@@ -57,9 +57,9 @@ public class Consts {
 
 	// Intent actions that we send from the BillingReceiver to the
 	// BillingService. Defined by this application.
-	public static final String ACTION_CONFIRM_NOTIFICATION = "com.example.dungeons.CONFIRM_NOTIFICATION";
-	public static final String ACTION_GET_PURCHASE_INFORMATION = "com.example.dungeons.GET_PURCHASE_INFORMATION";
-	public static final String ACTION_RESTORE_TRANSACTIONS = "com.example.dungeons.RESTORE_TRANSACTIONS";
+	public static final String ACTION_CONFIRM_NOTIFICATION = "com.rothconsulting.android.marketbilling.CONFIRM_NOTIFICATION";
+	public static final String ACTION_GET_PURCHASE_INFORMATION = "com.rothconsulting.android.marketbilling.GET_PURCHASE_INFORMATION";
+	public static final String ACTION_RESTORE_TRANSACTIONS = "com.rothconsulting.android.marketbilling.RESTORE_TRANSACTIONS";
 
 	// Intent actions that we receive in the BillingReceiver from Market.
 	// These are defined by Market and cannot be changed.

@@ -23,7 +23,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.rothconsulting.android.marketbilling.Consts.PurchaseState;
+import com.rothconsulting.android.marketbilling.Constants.PurchaseState;
 
 /**
  * An example database that records the state of each purchase. You should use

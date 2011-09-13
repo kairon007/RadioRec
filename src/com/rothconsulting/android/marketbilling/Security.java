@@ -21,7 +21,7 @@ import org.json.JSONObject;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.rothconsulting.android.marketbilling.Consts.PurchaseState;
+import com.rothconsulting.android.marketbilling.Constants.PurchaseState;
 import com.rothconsulting.android.marketbilling.util.Base64;
 import com.rothconsulting.android.marketbilling.util.Base64DecoderException;
 
@@ -110,7 +110,7 @@ public class Security {
 			Log.e(TAG, "data is null");
 			return null;
 		}
-		if (Consts.DEBUG) {
+		if (Constants.DEBUG) {
 			Log.i(TAG, "signedData: " + signedData);
 		}
 		boolean verified = false;
@@ -235,7 +235,7 @@ public class Security {
 	 */
 	public static boolean verify(PublicKey publicKey, String signedData,
 			String signature) {
-		if (Consts.DEBUG) {
+		if (Constants.DEBUG) {
 			Log.i(TAG, "signature: " + signature);
 		}
 		Signature sig;

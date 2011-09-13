@@ -1,10 +1,9 @@
 package com.rothconsulting.android.radiorec;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -12,14 +11,20 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class Settings extends Activity {
+public class Settings extends Activity implements
+		RadioGroup.OnCheckedChangeListener {
 
 	private static final String TAG = "Donate";
-	WifiManager.WifiLock wifiLock = null;
+
+	RadioButton radioImmerAn;
+	RadioButton radioImmerAnWennStrom;
+	RadioButton radioAutomatischAus;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,40 +71,62 @@ public class Settings extends Activity {
 			}
 		});
 
-		final CheckBox checkBoxWifiOnOff = (CheckBox) findViewById(R.id.checkBoxWifiEin);
+		final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroupWifi);
+		radioImmerAn = (RadioButton) findViewById(R.id.radioImmerAn);
+		radioImmerAnWennStrom = (RadioButton) findViewById(R.id.radioImmerAnWennStrom);
+		radioAutomatischAus = (RadioButton) findViewById(R.id.radioAutomatischAus);
+		final TextView textViewWifiVorsicht = (TextView) findViewById(R.id.textViewWifiVorsicht);
+		radioGroup.setOnCheckedChangeListener(this);
+		try {
+			int wifiSleepPolicy = android.provider.Settings.System.getInt(
+					getContentResolver(),
+					android.provider.Settings.System.WIFI_SLEEP_POLICY);
 
-		if (wifiLock != null && wifiLock.isHeld()) {
-			checkBoxWifiOnOff.setChecked(true);
-		} else {
-			checkBoxWifiOnOff.setChecked(false);
+			setRadioButtons(wifiSleepPolicy);
+
+		} catch (SettingNotFoundException e) {
+			Log.d(TAG,
+					"SettingNotFoundException: Kann System Settings nicht finden!");
+			Toast.makeText(this,
+					getResources().getString(R.string.settingsNotFound),
+					Toast.LENGTH_SHORT).show();
+			radioGroup.setVisibility(View.INVISIBLE);
+			textViewWifiVorsicht.setVisibility(View.INVISIBLE);
 		}
-		checkBoxWifiOnOff.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				Log.d(TAG, "WifiManager.WifiLock wifiLock");
-				WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-				Log.d(TAG, "getSystemService(Context.WIFI_SERVICE)");
-				if (wifiManager != null && wifiLock == null) {
-					Log.d(TAG, "wifiManager != null");
-					wifiLock = wifiManager
-							.createWifiLock("(RadioRec+ createWifiLock)");
-				}
-				doWifiStuff(checkBoxWifiOnOff, wifiLock);
-			}
-		});
-
 	}
 
-	private void doWifiStuff(CheckBox checkBoxWifiOnOff,
-			WifiManager.WifiLock wifiLock) {
-		if (checkBoxWifiOnOff.isChecked()) {
-			wifiLock.acquire();
-			Toast.makeText(this, getResources().getString(R.string.wifiLockOn),
+	private void setRadioButtons(int wifiSleepPolicy) {
+		if (wifiSleepPolicy == android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER) {
+			radioImmerAn.setChecked(true);
+		} else if (wifiSleepPolicy == android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED) {
+			radioImmerAnWennStrom.setChecked(true);
+		} else {
+			radioAutomatischAus.setChecked(true);
+		}
+	}
+
+	public void onCheckedChanged(RadioGroup group, int checkedId) {
+		if (checkedId == R.id.radioImmerAn) {
+			android.provider.Settings.System.putInt(getContentResolver(),
+					android.provider.Settings.System.WIFI_SLEEP_POLICY,
+					android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER);
+			Toast.makeText(this,
+					getResources().getString(R.string.wifiImmerAn),
+					Toast.LENGTH_SHORT).show();
+		} else if (checkedId == R.id.radioImmerAnWennStrom) {
+			android.provider.Settings.System
+					.putInt(getContentResolver(),
+							android.provider.Settings.System.WIFI_SLEEP_POLICY,
+							android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED);
+			Toast.makeText(this,
+					getResources().getString(R.string.wifiImmerAnWennAmStrom),
 					Toast.LENGTH_SHORT).show();
 		} else {
-			wifiLock.release();
+			android.provider.Settings.System.putInt(getContentResolver(),
+					android.provider.Settings.System.WIFI_SLEEP_POLICY,
+					android.provider.Settings.System.WIFI_SLEEP_POLICY_DEFAULT);
 			Toast.makeText(this,
-					getResources().getString(R.string.wifiLockOff),
+					getResources().getString(R.string.wifiAutomatischAus),
 					Toast.LENGTH_SHORT).show();
 		}
 	}
@@ -123,4 +150,5 @@ public class Settings extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
 }

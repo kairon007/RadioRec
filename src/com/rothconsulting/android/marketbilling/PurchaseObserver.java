@@ -4,8 +4,8 @@ package com.rothconsulting.android.marketbilling;
 
 import com.rothconsulting.android.marketbilling.BillingService.RequestPurchase;
 import com.rothconsulting.android.marketbilling.BillingService.RestoreTransactions;
-import com.rothconsulting.android.marketbilling.Consts.PurchaseState;
-import com.rothconsulting.android.marketbilling.Consts.ResponseCode;
+import com.rothconsulting.android.marketbilling.Constants.PurchaseState;
+import com.rothconsulting.android.marketbilling.Constants.ResponseCode;
 
 import android.app.Activity;
 import android.app.PendingIntent;
