@@ -13,10 +13,6 @@
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:paddingLeft="4dip"
 	android:paddingRight="4dip" android:background="@drawable/bg_land">
-	<ImageView android:src="@drawable/button_android_market"
-		android:id="@+id/imageAndroidMarket" android:layout_gravity="center"
-		android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dip"
-		android:background="@android:color/transparent" />
 	<TextView android:id="@+id/billing_supported"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:textColor="#ffc00000" />
@@ -25,23 +21,33 @@
 		android:layout_height="wrap_content" android:paddingTop="10dip"
 		android:textColor="@android:color/white" android:textAppearance="?android:attr/textAppearanceMedium"
 		android:textStyle="bold" android:text="@string/donate_options" />
-
 	<LinearLayout android:orientation="horizontal"
 		android:layout_width="fill_parent" android:layout_height="wrap_content">
 		<Spinner android:id="@+id/item_choices" android:layout_width="0dip"
 			android:layout_weight="1" android:layout_height="wrap_content"
 			android:prompt="@string/select" />
 	</LinearLayout>
-
+	<LinearLayout android:layout_height="wrap_content"
+		android:layout_width="match_parent" android:id="@+id/linearLayout1">
+		<Button android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:id="@+id/donate_button"
+			android:text="@string/donate" />
+		<Button android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:layout_marginLeft="30dip"
+			android:id="@+id/buttonZurueck" android:layout_marginRight="30dip"
+			android:text="@string/zurueck" android:layout_marginTop="0dip"
+			android:layout_gravity="center" />
+	</LinearLayout>
+	<ImageView android:src="@drawable/button_android_market"
+		android:id="@+id/imageAndroidMarket" android:layout_gravity="center"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_margin="5dip" android:background="@android:color/transparent" />
 	<ScrollView android:layout_width="fill_parent"
 		android:layout_height="wrap_content">
 		<TextView android:id="@+id/log" android:layout_width="fill_parent"
 			android:layout_height="wrap_content" android:bufferType="spannable"
 			android:textColor="@android:color/white" />
 	</ScrollView>
-	<Button android:id="@+id/donate_button" android:layout_width="wrap_content"
-		android:text="@string/donate" android:layout_height="wrap_content" />
-
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
 		android:orientation="vertical" android:gravity="center"
@@ -52,5 +58,4 @@
 			android:gravity="center" ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER"
 			ads:loadAdOnCreate="false" />
 	</LinearLayout>
-
 </LinearLayout>

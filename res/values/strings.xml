@@ -54,18 +54,13 @@
 	<string name="donate_bronze">CHF 10.00 - Bronze Spende</string>
 	<string name="donate_silver">CHF 20.00 - Silber Spende</string>
 	<string name="donate_gold">CHF 50.00 - Gold Spende</string>
-    <string name="billing_not_supported_title">Can\'t make purchases</string>
-    <string name="billing_not_supported_message">The Market billing service is not available at this time.  You can continue to use this app but you won\'t be able to make purchases.</string>
-    <string name="cannot_connect_title">Can\'t connect to Market</string>
-    <string name="cannot_connect_message">This app cannot connect to Market. Your version of Market may be out of date. You can continue to use this app but you won\'t be able to make purchases.</string>
+    <string name="billing_not_supported_title">Spende momentan nicht möglich</string>
+    <string name="billing_not_supported_message">Der Market Service ist momentan noch verfügbar. Veruchen sie es bitte später nochmal oder spenden sie via PayPal oder Kreditkarte.</string>
+    <string name="cannot_connect_title">Kann nicht zum Market verbinden</string>
+    <string name="cannot_connect_message">RadioRec+ kann nicht zum Market verbinden. Ihre Market Version ist entweder zu alt oder der Market kann nicht gefunden werden. \nSpenden sie bitte via PayPal oder Kreditkarte.</string>
     <string name="help_url" formatted="false">http://market.android.com/support/bin/answer.py?answer=1050566&amp;hl=%lang%&amp;dl=%region%</string>
-    <string name="learn_more">Learn more</string>
+    <string name="learn_more">Mehr Infos</string>
     <string name="restoring_transactions">Restoring transactions</string>
 	<string name="select">Auswahl</string>	
 	<string name="donate_options">Spende Möglichkeiten</string>	
-	<string name="edit_payload">Edit Payload</string>	
-    <string name="edit_payload_title">Edit the developer payload associated with this purchase</string>
-    <string name="edit_payload_accept">Set</string>
-    <string name="edit_payload_clear">No Payload</string>
-	
 </resources>

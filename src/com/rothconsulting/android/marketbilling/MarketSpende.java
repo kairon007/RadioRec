@@ -235,6 +235,13 @@ public class MarketSpende extends Activity implements OnClickListener,
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.donate_market);
 
+		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
+		zurueckButton.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				finish();
+			}
+		});
+
 		AdMob.showRemoveAds(this);
 
 		mHandler = new Handler();

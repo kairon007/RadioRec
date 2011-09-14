@@ -24,11 +24,14 @@ public class Settings extends Activity implements
 	RadioButton radioImmerAn;
 	RadioButton radioImmerAnWennStrom;
 	RadioButton radioAutomatischAus;
+	boolean firstrun;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings);
+		// to avoid Toast at first run
+		firstrun = true;
 
 		// hide keyboard
 		getWindow().setSoftInputMode(
@@ -85,9 +88,6 @@ public class Settings extends Activity implements
 		} catch (SettingNotFoundException e) {
 			Log.d(TAG,
 					"SettingNotFoundException: WIFI_SLEEP_POLICY ist noch nicht konfiguriert. Kein Problem!");
-			Toast.makeText(this,
-					getResources().getString(R.string.wifiSleepNotYetDefined),
-					Toast.LENGTH_SHORT).show();
 			radioAutomatischAus.setChecked(true);
 		}
 	}
@@ -103,29 +103,36 @@ public class Settings extends Activity implements
 	}
 
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
-		if (checkedId == R.id.radioImmerAn) {
-			android.provider.Settings.System.putInt(getContentResolver(),
-					android.provider.Settings.System.WIFI_SLEEP_POLICY,
-					android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER);
-			Toast.makeText(this,
-					getResources().getString(R.string.wifiImmerAn),
-					Toast.LENGTH_SHORT).show();
-		} else if (checkedId == R.id.radioImmerAnWennStrom) {
-			android.provider.Settings.System
-					.putInt(getContentResolver(),
-							android.provider.Settings.System.WIFI_SLEEP_POLICY,
-							android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED);
-			Toast.makeText(this,
-					getResources().getString(R.string.wifiImmerAnWennAmStrom),
-					Toast.LENGTH_SHORT).show();
-		} else {
-			android.provider.Settings.System.putInt(getContentResolver(),
-					android.provider.Settings.System.WIFI_SLEEP_POLICY,
-					android.provider.Settings.System.WIFI_SLEEP_POLICY_DEFAULT);
-			Toast.makeText(this,
-					getResources().getString(R.string.wifiAutomatischAus),
-					Toast.LENGTH_SHORT).show();
+		if (!firstrun) {
+			if (checkedId == R.id.radioImmerAn) {
+				android.provider.Settings.System
+						.putInt(getContentResolver(),
+								android.provider.Settings.System.WIFI_SLEEP_POLICY,
+								android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER);
+				Toast.makeText(this,
+						getResources().getString(R.string.wifiImmerAn),
+						Toast.LENGTH_SHORT).show();
+			} else if (checkedId == R.id.radioImmerAnWennStrom) {
+				android.provider.Settings.System
+						.putInt(getContentResolver(),
+								android.provider.Settings.System.WIFI_SLEEP_POLICY,
+								android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED);
+				Toast.makeText(
+						this,
+						getResources().getString(
+								R.string.wifiImmerAnWennAmStrom),
+						Toast.LENGTH_SHORT).show();
+			} else {
+				android.provider.Settings.System
+						.putInt(getContentResolver(),
+								android.provider.Settings.System.WIFI_SLEEP_POLICY,
+								android.provider.Settings.System.WIFI_SLEEP_POLICY_DEFAULT);
+				Toast.makeText(this,
+						getResources().getString(R.string.wifiAutomatischAus),
+						Toast.LENGTH_SHORT).show();
+			}
 		}
+		firstrun = false;
 	}
 
 	// ------------------------------------------------------------

@@ -86,6 +86,8 @@
 		<item>Radio Grischa</item>
 		<item>Radio sunshine-live</item>
 		<item>Radio Ö3</item>
+		<item>Radio SWR3</item>
+		<item>Buure-Radio</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -173,6 +175,8 @@
 		<item>@drawable/radio_grischa</item>
 		<item>@drawable/radio_sunshinelive</item>
 		<item>@drawable/radio_oe3</item>
+		<item>@drawable/radio_swr3</item>
+		<item>@drawable/radio_buureradio</item>
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -260,6 +264,8 @@
 		<item>http://grischa.mp3.green.ch</item>
 		<item>http://62.27.47.15/sunshinelive/livestream.mp3</item>
 		<item>http://mp3stream7.apasf.apa.at:8000</item>
+		<item>http://swr.ic.llnwd.net/stream/swr_mp3_m_swr3b</item>
+		<item>http://live-three.dmd2.ch</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -347,72 +353,74 @@
 		<item>http://www.radiogrischa.ch</item>
 		<item>http://www.sunshine-live.de</item>
 		<item>http://oe3.orf.at</item>
+		<item>http://www.swr3.de</item>
+		<item>http://www.buureradio.ch</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
 		<item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
-		<item> </item>
-		<item> </item>
+		<item></item>
+		<item></item>
 		<item>http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&amp;width=700&amp;quality=80</item>
 		<item>http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&amp;width=700&amp;quality=80</item>
-		<item>http://www.drs1.ch/import/webcam/drs1/webdrs1d.jpg</item>
 		<item>http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg</item>
-		<item>http://www.drs1.ch/import/webcam/drs1/webdrs1c.jpg</item>
-		<item> </item>
-		<item>http://www.drs3.ch/import/webcam/drs3/webdrs3b.jpg</item>
-		<item> </item>
+		<item>http://www.drs1.ch/import/webcam/drs1/webdrs1d.jpg</item>
+		<item>http://www.drs1.ch/import/webcam/drs1/webdrs1d.jpg</item>
+		<item></item>
+		<item>http://www.drs3.ch/import/webcam/drs3/webdrs3a.jpg</item>
+		<item></item>
 		<item>http://www.drs.ch/import/webcam/virus/virus2.jpg?1304112781446</item>
 		<item>http://webcam.radiohoch2.ch/webcam_big.php</item>
-		<item> </item>
-		<item> </item>
-		<item> </item>
-		<item> </item>
-		<item> </item>
-		<item> </item>
-		<item> </item>
-		<item> </item>
-		<item> </item>
-		<item> </item>
-		<item>http://www.radio1.ch/fileadmin/radio1/images/team/player_default.jpg</item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>
 		<item>http://live.radiozurisee.divio.ch//media/external/data_upload/CAM1/SR1_CAM1.jpg</item>
-		<item>http://mobile.radiopilatus.ch</item>
+		<item></item>
 		<item>http://www.radiobeo.ch/webcam/current.jpg</item>
-		<item>http://static-mm.toponline.ch/webcam/cam_640.jpg</item>
-		<item>http://static-mm.toponline.ch/webcam/cam_640.jpg</item>
-		<item> </item>
+		<item>http://www.toponline.ch/webcam/cam_640.jpg</item>
+		<item>http://www.toponline.ch/webcam/cam_640.jpg</item>
+		<item></item>
 		<item>http://www.neo1.ch/index.php?eID=tx_cms_showpic&amp;file=fileadmin%2Fuser_upload%2Fwebcam%2Fwebcam.jpg&amp;md5=94dde500b68cb331ee6493b0e7f2604282c29723&amp;parameters[0]=YTo0OntzOjU6IndpZHRoIjtzOjM6IjYwMCI7czo2OiJoZWlnaHQiO3M6MzoiNjAw&amp;parameters[1]=IjtzOjc6ImJvZHlUYWciO3M6NjoiPGJvZHk%2BIjtzOjQ6IndyYXAiO3M6MzU6Ijxh&amp;parameters[2]=IGhyZWY9ImphdmFzY3JpcHQ6Y2xvc2UoKTsiPnw8L2E%2BIjt9</item>
 		<item>http://www.neo1.ch/index.php?eID=tx_cms_showpic&amp;file=fileadmin%2Fuser_upload%2Fwebcam%2Fwebcam.jpg&amp;md5=94dde500b68cb331ee6493b0e7f2604282c29723&amp;parameters[0]=YTo0OntzOjU6IndpZHRoIjtzOjM6IjYwMCI7czo2OiJoZWlnaHQiO3M6MzoiNjAw&amp;parameters[1]=IjtzOjc6ImJvZHlUYWciO3M6NjoiPGJvZHk%2BIjtzOjQ6IndyYXAiO3M6MzU6Ijxh&amp;parameters[2]=IGhyZWY9ImphdmFzY3JpcHQ6Y2xvc2UoKTsiPnw8L2E%2BIjt9</item>
 		<item>http://radiobasel.ch/webcam/studio2.jpg</item>
 		<item>http://www.argovia.ch/live/</item>
 		<item>http://www.argovia.ch/live/</item>
 		<item>http://www.argovia.ch/live/</item>
-		<item> </item>
+		<item></item>
 		<item>http://www.radiofm1.ch/index.php?article_id=323</item>
-		<item> </item>
+		<item></item>
 		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
 		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
 		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
 		<item>http://www.br-online.de/content/import/webcams/bayern1/cam2_pult.jpg</item>
 		<item>http://www.br-online.de/content/import/webcams/bayern3/cam7_gast.jpg</item>
-		<item> </item>
-		<item> </item>
-		<item> </item>
-		<item>http://radioinside.ch/~kamera/studio1.jpg</item>
-		<item> </item>
-		<item>http://www.radio.li/hoererservice/regionale-webcams.html?type=3</item>
-		<item> </item>
-		<item> </item>
-		<item> </item>
-		<item> </item>
-		<item> </item>	
-		<item> </item>	
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item>http://www.radioinside.ch/~kamera/studio1.jpg</item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>	
 		<item>http://www.sunshine.ch/data/webcam/studio2.jpg</item>
-		<item> </item>
-		<item> </item>
-		<item> </item>
-		<item> </item>		
-		<item> </item>
-		<item> </item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>		
+		<item></item>
+		<item></item>
 		<item>http://webcam.3fach.ch:8080/axis-cgi/mjpg/video.cgi</item>
 		<item></item>
 		<item></item>
@@ -434,6 +442,8 @@
 		<item>http://www.radiogrischa.ch/sites/default/files/webcams/studio_1.jpg</item>
 		<item></item>
 		<item>http://onapp1.orf.at/webcam/oe3/cam2_oe3.jpg</item>
+		<item>http://www.swr3.de/studiocam</item>
+		<item></item>
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
@@ -521,5 +531,7 @@
 		<item>http://www.radiogrischa.ch/adresseanfahrt</item>
 		<item>http://www.sunshine-live.de/pop-ups/mail-ins-studio/</item>
 		<item>http://cluboe3.orf.at/song/index.php?round=24</item>
+		<item>http://www.swr3.de/-/id=421906/did=216928/a91pr1/index.html</item>
+		<item>info@buureradio.ch</item>
     </string-array>
 </resources>
