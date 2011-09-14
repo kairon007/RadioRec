@@ -14,13 +14,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class Settings extends Activity implements
 		RadioGroup.OnCheckedChangeListener {
 
-	private static final String TAG = "Donate";
+	private static final String TAG = "Settings";
 
 	RadioButton radioImmerAn;
 	RadioButton radioImmerAnWennStrom;
@@ -71,11 +70,10 @@ public class Settings extends Activity implements
 			}
 		});
 
-		final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroupWifi);
+		RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroupWifi);
 		radioImmerAn = (RadioButton) findViewById(R.id.radioImmerAn);
 		radioImmerAnWennStrom = (RadioButton) findViewById(R.id.radioImmerAnWennStrom);
 		radioAutomatischAus = (RadioButton) findViewById(R.id.radioAutomatischAus);
-		final TextView textViewWifiVorsicht = (TextView) findViewById(R.id.textViewWifiVorsicht);
 		radioGroup.setOnCheckedChangeListener(this);
 		try {
 			int wifiSleepPolicy = android.provider.Settings.System.getInt(
@@ -86,12 +84,11 @@ public class Settings extends Activity implements
 
 		} catch (SettingNotFoundException e) {
 			Log.d(TAG,
-					"SettingNotFoundException: Kann System Settings nicht finden!");
+					"SettingNotFoundException: WIFI_SLEEP_POLICY ist noch nicht konfiguriert. Kein Problem!");
 			Toast.makeText(this,
-					getResources().getString(R.string.settingsNotFound),
+					getResources().getString(R.string.wifiSleepNotYetDefined),
 					Toast.LENGTH_SHORT).show();
-			radioGroup.setVisibility(View.INVISIBLE);
-			textViewWifiVorsicht.setVisibility(View.INVISIBLE);
+			radioAutomatischAus.setChecked(true);
 		}
 	}
 

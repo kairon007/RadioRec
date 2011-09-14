@@ -41,7 +41,7 @@
 	<string name="wifiImmerAn"> WiFi immer an</string>
 	<string name="wifiImmerAnWennAmStrom"> Immer an wenn am Strom</string>
 	<string name="wifiAutomatischAus"> Automatisch aus bei Bildschirm aus</string>
-	<string name="settingsNotFound">Kann System Settings nicht finden!</string>
+	<string name="wifiSleepNotYetDefined">WiFi Policy noch nicht gesetzt (Default).</string>
 	<string name="donate_paypal_cc">Spende via PayPal oder Keditkarte</string>
 	<string name="donate_android_market">Spende via Android Market</string>
 	<string name="donate_bitcoin">Spende via Bitcoin</string>
