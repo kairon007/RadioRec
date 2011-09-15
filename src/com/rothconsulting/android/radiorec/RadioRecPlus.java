@@ -38,14 +38,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	static final String TAG = "RadioRecPlus";
 
-	boolean playing, recording, firstStart;
-	Spinner stations;
-	ArrayList<HashMap<String, Object>> stationList;
-	ImageView logo;
-	ImageButton back, fwd;
-	RadioPlayer radioPlayer;
-	RadioRecorder radioRecorder;
-	AsyncTask<URL, Integer, Long> recordTask;
+	private boolean playing, recording, firstStart;
+	private Spinner stations;
+	private ArrayList<HashMap<String, Object>> stationList;
+	private ImageView logo;
+	private ImageButton back, fwd;
+	private RadioPlayer radioPlayer;
+	private AsyncTask<URL, Integer, Long> recordTask;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -446,8 +445,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 							R.string.kannNichtAufSdCardSchreiben);
 		}
 
-		Utils.getNotifInstance(this, RadioRecPlus.class)
-				.showStatusBarNotificationRecording();
 		recordTask = new RadioRecorder(this, this.getIntent()).execute(
 				inputUrl, outputUrl);
 		Log.d(TAG, "*********** isRadioRecording2=" + recording);

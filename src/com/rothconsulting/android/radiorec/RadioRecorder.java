@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -30,6 +31,7 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 	private long bytesReadTmp;
 	private Context context = null;
 	private Intent intent = null;
+	private ProgressDialog connectionProgressDialog;
 
 	public RadioRecorder(Context theContext, Intent theIntent) {
 		this.context = theContext;
@@ -44,6 +46,7 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 		FileOutputStream fileOutputStream = null;
 		bytesRead = 0;
 		bytesReadTmp = 0;
+		this.publishProgress(1);
 
 		try {
 			File radioRecorderDirectory = new File("/"
@@ -55,9 +58,11 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 
 			fileOutputStream = new FileOutputStream(urls[1].getFile());
 			Log.d(TAG, "FileOutputStream: " + urls[1].getFile());
+			Utils.getNotifInstance(context, RadioRecorder.class)
+					.showStatusBarNotificationRecording();
 
-			int c;
-
+			connectionProgressDialog.dismiss();
+			int c = 0;
 			while ((c = inputStream.read()) != -1 && !isCancelled()) {
 				// Log.d(LOG_TAG, "bytesRead=" + bytesRead);
 				fileOutputStream.write(c);
@@ -75,14 +80,17 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 				Log.d(TAG, "******* End of inputStream. c=" + c);
 				Notifications not = new Notifications(this.context, intent);
 				not.showStatusBarNotificationError(R.string.aufnahmeUnterbrochen);
+				not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
 			}
 		} catch (FileNotFoundException fnfe) {
 			Notifications not = new Notifications(this.context, intent);
 			not.showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
+			not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
 			fnfe.printStackTrace();
 		} catch (IOException e) {
 			Notifications not = new Notifications(this.context, intent);
 			not.showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
+			not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
 			e.printStackTrace();
 		} finally {
 			try {
@@ -96,12 +104,15 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 			} catch (FileNotFoundException fnfe) {
 				Notifications not = new Notifications(this.context, intent);
 				not.showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
+				not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
 				fnfe.printStackTrace();
 			} catch (IOException e) {
 				Notifications not = new Notifications(this.context, intent);
 				not.showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
+				not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
 				e.printStackTrace();
 			}
+			connectionProgressDialog.dismiss();
 		}
 		return bytesRead;
 
@@ -126,6 +137,20 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 	protected void onPostExecute(Long result) {
 		Log.d(TAG, "onPostExecute");
 		result = bytesRead;
+	}
+
+	@Override
+	protected void onProgressUpdate(Integer... values) {
+		super.onProgressUpdate(values);
+	}
+
+	@Override
+	protected void onPreExecute() {
+		connectionProgressDialog = new ProgressDialog(context);
+		connectionProgressDialog.setCancelable(true);
+		connectionProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		connectionProgressDialog.setMessage("Verbinde. Bitte warten...");
+		connectionProgressDialog.show();
 	}
 
 }

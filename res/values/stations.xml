@@ -19,6 +19,7 @@
 		<item>Radio Energy Zürich</item>
 		<item>Radio Energy Swiss</item>
 		<item>Radio Energy Charts</item>
+		<item>Radio Energy Love</item>
 		<item>Radio Energy 80s</item>
 		<item>Radio Energy 90s</item>
 		<item>Radio Energy Italy</item>
@@ -87,7 +88,7 @@
 		<item>Radio sunshine-live</item>
 		<item>Radio Ö3</item>
 		<item>Radio SWR3</item>
-		<item>Buure-Radio</item>
+		<item>BuureRadio</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -108,6 +109,7 @@
 		<item>@drawable/radio_energy_zurich</item>
 		<item>@drawable/radio_energy_swiss</item>
 		<item>@drawable/radio_energy_charts</item>
+		<item>@drawable/radio_energy_love</item>
 		<item>@drawable/radio_energy_80s</item>
 		<item>@drawable/radio_energy_90s</item>
 		<item>@drawable/radio_energy_italy</item>
@@ -197,6 +199,7 @@
 		<item>http://energyzuerich.ice.infomaniak.ch:80/energyzuerich-high.mp3</item>
 		<item>http://energyswiss.ice.infomaniak.ch:80/energyswiss-high.mp3</item>
 		<item>http://broadcast.infomaniak.net/energycharts-high.mp3</item>
+		<item>http://broadcast.infomaniak.net:80/energylove-high.mp3</item>
 		<item>http://energy80s.ice.infomaniak.ch:80/energy80s-high.mp3</item>
 		<item>http://energy90s.ice.infomaniak.ch:80/energy90s-high.mp3</item>
 		<item>http://energyitaly.ice.infomaniak.ch:80/energyitaly-high.mp3</item>
@@ -284,6 +287,7 @@
 		<item>http://www.radiohoch2.ch</item>
 		<item>http://www.energy.ch/bern</item>
 		<item>http://www.energy.ch/zuerich</item>
+		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.energy.ch/webradios</item>
@@ -382,6 +386,7 @@
 		<item></item>
 		<item></item>
 		<item></item>
+		<item></item>
 		<item>http://live.radiozurisee.divio.ch//media/external/data_upload/CAM1/SR1_CAM1.jpg</item>
 		<item></item>
 		<item>http://www.radiobeo.ch/webcam/current.jpg</item>
@@ -462,6 +467,7 @@
 		<item>http://radiohoch2.ch/contact</item>
 		<item>http://www.energy.ch/bern/inside/kontakt</item>
 		<item>http://www.energy.ch/zurich/inside/kontakt</item>
+		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.energy.ch/webradios</item>
 		<item>http://www.energy.ch/webradios</item>
