@@ -122,7 +122,7 @@ public class Donate extends Activity {
 		String s = this.getString(R.string.donate_bitcoin_text);
 		s += "\n\n" + BITCOIN_KEY;
 		b.setMessage(s);
-		b.setPositiveButton(android.R.string.ok, null);
+		b.setPositiveButton(R.string.neinDanke, null);
 		b.setNeutralButton(R.string.copy_to_clipboard,
 				new DialogInterface.OnClickListener() {
 					public void onClick(final DialogInterface dialog,

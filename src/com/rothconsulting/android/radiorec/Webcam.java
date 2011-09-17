@@ -112,6 +112,17 @@ public class Webcam extends Activity {
 		}
 	}
 
+	private ProgressDialog getProgressDialog() {
+		ProgressDialog progressDialog = new ProgressDialog(this);
+		progressDialog.setCancelable(true);
+		progressDialog.setMessage("Loading...");
+		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		progressDialog
+				.setTitle("Webcam " + Constants.THE_SELECTED_STATION_NAME);
+		progressDialog.show();
+		return progressDialog;
+	}
+
 	// ------------------------------------------------------------
 	// Menu Stuff
 	// ------------------------------------------------------------
@@ -131,15 +142,4 @@ public class Webcam extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
-	private ProgressDialog getProgressDialog() {
-		ProgressDialog progressDialog = new ProgressDialog(this);
-		progressDialog.setCancelable(true);
-		progressDialog.setMessage("Loading...");
-		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		progressDialog.setTitle("Webcam " + Constants.THE_SELECTED_STATION_NAME);
-		progressDialog.show();
-		return progressDialog;
-	}
-
 }

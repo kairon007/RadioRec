@@ -20,7 +20,7 @@
     <string name="zurueck">Zurück</string>
     <string name="email_androider">androider@wolke7.net</string>
     <string name="nurLive">Dieses Radio sendet nur wenn eine Live-Übertragung ist! Informiere dich auf der Homepage wann die nächsten Live-Übertragungen sind.</string>
-    <string name="ok">OK</string>
+    <string name="neinDanke">Nein Danke</string>
     <string name="donate">Spenden</string>
     <string name="donate_adfree">Spenden/Werbefrei</string>    
     <string name="donateText">Haben sie RadioRec+ schon ein paar mal verwendet? \nGefällt ihnen RadioRec+ ? \nFalls sie dies mit "ja" beantworten, würde ich mich über eine Spende von ihnen freuen. \n\nVielen Dank!</string>
@@ -55,7 +55,7 @@
 	<string name="donate_silver">CHF 20.00 - Silber Spende</string>
 	<string name="donate_gold">CHF 50.00 - Gold Spende</string>
     <string name="billing_not_supported_title">Spende momentan nicht möglich</string>
-    <string name="billing_not_supported_message">Der Market Service ist momentan noch verfügbar. Veruchen sie es bitte später nochmal oder spenden sie via PayPal oder Kreditkarte.</string>
+    <string name="billing_not_supported_message">Der Market Service ist momentan nicht verfügbar. Veruchen sie es bitte später nochmal oder spenden sie via PayPal oder Kreditkarte.</string>
     <string name="cannot_connect_title">Kann nicht zum Market verbinden</string>
     <string name="cannot_connect_message">RadioRec+ kann nicht zum Market verbinden. Ihre Market Version ist entweder zu alt oder der Market kann nicht gefunden werden. \nSpenden sie bitte via PayPal oder Kreditkarte.</string>
     <string name="help_url" formatted="false">http://market.android.com/support/bin/answer.py?answer=1050566&amp;hl=%lang%&amp;dl=%region%</string>

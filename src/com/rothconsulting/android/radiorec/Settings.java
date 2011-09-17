@@ -154,5 +154,4 @@ public class Settings extends Activity implements
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
 }

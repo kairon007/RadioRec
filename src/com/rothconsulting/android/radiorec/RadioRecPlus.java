@@ -142,19 +142,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, -1, 0, this.getResources().getString(R.string.info))
-				.setIcon(R.drawable.ic_menu_info_details);
-		menu.add(0, -2, 0, this.getResources().getString(R.string.donate))
-				.setIcon(R.drawable.ic_menu_agenda);
-		menu.add(0, -3, 0, this.getResources().getString(R.string.settings))
-				.setIcon(R.drawable.ic_menu_preferences);
-		menu.add(0, -4, 0, this.getResources().getString(R.string.ende))
-				.setIcon(R.drawable.ic_menu_exit);
-		return super.onCreateOptionsMenu(menu);
-	}
-
-	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			if (playing) {
@@ -221,7 +208,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			alertbox.setMessage(this.getResources().getString(R.string.nurLive));
 			// set a positive/yes button and create a listener
 			alertbox.setPositiveButton(
-					this.getResources().getString(R.string.ok),
+					this.getResources().getString(android.R.string.ok),
 					new DialogInterface.OnClickListener() {
 						// do something when the button is clicked
 						public void onClick(DialogInterface arg0, int arg1) {
@@ -232,6 +219,20 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			alertbox.show();
 		}
 		return null;
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(0, -1, 0, this.getResources().getString(R.string.info))
+				.setIcon(R.drawable.ic_menu_info_details);
+		menu.add(0, -2, 0,
+				this.getResources().getString(R.string.donate_adfree)).setIcon(
+				R.drawable.ic_menu_agenda);
+		menu.add(0, -3, 0, this.getResources().getString(R.string.settings))
+				.setIcon(R.drawable.ic_menu_preferences);
+		menu.add(0, -4, 0, this.getResources().getString(R.string.ende))
+				.setIcon(R.drawable.ic_menu_exit);
+		return super.onCreateOptionsMenu(menu);
 	}
 
 	@Override

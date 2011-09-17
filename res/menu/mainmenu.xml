@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-	<item android:id="@+id/infos" android:title="@string/info" />
-	<item android:id="@+id/donate" android:title="@string/donate_adfree" />
-	<item android:id="@+id/ende" android:title="@string/ende" />
-</menu>
