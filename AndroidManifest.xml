@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.rothconsulting.android.radiorec" android:versionCode="110"
-	android:versionName="1.1.0">
+	package="com.rothconsulting.android.radiorec" android:versionCode="111"
+	android:versionName="1.1.1">
 	<uses-sdk android:minSdkVersion="4" />
 	<supports-screens android:resizeable="true"
 		android:smallScreens="true" android:normalScreens="true"
@@ -25,15 +25,15 @@
 		</activity>
 		<activity android:name="com.google.ads.AdActivity"
 			android:configChanges="keyboard|keyboardHidden|orientation" />
-		<activity android:name="Info" />
-		<activity android:name="Webcam" />
-		<activity android:name="Settings" />
-		<activity android:name="Donate" />
+		<activity android:name=".Info" />
+		<activity android:name=".Webcam" />
+		<activity android:name=".Settings" />
+		<activity android:name=".Donate" />
 		<activity android:name="com.rothconsulting.android.marketbilling.MarketSpende" />
 
-		<service android:name="BillingService" />
+		<service android:name="com.rothconsulting.android.marketbilling.BillingService" />
 
-		<receiver android:name="BillingReceiver">
+		<receiver android:name="com.rothconsulting.android.marketbilling.BillingReceiver">
 			<intent-filter>
 				<action android:name="com.android.vending.billing.IN_APP_NOTIFY" />
 				<action android:name="com.android.vending.billing.RESPONSE_CODE" />
