@@ -153,6 +153,7 @@ public class Donate extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.backmenu, menu);
+		menu.removeItem(R.id.donate_adfree);
 		return true;
 	}
 

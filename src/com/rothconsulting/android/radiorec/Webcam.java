@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
@@ -138,6 +139,10 @@ public class Webcam extends Activity {
 		switch (item.getItemId()) {
 		case R.id.zurueck:
 			finish();
+			return true;
+		case R.id.donate_adfree:
+			finish();
+			this.startActivity(new Intent(this, Donate.class));
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

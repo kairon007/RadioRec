@@ -49,8 +49,8 @@
 	<string name="copy_to_clipboard">In die Zwischenablage kopieren</string>
 	<string name="send_now">Jetzt senden</string>
 	<string name="antiWerbungKey">Anti-Werbung Schlüssel</string>
-	<string name="donate_normal">CHF  2.00 - Normale Spende</string>
-	<string name="donate_normal_plus">CHF  5.00 - Normal Plus! Spende</string>
+	<string name="donate_basic">CHF  2.00 - Basis Spende</string>
+	<string name="donate_basic_plus">CHF  5.00 - Basis+ (Plus) Spende</string>
 	<string name="donate_bronze">CHF 10.00 - Bronze Spende</string>
 	<string name="donate_silver">CHF 20.00 - Silber Spende</string>
 	<string name="donate_gold">CHF 50.00 - Gold Spende</string>

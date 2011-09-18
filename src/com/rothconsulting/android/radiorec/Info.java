@@ -65,6 +65,10 @@ public class Info extends Activity {
 		case R.id.zurueck:
 			finish();
 			return true;
+		case R.id.donate_adfree:
+			finish();
+			this.startActivity(new Intent(this, Donate.class));
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}

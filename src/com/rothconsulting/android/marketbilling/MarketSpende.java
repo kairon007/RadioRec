@@ -215,15 +215,15 @@ public class MarketSpende extends Activity implements OnClickListener,
 
 	/** An array of product list entries for the products that can be purchased. */
 	private static final CatalogEntry[] CATALOG = new CatalogEntry[] {
-			new CatalogEntry("donate_normal_plus", R.string.donate_normal_plus,
+			new CatalogEntry("rr_donate_basic", R.string.donate_basic,
 					Managed.UNMANAGED),
-			new CatalogEntry("donate_normal", R.string.donate_normal,
+			new CatalogEntry("rr_donate_basic_plus",
+					R.string.donate_basic_plus, Managed.UNMANAGED),
+			new CatalogEntry("rr_donate_bronze", R.string.donate_bronze,
 					Managed.UNMANAGED),
-			new CatalogEntry("donate_bronze", R.string.donate_bronze,
+			new CatalogEntry("rr_donate_silver", R.string.donate_silver,
 					Managed.UNMANAGED),
-			new CatalogEntry("donate_silver", R.string.donate_silver,
-					Managed.UNMANAGED),
-			new CatalogEntry("donate_gold", R.string.donate_gold,
+			new CatalogEntry("rr_donate_gold", R.string.donate_gold,
 					Managed.UNMANAGED) };
 	private String mItemName;
 	private String mSku;
@@ -379,6 +379,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 		mSelectItemSpinner = (Spinner) findViewById(R.id.item_choices);
 		mCatalogAdapter = new CatalogAdapter(this, CATALOG);
 		mSelectItemSpinner.setAdapter(mCatalogAdapter);
+		mSelectItemSpinner.setSelection(1);
 		mSelectItemSpinner.setOnItemSelectedListener(this);
 
 		mOwnedItemsCursor = mPurchaseDatabase.queryAllPurchasedItems();
