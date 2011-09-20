@@ -35,7 +35,8 @@ public class Settings extends Activity implements
 		getWindow().setSoftInputMode(
 				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-		AdMob.showRemoveAds(this);
+		AdMob admob = new AdMob();
+		admob.showRemoveAds(this);
 
 		final EditText edittextSdCardPath = (EditText) findViewById(R.id.editTextSdcardPath);
 		edittextSdCardPath.setText(Constants.THE_SD_CARD_PATH);

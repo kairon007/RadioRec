@@ -46,6 +46,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private RadioPlayer radioPlayer;
 	private AsyncTask<URL, Integer, Long> recordTask;
 
+	Utils utils = new Utils();
+
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 		firstStart = true;
-		Utils.getPreferences(this);
+		Utils utils = new Utils();
+		utils.getPreferences(this);
 		// get components and register clicks
 		stations = (Spinner) findViewById(R.id.stations);
 		logo = (ImageView) findViewById(R.id.logo);
@@ -104,7 +107,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		String[] contact = getResources().getStringArray(
 				R.array.station_contact);
 
-		AdMob.showRemoveAds(this);
+		AdMob admob = new AdMob();
+		admob.showRemoveAds(this);
 
 		Log.d(TAG, "Icon=" + Constants.THE_SELECTED_STATION_ICON);
 		Log.d(TAG, "Name=" + Constants.THE_SELECTED_STATION_NAME);
@@ -153,7 +157,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				finish();
 			}
 		}
-		Utils.getNotifInstance(this, RadioRecPlus.class)
+		utils.getNotifInstance(this, RadioRecPlus.class)
 				.hideStatusBarNotification(
 						Constants.NOTIFICATION_ID_ERROR_CONNECTION);
 		return super.onKeyDown(keyCode, event);
@@ -409,7 +413,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		firstStart = false;
 		back.setEnabled(index > 0);
 		fwd.setEnabled(index < stationList.size() - 1);
-		Utils.storePreferences(this);
+		utils.storePreferences(this);
 	}
 
 	private RadioPlayer getRadioPlayer() {
@@ -431,7 +435,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		try {
 			inputUrl = new URL(Constants.THE_URL_LIVE_STREAM);
 		} catch (MalformedURLException e) {
-			Utils.getNotifInstance(this, RadioRecPlus.class)
+			utils.getNotifInstance(this, RadioRecPlus.class)
 					.showStatusBarNotificationError(
 							R.string.internetadresseNichtErreichbar);
 		}
@@ -441,7 +445,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 					+ Constants.THE_SELECTED_STATION_NAME.replaceAll(" ", "")
 					+ "-" + dateTime + ".mp3");
 		} catch (MalformedURLException e) {
-			Utils.getNotifInstance(this, RadioRecPlus.class)
+			utils.getNotifInstance(this, RadioRecPlus.class)
 					.showStatusBarNotificationError(
 							R.string.kannNichtAufSdCardSchreiben);
 		}
@@ -456,7 +460,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private void doStopRecording() {
 		if (recordTask != null) {
 			recordTask.cancel(true);
-			Utils.getNotifInstance(this, RadioRecPlus.class)
+			utils.getNotifInstance(this, RadioRecPlus.class)
 					.hideStatusBarNotification(
 							Constants.NOTIFICATION_ID_RECORDING);
 			recording = false;

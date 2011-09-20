@@ -58,7 +58,8 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 
 			fileOutputStream = new FileOutputStream(urls[1].getFile());
 			Log.d(TAG, "FileOutputStream: " + urls[1].getFile());
-			Utils.getNotifInstance(context, RadioRecorder.class)
+			Utils utils = new Utils();
+			utils.getNotifInstance(context, RadioRecorder.class)
 					.showStatusBarNotificationRecording();
 
 			connectionProgressDialog.dismiss();

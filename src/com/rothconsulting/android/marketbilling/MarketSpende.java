@@ -242,7 +242,8 @@ public class MarketSpende extends Activity implements OnClickListener,
 			}
 		});
 
-		AdMob.showRemoveAds(this);
+		AdMob adMob = new AdMob();
+		adMob.showRemoveAds(this);
 
 		mHandler = new Handler();
 		mSpendePurchaseObserver = new SpendePurchaseObserver(mHandler);

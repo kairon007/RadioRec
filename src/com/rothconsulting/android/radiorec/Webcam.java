@@ -57,11 +57,11 @@ public class Webcam extends Activity {
 	}
 
 	private void showWebCam() {
-
+		Utils utils = new Utils();
 		Log.d(TAG, "RadioPlayer.URL_WEBCAM=" + Constants.THE_URL_WEBCAM);
 		if (Constants.THE_URL_WEBCAM != null
 				&& !Constants.THE_URL_WEBCAM.equals("")
-				&& Utils.isNetworkAvailable(this)) {
+				&& utils.isNetworkAvailable(this)) {
 			WebView myWebView = new WebView(this);
 			myWebView.clearCache(Boolean.TRUE);
 			myWebView = (WebView) findViewById(R.id.webkitWebViewWebCam);

@@ -33,6 +33,7 @@ public class Donate extends Activity {
 		setContentView(R.layout.donate);
 		Intent fromIntent = getIntent();
 		Log.d(TAG, "fromIntent=" + fromIntent);
+		Utils utils = new Utils();
 		// if it comes from the notification and isDonator go to the main screen
 		if (fromIntent != null) {
 			Bundle extraBundle = fromIntent.getExtras();
@@ -40,13 +41,13 @@ public class Donate extends Activity {
 					&& extraBundle.getString(Constants.FROM_NOTIFICATION) != null
 					&& extraBundle.getString(Constants.FROM_NOTIFICATION)
 							.equals(Constants.FROM_NOTIFICATION)
-					&& Utils.hasValidKey()) {
+					&& utils.hasValidKey()) {
 				Log.d(TAG, "*** finish (fromNotification und validKey)");
 				finish();
 			} else {
 				Log.d(TAG,
 						"*** not fromNotification or not validKey) validKey="
-								+ Utils.hasValidKey());
+								+ utils.hasValidKey());
 			}
 		}
 
@@ -54,7 +55,8 @@ public class Donate extends Activity {
 		getWindow().setSoftInputMode(
 				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-		AdMob.showRemoveAds(this);
+		AdMob admob = new AdMob();
+		admob.showRemoveAds(this);
 
 		final ImageButton buttonPayPal = (ImageButton) findViewById(R.id.imageButtonPaypal);
 		buttonPayPal.setOnClickListener(new View.OnClickListener() {

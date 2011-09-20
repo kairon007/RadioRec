@@ -19,11 +19,13 @@ public class Info extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.info);
 
-		AdMob.showRemoveAds(this);
+		AdMob admob = new AdMob();
+		admob.showRemoveAds(this);
 
 		final TextView textViewAppVersion = (TextView) findViewById(R.id.textViewAppVersion);
+		Utils utils = new Utils();
 		textViewAppVersion.setText("Version "
-				+ Utils.getAppVersionName(this, Info.class));
+				+ utils.getAppVersionName(this, Info.class));
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {

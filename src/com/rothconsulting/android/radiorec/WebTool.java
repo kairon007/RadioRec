@@ -16,15 +16,14 @@ import android.util.Log;
 
 public class WebTool {
 
-	private static final String TAG = WebTool.class.getSimpleName();
+	private static final String TAG = "WebTool";
 
 	/**
 	 * 
 	 * @param radioStation
 	 * @return
 	 */
-	protected static String getSongticker(String radioStation,
-			String urlHomepage) {
+	protected String getSongticker(String radioStation, String urlHomepage) {
 
 		String result = new String(
 				"<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /></head><body><center>");
@@ -123,7 +122,7 @@ public class WebTool {
 	 * @param endTagAfterMatch
 	 * @return
 	 */
-	private static String getAktuellerSong(String songUrl, String imgUrl,
+	private String getAktuellerSong(String songUrl, String imgUrl,
 			String findString, String endStringOrTagAfterMatch) {
 
 		StringBuilder result = new StringBuilder();
@@ -196,7 +195,7 @@ public class WebTool {
 		return result.toString();
 	}
 
-	private static String getHeaders(HttpResponse response) {
+	private String getHeaders(HttpResponse response) {
 		String ret = "headers:";
 		for (Header h : response.getAllHeaders()) {
 			ret += "\n" + h.getName() + ": " + h.getValue();

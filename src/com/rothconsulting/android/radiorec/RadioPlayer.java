@@ -30,7 +30,8 @@ public class RadioPlayer extends Activity {
 
 		createThread(context);
 		Log.d(TAG, "prepareProgressDialog");
-		progressDialog = Utils.prepareProgressDialog(context);
+		Utils utils = new Utils();
+		progressDialog = utils.prepareProgressDialog(context);
 		progressDialog.setTitle(Constants.THE_SELECTED_STATION_NAME);
 		Log.d(TAG, "progressDialog.show()");
 		progressDialog.show();

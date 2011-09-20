@@ -16,7 +16,7 @@ public class Utils {
 
 	private static final String TAG = Utils.class.getSimpleName();
 
-	protected static boolean isNetworkAvailable(Context context) {
+	protected boolean isNetworkAvailable(Context context) {
 		ConnectivityManager connectivity = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		if (connectivity != null) {
@@ -34,14 +34,14 @@ public class Utils {
 		return false;
 	}
 
-	protected static void resumeProgressBarAnimation(ProgressBar pb) {
+	protected void resumeProgressBarAnimation(ProgressBar pb) {
 		if (pb.getVisibility() == View.VISIBLE) {
 			pb.setVisibility(View.INVISIBLE);
 			pb.setVisibility(View.VISIBLE);
 		}
 	}
 
-	protected static ProgressDialog prepareProgressDialog(Context context) {
+	protected ProgressDialog prepareProgressDialog(Context context) {
 		ProgressDialog progressDialog = new ProgressDialog(context);
 		progressDialog.setCancelable(true);
 		progressDialog.setMessage("Loading...");
@@ -50,12 +50,11 @@ public class Utils {
 		return progressDialog;
 	}
 
-	protected static Notifications getNotifInstance(Context context,
-			Class<?> clss) {
+	protected Notifications getNotifInstance(Context context, Class<?> clss) {
 		return new Notifications(context, new Intent(context, clss));
 	}
 
-	protected static boolean hasValidKey() {
+	protected boolean hasValidKey() {
 		String key = Constants.THE_ANTI_ADS_KEY;
 		if (key != null && key.startsWith("rR+") && key.endsWith("so@p")) {
 			return true;
@@ -63,7 +62,7 @@ public class Utils {
 		return false;
 	}
 
-	protected static void storePreferences(Context context) {
+	protected void storePreferences(Context context) {
 		SharedPreferences settings = context.getSharedPreferences(
 				Constants.PREFERENCES_FILE, 0);
 		SharedPreferences.Editor editor = settings.edit();
@@ -86,7 +85,7 @@ public class Utils {
 		editor.commit();
 	}
 
-	protected static void getPreferences(Context context) {
+	protected void getPreferences(Context context) {
 		// Restore preferences
 		SharedPreferences settings = context.getSharedPreferences(
 				Constants.PREFERENCES_FILE, 0);
@@ -111,7 +110,7 @@ public class Utils {
 				Constants.DEFAULT_SD_CARD_PATH);
 	}
 
-	public static String getAppVersionName(Context context, Class cls) {
+	public String getAppVersionName(Context context, Class cls) {
 		try {
 			ComponentName comp = new ComponentName(context, cls);
 			PackageInfo pinfo = context.getPackageManager().getPackageInfo(
