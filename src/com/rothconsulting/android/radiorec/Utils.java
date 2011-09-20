@@ -1,9 +1,11 @@
 package com.rothconsulting.android.radiorec;
 
 import android.app.ProgressDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
@@ -107,5 +109,16 @@ public class Utils {
 				Constants.THE_ANTI_ADS_KEY);
 		Constants.THE_SD_CARD_PATH = settings.getString(Constants.SD_CARD_PATH,
 				Constants.DEFAULT_SD_CARD_PATH);
+	}
+
+	public static String getAppVersionName(Context context, Class cls) {
+		try {
+			ComponentName comp = new ComponentName(context, cls);
+			PackageInfo pinfo = context.getPackageManager().getPackageInfo(
+					comp.getPackageName(), 0);
+			return pinfo.versionName;
+		} catch (android.content.pm.PackageManager.NameNotFoundException e) {
+			return "";
+		}
 	}
 }

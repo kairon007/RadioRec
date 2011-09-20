@@ -14,6 +14,9 @@
 				android:id="@+id/textViewAppName" />
 			<TextView android:layout_height="wrap_content"
 				android:layout_width="wrap_content" android:layout_gravity="center"
+				android:id="@+id/textViewAppVersion" />
+			<TextView android:layout_height="wrap_content"
+				android:layout_width="wrap_content" android:layout_gravity="center"
 				android:text="@string/info_copyright" android:id="@+id/textViewCopyright"
 				android:layout_margin="5dip" />
 			<TextView android:layout_height="wrap_content"

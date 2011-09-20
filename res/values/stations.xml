@@ -92,6 +92,7 @@
 		<item>Radio Industrie</item>
 		<item>Radio Audioasyl</item>
 		<item>Piratenradio</item>		
+		<item>Radio 21</item>		
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -185,6 +186,7 @@
 		<item>@drawable/radio_industrie</item>
 		<item>@drawable/radio_audioasyl</item>
 		<item>@drawable/radio_piratenradio</item>		
+		<item>@drawable/radio_21</item>		
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -278,6 +280,7 @@
 		<item>http://96.31.83.87:8063</item>
 		<item>http://stream.audioasyl.net/audioasyl</item>
 		<item>http://rs1.stream24.org:8460/stream</item>
+		<item>http://rs3.stream24.org:8690</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -371,6 +374,7 @@
 		<item>http://www.radioindustrie.ch</item>
 		<item>http://www.audioasyl.net</item>
 		<item>http://www.piratenradio.ch</item>
+		<item>http://www.radio21.ch</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -462,6 +466,7 @@
 		<item>http://www.swr3.de/studiocam</item>
 		<item></item>
 		<item></item>
+		<item></item>		
 		<item></item>		
 		<item></item>		
     </string-array>
@@ -557,5 +562,6 @@
 		<item>info@radioindustrie.ch</item>
 		<item>info@audioasyl.net</item>		
 		<item>info@piratenradio.ch</item>		
+		<item>http://radio21.ch/wp/?page_id=481</item>		
     </string-array>
 </resources>

@@ -21,6 +21,10 @@ public class Info extends Activity {
 
 		AdMob.showRemoveAds(this);
 
+		final TextView textViewAppVersion = (TextView) findViewById(R.id.textViewAppVersion);
+		textViewAppVersion.setText("Version "
+				+ Utils.getAppVersionName(this, Info.class));
+
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
