@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">RadioRec+</string>
-    <string name="radiorec">RadioRec+</string>
     <string name="networkNotAvailable">Netzwerk nicht verfügbar!</string>
     <string name="internetadresseNichtErreichbar">Internetadresse nicht erreichbar!</string>
     <string name="kannNichtAufSdCardSchreiben">Kann nicht auf SD Card schreiben...!</string>

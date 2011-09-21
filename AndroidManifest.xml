@@ -17,7 +17,7 @@
 
 	<application android:label="@string/app_name" android:icon="@drawable/jukebox_48x48">
 		<activity android:name="com.rothconsulting.android.radiorec.RadioRecPlus"
-			android:label="@string/radiorec" android:configChanges="keyboard|keyboardHidden|orientation">
+			android:label="@string/app_name" android:configChanges="keyboard|keyboardHidden|orientation">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />

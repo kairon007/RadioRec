@@ -42,7 +42,7 @@ public class Notifications {
 
 		// int notificationFlags = Notification.FLAG_ONGOING_EVENT;
 
-		CharSequence contentTitle = context.getString(R.string.radiorec);
+		CharSequence contentTitle = context.getString(R.string.app_name);
 		CharSequence contentText = context.getString(R.string.onAir) + " "
 				+ Constants.THE_SELECTED_STATION_NAME;
 
