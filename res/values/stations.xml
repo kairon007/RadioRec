@@ -47,6 +47,9 @@
 		<item>Radio Antenne Rock</item>
 		<item>Radio Bayern 1</item>
 		<item>Radio Bayern 3</item>
+		<item>Radio SWR3</item>
+		<item>Radio DasDing</item>
+		<item>Radio BigFM</item>
 		<item>Radio Toxic FM</item>
 		<item>Radio X</item>
 		<item>Radio Kanal K</item>
@@ -55,6 +58,7 @@
 		<item>Radio Freiburg</item>
 		<item>Radio Liechtenstein</item>
 		<item>Radio Couleur 3</item>
+		<item>Radio RFJ (Frequence Jura)</item>
 		<item>Radio soma.fm - S.o.Goa</item>
 		<item>Radio Stadtfilter</item>
 		<item>Radio LoRa</item>
@@ -87,7 +91,6 @@
 		<item>Radio Grischa</item>
 		<item>Radio sunshine-live</item>
 		<item>Radio Ö3</item>
-		<item>Radio SWR3</item>
 		<item>BuureRadio</item>
 		<item>Radio Industrie</item>
 		<item>Radio Audioasyl</item>
@@ -141,6 +144,9 @@
 		<item>@drawable/radio_antenne_rock</item>
 		<item>@drawable/radio_bayern1</item>
 		<item>@drawable/radio_bayern3</item>
+		<item>@drawable/radio_swr3</item>
+		<item>@drawable/radio_dasding</item>
+		<item>@drawable/radio_bigfm</item>
 		<item>@drawable/radio_toxic_fm</item>
 		<item>@drawable/radio_x</item>
 		<item>@drawable/radio_kanal_k</item>
@@ -149,6 +155,7 @@
 		<item>@drawable/radio_fr</item>
 		<item>@drawable/radio_li</item>
 		<item>@drawable/radio_couleur3</item>
+		<item>@drawable/radio_rfj</item>
 		<item>@drawable/radio_somafm_sgoa</item>
 		<item>@drawable/radio_stadtfilter</item>
 		<item>@drawable/radio_lora</item>
@@ -181,7 +188,6 @@
 		<item>@drawable/radio_grischa</item>
 		<item>@drawable/radio_sunshinelive</item>
 		<item>@drawable/radio_oe3</item>
-		<item>@drawable/radio_swr3</item>
 		<item>@drawable/radio_buureradio</item>
 		<item>@drawable/radio_industrie</item>
 		<item>@drawable/radio_audioasyl</item>
@@ -235,6 +241,9 @@
 		<item>http://mp3.webradio.rockantenne.de:80</item>
 		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w10b</item>
 		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w12b</item>
+		<item>http://swr.ic.llnwd.net/stream/swr_mp3_m_swr3b</item>
+		<item>http://swr.ic.llnwd.net/stream/swr_mp3_m_dasdinga</item>
+		<item>http://srv05.bigstreams.de/bigfm-mp3-96</item>
 		<item>http://toxicfm.ice.infomaniak.ch:80/toxicfm-128.mp3</item>
 		<item>http://mp3.radiox.ch/standard.mp3</item>
 		<item>http://82.197.165.150</item>
@@ -243,6 +252,7 @@
 		<item>http://radiofreiburg.ice.infomaniak.ch:80/radiofreiburg-high.mp3</item>
 		<item>http://live.radiol.li:8000/live</item>
 		<item>http://broadcast.infomaniak.ch/rsr-couleur3-high.mp3</item>
+		<item>http://broadcast.infomaniak.net/rfj-high.mp3</item>
 		<item>http://ice.somafm.com/suburbsofgoa</item>
 		<item>http://stream.stadtfilter.net:8000/</item>
 		<item>http://h1788467.stratoserver.net:8100</item>
@@ -267,7 +277,7 @@
 		<item>http://s7.pop-stream.de:7830</item>
 		<item>http://live-two.dmd2.ch:8080/rbp_hi</item>	
 		<item>http://stream.laut.fm/sine-music</item>
-		<item>http://www.kingstonhot.de/shows/KingstonHotRadio110811.mp3</item>
+		<item>http://www.kingstonhot.de/shows/KingstonHotRadio110922.mp3</item>
 		<item>http://central128.mp3.green.ch</item>
 		<item>http://sp7128.mp3.green.ch</item>
 		<item>http://sp3128.mp3.green.ch</item>
@@ -275,7 +285,6 @@
 		<item>http://grischa.mp3.green.ch</item>
 		<item>http://62.27.47.15/sunshinelive/livestream.mp3</item>
 		<item>http://mp3stream7.apasf.apa.at:8000</item>
-		<item>http://swr.ic.llnwd.net/stream/swr_mp3_m_swr3b</item>
 		<item>http://live-three.dmd2.ch</item>
 		<item>http://96.31.83.87:8063</item>
 		<item>http://stream.audioasyl.net/audioasyl</item>
@@ -329,6 +338,9 @@
 		<item>http://www.rockantenne.de</item>
 		<item>http://www.bayern1.de</item>
 		<item>http://www.bayern3.de</item>
+		<item>http://www.swr3.de</item>
+		<item>http://www.dasding.de</item>
+		<item>http://www.bigfm.de</item>
 		<item>http://www.toxicfm.ch</item>
 		<item>http://www.radiox.ch</item>
 		<item>http://www.kanalk.ch</item>
@@ -337,6 +349,7 @@
 		<item>http://www.radiofr.ch/de</item>
 		<item>http://www.radio.li</item>
 		<item>http://www.couleur3.ch</item>
+		<item>http://www.rfj.ch</item>
 		<item>http://www.somafm.com</item>
 		<item>http://www.stadtfilter.ch</item>
 		<item>http://www.lora.ch</item>
@@ -369,7 +382,6 @@
 		<item>http://www.radiogrischa.ch</item>
 		<item>http://www.sunshine-live.de</item>
 		<item>http://oe3.orf.at</item>
-		<item>http://www.swr3.de</item>
 		<item>http://www.buureradio.ch</item>
 		<item>http://www.radioindustrie.ch</item>
 		<item>http://www.audioasyl.net</item>
@@ -423,11 +435,15 @@
 		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
 		<item>http://www.br-online.de/content/import/webcams/bayern1/cam2_pult.jpg</item>
 		<item>http://www.br-online.de/content/import/webcams/bayern3/cam7_gast.jpg</item>
+		<item>http://www.swr3.de/studiocam</item>
+		<item>http://www.dasding.de/ext/webcam/webcam770.php?cam=2</item>
+		<item>http://static.bigfm.de/webcam/cam6/webcam06.jpg</item>
 		<item></item>
 		<item></item>
 		<item></item>
 		<item></item>
 		<item>http://www.radioinside.ch/~kamera/studio1.jpg</item>
+		<item></item>
 		<item></item>
 		<item></item>
 		<item></item>
@@ -463,7 +479,6 @@
 		<item>http://www.radiogrischa.ch/sites/default/files/webcams/studio_1.jpg</item>
 		<item></item>
 		<item>http://onapp1.orf.at/webcam/oe3/cam2_oe3.jpg</item>
-		<item>http://www.swr3.de/studiocam</item>
 		<item></item>
 		<item></item>
 		<item></item>		
@@ -517,6 +532,9 @@
 		<item>http://www.rockantenne.de/mailinsstudio</item>
 		<item>http://www.br-online.de/bayern1/kontakt/kontakt-bayern1-mail-ID1203955361656.xml?_requestid=168772</item>
 		<item>http://www.br-online.de/bayern3/kontakt/kontakt-impressum-copyright-ID1195052108234.xml?_requestid=130461</item>
+		<item>http://www.swr3.de/-/id=421906/did=216928/a91pr1/index.html</item>
+		<item>http://www.dasding.de/ext/dingmessage/index.php</item>
+		<item>http://www.bigfm.de/content/html/shared/studiomail/index.html</item>
 		<item>studio@toxic.fm</item>
 		<item>http://www.radiox.ch/service/wuko</item>
 		<item>http://kanalk.ch/Infopool/Kontakt/tabid/166/Default.aspx</item>
@@ -525,6 +543,7 @@
 		<item>http://www.radiofr.ch/de/kontakt.html</item>
 		<item>http://www.radio.li/hoererservice/mein-musikwunsch.html?type=3</item>
 		<item>http://www.rsr.ch/#/corporate/contact/?contact=couleur3</item>
+		<item>http://www.rfj.ch/rfj/Radio/Contact.html</item>
 		<item>http://somafm.com/contact/</item>
 		<item>http://www.stadtfilter.ch/StadtfilterKontakt/Kontakt</item>
 		<item>http://lora.ch/ueberuns/kontakt</item>	
@@ -557,7 +576,6 @@
 		<item>http://www.radiogrischa.ch/adresseanfahrt</item>
 		<item>http://www.sunshine-live.de/pop-ups/mail-ins-studio/</item>
 		<item>http://cluboe3.orf.at/song/index.php?round=24</item>
-		<item>http://www.swr3.de/-/id=421906/did=216928/a91pr1/index.html</item>
 		<item>info@buureradio.ch</item>
 		<item>info@radioindustrie.ch</item>
 		<item>info@audioasyl.net</item>		
