@@ -375,7 +375,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			index = 0;
 			map = stationList.get(index);
 		}
-		Log.d(TAG, "Image=" + Constants.THE_SELECTED_STATION_NAME);
+		Log.d(TAG, "Sender=" + Constants.THE_SELECTED_STATION_NAME);
 		Constants.THE_SELECTED_STATION_ICON = (Integer) map.get("icon");
 		// avoiding OutOfMemory
 		// http://stackoverflow.com/questions/477572/android-strange-out-of-memory-issue
@@ -389,6 +389,15 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 		Constants.THE_SELECTED_STATION_NAME = "" + map.get("name");
 		Constants.THE_URL_LIVE_STREAM = "" + map.get("stream");
+		if (Constants.THE_SELECTED_STATION_NAME
+				.equalsIgnoreCase(Constants.RADIO_KINGSTONHOT)) {
+			Log.d(TAG, "*********** ist Kingstonhot");
+
+			Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
+					+ utils.getKingstonHotFileName();
+		} else {
+			Log.d(TAG, "*********** nicht Kingstonhot");
+		}
 		Constants.THE_URL_HOMEPAGE = "" + map.get("homepage");
 		Constants.THE_URL_WEBCAM = "" + map.get("webcam");
 		final TextView textViewWebcam = (TextView) findViewById(R.id.webcam);

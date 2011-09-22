@@ -1,5 +1,7 @@
 package com.rothconsulting.android.radiorec;
 
+import java.util.Calendar;
+
 import android.app.ProgressDialog;
 import android.content.ComponentName;
 import android.content.Context;
@@ -110,7 +112,7 @@ public class Utils {
 				Constants.DEFAULT_SD_CARD_PATH);
 	}
 
-	public String getAppVersionName(Context context, Class cls) {
+	public String getAppVersionName(Context context, Class<?> cls) {
 		try {
 			ComponentName comp = new ComponentName(context, cls);
 			PackageInfo pinfo = context.getPackageManager().getPackageInfo(
@@ -119,5 +121,25 @@ public class Utils {
 		} catch (android.content.pm.PackageManager.NameNotFoundException e) {
 			return "";
 		}
+	}
+
+	/**
+	 * Radio Kingstonhot.de hat immer Donnserstags eine Live Sendung. Ab Freitag
+	 * kann man diese als mp3 hören.
+	 * 
+	 * @return Dateinaame 'KingstonHotRadioYYMMDD.mp3'
+	 */
+	protected String getKingstonHotFileName() {
+		String dateiName = "KingstonHotRadio";
+
+		Calendar now = Calendar.getInstance();
+		int year = now.get(Calendar.YEAR) - 2000;
+		String month = "" + (now.get(Calendar.MONTH) + 1);
+		if (month.length() == 1) {
+			month = "0" + month;
+		}
+		int day = now.get(Calendar.DATE);
+		Log.d(TAG, year + "-" + month + "-" + day);
+		return dateiName + year + month + day + ".mp3";
 	}
 }
