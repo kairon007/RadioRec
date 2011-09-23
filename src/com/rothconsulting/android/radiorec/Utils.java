@@ -127,21 +127,26 @@ public class Utils {
 	 * Radio Kingstonhot.de hat immer Donnserstags eine Live Sendung. Ab Freitag
 	 * kann man diese als mp3 hören.
 	 * 
-	 * @return Dateinaame 'KingstonHotRadioYYMMDD.mp3'
+	 * @return Dateiname 'KingstonHotRadioYYMMDD.mp3'
 	 */
 	protected String getKingstonHotFileName() {
+		// 1:SO 2:MO 3:DI 4:MI 5:DO 6:FR 7:SA
 		String dateiName = "KingstonHotRadio";
-		int diffZuFreitag = Calendar.DAY_OF_WEEK + 1;
+		Calendar cal = Calendar.getInstance();
+		int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
+		Log.d(TAG, "Calendar.DAY_OF_WEEK=" + dayOfWeek);
+		if (dayOfWeek > 5) {
+			cal.add(Calendar.DAY_OF_WEEK, -(dayOfWeek - 5));
+		} else if (dayOfWeek <= 5) {
+			cal.add(Calendar.DAY_OF_WEEK, -(dayOfWeek + 2));
+		}
 
-		Calendar now = Calendar.getInstance();
-		now.set(Calendar.DATE, (Calendar.DATE + 1));
-
-		int year = now.get(Calendar.YEAR) - 2000;
-		String month = "" + (now.get(Calendar.MONTH) + 1);
+		int year = cal.get(Calendar.YEAR) - 2000;
+		String month = "" + (cal.get(Calendar.MONTH) + 1);
 		if (month.length() == 1) {
 			month = "0" + month;
 		}
-		int day = now.get(Calendar.DATE);
+		int day = cal.get(Calendar.DATE);
 		Log.d(TAG, year + "-" + month + "-" + day);
 		return dateiName + year + month + day + ".mp3";
 	}
