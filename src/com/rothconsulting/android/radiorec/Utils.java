@@ -124,7 +124,7 @@ public class Utils {
 	}
 
 	/**
-	 * Radio Kingstonhot.de hat immer Donnserstags eine Live Sendung. Ab Freitag
+	 * Radio Kingstonhot.de hat immer Donnerstags eine Live Sendung. Ab Freitag
 	 * kann man diese als mp3 hören.
 	 * 
 	 * @return Dateiname 'KingstonHotRadioYYMMDD.mp3'

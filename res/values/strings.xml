@@ -25,7 +25,7 @@
     <string name="donateText">Haben sie RadioRec+ schon ein paar mal verwendet? \nGefällt ihnen RadioRec+ ? \nFalls sie dies mit "ja" beantworten, würde ich mich über eine Spende von ihnen freuen. \n\nVielen Dank!</string>
     <string name="save">Speichern</string>
     <string name="antiAdsText">Schon gespendet? Diese App ist gratis und wird immer gratis bleiben! Wenn dir die App gefällt oder dich die Werbung nervt, kannst du gerne etwas spenden. Alle Spender die CHF/EUR 2.00 oder mehr spenden erhalten einen persönlichen \'Anti-Werbung Schlüssel\'. So kannst du RadioRec+ ohne Werbung geniessen! Beim Spenden bitte E-Mail-Adresse angeben.</string>
-    <string name="antiAdsKeyHere">Nach dem Spenden solltest du innerhalb ein paar Tage einen \'Anti-Werbung Schlüssel\' von mir erhalten. Falls der Schlüssel nicht bei dir eintrifft, schreib mir einfach ein E-Mail.\n\nAnti-Werbung Schlüssel hier eingeben und Speichern.</string>
+    <string name="antiAdsKeyHere">Nach dem Spenden solltest du innerhalb ein paar Tage einen \'Anti-Werbung Schlüssel\' von mir erhalten. Falls der Schlüssel nicht bei dir eintrifft, schreib mir einfach ein E-Mail (androider@wolke7.net).\n\nAnti-Werbung Schlüssel hier eingeben und Speichern.</string>
 	<string name="keineEingabe">Keine Eingabe ??</string>
 	<string name="danke">Danke !!!</string>
 	<string name="infoSDCard">Beim aufnehmen werden die Dateien auf die SD-Card gespeichert.\nDu findest sie standardmässig im Verzeichnis "RadioRecorder". In den Einstellungen kannst du diesen Pfad ändern.</string>
