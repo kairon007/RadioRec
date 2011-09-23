@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RadioRec+</string>
+    <string name="networkNotAvailable">Network not available!</string>
+    <string name="internetadresseNichtErreichbar">Internet address not reachable!</string>
+    <string name="kannNichtAufSdCardSchreiben">Can not write to SD-Card...!</string>
+    <string name="isSdCardKorrekt">Is SD-Card correct configured in the settings menu?</string>
+    <string name="aufnahmeUnterbrochen">Recording interrupted...!</string>
+    <string name="verbindeInternet">Is the Internet connected...?? If yes, the radio stream might not be reachable at the moment.</string>
+    <string name="willstDuWeiterHoeren">Do you want to listen in the background or should I stop playing and recording?</string>
+    <string name="wegDamit">Stop it</string>
+    <string name="weiterHoeren">Continue in background</string>
+    <string name="onAir">On-Air...</string>
+    <string name="info">Info</string>
+    <string name="info_copyright"> (c) 2011 by Koni</string>
+    <string name="info_design">Thanks to rakudave for the perfect GUI !!</string>
+    <string name="ende">End</string>
+    <string name="settings">Settings</string>
+    <string name="zurueck">Back</string>
+    <string name="email_androider">androider@wolke7.net</string>
+    <string name="nurLive">This radio is only on air when there is a live broadcast! Inform yourself on the homepage about the next live streams.</string>
+    <string name="neinDanke">No Thanks</string>
+    <string name="donate">Donate</string>
+    <string name="donate_adfree">Donate/AdFree</string>    
+    <string name="save">Save</string>
+    <string name="antiAdsText">Already donated? This app is free and will remain free! If you like the app or if you are bored about the ads so please do not hesitate to donate. All donor with CHF/EUR 2.00 or more will receive a personal \'Anti-Ads-Key\'. With it you can enjoy RadioRec+ without any advertisement! Please leave you email after donation.</string>
+    <string name="antiAdsKeyHere">Nach dem Spenden solltest du innerhalb ein paar Tage einen \'Anti-Werbung Schlüssel\' von mir erhalten. Falls der Schlüssel nicht bei dir eintrifft, schreib mir einfach ein E-Mail (androider@wolke7.net).\n\nAnti-Werbung Schlüssel hier eingeben und Speichern.</string>
+	<string name="keineEingabe">Nothing entered ??</string>
+	<string name="danke">Thank you !!!</string>
+	<string name="infoSDCard">Beim aufnehmen werden die Dateien auf die SD-Card gespeichert.\nDu findest sie standardmässig im Verzeichnis "RadioRecorder". In den Einstellungen kannst du diesen Pfad ändern.</string>
+	<string name="infoFeatureEmail">Fehlt dir ein Sender, ein Feature oder hast du sonst Anregungen? Klick auf folgende E-Mail-Adresse und teile mir dein Anligen mit. \n\n---  androider@wolke7.net  ---</string>
+	<string name="infoDatenverbrauchFrage">Folgende Frage wurde mir gestellt: Wieviel Daten werden verbraucht beim Radio hören mit RadioRec+ ?? </string>
+	<string name="infoDatenverbrauchAntwort">Antwort: Knapp 60MB/Std. Die Radio-Sender streamen mit 128kbps. Daraus rechnet sich der Verbrauch folgendermassen: 128\'000 Bit/s : 8 = 16\'000 Byte/s. Das entspricht 57.6 MB/Stunde (16\'000x3200 : 1\'000\'000). Tipp: Verwende WLAN, dann ist der Datenverbrauch kein Thema :-)</string>
+	<string name="speicherOrt">Save location</string>
+	<string name="sdcardPath">Standardmässig werden die MP3 Aufnahmen auf die SD-Card mit dem Pfad \n \"sdcard/RadioRecorder\" \ngespeichert. Auf Wunsch kann dieser Pfad hier angepasst werden. \nVorsicht: Pfad zum Speichermedium muss exakt stimmen!</string>
+	<string name="reset">Reset</string>
+	<string name="wifiVorsicht">Mit diesen 3 Optionen kannst du das Verhalten des Wireless steuern. Vorsicht: Wenn WiFi immer eingeschaltet ist wird dein Akku mehr belastet. Schalte es hier oder bei den erweiterten WLAN-Einstellungen wieder auf automatisch um Strom zu sparen.</string>
+	<string name="wifi">WiFi</string>
+	<string name="wifiImmerAn"> WiFi always on</string>
+	<string name="wifiImmerAnWennAmStrom"> Always on when on power</string>
+	<string name="wifiAutomatischAus"> Automaticaly off when screen lock</string>
+	<string name="wifiSleepNotYetDefined">WiFi Policy not set yet (Default).</string>
+	<string name="donate_paypal_cc">Donate via PayPal or Creditcard</string>
+	<string name="donate_android_market">Donate via Android Market</string>
+	<string name="donate_bitcoin">Donate via Bitcoin</string>
+	<string name="donate_bitcoin_text">Simply send some BTC to the following address und drop me an email.</string>
+	<string name="copy_to_clipboard">Copy to Clipboard</string>
+	<string name="send_now">Send now</string>
+	<string name="antiWerbungKey">Anti-Ads Key</string>
+	<string name="donate_basic">CHF  2.00 - Basic Donation</string>
+	<string name="donate_basic_plus">CHF  5.00 - Basic+ (Plus)  Donation</string>
+	<string name="donate_bronze">CHF 10.00 - Bronze  Donation</string>
+	<string name="donate_silver">CHF 20.00 - Silber  Donation</string>
+	<string name="donate_gold">CHF 50.00 - Gold  Donation</string>
+    <string name="billing_not_supported_title">Donation not possible at the moment</string>
+    <string name="billing_not_supported_message">Der Market Service ist momentan nicht verfügbar. Veruchen sie es bitte später nochmal oder spenden sie via PayPal oder Kreditkarte.</string>
+    <string name="cannot_connect_title">Cannot connect to the market</string>
+    <string name="cannot_connect_message">RadioRec+ cannot connect to the market. Ihre Market Version ist entweder zu alt oder der Market kann nicht gefunden werden. \nSpenden sie bitte via PayPal oder Kreditkarte.</string>
+    <string name="help_url" formatted="false">http://market.android.com/support/bin/answer.py?answer=1050566&amp;hl=%lang%&amp;dl=%region%</string>
+    <string name="learn_more">More Infos</string>
+    <string name="restoring_transactions">Restoring transactions</string>
+	<string name="select">Select</string>	
+	<string name="donate_options">Donation Options</string>	
+</resources>
