@@ -131,8 +131,11 @@ public class Utils {
 	 */
 	protected String getKingstonHotFileName() {
 		String dateiName = "KingstonHotRadio";
+		int diffZuFreitag = Calendar.DAY_OF_WEEK + 1;
 
 		Calendar now = Calendar.getInstance();
+		now.set(Calendar.DATE, (Calendar.DATE + 1));
+
 		int year = now.get(Calendar.YEAR) - 2000;
 		String month = "" + (now.get(Calendar.MONTH) + 1);
 		if (month.length() == 1) {
