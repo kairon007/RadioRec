@@ -59,6 +59,7 @@
 		<item>Radio Liechtenstein</item>
 		<item>Radio Couleur 3</item>
 		<item>Radio RFJ (Frequence Jura)</item>
+		<item>Radio Rouge FM</item>
 		<item>Radio soma.fm - S.o.Goa</item>
 		<item>Radio Stadtfilter</item>
 		<item>Radio LoRa</item>
@@ -156,6 +157,7 @@
 		<item>@drawable/radio_li</item>
 		<item>@drawable/radio_couleur3</item>
 		<item>@drawable/radio_rfj</item>
+		<item>@drawable/radio_rougefm</item>
 		<item>@drawable/radio_somafm_sgoa</item>
 		<item>@drawable/radio_stadtfilter</item>
 		<item>@drawable/radio_lora</item>
@@ -253,6 +255,7 @@
 		<item>http://live.radiol.li:8000/live</item>
 		<item>http://broadcast.infomaniak.ch/rsr-couleur3-high.mp3</item>
 		<item>http://broadcast.infomaniak.net/rfj-high.mp3</item>
+		<item>http://broadcast.infomaniak.ch/rougefm-high.mp3</item>
 		<item>http://ice.somafm.com/suburbsofgoa</item>
 		<item>http://stream.stadtfilter.net:8000/</item>
 		<item>http://h1788467.stratoserver.net:8100</item>
@@ -350,6 +353,7 @@
 		<item>http://www.radio.li</item>
 		<item>http://www.couleur3.ch</item>
 		<item>http://www.rfj.ch</item>
+		<item>http://www.rougefm.com</item>
 		<item>http://www.somafm.com</item>
 		<item>http://www.stadtfilter.ch</item>
 		<item>http://www.lora.ch</item>
@@ -443,6 +447,7 @@
 		<item></item>
 		<item></item>
 		<item>http://www.radioinside.ch/~kamera/studio1.jpg</item>
+		<item></item>
 		<item></item>
 		<item></item>
 		<item></item>
@@ -544,6 +549,7 @@
 		<item>http://www.radio.li/hoererservice/mein-musikwunsch.html?type=3</item>
 		<item>http://www.rsr.ch/#/corporate/contact/?contact=couleur3</item>
 		<item>http://www.rfj.ch/rfj/Radio/Contact.html</item>
+		<item>http://www.rougefm.com/radio/contact.php</item>
 		<item>http://somafm.com/contact/</item>
 		<item>http://www.stadtfilter.ch/StadtfilterKontakt/Kontakt</item>
 		<item>http://lora.ch/ueberuns/kontakt</item>	
