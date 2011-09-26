@@ -388,18 +388,19 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Log.d(TAG, "*********** Stream=" + map.get("stream"));
 
 		Constants.THE_SELECTED_STATION_NAME = "" + map.get("name");
+		Constants.THE_URL_LIVE_STREAM = "" + map.get("stream");
 
 		if (Constants.THE_SELECTED_STATION_NAME
 				.equalsIgnoreCase(Constants.RADIO_KINGSTONHOT)) {
-
 			// Kingstonhot.de hat immer Donnerstags eine Live Sendung. Ab
 			// Freitag kann man diese als mp3 hören. Daher ist die URL
 			// dynamisch.
 			Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
 					+ utils.getKingstonHotFileName();
+			Log.d(TAG, "*********** new Stream="
+					+ Constants.THE_URL_LIVE_STREAM);
 		}
 
-		Constants.THE_URL_LIVE_STREAM = "" + map.get("stream");
 		Constants.THE_URL_HOMEPAGE = "" + map.get("homepage");
 		Constants.THE_URL_WEBCAM = "" + map.get("webcam");
 		final TextView textViewWebcam = (TextView) findViewById(R.id.webcam);
@@ -444,6 +445,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		URL outputUrl = null;
 
 		try {
+			Log.d(TAG, "Constants.THE_URL_LIVE_STREAM="
+					+ Constants.THE_URL_LIVE_STREAM);
 			inputUrl = new URL(Constants.THE_URL_LIVE_STREAM);
 		} catch (MalformedURLException e) {
 			utils.getNotifInstance(this, RadioRecPlus.class)

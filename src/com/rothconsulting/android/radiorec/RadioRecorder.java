@@ -10,11 +10,12 @@ package com.rothconsulting.android.radiorec;
  * <uses-permission android:name="android.permission.RECORD_AUDIO" />
  *
  */
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 
 import android.app.ProgressDialog;
@@ -42,8 +43,8 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 	protected Long doInBackground(URL... urls) {
 
 		Log.d(TAG, "startRecording");
-		InputStream inputStream = null;
-		FileOutputStream fileOutputStream = null;
+		BufferedInputStream buffInputStream = null;
+		BufferedOutputStream buffOutputStream = null;
 		bytesRead = 0;
 		bytesReadTmp = 0;
 		this.publishProgress(1);
@@ -53,10 +54,11 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 					+ Constants.THE_SD_CARD_PATH + "/");
 			radioRecorderDirectory.mkdirs();
 
-			inputStream = urls[0].openStream();
+			buffInputStream = new BufferedInputStream(urls[0].openStream());
 			Log.d(TAG, "url.openStream()");
 
-			fileOutputStream = new FileOutputStream(urls[1].getFile());
+			buffOutputStream = new BufferedOutputStream(new FileOutputStream(
+					urls[1].getFile()));
 			Log.d(TAG, "FileOutputStream: " + urls[1].getFile());
 			Utils utils = new Utils();
 			utils.getNotifInstance(context, RadioRecorder.class)
@@ -64,13 +66,13 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 
 			connectionProgressDialog.dismiss();
 			int c = 0;
-			while ((c = inputStream.read()) != -1 && !isCancelled()) {
+			while ((c = buffInputStream.read()) != -1 && !isCancelled()) {
 				// Log.d(LOG_TAG, "bytesRead=" + bytesRead);
-				fileOutputStream.write(c);
+				buffOutputStream.write(c);
 				bytesRead++;
 				bytesReadTmp++;
 				if (bytesReadTmp > 1000) {
-					fileOutputStream.flush();
+					buffOutputStream.flush();
 					bytesReadTmp = 0;
 				}
 			}
@@ -95,12 +97,12 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (inputStream != null) {
-					inputStream.close();
+				if (buffInputStream != null) {
+					buffInputStream.close();
 				}
-				if (fileOutputStream != null) {
-					fileOutputStream.flush();
-					fileOutputStream.close();
+				if (buffOutputStream != null) {
+					buffOutputStream.flush();
+					buffOutputStream.close();
 				}
 			} catch (FileNotFoundException fnfe) {
 				Notifications not = new Notifications(this.context, intent);
@@ -147,10 +149,9 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 
 	@Override
 	protected void onPreExecute() {
-		connectionProgressDialog = new ProgressDialog(context);
-		connectionProgressDialog.setCancelable(true);
-		connectionProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		connectionProgressDialog.setMessage("Verbinde. Bitte warten...");
+		Log.d(TAG, "prepareProgressDialog");
+		Utils utils = new Utils();
+		connectionProgressDialog = utils.prepareProgressDialog(context);
 		connectionProgressDialog.show();
 	}
 
