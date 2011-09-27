@@ -98,7 +98,7 @@
 		<item>Radio Audioasyl</item>
 		<item>Piratenradio</item>		
 		<item>Radio 21</item>		
-		<item>Radio AllgäuaeuHIT</item>
+		<item>Radio AllgäuHIT</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
