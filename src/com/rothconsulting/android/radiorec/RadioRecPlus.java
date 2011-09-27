@@ -311,8 +311,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.play:
 			playing = !playing;
-			((ImageButton) v).setImageResource(playing ? R.drawable.stop
-					: R.drawable.play);
+			((ImageButton) v).setImageResource(playing ? R.drawable.button_stop
+					: R.drawable.button_play);
 			changeStation();
 			break;
 		case R.id.rec:
@@ -320,8 +320,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			if (recording) {
 				doStartRecording();
 			}
-			((ImageButton) v).setImageResource(recording ? R.drawable.record_on
-					: R.drawable.record);
+			((ImageButton) v)
+					.setImageResource(recording ? R.drawable.button_record_on
+							: R.drawable.button_record);
 			if (!recording) {
 				doStopRecording();
 			}

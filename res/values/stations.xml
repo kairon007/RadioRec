@@ -247,7 +247,7 @@
 		<item>http://mp3.webradio.antenne.de:80</item>
 		<item>http://mp3channels.webradio.antenne.de/chillout</item>
 		<item>http://mp3.webradio.rockantenne.de:80</item>
-		<item>http://mp3channels.webradio.antenne.de/classic-rock-live.mp3</item>		
+		<item>http://mp3channels.webradio.antenne.de/classic-rock-live</item>		
 		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w10b</item>
 		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w12b</item>
 		<item>http://swr.ic.llnwd.net/stream/swr_mp3_m_swr3b</item>
@@ -301,7 +301,7 @@
 		<item>http://stream.audioasyl.net/audioasyl</item>
 		<item>http://rs1.stream24.org:8460/stream</item>
 		<item>http://rs3.stream24.org:8690</item>
-		<item>http://www.allgaeuhit.de/allgaeuhit.m3u</item>
+		<item>http://81.169.132.81:7000/dsl</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>

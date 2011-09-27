@@ -53,7 +53,7 @@ public class Notifications {
 
 	protected void showStatusBarNotificationRecording() {
 
-		int icon = R.drawable.record_on;
+		int icon = R.drawable.button_record_on;
 		CharSequence tickerText = "Recording... "
 				+ Constants.THE_SELECTED_STATION_NAME;
 

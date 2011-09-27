@@ -49,20 +49,20 @@
 				android:layout_height="wrap_content" android:layout_width="fill_parent"
 				android:orientation="horizontal">
 				<ImageButton android:layout_weight="1"
-					android:layout_height="wrap_content" android:src="@drawable/play"
+					android:layout_height="wrap_content" android:src="@drawable/button_play"
 					android:layout_width="wrap_content" android:id="@+id/play" />
 				<ImageButton android:layout_weight="1"
-					android:layout_height="wrap_content" android:src="@drawable/record"
+					android:layout_height="wrap_content" android:src="@drawable/button_record"
 					android:layout_width="wrap_content" android:id="@+id/rec" />
 			</LinearLayout>
 			<LinearLayout android:layout_margin="4dp"
 				android:layout_height="wrap_content" android:layout_width="fill_parent"
 				android:orientation="horizontal">
 				<ImageButton android:layout_weight="1"
-					android:layout_height="wrap_content" android:src="@drawable/backward"
+					android:layout_height="wrap_content" android:src="@drawable/button_backward"
 					android:layout_width="wrap_content" android:id="@+id/back" />
 				<ImageButton android:layout_weight="1"
-					android:layout_height="wrap_content" android:src="@drawable/forward"
+					android:layout_height="wrap_content" android:src="@drawable/button_forward"
 					android:layout_width="wrap_content" android:id="@+id/fwd" />
 			</LinearLayout>
 		</LinearLayout>
