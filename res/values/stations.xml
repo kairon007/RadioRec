@@ -92,7 +92,8 @@
 		<item>Radio Eviva</item>
 		<item>Radio Grischa</item>
 		<item>Radio sunshine-live</item>
-		<item>Radio Ö3</item>
+		<item>Radio Ö1</item>
+		<item>Radio Ö3</item>		
 		<item>BuureRadio</item>
 		<item>Radio Industrie</item>
 		<item>Radio Audioasyl</item>
@@ -192,7 +193,8 @@
 		<item>@drawable/radio_eviva</item>
 		<item>@drawable/radio_grischa</item>
 		<item>@drawable/radio_sunshinelive</item>
-		<item>@drawable/radio_oe3</item>
+		<item>@drawable/radio_oe1</item>
+		<item>@drawable/radio_oe3</item>		
 		<item>@drawable/radio_buureradio</item>
 		<item>@drawable/radio_industrie</item>
 		<item>@drawable/radio_audioasyl</item>
@@ -292,7 +294,8 @@
 		<item>http://eviva128.mp3.green.ch</item>
 		<item>http://grischa.mp3.green.ch</item>
 		<item>http://62.27.47.15/sunshinelive/livestream.mp3</item>
-		<item>http://mp3stream7.apasf.apa.at:8000</item>
+		<item>http://mp3stream3.apasf.apa.at:8000</item>
+		<item>http://mp3stream7.apasf.apa.at:8000</item>		
 		<item>http://live-three.dmd2.ch</item>
 		<item>http://96.31.83.87:8063</item>
 		<item>http://stream.audioasyl.net/audioasyl</item>
@@ -392,7 +395,8 @@
 		<item>http://www.eviva.ch</item>
 		<item>http://www.radiogrischa.ch</item>
 		<item>http://www.sunshine-live.de</item>
-		<item>http://oe3.orf.at</item>
+		<item>http://oe1.orf.at</item>
+		<item>http://oe3.orf.at</item>		
 		<item>http://www.buureradio.ch</item>
 		<item>http://www.radioindustrie.ch</item>
 		<item>http://www.audioasyl.net</item>
@@ -491,6 +495,7 @@
 		<item>http://www.radiocentral.ch/data/WebCam/brunnen.jpg</item>
 		<item>http://www.radiocentral.ch/data/WebCam/brunnen.jpg</item>
 		<item>http://www.radiogrischa.ch/sites/default/files/webcams/studio_1.jpg</item>
+		<item></item>
 		<item></item>
 		<item>http://onapp1.orf.at/webcam/oe3/cam2_oe3.jpg</item>
 		<item></item>
@@ -592,6 +597,7 @@
 		<item>http://eviva.ch/dynasite.cfm?dsmid=78524</item>
 		<item>http://www.radiogrischa.ch/adresseanfahrt</item>
 		<item>http://www.sunshine-live.de/pop-ups/mail-ins-studio/</item>
+		<item>http://oe1.orf.at/kontakt</item>
 		<item>http://cluboe3.orf.at/song/index.php?round=24</item>
 		<item>info@buureradio.ch</item>
 		<item>info@radioindustrie.ch</item>
