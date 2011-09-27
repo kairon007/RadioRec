@@ -245,7 +245,7 @@
 		<item>http://mp3.webradio.antenne.de:80</item>
 		<item>http://mp3channels.webradio.antenne.de/chillout</item>
 		<item>http://mp3.webradio.rockantenne.de:80</item>
-		<item>http://www.antenne.de/webradio/channels/classic-rock-live.m3u</item>		
+		<item>http://mp3channels.webradio.antenne.de/classic-rock-live.mp3</item>		
 		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w10b</item>
 		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w12b</item>
 		<item>http://swr.ic.llnwd.net/stream/swr_mp3_m_swr3b</item>
