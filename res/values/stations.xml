@@ -45,6 +45,7 @@
 		<item>Radio Antenne Bayern</item>
 		<item>Radio Antenne Chillout</item>
 		<item>Radio Antenne Rock</item>
+		<item>Radio Antenne Classic Rock</item>		
 		<item>Radio Bayern 1</item>
 		<item>Radio Bayern 3</item>
 		<item>Radio SWR3</item>
@@ -97,6 +98,7 @@
 		<item>Radio Audioasyl</item>
 		<item>Piratenradio</item>		
 		<item>Radio 21</item>		
+		<item>Radio AllgäuaeuHIT</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -143,6 +145,7 @@
 		<item>@drawable/radio_antenne_bayern</item>
 		<item>@drawable/radio_antenne_chillout</item>
 		<item>@drawable/radio_antenne_rock</item>
+		<item>@drawable/radio_antenne_classic_rock</item>		
 		<item>@drawable/radio_bayern1</item>
 		<item>@drawable/radio_bayern3</item>
 		<item>@drawable/radio_swr3</item>
@@ -195,6 +198,7 @@
 		<item>@drawable/radio_audioasyl</item>
 		<item>@drawable/radio_piratenradio</item>		
 		<item>@drawable/radio_21</item>		
+		<item>@drawable/radio_allgaeuhit</item>		
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -241,6 +245,7 @@
 		<item>http://mp3.webradio.antenne.de:80</item>
 		<item>http://mp3channels.webradio.antenne.de/chillout</item>
 		<item>http://mp3.webradio.rockantenne.de:80</item>
+		<item>http://www.antenne.de/webradio/channels/classic-rock-live.m3u</item>		
 		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w10b</item>
 		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w12b</item>
 		<item>http://swr.ic.llnwd.net/stream/swr_mp3_m_swr3b</item>
@@ -293,6 +298,7 @@
 		<item>http://stream.audioasyl.net/audioasyl</item>
 		<item>http://rs1.stream24.org:8460/stream</item>
 		<item>http://rs3.stream24.org:8690</item>
+		<item>http://www.allgaeuhit.de/allgaeuhit.m3u</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -339,6 +345,7 @@
 		<item>http://www.antenne.de</item>
 		<item>http://www.antenne.de</item>
 		<item>http://www.rockantenne.de</item>
+		<item>http://www.antenne.de</item>
 		<item>http://www.bayern1.de</item>
 		<item>http://www.bayern3.de</item>
 		<item>http://www.swr3.de</item>
@@ -391,6 +398,7 @@
 		<item>http://www.audioasyl.net</item>
 		<item>http://www.piratenradio.ch</item>
 		<item>http://www.radio21.ch</item>
+		<item>http://www.allgaeuhit.de</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -434,6 +442,7 @@
 		<item></item>
 		<item>http://www.radiofm1.ch/index.php?article_id=323</item>
 		<item></item>
+		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
 		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
 		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
 		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
@@ -489,6 +498,7 @@
 		<item></item>		
 		<item></item>		
 		<item></item>		
+		<item>http://www.allgaeuhit.de/webcam.jpg</item>		
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
@@ -535,6 +545,7 @@
 		<item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
 		<item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
 		<item>http://www.rockantenne.de/mailinsstudio</item>
+		<item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
 		<item>http://www.br-online.de/bayern1/kontakt/kontakt-bayern1-mail-ID1203955361656.xml?_requestid=168772</item>
 		<item>http://www.br-online.de/bayern3/kontakt/kontakt-impressum-copyright-ID1195052108234.xml?_requestid=130461</item>
 		<item>http://www.swr3.de/-/id=421906/did=216928/a91pr1/index.html</item>
@@ -587,5 +598,6 @@
 		<item>info@audioasyl.net</item>		
 		<item>info@piratenradio.ch</item>		
 		<item>http://radio21.ch/wp/?page_id=481</item>		
+		<item>http://www.allgaeuhit.de/wugru.html</item>		
     </string-array>
 </resources>

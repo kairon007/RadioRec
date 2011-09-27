@@ -16,6 +16,7 @@ public class Constants {
 		ignoreList.add(RADIO_105);
 		ignoreList.add(RADIO_ANTENNE_BAYERN);
 		ignoreList.add(RADIO_ANTENNE_ROCK);
+		ignoreList.add(RADIO_ANTENNE_CLASSIC_ROCK);
 		ignoreList.add(RADIO_KANAL_K);
 		ignoreList.add(RADIO_SEEFUNK);
 		ignoreList.add(RADIO_ARGOVIA);
@@ -147,6 +148,7 @@ public class Constants {
 	public static final String RADIO_FM1 = "Radio FM1";
 	public static final String RADIO_ANTENNE_BAYERN = "Radio Antenne Bayern";
 	public static final String RADIO_ANTENNE_ROCK = "Radio Antenne Rock";
+	public static final String RADIO_ANTENNE_CLASSIC_ROCK = "Radio Antenne Classic Rock";
 	public static final String RADIO_KANAL_K = "Radio Kanal K";
 	public static final String RADIO_TOXIC_FM = "Radio Toxic FM";
 	public static final String RADIO_X = "Radio X";
