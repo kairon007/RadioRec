@@ -100,6 +100,7 @@
 		<item>Piratenradio</item>		
 		<item>Radio 21</item>		
 		<item>Radio AllgäuHIT</item>
+		<item>Radio Wave</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -199,8 +200,9 @@
 		<item>@drawable/radio_industrie</item>
 		<item>@drawable/radio_audioasyl</item>
 		<item>@drawable/radio_piratenradio</item>		
-		<item>@drawable/radio_21</item>		
+		<item>@drawable/radio_21</item>
 		<item>@drawable/radio_allgaeuhit</item>		
+		<item>@drawable/radio_wave</item>		
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -302,6 +304,7 @@
 		<item>http://rs1.stream24.org:8460/stream</item>
 		<item>http://rs3.stream24.org:8690</item>
 		<item>http://81.169.132.81:7000/dsl</item>
+		<item>http://212.83.60.57:2100</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -403,6 +406,7 @@
 		<item>http://www.piratenradio.ch</item>
 		<item>http://www.radio21.ch</item>
 		<item>http://www.allgaeuhit.de</item>
+		<item>http://www.radio-wave.ch</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -504,6 +508,7 @@
 		<item></item>		
 		<item></item>		
 		<item>http://www.allgaeuhit.de/webcam.jpg</item>		
+		<item>http://www.radiowave.ch/studio.jpg</item>		
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
@@ -605,5 +610,6 @@
 		<item>info@piratenradio.ch</item>		
 		<item>http://radio21.ch/wp/?page_id=481</item>		
 		<item>http://www.allgaeuhit.de/wugru.html</item>		
+		<item>http://www.radio-wave.ch/cms/index.php?section=contact&amp;cmd=8</item>
     </string-array>
 </resources>

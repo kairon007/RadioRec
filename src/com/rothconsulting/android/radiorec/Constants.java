@@ -187,5 +187,5 @@ public class Constants {
 	public static final String RADIO_INDUSTRIE = "Radio Industrie";
 	public static final String RADIO_21 = "Radio 21";
 	public static final String RADIO_KINGSTONHOT = "Radio Kingston Hot";
-
+	public static final String RADIO_WAVE = "Radio Wave";
 }
