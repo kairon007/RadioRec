@@ -29,6 +29,10 @@
 		<activity android:name=".Webcam" />
 		<activity android:name=".Settings" />
 		<activity android:name=".Donate" />
+		<activity android:name=".Tabs" />
+		<activity android:name=".TabCountry" />
+		<activity android:name=".TabFavourites" />
+		<activity android:name=".TabGenre" />
 		<activity android:name="com.rothconsulting.android.marketbilling.MarketSpende" />
 
 		<service android:name="com.rothconsulting.android.marketbilling.BillingService" />
