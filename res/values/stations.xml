@@ -104,6 +104,7 @@
 		<item>Radio Wave</item>
 		<item>Radio Helsinki Graz</item>
 		<item>Radio Soundportal</item>
+		<item>Radio 1Live</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -209,6 +210,7 @@
 		<item>@drawable/radio_wave</item>		
 		<item>@drawable/radio_helsinki_graz</item>		
 		<item>@drawable/radio_soundportal</item>		
+		<item>@drawable/radio_1live</item>		
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -314,6 +316,7 @@
 		<item>http://212.83.60.57:2100</item>
 		<item>http://live.helsinki.at:8088/live128.mp3</item>
 		<item>http://netradio01.soundportal.at:8100/live160</item>
+		<item>http://1live.akacast.akamaistream.net/7/706/119434/v1/gnl.akacast.akamaistream.net/1live</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -419,7 +422,7 @@
 		<item>http://www.radio-wave.ch</item>
 		<item>http://www.helsinki.at</item>
 		<item>http://www.soundportal.at</item>
-		
+		<item>http://www.einslive.de</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -525,6 +528,7 @@
 		<item>http://www.radiowave.ch/studio.jpg</item>		
 		<item></item>		
 		<item>http://soundportal.at/service/webcam</item>		
+		<item>http://www.einslive.de/webcam/studio_a_1.jpg</item>		
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
@@ -630,5 +634,6 @@
 		<item>http://www.radio-wave.ch/cms/index.php?section=contact&amp;cmd=8</item>
 		<item>http://helsinki.at/info/kontakt</item>
 		<item>http://soundportal.at/service/musikwunsch/</item>
+		<item>http://www.einslive.de/team/kontakt/</item>
     </string-array>
 </resources>
