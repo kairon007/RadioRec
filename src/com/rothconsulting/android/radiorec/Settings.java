@@ -3,8 +3,10 @@ package com.rothconsulting.android.radiorec;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings.SettingNotFoundException;
+import android.text.InputType;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -40,8 +42,8 @@ public class Settings extends Activity implements
 
 		final EditText edittextSdCardPath = (EditText) findViewById(R.id.editTextSdcardPath);
 		edittextSdCardPath.setText(Constants.THE_SD_CARD_PATH);
-		final Button saveButton = (Button) findViewById(R.id.buttonSave);
-		saveButton.setOnClickListener(new View.OnClickListener() {
+		final Button saveButtonPath = (Button) findViewById(R.id.buttonSavePath);
+		saveButtonPath.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				Constants.THE_SD_CARD_PATH = "" + edittextSdCardPath.getText();
 				SharedPreferences settings = getSharedPreferences(
@@ -58,10 +60,55 @@ public class Settings extends Activity implements
 			}
 		});
 
-		final Button resetButton = (Button) findViewById(R.id.buttonReset);
-		resetButton.setOnClickListener(new View.OnClickListener() {
+		final Button resetButtonPath = (Button) findViewById(R.id.buttonResetPath);
+		resetButtonPath.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				edittextSdCardPath.setText(Constants.DEFAULT_SD_CARD_PATH);
+			}
+		});
+
+		final EditText editTextBufferSize = (EditText) findViewById(R.id.editTextBuffer);
+		editTextBufferSize.setText("" + Constants.THE_BUFFER);
+		editTextBufferSize.setInputType(InputType.TYPE_CLASS_PHONE);
+		final Button saveButtonBuffer = (Button) findViewById(R.id.buttonSaveBuffer);
+		saveButtonBuffer.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				editTextBufferSize.setTextColor(Color.BLACK);
+				editTextBufferSize.setBackgroundColor(Color.WHITE);
+				try {
+					int bufferSize = new Integer(""
+							+ editTextBufferSize.getText());
+					if (bufferSize < 0 || bufferSize > 1000000) {
+						throw new NumberFormatException();
+					} else {
+						Constants.THE_BUFFER = bufferSize;
+						SharedPreferences settings = getSharedPreferences(
+								Constants.PREFERENCES_FILE, 0);
+						SharedPreferences.Editor editor = settings.edit();
+						editor.putInt(Constants.BUFFER, Constants.THE_BUFFER);
+						editor.commit();
+						Toast.makeText(
+								Settings.this,
+								getResources().getString(R.string.save) + " ("
+										+ editTextBufferSize.getText() + ")",
+								Toast.LENGTH_LONG).show();
+					}
+				} catch (Exception e) {
+					editTextBufferSize.setTextColor(Color.WHITE);
+					editTextBufferSize.setBackgroundColor(Color.RED);
+					Toast.makeText(
+							Settings.this,
+							getResources()
+									.getString(R.string.errorZahlEingeben),
+							Toast.LENGTH_LONG).show();
+				}
+			}
+		});
+
+		final Button resetButtonBuffer = (Button) findViewById(R.id.buttonResetBuffer);
+		resetButtonBuffer.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				editTextBufferSize.setText("" + Constants.DEFAULT_BUFFER);
 			}
 		});
 

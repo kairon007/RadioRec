@@ -84,6 +84,7 @@ public class Utils {
 				Constants.THE_URL_CONTACT);
 		editor.putString(Constants.ANTI_ADS_KEY, Constants.THE_ANTI_ADS_KEY);
 		editor.putString(Constants.SD_CARD_PATH, Constants.THE_SD_CARD_PATH);
+		editor.putInt(Constants.BUFFER, Constants.THE_BUFFER);
 		editor.commit();
 	}
 
@@ -110,6 +111,8 @@ public class Utils {
 				Constants.THE_ANTI_ADS_KEY);
 		Constants.THE_SD_CARD_PATH = settings.getString(Constants.SD_CARD_PATH,
 				Constants.DEFAULT_SD_CARD_PATH);
+		Constants.THE_BUFFER = settings.getInt(Constants.BUFFER,
+				Constants.DEFAULT_BUFFER);
 	}
 
 	public String getAppVersionName(Context context, Class<?> cls) {

@@ -2,6 +2,7 @@ package com.rothconsulting.android.radiorec;
 
 import android.app.TabActivity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Window;
@@ -19,6 +20,7 @@ public class Tabs extends TabActivity implements OnTabChangeListener {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.tabs);
+		Resources res = getResources(); // Resource object to get Drawables
 
 		/** TabHost will have Tabs */
 		tabHost = (TabHost) findViewById(android.R.id.tabhost);
@@ -30,25 +32,28 @@ public class Tabs extends TabActivity implements OnTabChangeListener {
 		 */
 
 		/** tid1 is firstTabSpec Id. Its used to access outside. */
-		TabSpec tabSpecCountry = tabHost.newTabSpec("tag1");
-		TabSpec tabSpecFavourites = tabHost.newTabSpec("tag2");
-		TabSpec tabSpecGenre = tabHost.newTabSpec("tag3");
+		TabSpec tabSpecCountry = tabHost.newTabSpec("tag");
+		TabSpec tabSpecGenre = tabHost.newTabSpec("tag");
+		TabSpec tabSpecFavourites = tabHost.newTabSpec("tag");
 
 		/** TabSpec setIndicator() is used to set name for the tab. */
 		/** TabSpec setContent() is used to set content for a particular tab. */
-		tabSpecCountry.setIndicator("Country").setContent(
+		tabSpecCountry.setIndicator("Country",
+				res.getDrawable(R.drawable.ic_menu_globe)).setContent(
 				new Intent(this, TabCountry.class));
-		tabSpecFavourites.setIndicator("Favourites").setContent(
-				new Intent(this, TabFavourites.class));
-		tabSpecGenre.setIndicator("Genre").setContent(
+		tabSpecGenre.setIndicator("Genre",
+				res.getDrawable(R.drawable.ic_menu_agenda)).setContent(
 				new Intent(this, TabGenre.class));
+		tabSpecFavourites.setIndicator("Favourites",
+				res.getDrawable(R.drawable.ic_menu_star)).setContent(
+				new Intent(this, TabFavourites.class));
 
 		/** Add tabSpec to the TabHost to display. */
 		tabHost.addTab(tabSpecCountry);
-		tabHost.addTab(tabSpecFavourites);
 		tabHost.addTab(tabSpecGenre);
+		tabHost.addTab(tabSpecFavourites);
 
-		setTabColor(tabHost);
+		// setTabColor(tabHost);
 	}
 
 	public static void setTabColor(TabHost tabhost) {
@@ -61,7 +66,7 @@ public class Tabs extends TabActivity implements OnTabChangeListener {
 	}
 
 	public void onTabChanged(String tabId) {
-		setTabColor(tabHost);
+		// setTabColor(tabHost);
 	}
 
 }

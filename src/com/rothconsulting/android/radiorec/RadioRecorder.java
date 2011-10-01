@@ -53,12 +53,13 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 			File radioRecorderDirectory = new File("/"
 					+ Constants.THE_SD_CARD_PATH + "/");
 			radioRecorderDirectory.mkdirs();
-
-			buffInputStream = new BufferedInputStream(urls[0].openStream());
+			Log.d(TAG, "Stream Buffer=" + Constants.THE_BUFFER);
+			buffInputStream = new BufferedInputStream(urls[0].openStream(),
+					Constants.THE_BUFFER);
 			Log.d(TAG, "url.openStream()");
 
 			buffOutputStream = new BufferedOutputStream(new FileOutputStream(
-					urls[1].getFile()));
+					urls[1].getFile()), Constants.THE_BUFFER);
 			Log.d(TAG, "FileOutputStream: " + urls[1].getFile());
 			Utils utils = new Utils();
 			utils.getNotifInstance(context, RadioRecorder.class)
@@ -71,7 +72,7 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 				buffOutputStream.write(c);
 				bytesRead++;
 				bytesReadTmp++;
-				if (bytesReadTmp > 1000) {
+				if (bytesReadTmp > 10000) {
 					buffOutputStream.flush();
 					bytesReadTmp = 0;
 				}

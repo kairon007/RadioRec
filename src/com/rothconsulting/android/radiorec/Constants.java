@@ -90,6 +90,7 @@ public class Constants {
 	public static final String SELECTED_STATION_CONTACT = "MySelectedStationContact";
 	public static final String ANTI_ADS_KEY = "MyAntiAdsKey";
 	public static final String SD_CARD_PATH = "MySdCardPath";
+	public static final String BUFFER = "MyBuffer";
 
 	// Default Constants
 	protected static int THE_SELECTED_STATION_INDEX;
@@ -102,8 +103,10 @@ public class Constants {
 	protected static String THE_URL_SONGTICKER;
 	protected static String THE_ANTI_ADS_KEY;
 	protected static String THE_SD_CARD_PATH;
+	protected static int THE_BUFFER;
 
 	public static final String DEFAULT_SD_CARD_PATH = "sdcard/RadioRecorder";
+	public static final int DEFAULT_BUFFER = 8192;
 
 	public static final int NOTIFICATION_ID_RADIO_IS_PLAYING = 1;
 	public static final int NOTIFICATION_ID_RECORDING = 2;

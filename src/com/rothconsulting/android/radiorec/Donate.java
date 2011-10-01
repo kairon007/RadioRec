@@ -85,7 +85,7 @@ public class Donate extends Activity {
 
 		final EditText edittext = (EditText) findViewById(R.id.editTextAntiAdsKey);
 
-		final Button saveButton = (Button) findViewById(R.id.buttonSave);
+		final Button saveButton = (Button) findViewById(R.id.buttonSaveAntiAdsKey);
 		saveButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				Constants.THE_ANTI_ADS_KEY = "" + edittext.getText();

@@ -36,8 +36,8 @@
 	<string name="reset">Reset</string>
 	<string name="wifiVorsicht">With this 3 options you can set the Wireless behavior. Attention: If \'WiFi always on\' your battery will be used more. Switch it off here or at the advanced wireless settings to save power.</string>
 	<string name="wifi">WiFi</string>
-	<string name="wifiImmerAn"> WiFi always on</string>
-	<string name="wifiImmerAnWennAmStrom"> Always on when plugged in</string>
+	<string name="wifiImmerAn"> WiFi never automatically off</string>
+	<string name="wifiImmerAnWennAmStrom"> Keep WiFi on when plugged in</string>
 	<string name="wifiAutomatischAus"> Automatically off when screen turns off</string>
 	<string name="wifiSleepNotYetDefined">WiFi Policy not set yet (Default).</string>
 	<string name="donate_paypal_cc">Donate via PayPal or credit card</string>
@@ -61,4 +61,7 @@
     <string name="restoring_transactions">Restoring transactions</string>
 	<string name="select">Select</string>	
 	<string name="donate_options">Donation Options</string>	
+	<string name="bufferZwischenspeicher">Buffer size for recording</string>
+	<string name="bufferText">Before writing the mp3 file the data is ongoing stored in a buffer. Here you can configure the buffer size. If you have no problem with recording or you\'re not sure leave it 8192 bytes.</string>
+	<string name="errorZahlEingeben">ERROR: Enter a number between\n0 - 1000000 (1 million) !</string>
 </resources>
