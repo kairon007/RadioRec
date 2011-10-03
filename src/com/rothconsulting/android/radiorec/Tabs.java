@@ -42,11 +42,11 @@ public class Tabs extends TabActivity implements OnTabChangeListener {
 				res.getDrawable(R.drawable.ic_menu_globe)).setContent(
 				new Intent(this, TabCountry.class));
 		tabSpecGenre.setIndicator("Genre",
-				res.getDrawable(R.drawable.ic_menu_agenda)).setContent(
+				res.getDrawable(android.R.drawable.ic_menu_agenda)).setContent(
 				new Intent(this, TabGenre.class));
 		tabSpecFavourites.setIndicator("Favourites",
-				res.getDrawable(R.drawable.ic_menu_star)).setContent(
-				new Intent(this, TabFavourites.class));
+				res.getDrawable(android.R.drawable.star_big_on)).setContent(
+				new Intent(this, RadioRecPlus.class));
 
 		/** Add tabSpec to the TabHost to display. */
 		tabHost.addTab(tabSpecCountry);

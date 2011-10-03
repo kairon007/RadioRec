@@ -18,7 +18,7 @@ public class Notifications {
 
 	protected void showStatusBarNotificationError(int errorRessourceString) {
 
-		int icon = R.drawable.status_error;
+		int icon = android.R.drawable.stat_sys_warning;
 		CharSequence tickerText = context.getString(errorRessourceString);
 
 		CharSequence contentTitle = context.getString(errorRessourceString);

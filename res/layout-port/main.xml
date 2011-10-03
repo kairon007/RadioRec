@@ -8,7 +8,7 @@
 		android:orientation="horizontal" android:layout_height="wrap_content">
 		<TextView android:layout_height="wrap_content"
 			android:layout_width="wrap_content" android:id="@+id/webcam"
-			android:drawableTop="@drawable/ic_menu_camera" android:text="Webcam"
+			android:drawableTop="@android:drawable/ic_menu_camera" android:text="Webcam"
 			android:gravity="center" android:layout_margin="4dp"
 			android:layout_weight="1" />
 		<TextView android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
 			android:layout_weight="1" />
 		<TextView android:layout_height="wrap_content"
 			android:layout_width="wrap_content" android:id="@+id/mail"
-			android:drawableTop="@drawable/ic_menu_send" android:text="Mail"
+			android:drawableTop="@android:drawable/ic_menu_send" android:text="Mail"
 			android:gravity="center" android:layout_margin="4dp"
 			android:layout_weight="1" />
 	</LinearLayout>
