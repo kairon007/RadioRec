@@ -48,7 +48,11 @@
 		<item>Radio Antenne Rock</item>
 		<item>Radio Antenne Classic Rock</item>		
 		<item>Radio Bayern 1</item>
+		<item>Radio Bayern 2</item>
 		<item>Radio Bayern 3</item>
+		<item>Radio On-3</item>
+		<item>Radio SWR1</item>
+		<item>Radio SWR2</item>
 		<item>Radio SWR3</item>
 		<item>Radio DasDing</item>
 		<item>Radio BigFM</item>
@@ -157,7 +161,11 @@
 		<item>@drawable/radio_antenne_rock</item>
 		<item>@drawable/radio_antenne_classic_rock</item>		
 		<item>@drawable/radio_bayern1</item>
+		<item>@drawable/radio_bayern2</item>
 		<item>@drawable/radio_bayern3</item>
+		<item>@drawable/radio_bayern_on3</item>
+		<item>@drawable/radio_swr1</item>
+		<item>@drawable/radio_swr2</item>
 		<item>@drawable/radio_swr3</item>
 		<item>@drawable/radio_dasding</item>
 		<item>@drawable/radio_bigfm</item>
@@ -266,7 +274,11 @@
 		<item>http://mp3.webradio.rockantenne.de:80</item>
 		<item>http://mp3channels.webradio.antenne.de/classic-rock-live</item>		
 		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w10b</item>
+		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w11b</item>
 		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w12b</item>
+		<item>http://gffstream.ic.llnwd.net/stream/gffstream_w9a</item>
+		<item>http://swr.ic.llnwd.net/stream/swr_mp3_m_swr1bwb</item>
+		<item>http://swr.ic.llnwd.net/stream/swr_mp3_m_swr2b</item>
 		<item>http://swr.ic.llnwd.net/stream/swr_mp3_m_swr3b</item>
 		<item>http://swr.ic.llnwd.net/stream/swr_mp3_m_dasdinga</item>
 		<item>http://srv05.bigstreams.de/bigfm-mp3-96</item>
@@ -375,7 +387,11 @@
 		<item>http://www.rockantenne.de</item>
 		<item>http://www.antenne.de</item>
 		<item>http://www.bayern1.de</item>
+		<item>http://www.bayern2.de</item>
 		<item>http://www.bayern3.de</item>
+		<item>http://www.on3.de</item>
+		<item>http://www.swr1.de</item>
+		<item>http://www.swr2.de</item>
 		<item>http://www.swr3.de</item>
 		<item>http://www.dasding.de</item>
 		<item>http://www.bigfm.de</item>
@@ -484,7 +500,11 @@
 		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
 		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
 		<item>http://www.br-online.de/content/import/webcams/bayern1/cam2_pult.jpg</item>
+		<item></item>
 		<item>http://www.br-online.de/content/import/webcams/bayern3/cam7_gast.jpg</item>
+		<item></item>
+		<item></item>
+		<item></item>
 		<item>http://www.swr3.de/studiocam</item>
 		<item>http://www.dasding.de/ext/webcam/webcam770.php?cam=2</item>
 		<item>http://static.bigfm.de/webcam/cam6/webcam06.jpg</item>
@@ -593,7 +613,11 @@
 		<item>http://www.rockantenne.de/mailinsstudio</item>
 		<item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
 		<item>http://www.br-online.de/bayern1/kontakt/kontakt-bayern1-mail-ID1203955361656.xml?_requestid=168772</item>
+		<item>http://www.br-online.de/bayern2/land-und-leute/bayern-2-kontakt-service-ID1198255138342.xml?_requestid=3320</item>
 		<item>http://www.br-online.de/bayern3/kontakt/kontakt-impressum-copyright-ID1195052108234.xml?_requestid=130461</item>
+		<item>http://on3.de/focus/11/on3-radio#/main/9/kontakt</item>
+		<item>http://www.swr.de/swr1/bw/programm/-/id=446250/nid=446250/did=1420380/cf=42/1gqznk3/index.html</item>
+		<item>http://www.swr.de/swr2/-/id=7576/vv=email/nid=7576/did=661414/wfs5qs/index.html</item>
 		<item>http://www.swr3.de/-/id=421906/did=216928/a91pr1/index.html</item>
 		<item>http://www.dasding.de/ext/dingmessage/index.php</item>
 		<item>http://www.bigfm.de/content/html/shared/studiomail/index.html</item>
