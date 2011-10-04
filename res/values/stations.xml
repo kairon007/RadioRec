@@ -107,6 +107,7 @@
 		<item>Radio Soundportal</item>
 		<item>Radio 1Live</item>
 		<item>Radio Top 100 Station</item>
+		<item>Radio Rockstation</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -215,6 +216,7 @@
 		<item>@drawable/radio_soundportal</item>		
 		<item>@drawable/radio_1live</item>		
 		<item>@drawable/radio_top100station</item>		
+		<item>@drawable/radio_rockstation</item>		
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -323,6 +325,7 @@
 		<item>http://netradio01.soundportal.at:8100/live160</item>
 		<item>http://1live.akacast.akamaistream.net/7/706/119434/v1/gnl.akacast.akamaistream.net/1live</item>
 		<item>http://87.230.101.11:8000</item>
+		<item>http://rs11.stream24.org:8130</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -431,6 +434,7 @@
 		<item>http://www.soundportal.at</item>
 		<item>http://www.einslive.de</item>
 		<item>http://www.top100station.de</item>
+		<item>http://www.rockstation.ch</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -538,6 +542,7 @@
 		<item></item>		
 		<item>http://soundportal.at/service/webcam</item>		
 		<item>http://www.einslive.de/webcam/studio_a_1.jpg</item>		
+		<item></item>
 		<item></item>
     </string-array>
     <string-array name="station_contact">
@@ -647,5 +652,6 @@
 		<item>http://soundportal.at/service/musikwunsch/</item>
 		<item>http://www.einslive.de/team/kontakt/</item>
 		<item>http://mobile.top100station.de/index.php?mobilesite=20</item>
+		<item>http://www.rockstation.ch/pages/contact.html</item>
     </string-array>
 </resources>
