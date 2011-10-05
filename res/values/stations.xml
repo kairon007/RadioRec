@@ -14,6 +14,7 @@
 		<item>Radio DRS2</item>
 		<item>Radio DRS3</item>
 		<item>Radio DRS4 News</item>
+		<item>Radio DRS Musikwelle</item>
 		<item>Radio DRS Virus</item>
 		<item>Radio Hoch2</item>
 		<item>Radio Energy Bern</item>
@@ -127,6 +128,7 @@
 		<item>@drawable/radio_drs_2</item>
 		<item>@drawable/radio_drs_3</item>
 		<item>@drawable/radio_drs_4_news</item>
+		<item>@drawable/radio_drs_musikwelle</item>
 		<item>@drawable/radio_drs_virus</item>
 		<item>@drawable/radio_hoch_2</item>
 		<item>@drawable/radio_energy_bern</item>
@@ -240,6 +242,7 @@
 		<item>http://glb-stream12.streamserver.ch/2/drs2/mp3_128</item>
 		<item>http://glb-stream12.streamserver.ch/2/drs3/mp3_128</item>
 		<item>http://glb-stream12.streamserver.ch/2/drs4news/mp3_128</item>
+		<item>http://glb-stream12.streamserver.ch/2/drsmw/mp3_128</item>
 		<item>http://glb-stream12.streamserver.ch/2/drsvirus/mp3_128</item>
 		<item>http://stream1.radiohoch2.ch:80/web</item>
 		<item>http://energybern.ice.infomaniak.ch:80/energybern-high.mp3</item>
@@ -353,6 +356,7 @@
 		<item>http://www.drs2.ch</item>
 		<item>http://www.drs3.ch</item>
 		<item>http://www.drs4news.ch</item>
+		<item>http://www.drsmusikwelle.ch</item>
 		<item>http://www.virus.ch</item>
 		<item>http://www.radiohoch2.ch</item>
 		<item>http://www.energy.ch/bern</item>
@@ -466,6 +470,7 @@
 		<item></item>
 		<item>http://www.drs3.ch/import/webcam/drs3/webdrs3a.jpg</item>
 		<item></item>
+		<item>http://www.drsmusikwelle.ch/import/webcam/drsmw/webdrsmwb.jpg</item>
 		<item>http://www.drs.ch/import/webcam/virus/virus2.jpg?1304112781446</item>
 		<item>http://webcam.radiohoch2.ch/webcam_big.php</item>
 		<item></item>
@@ -579,6 +584,7 @@
 		<item>http://www.drs2.ch/www/de/drs2/kontakt/kundendienst.html</item>
 		<item>http://www.drs3.ch/www/de/drs3/kontakt/mail-ins-studio.html</item>
 		<item>http://www.drs4news.ch/www/de/drs4/kontakt/mail-ins-studio.html</item>
+		<item>http://www.drsmusikwelle.ch/www//de/drsmusikwelle/kontakt/mail-ins-studio.html</item>
 		<item>http://www.virus.ch/virus/kontakt</item>
 		<item>http://radiohoch2.ch/contact</item>
 		<item>http://www.energy.ch/bern/inside/kontakt</item>
