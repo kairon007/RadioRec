@@ -36,7 +36,7 @@ public class Notifications {
 
 	protected void showStatusBarNotificationIsRunning() {
 
-		int icon = R.drawable.jukebox_48x48;
+		int icon = R.drawable.jukebox;
 		CharSequence tickerText = context.getString(R.string.onAir) + " "
 				+ Constants.THE_SELECTED_STATION_NAME;
 
