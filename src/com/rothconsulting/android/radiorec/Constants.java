@@ -54,6 +54,7 @@ public class Constants {
 		ignoreList.add(RADIO_21);
 		ignoreList.add(RADIO_WAVE);
 		ignoreList.add(RADIO_TOP100STATION);
+		ignoreList.add(RADIO_ROCKSTATION);
 		return ignoreList;
 	}
 
@@ -196,4 +197,5 @@ public class Constants {
 	public static final String RADIO_KINGSTONHOT = "Radio Kingston Hot";
 	public static final String RADIO_WAVE = "Radio Wave";
 	public static final String RADIO_TOP100STATION = "Radio Top 100 Station";
+	public static final String RADIO_ROCKSTATION = "Radio Rockstation";
 }
