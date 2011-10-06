@@ -39,8 +39,8 @@ public class Tabs extends TabActivity implements OnTabChangeListener {
 		/** TabSpec setIndicator() is used to set name for the tab. */
 		/** TabSpec setContent() is used to set content for a particular tab. */
 		tabSpecCountry.setIndicator("Country",
-				res.getDrawable(R.drawable.ic_menu_globe)).setContent(
-				new Intent(this, TabCountry.class));
+				res.getDrawable(android.R.drawable.ic_menu_compass))
+				.setContent(new Intent(this, TabCountry.class));
 		tabSpecGenre.setIndicator("Genre",
 				res.getDrawable(android.R.drawable.ic_menu_agenda)).setContent(
 				new Intent(this, TabGenre.class));

@@ -13,7 +13,7 @@
 			android:layout_weight="1" />
 		<TextView android:layout_height="wrap_content"
 			android:layout_width="wrap_content" android:id="@+id/homepage"
-			android:drawableTop="@drawable/ic_menu_globe" android:text="Homepage"
+			android:drawableTop="@android:drawable/ic_menu_mapmode" android:text="Homepage"
 			android:gravity="center" android:layout_margin="4dp"
 			android:layout_weight="1" />
 		<TextView android:layout_height="wrap_content"
