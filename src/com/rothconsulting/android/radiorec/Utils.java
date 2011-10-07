@@ -149,7 +149,10 @@ public class Utils {
 		if (month.length() == 1) {
 			month = "0" + month;
 		}
-		int day = cal.get(Calendar.DATE);
+		String day = "" + cal.get(Calendar.DATE);
+		if (day.length() == 1) {
+			day = "0" + day;
+		}
 		Log.d(TAG, year + "-" + month + "-" + day);
 		return dateiName + year + month + day + ".mp3";
 	}
