@@ -115,6 +115,8 @@
 		<item>Radio Rockstation</item>
 		<item>Radio SkyLive</item>
 		<item>Radio TranceRadio</item>
+		<item>Radio 7</item>
+		<item>Radio Salü</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -231,6 +233,8 @@
 		<item>@drawable/radio_rockstation</item>		
 		<item>@drawable/radio_skylive</item>	
 		<item>@drawable/radio_tranceradio</item>	
+		<item>@drawable/radio_7</item>	
+		<item>@drawable/radio_salue</item>	
     </array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -347,6 +351,8 @@
 		<item>http://rs11.stream24.org:8130</item>
 		<item>http://s10.pop-stream.de:10242</item>
 		<item>http://stream3144.init7.net</item>
+		<item>http://stream.hoerradar.de:80/mp3-radio7-128</item>
+		<item>http://edge.download.newmedia.nacamar.net/sltokens/stream-radio-player.php?stream=radiosalue/livestream96s.mp3&amp;contentType=mp3</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -463,6 +469,8 @@
 		<item>http://www.rockstation.ch</item>
 		<item>http://www.skylive.ch</item>
 		<item>http://www.tranceradio.ch</item>
+		<item>http://www.radio7.de</item>
+		<item>http://www.radiosalue.de</item>
     </string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -579,6 +587,8 @@
 		<item></item>
 		<item>http://www.skylive.ch/viewpage.php?page_id=6</item>
 		<item></item>
+		<item></item>
+		<item>http://www.salue.de/img2/studio.jpg</item>
     </string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
@@ -695,5 +705,7 @@
 		<item>http://www.rockstation.ch/pages/contact.html</item>
 		<item>http://skylive.ch/infusions/ls_tinychat_panel/ls_tinychat.php</item>
 		<item>http://technoradio.ch/contact.html</item>
+		<item>http://radio7.de/index.php?id=75</item>
+		<item>http://www.salue.de/inside/kontakt.phtml</item>
     </string-array>
 </resources>
