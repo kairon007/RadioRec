@@ -99,6 +99,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		String[] names = getResources().getStringArray(R.array.station_names);
 		TypedArray logos = getResources().obtainTypedArray(
 				R.array.station_logos);
+		TypedArray logos_small = getResources().obtainTypedArray(
+				R.array.station_logos_small);
 		String[] streams = getResources().getStringArray(
 				R.array.station_streams);
 		String[] homepages = getResources().getStringArray(
@@ -129,6 +131,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			}
 			HashMap<String, Object> m = new HashMap<String, Object>();
 			m.put("name", names[i]);
+			m.put("icon_small", logos_small.getResourceId(i, R.id.logo));
 			m.put("icon", logos.getResourceId(i, R.id.logo));
 			m.put("stream", streams[i]);
 			m.put("homepage", homepages[i]);
@@ -138,7 +141,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 			// apply list to spinner
 			SimpleAdapter adapter = new SimpleAdapter(this, stationList,
-					R.layout.listitem, new String[] { "icon", "name" },
+					R.layout.listitem, new String[] { "icon_small", "name" },
 					new int[] { R.id.option_icon, R.id.option_text });
 			stations.setAdapter(adapter);
 			stations.setOnItemSelectedListener(this);
