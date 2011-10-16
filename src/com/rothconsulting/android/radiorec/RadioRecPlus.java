@@ -45,6 +45,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private ImageButton back, fwd;
 	private RadioPlayer radioPlayer;
 	private AsyncTask<URL, Integer, Long> recordTask;
+	private String origRT1steam = null;
 
 	Utils utils = new Utils();
 
@@ -401,6 +402,17 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			Log.d(TAG, "*********** new Stream="
 					+ Constants.THE_URL_LIVE_STREAM);
 		}
+		if (Constants.THE_SELECTED_STATION_NAME
+				.equalsIgnoreCase(Constants.RADIO_RT1_SUEDSCHWABEN)) {
+			WebTool webtool = new WebTool();
+			// rt1 ist geschützt und braucht login token damit man den Stream
+			// abspielen kann.
+			origRT1steam = Constants.THE_URL_LIVE_STREAM;
+			Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
+					+ webtool.getRT1token();
+			Log.d(TAG, "*********** new Stream="
+					+ Constants.THE_URL_LIVE_STREAM);
+		}
 
 		Constants.THE_URL_HOMEPAGE = "" + map.get("homepage");
 		Constants.THE_URL_WEBCAM = "" + map.get("webcam");
@@ -446,6 +458,21 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		URL outputUrl = null;
 
 		try {
+
+			if (Constants.THE_SELECTED_STATION_NAME
+					.equalsIgnoreCase(Constants.RADIO_RT1_SUEDSCHWABEN)) {
+				WebTool webtool = new WebTool();
+				// rt1 ist geschützt und braucht login token damit man den
+				// Stream abspielen kann.
+				if (origRT1steam == null) {
+					origRT1steam = Constants.THE_URL_LIVE_STREAM;
+				}
+				Constants.THE_URL_LIVE_STREAM = origRT1steam
+						+ webtool.getRT1token();
+				Log.d(TAG, "*********** new Stream="
+						+ Constants.THE_URL_LIVE_STREAM);
+			}
+
 			Log.d(TAG, "Constants.THE_URL_LIVE_STREAM="
 					+ Constants.THE_URL_LIVE_STREAM);
 			inputUrl = new URL(Constants.THE_URL_LIVE_STREAM);

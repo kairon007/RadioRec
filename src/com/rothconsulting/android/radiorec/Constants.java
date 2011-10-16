@@ -202,4 +202,5 @@ public class Constants {
 	public static final String RADIO_ROCKSTATION = "Radio Rockstation";
 	public static final String RADIO_SKYLIVE = "Radio SkyLive";
 	public static final String RADIO_TRANCERADIO = "TranceRadio";
+	public static final String RADIO_RT1_SUEDSCHWABEN = "Radio rt1 Südschwaben";
 }

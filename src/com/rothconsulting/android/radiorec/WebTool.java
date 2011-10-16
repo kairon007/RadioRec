@@ -34,12 +34,13 @@ public class WebTool {
 		if (radioStation != null) {
 
 			if (radioStation.equalsIgnoreCase(Constants.RADIO_32)) {
-				result += getAktuellerSong(urlHomepage, urlHomepage,
+				result += getStringFromWebsite(urlHomepage, urlHomepage,
 						"nowplaying", "</div>");
 			} else if (radioStation
 					.equalsIgnoreCase(Constants.RADIO_32_GOLDIES)) {
-				result += getAktuellerSong("http://www.radio32.ch/?rub=124",
-						urlHomepage, "nowplaying", "</div>");
+				result += getStringFromWebsite(
+						"http://www.radio32.ch/?rub=124", urlHomepage,
+						"nowplaying", "</div>");
 			} else if (radioStation
 					.equalsIgnoreCase(Constants.RADIO_CAPITAL_FM)) {
 
@@ -47,7 +48,7 @@ public class WebTool {
 				result = new String(
 						"<html><head><style>.hidden {display:none;}</style></head><body><center>");
 
-				result += getAktuellerSong(urlHomepage, urlHomepage,
+				result += getStringFromWebsite(urlHomepage, urlHomepage,
 						"summary=\"Capital FM Airplay\">", "</table>");
 			} else if (radioStation.equalsIgnoreCase("Radio 24")) {
 				// result += getAktuellerSong(
@@ -56,12 +57,12 @@ public class WebTool {
 				// "</script>");
 			} else if (radioStation.equalsIgnoreCase(Constants.RADIO_24_ROCK)) {
 
-				result += getAktuellerSong(
+				result += getStringFromWebsite(
 						"http://www.radio24.ch/player/index.html?channel=rock",
 						"", "mainContainer", "</script>");
 			} else if (radioStation.equalsIgnoreCase(Constants.RADIO_RABE)) {
 
-				result += getAktuellerSong(
+				result += getStringFromWebsite(
 						"http://www.rabe.ch/nc/songticker.html", "",
 						"playlist-latest-item", "</div>");
 
@@ -72,7 +73,7 @@ public class WebTool {
 			} else if (radioStation.equalsIgnoreCase(Constants.RADIO_DRS3)) {
 
 				String parseResult = new String();
-				parseResult += getAktuellerSong(
+				parseResult += getStringFromWebsite(
 						"http://www.drs.ch/lib/player/radio.php?audiourl=http%3A%2F%2Fstream.srg-ssr.ch%2Fdrs3%2Fmp3_128.m3u&stream=drs3&design=drs3&type=popup&type=popup&skin=srdrs",
 						"", "<span class=\"active_with_icon\"", "</span>");
 
@@ -100,8 +101,8 @@ public class WebTool {
 
 				String findString = "<td>Current Song:</td>";
 
-				result += getAktuellerSong("http://icecast.radiotop.ch", null,
-						findString, "</div>");
+				result += getStringFromWebsite("http://icecast.radiotop.ch",
+						null, findString, "</div>");
 			}
 		}
 
@@ -122,7 +123,7 @@ public class WebTool {
 	 * @param endTagAfterMatch
 	 * @return
 	 */
-	private String getAktuellerSong(String songUrl, String imgUrl,
+	private String getStringFromWebsite(String songUrl, String imgUrl,
 			String findString, String endStringOrTagAfterMatch) {
 
 		StringBuilder result = new StringBuilder();
@@ -205,5 +206,15 @@ public class WebTool {
 		Log.d(TAG, ret);
 		return ret;
 
+	}
+
+	protected String getRT1token() {
+		String url = "http://edge.download.newmedia.nacamar.net/sltokens/flashplayer/stream-mp3-player.php?stream=rt1suedschwaben/livestream.mp3";
+		String findString = "var token = \"";
+		String endString = "\";";
+		String token = getStringFromWebsite(url, null, findString, endString);
+		token = token.substring(13, token.length() - 2);
+		Log.d(TAG, "** Token=" + token);
+		return token;
 	}
 }
