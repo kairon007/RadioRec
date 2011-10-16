@@ -239,7 +239,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		menu.add(0, -3, 0, this.getResources().getString(R.string.settings))
 				.setIcon(android.R.drawable.ic_menu_preferences);
 		menu.add(0, -4, 0, this.getResources().getString(R.string.ende))
-				.setIcon(R.drawable.ic_menu_exit);
+				.setIcon(android.R.drawable.ic_menu_close_clear_cancel);
 		return super.onCreateOptionsMenu(menu);
 	}
 

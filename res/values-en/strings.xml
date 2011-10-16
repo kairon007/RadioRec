@@ -64,4 +64,5 @@
 	<string name="bufferZwischenspeicher">Buffer size for recording</string>
 	<string name="bufferText">Before writing the mp3 file the data is ongoing stored in a buffer. Here you can configure the buffer size. If you have no problem with recording or you\'re not sure leave it 8192 bytes.</string>
 	<string name="errorZahlEingeben">ERROR: Enter a number between\n0 - 1000000 (1 million) !</string>
+	<string name="verbinde">Connecting...</string>
 </resources>

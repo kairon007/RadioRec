@@ -46,7 +46,7 @@ public class Utils {
 	protected ProgressDialog prepareProgressDialog(Context context) {
 		ProgressDialog progressDialog = new ProgressDialog(context);
 		progressDialog.setCancelable(true);
-		progressDialog.setMessage("Loading...");
+		progressDialog.setMessage(context.getText(R.string.verbinde));
 		progressDialog.setTitle(R.string.app_name);
 		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 		return progressDialog;
