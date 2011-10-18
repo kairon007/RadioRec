@@ -1,72 +1,98 @@
 package com.rothconsulting.android.radiorec;
 
-import android.app.TabActivity;
+import android.app.ActivityGroup;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
 import android.view.Window;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.TabHost;
-import android.widget.TabHost.OnTabChangeListener;
+import android.widget.TabHost.TabContentFactory;
 import android.widget.TabHost.TabSpec;
+import android.widget.TabWidget;
+import android.widget.TextView;
 
-public class Tabs extends TabActivity implements OnTabChangeListener {
+public class Tabs extends ActivityGroup {
 
-	TabHost tabHost;
+	int tabHeight = 40;
 
-	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.tabs);
-		Resources res = getResources(); // Resource object to get Drawables
+		LinearLayout main = new LinearLayout(this);
+		main.setOrientation(LinearLayout.VERTICAL);
+		setContentView(main);
 
-		/** TabHost will have Tabs */
-		tabHost = (TabHost) findViewById(android.R.id.tabhost);
-		tabHost.setOnTabChangedListener(this);
-		/**
-		 * TabSpec used to create a new tab. By using TabSpec only we can able
-		 * to setContent to the tab. By using TabSpec setIndicator() we can set
-		 * name to tab.
-		 */
+		TabHost tabs = new TabHost(this);
+		tabs.setId(android.R.id.tabhost);
+		main.addView(tabs);
 
-		/** tid1 is firstTabSpec Id. Its used to access outside. */
-		TabSpec tabSpecCountry = tabHost.newTabSpec("tag");
-		TabSpec tabSpecGenre = tabHost.newTabSpec("tag");
-		TabSpec tabSpecFavourites = tabHost.newTabSpec("tag");
+		TabWidget tabWidget = new TabWidget(this);
+		tabWidget.setId(android.R.id.tabs);
+		tabs.addView(tabWidget);
 
-		/** TabSpec setIndicator() is used to set name for the tab. */
-		/** TabSpec setContent() is used to set content for a particular tab. */
-		tabSpecCountry.setIndicator("Country",
-				res.getDrawable(android.R.drawable.ic_menu_compass))
-				.setContent(new Intent(this, TabCountry.class));
-		tabSpecGenre.setIndicator("Genre",
-				res.getDrawable(android.R.drawable.ic_menu_agenda)).setContent(
-				new Intent(this, TabGenre.class));
-		tabSpecFavourites.setIndicator("Favourites",
-				res.getDrawable(android.R.drawable.star_big_on)).setContent(
-				new Intent(this, RadioRecPlus.class));
+		FrameLayout tabContent = new FrameLayout(this);
+		tabContent.setId(android.R.id.tabcontent);
+		tabContent.setPadding(0, tabHeight, 0, 0);
+		tabs.addView(tabContent);
 
-		/** Add tabSpec to the TabHost to display. */
-		tabHost.addTab(tabSpecCountry);
-		tabHost.addTab(tabSpecGenre);
-		tabHost.addTab(tabSpecFavourites);
+		// TextView content = new TextView(this);
+		// content.setText("This is the Frame Content");
+		// content.setId(100);
+		tabs.setup(getLocalActivityManager());
 
-		// setTabColor(tabHost);
+		TabSpec tspec1 = tabs.newTabSpec("Tab1");
+		tspec1.setIndicator(makeTabIndicator(getString(R.string.player)));
+		tspec1.setContent(new Intent(this, RadioRecPlus.class));
+		tabs.addTab(tspec1);
+
+		TabSpec tspec2 = tabs.newTabSpec("Tab2");
+		tspec2.setIndicator(makeTabIndicator(getString(R.string.laender)));
+		tspec2.setContent(new Intent(this, TabCountry.class));
+		tabs.addTab(tspec2);
+
+		TabSpec tspec3 = tabs.newTabSpec("Tab3");
+		tspec3.setIndicator(makeTabIndicator(getString(R.string.favoriten)));
+		tspec3.setContent(new Intent(this, TabFavourites.class));
+		// tspec3.setContent(new PreExistingViewFactory(content));
+		tabs.addTab(tspec3);
+
 	}
 
-	public static void setTabColor(TabHost tabhost) {
-		for (int i = 0; i < tabhost.getTabWidget().getChildCount(); i++) {
-			tabhost.getTabWidget().getChildAt(i)
-					.setBackgroundColor(Color.parseColor("#B5CDE7")); // unselected
+	private TextView makeTabIndicator(String text) {
+
+		TextView tabView = new TextView(this);
+		LayoutParams lp3 = new LayoutParams(LayoutParams.WRAP_CONTENT,
+				tabHeight, 1);
+		lp3.setMargins(1, 0, 1, 0);
+		tabView.setLayoutParams(lp3);
+		tabView.setText(text);
+		tabView.setTextColor(Color.WHITE);
+		tabView.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+		tabView.setBackgroundDrawable(getResources().getDrawable(
+				R.drawable.tab_indicator));
+		tabView.setPadding(13, 0, 13, 0);
+		return tabView;
+
+	}
+
+	class PreExistingViewFactory implements TabContentFactory {
+
+		private final View preExisting;
+
+		protected PreExistingViewFactory(View view) {
+			preExisting = view;
 		}
-		tabhost.getTabWidget().getChildAt(tabhost.getCurrentTab())
-				.setBackgroundColor(Color.parseColor("#3278B3")); // selected
-	}
 
-	public void onTabChanged(String tabId) {
-		// setTabColor(tabHost);
-	}
+		public View createTabContent(String tag) {
+			return preExisting;
+		}
 
+	}
 }

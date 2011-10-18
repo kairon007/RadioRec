@@ -21,6 +21,11 @@
 			android:drawableTop="@android:drawable/ic_menu_send" android:text="Mail"
 			android:gravity="center" android:layout_margin="4dp"
 			android:layout_weight="1" />
+		<TextView android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:id="@+id/favourites"
+			android:drawableTop="@android:drawable/star_big_off" android:text="@string/favorit"
+			android:gravity="center" android:layout_margin="4dp"
+			android:layout_weight="1" />
 	</LinearLayout>
 	<!-- TextView android:layout_height="wrap_content"
 		android:layout_width="fill_parent" android:id="@+id/ticker"

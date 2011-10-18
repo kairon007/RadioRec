@@ -13,7 +13,7 @@ public class TabCountry extends Activity {
 
 		/* First Tab Content */
 		TextView textView = new TextView(this);
-		textView.setText("First Tab Country");
+		textView.setText("Tab Country");
 		setContentView(textView);
 
 	}

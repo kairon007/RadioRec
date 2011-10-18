@@ -69,6 +69,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
 		((TextView) findViewById(R.id.webcam)).setOnClickListener(this);
 		((TextView) findViewById(R.id.mail)).setOnClickListener(this);
+		((TextView) findViewById(R.id.favourites)).setOnClickListener(this);
 		back = ((ImageButton) findViewById(R.id.back));
 		back.setOnClickListener(this);
 		back.setEnabled(false);
@@ -304,6 +305,12 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				startActivity(Intent.createChooser(emailIntent, "Send mail..."));
 			}
 			break;
+		case R.id.favourites:
+			Log.i(TAG, "favorit");
+			TextView favIcon = (TextView) findViewById(R.id.favourites);
+			favIcon.setCompoundDrawablesWithIntrinsicBounds(0,
+					android.R.drawable.star_big_on, 0, 0);
+			break;
 		case R.id.back:
 			if (stations.getSelectedItemPosition() > 0) {
 				back.setEnabled(false);
@@ -373,6 +380,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		if (index < 0) {
 			index = 0;
 		}
+		TextView favIcon = (TextView) findViewById(R.id.favourites);
+		favIcon.setCompoundDrawablesWithIntrinsicBounds(0,
+				android.R.drawable.star_big_off, 0, 0);
+
 		HashMap<String, Object> map = null;
 		try {
 			map = stationList.get(index);

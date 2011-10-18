@@ -13,7 +13,7 @@ public class TabFavourites extends Activity {
 
 		/* Second Tab Content */
 		TextView textView = new TextView(this);
-		textView.setText("Second Tab Favourites");
+		textView.setText("Tab Favourites");
 		setContentView(textView);
 
 	}

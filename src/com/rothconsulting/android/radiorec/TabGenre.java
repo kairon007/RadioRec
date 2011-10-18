@@ -13,7 +13,7 @@ public class TabGenre extends Activity {
 
 		/* Second Tab Content */
 		TextView textView = new TextView(this);
-		textView.setText("Third Tab Genre");
+		textView.setText("Tab Genre");
 		setContentView(textView);
 	}
 
