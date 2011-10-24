@@ -120,6 +120,8 @@
 		<item>Radio Salü</item>
 		<item>Radio FFH</item>
 		<item>Radio rt1 Südschwaben</item>
+		<item>Radio HR3</item>
+		<item>Radio Star FM</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -241,7 +243,9 @@
 		<item>@drawable/radio_salue</item>	
 		<item>@drawable/radio_ffh</item>	
 		<item>@drawable/radio_rt1_suedschwaben</item>	
-    </array>
+		<item>@drawable/radio_hr3</item>	
+		<item>@drawable/radio_starfm</item>	
+		</array>
     <array name="station_logos_small">
         <item>@drawable/radio_32_small</item>
 		<item>@drawable/radio_32_goldies_small</item>
@@ -362,7 +366,9 @@
 		<item>@drawable/radio_salue_small</item>	
 		<item>@drawable/radio_ffh_small</item>	
 		<item>@drawable/radio_rt1_suedschwaben_small</item>	    
-    </array>
+		<item>@drawable/radio_hr3_small</item>	    
+		<item>@drawable/radio_starfm_small</item>	
+	</array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
 		<item>http://radio32-stream.customer.solnet.ch:8100/radio32goldies</item>
@@ -483,6 +489,8 @@
 		<item>http://62.27.26.45/radiosalue/livestream64m.mp3</item>
 		<item>http://mp3.ffh.de/radioffh/hqlivestream.mp3</item>
 		<item>http://62.27.44.59/rt1suedschwaben/livestream.mp3?token=</item>
+		<item>http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w69b</item>
+		<item>http://87.230.53.43:8004</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -604,7 +612,9 @@
 		<item>http://www.radiosalue.de</item>
 		<item>http://www.ffh.de</item>
 		<item>http://www.rt1-suedschwaben.de</item>
-    </string-array>
+		<item>http://www.hr3.de</item>
+		<item>http://www.starfm.de/nuernberg</item>
+		</string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
 		<item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -724,6 +734,8 @@
 		<item></item>
 		<item>http://www.salue.de/img2/studio.jpg</item>
 		<item>http://resource.ffh.de/webcams/ffh/cam1-fullsize.jpg</item>
+		<item></item>
+		<item>http://www.hrfoto.dunkel.de/webcams/hr3/studio2.jpg</item>
 		<item></item>
     </string-array>
     <string-array name="station_contact">
@@ -846,5 +858,7 @@
 		<item>http://www.salue.de/inside/kontakt.phtml</item>
 		<item>http://www.ffh.de/ffh-welt/kontakt.html</item>
 		<item>http://www.rt1-suedschwaben.de/index.php?pageid=174&amp;puid=7</item>
+		<item>http://www.hr-online.de/website/radio/hr3/index.jsp?rubrik=3532</item>
+		<item>http://www.starfm.de/nuernberg/kontakt.php</item>
     </string-array>
 </resources>

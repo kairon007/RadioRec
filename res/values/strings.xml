@@ -65,7 +65,7 @@
 	<string name="bufferText">Die Daten für die Aufnahme einer MP3 Datei werden zuerst in einen Buffer (Zwischenspeicher) gelesen und erst dann als MP3 gespeichert. Das soll sicherstellen, dass bei kurzen Netzunterbrechungen die Aufnahme dennoch weiter geht. Hier kannst du die Buffer-Grösse selber konfigurieren. Falls du keine Probleme mit dem Aufnehmen hast oder du nicht sicher bist, lass es auf 8192 Bytes.</string>
 	<string name="errorZahlEingeben">ERROR: Bitte gib eine Zahl zwischen\n0 - 1000000 (1 Mio) ein!</string>
 	<string name="verbinde">Verbinde...</string>
-	<string name="player">Player</string>
+	<string name="senderNach">Sender nach...</string>
 	<string name="laender">Länder</string>
 	<string name="favorit">Favorit</string>
 	<string name="favoriten">Favoriten</string>

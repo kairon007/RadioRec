@@ -17,32 +17,34 @@
 				android:orientation="horizontal" android:layout_height="wrap_content">
 				<TextView android:layout_height="wrap_content"
 					android:layout_width="wrap_content" android:id="@+id/webcam"
-					android:drawableTop="@android:drawable/ic_menu_camera" android:text="Webcam"
-					android:gravity="center" android:layout_margin="4dp"
-					android:layout_weight="1" />
+					android:drawableTop="@android:drawable/ic_menu_camera"
+					android:text="Webcam" android:gravity="center"
+					android:layout_margin="4dp" android:layout_weight="1" />
 				<TextView android:layout_height="wrap_content"
 					android:layout_width="wrap_content" android:id="@+id/homepage"
-					android:drawableTop="@android:drawable/ic_menu_mapmode" android:text="Homepage"
-					android:gravity="center" android:layout_margin="4dp"
-					android:layout_weight="1" />
+					android:drawableTop="@android:drawable/ic_menu_mapmode"
+					android:text="Homepage" android:gravity="center"
+					android:layout_margin="4dp" android:layout_weight="1" />
 				<TextView android:layout_height="wrap_content"
 					android:layout_width="wrap_content" android:id="@+id/mail"
 					android:drawableTop="@android:drawable/ic_menu_send" android:text="Mail"
 					android:gravity="center" android:layout_margin="4dp"
 					android:layout_weight="1" />
-				<TextView android:layout_height="wrap_content"
-					android:layout_width="wrap_content" android:id="@+id/favourites"
-					android:drawableTop="@android:drawable/star_big_off" android:text="@string/favorit"
-					android:gravity="center" android:layout_margin="4dp"
-					android:layout_weight="1" />
+				<ToggleButton android:id="@+id/toggleButtonFavorit"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_weight="1" android:background="@color/transparent"
+					android:src="@android:drawable/star_big_off" android:gravity="center|top"
+					android:textOn="" android:textOff="" android:text="" />
 			</LinearLayout>
 			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 				xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-				android:orientation="vertical" android:layout_width="fill_parent" android:gravity="center"
-				android:layout_height="fill_parent" android:id="@+id/adsLayout">
+				android:orientation="vertical" android:layout_width="fill_parent"
+				android:gravity="center" android:layout_height="fill_parent"
+				android:id="@+id/adsLayout">
 				<com.google.ads.AdView android:id="@+id/adView"
-					android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center"
-					ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER" ads:loadAdOnCreate="false"/>
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:gravity="center" ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER"
+					ads:loadAdOnCreate="false" />
 			</LinearLayout>
 			<!-- TextView android:layout_height="wrap_content" android:layout_width="fill_parent" 
 				android:id="@+id/ticker" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" 

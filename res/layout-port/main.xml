@@ -2,8 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:background="@drawable/bg_port">
-	<Spinner android:layout_height="wrap_content" android:layout_marginTop="4dp"
-		android:layout_width="fill_parent" android:id="@+id/stations" />
+	<Spinner android:layout_height="wrap_content"
+		android:layout_marginTop="4dp" android:layout_width="fill_parent"
+		android:id="@+id/stations" />
 	<LinearLayout android:layout_width="fill_parent"
 		android:orientation="horizontal" android:layout_height="wrap_content">
 		<TextView android:layout_height="wrap_content"
@@ -21,29 +22,30 @@
 			android:drawableTop="@android:drawable/ic_menu_send" android:text="Mail"
 			android:gravity="center" android:layout_margin="4dp"
 			android:layout_weight="1" />
-		<TextView android:layout_height="wrap_content"
-			android:layout_width="wrap_content" android:id="@+id/favourites"
-			android:drawableTop="@android:drawable/star_big_off" android:text="@string/favorit"
-			android:gravity="center" android:layout_margin="4dp"
-			android:layout_weight="1" />
+		<ToggleButton android:id="@+id/toggleButtonFavorit"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_weight="1" android:background="@color/transparent"
+			android:src="@android:drawable/star_big_off" android:gravity="center|top"
+			android:textOn="" android:textOff="" android:text="" />
 	</LinearLayout>
-	<!-- TextView android:layout_height="wrap_content"
-		android:layout_width="fill_parent" android:id="@+id/ticker"
-		android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever"
-		android:scrollHorizontally="true" android:singleLine="true"
-		android:focusable="true" android:focusableInTouchMode="true"
-		android:text="Ticker... Buffering... Playing: SomeSong by SomeArtist..."
-		android:gravity="center" android:layout_margin="2dp" / -->
+	<!-- TextView android:layout_height="wrap_content" android:layout_width="fill_parent" 
+		android:id="@+id/ticker" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" 
+		android:scrollHorizontally="true" android:singleLine="true" android:focusable="true" 
+		android:focusableInTouchMode="true" android:text="Ticker... Buffering... 
+		Playing: SomeSong by SomeArtist..." android:gravity="center" android:layout_margin="2dp" 
+		/ -->
 	<ImageView android:layout_height="wrap_content" android:src="@drawable/icon"
 		android:id="@+id/logo" android:layout_width="fill_parent"
 		android:layout_weight="1" android:scaleType="centerInside" />
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-	android:orientation="vertical" android:gravity="center" android:layout_width="fill_parent"
-	android:layout_height="wrap_content" android:id="@+id/adsLayout">
-	<com.google.ads.AdView android:id="@+id/adView"
-		android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center"
-		ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER" ads:loadAdOnCreate="false" />
+		xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+		android:orientation="vertical" android:gravity="center"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:id="@+id/adsLayout">
+		<com.google.ads.AdView android:id="@+id/adView"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:gravity="center" ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER"
+			ads:loadAdOnCreate="false" />
 	</LinearLayout>
 	<LinearLayout android:layout_margin="4dp"
 		android:layout_height="wrap_content" android:layout_width="fill_parent"

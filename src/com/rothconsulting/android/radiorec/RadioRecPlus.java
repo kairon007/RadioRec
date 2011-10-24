@@ -32,6 +32,7 @@ import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class RadioRecPlus extends Activity implements OnClickListener,
 		OnItemSelectedListener {
@@ -40,6 +41,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	private boolean playing, recording, firstStart;
 	private Spinner stations;
+
+	public Spinner getStations() {
+		return stations;
+	}
+
 	private ArrayList<HashMap<String, Object>> stationList;
 	private ImageView logo;
 	private ImageButton back, fwd;
@@ -69,7 +75,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
 		((TextView) findViewById(R.id.webcam)).setOnClickListener(this);
 		((TextView) findViewById(R.id.mail)).setOnClickListener(this);
-		((TextView) findViewById(R.id.favourites)).setOnClickListener(this);
+		((ToggleButton) findViewById(R.id.toggleButtonFavorit))
+				.setOnClickListener(this);
 		back = ((ImageButton) findViewById(R.id.back));
 		back.setOnClickListener(this);
 		back.setEnabled(false);
@@ -140,14 +147,16 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			m.put("email", contact[i]);
 			stationList.add(m);
 
-			// apply list to spinner
-			SimpleAdapter adapter = new SimpleAdapter(this, stationList,
-					R.layout.listitem, new String[] { "icon_small", "name" },
-					new int[] { R.id.option_icon, R.id.option_text });
-			stations.setAdapter(adapter);
-			stations.setOnItemSelectedListener(this);
 			// }
 		}
+		// apply list to spinner
+		SimpleAdapter adapter = new SimpleAdapter(this, stationList,
+				R.layout.station_listitem,
+				new String[] { "icon_small", "name" }, new int[] {
+						R.id.option_icon, R.id.option_text });
+		stations.setAdapter(adapter);
+		stations.setOnItemSelectedListener(this);
+
 	}
 
 	@Override
@@ -305,11 +314,15 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				startActivity(Intent.createChooser(emailIntent, "Send mail..."));
 			}
 			break;
-		case R.id.favourites:
+		case R.id.toggleButtonFavorit:
 			Log.i(TAG, "favorit");
-			TextView favIcon = (TextView) findViewById(R.id.favourites);
-			favIcon.setCompoundDrawablesWithIntrinsicBounds(0,
-					android.R.drawable.star_big_on, 0, 0);
+			ToggleButton favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
+
+			if (favIcon.isChecked()) {
+				favIcon.setButtonDrawable(android.R.drawable.star_big_on);
+			} else {
+				favIcon.setButtonDrawable(android.R.drawable.star_big_off);
+			}
 			break;
 		case R.id.back:
 			if (stations.getSelectedItemPosition() > 0) {
@@ -380,9 +393,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		if (index < 0) {
 			index = 0;
 		}
-		TextView favIcon = (TextView) findViewById(R.id.favourites);
-		favIcon.setCompoundDrawablesWithIntrinsicBounds(0,
-				android.R.drawable.star_big_off, 0, 0);
+		ToggleButton favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
+		favIcon.setButtonDrawable(android.R.drawable.star_big_off);
 
 		HashMap<String, Object> map = null;
 		try {
@@ -522,5 +534,4 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			recording = false;
 		}
 	}
-
 }

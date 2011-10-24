@@ -1,6 +1,11 @@
 package com.rothconsulting.android.radiorec;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.TreeSet;
 
 import android.app.ProgressDialog;
 import android.content.ComponentName;
@@ -8,6 +13,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
@@ -155,5 +164,35 @@ public class Utils {
 		}
 		Log.d(TAG, year + "-" + month + "-" + day);
 		return dateiName + year + month + day + ".mp3";
+	}
+
+	protected HashMap sortValuesInHashMap(HashMap hashMap) {
+
+		// to hold the result
+		HashMap sortedMap = new LinkedHashMap();
+
+		List yourMapKeys = new ArrayList(hashMap.keySet());
+		List yourMapValues = new ArrayList(hashMap.values());
+		TreeSet sortedSet = new TreeSet(yourMapValues);
+		Object[] sortedArray = sortedSet.toArray();
+		int size = sortedArray.length;
+
+		for (int i = 0; i < size; i++) {
+			sortedMap.put(
+					yourMapKeys.get(yourMapValues.indexOf(sortedArray[i])),
+					sortedArray[i]);
+		}
+
+		return sortedMap;
+	}
+
+	protected Drawable resizeImage(int resId, Context context, int width,
+			int height) {
+		Bitmap origBitmap = BitmapFactory.decodeResource(
+				context.getResources(), resId);
+		Bitmap resizedBitmap = Bitmap.createScaledBitmap(origBitmap, width,
+				height, false);
+		BitmapDrawable bitmapDrawable = new BitmapDrawable(resizedBitmap);
+		return bitmapDrawable;
 	}
 }

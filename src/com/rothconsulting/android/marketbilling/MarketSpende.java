@@ -389,8 +389,8 @@ public class MarketSpende extends Activity implements OnClickListener,
 				PurchaseDatabase.PURCHASED_PRODUCT_ID_COL,
 				PurchaseDatabase.PURCHASED_QUANTITY_COL };
 		int[] to = new int[] { R.id.item_name, R.id.item_quantity };
-		mOwnedItemsAdapter = new SimpleCursorAdapter(this, R.layout.item_row,
-				mOwnedItemsCursor, from, to);
+		mOwnedItemsAdapter = new SimpleCursorAdapter(this,
+				R.layout.market_donate_listitem, mOwnedItemsCursor, from, to);
 	}
 
 	private void prependLogEntry(CharSequence cs) {
