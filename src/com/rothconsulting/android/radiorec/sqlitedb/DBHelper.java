@@ -15,7 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 	// Database creation sql statement
 	private static final String DATABASE_CREATE = "create table "
-			+ DbAdapter.T_FAVORITES + " (" + DbAdapter.KEY_ROWID
+			+ DbAdapter.T_STATION + " (" + DbAdapter.KEY_ROWID
 			+ " integer primary key autoincrement, "
 			+ DbAdapter.KEY_STATION_ICON + " integer not null, "
 			+ DbAdapter.KEY_STATION_NAME + " text not null);";
@@ -39,7 +39,7 @@ public class DBHelper extends SQLiteOpenHelper {
 		Log.w(DBHelper.class.getName(), "Upgrading database from version "
 				+ oldVersion + " to " + newVersion
 				+ ", which will destroy all old data");
-		database.execSQL("DROP TABLE IF EXISTS " + DbAdapter.T_FAVORITES);
+		database.execSQL("DROP TABLE IF EXISTS " + DbAdapter.T_STATION);
 		onCreate(database);
 	}
 }

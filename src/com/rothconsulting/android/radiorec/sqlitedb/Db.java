@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.SimpleCursorAdapter;
 
+import com.rothconsulting.android.radiorec.R;
+
 public class Db extends ListActivity {
 
 	private DbAdapter db;
@@ -19,7 +21,7 @@ public class Db extends ListActivity {
 		// From this column of the table
 		String[] from = new String[] { DbAdapter.KEY_STATION_NAME };
 		// To which view element will this be mapped
-		int[] to = new int[] { android.R.id.text1 };
+		int[] to = new int[] { R.id.category };
 		db = new DbAdapter(this);
 		db.open();
 
@@ -27,9 +29,9 @@ public class Db extends ListActivity {
 
 		String[] favorite = new String[] { "Cool", "Very nice", "Hate it" };
 		int nextInt = new Random().nextInt(3);
-		db.createFavorite(0, "stationName");
+		db.createCategory(0, "stationName");
 
-		Cursor c = db.fetchAllFavorites();
+		Cursor c = db.fetchAllCategorys();
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
 				android.R.layout.simple_list_item_1, c, from, to);
 		setListAdapter(adapter);

@@ -14,7 +14,9 @@ public class DbAdapter {
 	public static final String KEY_ROWID = "_id";
 	public static final String KEY_STATION_ICON = "station_icon";
 	public static final String KEY_STATION_NAME = "station_name";
-	public static final String T_FAVORITES = "favorites";
+	public static final String KEY_STATION_URL = "station_url";
+	public static final String KEY_CATEGORY = "category";
+	public static final String T_STATION = "station";
 	private final Context context;
 	private SQLiteDatabase database;
 	private DBHelper dbHelper;
@@ -36,51 +38,52 @@ public class DbAdapter {
 	}
 
 	/**
-	 * Create a new favorite. If the favorite is successfully created return the
+	 * Create a new category. If the category is successfully created return the
 	 * new rowId for that note, otherwise return a -1 to indicate failure.
 	 */
-	public long createFavorite(int stationIcon, String stationName) {
+	public long createCategory(int stationIcon, String stationName) {
 		ContentValues initialValues = createContentValues(stationIcon,
 				stationName);
 
-		return database.insert(T_FAVORITES, null, initialValues);
+		return database.insert(T_STATION, null, initialValues);
 	}
 
 	/**
-	 * Update the favorite
+	 * Update the category
 	 */
-	public boolean updateFavorite(long rowId, int stationIcon,
+	public boolean updateCategory(long rowId, int stationIcon,
 			String stationName) {
 		ContentValues updateValues = createContentValues(stationIcon,
 				stationName);
 
-		return database.update(T_FAVORITES, updateValues, KEY_ROWID + "="
-				+ rowId, null) > 0;
+		return database.update(T_STATION, updateValues,
+				KEY_ROWID + "=" + rowId, null) > 0;
 	}
 
 	/**
-	 * Deletes favorite
+	 * Deletes category
 	 */
-	public boolean deleteFavorite(long rowId) {
-		return database.delete(T_FAVORITES, KEY_ROWID + "=" + rowId, null) > 0;
+	public boolean deleteCategory(String stationName) {
+		return database.delete(T_STATION, KEY_STATION_NAME + "=" + stationName,
+				null) > 0;
 	}
 
 	/**
-	 * Return a Cursor over the list of all favorites in the database
+	 * Return a Cursor over the list of all categories in the database
 	 * 
-	 * @return Cursor over all favorite
+	 * @return Cursor over all category
 	 */
-	public Cursor fetchAllFavorites() {
-		return database.query(T_FAVORITES, new String[] { KEY_ROWID,
+	public Cursor fetchAllCategorys() {
+		return database.query(T_STATION, new String[] { KEY_ROWID,
 				KEY_STATION_ICON, KEY_STATION_NAME }, null, null, null, null,
 				null);
 	}
 
 	/**
-	 * Return a Cursor positioned at the defined todo
+	 * Return a Cursor positioned at the defined category
 	 */
-	public Cursor fetchFavorite(long rowId) throws SQLException {
-		Cursor mCursor = database.query(true, T_FAVORITES, new String[] {
+	public Cursor fetchCategory(long rowId) throws SQLException {
+		Cursor mCursor = database.query(true, T_STATION, new String[] {
 				KEY_ROWID, KEY_STATION_ICON, KEY_STATION_NAME }, KEY_ROWID
 				+ "=" + rowId, null, null, null, null, null);
 		if (mCursor != null) {

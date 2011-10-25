@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.rothconsulting.android.radiorec" android:versionCode="114"
-	android:versionName="1.1.4" android:installLocation="auto">
+	package="com.rothconsulting.android.radiorec" android:versionCode="115"
+	android:versionName="1.1.5" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="4" />
 	<supports-screens android:resizeable="true"
 		android:smallScreens="true" android:normalScreens="true"
@@ -30,9 +30,7 @@
 		<activity android:name=".Settings" />
 		<activity android:name=".Donate" />
 		<activity android:name=".RadioRecPlus" />
-		<activity android:name=".TabCountry" />
-		<activity android:name=".TabFavourites" />
-		<activity android:name=".TabGenre" />
+		<activity android:name=".TabCategories" />
 		<activity android:name="com.rothconsulting.android.marketbilling.MarketSpende" />
 
 		<service android:name="com.rothconsulting.android.marketbilling.BillingService" />

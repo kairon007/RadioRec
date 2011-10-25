@@ -30,7 +30,11 @@ public class Webcam extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.webcam);
-		progressDialog = getProgressDialog();
+		Utils utils = new Utils();
+		progressDialog = utils.prepareProgressDialog(this);
+		progressDialog
+				.setTitle("Webcam " + Constants.THE_SELECTED_STATION_NAME);
+		progressDialog.show();
 		alertDialog = new AlertDialog.Builder(this).create();
 
 		Thread threadShowWebcam = new Thread() {
@@ -111,17 +115,6 @@ public class Webcam extends Activity {
 			});
 			alertDialog.show();
 		}
-	}
-
-	private ProgressDialog getProgressDialog() {
-		ProgressDialog progressDialog = new ProgressDialog(this);
-		progressDialog.setCancelable(true);
-		progressDialog.setMessage("Loading...");
-		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		progressDialog
-				.setTitle("Webcam " + Constants.THE_SELECTED_STATION_NAME);
-		progressDialog.show();
-		return progressDialog;
 	}
 
 	// ------------------------------------------------------------

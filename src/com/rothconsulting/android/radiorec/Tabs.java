@@ -1,29 +1,23 @@
 package com.rothconsulting.android.radiorec;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import android.app.ActivityGroup;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
-import android.widget.SimpleAdapter;
-import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TabHost.TabContentFactory;
 import android.widget.TabHost.TabSpec;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
-public class Tabs extends ActivityGroup implements TabHost.TabContentFactory {
+public class Tabs extends ActivityGroup {
 
 	int tabHeight = 40;
 
@@ -54,19 +48,23 @@ public class Tabs extends ActivityGroup implements TabHost.TabContentFactory {
 		// content.setId(100);
 		tabs.setup(getLocalActivityManager());
 
+		Log.d("TAG", "Tabs Tab1");
 		TabSpec tspec1 = tabs.newTabSpec("Tab1");
-		Utils utils = new Utils();
-		Drawable resizedImg1 = utils.resizeImage(R.drawable.jukebox, this, 40,
-				40);
-		tspec1.setIndicator(getString(R.string.app_name), resizedImg1);
+		// Utils utils = new Utils();
+		// Drawable resizedImg1 = utils.resizeImage(R.drawable.jukebox, this,
+		// 40,
+		// 40);
+		tspec1.setIndicator(makeTabIndicator(getString(R.string.app_name)));
 		tspec1.setContent(new Intent(this, RadioRecPlus.class));
+		Log.d("TAG", "Tabs after Intent");
 		tabs.addTab(tspec1);
 
+		Log.d("TAG", "Tabs Tab2");
 		TabSpec tspec2 = tabs.newTabSpec("Tab2");
-		Drawable resizedImg2 = utils.resizeImage(
-				android.R.drawable.ic_menu_agenda, this, 40, 40);
-		tspec2.setIndicator(getString(R.string.senderNach), resizedImg2);
-		tspec2.setContent(new Intent(this, TabFavourites.class));
+		// Drawable resizedImg2 = utils.resizeImage(
+		// android.R.drawable.ic_menu_agenda, this, 40, 40);
+		tspec2.setIndicator(makeTabIndicator(getString(R.string.senderNach)));
+		tspec2.setContent(new Intent(this, TabCategories.class));
 		tabs.addTab(tspec2);
 
 		// TabSpec tspec3 = tabs.newTabSpec("Tab3");
@@ -106,29 +104,5 @@ public class Tabs extends ActivityGroup implements TabHost.TabContentFactory {
 			return preExisting;
 		}
 
-	}
-
-	private void openFav() {
-
-		List<HashMap<String, Object>> stationList = new ArrayList<HashMap<String, Object>>();
-		HashMap<String, Object> m = new HashMap<String, Object>();
-		m.put("icon_small", 0);
-		m.put("name", "Radio 32");
-		stationList.add(m);
-		// apply list to spinner
-		SimpleAdapter adapter = new SimpleAdapter(this, stationList,
-				R.layout.station_listitem,
-				new String[] { "icon_small", "name" }, new int[] {
-						R.id.option_icon, R.id.option_text });
-		Spinner stations = new Spinner(this);
-		stations.setPrompt("Favoriten");
-		stations.setAdapter(adapter);
-		stations.pointToPosition(1, 1);
-		stations.performClick();
-	}
-
-	public View createTabContent(String tag) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

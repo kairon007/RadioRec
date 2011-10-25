@@ -34,6 +34,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
+
 public class RadioRecPlus extends Activity implements OnClickListener,
 		OnItemSelectedListener {
 
@@ -64,6 +66,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			getApplicationContext().deleteDatabase("webview.db");
 			getApplicationContext().deleteDatabase("webviewCache.db");
 		}
+		Log.d(TAG, "RadioRePlus");
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 		firstStart = true;
@@ -317,6 +320,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		case R.id.toggleButtonFavorit:
 			Log.i(TAG, "favorit");
 			ToggleButton favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
+			DbAdapter dbadapter = new DbAdapter(this);
 
 			if (favIcon.isChecked()) {
 				favIcon.setButtonDrawable(android.R.drawable.star_big_on);
