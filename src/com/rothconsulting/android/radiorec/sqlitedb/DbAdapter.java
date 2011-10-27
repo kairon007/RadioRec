@@ -15,7 +15,13 @@ public class DbAdapter {
 	public static final String KEY_STATION_ICON = "station_icon";
 	public static final String KEY_STATION_NAME = "station_name";
 	public static final String KEY_STATION_URL = "station_url";
-	public static final String KEY_CATEGORY = "category";
+	public static final String KEY_STATION_STEAM = "station_stream";
+	public static final String KEY_STATION_WEBCAM = "station_webcam";
+	public static final String KEY_STATION_CONTACT = "station_contact";
+	public static final String KEY_LANGUAGE = "station_language";
+	public static final String KEY_COUNTRY = "station_country";
+	public static final String KEY_GENRE = "station_genre";
+	public static final String KEY_FAVORITE = "favorite";
 	public static final String T_STATION = "station";
 	private final Context context;
 	private SQLiteDatabase database;
@@ -38,10 +44,10 @@ public class DbAdapter {
 	}
 
 	/**
-	 * Create a new category. If the category is successfully created return the
+	 * Create a new station. If the station is successfully created return the
 	 * new rowId for that note, otherwise return a -1 to indicate failure.
 	 */
-	public long createCategory(int stationIcon, String stationName) {
+	public long insertStation(int stationIcon, String stationName) {
 		ContentValues initialValues = createContentValues(stationIcon,
 				stationName);
 
@@ -49,10 +55,9 @@ public class DbAdapter {
 	}
 
 	/**
-	 * Update the category
+	 * Update the station
 	 */
-	public boolean updateCategory(long rowId, int stationIcon,
-			String stationName) {
+	public boolean updateStation(long rowId, int stationIcon, String stationName) {
 		ContentValues updateValues = createContentValues(stationIcon,
 				stationName);
 
@@ -61,28 +66,28 @@ public class DbAdapter {
 	}
 
 	/**
-	 * Deletes category
+	 * Deletes station
 	 */
-	public boolean deleteCategory(String stationName) {
+	public boolean deleteStation(String stationName) {
 		return database.delete(T_STATION, KEY_STATION_NAME + "=" + stationName,
 				null) > 0;
 	}
 
 	/**
-	 * Return a Cursor over the list of all categories in the database
+	 * Return a Cursor over the list of all stations in the database
 	 * 
-	 * @return Cursor over all category
+	 * @return Cursor over all station
 	 */
-	public Cursor fetchAllCategorys() {
+	public Cursor fetchAllStations() {
 		return database.query(T_STATION, new String[] { KEY_ROWID,
 				KEY_STATION_ICON, KEY_STATION_NAME }, null, null, null, null,
 				null);
 	}
 
 	/**
-	 * Return a Cursor positioned at the defined category
+	 * Return a Cursor positioned at the defined station
 	 */
-	public Cursor fetchCategory(long rowId) throws SQLException {
+	public Cursor fetchStation(long rowId) throws SQLException {
 		Cursor mCursor = database.query(true, T_STATION, new String[] {
 				KEY_ROWID, KEY_STATION_ICON, KEY_STATION_NAME }, KEY_ROWID
 				+ "=" + rowId, null, null, null, null, null);

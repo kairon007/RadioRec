@@ -29,9 +29,9 @@ public class Db extends ListActivity {
 
 		String[] favorite = new String[] { "Cool", "Very nice", "Hate it" };
 		int nextInt = new Random().nextInt(3);
-		db.createCategory(0, "stationName");
+		db.insertStation(0, "stationName");
 
-		Cursor c = db.fetchAllCategorys();
+		Cursor c = db.fetchAllStations();
 		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
 				android.R.layout.simple_list_item_1, c, from, to);
 		setListAdapter(adapter);

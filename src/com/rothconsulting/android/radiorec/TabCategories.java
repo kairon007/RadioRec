@@ -31,20 +31,20 @@ public class TabCategories extends ListActivity {
 		setContentView(R.layout.categories_list);
 		mDbAdapter = new DbAdapter(this);
 		mDbAdapter.open();
-		mDbAdapter.createCategory(0, "Meine Favoriten");
-		mDbAdapter.createCategory(1, "Alphabetisch A-Z");
-		mDbAdapter.createCategory(2, "Alphabetisch Z-A");
-		mDbAdapter.createCategory(4, "Land: Schweiz");
-		mDbAdapter.createCategory(5, "Land: Deutschland");
-		mDbAdapter.createCategory(6, "Land: Österreich");
-		mDbAdapter.createCategory(7, "Sprache: Deutsch");
-		mDbAdapter.createCategory(8, "Sprache: Französisch");
-		mDbAdapter.createCategory(9, "Sprache: Englisch");
-		mDbAdapter.createCategory(10, "Musikstil: Pop");
-		mDbAdapter.createCategory(11, "Musikstil: Rock");
-		mDbAdapter.createCategory(12, "Musikstil: Swiss");
-		mDbAdapter.createCategory(13, "Musikstil: Chillout");
-		mDbAdapter.createCategory(14, "Musikstil: Volkstümlich");
+		mDbAdapter.insertStation(0, "Meine Favoriten");
+		mDbAdapter.insertStation(1, "Alphabetisch A-Z");
+		mDbAdapter.insertStation(2, "Alphabetisch Z-A");
+		mDbAdapter.insertStation(4, "Land: Schweiz");
+		mDbAdapter.insertStation(5, "Land: Deutschland");
+		mDbAdapter.insertStation(6, "Land: Österreich");
+		mDbAdapter.insertStation(7, "Sprache: Deutsch");
+		mDbAdapter.insertStation(8, "Sprache: Französisch");
+		mDbAdapter.insertStation(9, "Sprache: Englisch");
+		mDbAdapter.insertStation(10, "Musikstil: Pop");
+		mDbAdapter.insertStation(11, "Musikstil: Rock");
+		mDbAdapter.insertStation(12, "Musikstil: Swiss");
+		mDbAdapter.insertStation(13, "Musikstil: Chillout");
+		mDbAdapter.insertStation(14, "Musikstil: Volkstümlich");
 		fillData();
 
 		// showFavList();
@@ -71,7 +71,7 @@ public class TabCategories extends ListActivity {
 	}
 
 	private void fillData() {
-		cursor = mDbAdapter.fetchAllCategorys();
+		cursor = mDbAdapter.fetchAllStations();
 		startManagingCursor(cursor);
 
 		String[] from = new String[] { DbAdapter.KEY_STATION_NAME };

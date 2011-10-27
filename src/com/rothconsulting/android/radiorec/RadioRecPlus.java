@@ -135,11 +135,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 							names[i])) {
 				continue;
 			}
-			if (Build.VERSION.SDK_INT == 8
-					&& Constants.getIgnoreListGleichAndroid22().contains(
-							names[i])) {
-				continue;
-			}
 			HashMap<String, Object> m = new HashMap<String, Object>();
 			m.put("name", names[i]);
 			m.put("icon_small", logos_small.getResourceId(i, R.id.logo));
