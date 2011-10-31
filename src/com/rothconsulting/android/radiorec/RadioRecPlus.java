@@ -319,8 +319,17 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 			if (favIcon.isChecked()) {
 				favIcon.setButtonDrawable(android.R.drawable.star_big_on);
+				Log.d(TAG, "isChecked -> instertStation");
+				dbadapter.open();
+				dbadapter.insertStation(Constants.THE_SELECTED_STATION_ICON,
+						Constants.THE_SELECTED_STATION_NAME);
+				dbadapter.close();
 			} else {
 				favIcon.setButtonDrawable(android.R.drawable.star_big_off);
+				Log.d(TAG, "is NOT Checked -> deleteStation");
+				dbadapter.open();
+				dbadapter.deleteStation(Constants.THE_SELECTED_STATION_NAME);
+				dbadapter.close();
 			}
 			break;
 		case R.id.back:

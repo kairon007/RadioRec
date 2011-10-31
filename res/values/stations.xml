@@ -122,6 +122,10 @@
 		<item>Radio rt1 Südschwaben</item>
 		<item>Radio HR3</item>
 		<item>Radio Star FM</item>
+		<item>Radio Ibiza Sonica</item>
+		<item>Radio Amnesia</item>
+		<item>Radio Blue Marlin Ibiza</item>
+		<item>Radio Regenbogen</item>
     </string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -245,7 +249,11 @@
 		<item>@drawable/radio_rt1_suedschwaben</item>	
 		<item>@drawable/radio_hr3</item>	
 		<item>@drawable/radio_starfm</item>	
-		</array>
+		<item>@drawable/radio_ibizasonica</item>	
+		<item>@drawable/radio_amnesia</item>	
+		<item>@drawable/radio_bluemarlin</item>	
+		<item>@drawable/radio_regenbogen</item>	
+	</array>
     <array name="station_logos_small">
         <item>@drawable/radio_32_small</item>
 		<item>@drawable/radio_32_goldies_small</item>
@@ -368,6 +376,10 @@
 		<item>@drawable/radio_rt1_suedschwaben_small</item>	    
 		<item>@drawable/radio_hr3_small</item>	    
 		<item>@drawable/radio_starfm_small</item>	
+		<item>@drawable/radio_ibizasonica_small</item>	
+		<item>@drawable/radio_amnesia_small</item>	
+		<item>@drawable/radio_bluemarlin_small</item>	
+		<item>@drawable/radio_regenbogen_small</item>	
 	</array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -491,6 +503,10 @@
 		<item>http://62.27.44.59/rt1suedschwaben/livestream.mp3?token=</item>
 		<item>http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w69b</item>
 		<item>http://87.230.53.43:8004</item>
+		<item>http://stream.wft.es:7005</item>
+		<item>http://stream.estudiosonico.com:7015</item>
+		<item>http://89.238.146.142:8635</item>
+		<item>http://217.151.151.91:80/live</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -614,7 +630,11 @@
 		<item>http://www.rt1-suedschwaben.de</item>
 		<item>http://www.hr3.de</item>
 		<item>http://www.starfm.de/nuernberg</item>
-		</string-array>
+		<item>http://www.ibizasonica.com</item>
+		<item>http://www.amnesia.es</item>
+		<item>http://www.bluemarlinibiza.com</item>
+		<item>http://www.regenbogen.de</item>
+	</string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
 		<item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -737,7 +757,11 @@
 		<item></item>
 		<item>http://www.hrfoto.dunkel.de/webcams/hr3/studio2.jpg</item>
 		<item></item>
-    </string-array>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item>http://www.regenbogen.de/content/html/shared/webcams/index.html</item>
+	</string-array>
     <string-array name="station_contact">
         <item>http://www.radio32.ch/?id=257&amp;rub=55</item>
 		<item>http://www.radio32.ch/?id=685&amp;rub=124</item>
@@ -860,5 +884,9 @@
 		<item>http://www.rt1-suedschwaben.de/index.php?pageid=174&amp;puid=7</item>
 		<item>http://www.hr-online.de/website/radio/hr3/index.jsp?rubrik=3532</item>
 		<item>http://www.starfm.de/nuernberg/kontakt.php</item>
+		<item>https://www.facebook.com/ibizasonicaradio</item>
+		<item>http://www.amnesia.es/webapp/contact</item>
+		<item>http://www.bluemarlinibiza.com/contact/contact</item>
+		<item>http://www.regenbogen.de/views/service-navigation/kontakt/e-mail.html</item>
     </string-array>
 </resources>
