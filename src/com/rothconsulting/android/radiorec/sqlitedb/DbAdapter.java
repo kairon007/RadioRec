@@ -55,17 +55,6 @@ public class DbAdapter {
 	}
 
 	/**
-	 * Update the station
-	 */
-	public boolean updateStation(long rowId, int stationIcon, String stationName) {
-		ContentValues updateValues = createContentValues(stationIcon,
-				stationName);
-
-		return database.update(T_STATION, updateValues,
-				KEY_ROWID + "=" + rowId, null) > 0;
-	}
-
-	/**
 	 * Deletes station
 	 */
 	public boolean deleteStation(String stationName) {
@@ -87,10 +76,11 @@ public class DbAdapter {
 	/**
 	 * Return a Cursor positioned at the defined station
 	 */
-	public Cursor fetchStation(long rowId) throws SQLException {
-		Cursor mCursor = database.query(true, T_STATION, new String[] {
-				KEY_ROWID, KEY_STATION_ICON, KEY_STATION_NAME }, KEY_ROWID
-				+ "=" + rowId, null, null, null, null, null);
+	public Cursor fetchStation(String stationName) throws SQLException {
+		Cursor mCursor = null;
+		mCursor = database.query(true, T_STATION, new String[] {
+				KEY_STATION_ICON, KEY_STATION_NAME }, KEY_STATION_NAME + "= '"
+				+ stationName + "'", null, null, null, null, null);
 		if (mCursor != null) {
 			mCursor.moveToFirst();
 		}

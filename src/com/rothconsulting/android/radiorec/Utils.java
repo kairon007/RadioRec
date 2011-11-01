@@ -31,10 +31,10 @@ public class Utils {
 		ConnectivityManager connectivity = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		if (connectivity != null) {
-			NetworkInfo[] info = connectivity.getAllNetworkInfo();
-			if (info != null) {
-				for (int i = 0; i < info.length; i++) {
-					if (info[i].getState() == NetworkInfo.State.CONNECTED) {
+			NetworkInfo[] infos = connectivity.getAllNetworkInfo();
+			if (infos != null) {
+				for (NetworkInfo ni : infos) {
+					if (ni.getState() == NetworkInfo.State.CONNECTED) {
 						Log.d(TAG, "Wir sind connected!");
 						return true;
 					}

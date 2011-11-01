@@ -13,6 +13,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -54,6 +55,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private RadioPlayer radioPlayer;
 	private AsyncTask<URL, Integer, Long> recordTask;
 	private String origRT1steam = null;
+	private ToggleButton favIcon = null;
+	private DbAdapter dbadapter = null;
 
 	Utils utils = new Utils();
 
@@ -70,6 +73,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 		firstStart = true;
+		dbadapter = new DbAdapter(this);
 		Utils utils = new Utils();
 		utils.getPreferences(this);
 		// get components and register clicks
@@ -78,6 +82,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
 		((TextView) findViewById(R.id.webcam)).setOnClickListener(this);
 		((TextView) findViewById(R.id.mail)).setOnClickListener(this);
+		favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
 		((ToggleButton) findViewById(R.id.toggleButtonFavorit))
 				.setOnClickListener(this);
 		back = ((ImageButton) findViewById(R.id.back));
@@ -314,8 +319,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.toggleButtonFavorit:
 			Log.i(TAG, "favorit");
-			ToggleButton favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
-			DbAdapter dbadapter = new DbAdapter(this);
 
 			if (favIcon.isChecked()) {
 				favIcon.setButtonDrawable(android.R.drawable.star_big_on);
@@ -338,6 +341,16 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				stations.setSelection(stations.getSelectedItemPosition() - 1);
 				Constants.THE_SELECTED_STATION_INDEX = stations
 						.getSelectedItemPosition();
+				dbadapter.open();
+				Cursor cursor = dbadapter
+						.fetchStation(Constants.THE_SELECTED_STATION_NAME);
+				if (cursor != null) {
+					favIcon.setChecked(true);
+				} else {
+					favIcon.setChecked(false);
+				}
+				cursor.close();
+				dbadapter.close();
 				Log.d(TAG, "back");
 			}
 			break;
@@ -389,6 +402,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Log.d(TAG, "getSelectedItemPosition2=" + arg0.getSelectedItemPosition());
 		Log.d(TAG, "SELECTED_STATION_INDEX2="
 				+ Constants.SELECTED_STATION_INDEX);
+
+		dbadapter.open();
+		dbadapter.deleteStation(Constants.THE_SELECTED_STATION_NAME);
+		dbadapter.close();
 
 		changeStation();
 	}
