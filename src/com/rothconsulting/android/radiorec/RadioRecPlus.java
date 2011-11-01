@@ -443,7 +443,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			// abspielen kann.
 			origRT1steam = Constants.THE_URL_LIVE_STREAM;
 			Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
-					+ webtool.getRT1token();
+					+ webtool.getRT1token(this);
 			Log.d(TAG, "*********** new Stream="
 					+ Constants.THE_URL_LIVE_STREAM);
 		}
@@ -502,7 +502,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 					origRT1steam = Constants.THE_URL_LIVE_STREAM;
 				}
 				Constants.THE_URL_LIVE_STREAM = origRT1steam
-						+ webtool.getRT1token();
+						+ webtool.getRT1token(this);
 				Log.d(TAG, "*********** new Stream="
 						+ Constants.THE_URL_LIVE_STREAM);
 			}

@@ -12,6 +12,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+import android.content.Context;
 import android.util.Log;
 
 public class WebTool {
@@ -208,13 +209,17 @@ public class WebTool {
 
 	}
 
-	protected String getRT1token() {
-		String url = "http://edge.download.newmedia.nacamar.net/sltokens/flashplayer/stream-mp3-player.php?stream=rt1suedschwaben/livestream.mp3";
-		String findString = "var token = \"";
-		String endString = "\";";
-		String token = getStringFromWebsite(url, null, findString, endString);
-		token = token.substring(13, token.length() - 2);
-		Log.d(TAG, "** Token=" + token);
+	protected String getRT1token(Context context) {
+		Utils utils = new Utils();
+		String token = "";
+		if (utils.isNetworkAvailable(context)) {
+			String url = "http://edge.download.newmedia.nacamar.net/sltokens/flashplayer/stream-mp3-player.php?stream=rt1suedschwaben/livestream.mp3";
+			String findString = "var token = \"";
+			String endString = "\";";
+			token = getStringFromWebsite(url, null, findString, endString);
+			token = token.substring(13, token.length() - 2);
+			Log.d(TAG, "** Token=" + token);
+		}
 		return token;
 	}
 }
