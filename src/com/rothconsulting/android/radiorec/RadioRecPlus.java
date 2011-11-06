@@ -56,7 +56,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private AsyncTask<URL, Integer, Long> recordTask;
 	private String origRT1steam = null;
 	private ToggleButton favIcon = null;
-	private DbAdapter dbadapter = null;
 
 	Utils utils = new Utils();
 
@@ -73,7 +72,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 		firstStart = true;
-		dbadapter = new DbAdapter(this);
 		Utils utils = new Utils();
 		utils.getPreferences(this);
 		// get components and register clicks
@@ -159,7 +157,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 						R.id.option_icon, R.id.option_text });
 		stations.setAdapter(adapter);
 		stations.setOnItemSelectedListener(this);
-
 	}
 
 	@Override
@@ -319,7 +316,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.toggleButtonFavorit:
 			Log.i(TAG, "favorit");
-
+			DbAdapter dbadapter = new DbAdapter(this);
 			if (favIcon.isChecked()) {
 				favIcon.setButtonDrawable(android.R.drawable.star_big_on);
 				Log.d(TAG, "isChecked -> instertStation");
@@ -341,16 +338,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				stations.setSelection(stations.getSelectedItemPosition() - 1);
 				Constants.THE_SELECTED_STATION_INDEX = stations
 						.getSelectedItemPosition();
-				dbadapter.open();
-				Cursor cursor = dbadapter
-						.fetchStation(Constants.THE_SELECTED_STATION_NAME);
-				if (cursor != null) {
-					favIcon.setChecked(true);
-				} else {
-					favIcon.setChecked(false);
-				}
-				cursor.close();
-				dbadapter.close();
 				Log.d(TAG, "back");
 			}
 			break;
@@ -403,10 +390,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Log.d(TAG, "SELECTED_STATION_INDEX2="
 				+ Constants.SELECTED_STATION_INDEX);
 
-		dbadapter.open();
-		dbadapter.deleteStation(Constants.THE_SELECTED_STATION_NAME);
-		dbadapter.close();
-
 		changeStation();
 	}
 
@@ -418,8 +401,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		if (index < 0) {
 			index = 0;
 		}
-		ToggleButton favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
-		favIcon.setButtonDrawable(android.R.drawable.star_big_off);
 
 		HashMap<String, Object> map = null;
 		try {
@@ -443,28 +424,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Constants.THE_SELECTED_STATION_NAME = "" + map.get("name");
 		Constants.THE_URL_LIVE_STREAM = "" + map.get("stream");
 
-		if (Constants.THE_SELECTED_STATION_NAME
-				.equalsIgnoreCase(Constants.RADIO_KINGSTONHOT)) {
-			// Kingstonhot.de hat immer Donnerstags eine Live Sendung. Ab
-			// Freitag kann man diese als mp3 hören. Daher ist die URL
-			// dynamisch.
-			Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
-					+ utils.getKingstonHotFileName();
-			Log.d(TAG, "*********** new Stream="
-					+ Constants.THE_URL_LIVE_STREAM);
-		}
-		if (Constants.THE_SELECTED_STATION_NAME
-				.equalsIgnoreCase(Constants.RADIO_RT1_SUEDSCHWABEN)) {
-			WebTool webtool = new WebTool();
-			// rt1 ist geschützt und braucht login token damit man den Stream
-			// abspielen kann.
-			origRT1steam = Constants.THE_URL_LIVE_STREAM;
-			Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
-					+ webtool.getRT1token(this);
-			Log.d(TAG, "*********** new Stream="
-					+ Constants.THE_URL_LIVE_STREAM);
-		}
-
 		Constants.THE_URL_HOMEPAGE = "" + map.get("homepage");
 		Constants.THE_URL_WEBCAM = "" + map.get("webcam");
 		final TextView textViewWebcam = (TextView) findViewById(R.id.webcam);
@@ -476,11 +435,35 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 		Constants.THE_URL_CONTACT = "" + map.get("email");
 
+		this.setFavIcon();
+
 		if (!firstStart && playing) {
 			if (Constants.getLiveStreamStations().contains(
 					Constants.THE_SELECTED_STATION_NAME)) {
 				Log.d(TAG, "------ ist Radio Gelb-Schwarz");
 				showDialog(Constants.LIVE_STREAM_STATION);
+			}
+			if (Constants.THE_SELECTED_STATION_NAME
+					.equalsIgnoreCase(Constants.RADIO_KINGSTONHOT)) {
+				// Kingstonhot.de hat immer Donnerstags eine Live Sendung. Ab
+				// Freitag kann man diese als mp3 hören. Daher ist die URL
+				// dynamisch.
+				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
+						+ utils.getKingstonHotFileName();
+				Log.d(TAG, "*********** new Stream="
+						+ Constants.THE_URL_LIVE_STREAM);
+			}
+			if (Constants.THE_SELECTED_STATION_NAME
+					.equalsIgnoreCase(Constants.RADIO_RT1_SUEDSCHWABEN)) {
+				WebTool webtool = new WebTool();
+				// rt1 ist geschützt und braucht login token damit man den
+				// Stream
+				// abspielen kann.
+				origRT1steam = Constants.THE_URL_LIVE_STREAM;
+				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
+						+ webtool.getRT1token(this);
+				Log.d(TAG, "*********** new Stream="
+						+ Constants.THE_URL_LIVE_STREAM);
 			}
 			getRadioPlayer().doStartPlay(this);
 		} else {
@@ -558,5 +541,23 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 							Constants.NOTIFICATION_ID_RECORDING);
 			recording = false;
 		}
+	}
+
+	private void setFavIcon() {
+		DbAdapter dbadapter = new DbAdapter(this);
+		dbadapter.open();
+		Cursor cursor = null;
+		cursor = dbadapter.fetchStation(Constants.THE_SELECTED_STATION_NAME);
+		if (cursor != null && cursor.getCount() > 0) {
+			favIcon.setChecked(true);
+			Log.d(TAG, "favIcon.setChecked(true)");
+			favIcon.setButtonDrawable(android.R.drawable.star_big_on);
+		} else {
+			favIcon.setChecked(false);
+			Log.d(TAG, "favIcon.setChecked(false)");
+			favIcon.setButtonDrawable(android.R.drawable.star_big_off);
+		}
+		cursor.close();
+		dbadapter.close();
 	}
 }

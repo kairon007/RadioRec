@@ -83,7 +83,9 @@ public class DbAdapter {
 				+ stationName + "'", null, null, null, null, null);
 		if (mCursor != null) {
 			mCursor.moveToFirst();
+			Log.d(TAG, "cursor.getCount()=" + mCursor.getCount());
 		}
+		Log.d(TAG, "cursor=" + mCursor);
 		return mCursor;
 	}
 
