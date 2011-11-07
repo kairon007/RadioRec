@@ -57,9 +57,13 @@ public class DbAdapter {
 	/**
 	 * Deletes station
 	 */
-	public boolean deleteStation(String stationName) {
-		return database.delete(T_STATION, KEY_STATION_NAME + "=?",
-				new String[] { "'" + stationName + "'" }) > 0;
+	public int deleteStation(String stationName) {
+		Log.d(TAG, "delete stationName=" + stationName);
+		int affected = database.delete(T_STATION, KEY_STATION_NAME + "='"
+				+ stationName + "'", null);
+		Log.d(TAG, "rows deleted=" + affected);
+
+		return affected;
 	}
 
 	/**

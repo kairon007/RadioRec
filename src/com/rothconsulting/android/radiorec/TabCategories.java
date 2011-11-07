@@ -13,52 +13,37 @@ import android.widget.SimpleAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 
-import com.rothconsulting.android.radiorec.sqlitedb.DBHelper;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
 
 public class TabCategories extends ListActivity {
-	private DbAdapter mDbAdapter;
-	private static final int DELETE_ID = 1;
-	private Cursor cursor;
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		getApplicationContext().deleteDatabase(DBHelper.DATABASE_NAME);
-		getApplicationContext().deleteDatabase("RadioRecPlus");
+		// getApplicationContext().deleteDatabase(DBHelper.DATABASE_NAME);
+		// getApplicationContext().deleteDatabase("RadioRecPlus");
 
 		setContentView(R.layout.categories_list);
-		mDbAdapter = new DbAdapter(this);
-		mDbAdapter.open();
-		mDbAdapter.insertStation(0, "Meine Favoriten");
-		mDbAdapter.insertStation(1, "Alphabetisch A-Z");
-		mDbAdapter.insertStation(2, "Alphabetisch Z-A");
-		mDbAdapter.insertStation(4, "Land: Schweiz");
-		mDbAdapter.insertStation(5, "Land: Deutschland");
-		mDbAdapter.insertStation(6, "Land: Österreich");
-		mDbAdapter.insertStation(7, "Sprache: Deutsch");
-		mDbAdapter.insertStation(8, "Sprache: Französisch");
-		mDbAdapter.insertStation(9, "Sprache: Englisch");
-		mDbAdapter.insertStation(10, "Musikstil: Pop");
-		mDbAdapter.insertStation(11, "Musikstil: Rock");
-		mDbAdapter.insertStation(12, "Musikstil: Swiss");
-		mDbAdapter.insertStation(13, "Musikstil: Chillout");
-		mDbAdapter.insertStation(14, "Musikstil: Volkstümlich");
-		fillData();
+		// DbAdapter mDbAdapter = new DbAdapter(this);
+		// mDbAdapter.open();
+		// mDbAdapter.insertStation(0, "Meine Favoriten");
+		// mDbAdapter.insertStation(1, "Alphabetisch A-Z");
+		// mDbAdapter.close();
+		// fillData();
 
-		// showFavList();
+		showFavList();
 	}
 
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
-		Cursor c = cursor;
-		c.moveToPosition(position);
-		int icon = c
-				.getInt(c.getColumnIndexOrThrow(DbAdapter.KEY_STATION_ICON));
-		String name = c.getString(c
-				.getColumnIndexOrThrow(DbAdapter.KEY_STATION_NAME));
+		// Cursor c = cursor;
+		// c.moveToPosition(position);
+		// int icon = c
+		// .getInt(c.getColumnIndexOrThrow(DbAdapter.KEY_STATION_ICON));
+		// String name = c.getString(c
+		// .getColumnIndexOrThrow(DbAdapter.KEY_STATION_NAME));
 
 		showFavList();
 		// Intent i = new Intent(this, Tabs.class);
@@ -71,7 +56,8 @@ public class TabCategories extends ListActivity {
 	}
 
 	private void fillData() {
-		cursor = mDbAdapter.fetchAllStations();
+		DbAdapter mDbAdapter = new DbAdapter(this).open();
+		Cursor cursor = mDbAdapter.fetchAllStations();
 		startManagingCursor(cursor);
 
 		String[] from = new String[] { DbAdapter.KEY_STATION_NAME };
@@ -81,23 +67,31 @@ public class TabCategories extends ListActivity {
 		SimpleCursorAdapter notes = new SimpleCursorAdapter(this,
 				R.layout.categories_listitem, cursor, from, to);
 		setListAdapter(notes);
+		cursor.close();
+		mDbAdapter.close();
 	}
 
 	private void showFavList() {
 		List<HashMap<String, Object>> stationList = new ArrayList<HashMap<String, Object>>();
-		HashMap<String, Object> m = new HashMap<String, Object>();
-		m.put("icon_small", R.drawable.radio_32_small);
-		m.put("name", "Radio 32");
-		stationList.add(m);
-		m = new HashMap<String, Object>();
-		m.put("icon_small", R.drawable.radio_32_goldies_small);
-		m.put("name", "Radio 32 Goldies");
-		stationList.add(m);
-		m = new HashMap<String, Object>();
-		m.put("icon_small", 2);
-		m.put("name", "Radio 33");
-		stationList.add(m);
-
+		DbAdapter myDbAdapter = new DbAdapter(this);
+		myDbAdapter.open();
+		Cursor cursor = myDbAdapter.fetchAllStations();
+		if (cursor != null && cursor.getCount() > 0) {
+			int columnIndexIcon = cursor
+					.getColumnIndex(DbAdapter.KEY_STATION_ICON);
+			int columnIndexName = cursor
+					.getColumnIndex(DbAdapter.KEY_STATION_NAME);
+			cursor.moveToFirst();
+			for (int i = 0; i < cursor.getCount(); i++) {
+				HashMap<String, Object> m = new HashMap<String, Object>();
+				m.put("icon_small", cursor.getInt(columnIndexIcon));
+				m.put("name", cursor.getString(columnIndexName));
+				stationList.add(m);
+				cursor.moveToNext();
+			}
+			cursor.close();
+		}
+		myDbAdapter.close();
 		SimpleAdapter adapter = new SimpleAdapter(this, stationList,
 				R.layout.station_listitem,
 				new String[] { "icon_small", "name" }, new int[] {

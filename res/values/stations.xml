@@ -102,7 +102,8 @@
 		<item>Radio Ö1 - ORF</item>
 		<item>Radio Ö3 - ORF</item>		
 		<item>Radio FM4 - ORF</item>		
-		<item>BuureRadio</item>
+		<item>Radio Wien - ORF</item>		
+   		<item>BuureRadio</item>
 		<item>Radio Industrie</item>
 		<item>Radio Audioasyl</item>
 		<item>Piratenradio</item>		
@@ -229,6 +230,7 @@
 		<item>@drawable/radio_oe1</item>
 		<item>@drawable/radio_oe3</item>		
 		<item>@drawable/radio_oe_fm4</item>		
+		<item>@drawable/radio_orf_wien</item>		
 		<item>@drawable/radio_buureradio</item>
 		<item>@drawable/radio_industrie</item>
 		<item>@drawable/radio_audioasyl</item>
@@ -355,7 +357,8 @@
 		<item>@drawable/radio_sunshinelive_small</item>
 		<item>@drawable/radio_oe1_small</item>
 		<item>@drawable/radio_oe3_small</item>		
-		<item>@drawable/radio_oe_fm4_small</item>		
+		<item>@drawable/radio_oe_fm4_small</item>	
+		<item>@drawable/radio_orf_wien_small</item>		
 		<item>@drawable/radio_buureradio_small</item>
 		<item>@drawable/radio_industrie_small</item>
 		<item>@drawable/radio_audioasyl_small</item>
@@ -415,7 +418,7 @@
 		<item>http://87.237.169.123:8000/radiobeo.mp3</item>
 		<item>http://icecast.radiotop.ch:8000/radiotop</item>
 		<item>http://icecast.radiotop.ch:8000/toptwo</item>
-		<item>http://s1.radio.tilllate.com:8080/20min_ger</item>
+		<item>http://ch4.streamhosting.ch:8080/20min_ger</item>
 		<item>http://stream-02.neo1.ch:80/neo1</item>
 		<item>http://stream-02.neo1.ch:80/neo2</item>
 		<item>http://stream3.radiobasel.ch:8000/rb13</item>
@@ -483,6 +486,7 @@
 		<item>http://mp3stream3.apasf.apa.at:8000</item>
 		<item>http://mp3stream7.apasf.apa.at:8000</item>		
 		<item>http://mp3stream1.apasf.apa.at:8000</item>		
+		<item>http://mp3stream2.apasf.apa.at:8000</item>		
 		<item>http://live-three.dmd2.ch</item>
 		<item>http://96.31.83.87:8063</item>
 		<item>http://stream.audioasyl.net/audioasyl</item>
@@ -610,6 +614,7 @@
 		<item>http://oe1.orf.at</item>
 		<item>http://oe3.orf.at</item>		
 		<item>http://fm4.orf.at</item>		
+		<item>http://wien.orf.at</item>		
 		<item>http://www.buureradio.ch</item>
 		<item>http://www.radioindustrie.ch</item>
 		<item>http://www.audioasyl.net</item>
@@ -739,6 +744,7 @@
 		<item></item>
 		<item></item>
 		<item></item>
+		<item></item>
 		<item></item>		
 		<item></item>		
 		<item></item>		
@@ -864,6 +870,7 @@
 		<item>http://oe1.orf.at/kontakt</item>
 		<item>http://cluboe3.orf.at/song/index.php?round=24</item>
 		<item>http://our.orf.at/mailform/fm4_kontakt</item>
+		<item>899953@orf.at</item>
 		<item>info@buureradio.ch</item>
 		<item>info@radioindustrie.ch</item>
 		<item>info@audioasyl.net</item>		
