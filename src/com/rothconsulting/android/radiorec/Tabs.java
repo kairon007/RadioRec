@@ -64,7 +64,7 @@ public class Tabs extends ActivityGroup {
 		// Drawable resizedImg2 = utils.resizeImage(
 		// android.R.drawable.ic_menu_agenda, this, 40, 40);
 		tspec2.setIndicator(makeTabIndicator(getString(R.string.senderNach)));
-		tspec2.setContent(new Intent(this, TabCategories.class));
+		tspec2.setContent(new Intent(this, TabFavourites.class));
 		tabs.addTab(tspec2);
 
 		// TabSpec tspec3 = tabs.newTabSpec("Tab3");

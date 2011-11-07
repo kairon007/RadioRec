@@ -30,9 +30,9 @@ public class TabCategories extends ListActivity {
 		// mDbAdapter.insertStation(0, "Meine Favoriten");
 		// mDbAdapter.insertStation(1, "Alphabetisch A-Z");
 		// mDbAdapter.close();
-		// fillData();
+		fillData();
 
-		showFavList();
+		// showFavList();
 	}
 
 	@Override
