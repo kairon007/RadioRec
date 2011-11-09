@@ -168,7 +168,7 @@
 		<item>@drawable/radio_basel</item>
 		<item>@drawable/radio_argovia</item>
 		<item>@drawable/radio_argovia_hitmix</item>
-		<item>@drawable/radio_argovia</item>
+		<item>@drawable/radio_argovia_swissclassicrock</item>
 		<item>@drawable/radio_105</item>
 		<item>@drawable/radio_fm_1</item>
 		<item>@drawable/radio_fm1_melody</item>
@@ -296,7 +296,7 @@
 		<item>@drawable/radio_basel_small</item>
 		<item>@drawable/radio_argovia_small</item>
 		<item>@drawable/radio_argovia_hitmix_small</item>
-		<item>@drawable/radio_argovia_small</item>
+		<item>@drawable/radio_argovia_swissclassicrock_small</item>
 		<item>@drawable/radio_105_small</item>
 		<item>@drawable/radio_fm_1_small</item>
 		<item>@drawable/radio_fm1_melody_small</item>
