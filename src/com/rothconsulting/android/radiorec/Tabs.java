@@ -18,7 +18,7 @@ import android.widget.TabWidget;
 import android.widget.TextView;
 
 public class Tabs extends ActivityGroup {
-
+	private final static String TAG = "Tabs";
 	int tabHeight = 40;
 
 	@Override
@@ -48,7 +48,7 @@ public class Tabs extends ActivityGroup {
 		// content.setId(100);
 		tabs.setup(getLocalActivityManager());
 
-		Log.d("TAG", "Tabs Tab1");
+		Log.d(TAG, "Tabs Tab1");
 		TabSpec tspec1 = tabs.newTabSpec("Tab1");
 		// Utils utils = new Utils();
 		// Drawable resizedImg1 = utils.resizeImage(R.drawable.jukebox, this,
@@ -56,10 +56,10 @@ public class Tabs extends ActivityGroup {
 		// 40);
 		tspec1.setIndicator(makeTabIndicator(getString(R.string.app_name)));
 		tspec1.setContent(new Intent(this, RadioRecPlus.class));
-		Log.d("TAG", "Tabs after Intent");
+		Log.d(TAG, "Tabs after Intent");
 		tabs.addTab(tspec1);
 
-		Log.d("TAG", "Tabs Tab2");
+		Log.d(TAG, "Tabs Tab2");
 		TabSpec tspec2 = tabs.newTabSpec("Tab2");
 		// Drawable resizedImg2 = utils.resizeImage(
 		// android.R.drawable.ic_menu_agenda, this, 40, 40);

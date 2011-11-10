@@ -7,6 +7,7 @@ import java.util.List;
 import android.app.ListActivity;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -15,9 +16,11 @@ import android.widget.Toast;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
 
 public class TabFavourites extends ListActivity {
+	private static final String TAG = "TabFavourites";
 
 	@Override
 	public void onCreate(Bundle icicle) {
+		Log.d(TAG, "*********** TabFavourites onCreate ***************");
 		super.onCreate(icicle);
 		List<HashMap<String, Object>> stationList = new ArrayList<HashMap<String, Object>>();
 		DbAdapter dbAdapter = new DbAdapter(this);
