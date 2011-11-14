@@ -20,6 +20,7 @@ import android.widget.TextView;
 public class Tabs extends ActivityGroup {
 	private final static String TAG = "Tabs";
 	int tabHeight = 40;
+	TabHost tabs = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -27,10 +28,12 @@ public class Tabs extends ActivityGroup {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		LinearLayout main = new LinearLayout(this);
+		main.setBackgroundResource(R.drawable.bg_port);
 		main.setOrientation(LinearLayout.VERTICAL);
 		setContentView(main);
 
-		TabHost tabs = new TabHost(this);
+		tabs = new TabHost(this);
+		// tabs.setOnTabChangedListener(this);
 		tabs.setId(android.R.id.tabhost);
 		main.addView(tabs);
 
@@ -63,9 +66,11 @@ public class Tabs extends ActivityGroup {
 		TabSpec tspec2 = tabs.newTabSpec("Tab2");
 		// Drawable resizedImg2 = utils.resizeImage(
 		// android.R.drawable.ic_menu_agenda, this, 40, 40);
-		tspec2.setIndicator(makeTabIndicator(getString(R.string.senderNach)));
-		tspec2.setContent(new Intent(this, TabFavourites.class));
+		tspec2.setIndicator(makeTabIndicator(getString(R.string.favoriten)));
+		tspec2.setContent(new Intent(this, TabFavourites.class)
+				.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
 		tabs.addTab(tspec2);
+		tabs.setCurrentTab(0);
 
 		// TabSpec tspec3 = tabs.newTabSpec("Tab3");
 		// tspec3.setIndicator(makeTabIndicator(getString(R.string.favoriten)));
@@ -105,4 +110,11 @@ public class Tabs extends ActivityGroup {
 		}
 
 	}
+
+	// public void onTabChanged(String arg0) {
+	// Log.d(TAG, "Tab changed -------------------------");
+	// if (tabs.getCurrentTab() == 1) {
+	// startActivity(new Intent(this, TabFavourites.class));
+	// }
+	// }
 }

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,9 +20,12 @@ public class TabFavourites extends ListActivity {
 	private static final String TAG = "TabFavourites";
 
 	@Override
-	public void onCreate(Bundle icicle) {
+	public void onCreate(Bundle bundle) {
 		Log.d(TAG, "*********** TabFavourites onCreate ***************");
-		super.onCreate(icicle);
+		super.onCreate(bundle);
+
+		// getApplicationContext().deleteDatabase(DBHelper.DATABASE_NAME);
+
 		List<HashMap<String, Object>> stationList = new ArrayList<HashMap<String, Object>>();
 		DbAdapter dbAdapter = new DbAdapter(this);
 		dbAdapter.open();
@@ -40,16 +44,16 @@ public class TabFavourites extends ListActivity {
 		} else {
 			Toast.makeText(
 					this,
-					"Noch keine Favoriten vorhanden.\nDrücke Stern neben dem Sender.",
+					"Noch keine Favoriten vorhanden.\nDrücke Stern neben den Sendern.",
 					Toast.LENGTH_LONG).show();
 		}
 		cursor.close();
 		dbAdapter.close();
 
 		SimpleAdapter adapter = new SimpleAdapter(this, stationList,
-				R.layout.station_listitem,
-				new String[] { "icon_small", "name" }, new int[] {
-						R.id.option_icon, R.id.option_text });
+				R.layout.favourites_listitem, new String[] { "icon_small",
+						"name" }, new int[] { R.id.option_icon,
+						R.id.option_text });
 
 		setListAdapter(adapter);
 	}
@@ -62,6 +66,6 @@ public class TabFavourites extends ListActivity {
 		String keyword = o.toString();
 		Toast.makeText(this, "You selected: " + keyword, Toast.LENGTH_SHORT)
 				.show();
-
+		startActivity(new Intent(this, RadioRecPlus.class));
 	}
 }

@@ -49,6 +49,8 @@ public class Constants {
 		ignoreList.add(RADIO_OE1);
 		ignoreList.add(RADIO_OE3);
 		ignoreList.add(RADIO_FM4);
+		ignoreList.add(RADIO_TIROL);
+		ignoreList.add(RADIO_WIEN);
 		ignoreList.add(RADIO_BUURERADIO);
 		ignoreList.add(RADIO_INDUSTRIE);
 		ignoreList.add(RADIO_21);
@@ -58,6 +60,10 @@ public class Constants {
 		ignoreList.add(RADIO_SKYLIVE);
 		ignoreList.add(RADIO_TRANCERADIO);
 		ignoreList.add(RADIO_STAR_FM);
+		ignoreList.add(RADIO_IBIZA_SONICA);
+		ignoreList.add(RADIO_AMNESIA);
+		ignoreList.add(RADIO_BLUE_MARLIN);
+		ignoreList.add(RADIO_TIROL_IT);
 		return ignoreList;
 	}
 
@@ -109,6 +115,8 @@ public class Constants {
 	protected static String THE_ANTI_ADS_KEY;
 	protected static String THE_SD_CARD_PATH;
 	protected static int THE_BUFFER;
+
+	public static int CURRENT_TAB = 0;
 
 	public static final String DEFAULT_SD_CARD_PATH = "sdcard/RadioRecorder";
 	public static final int DEFAULT_BUFFER = 8192;
@@ -194,6 +202,8 @@ public class Constants {
 	public static final String RADIO_OE3 = "Radio Ö3 - ORF";
 	public static final String RADIO_OE1 = "Radio Ö1 - ORF";
 	public static final String RADIO_FM4 = "Radio FM4 - ORF";
+	public static final String RADIO_WIEN = "Radio Wien - ORF";
+	public static final String RADIO_TIROL = "Radio Tirol - ORF";
 	public static final String RADIO_BUURERADIO = "BuureRadio";
 	public static final String RADIO_INDUSTRIE = "Radio Industrie";
 	public static final String RADIO_21 = "Radio 21";
@@ -205,4 +215,8 @@ public class Constants {
 	public static final String RADIO_TRANCERADIO = "TranceRadio";
 	public static final String RADIO_RT1_SUEDSCHWABEN = "Radio rt1 Südschwaben";
 	public static final String RADIO_STAR_FM = "Radio Star FM";
+	public static final String RADIO_IBIZA_SONICA = "Radio Ibiza Sonica";
+	public static final String RADIO_AMNESIA = "Radio Amnesia";
+	public static final String RADIO_BLUE_MARLIN = "Radio Blue Marlin Ibiza";
+	public static final String RADIO_TIROL_IT = "Radio Tirol (IT)";
 }
