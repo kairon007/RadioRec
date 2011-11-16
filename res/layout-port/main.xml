@@ -22,11 +22,11 @@
 			android:drawableTop="@android:drawable/ic_menu_send" android:text="Mail"
 			android:gravity="center" android:layout_margin="4dp"
 			android:layout_weight="1" />
-		<ToggleButton android:id="@+id/toggleButtonFavorit"
+		<!-- ToggleButton android:id="@+id/toggleButtonFavorit"
 			android:layout_width="wrap_content" android:layout_height="wrap_content"
 			android:layout_weight="1" android:background="@color/transparent"
 			android:src="@android:drawable/star_big_off" android:gravity="center|top"
-			android:textOn="" android:textOff="" android:text="" />
+			android:textOn="" android:textOff="" android:text="" / -->
 	</LinearLayout>
 	<!-- TextView android:layout_height="wrap_content" android:layout_width="fill_parent" 
 		android:id="@+id/ticker" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" 

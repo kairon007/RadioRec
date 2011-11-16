@@ -55,7 +55,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private RadioPlayer radioPlayer;
 	private AsyncTask<URL, Integer, Long> recordTask;
 	private String origRT1steam = null;
-	private ToggleButton favIcon = null;
+	private final ToggleButton favIcon = null;
 
 	Utils utils = new Utils();
 
@@ -80,9 +80,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
 		((TextView) findViewById(R.id.webcam)).setOnClickListener(this);
 		((TextView) findViewById(R.id.mail)).setOnClickListener(this);
-		favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
-		((ToggleButton) findViewById(R.id.toggleButtonFavorit))
-				.setOnClickListener(this);
+		// favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
+		// ((ToggleButton) findViewById(R.id.toggleButtonFavorit))
+		// .setOnClickListener(this);
 		back = ((ImageButton) findViewById(R.id.back));
 		back.setOnClickListener(this);
 		back.setEnabled(false);
@@ -314,24 +314,24 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				startActivity(Intent.createChooser(emailIntent, "Send mail..."));
 			}
 			break;
-		case R.id.toggleButtonFavorit:
-			Log.i(TAG, "favorit");
-			DbAdapter dbadapter = new DbAdapter(this);
-			if (favIcon.isChecked()) {
-				favIcon.setButtonDrawable(android.R.drawable.star_big_on);
-				Log.d(TAG, "isChecked -> instertStation");
-				dbadapter.open();
-				dbadapter.insertStation(Constants.THE_SELECTED_STATION_ICON,
-						Constants.THE_SELECTED_STATION_NAME);
-				dbadapter.close();
-			} else {
-				favIcon.setButtonDrawable(android.R.drawable.star_big_off);
-				Log.d(TAG, "is NOT Checked -> deleteStation");
-				dbadapter.open();
-				dbadapter.deleteStation(Constants.THE_SELECTED_STATION_NAME);
-				dbadapter.close();
-			}
-			break;
+		// case R.id.toggleButtonFavorit:
+		// Log.i(TAG, "favorit");
+		// DbAdapter dbadapter = new DbAdapter(this);
+		// if (favIcon.isChecked()) {
+		// favIcon.setButtonDrawable(android.R.drawable.star_big_on);
+		// Log.d(TAG, "isChecked -> instertStation");
+		// dbadapter.open();
+		// dbadapter.insertStation(Constants.THE_SELECTED_STATION_ICON,
+		// Constants.THE_SELECTED_STATION_NAME);
+		// dbadapter.close();
+		// } else {
+		// favIcon.setButtonDrawable(android.R.drawable.star_big_off);
+		// Log.d(TAG, "is NOT Checked -> deleteStation");
+		// dbadapter.open();
+		// dbadapter.deleteStation(Constants.THE_SELECTED_STATION_NAME);
+		// dbadapter.close();
+		// }
+		// break;
 		case R.id.back:
 			if (stations.getSelectedItemPosition() > 0) {
 				back.setEnabled(false);
@@ -435,7 +435,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 		Constants.THE_URL_CONTACT = "" + map.get("email");
 
-		this.setFavIcon();
+		// this.setFavIcon();
 
 		if (!firstStart && playing) {
 			if (Constants.getLiveStreamStations().contains(
@@ -475,7 +475,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		utils.storePreferences(this);
 	}
 
-	private RadioPlayer getRadioPlayer() {
+	protected RadioPlayer getRadioPlayer() {
 		if (radioPlayer == null) {
 			radioPlayer = new RadioPlayer();
 		}
@@ -533,7 +533,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		return recording;
 	}
 
-	private void doStopRecording() {
+	protected void doStopRecording() {
 		if (recordTask != null) {
 			recordTask.cancel(true);
 			utils.getNotifInstance(this, RadioRecPlus.class)
@@ -559,5 +559,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 		cursor.close();
 		dbadapter.close();
+	}
+
+	public boolean isPlaying() {
+		return playing;
 	}
 }

@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
@@ -117,4 +118,30 @@ public class Tabs extends ActivityGroup {
 	// startActivity(new Intent(this, TabFavourites.class));
 	// }
 	// }
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		Log.d(TAG, "Zurückkkkkk ------");
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			RadioRecPlus rrp = new RadioRecPlus();
+			if (tabs.getCurrentTab() == 1) {
+				tabs.setCurrentTab(0);
+			} else
+
+			if (rrp.isPlaying()) {
+				showDialog(Constants.PRESS_BACK_BUTTON);
+				return true;
+			} else {
+				rrp.getRadioPlayer().doStopPlay(this);
+				rrp.doStopRecording();
+				finish();
+			}
+		}
+		Utils utils = new Utils();
+		utils.getNotifInstance(this, RadioRecPlus.class)
+				.hideStatusBarNotification(
+						Constants.NOTIFICATION_ID_ERROR_CONNECTION);
+		return super.onKeyDown(keyCode, event);
+	}
+
 }
