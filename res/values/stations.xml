@@ -42,6 +42,7 @@
 		<item>Radio Argovia Hitmix</item>
 		<item>Radio Argovia Classic Rock</item>
 		<item>Radio 105</item>
+		<item>Radio 105 Classics</item>
 		<item>Radio FM1</item>
 		<item>Radio FM1 Melody</item>
 		<item>Radio Antenne Bayern</item>
@@ -103,8 +104,9 @@
 		<item>Radio Ö3 - ORF</item>		
 		<item>Radio FM4 - ORF</item>		
 		<item>Radio Wien - ORF</item>
-		<item>Radio Tirol - ORF</item>	
-   		<item>BuureRadio</item>
+		<item>Radio Tirol - ORF</item>
+		<item>Radio Kärnten - ORF</item>
+		<item>BuureRadio</item>
 		<item>Radio Industrie</item>
 		<item>Radio Audioasyl</item>
 		<item>Piratenradio</item>		
@@ -173,6 +175,7 @@
 		<item>@drawable/radio_argovia_hitmix</item>
 		<item>@drawable/radio_argovia_swissclassicrock</item>
 		<item>@drawable/radio_105</item>
+		<item>@drawable/radio_105_classics</item>
 		<item>@drawable/radio_fm_1</item>
 		<item>@drawable/radio_fm1_melody</item>
 		<item>@drawable/radio_antenne_bayern</item>
@@ -234,7 +237,8 @@
 		<item>@drawable/radio_oe3</item>		
 		<item>@drawable/radio_oe_fm4</item>		
 		<item>@drawable/radio_orf_wien</item>
-		<item>@drawable/radio_orf_tirol</item>		
+		<item>@drawable/radio_orf_tirol</item>
+		<item>@drawable/radio_orf_kaernten</item>
 		<item>@drawable/radio_buureradio</item>
 		<item>@drawable/radio_industrie</item>
 		<item>@drawable/radio_audioasyl</item>
@@ -304,7 +308,8 @@
 		<item>@drawable/radio_argovia_hitmix_small</item>
 		<item>@drawable/radio_argovia_swissclassicrock_small</item>
 		<item>@drawable/radio_105_small</item>
-		<item>@drawable/radio_fm_1_small</item>
+		<item>@drawable/radio_105_classics_small</item>
+   		<item>@drawable/radio_fm_1_small</item>
 		<item>@drawable/radio_fm1_melody_small</item>
 		<item>@drawable/radio_antenne_bayern_small</item>
 		<item>@drawable/radio_antenne_chillout_small</item>
@@ -366,6 +371,7 @@
 		<item>@drawable/radio_oe_fm4_small</item>	
 		<item>@drawable/radio_orf_wien_small</item>		
 		<item>@drawable/radio_orf_tirol_small</item>		
+		<item>@drawable/radio_orf_kaernten_small</item>
    		<item>@drawable/radio_buureradio_small</item>
 		<item>@drawable/radio_industrie_small</item>
 		<item>@drawable/radio_audioasyl_small</item>
@@ -435,6 +441,7 @@
 		<item>http://shoutcast.argovia.ch:8095</item>
 		<item>http://shoutcast.argovia.ch:8090</item>
 		<item>http://bas-flu-stream-01.datacomm.ch:8000/105fm</item>
+		<item>http://bas-flu-stream-01.datacomm.ch:8000/105classics</item>
 		<item>http://radiofm1.ice.infomaniak.ch:80/radiofm1-128.mp3</item>
 		<item>http://fm1melody.ice.infomaniak.ch/fm1melody-128.mp3</item>
 		<item>http://mp3.webradio.antenne.de:80</item>
@@ -496,7 +503,8 @@
 		<item>http://mp3stream7.apasf.apa.at:8000</item>		
 		<item>http://mp3stream1.apasf.apa.at:8000</item>		
 		<item>http://mp3stream2.apasf.apa.at:8000</item>		
-		<item>http://194.232.200.159:8000</item>		
+		<item>http://194.232.200.159:8000</item>
+		<item>http://194.232.200.145:8000</item>	
 		<item>http://live-three.dmd2.ch</item>
 		<item>http://96.31.83.87:8063</item>
 		<item>http://stream.audioasyl.net/audioasyl</item>
@@ -566,6 +574,7 @@
 		<item>http://www.argovia.ch</item>
 		<item>http://www.argovia.ch</item>
 		<item>http://www.105.ch</item>
+		<item>http://www.105classics.ch</item>
 		<item>http://www.radiofm1.ch</item>
 		<item>http://www.fm1melody.ch</item>
 		<item>http://www.antenne.de</item>
@@ -626,8 +635,9 @@
 		<item>http://oe1.orf.at</item>
 		<item>http://oe3.orf.at</item>		
 		<item>http://fm4.orf.at</item>		
-		<item>http://wien.orf.at</item>		
-		<item>http://tirol.orf.at</item>		
+		<item>http://wien.orf.at</item>
+		<item>http://tirol.orf.at</item>
+		<item>http://kaernten.orf.at</item>
 		<item>http://www.buureradio.ch</item>
 		<item>http://www.radioindustrie.ch</item>
 		<item>http://www.audioasyl.net</item>
@@ -697,6 +707,7 @@
 		<item>http://www.argovia.ch/live/</item>
 		<item>http://www.argovia.ch/live/</item>
 		<item></item>
+		<item></item>
 		<item>http://www.radiofm1.ch/index.php?article_id=323</item>
 		<item></item>
 		<item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
@@ -756,6 +767,7 @@
 		<item></item>
 		<item></item>
 		<item>http://onapp1.orf.at/webcam/oe3/cam2_oe3.jpg</item>
+		<item></item>
 		<item></item>
 		<item></item>
 		<item></item>
@@ -827,7 +839,8 @@
 		<item>http://www.argovia.ch/miniwin-jukes.phpch</item>
 		<item>http://www.argovia.ch/miniwin-jukes.php</item>
 		<item>http://www.argovia.ch/miniwin-jukes.php</item>
-		<item>http://www.105.ch/channels/105-fm/?article=65#top</item>
+		<item>http://www.105.ch/channels/105-fm/?article=65</item>
+		<item>http://www.105.ch/channels/radio-105-classic/?article=65</item>
 		<item>http://www.radiofm1.ch/index.php?article_id=285</item>
 		<item>http://www.fm1melody.ch/index.php?article_id=20</item>
 		<item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
@@ -891,6 +904,7 @@
 		<item>899953@orf.at</item>
 		<item>899953@orf.at</item>
 		<item>publikumsservice.tirol@orf.at</item>
+		<item>service.kaernten@orf.at</item>
 		<item>info@radioindustrie.ch</item>
 		<item>info@audioasyl.net</item>		
 		<item>info@piratenradio.ch</item>		
