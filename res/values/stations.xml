@@ -133,7 +133,11 @@
 		<item>Radio Regenbogen</item>
 		<item>Radio Fantasy Dance FM</item>
 		<item>Radio Tirol (IT)</item>
-    </string-array>
+		<item>Delta Radio</item>
+		<item>Radio NDR 1</item>
+		<item>Radio NDR 2</item>
+		<item>Radio N-Joy</item>
+	</string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
 		<item>@drawable/radio_32_goldies</item>
@@ -267,6 +271,10 @@
 		<item>@drawable/radio_regenbogen</item>	
 		<item>@drawable/radio_fantasy_dance</item>	
 		<item>@drawable/radio_tirol_it</item>		
+		<item>@drawable/radio_delta_radio</item>		
+		<item>@drawable/radio_ndr1</item>		
+		<item>@drawable/radio_ndr2</item>		
+		<item>@drawable/radio_n_joy</item>		
 	</array>
     <array name="station_logos_small">
         <item>@drawable/radio_32_small</item>
@@ -401,6 +409,10 @@
 		<item>@drawable/radio_regenbogen_small</item>	
 		<item>@drawable/radio_fantasy_dance_small</item>	
 		<item>@drawable/radio_tirol_it</item>		
+		<item>@drawable/radio_delta_radio_small</item>		
+		<item>@drawable/radio_ndr1_small</item>		
+		<item>@drawable/radio_ndr2_small</item>		
+		<item>@drawable/radio_n_joy_small</item>		
 	</array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -535,6 +547,10 @@
 		<item>http://217.151.151.91:80/live</item>
 		<item>http://dancefmwebradio.de:8000/dsl_stream.mp3</item>
 		<item>http://str2.creacast.com/radiotirol_a</item>
+		<item>http://stream.hoerradar.de/deltaradio128</item>
+		<item>http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr1wellenord_hi_mp3</item>
+		<item>http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr2_hi_mp3</item>
+		<item>http://ndrstream.ic.llnwd.net/stream/ndrstream_n-joy_hi_mp3</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -669,6 +685,10 @@
 		<item>http://www.regenbogen.de</item>
 		<item>http://www.fantasy967.de</item>
 		<item>http://www.radiotirol.it</item>
+		<item>http://www.deltaradio.ch</item>
+		<item>http://www.ndr1.de</item>
+		<item>http://www.ndr2.de</item>
+		<item>http://www.n-joy.de</item>
 	</string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -801,6 +821,10 @@
 		<item></item>
 		<item></item>
 		<item>http://www.regenbogen.de/content/html/shared/webcams/index.html</item>
+		<item></item>
+		<item></item>
+		<item></item>
+		<item></item>
 		<item></item>
 		<item></item>
 	</string-array>
@@ -937,5 +961,9 @@
 		<item>http://www.regenbogen.de/views/service-navigation/kontakt/e-mail.html</item>
 		<item>http://www.fantasy967.de/index.php?id=88</item>
 		<item>http://www.radiotirol.it/index.php?id=18</item>
-    </string-array>
+		<item>http://www.deltaradio.de/delta/kontakt/mail/index.html</item>
+		<item>http://www.ndr.de/wellenord/service/mail_ins_studio/index.html</item>
+		<item>http://www.ndr.de/ndr2/musik/musikwunsch/index.html</item>
+		<item>http://www.n-joy.de/kontakt377.html</item>
+	</string-array>
 </resources>
