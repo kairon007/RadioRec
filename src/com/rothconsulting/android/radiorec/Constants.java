@@ -13,7 +13,7 @@ public class Constants {
 	 */
 	public static final List<String> getIgnoreListKleinerAndroid22() {
 		List<String> ignoreList = new ArrayList<String>();
-		ignoreList.add(RADIO_105);
+		// ignoreList.add(RADIO_105);
 		ignoreList.add(RADIO_ANTENNE_BAYERN);
 		ignoreList.add(RADIO_ANTENNE_ROCK);
 		ignoreList.add(RADIO_KANAL_K);
@@ -51,6 +51,8 @@ public class Constants {
 		ignoreList.add(RADIO_FM4);
 		ignoreList.add(RADIO_TIROL);
 		ignoreList.add(RADIO_WIEN);
+		ignoreList.add(RADIO_KAERNTEN);
+		ignoreList.add(RADIO_SALZBURG);
 		ignoreList.add(RADIO_BUURERADIO);
 		ignoreList.add(RADIO_INDUSTRIE);
 		ignoreList.add(RADIO_21);
@@ -204,6 +206,8 @@ public class Constants {
 	public static final String RADIO_FM4 = "Radio FM4 - ORF";
 	public static final String RADIO_WIEN = "Radio Wien - ORF";
 	public static final String RADIO_TIROL = "Radio Tirol - ORF";
+	public static final String RADIO_KAERNTEN = "Radio Kärnten - ORF";
+	public static final String RADIO_SALZBURG = "Radio Salzburg - ORF";
 	public static final String RADIO_BUURERADIO = "BuureRadio";
 	public static final String RADIO_INDUSTRIE = "Radio Industrie";
 	public static final String RADIO_21 = "Radio 21";
@@ -212,7 +216,7 @@ public class Constants {
 	public static final String RADIO_TOP100STATION = "Radio Top 100 Station";
 	public static final String RADIO_ROCKSTATION = "Radio Rockstation";
 	public static final String RADIO_SKYLIVE = "Radio SkyLive";
-	public static final String RADIO_TRANCERADIO = "TranceRadio";
+	public static final String RADIO_TRANCERADIO = "Radio TranceRadio";
 	public static final String RADIO_RT1_SUEDSCHWABEN = "Radio rt1 Südschwaben";
 	public static final String RADIO_STAR_FM = "Radio Star FM";
 	public static final String RADIO_IBIZA_SONICA = "Radio Ibiza Sonica";
