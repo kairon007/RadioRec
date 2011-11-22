@@ -103,10 +103,11 @@
 		<item>Radio Ö1 - ORF</item>
 		<item>Radio Ö3 - ORF</item>		
 		<item>Radio FM4 - ORF</item>		
-		<item>Radio Wien - ORF</item>
 		<item>Radio Tirol - ORF</item>
+		<item>Radio Wien - ORF</item>		
 		<item>Radio Kärnten - ORF</item>
 		<item>Radio Salzburg - ORF</item>
+		<item>Radio Niederösterreich - ORF</item>		
 		<item>BuureRadio</item>
 		<item>Radio Industrie</item>
 		<item>Radio Audioasyl</item>
@@ -137,6 +138,7 @@
 		<item>Radio NDR 1</item>
 		<item>Radio NDR 2</item>
 		<item>Radio N-Joy</item>
+		<item>Radio Stephansdom</item>
 	</string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -241,10 +243,11 @@
 		<item>@drawable/radio_oe1</item>
 		<item>@drawable/radio_oe3</item>		
 		<item>@drawable/radio_oe_fm4</item>		
-		<item>@drawable/radio_orf_wien</item>
 		<item>@drawable/radio_orf_tirol</item>
+		<item>@drawable/radio_orf_wien</item>		
 		<item>@drawable/radio_orf_kaernten</item>
 		<item>@drawable/radio_orf_salzburg</item>
+		<item>@drawable/radio_orf_niederoesterreich</item>		
 		<item>@drawable/radio_buureradio</item>
 		<item>@drawable/radio_industrie</item>
 		<item>@drawable/radio_audioasyl</item>
@@ -275,6 +278,7 @@
 		<item>@drawable/radio_ndr1</item>		
 		<item>@drawable/radio_ndr2</item>		
 		<item>@drawable/radio_n_joy</item>		
+		<item>@drawable/radio_stephansdom</item>		
 	</array>
     <array name="station_logos_small">
         <item>@drawable/radio_32_small</item>
@@ -379,10 +383,11 @@
 		<item>@drawable/radio_oe1_small</item>
 		<item>@drawable/radio_oe3_small</item>		
 		<item>@drawable/radio_oe_fm4_small</item>	
-		<item>@drawable/radio_orf_wien_small</item>		
-		<item>@drawable/radio_orf_tirol_small</item>		
+		<item>@drawable/radio_orf_tirol_small</item>
+		<item>@drawable/radio_orf_wien_small</item>				
 		<item>@drawable/radio_orf_kaernten_small</item>
-		<item>@drawable/radio_orf_salzburg</item>
+		<item>@drawable/radio_orf_salzburg_small</item>
+		<item>@drawable/radio_orf_niederoesterreich_small</item>		
 		<item>@drawable/radio_buureradio_small</item>
 		<item>@drawable/radio_industrie_small</item>
 		<item>@drawable/radio_audioasyl_small</item>
@@ -413,6 +418,7 @@
 		<item>@drawable/radio_ndr1_small</item>		
 		<item>@drawable/radio_ndr2_small</item>		
 		<item>@drawable/radio_n_joy_small</item>		
+		<item>@drawable/radio_stephansdom_small</item>		
 	</array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -518,9 +524,10 @@
 		<item>http://mp3stream7.apasf.apa.at:8000</item>		
 		<item>http://mp3stream1.apasf.apa.at:8000</item>		
 		<item>http://mp3stream2.apasf.apa.at:8000</item>		
+		<item>http://194.232.200.145:8000</item>
 		<item>http://194.232.200.159:8000</item>
-		<item>http://194.232.200.145:8000</item>	
 		<item>http://194.232.200.147:8000</item>	
+		<item>http://194.232.200.147:8000</item>		
 		<item>http://live-three.dmd2.ch</item>
 		<item>http://96.31.83.87:8063</item>
 		<item>http://stream.audioasyl.net/audioasyl</item>
@@ -551,6 +558,7 @@
 		<item>http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr1wellenord_hi_mp3</item>
 		<item>http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr2_hi_mp3</item>
 		<item>http://ndrstream.ic.llnwd.net/stream/ndrstream_n-joy_hi_mp3</item>
+		<item>http://srvhost24.serverhosting.apa.net:8000/rsdstream128</item>		
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -655,10 +663,11 @@
 		<item>http://oe1.orf.at</item>
 		<item>http://oe3.orf.at</item>		
 		<item>http://fm4.orf.at</item>		
-		<item>http://wien.orf.at</item>
 		<item>http://tirol.orf.at</item>
+		<item>http://wien.orf.at</item>		
 		<item>http://kaernten.orf.at</item>
 		<item>http://salzburg.orf.at</item>
+		<item>http://noe.orf.at</item>		
 		<item>http://www.buureradio.ch</item>
 		<item>http://www.radioindustrie.ch</item>
 		<item>http://www.audioasyl.net</item>
@@ -689,6 +698,7 @@
 		<item>http://www.ndr1.de</item>
 		<item>http://www.ndr2.de</item>
 		<item>http://www.n-joy.de</item>
+		<item>http://www.radiostephansdom.at</item>
 	</string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -798,6 +808,7 @@
 		<item></item>
 		<item></item>
 		<item></item>
+		<item></item>		
 		<item></item>
 		<item></item>		
 		<item></item>		
@@ -821,6 +832,7 @@
 		<item></item>
 		<item></item>
 		<item>http://www.regenbogen.de/content/html/shared/webcams/index.html</item>
+		<item></item>
 		<item></item>
 		<item></item>
 		<item></item>
@@ -931,12 +943,13 @@
 		<item>http://oe1.orf.at/kontakt</item>
 		<item>http://cluboe3.orf.at/song/index.php?round=24</item>
 		<item>http://our.orf.at/mailform/fm4_kontakt</item>
-		<item>899953@orf.at</item>
-		<item>899953@orf.at</item>
 		<item>publikumsservice.tirol@orf.at</item>
+		<item>899953@orf.at</item>		
 		<item>service.kaernten@orf.at</item>
 		<item>publikumsservice.salzburg@orf.at</item>
-		<item>info@radioindustrie.ch</item>
+		<item>noe-publikum@orf.at</item>		
+		<item>http://www.buureradio.ch/buureradio20/module/songs/searchform.asp</item>
+		<item>info@radioindustrie.ch</item>		
 		<item>info@audioasyl.net</item>		
 		<item>info@piratenradio.ch</item>		
 		<item>http://radio21.ch/wp/?page_id=481</item>		
@@ -965,5 +978,6 @@
 		<item>http://www.ndr.de/wellenord/service/mail_ins_studio/index.html</item>
 		<item>http://www.ndr.de/ndr2/musik/musikwunsch/index.html</item>
 		<item>http://www.n-joy.de/kontakt377.html</item>
+		<item>http://www.radiostephansdom.at/kontakt/</item>
 	</string-array>
 </resources>
