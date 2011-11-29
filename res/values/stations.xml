@@ -128,6 +128,7 @@
 		<item>Radio rt1 Südschwaben</item>
 		<item>Radio HR3</item>
 		<item>Radio Star FM</item>
+		<item>Radio Star FM From Hell</item>
 		<item>Radio Ibiza Sonica</item>
 		<item>Radio Amnesia</item>
 		<item>Radio Blue Marlin Ibiza</item>
@@ -139,6 +140,8 @@
 		<item>Radio NDR 2</item>
 		<item>Radio N-Joy</item>
 		<item>Radio Stephansdom</item>
+		<item>Celtic Music Radio</item>
+		<item>Radio Mittelalterklang</item>
 	</string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -268,6 +271,7 @@
 		<item>@drawable/radio_rt1_suedschwaben</item>	
 		<item>@drawable/radio_hr3</item>	
 		<item>@drawable/radio_starfm</item>	
+		<item>@drawable/radio_starfm_hell</item>	
 		<item>@drawable/radio_ibizasonica</item>	
 		<item>@drawable/radio_amnesia</item>	
 		<item>@drawable/radio_bluemarlin</item>	
@@ -279,6 +283,8 @@
 		<item>@drawable/radio_ndr2</item>		
 		<item>@drawable/radio_n_joy</item>		
 		<item>@drawable/radio_stephansdom</item>		
+		<item>@drawable/radio_celtic_radio</item>		
+		<item>@drawable/radio_mittelalterklang</item>		
 	</array>
     <array name="station_logos_small">
         <item>@drawable/radio_32_small</item>
@@ -408,6 +414,7 @@
 		<item>@drawable/radio_rt1_suedschwaben_small</item>	    
 		<item>@drawable/radio_hr3_small</item>	    
 		<item>@drawable/radio_starfm_small</item>	
+		<item>@drawable/radio_starfm_hell_small</item>	
 		<item>@drawable/radio_ibizasonica_small</item>	
 		<item>@drawable/radio_amnesia_small</item>	
 		<item>@drawable/radio_bluemarlin_small</item>	
@@ -419,6 +426,8 @@
 		<item>@drawable/radio_ndr2_small</item>		
 		<item>@drawable/radio_n_joy_small</item>		
 		<item>@drawable/radio_stephansdom_small</item>		
+		<item>@drawable/radio_celtic_radio_small</item>		
+		<item>@drawable/radio_mittelalterklang_small</item>		
 	</array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -548,6 +557,7 @@
 		<item>http://62.27.44.59/rt1suedschwaben/livestream.mp3?token=</item>
 		<item>http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w69b</item>
 		<item>http://87.230.53.43:8004</item>
+		<item>http://87.230.53.43:7000</item>
 		<item>http://stream.wft.es:7005</item>
 		<item>http://stream.estudiosonico.com:7015</item>
 		<item>http://89.238.146.142:8635</item>
@@ -558,7 +568,9 @@
 		<item>http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr1wellenord_hi_mp3</item>
 		<item>http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr2_hi_mp3</item>
 		<item>http://ndrstream.ic.llnwd.net/stream/ndrstream_n-joy_hi_mp3</item>
-		<item>http://srvhost24.serverhosting.apa.net:8000/rsdstream128</item>		
+		<item>http://srvhost24.serverhosting.apa.net:8000/rsdstream128</item>	
+		<item>http://173.192.224.123:8214</item>
+		<item>http://62.75.216.154:8050</item>	
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -688,6 +700,7 @@
 		<item>http://www.rt1-suedschwaben.de</item>
 		<item>http://www.hr3.de</item>
 		<item>http://www.starfm.de/nuernberg</item>
+		<item>http://www.starfm.de/berlin</item>
 		<item>http://www.ibizasonica.com</item>
 		<item>http://www.amnesia.es</item>
 		<item>http://www.bluemarlinibiza.com</item>
@@ -699,6 +712,9 @@
 		<item>http://www.ndr2.de</item>
 		<item>http://www.n-joy.de</item>
 		<item>http://www.radiostephansdom.at</item>
+		<item>http://www.celticmusicradio.com</item>
+		<item>http://www.mittelalterklang.de</item>
+		<item></item>
 	</string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -831,7 +847,10 @@
 		<item></item>
 		<item></item>
 		<item></item>
+		<item></item>
 		<item>http://www.regenbogen.de/content/html/shared/webcams/index.html</item>
+		<item></item>
+		<item></item>
 		<item></item>
 		<item></item>
 		<item></item>
@@ -968,6 +987,7 @@
 		<item>http://www.rt1-suedschwaben.de/index.php?pageid=174&amp;puid=7</item>
 		<item>http://www.hr-online.de/website/radio/hr3/index.jsp?rubrik=3532</item>
 		<item>http://www.starfm.de/nuernberg/kontakt.php</item>
+		<item>http://www.starfm.de/berlin/kontakt.php</item>
 		<item>https://www.facebook.com/ibizasonicaradio</item>
 		<item>http://www.amnesia.es/webapp/contact</item>
 		<item>http://www.bluemarlinibiza.com/contact/contact</item>
@@ -978,6 +998,8 @@
 		<item>http://www.ndr.de/wellenord/service/mail_ins_studio/index.html</item>
 		<item>http://www.ndr.de/ndr2/musik/musikwunsch/index.html</item>
 		<item>http://www.n-joy.de/kontakt377.html</item>
-		<item>http://www.radiostephansdom.at/kontakt/</item>
+		<item>http://www.radiostephansdom.at/kontakt</item>
+		<item>http://www.celticradio.net/php/service_mod.php?type=contact</item>
+		<item>administration@mittelalterklang.de</item>
 	</string-array>
 </resources>
