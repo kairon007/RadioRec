@@ -142,6 +142,7 @@
 		<item>Radio Stephansdom</item>
 		<item>Celtic Music Radio</item>
 		<item>Radio Mittelalterklang</item>
+		<item>Radio Secrettube</item>
 	</string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -284,7 +285,8 @@
 		<item>@drawable/radio_n_joy</item>		
 		<item>@drawable/radio_stephansdom</item>		
 		<item>@drawable/radio_celtic_radio</item>		
-		<item>@drawable/radio_mittelalterklang</item>		
+		<item>@drawable/radio_mittelalterklang</item>	
+		<item>@drawable/radio_secrettube</item>	
 	</array>
     <array name="station_logos_small">
         <item>@drawable/radio_32_small</item>
@@ -428,6 +430,7 @@
 		<item>@drawable/radio_stephansdom_small</item>		
 		<item>@drawable/radio_celtic_radio_small</item>		
 		<item>@drawable/radio_mittelalterklang_small</item>		
+		<item>@drawable/radio_secrettube_small</item>	
 	</array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -571,6 +574,7 @@
 		<item>http://srvhost24.serverhosting.apa.net:8000/rsdstream128</item>	
 		<item>http://173.192.224.123:8214</item>
 		<item>http://62.75.216.154:8050</item>	
+		<item>http://secrettube.ch:6010</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -714,7 +718,7 @@
 		<item>http://www.radiostephansdom.at</item>
 		<item>http://www.celticmusicradio.com</item>
 		<item>http://www.mittelalterklang.de</item>
-		<item></item>
+		<item>http://radio.secrettube.ch</item>
 	</string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -849,6 +853,7 @@
 		<item></item>
 		<item></item>
 		<item>http://www.regenbogen.de/content/html/shared/webcams/index.html</item>
+		<item></item>
 		<item></item>
 		<item></item>
 		<item></item>
@@ -1001,5 +1006,6 @@
 		<item>http://www.radiostephansdom.at/kontakt</item>
 		<item>http://www.celticradio.net/php/service_mod.php?type=contact</item>
 		<item>administration@mittelalterklang.de</item>
+		<item>webmaster@secrettube.ch</item>
 	</string-array>
 </resources>

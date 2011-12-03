@@ -66,6 +66,9 @@ public class Constants {
 		ignoreList.add(RADIO_AMNESIA);
 		ignoreList.add(RADIO_BLUE_MARLIN);
 		ignoreList.add(RADIO_TIROL_IT);
+		ignoreList.add(RADIO_CELITIC_MUSIC);
+		ignoreList.add(RADIO_MITTELALTERKLANG);
+		ignoreList.add(RADIO_SECRETTUBE);
 		return ignoreList;
 	}
 
@@ -208,6 +211,7 @@ public class Constants {
 	public static final String RADIO_TIROL = "Radio Tirol - ORF";
 	public static final String RADIO_KAERNTEN = "Radio Kärnten - ORF";
 	public static final String RADIO_SALZBURG = "Radio Salzburg - ORF";
+	public static final String RADIO_NIEDEROESTERREICH = "Radio Niederösterreich - ORF";
 	public static final String RADIO_BUURERADIO = "BuureRadio";
 	public static final String RADIO_INDUSTRIE = "Radio Industrie";
 	public static final String RADIO_21 = "Radio 21";
@@ -219,8 +223,12 @@ public class Constants {
 	public static final String RADIO_TRANCERADIO = "Radio TranceRadio";
 	public static final String RADIO_RT1_SUEDSCHWABEN = "Radio rt1 Südschwaben";
 	public static final String RADIO_STAR_FM = "Radio Star FM";
+	public static final String RADIO_STAR_FM_FROM_HELL = "Radio Star FM From Hell";
 	public static final String RADIO_IBIZA_SONICA = "Radio Ibiza Sonica";
 	public static final String RADIO_AMNESIA = "Radio Amnesia";
 	public static final String RADIO_BLUE_MARLIN = "Radio Blue Marlin Ibiza";
 	public static final String RADIO_TIROL_IT = "Radio Tirol (IT)";
+	public static final String RADIO_CELITIC_MUSIC = "Celtic Music Radio";
+	public static final String RADIO_MITTELALTERKLANG = "Radio Mittelalterklang";
+	public static final String RADIO_SECRETTUBE = "Radio Secrettube";
 }
