@@ -231,4 +231,5 @@ public class Constants {
 	public static final String RADIO_CELITIC_MUSIC = "Celtic Music Radio";
 	public static final String RADIO_MITTELALTERKLANG = "Radio Mittelalterklang";
 	public static final String RADIO_SECRETTUBE = "Radio Secrettube";
+	public static final String RADIO_GONG_NUERNBERG = "Radio Gong Nürnberg";
 }
