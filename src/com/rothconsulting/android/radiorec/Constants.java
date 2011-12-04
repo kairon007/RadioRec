@@ -69,6 +69,8 @@ public class Constants {
 		ignoreList.add(RADIO_CELITIC_MUSIC);
 		ignoreList.add(RADIO_MITTELALTERKLANG);
 		ignoreList.add(RADIO_SECRETTUBE);
+		ignoreList.add(RADIO_GONG_NUERNBERG);
+		ignoreList.add(RADIO_PALOMA);
 		return ignoreList;
 	}
 
@@ -131,6 +133,8 @@ public class Constants {
 	public static final int NOTIFICATION_ID_ERROR_CONNECTION = 3;
 	public static final int PRESS_BACK_BUTTON = 10;
 	public static final int LIVE_STREAM_STATION = 11;
+
+	public static final int INTENT_REQUEST_FROM_FAV = 1;
 
 	public static final String FROM_NOTIFICATION = "fromNotification";
 
@@ -232,4 +236,5 @@ public class Constants {
 	public static final String RADIO_MITTELALTERKLANG = "Radio Mittelalterklang";
 	public static final String RADIO_SECRETTUBE = "Radio Secrettube";
 	public static final String RADIO_GONG_NUERNBERG = "Radio Gong Nürnberg";
+	public static final String RADIO_PALOMA = "Radio Paloma";
 }

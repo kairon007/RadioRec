@@ -66,6 +66,7 @@ public class TabFavourites extends ListActivity {
 		String keyword = o.toString();
 		Toast.makeText(this, "You selected: " + keyword, Toast.LENGTH_SHORT)
 				.show();
-		startActivity(new Intent(this, RadioRecPlus.class));
+		Intent i = new Intent(this, RadioRecPlus.class);
+		startActivityForResult(i, Constants.INTENT_REQUEST_FROM_FAV);
 	}
 }
