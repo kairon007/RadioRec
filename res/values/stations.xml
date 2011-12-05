@@ -147,6 +147,7 @@
 		<item>Radio Paloma</item>
 		<item>Radio eins rbb</item>
 		<item>Radio Dreyeckland</item>
+		<item>Radio Novaplanet</item>
 	</string-array>
     <array name="station_logos">
         <item>@drawable/radio_32</item>
@@ -295,6 +296,7 @@
 		<item>@drawable/radio_paloma</item>
 		<item>@drawable/radio_eins_rbb</item>
 		<item>@drawable/radio_dreyeckland</item>
+		<item>@drawable/radio_novaplanet</item>
 	</array>
     <array name="station_logos_small">
         <item>@drawable/radio_32_small</item>
@@ -443,6 +445,7 @@
 		<item>@drawable/radio_paloma_small</item>
 		<item>@drawable/radio_eins_rbb_small</item>
 		<item>@drawable/radio_dreyeckland_small</item>
+		<item>@drawable/radio_novaplanet_small</item>
 	</array>
     <string-array name="station_streams">
         <item>http://radio32-stream.customer.solnet.ch:8000/radio32</item>
@@ -591,6 +594,7 @@
 		<item>http://he-srv1.radiopaloma.de:80</item>
 		<item>http://rbb.ic.llnwd.net/stream/rbb_radioeins_mp3_m_a</item>
 		<item>http://85.214.250.73:8000/rdl</item>
+		<item>http://broadcast.infomaniak.ch/radionova-high.mp3</item>
     </string-array>
     <string-array name="station_homepages">
         <item>http://www.radio32.ch</item>
@@ -739,6 +743,7 @@
 		<item>http://www.radiopaloma.de</item>
 		<item>http://www.radioeins.de</item>
 		<item>http://www.rdl.de</item>
+		<item>http://www.novaplanet.com</item>
 	</string-array>
     <string-array name="station_webcams">
         <item>http://www.radio32.ch/pages/inc/getcampicfront.cfm</item>
@@ -873,6 +878,7 @@
 		<item></item>
 		<item></item>
 		<item>http://www.regenbogen.de/content/html/shared/webcams/index.html</item>
+		<item></item>
 		<item></item>
 		<item></item>
 		<item></item>
@@ -1036,5 +1042,6 @@
 		<item>http://www.radiopaloma.de/kontakt.html</item>
 		<item>http://www.radioeins.de/kontakt/index.html</item>
 		<item>http://www.rdl.de/index.php?option=com_content&amp;view=article&amp;id=8825&amp;Itemid=466</item>
+		<item>http://www.novaplanet.com/content/contact</item>
 	</string-array>
 </resources>
