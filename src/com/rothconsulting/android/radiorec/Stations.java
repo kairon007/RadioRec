@@ -48,6 +48,19 @@ public class Stations {
 		stationList.add(m);
 
 		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_HOCH2);
+		m.put("icon", R.drawable.radio_hoch_2);
+		m.put("icon_small", R.drawable.radio_hoch_2_small);
+		m.put("stream", "http://stream1.radiohoch2.ch:80/web");
+		m.put("homepage", "http://www.radiohoch2.ch");
+		m.put("webcam", "http://webcam.radiohoch2.ch/webcam_big.php");
+		m.put("email", "http://radiohoch2.ch/contact");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
 		m.put("name", Constants.RADIO_CAPITAL_FM);
 		m.put("icon", R.drawable.radio_capital_fm);
 		m.put("icon_small", R.drawable.radio_capital_fm_small);
@@ -165,716 +178,778 @@ public class Stations {
 		m.put("stil", "pop");
 		stationList.add(m);
 
-		//
-		//
-		// <item>Radio DRS2</item>
-		// <item>Radio DRS3</item>
-		// <item>Radio DRS4 News</item>
-		// <item>Radio DRS Musikwelle</item>
-		// <item>Radio DRS Virus</item>
-		// <item>Radio Hoch2</item>
-		// <item>Radio Energy Bern</item>
-		// <item>Radio Energy Zürich</item>
-		// <item>Radio Energy Swiss</item>
-		// <item>Radio Energy Charts</item>
-		// <item>Radio Energy Love</item>
-		// <item>Radio Energy 80s</item>
-		// <item>Radio Energy 90s</item>
-		// <item>Radio Energy Italy</item>
-		// <item>Radio Swiss Classic</item>
-		// <item>Radio Swiss Jazz</item>
-		// <item>Radio Swiss Pop</item>
-		// <item>Radio 1</item>
-		// <item>Radio Zürisee</item>
-		// <item>Radio Pilatus</item>
-		// <item>Radio BeO</item>
-		// <item>Radio Top</item>
-		// <item>Radio Top Two</item>
-		// <item>Radio 20 Minuten</item>
-		// <item>Radio neo 1</item>
-		// <item>Radio neo zwei</item>
-		// <item>Radio Basel</item>
-		// <item>Radio Argovia</item>
-		// <item>Radio Argovia Hitmix</item>
-		// <item>Radio Argovia Classic Rock</item>
-		// <item>Radio 105</item>
-		// <item>Radio 105 Classics</item>
-		// <item>Radio FM1</item>
-		// <item>Radio FM1 Melody</item>
-		// <item>Radio Antenne Bayern</item>
-		// <item>Radio Antenne Chillout</item>
-		// <item>Radio Antenne Rock</item>
-		// <item>Radio Antenne Classic Rock</item>
-		// <item>Radio Bayern 1</item>
-		// <item>Radio Bayern 2</item>
-		// <item>Radio Bayern 3</item>
-		// <item>Radio On-3</item>
-		// <item>Radio SWR1</item>
-		// <item>Radio SWR2</item>
-		// <item>Radio SWR3</item>
-		// <item>Radio SWR4</item>
-		// <item>Radio DasDing</item>
-		// <item>Radio BigFM</item>
-		// <item>Radio Toxic FM</item>
-		// <item>Radio X</item>
-		// <item>Radio Kanal K</item>
-		// <item>Radio Seefunk</item>
-		// <item>Radio Inside</item>
-		// <item>Radio Freiburg</item>
-		// <item>Radio Liechtenstein</item>
-		// <item>Radio Couleur 3</item>
-		// <item>Radio RFJ (Frequence Jura)</item>
-		// <item>Radio Rouge FM</item>
-		// <item>Radio soma fm - S.o.Goa</item>
-		// <item>Radio Stadtfilter</item>
-		// <item>Radio LoRa</item>
-		// <item>Radio Kaiseregg</item>
-		// <item>Radio Sunshine</item>
-		// <item>Radio Tropic</item>
-		// <item>Radio DJ Radio</item>
-		// <item>Radio Lounge Radio</item>
-		// <item>Radio SwissGroove</item>
-		// <item>Radio RSI Rete 3</item>
-		// <item>Radio Rock Nation</item>
-		// <item>Radio 3fach</item>
-		// <item>Radio Country Radio</item>
-		// <item>Radio Life Channel</item>
-		// <item>Radio Gloria</item>
-		// <item>Radio Gelb-Schwarz YB</item>
-		// <item>Radio FC Basel Live Radio</item>
-		// <item>Radio FC Zürich</item>
-		// <item>Backstage Radio</item>
-		// <item>Radio Rottu Oberwallis</item>
-		// <item>Radio Monte Carlo</item>
-		// <item>Radio RaSa</item>
-		// <item>Radio Blind Power</item>
-		// <item>Radio Sine-Music</item>
-		// <item>Radio Kingston Hot</item>
-		// <item>Radio Central</item>
-		// <item>Radio Central Rock</item>
-		// <item>Radio Central Swiss</item>
-		// <item>Radio Eviva</item>
-		// <item>Radio Grischa</item>
-		// <item>Radio sunshine-live</item>
-		// <item>Radio Ö1 - ORF</item>
-		// <item>Radio Ö3 - ORF</item>
-		// <item>Radio FM4 - ORF</item>
-		// <item>Radio Tirol - ORF</item>
-		// <item>Radio Wien - ORF</item>
-		// <item>Radio Kärnten - ORF</item>
-		// <item>Radio Salzburg - ORF</item>
-		// <item>Radio Niederösterreich - ORF</item>
-		// <item>BuureRadio</item>
-		// <item>Radio Industrie</item>
-		// <item>Radio Audioasyl</item>
-		// <item>Piratenradio</item>
-		// <item>Radio 21</item>
-		// <item>Radio AllgäuHIT</item>
-		// <item>Radio Wave</item>
-		// <item>Radio Helsinki Graz</item>
-		// <item>Radio Soundportal</item>
-		// <item>Radio 1Live</item>
-		// <item>Radio Top 100 Station</item>
-		// <item>Radio Rockstation</item>
-		// <item>Radio SkyLive</item>
-		// <item>Radio TranceRadio</item>
-		// <item>Radio 7</item>
-		// <item>Radio Salü</item>
-		// <item>Radio FFH</item>
-		// <item>Radio rt1 Südschwaben</item>
-		// <item>Radio HR3</item>
-		// <item>Radio Star FM</item>
-		// <item>Radio Star FM From Hell</item>
-		// <item>Radio Ibiza Sonica</item>
-		// <item>Radio Amnesia</item>
-		// <item>Radio Blue Marlin Ibiza</item>
-		// <item>Radio Regenbogen</item>
-		// <item>Radio Fantasy Dance FM</item>
-		// <item>Radio Tirol (IT)</item>
-		// <item>Delta Radio</item>
-		// <item>Radio NDR 1</item>
-		// <item>Radio NDR 2</item>
-		// <item>Radio N-Joy</item>
-		// <item>Radio Stephansdom</item>
-		// <item>Celtic Music Radio</item>
-		// <item>Radio Mittelalterklang</item>
-		// <item>Radio Secrettube</item>
-		// <item>Radio Gong Nürnberg</item>
-		// <item>Radio Paloma</item>
-		// <item>Radio eins rbb</item>
-		// <item>Radio Dreyeckland</item>
-		// <item>Radio Novaplanet</item>
-		//
-		//
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_DRS2);
+		m.put("icon", R.drawable.radio_drs_2);
+		m.put("icon_small", R.drawable.radio_drs_2_small);
+		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs2/mp3_128");
+		m.put("homepage", "http://www.drs2.ch");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.drs2.ch/www/de/drs2/kontakt/kundendienst.html");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
 
-		// <item></item>
-		// <item></item>
-		// <item>http://glb-stream12.streamserver.ch/2/drs2/mp3_128</item>
-		// <item>http://glb-stream12.streamserver.ch/2/drs3/mp3_128</item>
-		// <item>http://glb-stream12.streamserver.ch/2/drs4news/mp3_128</item>
-		// <item>http://glb-stream12.streamserver.ch/2/drsmw/mp3_128</item>
-		// <item>http://glb-stream12.streamserver.ch/2/drsvirus/mp3_128</item>
-		// <item>http://stream1.radiohoch2.ch:80/web</item>
-		// <item>http://energybern.ice.infomaniak.ch:80/energybern-high.mp3</item>
-		// <item>http://energyzuerich.ice.infomaniak.ch:80/energyzuerich-high.mp3</item>
-		// <item>http://energyswiss.ice.infomaniak.ch:80/energyswiss-high.mp3</item>
-		// <item>http://broadcast.infomaniak.net/energycharts-high.mp3</item>
-		// <item>http://broadcast.infomaniak.net:80/energylove-high.mp3</item>
-		// <item>http://energy80s.ice.infomaniak.ch:80/energy80s-high.mp3</item>
-		// <item>http://energy90s.ice.infomaniak.ch:80/energy90s-high.mp3</item>
-		// <item>http://energyitaly.ice.infomaniak.ch:80/energyitaly-high.mp3</item>
-		// <item>http://glb-stream12.streamserver.ch/2/rsc_de/mp3_128</item>
-		// <item>http://glb-stream12.streamserver.ch/2/rsj/mp3_128</item>
-		// <item>http://glb-stream12.streamserver.ch/2/rsp/mp3_128</item>
-		// <item>http://stream.radio1.ch:8000/128k</item>
-		// <item>http://mp3.radio.ch:80/radiozuerisee128k</item>
-		// <item>http://media.radiopilatus.ch:80/pilatus128</item>
-		// <item>http://87.237.169.123:8000/radiobeo.mp3</item>
-		// <item>http://icecast.radiotop.ch:8000/radiotop</item>
-		// <item>http://icecast.radiotop.ch:8000/toptwo</item>
-		// <item>http://ch4.streamhosting.ch:8080/20min_ger</item>
-		// <item>http://stream-02.neo1.ch:80/neo1</item>
-		// <item>http://stream-02.neo1.ch:80/neo2</item>
-		// <item>http://stream3.radiobasel.ch:8000/rb13</item>
-		// <item>http://argovia.mp3.green.ch</item>
-		// <item>http://shoutcast.argovia.ch:8095</item>
-		// <item>http://shoutcast.argovia.ch:8090</item>
-		// <item>http://bas-flu-stream-01.datacomm.ch:8000/105fm</item>
-		// <item>http://bas-flu-stream-01.datacomm.ch:8000/105classics</item>
-		// <item>http://radiofm1.ice.infomaniak.ch:80/radiofm1-128.mp3</item>
-		// <item>http://fm1melody.ice.infomaniak.ch/fm1melody-128.mp3</item>
-		// <item>http://mp3.webradio.antenne.de:80</item>
-		// <item>http://mp3channels.webradio.antenne.de/chillout</item>
-		// <item>http://mp3.webradio.rockantenne.de:80</item>
-		// <item>http://mp3channels.webradio.antenne.de/classic-rock-live</item>
-		// <item>http://gffstream.ic.llnwd.net/stream/gffstream_w10b</item>
-		// <item>http://gffstream.ic.llnwd.net/stream/gffstream_w11b</item>
-		// <item>http://gffstream.ic.llnwd.net/stream/gffstream_w12b</item>
-		// <item>http://gffstream.ic.llnwd.net/stream/gffstream_w9a</item>
-		// <item>http://swr.ic.llnwd.net/stream/swr_mp3_m_swr1bwb</item>
-		// <item>http://swr.ic.llnwd.net/stream/swr_mp3_m_swr2b</item>
-		// <item>http://swr.ic.llnwd.net/stream/swr_mp3_m_swr3b</item>
-		// <item>http://swr.ic.llnwd.net/stream/swr_mp3_m_swr4bwb</item>
-		// <item>http://swr.ic.llnwd.net/stream/swr_mp3_m_dasdinga</item>
-		// <item>http://srv05.bigstreams.de/bigfm-mp3-96</item>
-		// <item>http://toxicfm.ice.infomaniak.ch:80/toxicfm-128.mp3</item>
-		// <item>http://mp3.radiox.ch/standard.mp3</item>
-		// <item>http://82.197.165.150</item>
-		// <item>http://webradio.radio-seefunk.de:8000</item>
-		// <item>http://rs43.stream24.org:8310/;stream0.238134464714676.mp3</item>
-		// <item>http://radiofreiburg.ice.infomaniak.ch:80/radiofreiburg-high.mp3</item>
-		// <item>http://live.radiol.li:8000/live</item>
-		// <item>http://broadcast.infomaniak.ch/rsr-couleur3-high.mp3</item>
-		// <item>http://broadcast.infomaniak.net/rfj-high.mp3</item>
-		// <item>http://broadcast.infomaniak.ch/rougefm-high.mp3</item>
-		// <item>http://ice.somafm.com/suburbsofgoa</item>
-		// <item>http://stream.stadtfilter.net:8000/</item>
-		// <item>http://h1788467.stratoserver.net:8100</item>
-		// <item>http://kaiseregg.ice.infomaniak.ch/stream128k.mp3</item>
-		// <item>http://mp3stream.sunshine.ch:80</item>
-		// <item>http://tropic.ice.infomaniak.ch:80/tropic-high.mp3</item>
-		// <item>http://streamplus16.leonex.de:17130</item>
-		// <item>http://ch3.streamhosting.ch:8080</item>
-		// <item>http://server4.digital-webstream.de:13600</item>
-		// <item>http://glb-stream12.streamserver.ch/1/retetre/mp3_128</item>
-		// <item>http://105-stream-02.datacomm.ch:8000/rocknation</item>
-		// <item>http://94.126.18.195:8000</item>
-		// <item>http://rs3.radiostreamer.com:9330</item>
-		// <item>http://mp3.lifechannel.ch/LC128</item>
-		// <item>http://live-two.dmd2.ch:8080/radiogloria_lo</item>
-		// <item>http://radiogelb-schwarz.ice.infomaniak.ch:80/radiogelbschwarz.mp3</item>
-		// <item>http://195.49.27.25:8000</item>
-		// <item>http://stream.fcz.ch:8000/fcz01</item>
-		// <item>http://broadcast.infomaniak.ch/backstageradio-high.mp3</item>
-		// <item>http://stream.rro.ch/shoutcast/radiostation2.stream/playlist.m3u8</item>
-		// <item>http://212.40.13.22:11000</item>
-		// <item>http://s7.pop-stream.de:7830</item>
-		// <item>http://live-two.dmd2.ch:8080/rbp_hi</item>
-		// <item>http://stream.laut.fm/sine-music</item>
-		// <item>http://www.kingstonhot.de/shows/</item>
-		// <item>http://central128.mp3.green.ch</item>
-		// <item>http://sp7128.mp3.green.ch</item>
-		// <item>http://sp3128.mp3.green.ch</item>
-		// <item>http://eviva128.mp3.green.ch</item>
-		// <item>http://grischa.mp3.green.ch</item>
-		// <item>http://62.27.47.15/sunshinelive/livestream.mp3</item>
-		// <item>http://mp3stream3.apasf.apa.at:8000</item>
-		// <item>http://mp3stream7.apasf.apa.at:8000</item>
-		// <item>http://mp3stream1.apasf.apa.at:8000</item>
-		// <item>http://mp3stream2.apasf.apa.at:8000</item>
-		// <item>http://194.232.200.145:8000</item>
-		// <item>http://194.232.200.159:8000</item>
-		// <item>http://194.232.200.147:8000</item>
-		// <item>http://194.232.200.147:8000</item>
-		// <item>http://live-three.dmd2.ch</item>
-		// <item>http://96.31.83.87:8063</item>
-		// <item>http://stream.audioasyl.net/audioasyl</item>
-		// <item>http://rs1.stream24.org:8460/stream</item>
-		// <item>http://rs3.stream24.org:8690</item>
-		// <item>http://81.169.132.81:7000/dsl</item>
-		// <item>http://212.83.60.57:2100</item>
-		// <item>http://live.helsinki.at:8088/live128.mp3</item>
-		// <item>http://netradio01.soundportal.at:8100/live160</item>
-		// <item>http://1live.akacast.akamaistream.net/7/706/119434/v1/gnl.akacast.akamaistream.net/1live</item>
-		// <item>http://87.230.101.11:8000</item>
-		// <item>http://rs11.stream24.org:8130</item>
-		// <item>http://s10.pop-stream.de:10242</item>
-		// <item>http://stream3144.init7.net</item>
-		// <item>http://stream.hoerradar.de:80/mp3-radio7-128</item>
-		// <item>http://62.27.26.45/radiosalue/livestream64m.mp3</item>
-		// <item>http://mp3.ffh.de/radioffh/hqlivestream.mp3</item>
-		// <item>http://62.27.44.59/rt1suedschwaben/livestream.mp3?token=</item>
-		// <item>http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w69b</item>
-		// <item>http://87.230.53.43:8004</item>
-		// <item>http://87.230.53.43:7000</item>
-		// <item>http://stream.wft.es:7005</item>
-		// <item>http://stream.estudiosonico.com:7015</item>
-		// <item>http://89.238.146.142:8635</item>
-		// <item>http://217.151.151.91:80/live</item>
-		// <item>http://dancefmwebradio.de:8000/dsl_stream.mp3</item>
-		// <item>http://str2.creacast.com/radiotirol_a</item>
-		// <item>http://stream.hoerradar.de/deltaradio128</item>
-		// <item>http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr1wellenord_hi_mp3</item>
-		// <item>http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr2_hi_mp3</item>
-		// <item>http://ndrstream.ic.llnwd.net/stream/ndrstream_n-joy_hi_mp3</item>
-		// <item>http://srvhost24.serverhosting.apa.net:8000/rsdstream128</item>
-		// <item>http://173.192.224.123:8214</item>
-		// <item>http://62.75.216.154:8050</item>
-		// <item>http://secrettube.ch:6010</item>
-		// <item>http://webradio.gong971.de:8000</item>
-		// <item>http://he-srv1.radiopaloma.de:80</item>
-		// <item>http://rbb.ic.llnwd.net/stream/rbb_radioeins_mp3_m_a</item>
-		// <item>http://85.214.250.73:8000/rdl</item>
-		// <item>http://broadcast.infomaniak.ch/radionova-high.mp3</item>
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_DRS3);
+		m.put("icon", R.drawable.radio_drs_3);
+		m.put("icon_small", R.drawable.radio_drs_3_small);
+		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs3/mp3_128");
+		m.put("homepage", "http://www.drs3.ch");
+		m.put("webcam", "http://www.drs3.ch/import/webcam/drs3/webdrs3a.jpg");
+		m.put("email",
+				"http://www.drs3.ch/www/de/drs3/kontakt/mail-ins-studio.html");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_DRS4);
+		m.put("icon", R.drawable.radio_drs_4_news);
+		m.put("icon_small", R.drawable.radio_drs_4_news_small);
+		m.put("stream",
+				"http://glb-stream12.streamserver.ch/2/drs4news/mp3_128");
+		m.put("homepage", "http://www.drs4news.ch");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.drs4news.ch/www/de/drs4/kontakt/mail-ins-studio.html");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_DRS_VIRUS);
+		m.put("icon", R.drawable.radio_drs_virus);
+		m.put("icon_small", R.drawable.radio_drs_virus_small);
+		m.put("stream",
+				"http://glb-stream12.streamserver.ch/2/drsvirus/mp3_128");
+		m.put("homepage", "http://www.virus.ch");
+		m.put("webcam",
+				"http://www.drs.ch/import/webcam/virus/virus2.jpg?1304112781446");
+		m.put("email", "http://www.virus.ch/virus/kontakt");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_DRS_MUSIKWELLE);
+		m.put("icon", R.drawable.radio_drs_musikwelle);
+		m.put("icon_small", R.drawable.radio_drs_musikwelle_small);
+		m.put("stream", "http://glb-stream12.streamserver.ch/2/drsmw/mp3_128");
+		m.put("homepage", "http://www.drsmusikwelle.ch");
+		m.put("webcam",
+				"http://www.drsmusikwelle.ch/import/webcam/drsmw/webdrsmwb.jpg");
+		m.put("email",
+				"http://www.drsmusikwelle.ch/www/de/drsmusikwelle/kontakt/mail-ins-studio.html");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ENERGY_BERN);
+		m.put("icon", R.drawable.radio_energy_bern);
+		m.put("icon_small", R.drawable.radio_energy_bern_small);
+		m.put("stream",
+				"http://energybern.ice.infomaniak.ch:80/energybern-high.mp3");
+		m.put("homepage", "http://www.energy.ch/bern");
+		m.put("webcam", "");
+		m.put("email", "http://www.energy.ch/bern/inside/kontakt");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ENERGY_ZUERICH);
+		m.put("icon", R.drawable.radio_energy_zurich);
+		m.put("icon_small", R.drawable.radio_energy_zurich_small);
+		m.put("stream",
+				"http://energyzuerich.ice.infomaniak.ch:80/energyzuerich-high.mp3");
+		m.put("homepage", "http://www.energy.ch/zuerich");
+		m.put("webcam", "");
+		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ENERGY_SWISS);
+		m.put("icon", R.drawable.radio_energy_swiss);
+		m.put("icon_small", R.drawable.radio_energy_swiss_small);
+		m.put("stream",
+				"http://energyswiss.ice.infomaniak.ch:80/energyswiss-high.mp3");
+		m.put("homepage", "http://www.energy.ch/webradios");
+		m.put("webcam", "");
+		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ENERGY_CHARTS);
+		m.put("icon", R.drawable.radio_energy_charts);
+		m.put("icon_small", R.drawable.radio_energy_charts_small);
+		m.put("stream", "http://broadcast.infomaniak.net/energycharts-high.mp3");
+		m.put("homepage", "http://www.energy.ch/webradios");
+		m.put("webcam", "");
+		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ENERGY_LOVE);
+		m.put("icon", R.drawable.radio_energy_love);
+		m.put("icon_small", R.drawable.radio_energy_love_small);
+		m.put("stream",
+				"http://broadcast.infomaniak.net:80/energylove-high.mp3");
+		m.put("homepage", "http://www.energy.ch/webradios");
+		m.put("webcam", "");
+		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ENERGY_80);
+		m.put("icon", R.drawable.radio_energy_80s);
+		m.put("icon_small", R.drawable.radio_energy_80s_small);
+		m.put("stream",
+				"http://energy80s.ice.infomaniak.ch:80/energy80s-high.mp3");
+		m.put("homepage", "http://www.energy.ch/webradios");
+		m.put("webcam", "");
+		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ENERGY_90);
+		m.put("icon", R.drawable.radio_energy_90s);
+		m.put("icon_small", R.drawable.radio_energy_90s_small);
+		m.put("stream",
+				"http://energy90s.ice.infomaniak.ch:80/energy90s-high.mp3");
+		m.put("homepage", "http://www.energy.ch/webradios");
+		m.put("webcam", "");
+		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ENERGY_ITALY);
+		m.put("icon", R.drawable.radio_energy_italy);
+		m.put("icon_small", R.drawable.radio_energy_italy_small);
+		m.put("stream",
+				"http://energyitaly.ice.infomaniak.ch:80/energyitaly-high.mp3");
+		m.put("homepage", "http://www.energy.ch/webradios");
+		m.put("webcam", "");
+		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SWISS_CLASSIC);
+		m.put("icon", R.drawable.radio_swiss_classic);
+		m.put("icon_small", R.drawable.radio_swiss_classic_small);
+		m.put("stream", "http://glb-stream12.streamserver.ch/2/rsc_de/mp3_128");
+		m.put("homepage", "http://www.radioswissclassic.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.radioswissclassic.ch/de/feedback");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SWISS_JAZZ);
+		m.put("icon", R.drawable.radio_swiss_jazz);
+		m.put("icon_small", R.drawable.radio_swiss_jazz_small);
+		m.put("stream", "http://glb-stream12.streamserver.ch/2/rsj/mp3_128");
+		m.put("homepage", "http://www.radioswissjazz.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.radioswissjazz.ch/de/feedback");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SWISS_POP);
+		m.put("icon", R.drawable.radio_swiss_pop);
+		m.put("icon_small", R.drawable.radio_swiss_pop_small);
+		m.put("stream", "http://glb-stream12.streamserver.ch/2/rsp/mp3_128");
+		m.put("homepage", "http://www.radioswisspop.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.radioswisspop.ch/de/feedback");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_1);
+		m.put("icon", R.drawable.radio_1);
+		m.put("icon_small", R.drawable.radio_1_small);
+		m.put("stream", "http://stream.radio1.ch:8000/128k");
+		m.put("homepage", "http://www.radio1.ch");
+		m.put("webcam", "");
+		m.put("email", "studio@radio1.ch");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ZUERISEE);
+		m.put("icon", R.drawable.radio_zuerichsee);
+		m.put("icon_small", R.drawable.radio_zuerichsee_small);
+		m.put("stream", "http://mp3.radio.ch:80/radiozuerisee128k");
+		m.put("homepage", "http://www.radio.ch");
+		m.put("webcam",
+				"http://live.radiozurisee.divio.ch//media/external/data_upload/CAM1/SR1_CAM1.jpg");
+		m.put("email", "http://www.radio.ch/de/kontakt/mail-ins-studio/");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_PILATUS);
+		m.put("icon", R.drawable.radio_pilatus);
+		m.put("icon_small", R.drawable.radio_pilatus_small);
+		m.put("stream", "http://media.radiopilatus.ch:80/pilatus128");
+		m.put("homepage", "http://www.radiopilatus.ch");
+		m.put("webcam", "");
+		m.put("email", "http://mobile.radiopilatus.ch/kontakt.php");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_BEO);
+		m.put("icon", R.drawable.radio_beo);
+		m.put("icon_small", R.drawable.radio_beo_small);
+		m.put("stream", "http://87.237.169.123:8000/radiobeo.mp3");
+		m.put("homepage", "http://www.radiobeo.ch");
+		m.put("webcam", "http://www.radiobeo.ch/webcam/current.jpg");
+		m.put("email", "sendestudio@radiobeo.ch");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_TOP);
+		m.put("icon", R.drawable.radio_top);
+		m.put("icon_small", R.drawable.radio_top_small);
+		m.put("stream", "http://icecast.radiotop.ch:8000/radiotop");
+		m.put("homepage", "http://www.toponline.ch");
+		m.put("webcam", "http://www.toponline.ch/webcam/cam_640.jpg");
+		m.put("email", "studiofeedback@radiotop.ch");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_TOP_TWO);
+		m.put("icon", R.drawable.radio_top_two);
+		m.put("icon_small", R.drawable.radio_top_two_small);
+		m.put("stream", "http://icecast.radiotop.ch:8000/toptwo");
+		m.put("homepage", "http://www.toponline.ch/toptwo");
+		m.put("webcam", "http://www.toponline.ch/webcam/cam_640.jpg");
+		m.put("email", "studiofeedback@radiotop.ch");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_20MIN);
+		m.put("icon", R.drawable.radio_20_min);
+		m.put("icon_small", R.drawable.radio_20_min_small);
+		m.put("stream", "http://ch4.streamhosting.ch:8080/20min_ger");
+		m.put("homepage", "http://www.20min.ch/radio/radio.tmpl");
+		m.put("webcam", "");
+		m.put("email", "feedback@20minuten.ch");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_NEO_1);
+		m.put("icon", R.drawable.radio_neo_1);
+		m.put("icon_small", R.drawable.radio_neo_1_small);
+		m.put("stream", "http://stream-02.neo1.ch:80/neo1");
+		m.put("homepage", "http://www.neo1.ch");
+		m.put("webcam",
+				"http://www.neo1.ch/index.php?eID=tx_cms_showpic&file=fileadmin%2Fuser_upload%2Fwebcam%2Fwebcam.jpg&md5=94dde500b68cb331ee6493b0e7f2604282c29723&parameters[0]=YTo0OntzOjU6IndpZHRoIjtzOjM6IjYwMCI7czo2OiJoZWlnaHQiO3M6MzoiNjAw&parameters[1]=IjtzOjc6ImJvZHlUYWciO3M6NjoiPGJvZHk%2BIjtzOjQ6IndyYXAiO3M6MzU6Ijxh&parameters[2]=IGhyZWY9ImphdmFzY3JpcHQ6Y2xvc2UoKTsiPnw8L2E%2BIjt9");
+		m.put("email", "http://www.neo1.ch/studiomail.html");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_NEO_ZWEI);
+		m.put("icon", R.drawable.radio_neo_2);
+		m.put("icon_small", R.drawable.radio_neo_2_small);
+		m.put("stream", "http://stream-02.neo1.ch:80/neo2");
+		m.put("homepage", "http://www.neozwei.ch");
+		m.put("webcam",
+				"http://www.neo1.ch/index.php?eID=tx_cms_showpic&file=fileadmin%2Fuser_upload%2Fwebcam%2Fwebcam.jpg&md5=94dde500b68cb331ee6493b0e7f2604282c29723&parameters[0]=YTo0OntzOjU6IndpZHRoIjtzOjM6IjYwMCI7czo2OiJoZWlnaHQiO3M6MzoiNjAw&parameters[1]=IjtzOjc6ImJvZHlUYWciO3M6NjoiPGJvZHk%2BIjtzOjQ6IndyYXAiO3M6MzU6Ijxh&parameters[2]=IGhyZWY9ImphdmFzY3JpcHQ6Y2xvc2UoKTsiPnw8L2E%2BIjt9");
+		m.put("email", "http://www.neozwei.ch/index.php?id=314");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_BASEL);
+		m.put("icon", R.drawable.radio_basel);
+		m.put("icon_small", R.drawable.radio_basel_small);
+		m.put("stream", "http://stream3.radiobasel.ch:8000/rb13");
+		m.put("homepage", "http://www.radiobasel.ch");
+		m.put("webcam", "http://radiobasel.ch/webcam/studio2.jpg");
+		m.put("email", "http://radiobasel.ch/kontakt?cid=Studio");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ARGOVIA);
+		m.put("icon", R.drawable.radio_argovia);
+		m.put("icon_small", R.drawable.radio_argovia_small);
+		m.put("stream", "http://argovia.mp3.green.ch");
+		m.put("homepage", "http://www.argovia.ch");
+		m.put("webcam", "http://www.argovia.ch/live/");
+		m.put("email", "http://www.argovia.ch/miniwin-jukes.php");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ARGOVIA_HITMIX);
+		m.put("icon", R.drawable.radio_argovia_hitmix);
+		m.put("icon_small", R.drawable.radio_argovia_hitmix_small);
+		m.put("stream", "http://shoutcast.argovia.ch:8095");
+		m.put("homepage", "http://www.argovia.ch");
+		m.put("webcam", "http://www.argovia.ch/live/");
+		m.put("email", "http://www.argovia.ch/miniwin-jukes.php");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ARGOVIA_CLASSIC_ROCK);
+		m.put("icon", R.drawable.radio_argovia_swissclassicrock);
+		m.put("icon_small", R.drawable.radio_argovia_swissclassicrock_small);
+		m.put("stream", "http://shoutcast.argovia.ch:8090");
+		m.put("homepage", "http://www.argovia.ch");
+		m.put("webcam", "http://www.argovia.ch/live/");
+		m.put("email", "http://www.argovia.ch/miniwin-jukes.php");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_105);
+		m.put("icon", R.drawable.radio_105);
+		m.put("icon_small", R.drawable.radio_105_small);
+		m.put("stream", "http://bas-flu-stream-01.datacomm.ch:8000/105fm");
+		m.put("homepage", "http://www.105.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.105.ch/channels/105-fm/?article=65");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_105_CLASSICS);
+		m.put("icon", R.drawable.radio_105_classics);
+		m.put("icon_small", R.drawable.radio_105_classics_small);
+		m.put("stream", "http://bas-flu-stream-01.datacomm.ch:8000/105classics");
+		m.put("homepage", "http://www.105classics.ch");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.105.ch/channels/radio-105-classic/?article=65");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_FM1);
+		m.put("icon", R.drawable.radio_fm_1);
+		m.put("icon_small", R.drawable.radio_fm_1_small);
+		m.put("stream", "http://radiofm1.ice.infomaniak.ch:80/radiofm1-128.mp3");
+		m.put("homepage", "http://www.radiofm1.ch");
+		m.put("webcam", "http://www.radiofm1.ch/index.php?article_id=323");
+		m.put("email", "http://www.radiofm1.ch/index.php?article_id=75");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
 		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
 		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
 		//
-		// <item>http://www.drs2.ch</item>
-		// <item>http://www.drs3.ch</item>
-		// <item>http://www.drs4news.ch</item>
-		// <item>http://www.drsmusikwelle.ch</item>
-		// <item>http://www.virus.ch</item>
-		// <item>http://www.radiohoch2.ch</item>
-		// <item>http://www.energy.ch/bern</item>
-		// <item>http://www.energy.ch/zuerich</item>
-		// <item>http://www.energy.ch/webradios</item>
-		// <item>http://www.energy.ch/webradios</item>
-		// <item>http://www.energy.ch/webradios</item>
-		// <item>http://www.energy.ch/webradios</item>
-		// <item>http://www.energy.ch/webradios</item>
-		// <item>http://www.energy.ch/webradios</item>
-		// <item>http://www.radioswissclassic.ch</item>
-		// <item>http://www.radioswissjazz.ch</item>
-		// <item>http://www.radioswisspop.ch</item>
-		// <item>http://www.radio1.ch</item>
-		// <item>http://www.radio.ch</item>
-		// <item>http://www.radiopilatus.ch</item>
-		// <item>http://www.radiobeo.ch</item>
-		// <item>http://www.toponline.ch</item>
-		// <item>http://www.toponline.ch/toptwo</item>
-		// <item>http://www.20min.ch/radio/radio.tmpl</item>
-		// <item>http://www.neo1.ch</item>
-		// <item>http://www.neozwei.ch</item>
-		// <item>http://www.radiobasel.ch</item>
-		// <item>http://www.argovia.ch</item>
-		// <item>http://www.argovia.ch</item>
-		// <item>http://www.argovia.ch</item>
-		// <item>http://www.105.ch</item>
-		// <item>http://www.105classics.ch</item>
-		// <item>http://www.radiofm1.ch</item>
-		// <item>http://www.fm1melody.ch</item>
-		// <item>http://www.antenne.de</item>
-		// <item>http://www.antenne.de</item>
-		// <item>http://www.rockantenne.de</item>
-		// <item>http://www.antenne.de</item>
-		// <item>http://www.bayern1.de</item>
-		// <item>http://www.bayern2.de</item>
-		// <item>http://www.bayern3.de</item>
-		// <item>http://www.on3.de</item>
-		// <item>http://www.swr1.de</item>
-		// <item>http://www.swr2.de</item>
-		// <item>http://www.swr3.de</item>
-		// <item>http://www.swr4.de</item>
-		// <item>http://www.dasding.de</item>
-		// <item>http://www.bigfm.de</item>
-		// <item>http://www.toxicfm.ch</item>
-		// <item>http://www.radiox.ch</item>
-		// <item>http://www.kanalk.ch</item>
-		// <item>http://www.radio-seefunk.de</item>
-		// <item>http://www.radioinside.ch</item>
-		// <item>http://www.radiofr.ch/de</item>
-		// <item>http://www.radio.li</item>
-		// <item>http://www.couleur3.ch</item>
-		// <item>http://www.rfj.ch</item>
-		// <item>http://www.rougefm.com</item>
-		// <item>http://www.somafm.com</item>
-		// <item>http://www.stadtfilter.ch</item>
-		// <item>http://www.lora.ch</item>
-		// <item>http://www.kaiseregg.ch</item>
-		// <item>http://www.sunshine.ch</item>
-		// <item>http://www.radio-tropic.ch</item>
-		// <item>http://www.djradio.ch</item>
-		// <item>http://www.lounge-radio.com</item>
-		// <item>http://www.swissgroove.ch</item>
-		// <item>http://retetre.rtsi.ch</item>
-		// <item>http://www.rocknation.ch</item>
-		// <item>http://www.3fach.ch</item>
-		// <item>http://www.countryradio.ch</item>
-		// <item>http://www.lifechannel.ch</item>
-		// <item>http://www.radiogloria.ch</item>
-		// <item>http://www.radio-gelb-schwarz.ch</item>
-		// <item>http://www.fcbliveradio.ch</item>
-		// <item>http://www.fcz.ch/radio</item>
-		// <item>http://www.backstageradio.ch</item>
-		// <item>http://www.rro.ch</item>
-		// <item>http://www.radiomontecarlo.ch</item>
-		// <item>http://www.rasa.ch</item>
-		// <item>http://www.radioblindpower.ch</item>
-		// <item>http://www.sine-music.de</item>
-		// <item>http://www.app.kingstonhot.de</item>
-		// <item>http://www.radiocenral.ch</item>
-		// <item>http://www.radiocenral.ch</item>
-		// <item>http://www.radiocenral.ch</item>
-		// <item>http://www.eviva.ch</item>
-		// <item>http://www.radiogrischa.ch</item>
-		// <item>http://www.sunshine-live.de</item>
-		// <item>http://oe1.orf.at</item>
-		// <item>http://oe3.orf.at</item>
-		// <item>http://fm4.orf.at</item>
-		// <item>http://tirol.orf.at</item>
-		// <item>http://wien.orf.at</item>
-		// <item>http://kaernten.orf.at</item>
-		// <item>http://salzburg.orf.at</item>
-		// <item>http://noe.orf.at</item>
-		// <item>http://www.buureradio.ch</item>
-		// <item>http://www.radioindustrie.ch</item>
-		// <item>http://www.audioasyl.net</item>
-		// <item>http://www.piratenradio.ch</item>
-		// <item>http://www.radio21.ch</item>
-		// <item>http://www.allgaeuhit.de</item>
-		// <item>http://www.radio-wave.ch</item>
-		// <item>http://www.helsinki.at</item>
-		// <item>http://www.soundportal.at</item>
-		// <item>http://www.einslive.de</item>
-		// <item>http://www.top100station.de</item>
-		// <item>http://www.rockstation.ch</item>
-		// <item>http://www.skylive.ch</item>
-		// <item>http://www.tranceradio.ch</item>
-		// <item>http://www.radio7.de</item>
-		// <item>http://www.radiosalue.de</item>
-		// <item>http://www.ffh.de</item>
-		// <item>http://www.rt1-suedschwaben.de</item>
-		// <item>http://www.hr3.de</item>
-		// <item>http://www.starfm.de/nuernberg</item>
-		// <item>http://www.starfm.de/berlin</item>
-		// <item>http://www.ibizasonica.com</item>
-		// <item>http://www.amnesia.es</item>
-		// <item>http://www.bluemarlinibiza.com</item>
-		// <item>http://www.regenbogen.de</item>
-		// <item>http://www.fantasy967.de</item>
-		// <item>http://www.radiotirol.it</item>
-		// <item>http://www.deltaradio.ch</item>
-		// <item>http://www.ndr1.de</item>
-		// <item>http://www.ndr2.de</item>
-		// <item>http://www.n-joy.de</item>
-		// <item>http://www.radiostephansdom.at</item>
-		// <item>http://www.celticmusicradio.com</item>
-		// <item>http://www.mittelalterklang.de</item>
-		// <item>http://radio.secrettube.ch</item>
-		// <item>http://www.gong971.de</item>
-		// <item>http://www.radiopaloma.de</item>
-		// <item>http://www.radioeins.de</item>
-		// <item>http://www.rdl.de</item>
-		// <item>http://www.novaplanet.com</item>
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
 		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
 		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
 		//
-		// <item></item>
-		// <item>http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg</item>
-		// <item>http://www.drs1.ch/import/webcam/drs1/webdrs1d.jpg</item>
-		// <item>http://www.drs1.ch/import/webcam/drs1/webdrs1d.jpg</item>
-		// <item></item>
-		// <item>http://www.drs3.ch/import/webcam/drs3/webdrs3a.jpg</item>
-		// <item></item>
-		// <item>http://www.drsmusikwelle.ch/import/webcam/drsmw/webdrsmwb.jpg</item>
-		// <item>http://www.drs.ch/import/webcam/virus/virus2.jpg?1304112781446</item>
-		// <item>http://webcam.radiohoch2.ch/webcam_big.php</item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item>http://live.radiozurisee.divio.ch//media/external/data_upload/CAM1/SR1_CAM1.jpg</item>
-		// <item></item>
-		// <item>http://www.radiobeo.ch/webcam/current.jpg</item>
-		// <item>http://www.toponline.ch/webcam/cam_640.jpg</item>
-		// <item>http://www.toponline.ch/webcam/cam_640.jpg</item>
-		// <item></item>
-		// <item>http://www.neo1.ch/index.php?eID=tx_cms_showpic&amp;file=fileadmin%2Fuser_upload%2Fwebcam%2Fwebcam.jpg&amp;md5=94dde500b68cb331ee6493b0e7f2604282c29723&amp;parameters[0]=YTo0OntzOjU6IndpZHRoIjtzOjM6IjYwMCI7czo2OiJoZWlnaHQiO3M6MzoiNjAw&amp;parameters[1]=IjtzOjc6ImJvZHlUYWciO3M6NjoiPGJvZHk%2BIjtzOjQ6IndyYXAiO3M6MzU6Ijxh&amp;parameters[2]=IGhyZWY9ImphdmFzY3JpcHQ6Y2xvc2UoKTsiPnw8L2E%2BIjt9</item>
-		// <item>http://www.neo1.ch/index.php?eID=tx_cms_showpic&amp;file=fileadmin%2Fuser_upload%2Fwebcam%2Fwebcam.jpg&amp;md5=94dde500b68cb331ee6493b0e7f2604282c29723&amp;parameters[0]=YTo0OntzOjU6IndpZHRoIjtzOjM6IjYwMCI7czo2OiJoZWlnaHQiO3M6MzoiNjAw&amp;parameters[1]=IjtzOjc6ImJvZHlUYWciO3M6NjoiPGJvZHk%2BIjtzOjQ6IndyYXAiO3M6MzU6Ijxh&amp;parameters[2]=IGhyZWY9ImphdmFzY3JpcHQ6Y2xvc2UoKTsiPnw8L2E%2BIjt9</item>
-		// <item>http://radiobasel.ch/webcam/studio2.jpg</item>
-		// <item>http://www.argovia.ch/live/</item>
-		// <item>http://www.argovia.ch/live/</item>
-		// <item>http://www.argovia.ch/live/</item>
-		// <item></item>
-		// <item></item>
-		// <item>http://www.radiofm1.ch/index.php?article_id=323</item>
-		// <item></item>
-		// <item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
-		// <item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
-		// <item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
-		// <item>http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&amp;y=360&amp;resize=1&amp;thumb_path=/webcam/thumb/440x360</item>
-		// <item>http://www.br-online.de/content/import/webcams/bayern1/cam2_pult.jpg</item>
-		// <item></item>
-		// <item>http://www.br-online.de/content/import/webcams/bayern3/cam7_gast.jpg</item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item>http://www.swr3.de/studiocam</item>
-		// <item></item>
-		// <item>http://www.dasding.de/ext/webcam/webcam770.php?cam=2</item>
-		// <item>http://static.bigfm.de/webcam/cam6/webcam06.jpg</item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item>http://www.radioinside.ch/~kamera/studio1.jpg</item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item>http://www.sunshine.ch/data/webcam/studio2.jpg</item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item>http://webcam.3fach.ch:8080/axis-cgi/mjpg/video.cgi</item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item>http://data.bkw-fmb.ch/opd/camPics/Stade-de-suisse.jpg</item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item>http://www.radiocentral.ch/data/WebCam/brunnen.jpg</item>
-		// <item>http://www.radiocentral.ch/data/WebCam/brunnen.jpg</item>
-		// <item>http://www.radiocentral.ch/data/WebCam/brunnen.jpg</item>
-		// <item>http://www.radiocentral.ch/data/WebCam/brunnen.jpg</item>
-		// <item>http://www.radiogrischa.ch/sites/default/files/webcams/studio_1.jpg</item>
-		// <item></item>
-		// <item></item>
-		// <item>http://onapp1.orf.at/webcam/oe3/cam2_oe3.jpg</item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item>http://www.allgaeuhit.de/webcam.jpg</item>
-		// <item>http://www.radiowave.ch/studio.jpg</item>
-		// <item></item>
-		// <item>http://soundportal.at/service/webcam</item>
-		// <item>http://www.einslive.de/webcam/studio_a_1.jpg</item>
-		// <item></item>
-		// <item></item>
-		// <item>http://www.skylive.ch/viewpage.php?page_id=6</item>
-		// <item></item>
-		// <item></item>
-		// <item>http://www.salue.de/img2/studio.jpg</item>
-		// <item>http://resource.ffh.de/webcams/ffh/cam1-fullsize.jpg</item>
-		// <item></item>
-		// <item>http://www.hrfoto.dunkel.de/webcams/hr3/studio2.jpg</item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item>http://www.regenbogen.de/content/html/shared/webcams/index.html</item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
-		// <item></item>
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
 		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
 		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
 		//
-		// <item>http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html</item>
-		// <item>http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html</item>
-		// <item>http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html</item>
-		// <item>http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html</item>
-		// <item>http://www.drs2.ch/www/de/drs2/kontakt/kundendienst.html</item>
-		// <item>http://www.drs3.ch/www/de/drs3/kontakt/mail-ins-studio.html</item>
-		// <item>http://www.drs4news.ch/www/de/drs4/kontakt/mail-ins-studio.html</item>
-		// <item>http://www.drsmusikwelle.ch/www//de/drsmusikwelle/kontakt/mail-ins-studio.html</item>
-		// <item>http://www.virus.ch/virus/kontakt</item>
-		// <item>http://radiohoch2.ch/contact</item>
-		// <item>http://www.energy.ch/bern/inside/kontakt</item>
-		// <item>http://www.energy.ch/zurich/inside/kontakt</item>
-		// <item>http://www.energy.ch/webradios</item>
-		// <item>http://www.energy.ch/webradios</item>
-		// <item>http://www.energy.ch/webradios</item>
-		// <item>http://www.energy.ch/webradios</item>
-		// <item>http://www.energy.ch/webradios</item>
-		// <item>http://www.energy.ch/webradios</item>
-		// <item>http://www.radioswissclassic.ch/de/feedback</item>
-		// <item>http://www.radioswissjazz.ch/de/feedback</item>
-		// <item>http://www.radioswisspop.ch/de/feedback</item>
-		// <item>studio@radio1.ch</item>
-		// <item>http://www.radio.ch/de/kontakt/mail-ins-studio/</item>
-		// <item>http://mobile.radiopilatus.ch/kontakt.php</item>
-		// <item>sendestudio@radiobeo.ch</item>
-		// <item>studiofeedback@radiotop.ch</item>
-		// <item>studiofeedback@radiotop.ch</item>
-		// <item>feedback@20minuten.ch</item>
-		// <item>http://www.neo1.ch/studiomail.html</item>
-		// <item>http://www.neozwei.ch/index.php?id=314</item>
-		// <item>http://radiobasel.ch/kontakt?cid=Studio</item>
-		// <item>http://www.argovia.ch/miniwin-jukes.phpch</item>
-		// <item>http://www.argovia.ch/miniwin-jukes.php</item>
-		// <item>http://www.argovia.ch/miniwin-jukes.php</item>
-		// <item>http://www.105.ch/channels/105-fm/?article=65</item>
-		// <item>http://www.105.ch/channels/radio-105-classic/?article=65</item>
-		// <item>http://www.radiofm1.ch/index.php?article_id=285</item>
-		// <item>http://www.fm1melody.ch/index.php?article_id=20</item>
-		// <item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
-		// <item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
-		// <item>http://www.rockantenne.de/mailinsstudio</item>
-		// <item>http://www.antenne.de/antenne/radio/kontakt/index.php</item>
-		// <item>http://www.br-online.de/bayern1/kontakt/kontakt-bayern1-mail-ID1203955361656.xml?_requestid=168772</item>
-		// <item>http://www.br-online.de/bayern2/land-und-leute/bayern-2-kontakt-service-ID1198255138342.xml?_requestid=3320</item>
-		// <item>http://www.br-online.de/bayern3/kontakt/kontakt-impressum-copyright-ID1195052108234.xml?_requestid=130461</item>
-		// <item>http://on3.de/focus/11/on3-radio#/main/9/kontakt</item>
-		// <item>http://www.swr.de/swr1/bw/programm/-/id=446250/nid=446250/did=1420380/cf=42/1gqznk3/index.html</item>
-		// <item>http://www.swr.de/swr2/-/id=7576/vv=email/nid=7576/did=661414/wfs5qs/index.html</item>
-		// <item>http://www.swr3.de/-/id=421906/did=216928/a91pr1/index.html</item>
-		// <item>http://www.swr.de/swr4/bw/-/id=233374/vv=email/nid=233374/did=259762/1gqvrz9/index.html</item>
-		// <item>http://www.dasding.de/ext/dingmessage/index.php</item>
-		// <item>http://www.bigfm.de/content/html/shared/studiomail/index.html</item>
-		// <item>studio@toxic.fm</item>
-		// <item>http://www.radiox.ch/service/wuko</item>
-		// <item>http://kanalk.ch/Infopool/Kontakt/tabid/166/Default.aspx</item>
-		// <item>http://www.radio-seefunk.de/default.aspx?ID=11550</item>
-		// <item>http://www.radioinside.ch/index.php/studiomail</item>
-		// <item>http://www.radiofr.ch/de/kontakt.html</item>
-		// <item>http://www.radio.li/hoererservice/mein-musikwunsch.html?type=3</item>
-		// <item>http://www.rsr.ch/#/corporate/contact/?contact=couleur3</item>
-		// <item>http://www.rfj.ch/rfj/Radio/Contact.html</item>
-		// <item>http://www.rougefm.com/radio/contact.php</item>
-		// <item>http://somafm.com/contact/</item>
-		// <item>http://www.stadtfilter.ch/StadtfilterKontakt/Kontakt</item>
-		// <item>http://lora.ch/ueberuns/kontakt</item>
-		// <item>http://www.kaiseregg.ch/index.php?option=com_contact&amp;view=contact&amp;id=1&amp;Itemid=7</item>
-		// <item>http://www.sunshine.ch/dynasite.cfm?dsmid=98592</item>
-		// <item>http://radio-tropic.ch/contact</item>
-		// <item>http://www.djradio.ch/kontakt</item>
-		// <item>http://www.lounge-radio.com/index.php?option=com_contact&amp;Itemid=42</item>
-		// <item>http://www.swissgroove.ch/index.php?content=main&amp;id=17</item>
-		// <item>http://retetre.rtsi.ch/index.php?option=com_contact&amp;catid=12&amp;Itemid=30</item>
-		// <item>info@rocknation.ch</item>
-		// <item>http://www.3fach.ch/index.php?id=2</item>
-		// <item>http://www.countryradio.ch/index.php?id=22</item>
-		// <item>http://www.lifechannel.ch/fenster_zum_sonntag-feedback___kontakt.html</item>
-		// <item>http://www.radiogloria.ch/kontakt.html</item>
-		// <item>rgs@im-stadion.ch</item>
-		// <item>http://www.fcbliveradio.ch/index.php?option=com_contact&amp;view=category&amp;catid=12&amp;Itemid=53</item>
-		// <item>http://www.fcz.ch/tv/fcz_radio_kontakt.htm</item>
-		// <item>http://www.facebook.com/apps/application.php?id=194482473899008</item>
-		// <item>http://www.rro.ch/cms/?page=kontakt</item>
-		// <item>info@radiomontecarlo.ch</item>
-		// <item>http://www.rasa.ch/feedback.php</item>
-		// <item>http://www.radioblindpower.ch/studio/studiomail.php</item>
-		// <item>http://www.sine-music.de/?page_id=679</item>
-		// <item>http://34073.speechbox.de</item>
-		// <item>http://www.radiocentral.ch/dynasite.cfm?dsmid=77268</item>
-		// <item>http://www.radiocentral.ch/dynasite.cfm?dsmid=77268</item>
-		// <item>http://www.radiocentral.ch/dynasite.cfm?dsmid=77268</item>
-		// <item>http://eviva.ch/dynasite.cfm?dsmid=78524</item>
-		// <item>http://www.radiogrischa.ch/adresseanfahrt</item>
-		// <item>http://www.sunshine-live.de/pop-ups/mail-ins-studio/</item>
-		// <item>http://oe1.orf.at/kontakt</item>
-		// <item>http://cluboe3.orf.at/song/index.php?round=24</item>
-		// <item>http://our.orf.at/mailform/fm4_kontakt</item>
-		// <item>publikumsservice.tirol@orf.at</item>
-		// <item>899953@orf.at</item>
-		// <item>service.kaernten@orf.at</item>
-		// <item>publikumsservice.salzburg@orf.at</item>
-		// <item>noe-publikum@orf.at</item>
-		// <item>http://www.buureradio.ch/buureradio20/module/songs/searchform.asp</item>
-		// <item>info@radioindustrie.ch</item>
-		// <item>info@audioasyl.net</item>
-		// <item>info@piratenradio.ch</item>
-		// <item>http://radio21.ch/wp/?page_id=481</item>
-		// <item>http://www.allgaeuhit.de/wugru.html</item>
-		// <item>http://www.radio-wave.ch/cms/index.php?section=contact&amp;cmd=8</item>
-		// <item>http://helsinki.at/info/kontakt</item>
-		// <item>http://soundportal.at/service/musikwunsch/</item>
-		// <item>http://www.einslive.de/team/kontakt/</item>
-		// <item>http://mobile.top100station.de/index.php?mobilesite=20</item>
-		// <item>http://www.rockstation.ch/pages/contact.html</item>
-		// <item>http://skylive.ch/infusions/ls_tinychat_panel/ls_tinychat.php</item>
-		// <item>http://technoradio.ch/contact.html</item>
-		// <item>http://radio7.de/index.php?id=75</item>
-		// <item>http://www.salue.de/inside/kontakt.phtml</item>
-		// <item>http://www.ffh.de/ffh-welt/kontakt.html</item>
-		// <item>http://www.rt1-suedschwaben.de/index.php?pageid=174&amp;puid=7</item>
-		// <item>http://www.hr-online.de/website/radio/hr3/index.jsp?rubrik=3532</item>
-		// <item>http://www.starfm.de/nuernberg/kontakt.php</item>
-		// <item>http://www.starfm.de/berlin/kontakt.php</item>
-		// <item>https://www.facebook.com/ibizasonicaradio</item>
-		// <item>http://www.amnesia.es/webapp/contact</item>
-		// <item>http://www.bluemarlinibiza.com/contact/contact</item>
-		// <item>http://www.regenbogen.de/views/service-navigation/kontakt/e-mail.html</item>
-		// <item>http://www.fantasy967.de/index.php?id=88</item>
-		// <item>http://www.radiotirol.it/index.php?id=18</item>
-		// <item>http://www.deltaradio.de/delta/kontakt/mail/index.html</item>
-		// <item>http://www.ndr.de/wellenord/service/mail_ins_studio/index.html</item>
-		// <item>http://www.ndr.de/ndr2/musik/musikwunsch/index.html</item>
-		// <item>http://www.n-joy.de/kontakt377.html</item>
-		// <item>http://www.radiostephansdom.at/kontakt</item>
-		// <item>http://www.celticradio.net/php/service_mod.php?type=contact</item>
-		// <item>administration@mittelalterklang.de</item>
-		// <item>webmaster@secrettube.ch</item>
-		// <item>http://www.gong971.de/gong971.de/kontakt/index.php</item>
-		// <item>http://www.radiopaloma.de/kontakt.html</item>
-		// <item>http://www.radioeins.de/kontakt/index.html</item>
-		// <item>http://www.rdl.de/index.php?option=com_content&amp;view=article&amp;id=8825&amp;Itemid=466</item>
-		// <item>http://www.novaplanet.com/content/contact</item>
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
 
 		return stationList;
 	}
