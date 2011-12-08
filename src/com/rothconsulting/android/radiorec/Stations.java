@@ -27,7 +27,7 @@ public class Stations {
 		m.put("stream", "http://radio32-stream.customer.solnet.ch:8000/radio32");
 		m.put("homepage", "http://www.radio32.ch");
 		m.put("webcam", "http://www.radio32.ch/pages/inc/getcampicfront.cfm");
-		m.put("email", "http://www.radio32.ch/?id=257&amp;rub=55");
+		m.put("email", "http://www.radio32.ch/?id=257&rub=55");
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
@@ -41,7 +41,7 @@ public class Stations {
 				"http://radio32-stream.customer.solnet.ch:8100/radio32goldies");
 		m.put("homepage", "http://www.goldies.ch");
 		m.put("webcam", "http://www.radio32.ch/pages/inc/getcampicfront.cfm");
-		m.put("email", "http://www.radio32.ch/?id=685&amp;rub=124");
+		m.put("email", "http://www.radio32.ch/?id=685&rub=124");
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
@@ -93,7 +93,7 @@ public class Stations {
 		m.put("stream", "http://live.radio24.ch/radio24");
 		m.put("homepage", "http://www.radio24.ch");
 		m.put("webcam",
-				"http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&amp;width=700&amp;quality=80");
+				"http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&width=700&quality=80");
 		m.put("email",
 				"http://www.radio24.ch/service/standard/Kontakt/story/17621407");
 		m.put("sprache", "de");
@@ -108,7 +108,7 @@ public class Stations {
 		m.put("stream", "http://live.radio24.ch:80/radio24Rock");
 		m.put("homepage", "http://www.radio24.ch");
 		m.put("webcam",
-				"http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&amp;width=700&amp;quality=80");
+				"http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&width=700&quality=80");
 		m.put("email",
 				"http://www.radio24.ch/service/standard/Kontakt/story/17621407");
 		m.put("sprache", "de");
@@ -613,6 +613,466 @@ public class Stations {
 		m.put("stil", "pop");
 		stationList.add(m);
 
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_FM1_MELODY);
+		m.put("icon", R.drawable.radio_fm1_melody);
+		m.put("icon_small", R.drawable.radio_fm1_melody_small);
+		m.put("stream", "http://fm1melody.ice.infomaniak.ch/fm1melody-128.mp3");
+		m.put("homepage", "http://www.fm1melody.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.fm1melody.ch/index.php?article_id=20");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ANTENNE_BAYERN);
+		m.put("icon", R.drawable.radio_antenne_bayern);
+		m.put("icon_small", R.drawable.radio_antenne_bayern_small);
+		m.put("stream", "http://mp3.webradio.antenne.de:80");
+		m.put("homepage", "http://www.antenne.de");
+		m.put("webcam",
+				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
+		m.put("email", "http://www.antenne.de/antenne/radio/kontakt/index.php");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ANTENNE_CHILLOUT);
+		m.put("icon", R.drawable.radio_antenne_chillout);
+		m.put("icon_small", R.drawable.radio_antenne_chillout_small);
+		m.put("stream", "http://mp3channels.webradio.antenne.de/chillout");
+		m.put("homepage", "http://www.antenne.de");
+		m.put("webcam",
+				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
+		m.put("email", "http://www.antenne.de/antenne/radio/kontakt/index.php");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ANTENNE_ROCK);
+		m.put("icon", R.drawable.radio_antenne_rock);
+		m.put("icon_small", R.drawable.radio_antenne_rock_small);
+		m.put("stream", "http://mp3.webradio.rockantenne.de:80");
+		m.put("homepage", "http://www.rockantenne.de");
+		m.put("webcam",
+				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
+		m.put("email", "http://www.rockantenne.de/mailinsstudio");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "rock");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ANTENNE_CLASSIC_ROCK);
+		m.put("icon", R.drawable.radio_antenne_classic_rock);
+		m.put("icon_small", R.drawable.radio_antenne_classic_rock_small);
+		m.put("stream",
+				"http://mp3channels.webradio.antenne.de/classic-rock-live");
+		m.put("homepage", "http://www.antenne.de");
+		m.put("webcam",
+				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
+		m.put("email", "http://www.antenne.de/antenne/radio/kontakt/index.php");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "rock");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_BAYERN_1);
+		m.put("icon", R.drawable.radio_bayern1);
+		m.put("icon_small", R.drawable.radio_bayern1_small);
+		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w10b");
+		m.put("homepage", "http://www.bayern1.de");
+		m.put("webcam",
+				"http://www.br-online.de/content/import/webcams/bayern1/cam2_pult.jpg");
+		m.put("email", "studio@bayern1.de");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_BAYERN_2);
+		m.put("icon", R.drawable.radio_bayern2);
+		m.put("icon_small", R.drawable.radio_bayern2_small);
+		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w11b");
+		m.put("homepage", "http://www.bayern2.de");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.br.de/radio/bayern2/sendungen/land-und-leute/kontakt/index.html");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_BAYERN_3);
+		m.put("icon", R.drawable.radio_bayern3);
+		m.put("icon_small", R.drawable.radio_bayern3_small);
+		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w12b");
+		m.put("homepage", "http://www.bayern2.de");
+		m.put("webcam",
+				"http://www.br-online.de/content/import/webcams/bayern3/cam7_gast.jpg");
+		m.put("email",
+				"http://www.br.de/radio/bayern3/service/kontakt/index.html");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ON_3);
+		m.put("icon", R.drawable.radio_bayern_on3);
+		m.put("icon_small", R.drawable.radio_bayern_on3_small);
+		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w9a");
+		m.put("homepage", "http://www.on3.de");
+		m.put("webcam", "");
+		m.put("email", "http://on3.de/focus/29/kontakt");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SWR_1);
+		m.put("icon", R.drawable.radio_swr1);
+		m.put("icon_small", R.drawable.radio_swr1_small);
+		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_swr1bwb");
+		m.put("homepage", "http://www.swr1.de");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.swr.de/swr1/bw/kontakt/-/id=446430/cf=42/s4inx1/index.html");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SWR_2);
+		m.put("icon", R.drawable.radio_swr2);
+		m.put("icon_small", R.drawable.radio_swr2_small);
+		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_swr2b");
+		m.put("homepage", "http://www.swr2.de");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.swr.de/swr2/-/id=7576/vv=email/nid=7576/did=661414/wfs5qs/index.html");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SWR_3);
+		m.put("icon", R.drawable.radio_swr3);
+		m.put("icon_small", R.drawable.radio_swr3_small);
+		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_swr3b");
+		m.put("homepage", "http://www.swr3.ch");
+		m.put("webcam", "http://www.swr3.de/studiocam");
+		m.put("email",
+				"http://www.swr3.de/service/kontakt/-/id=49820/nsuyg4/index.html");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SWR_4);
+		m.put("icon", R.drawable.radio_swr4);
+		m.put("icon_small", R.drawable.radio_swr4_small);
+		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_swr4bwb");
+		m.put("homepage", "http://www.swr4.de");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.swr.de/swr4/bw/-/id=233374/vv=email/nid=233374/did=259762/1gqvrz9/index.html");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_DAS_DING);
+		m.put("icon", R.drawable.radio_dasding);
+		m.put("icon_small", R.drawable.radio_dasding_small);
+		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_dasdinga");
+		m.put("homepage", "http://www.dasding.de");
+		m.put("webcam", "http://www.dasding.de/ext/webcam/webcam770.php?cam=2");
+		m.put("email", "http://www.dasding.de/ext/dingmessage/index.php");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_BIG_FM);
+		m.put("icon", R.drawable.radio_bigfm);
+		m.put("icon_small", R.drawable.radio_bigfm_small);
+		m.put("stream", "http://srv05.bigstreams.de/bigfm-mp3-96");
+		m.put("homepage", "http://www.bigfm.de");
+		m.put("webcam", "http://static.bigfm.de/webcam/cam6/webcam06.jpg");
+		m.put("email",
+				"http://www.bigfm.de/content/html/shared/studiomail/index.html");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_TOXIC_FM);
+		m.put("icon", R.drawable.radio_toxic_fm);
+		m.put("icon_small", R.drawable.radio_toxic_fm_small);
+		m.put("stream", "http://toxicfm.ice.infomaniak.ch:80/toxicfm-128.mp3");
+		m.put("homepage", "http://www.toxicfm.ch");
+		m.put("webcam", "");
+		m.put("email", "studio@toxic.fm");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_X);
+		m.put("icon", R.drawable.radio_x);
+		m.put("icon_small", R.drawable.radio_x_small);
+		m.put("stream", "http://mp3.radiox.ch/standard.mp3");
+		m.put("homepage", "http://www.radiox.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiox.ch/service/wuko");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_KANAL_K);
+		m.put("icon", R.drawable.radio_kanal_k);
+		m.put("icon_small", R.drawable.radio_kanal_k_small);
+		m.put("stream", "http://82.197.165.150");
+		m.put("homepage", "http://www.kanalk.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.kanalk.ch/ueber-uns/kontakt/");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SEEFUNK);
+		m.put("icon", R.drawable.radio_seefunk);
+		m.put("icon_small", R.drawable.radio_seefunk_small);
+		m.put("stream", "http://webradio.radio-seefunk.de:8000");
+		m.put("homepage", "http://www.radio-seefunk.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.radio-seefunk.de/default.aspx?ID=11550");
+		m.put("sprache", "de");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_INSIDE);
+		m.put("icon", R.drawable.radio_inside);
+		m.put("icon_small", R.drawable.radio_inside_small);
+		m.put("stream",
+				"http://rs43.stream24.org:8310/;stream0.238134464714676.mp3");
+		m.put("homepage", "http://www.radioinside.ch");
+		m.put("webcam", "http://www.radioinside.ch/~kamera/studio1.jpg");
+		m.put("email", "http://www.radioinside.ch/index.php/studiomail");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_FREIBURG);
+		m.put("icon", R.drawable.radio_fr);
+		m.put("icon_small", R.drawable.radio_fr_small);
+		m.put("stream",
+				"http://radiofreiburg.ice.infomaniak.ch:80/radiofreiburg-high.mp3");
+		m.put("homepage", "http://www.radiofr.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiofr.ch/de/kontakt.html");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_LIECHSTENSTEIN);
+		m.put("icon", R.drawable.radio_li);
+		m.put("icon_small", R.drawable.radio_li_small);
+		m.put("stream", "http://live.radiol.li:8000/live");
+		m.put("homepage", "http://www.radio.li");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.radio.li/hoererservice/mein-musikwunsch.html?type=3");
+		m.put("sprache", "de");
+		m.put("land", "li");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_COULEUR_3);
+		m.put("icon", R.drawable.radio_couleur3);
+		m.put("icon_small", R.drawable.radio_couleur3_small);
+		m.put("stream", "http://broadcast.infomaniak.ch/rsr-couleur3-high.mp3");
+		m.put("homepage", "http://www.couleur3.ch");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.rsr.ch/#/corporate/contact/?contact=couleur3");
+		m.put("sprache", "fr");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_RFJ);
+		m.put("icon", R.drawable.radio_rfj);
+		m.put("icon_small", R.drawable.radio_rfj_small);
+		m.put("stream", "http://broadcast.infomaniak.net/rfj-high.mp3");
+		m.put("homepage", "http://www.rfj.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.rfj.ch/rfj/Radio/Contact.html");
+		m.put("sprache", "fr");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ROUGE_FM);
+		m.put("icon", R.drawable.radio_rougefm);
+		m.put("icon_small", R.drawable.radio_rougefm_small);
+		m.put("stream", "http://broadcast.infomaniak.ch/rougefm-high.mp3");
+		m.put("homepage", "http://www.rougefm.com");
+		m.put("webcam", "");
+		m.put("email", "http://www.rougefm.com/radio/contact.php");
+		m.put("sprache", "fr");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SOMA_FM);
+		m.put("icon", R.drawable.radio_somafm_sgoa);
+		m.put("icon_small", R.drawable.radio_somafm_sgoa_small);
+		m.put("stream", "http://ice.somafm.com/suburbsofgoa");
+		m.put("homepage", "http://www.somafm.com");
+		m.put("webcam", "");
+		m.put("email", "http://somafm.com/contact");
+		m.put("sprache", "en");
+		m.put("land", "de");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_STADTFILTER);
+		m.put("icon", R.drawable.radio_stadtfilter);
+		m.put("icon_small", R.drawable.radio_stadtfilter_small);
+		m.put("stream", "http://stream.stadtfilter.net:8000");
+		m.put("homepage", "http://www.stadtfilter.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.stadtfilter.ch/StadtfilterKontakt/Kontakt");
+		m.put("sprache", "de");
+		m.put("land", "ch");
+		m.put("stil", "pop");
+		stationList.add(m);
+
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+
 		// m = new HashMap<String, Object>();
 		// m.put("name", Constants.RADIO_);
 		// m.put("icon", R.drawable.radio_);
@@ -716,7 +1176,7 @@ public class Stations {
 		// m.put("land", "ch");
 		// m.put("stil", "pop");
 		// stationList.add(m);
-		//
+
 		// m = new HashMap<String, Object>();
 		// m.put("name", Constants.RADIO_);
 		// m.put("icon", R.drawable.radio_);
@@ -820,6 +1280,32 @@ public class Stations {
 		// m.put("land", "ch");
 		// m.put("stil", "pop");
 		// stationList.add(m);
+
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
 		//
 		// m = new HashMap<String, Object>();
 		// m.put("name", Constants.RADIO_);
@@ -847,6 +1333,58 @@ public class Stations {
 		// m.put("stil", "pop");
 		// stationList.add(m);
 		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+		//
+		// m = new HashMap<String, Object>();
+		// m.put("name", Constants.RADIO_);
+		// m.put("icon", R.drawable.radio_);
+		// m.put("icon_small", R.drawable.radio_);
+		// m.put("stream", "");
+		// m.put("homepage", "http://www.radiopilatus.ch");
+		// m.put("webcam", "");
+		// m.put("email", "");
+		// m.put("sprache", "de");
+		// m.put("land", "ch");
+		// m.put("stil", "pop");
+		// stationList.add(m);
+
 		// m = new HashMap<String, Object>();
 		// m.put("name", Constants.RADIO_);
 		// m.put("icon", R.drawable.radio_);
