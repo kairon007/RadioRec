@@ -12,7 +12,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -55,14 +54,14 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private RadioPlayer radioPlayer;
 	private AsyncTask<URL, Integer, Long> recordTask;
 	private String origRT1steam = null;
-	private final ToggleButton favIcon = null;
+	private ToggleButton favIcon = null;
 
 	Utils utils = new Utils();
 
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		// if (!playing) {
+
 		super.onCreate(savedInstanceState);
 		if (Build.VERSION.SDK_INT < 7) {
 			getApplicationContext().deleteDatabase("webview.db");
@@ -80,9 +79,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
 		((TextView) findViewById(R.id.webcam)).setOnClickListener(this);
 		((TextView) findViewById(R.id.mail)).setOnClickListener(this);
-		// favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
-		// ((ToggleButton) findViewById(R.id.toggleButtonFavorit))
-		// .setOnClickListener(this);
+		favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
+		((ToggleButton) findViewById(R.id.toggleButtonFavorit))
+				.setOnClickListener(this);
 		back = ((ImageButton) findViewById(R.id.back));
 		back.setOnClickListener(this);
 		back.setEnabled(false);
@@ -107,50 +106,21 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 					.decodeResource(getResources(), R.drawable.radio_32,
 							options), 0));
 		}
+
+		Log.d(TAG, "Icon=" + Constants.THE_SELECTED_STATION_ICON);
+		Log.d(TAG, "Name=" + Constants.THE_SELECTED_STATION_NAME);
+		Log.d(TAG, "Index=" + Constants.THE_SELECTED_STATION_INDEX);
+
 		// construct list of maps for the spinner (DropDown-Selector)
 		stationList = new ArrayList<HashMap<String, Object>>();
-		// Get all the sources: name, logo, stream, homepage, webcam, mail.
-		String[] names = getResources().getStringArray(R.array.station_names);
-		TypedArray logos = getResources().obtainTypedArray(
-				R.array.station_logos);
-		TypedArray logos_small = getResources().obtainTypedArray(
-				R.array.station_logos_small);
-		String[] streams = getResources().getStringArray(
-				R.array.station_streams);
-		String[] homepages = getResources().getStringArray(
-				R.array.station_homepages);
-		String[] webcams = getResources().getStringArray(
-				R.array.station_webcams);
-		String[] contact = getResources().getStringArray(
-				R.array.station_contact);
 
 		AdMob admob = new AdMob();
 		admob.showRemoveAds(this);
 
-		Log.d(TAG, "Icon=" + Constants.THE_SELECTED_STATION_ICON);
-		Log.d(TAG, "Name=" + Constants.THE_SELECTED_STATION_NAME);
-		Log.d(TAG, "Index=" + Constants.SELECTED_STATION_INDEX);
+		Log.d(TAG, "getAllStations()");
+		Stations theStations = new Stations();
+		stationList = theStations.getAllStations();
 
-		for (int i = 0; i < names.length; i++) {
-			// Shoutcast Streams gehen erst ab Android 2.2 (Level 8)
-			if (Build.VERSION.SDK_INT < 8
-					&& Constants.getIgnoreListKleinerAndroid22().contains(
-							names[i])) {
-				continue;
-			}
-			HashMap<String, Object> m = new HashMap<String, Object>();
-			m.put("name", names[i]);
-			m.put("icon_small", logos_small.getResourceId(i, R.id.logo));
-			m.put("icon", logos.getResourceId(i, R.id.logo));
-			m.put("stream", streams[i]);
-			m.put("homepage", homepages[i]);
-			m.put("webcam", webcams[i]);
-			m.put("email", contact[i]);
-			stationList.add(m);
-
-			// }
-		}
-		// apply list to spinner
 		SimpleAdapter adapter = new SimpleAdapter(this, stationList,
 				R.layout.station_listitem,
 				new String[] { "icon_small", "name" }, new int[] {
@@ -314,24 +284,24 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				startActivity(Intent.createChooser(emailIntent, "Send mail..."));
 			}
 			break;
-		// case R.id.toggleButtonFavorit:
-		// Log.i(TAG, "favorit");
-		// DbAdapter dbadapter = new DbAdapter(this);
-		// if (favIcon.isChecked()) {
-		// favIcon.setButtonDrawable(android.R.drawable.star_big_on);
-		// Log.d(TAG, "isChecked -> instertStation");
-		// dbadapter.open();
-		// dbadapter.insertStation(Constants.THE_SELECTED_STATION_ICON,
-		// Constants.THE_SELECTED_STATION_NAME);
-		// dbadapter.close();
-		// } else {
-		// favIcon.setButtonDrawable(android.R.drawable.star_big_off);
-		// Log.d(TAG, "is NOT Checked -> deleteStation");
-		// dbadapter.open();
-		// dbadapter.deleteStation(Constants.THE_SELECTED_STATION_NAME);
-		// dbadapter.close();
-		// }
-		// break;
+		case R.id.toggleButtonFavorit:
+			Log.i(TAG, "favorit");
+			DbAdapter dbadapter = new DbAdapter(this);
+			if (favIcon.isChecked()) {
+				favIcon.setButtonDrawable(android.R.drawable.star_big_on);
+				Log.d(TAG, "isChecked -> instertStation");
+				dbadapter.open();
+				dbadapter.insertStation(Constants.THE_SELECTED_STATION_ICON,
+						Constants.THE_SELECTED_STATION_NAME);
+				dbadapter.close();
+			} else {
+				favIcon.setButtonDrawable(android.R.drawable.star_big_off);
+				Log.d(TAG, "is NOT Checked -> deleteStation");
+				dbadapter.open();
+				dbadapter.deleteStation(Constants.THE_SELECTED_STATION_NAME);
+				dbadapter.close();
+			}
+			break;
 		case R.id.back:
 			if (stations.getSelectedItemPosition() > 0) {
 				back.setEnabled(false);
@@ -376,11 +346,14 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Log.d(TAG, "onItemSelected(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
 				+ arg3 + ")");
 		Log.d(TAG, "getSelectedItemPosition1=" + arg0.getSelectedItemPosition());
-		Log.d(TAG, "SELECTED_STATION_INDEX1="
-				+ Constants.SELECTED_STATION_INDEX);
+		Log.d(TAG, "THE_SELECTED_STATION_INDEX1="
+				+ Constants.THE_SELECTED_STATION_INDEX);
 		if (firstStart) {
 			Log.d(TAG,
-					"firstStart -> arg0.setSelection(SELECTED_STATION_INDEX)");
+					"firstStart -> arg0.setSelection(THE_SELECTED_STATION_INDEX)");
+			if (Constants.THE_SELECTED_STATION_INDEX > stationList.size()) {
+				Constants.THE_SELECTED_STATION_INDEX = 0;
+			}
 			arg0.setSelection(Constants.THE_SELECTED_STATION_INDEX);
 		} else {
 			Constants.THE_SELECTED_STATION_INDEX = arg0
@@ -388,7 +361,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 		Log.d(TAG, "getSelectedItemPosition2=" + arg0.getSelectedItemPosition());
 		Log.d(TAG, "SELECTED_STATION_INDEX2="
-				+ Constants.SELECTED_STATION_INDEX);
+				+ Constants.THE_SELECTED_STATION_INDEX);
 
 		changeStation();
 	}
@@ -398,17 +371,18 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	private void changeStation() {
 		int index = Constants.THE_SELECTED_STATION_INDEX;
-		if (index < 0) {
+		if (index < 0 || index > stationList.size()) {
 			index = 0;
+			Constants.THE_SELECTED_STATION_INDEX = index;
 		}
 
+		Log.d(TAG,
+				"index=" + index + " / stationList.size()="
+						+ stationList.size());
+
 		HashMap<String, Object> map = null;
-		try {
-			map = stationList.get(index);
-		} catch (Exception e) {
-			index = 0;
-			map = stationList.get(index);
-		}
+		map = stationList.get(index);
+
 		Log.d(TAG, "Sender=" + Constants.THE_SELECTED_STATION_NAME);
 		Constants.THE_SELECTED_STATION_ICON = (Integer) map.get("icon");
 		// avoiding OutOfMemory
@@ -435,7 +409,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 		Constants.THE_URL_CONTACT = "" + map.get("email");
 
-		// this.setFavIcon();
+		this.setFavIcon();
 
 		if (!firstStart && playing) {
 			if (Constants.getLiveStreamStations().contains(
