@@ -69,9 +69,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -88,9 +91,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -106,9 +112,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -124,9 +133,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -142,9 +154,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -162,9 +177,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -182,9 +200,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -201,9 +222,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -222,9 +246,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -243,9 +270,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -264,9 +294,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -283,9 +316,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -302,9 +338,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -322,9 +361,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -342,9 +384,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -362,9 +407,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -381,9 +429,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -400,9 +451,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -419,9 +473,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -437,9 +494,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -456,9 +516,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -475,9 +538,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -494,9 +560,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -513,9 +582,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -531,9 +603,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -549,9 +624,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -567,9 +645,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -585,9 +666,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -604,9 +688,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -622,9 +709,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -640,9 +730,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -658,9 +751,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -676,9 +772,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -694,9 +793,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -713,9 +815,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -732,9 +837,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -750,9 +858,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -768,9 +879,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -786,9 +900,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -804,9 +921,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -822,9 +942,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -841,9 +964,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -859,9 +985,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -877,9 +1006,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -896,9 +1028,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -915,9 +1050,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -934,9 +1072,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "rock");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -954,9 +1095,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "rock");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -973,9 +1117,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -992,9 +1139,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1012,9 +1162,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1030,9 +1183,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1049,9 +1205,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1068,9 +1227,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1087,9 +1249,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1106,9 +1271,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1124,9 +1292,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1143,9 +1314,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1161,9 +1335,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1179,9 +1356,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1197,9 +1377,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1215,9 +1398,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1234,9 +1420,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1253,9 +1442,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1272,9 +1464,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "li");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1291,9 +1486,12 @@ public class Stations {
 		m.put("sprache", "fr");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1309,9 +1507,12 @@ public class Stations {
 		m.put("sprache", "fr");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1327,9 +1528,12 @@ public class Stations {
 		m.put("sprache", "fr");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1345,9 +1549,12 @@ public class Stations {
 		m.put("sprache", "en");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1363,9 +1570,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1381,9 +1591,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1400,9 +1613,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1418,9 +1634,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1436,9 +1655,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1454,9 +1676,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1473,9 +1698,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1491,9 +1719,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1510,9 +1741,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1528,9 +1762,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1546,9 +1783,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1564,9 +1804,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1583,9 +1826,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "spirituell");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1601,9 +1847,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "spirituell");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1621,9 +1870,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "sport");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1640,9 +1892,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "sport");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1658,9 +1913,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "sport");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1678,9 +1936,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1697,9 +1958,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1715,9 +1979,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1733,9 +2000,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1751,9 +2021,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1769,9 +2042,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1787,9 +2063,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1805,9 +2084,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1823,9 +2105,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1841,9 +2126,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1859,9 +2147,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1878,9 +2169,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1896,9 +2190,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1914,9 +2211,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "at");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1932,9 +2232,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "at");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1950,9 +2253,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "at");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1968,9 +2274,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "at");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -1986,9 +2295,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "at");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2004,9 +2316,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "at");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2022,9 +2337,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "at");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2040,9 +2358,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "at");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2059,9 +2380,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "volks");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2077,9 +2401,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2095,9 +2422,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2106,16 +2436,20 @@ public class Stations {
 		m.put("name", Constants.RADIO_PIRATENRADIO);
 		m.put("icon", R.drawable.radio_piratenradio);
 		m.put("icon_small", R.drawable.radio_piratenradio_small);
-		m.put("stream", "http://rs1.stream24.org:8460/stream");
+		m.put("stream",
+				"http://piratenradioch.ice.infomaniak.ch/piratenradioch-128.mp3");
 		m.put("homepage", "http://www.piratenradio.ch");
 		m.put("webcam", "");
 		m.put("email", "info@piratenradio.ch");
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2131,9 +2465,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2149,9 +2486,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2168,9 +2508,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2186,9 +2529,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "at");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2204,9 +2550,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "at");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2223,9 +2572,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2241,9 +2593,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2259,9 +2614,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "rock");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2278,9 +2636,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2296,9 +2657,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "techno");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2314,9 +2678,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2332,9 +2699,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2350,9 +2720,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2362,7 +2735,7 @@ public class Stations {
 		m.put("icon", R.drawable.radio_rt1_suedschwaben);
 		m.put("icon_small", R.drawable.radio_rt1_suedschwaben_small);
 		m.put("stream",
-				"http://62.27.44.59/rt1suedschwaben/livestream.mp3?token=");
+				"http://62.27.44.60/rt1suedschwaben/livestream.mp3?token=");
 		m.put("homepage", "http://www.rt1-suedschwaben.de");
 		m.put("webcam", "");
 		m.put("email",
@@ -2370,9 +2743,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2390,9 +2766,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2408,9 +2787,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2426,9 +2808,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2444,9 +2829,12 @@ public class Stations {
 		m.put("sprache", "es");
 		m.put("land", "es");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2462,9 +2850,12 @@ public class Stations {
 		m.put("sprache", "es");
 		m.put("land", "es");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2480,9 +2871,12 @@ public class Stations {
 		m.put("sprache", "es");
 		m.put("land", "es");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2500,9 +2894,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2518,9 +2915,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2536,9 +2936,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "it");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2554,9 +2957,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2574,9 +2980,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2593,9 +3002,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2612,9 +3024,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2631,9 +3046,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "at");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2650,9 +3068,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ir");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2668,9 +3089,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2686,9 +3110,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2704,9 +3131,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2722,9 +3152,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2740,9 +3173,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "de");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2759,9 +3195,12 @@ public class Stations {
 		m.put("sprache", "de");
 		m.put("land", "ch");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}
@@ -2777,9 +3216,11 @@ public class Stations {
 		m.put("sprache", "fr");
 		m.put("land", "fr");
 		m.put("stil", "pop");
-		if (Build.VERSION.SDK_INT >= 8
-				&& !Constants.getIgnoreListKleinerAndroid22().contains(
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
 			stationList.add(m);
 			fillLandList(m);
 		}

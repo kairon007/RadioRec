@@ -52,6 +52,7 @@ public class Constants {
 		ignoreList.add(RADIO_WIEN);
 		ignoreList.add(RADIO_KAERNTEN);
 		ignoreList.add(RADIO_SALZBURG);
+		ignoreList.add(RADIO_NIEDEROESTERREICH);
 		ignoreList.add(RADIO_BUURERADIO);
 		ignoreList.add(RADIO_INDUSTRIE);
 		ignoreList.add(RADIO_21);
@@ -61,6 +62,7 @@ public class Constants {
 		ignoreList.add(RADIO_SKYLIVE);
 		ignoreList.add(RADIO_TRANCERADIO);
 		ignoreList.add(RADIO_STAR_FM);
+		ignoreList.add(RADIO_STAR_FM_FROM_HELL);
 		ignoreList.add(RADIO_IBIZA_SONICA);
 		ignoreList.add(RADIO_AMNESIA);
 		ignoreList.add(RADIO_BLUE_MARLIN);
@@ -70,6 +72,7 @@ public class Constants {
 		ignoreList.add(RADIO_SECRETTUBE);
 		ignoreList.add(RADIO_GONG_NUERNBERG);
 		ignoreList.add(RADIO_PALOMA);
+		ignoreList.add(RADIO_DREYECKLAND);
 		return ignoreList;
 	}
 
