@@ -69,4 +69,6 @@
 	<string name="laender">Länder</string>
 	<string name="favorit">Favorit</string>
 	<string name="favoriten">Favoriten</string>
+	<string name="stil">Stil</string>
+	<string name="allStations">Alle Sender</string>
 </resources>

@@ -27,6 +27,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
@@ -42,13 +43,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	static final String TAG = "RadioRecPlus";
 
 	private boolean playing, recording, firstStart;
-	private Spinner stations;
-
-	public Spinner getStations() {
-		return stations;
-	}
-
+	private Spinner spnAllStations, spnFavoriten, spnLaender, spnStil;
+	private Button btnFavoriten, btnLaender, btnStil;
 	private ArrayList<HashMap<String, Object>> stationList;
+	private ArrayList<HashMap<String, Integer>> favList, landList, stilList;
 	private ImageView logo;
 	private ImageButton back, fwd;
 	private RadioPlayer radioPlayer;
@@ -57,6 +55,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private ToggleButton favIcon = null;
 
 	Utils utils = new Utils();
+
+	public Spinner getStations() {
+		return spnAllStations;
+	}
 
 	/** Called when the activity is first created. */
 	@Override
@@ -74,20 +76,28 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Utils utils = new Utils();
 		utils.getPreferences(this);
 		// get components and register clicks
-		stations = (Spinner) findViewById(R.id.stations);
+		spnAllStations = (Spinner) findViewById(R.id.stations);
+		spnFavoriten = (Spinner) findViewById(R.id.spinnerFav);
+		spnLaender = (Spinner) findViewById(R.id.spinnerLand);
+		spnStil = (Spinner) findViewById(R.id.spinnerStil);
+		btnFavoriten = (Button) findViewById(R.id.buttonFav);
+		btnFavoriten.setOnClickListener(this);
+		btnLaender = (Button) findViewById(R.id.buttonLand);
+		btnLaender.setOnClickListener(this);
+		btnStil = (Button) findViewById(R.id.buttonStil);
+		btnStil.setOnClickListener(this);
 		logo = (ImageView) findViewById(R.id.logo);
 		((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
 		((TextView) findViewById(R.id.webcam)).setOnClickListener(this);
 		((TextView) findViewById(R.id.mail)).setOnClickListener(this);
 		favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
-		((ToggleButton) findViewById(R.id.toggleButtonFavorit))
-				.setOnClickListener(this);
-		back = ((ImageButton) findViewById(R.id.back));
+		favIcon.setOnClickListener(this);
+		back = (ImageButton) findViewById(R.id.back);
 		back.setOnClickListener(this);
 		back.setEnabled(false);
 		((ImageButton) findViewById(R.id.play)).setOnClickListener(this);
 		((ImageButton) findViewById(R.id.rec)).setOnClickListener(this);
-		fwd = ((ImageButton) findViewById(R.id.fwd));
+		fwd = (ImageButton) findViewById(R.id.fwd);
 		fwd.setOnClickListener(this);
 		// set first image
 		if (Constants.THE_SELECTED_STATION_ICON == 0x0) {
@@ -120,13 +130,22 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Log.d(TAG, "getAllStations()");
 		Stations theStations = new Stations();
 		stationList = theStations.getAllStations();
+		landList = theStations.getLandListCh();
+		Log.d(TAG, "******** landListCH=" + landList);
+
+		SimpleAdapter laenderAdapter = new SimpleAdapter(this, landList,
+				R.layout.station_listitem,
+				new String[] { "icon_small", "name" }, new int[] {
+						R.id.option_icon, R.id.option_text });
+		spnLaender.setAdapter(laenderAdapter);
+		spnLaender.setOnItemSelectedListener(this);
 
 		SimpleAdapter adapter = new SimpleAdapter(this, stationList,
 				R.layout.station_listitem,
 				new String[] { "icon_small", "name" }, new int[] {
 						R.id.option_icon, R.id.option_text });
-		stations.setAdapter(adapter);
-		stations.setOnItemSelectedListener(this);
+		spnAllStations.setAdapter(adapter);
+		spnAllStations.setOnItemSelectedListener(this);
 	}
 
 	@Override
@@ -303,10 +322,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			}
 			break;
 		case R.id.back:
-			if (stations.getSelectedItemPosition() > 0) {
+			if (spnAllStations.getSelectedItemPosition() > 0) {
 				back.setEnabled(false);
-				stations.setSelection(stations.getSelectedItemPosition() - 1);
-				Constants.THE_SELECTED_STATION_INDEX = stations
+				spnAllStations.setSelection(spnAllStations
+						.getSelectedItemPosition() - 1);
+				Constants.THE_SELECTED_STATION_INDEX = spnAllStations
 						.getSelectedItemPosition();
 				Log.d(TAG, "back");
 			}
@@ -330,13 +350,35 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			}
 			break;
 		case R.id.fwd:
-			if (stations.getSelectedItemPosition() < stationList.size() - 1) {
+			if (spnAllStations.getSelectedItemPosition() < stationList.size() - 1) {
 				fwd.setEnabled(false);
-				stations.setSelection(stations.getSelectedItemPosition() + 1);
-				Constants.THE_SELECTED_STATION_INDEX = stations
+				spnAllStations.setSelection(spnAllStations
+						.getSelectedItemPosition() + 1);
+				Constants.THE_SELECTED_STATION_INDEX = spnAllStations
 						.getSelectedItemPosition();
 				Log.d(TAG, "fwd");
 			}
+			break;
+		case R.id.buttonFav:
+			Log.d(TAG,
+					"Button Favoriten pressed. Firts="
+							+ spnFavoriten.getFirstVisiblePosition());
+
+			spnFavoriten.performClick();
+			break;
+		case R.id.buttonLand:
+			Log.d(TAG,
+					"Button Land pressed. Firts="
+							+ spnLaender.getFirstVisiblePosition());
+
+			spnLaender.performClick();
+			break;
+		case R.id.buttonStil:
+			Log.d(TAG,
+					"Button Stil pressed. Firts="
+							+ spnStil.getFirstVisiblePosition());
+
+			spnStil.performClick();
 			break;
 		}
 	}

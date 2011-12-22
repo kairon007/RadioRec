@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.os.Build;
+import android.util.Log;
 
 public class Stations {
 
@@ -24,8 +25,11 @@ public class Stations {
 		}
 	}
 
-	public HashMap<String, Integer> getLandListCh() {
-		return landListCh;
+	public ArrayList<HashMap<String, Integer>> getLandListCh() {
+		Log.d("Stations", "getLandListCh");
+		ArrayList<HashMap<String, Integer>> list = new ArrayList<HashMap<String, Integer>>();
+		list.add(landListCh);
+		return list;
 	}
 
 	public HashMap<String, Integer> getLandListDe() {

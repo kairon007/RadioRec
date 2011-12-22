@@ -69,4 +69,5 @@
 	<string name="laender">Countries</string>
 	<string name="favorit">Favourite</string>
 	<string name="favoriten">Favourites</string>
+	<string name="allStations">All Stations</string>	
 </resources>
