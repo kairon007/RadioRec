@@ -45,8 +45,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private boolean playing, recording, firstStart;
 	private Spinner spnAllStations, spnFavoriten, spnLaender, spnStil;
 	private Button btnFavoriten, btnLaender, btnStil;
-	private ArrayList<HashMap<String, Object>> stationList;
-	private ArrayList<HashMap<String, Integer>> favList, landList, stilList;
+	private ArrayList<HashMap<String, Object>> stationList, favList, landList,
+			stilList;
 	private ImageView logo;
 	private ImageButton back, fwd;
 	private RadioPlayer radioPlayer;
@@ -77,9 +77,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		utils.getPreferences(this);
 		// get components and register clicks
 		spnAllStations = (Spinner) findViewById(R.id.stations);
+		Constants.SPINNER_ALL_STATIONS = spnAllStations.getId();
 		spnFavoriten = (Spinner) findViewById(R.id.spinnerFav);
+		Constants.SPINNER_FAVORITEN = spnFavoriten.getId();
 		spnLaender = (Spinner) findViewById(R.id.spinnerLand);
+		Constants.SPINNER_LAENDER = spnLaender.getId();
 		spnStil = (Spinner) findViewById(R.id.spinnerStil);
+		Constants.SPINNER_STIL = spnStil.getId();
 		btnFavoriten = (Button) findViewById(R.id.buttonFav);
 		btnFavoriten.setOnClickListener(this);
 		btnLaender = (Button) findViewById(R.id.buttonLand);
@@ -128,10 +132,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		admob.showRemoveAds(this);
 
 		Log.d(TAG, "getAllStations()");
-		Stations theStations = new Stations();
-		stationList = theStations.getAllStations();
-		landList = theStations.getLandListCh();
-		Log.d(TAG, "******** landListCH=" + landList);
+		stationList = Stations.getAllStations();
+		landList = Stations.getLandListCh();
+		stilList = Stations.getStilPop();
 
 		SimpleAdapter laenderAdapter = new SimpleAdapter(this, landList,
 				R.layout.station_listitem,
@@ -140,12 +143,20 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		spnLaender.setAdapter(laenderAdapter);
 		spnLaender.setOnItemSelectedListener(this);
 
+		SimpleAdapter stilAdapter = new SimpleAdapter(this, stilList,
+				R.layout.station_listitem,
+				new String[] { "icon_small", "name" }, new int[] {
+						R.id.option_icon, R.id.option_text });
+		spnStil.setAdapter(stilAdapter);
+		spnStil.setOnItemSelectedListener(this);
+
 		SimpleAdapter adapter = new SimpleAdapter(this, stationList,
 				R.layout.station_listitem,
 				new String[] { "icon_small", "name" }, new int[] {
 						R.id.option_icon, R.id.option_text });
 		spnAllStations.setAdapter(adapter);
 		spnAllStations.setOnItemSelectedListener(this);
+
 	}
 
 	@Override
@@ -385,11 +396,19 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3) {
-		Log.d(TAG, "onItemSelected(" + arg0 + ", " + arg1 + ", " + arg2 + ", "
-				+ arg3 + ")");
+		Log.d(TAG, "****************");
+		Log.d(TAG, "onItemSelected(AdapterView<?> arg0 = " + arg0);
+		Constants.SPINNER_SELECTION = arg0.getId();
+		AdapterView aview = arg0;
+		SimpleAdapter sa = (SimpleAdapter) aview.getAdapter();
+		Log.d(TAG, "onItemSelected(View arg1 = " + arg1);
+		Log.d(TAG, "onItemSelected(int arg2 = " + arg2);
+		Log.d(TAG, "onItemSelected(long arg0 = " + arg3);
 		Log.d(TAG, "getSelectedItemPosition1=" + arg0.getSelectedItemPosition());
 		Log.d(TAG, "THE_SELECTED_STATION_INDEX1="
 				+ Constants.THE_SELECTED_STATION_INDEX);
+		Log.d(TAG, "****************");
+
 		if (firstStart) {
 			Log.d(TAG,
 					"firstStart -> arg0.setSelection(THE_SELECTED_STATION_INDEX)");
@@ -423,7 +442,15 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 						+ stationList.size());
 
 		HashMap<String, Object> map = null;
-		map = stationList.get(index);
+		if (Constants.SPINNER_SELECTION == Constants.SPINNER_ALL_STATIONS) {
+			map = stationList.get(index);
+		} else if (Constants.SPINNER_SELECTION == Constants.SPINNER_FAVORITEN) {
+			map = favList.get(index);
+		} else if (Constants.SPINNER_SELECTION == Constants.SPINNER_LAENDER) {
+			map = landList.get(index);
+		} else if (Constants.SPINNER_SELECTION == Constants.SPINNER_STIL) {
+			map = stilList.get(index);
+		}
 
 		Log.d(TAG, "Sender=" + Constants.THE_SELECTED_STATION_NAME);
 		Constants.THE_SELECTED_STATION_ICON = (Integer) map.get("icon");

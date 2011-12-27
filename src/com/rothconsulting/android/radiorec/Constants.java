@@ -142,6 +142,12 @@ public class Constants {
 
 	public static String ADMOB_PUBLISHER_ID = "a14dc9885936cd9";
 
+	public static int SPINNER_SELECTION = -1;
+	public static int SPINNER_ALL_STATIONS = -1;
+	public static int SPINNER_FAVORITEN = -1;
+	public static int SPINNER_LAENDER = -1;
+	public static int SPINNER_STIL = -1;
+
 	public static final String RADIO_32 = "Radio 32";
 	public static final String RADIO_32_GOLDIES = "Radio 32 Goldies";
 	public static final String RADIO_24 = "Radio 24";

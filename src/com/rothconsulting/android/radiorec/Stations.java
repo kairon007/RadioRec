@@ -4,44 +4,74 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.os.Build;
-import android.util.Log;
 
 public class Stations {
 
-	private final HashMap<String, Integer> landListCh = new HashMap<String, Integer>();
-	private final HashMap<String, Integer> landListDe = new HashMap<String, Integer>();
-	private final HashMap<String, Integer> landListAt = new HashMap<String, Integer>();
-	private final HashMap<String, Integer> landListDiv = new HashMap<String, Integer>();
+	private final static String TAG = "Stations";
+	private final static String STIL_POP = "Pop";
+	private final static String STIL_ROCK = "Rock";
+	private final static String STIL_VOLKSTUEMLICH = "Laendler";
+	private final static String STIL_SWISS = "Swiss";
+	private final static String STIL_LOUNGE = "Lounge";
+	private final static String STIL_TRANCE = "Trance";
+	private final static String STIL_RELIGION = "Religion";
+	private final static String STIL_SPORT = "Sport";
+	private final static String SPRACHE_DE = "de";
+	private final static String SPRACHE_FR = "fr";
+	private final static String SPRACHE_IT = "it";
+	private final static String SPRACHE_ES = "es";
+	private final static String SPRACHE_EN = "en";
+	private final static String LAND_DE = "de";
+	private final static String LAND_CH = "ch";
+	private final static String LAND_AT = "at";
+	private final static String LAND_ES = "es";
+	private final static String LAND_IT = "it";
+	private final static String LAND_DIV = "div";
 
-	private void fillLandList(HashMap<String, Object> m) {
+	static ArrayList<HashMap<String, Object>> returnLandListCh = new ArrayList<HashMap<String, Object>>();
+	static ArrayList<HashMap<String, Object>> returnLandListDe = new ArrayList<HashMap<String, Object>>();
+	static ArrayList<HashMap<String, Object>> returnLandListAt = new ArrayList<HashMap<String, Object>>();
+	static ArrayList<HashMap<String, Object>> returnLandListDiv = new ArrayList<HashMap<String, Object>>();
+	static ArrayList<HashMap<String, Object>> returnStilListPop = new ArrayList<HashMap<String, Object>>();
+	static ArrayList<HashMap<String, Object>> returnStilListRock = new ArrayList<HashMap<String, Object>>();
+	static ArrayList<HashMap<String, Object>> returnStilListLounge = new ArrayList<HashMap<String, Object>>();
+
+	private static void fillLandStilList(HashMap<String, Object> m) {
 		if (m.get("land").equals("ch")) {
-			landListCh.put("" + m.get("name"), (Integer) m.get("icon_small"));
+			returnLandListCh.add(m);
 		} else if (m.get("land").equals("de")) {
-			landListDe.put("" + m.get("name"), (Integer) m.get("icon_small"));
+			returnLandListDe.add(m);
 		} else if (m.get("land").equals("at")) {
-			landListAt.put("" + m.get("name"), (Integer) m.get("icon_small"));
-		} else {
-			landListDiv.put("" + m.get("name"), (Integer) m.get("icon_small"));
+			returnLandListAt.add(m);
+		} else if (m.get("land").equals("div")) {
+			returnLandListDiv.add(m);
+		} else if (m.get("stil").equals(STIL_POP)) {
+			returnStilListPop.add(m);
+		} else if (m.get("stil").equals(STIL_ROCK)) {
+			returnStilListRock.add(m);
+		} else if (m.get("stil").equals(STIL_LOUNGE)) {
+			returnStilListLounge.add(m);
 		}
 	}
 
-	public ArrayList<HashMap<String, Integer>> getLandListCh() {
-		Log.d("Stations", "getLandListCh");
-		ArrayList<HashMap<String, Integer>> list = new ArrayList<HashMap<String, Integer>>();
-		list.add(landListCh);
-		return list;
+	public static ArrayList<HashMap<String, Object>> getLandListCh() {
+		return returnLandListCh;
 	}
 
-	public HashMap<String, Integer> getLandListDe() {
-		return landListDe;
+	public static ArrayList<HashMap<String, Object>> getLandListDe() {
+		return returnLandListDe;
 	}
 
-	public HashMap<String, Integer> getLandListAt() {
-		return landListAt;
+	public static ArrayList<HashMap<String, Object>> getLandListAt() {
+		return returnLandListAt;
 	}
 
-	public HashMap<String, Integer> getLandListDiv() {
-		return landListDiv;
+	public static ArrayList<HashMap<String, Object>> getLandListDiv() {
+		return returnLandListDiv;
+	}
+
+	public static ArrayList<HashMap<String, Object>> getStilPop() {
+		return returnStilListPop;
 	}
 
 	/**
@@ -58,7 +88,7 @@ public class Stations {
 	 * 
 	 * @return
 	 */
-	public ArrayList<HashMap<String, Object>> getAllStations() {
+	public static ArrayList<HashMap<String, Object>> getAllStations() {
 		ArrayList<HashMap<String, Object>> stationList = new ArrayList<HashMap<String, Object>>();
 		HashMap<String, Object> m;
 
@@ -70,9 +100,9 @@ public class Stations {
 		m.put("homepage", "http://www.radio32.ch");
 		m.put("webcam", "http://www.radio32.ch/pages/inc/getcampicfront.cfm");
 		m.put("email", "http://www.radio32.ch/?id=257&rub=55");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -80,7 +110,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -92,9 +122,9 @@ public class Stations {
 		m.put("homepage", "http://www.goldies.ch");
 		m.put("webcam", "http://www.radio32.ch/pages/inc/getcampicfront.cfm");
 		m.put("email", "http://www.radio32.ch/?id=685&rub=124");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -102,7 +132,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -113,9 +143,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiohoch2.ch");
 		m.put("webcam", "http://webcam.radiohoch2.ch/webcam_big.php");
 		m.put("email", "http://radiohoch2.ch/contact");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -123,7 +153,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -134,9 +164,9 @@ public class Stations {
 		m.put("homepage", "http://www.capitalfm.ch");
 		m.put("webcam", "");
 		m.put("email", "http://capitalfm.ch/kontakt.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -144,7 +174,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -155,9 +185,9 @@ public class Stations {
 		m.put("homepage", "http://www.rabe.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.rabe.ch/ueber-uns/kontakt.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -165,7 +195,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -178,9 +208,9 @@ public class Stations {
 				"http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&width=700&quality=80");
 		m.put("email",
 				"http://www.radio24.ch/service/standard/Kontakt/story/17621407");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -188,7 +218,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -201,9 +231,9 @@ public class Stations {
 				"http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&width=700&quality=80");
 		m.put("email",
 				"http://www.radio24.ch/service/standard/Kontakt/story/17621407");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -211,7 +241,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -223,9 +253,9 @@ public class Stations {
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
 		m.put("email",
 				"http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -233,7 +263,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -247,9 +277,9 @@ public class Stations {
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
 		m.put("email",
 				"http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -257,7 +287,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -271,9 +301,9 @@ public class Stations {
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
 		m.put("email",
 				"http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -281,7 +311,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -295,9 +325,9 @@ public class Stations {
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
 		m.put("email",
 				"http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -305,7 +335,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -317,9 +347,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.drs2.ch/www/de/drs2/kontakt/kundendienst.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -327,7 +357,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -339,9 +369,9 @@ public class Stations {
 		m.put("webcam", "http://www.drs3.ch/import/webcam/drs3/webdrs3a.jpg");
 		m.put("email",
 				"http://www.drs3.ch/www/de/drs3/kontakt/mail-ins-studio.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -349,7 +379,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -362,9 +392,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.drs4news.ch/www/de/drs4/kontakt/mail-ins-studio.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -372,7 +402,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -385,9 +415,9 @@ public class Stations {
 		m.put("webcam",
 				"http://www.drs.ch/import/webcam/virus/virus2.jpg?1304112781446");
 		m.put("email", "http://www.virus.ch/virus/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -395,7 +425,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -408,9 +438,9 @@ public class Stations {
 				"http://www.drsmusikwelle.ch/import/webcam/drsmw/webdrsmwb.jpg");
 		m.put("email",
 				"http://www.drsmusikwelle.ch/www/de/drsmusikwelle/kontakt/mail-ins-studio.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -418,7 +448,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -430,9 +460,9 @@ public class Stations {
 		m.put("homepage", "http://www.energy.ch/bern");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/bern/inside/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -440,7 +470,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -452,9 +482,9 @@ public class Stations {
 		m.put("homepage", "http://www.energy.ch/zuerich");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -462,7 +492,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -474,9 +504,9 @@ public class Stations {
 		m.put("homepage", "http://www.energy.ch/webradios");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -484,7 +514,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -495,9 +525,9 @@ public class Stations {
 		m.put("homepage", "http://www.energy.ch/webradios");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -505,7 +535,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -517,9 +547,9 @@ public class Stations {
 		m.put("homepage", "http://www.energy.ch/webradios");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -527,7 +557,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -539,9 +569,9 @@ public class Stations {
 		m.put("homepage", "http://www.energy.ch/webradios");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -549,7 +579,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -561,9 +591,9 @@ public class Stations {
 		m.put("homepage", "http://www.energy.ch/webradios");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -571,7 +601,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -583,9 +613,9 @@ public class Stations {
 		m.put("homepage", "http://www.energy.ch/webradios");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -593,7 +623,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -604,9 +634,9 @@ public class Stations {
 		m.put("homepage", "http://www.radioswissclassic.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.radioswissclassic.ch/de/feedback");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -614,7 +644,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -625,9 +655,9 @@ public class Stations {
 		m.put("homepage", "http://www.radioswissjazz.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.radioswissjazz.ch/de/feedback");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -635,7 +665,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -646,9 +676,9 @@ public class Stations {
 		m.put("homepage", "http://www.radioswisspop.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.radioswisspop.ch/de/feedback");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -656,7 +686,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -667,9 +697,9 @@ public class Stations {
 		m.put("homepage", "http://www.radio1.ch");
 		m.put("webcam", "");
 		m.put("email", "studio@radio1.ch");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -677,7 +707,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -689,9 +719,9 @@ public class Stations {
 		m.put("webcam",
 				"http://live.radiozurisee.divio.ch//media/external/data_upload/CAM1/SR1_CAM1.jpg");
 		m.put("email", "http://www.radio.ch/de/kontakt/mail-ins-studio/");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -699,7 +729,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -710,9 +740,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiopilatus.ch");
 		m.put("webcam", "");
 		m.put("email", "http://mobile.radiopilatus.ch/kontakt.php");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -720,7 +750,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -731,9 +761,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiobeo.ch");
 		m.put("webcam", "http://www.radiobeo.ch/webcam/current.jpg");
 		m.put("email", "sendestudio@radiobeo.ch");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -741,7 +771,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -752,9 +782,9 @@ public class Stations {
 		m.put("homepage", "http://www.toponline.ch");
 		m.put("webcam", "http://www.toponline.ch/webcam/cam_640.jpg");
 		m.put("email", "studiofeedback@radiotop.ch");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -762,7 +792,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -773,9 +803,9 @@ public class Stations {
 		m.put("homepage", "http://www.toponline.ch/toptwo");
 		m.put("webcam", "http://www.toponline.ch/webcam/cam_640.jpg");
 		m.put("email", "studiofeedback@radiotop.ch");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -783,7 +813,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -794,9 +824,9 @@ public class Stations {
 		m.put("homepage", "http://www.20min.ch/radio/radio.tmpl");
 		m.put("webcam", "");
 		m.put("email", "feedback@20minuten.ch");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -804,7 +834,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -816,9 +846,9 @@ public class Stations {
 		m.put("webcam",
 				"http://www.neo1.ch/index.php?eID=tx_cms_showpic&file=fileadmin%2Fuser_upload%2Fwebcam%2Fwebcam.jpg&md5=94dde500b68cb331ee6493b0e7f2604282c29723&parameters[0]=YTo0OntzOjU6IndpZHRoIjtzOjM6IjYwMCI7czo2OiJoZWlnaHQiO3M6MzoiNjAw&parameters[1]=IjtzOjc6ImJvZHlUYWciO3M6NjoiPGJvZHk%2BIjtzOjQ6IndyYXAiO3M6MzU6Ijxh&parameters[2]=IGhyZWY9ImphdmFzY3JpcHQ6Y2xvc2UoKTsiPnw8L2E%2BIjt9");
 		m.put("email", "http://www.neo1.ch/studiomail.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -826,7 +856,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -838,9 +868,9 @@ public class Stations {
 		m.put("webcam",
 				"http://www.neo1.ch/index.php?eID=tx_cms_showpic&file=fileadmin%2Fuser_upload%2Fwebcam%2Fwebcam.jpg&md5=94dde500b68cb331ee6493b0e7f2604282c29723&parameters[0]=YTo0OntzOjU6IndpZHRoIjtzOjM6IjYwMCI7czo2OiJoZWlnaHQiO3M6MzoiNjAw&parameters[1]=IjtzOjc6ImJvZHlUYWciO3M6NjoiPGJvZHk%2BIjtzOjQ6IndyYXAiO3M6MzU6Ijxh&parameters[2]=IGhyZWY9ImphdmFzY3JpcHQ6Y2xvc2UoKTsiPnw8L2E%2BIjt9");
 		m.put("email", "http://www.neozwei.ch/index.php?id=314");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -848,7 +878,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -859,9 +889,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiobasel.ch");
 		m.put("webcam", "http://radiobasel.ch/webcam/studio2.jpg");
 		m.put("email", "http://radiobasel.ch/kontakt?cid=Studio");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -869,7 +899,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -880,9 +910,9 @@ public class Stations {
 		m.put("homepage", "http://www.argovia.ch");
 		m.put("webcam", "http://www.argovia.ch/live/");
 		m.put("email", "http://www.argovia.ch/miniwin-jukes.php");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -890,7 +920,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -901,9 +931,9 @@ public class Stations {
 		m.put("homepage", "http://www.argovia.ch");
 		m.put("webcam", "http://www.argovia.ch/live/");
 		m.put("email", "http://www.argovia.ch/miniwin-jukes.php");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -911,7 +941,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -922,9 +952,9 @@ public class Stations {
 		m.put("homepage", "http://www.argovia.ch");
 		m.put("webcam", "http://www.argovia.ch/live/");
 		m.put("email", "http://www.argovia.ch/miniwin-jukes.php");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -932,7 +962,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -943,9 +973,9 @@ public class Stations {
 		m.put("homepage", "http://www.105.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.105.ch/channels/105-fm/?article=65");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -953,7 +983,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -965,9 +995,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.105.ch/channels/radio-105-classic/?article=65");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -975,7 +1005,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -986,9 +1016,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiofm1.ch");
 		m.put("webcam", "http://www.radiofm1.ch/index.php?article_id=323");
 		m.put("email", "http://www.radiofm1.ch/index.php?article_id=75");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -996,7 +1026,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1007,9 +1037,9 @@ public class Stations {
 		m.put("homepage", "http://www.fm1melody.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.fm1melody.ch/index.php?article_id=20");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_VOLKSTUEMLICH);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1017,7 +1047,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1029,9 +1059,9 @@ public class Stations {
 		m.put("webcam",
 				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
 		m.put("email", "http://www.antenne.de/antenne/radio/kontakt/index.php");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1039,7 +1069,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1051,9 +1081,9 @@ public class Stations {
 		m.put("webcam",
 				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
 		m.put("email", "http://www.antenne.de/antenne/radio/kontakt/index.php");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1061,7 +1091,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1073,9 +1103,9 @@ public class Stations {
 		m.put("webcam",
 				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
 		m.put("email", "http://www.rockantenne.de/mailinsstudio");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "rock");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_ROCK);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1083,7 +1113,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1096,9 +1126,9 @@ public class Stations {
 		m.put("webcam",
 				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
 		m.put("email", "http://www.antenne.de/antenne/radio/kontakt/index.php");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "rock");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_ROCK);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1106,7 +1136,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1118,9 +1148,9 @@ public class Stations {
 		m.put("webcam",
 				"http://www.br-online.de/content/import/webcams/bayern1/cam2_pult.jpg");
 		m.put("email", "studio@bayern1.de");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1128,7 +1158,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1140,9 +1170,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.br.de/radio/bayern2/sendungen/land-und-leute/kontakt/index.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1150,7 +1180,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1163,9 +1193,9 @@ public class Stations {
 				"http://www.br-online.de/content/import/webcams/bayern3/cam7_gast.jpg");
 		m.put("email",
 				"http://www.br.de/radio/bayern3/service/kontakt/index.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1173,7 +1203,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1184,9 +1214,9 @@ public class Stations {
 		m.put("homepage", "http://www.on3.de");
 		m.put("webcam", "");
 		m.put("email", "http://on3.de/focus/29/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1194,7 +1224,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1206,9 +1236,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.swr.de/swr1/bw/kontakt/-/id=446430/cf=42/s4inx1/index.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1216,7 +1246,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1228,9 +1258,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.swr.de/swr2/-/id=7576/vv=email/nid=7576/did=661414/wfs5qs/index.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1238,7 +1268,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1250,9 +1280,9 @@ public class Stations {
 		m.put("webcam", "http://www.swr3.de/studiocam");
 		m.put("email",
 				"http://www.swr3.de/service/kontakt/-/id=49820/nsuyg4/index.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1260,7 +1290,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1272,9 +1302,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.swr.de/swr4/bw/-/id=233374/vv=email/nid=233374/did=259762/1gqvrz9/index.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1282,7 +1312,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1293,9 +1323,9 @@ public class Stations {
 		m.put("homepage", "http://www.dasding.de");
 		m.put("webcam", "http://www.dasding.de/ext/webcam/webcam770.php?cam=2");
 		m.put("email", "http://www.dasding.de/ext/dingmessage/index.php");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1303,7 +1333,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1315,9 +1345,9 @@ public class Stations {
 		m.put("webcam", "http://static.bigfm.de/webcam/cam6/webcam06.jpg");
 		m.put("email",
 				"http://www.bigfm.de/content/html/shared/studiomail/index.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1325,7 +1355,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1336,9 +1366,9 @@ public class Stations {
 		m.put("homepage", "http://www.toxicfm.ch");
 		m.put("webcam", "");
 		m.put("email", "studio@toxic.fm");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1346,7 +1376,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1357,9 +1387,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiox.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiox.ch/service/wuko");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1367,7 +1397,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1378,9 +1408,9 @@ public class Stations {
 		m.put("homepage", "http://www.kanalk.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.kanalk.ch/ueber-uns/kontakt/");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1388,7 +1418,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1399,9 +1429,9 @@ public class Stations {
 		m.put("homepage", "http://www.radio-seefunk.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radio-seefunk.de/default.aspx?ID=11550");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1409,7 +1439,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1421,9 +1451,9 @@ public class Stations {
 		m.put("homepage", "http://www.radioinside.ch");
 		m.put("webcam", "http://www.radioinside.ch/~kamera/studio1.jpg");
 		m.put("email", "http://www.radioinside.ch/index.php/studiomail");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1431,7 +1461,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1443,9 +1473,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiofr.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiofr.ch/de/kontakt.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1453,7 +1483,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1465,9 +1495,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.radio.li/hoererservice/mein-musikwunsch.html?type=3");
-		m.put("sprache", "de");
+		m.put("sprache", SPRACHE_DE);
 		m.put("land", "li");
-		m.put("stil", "pop");
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1475,7 +1505,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1487,9 +1517,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.rsr.ch/#/corporate/contact/?contact=couleur3");
-		m.put("sprache", "fr");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1497,7 +1527,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1508,9 +1538,9 @@ public class Stations {
 		m.put("homepage", "http://www.rfj.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.rfj.ch/rfj/Radio/Contact.html");
-		m.put("sprache", "fr");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1518,7 +1548,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1529,9 +1559,9 @@ public class Stations {
 		m.put("homepage", "http://www.rougefm.com");
 		m.put("webcam", "");
 		m.put("email", "http://www.rougefm.com/radio/contact.php");
-		m.put("sprache", "fr");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1539,7 +1569,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1550,9 +1580,9 @@ public class Stations {
 		m.put("homepage", "http://www.somafm.com");
 		m.put("webcam", "");
 		m.put("email", "http://somafm.com/contact");
-		m.put("sprache", "en");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_EN);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1560,7 +1590,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1571,9 +1601,9 @@ public class Stations {
 		m.put("homepage", "http://www.stadtfilter.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.stadtfilter.ch/StadtfilterKontakt/Kontakt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1581,7 +1611,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1592,9 +1622,9 @@ public class Stations {
 		m.put("homepage", "http://www.lora.ch");
 		m.put("webcam", "");
 		m.put("email", "http://lora.ch/ueberuns/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1602,7 +1632,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1614,9 +1644,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.kaiseregg.ch/index.php?option=com_contact&view=contact&id=1&Itemid=7");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1624,7 +1654,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1635,9 +1665,9 @@ public class Stations {
 		m.put("homepage", "http://www.sunshine.ch");
 		m.put("webcam", "http://www.sunshine.ch/data/webcam/studio2.jpg");
 		m.put("email", "http://www.sunshine.ch/dynasite.cfm?dsmid=98592");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1645,7 +1675,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1656,9 +1686,9 @@ public class Stations {
 		m.put("homepage", "http://www.radio-tropic.ch");
 		m.put("webcam", "");
 		m.put("email", "http://radio-tropic.ch/contact");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1666,7 +1696,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1677,9 +1707,9 @@ public class Stations {
 		m.put("homepage", "http://www.djradio.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.djradio.ch/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1687,7 +1717,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1699,9 +1729,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.lounge-radio.com/index.php?option=com_contact&Itemid=42");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1709,7 +1739,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1720,9 +1750,9 @@ public class Stations {
 		m.put("homepage", "http://www.swissgroove.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.swissgroove.ch/index.php?content=main&id=17");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1730,7 +1760,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1742,9 +1772,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://retetre.rtsi.ch/index.php?option=com_contact&catid=12&Itemid=30");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_IT);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1752,7 +1782,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1763,9 +1793,9 @@ public class Stations {
 		m.put("homepage", "http://www.rocknation.ch");
 		m.put("webcam", "");
 		m.put("email", "info@rocknation.ch");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1773,7 +1803,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1784,9 +1814,9 @@ public class Stations {
 		m.put("homepage", "http://www.3fach.ch");
 		m.put("webcam", "");
 		m.put("email", "https://radio3fach.wordpress.com/kontakt/");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1794,7 +1824,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1805,9 +1835,9 @@ public class Stations {
 		m.put("homepage", "http://www.countryradio.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.countryradio.ch/index.php?id=22");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1815,7 +1845,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1827,9 +1857,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.lifechannel.ch/fenster_zum_sonntag-feedback___kontakt.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "spirituell");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_RELIGION);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1837,7 +1867,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1848,9 +1878,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiogloria.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiogloria.ch/kontakt.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "spirituell");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_RELIGION);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1858,7 +1888,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1871,9 +1901,9 @@ public class Stations {
 		m.put("webcam",
 				"http://data.bkw-fmb.ch/opd/camPics/Stade-de-suisse.jpg");
 		m.put("email", "rgs@im-stadion.ch");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "sport");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_SPORT);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1881,7 +1911,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1893,9 +1923,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.fcbliveradio.ch/index.php?option=com_contact&view=category&catid=12&Itemid=53");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "sport");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_SPORT);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1903,7 +1933,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1914,9 +1944,9 @@ public class Stations {
 		m.put("homepage", "http://www.fcz.ch/radio");
 		m.put("webcam", "");
 		m.put("email", "http://www.fcz.ch/tv/fcz_radio_kontakt.htm");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "sport");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_SPORT);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1924,7 +1954,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1937,9 +1967,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.facebook.com/apps/application.php?id=194482473899008");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1947,7 +1977,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1959,9 +1989,9 @@ public class Stations {
 		m.put("homepage", "http://www.rro.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.rro.ch/cms/?page=kontakt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1969,7 +1999,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1980,9 +2010,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiomontecarlo.ch");
 		m.put("webcam", "");
 		m.put("email", "info@radiomontecarlo.ch");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -1990,7 +2020,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2001,9 +2031,9 @@ public class Stations {
 		m.put("homepage", "http://www.rasa.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.rasa.ch/feedback.php");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2011,7 +2041,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2022,9 +2052,9 @@ public class Stations {
 		m.put("homepage", "http://www.radioblindpower.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.radioblindpower.ch/studio/studiomail.php");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2032,7 +2062,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2043,9 +2073,9 @@ public class Stations {
 		m.put("homepage", "http://www.sine-music.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.sine-music.de/?page_id=679");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2053,7 +2083,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2064,9 +2094,9 @@ public class Stations {
 		m.put("homepage", "http://www.kingstonhot.de");
 		m.put("webcam", "");
 		m.put("email", "http://34073.speechbox.de");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2074,7 +2104,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2085,9 +2115,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiocenral.ch");
 		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
 		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2095,7 +2125,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2106,9 +2136,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiocenral.ch");
 		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
 		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2116,7 +2146,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2127,9 +2157,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiocenral.ch");
 		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
 		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2137,7 +2167,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2148,9 +2178,9 @@ public class Stations {
 		m.put("homepage", "http://www.eviva.ch");
 		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
 		m.put("email", "http://eviva.ch/dynasite.cfm?dsmid=78524");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2158,7 +2188,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2170,9 +2200,9 @@ public class Stations {
 		m.put("webcam",
 				"http://www.radiogrischa.ch/sites/default/files/webcams/studio_1.jpg");
 		m.put("email", "http://www.radiogrischa.ch/adresseanfahrt");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2180,7 +2210,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2191,9 +2221,9 @@ public class Stations {
 		m.put("homepage", "http://www.sunshine-live.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.sunshine-live.de/pop-ups/mail-ins-studio/");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2201,7 +2231,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2212,9 +2242,9 @@ public class Stations {
 		m.put("homepage", "http://oe1.orf.at");
 		m.put("webcam", "");
 		m.put("email", "http://oe1.orf.at/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "at");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2222,7 +2252,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2233,9 +2263,9 @@ public class Stations {
 		m.put("homepage", "http://oe3.orf.at");
 		m.put("webcam", "http://onapp1.orf.at/webcam/oe3/cam2_oe3.jpg");
 		m.put("email", "http://cluboe3.orf.at/song/index.php?round=24");
-		m.put("sprache", "de");
-		m.put("land", "at");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2243,7 +2273,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2254,9 +2284,9 @@ public class Stations {
 		m.put("homepage", "http://http://fm4.orf.at");
 		m.put("webcam", "");
 		m.put("email", "http://our.orf.at/mailform/fm4_kontakt");
-		m.put("sprache", "de");
-		m.put("land", "at");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2264,7 +2294,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2275,9 +2305,9 @@ public class Stations {
 		m.put("homepage", "http://tirol.orf.at");
 		m.put("webcam", "");
 		m.put("email", "publikumsservice.tirol@orf.at");
-		m.put("sprache", "de");
-		m.put("land", "at");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2285,7 +2315,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2296,9 +2326,9 @@ public class Stations {
 		m.put("homepage", "http://wien.orf.at");
 		m.put("webcam", "");
 		m.put("email", "899953@orf.at");
-		m.put("sprache", "de");
-		m.put("land", "at");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2306,7 +2336,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2317,9 +2347,9 @@ public class Stations {
 		m.put("homepage", "http://kaernten.orf.at");
 		m.put("webcam", "");
 		m.put("email", "service.kaernten@orf.at");
-		m.put("sprache", "de");
-		m.put("land", "at");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2327,7 +2357,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2338,9 +2368,9 @@ public class Stations {
 		m.put("homepage", "http://salzburg.orf.at");
 		m.put("webcam", "");
 		m.put("email", "publikumsservice.salzburg@orf.at");
-		m.put("sprache", "de");
-		m.put("land", "at");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2348,7 +2378,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2359,9 +2389,9 @@ public class Stations {
 		m.put("homepage", "http://noe.orf.at");
 		m.put("webcam", "");
 		m.put("email", "noe-publikum@orf.at");
-		m.put("sprache", "de");
-		m.put("land", "at");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2369,7 +2399,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2381,9 +2411,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.buureradio.ch/buureradio20/module/songs/searchform.asp");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "volks");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_VOLKSTUEMLICH);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2391,7 +2421,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2402,9 +2432,9 @@ public class Stations {
 		m.put("homepage", "http://www.radioindustrie.ch");
 		m.put("webcam", "");
 		m.put("email", "info@radioindustrie.ch");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2412,7 +2442,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2423,9 +2453,9 @@ public class Stations {
 		m.put("homepage", "http://www.audioasyl.net");
 		m.put("webcam", "");
 		m.put("email", "info@audioasyl.net");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2433,7 +2463,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2445,9 +2475,9 @@ public class Stations {
 		m.put("homepage", "http://www.piratenradio.ch");
 		m.put("webcam", "");
 		m.put("email", "info@piratenradio.ch");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2455,7 +2485,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2466,9 +2496,9 @@ public class Stations {
 		m.put("homepage", "http://www.radio21.ch");
 		m.put("webcam", "");
 		m.put("email", "http://radio21.ch/wp/?page_id=481");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2476,7 +2506,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2487,9 +2517,9 @@ public class Stations {
 		m.put("homepage", "http://www.allgaeuhit.de");
 		m.put("webcam", "http://www.allgaeuhit.de/webcam.jpg");
 		m.put("email", "http://www.allgaeuhit.de/wugru.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2497,7 +2527,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2509,9 +2539,9 @@ public class Stations {
 		m.put("webcam", "http://www.radiowave.ch/studio.jpg");
 		m.put("email",
 				"http://www.radio-wave.ch/cms/index.php?section=contact&cmd=8");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2519,7 +2549,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2530,9 +2560,9 @@ public class Stations {
 		m.put("homepage", "http://www.helsinki.at");
 		m.put("webcam", "");
 		m.put("email", "http://helsinki.at/info/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "at");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2540,7 +2570,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2551,9 +2581,9 @@ public class Stations {
 		m.put("homepage", "http://www.soundportal.at");
 		m.put("webcam", "http://soundportal.at/service/webcam");
 		m.put("email", "http://soundportal.at/service/musikwunsch/");
-		m.put("sprache", "de");
-		m.put("land", "at");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2561,7 +2591,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2573,9 +2603,9 @@ public class Stations {
 		m.put("homepage", "http://www.einslive.de");
 		m.put("webcam", "http://www.einslive.de/webcam/studio_a_1.jpg");
 		m.put("email", "http://www.einslive.de/team/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2583,7 +2613,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2594,9 +2624,9 @@ public class Stations {
 		m.put("homepage", "http://www.top100station.de");
 		m.put("webcam", "");
 		m.put("email", "http://mobile.top100station.de/index.php?mobilesite=20");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2604,7 +2634,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2615,9 +2645,9 @@ public class Stations {
 		m.put("homepage", "http://www.rockstation.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.rockstation.ch/pages/contact.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "rock");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_ROCK);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2625,7 +2655,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2637,9 +2667,9 @@ public class Stations {
 		m.put("webcam", "http://www.skylive.ch/viewpage.php?page_id=6");
 		m.put("email",
 				"http://skylive.ch/infusions/ls_tinychat_panel/ls_tinychat.php");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2647,7 +2677,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2658,9 +2688,9 @@ public class Stations {
 		m.put("homepage", "http://www.tranceradio.ch");
 		m.put("webcam", "");
 		m.put("email", "http://technoradio.ch/contact.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "techno");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_TRANCE);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2668,7 +2698,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2679,9 +2709,9 @@ public class Stations {
 		m.put("homepage", "http://www.radio7.de");
 		m.put("webcam", "");
 		m.put("email", "http://radio7.de/index.php?id=75");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2689,7 +2719,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2700,9 +2730,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiosalue.de");
 		m.put("webcam", "http://www.salue.de/img2/studio.jpg");
 		m.put("email", "http://www.salue.de/inside/kontakt.phtml");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2710,7 +2740,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2721,9 +2751,9 @@ public class Stations {
 		m.put("homepage", "http://www.ffh.de");
 		m.put("webcam", "http://resource.ffh.de/webcams/ffh/cam1-fullsize.jpg");
 		m.put("email", "http://www.ffh.de/ffh-welt/kontakt.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2731,7 +2761,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2744,9 +2774,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.rt1-suedschwaben.de/index.php?pageid=174&puid=7");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2754,7 +2784,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2767,9 +2797,9 @@ public class Stations {
 		m.put("webcam", "http://www.hrfoto.dunkel.de/webcams/hr3/studio2.jpg");
 		m.put("email",
 				"http://www.hr-online.de/website/radio/hr3/index.jsp?rubrik=3532");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2777,7 +2807,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2788,9 +2818,9 @@ public class Stations {
 		m.put("homepage", "http://www.starfm.de/nuernberg");
 		m.put("webcam", "");
 		m.put("email", "http://www.starfm.de/nuernberg/kontakt.php");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2798,7 +2828,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2809,9 +2839,9 @@ public class Stations {
 		m.put("homepage", "http://www.starfm.de/berlin");
 		m.put("webcam", "");
 		m.put("email", "http://www.starfm.de/berlin/kontakt.php");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2819,7 +2849,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2830,9 +2860,9 @@ public class Stations {
 		m.put("homepage", "http://www.ibizasonica.com");
 		m.put("webcam", "");
 		m.put("email", "https://www.facebook.com/ibizasonicaradio");
-		m.put("sprache", "es");
-		m.put("land", "es");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_ES);
+		m.put("land", LAND_ES);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2840,7 +2870,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2851,9 +2881,9 @@ public class Stations {
 		m.put("homepage", "http://www.amnesia.es");
 		m.put("webcam", "");
 		m.put("email", "http://www.amnesia.es/webapp/contact");
-		m.put("sprache", "es");
-		m.put("land", "es");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_ES);
+		m.put("land", LAND_ES);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2861,7 +2891,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2872,9 +2902,9 @@ public class Stations {
 		m.put("homepage", "http://www.bluemarlinibiza.com");
 		m.put("webcam", "");
 		m.put("email", "http://www.bluemarlinibiza.com/contact/contact");
-		m.put("sprache", "es");
-		m.put("land", "es");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_ES);
+		m.put("land", LAND_ES);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2882,7 +2912,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2895,9 +2925,9 @@ public class Stations {
 				"http://www.regenbogen.de/content/html/shared/webcams/index.html");
 		m.put("email",
 				"http://www.regenbogen.de/views/service-navigation/kontakt/e-mail.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2905,7 +2935,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2916,9 +2946,9 @@ public class Stations {
 		m.put("homepage", "http://www.fantasy967.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.fantasy967.de/index.php?id=88");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2926,7 +2956,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2937,9 +2967,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiotirol.it");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiotirol.it/index.php?id=18");
-		m.put("sprache", "de");
-		m.put("land", "it");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_IT);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2947,7 +2977,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2958,9 +2988,9 @@ public class Stations {
 		m.put("homepage", "http://www.deltaradio.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.deltaradio.de/delta/kontakt/mail/index.html");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2968,7 +2998,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2981,9 +3011,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.ndr.de/wellenord/service/mail_ins_studio/index.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2991,7 +3021,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3003,9 +3033,9 @@ public class Stations {
 		m.put("homepage", "http://www.ndr2.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.ndr.de/ndr2/musik/musikwunsch/index.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -3013,7 +3043,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3025,9 +3055,9 @@ public class Stations {
 		m.put("homepage", "http://www.n-joy.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.n-joy.de/kontakt377.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -3035,7 +3065,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3047,9 +3077,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiostephansdom.at");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiostephansdom.at/kontakt");
-		m.put("sprache", "de");
-		m.put("land", "at");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -3057,7 +3087,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3069,9 +3099,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.celticradio.net/php/service_mod.php?type=contact");
-		m.put("sprache", "de");
+		m.put("sprache", SPRACHE_DE);
 		m.put("land", "ir");
-		m.put("stil", "pop");
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -3079,7 +3109,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3090,9 +3120,9 @@ public class Stations {
 		m.put("homepage", "http://www.mittelalterklang.de");
 		m.put("webcam", "");
 		m.put("email", "administration@mittelalterklang.de");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -3100,7 +3130,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3111,9 +3141,9 @@ public class Stations {
 		m.put("homepage", "http://radio.secrettube.ch");
 		m.put("webcam", "");
 		m.put("email", "webmaster@secrettube.ch");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -3121,7 +3151,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3132,9 +3162,9 @@ public class Stations {
 		m.put("homepage", "http://www.gong971.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.gong971.de/gong971.de/kontakt/index.php");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -3142,7 +3172,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3153,9 +3183,9 @@ public class Stations {
 		m.put("homepage", "http://www.radiopaloma.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiopaloma.de/kontakt.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -3163,7 +3193,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3174,9 +3204,9 @@ public class Stations {
 		m.put("homepage", "http://www.radioeins.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radioeins.de/kontakt/index.html");
-		m.put("sprache", "de");
-		m.put("land", "de");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -3184,7 +3214,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3196,9 +3226,9 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.rdl.de/index.php?option=com_content&view=article&id=8825&Itemid=466");
-		m.put("sprache", "de");
-		m.put("land", "ch");
-		m.put("stil", "pop");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -3206,7 +3236,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3217,16 +3247,16 @@ public class Stations {
 		m.put("homepage", "http://www.novaplanet.com");
 		m.put("webcam", "");
 		m.put("email", "http://www.novaplanet.com/content/contact");
-		m.put("sprache", "fr");
+		m.put("sprache", SPRACHE_FR);
 		m.put("land", "fr");
-		m.put("stil", "pop");
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
 			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
 		} else {
 			stationList.add(m);
-			fillLandList(m);
+			fillLandStilList(m);
 		}
 
 		return stationList;
