@@ -195,4 +195,24 @@ public class Utils {
 		BitmapDrawable bitmapDrawable = new BitmapDrawable(resizedBitmap);
 		return bitmapDrawable;
 	}
+
+	protected HashMap<String, Object> fillStationHashMap(String stationName,
+			int icon, int iconSmall, String stream, String homepage,
+			String webcam, String contact, String sprache, String land,
+			String stil) {
+
+		HashMap<String, Object> m = new HashMap<String, Object>();
+		m.put("name", stationName);
+		m.put("icon", icon);
+		m.put("icon_small", iconSmall);
+		m.put("stream", stream);
+		m.put("homepage", homepage);
+		m.put("webcam", webcam);
+		m.put("email", contact);
+		m.put("sprache", sprache);
+		m.put("land", land);
+		m.put("stil", stil);
+
+		return m;
+	}
 }

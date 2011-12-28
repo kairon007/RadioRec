@@ -115,6 +115,7 @@ public class Constants {
 	// Default Constants
 	protected static int THE_SELECTED_STATION_INDEX;
 	protected static int THE_SELECTED_STATION_ICON;
+	protected static int THE_SELECTED_STATION_ICON_SMALL;
 	protected static String THE_SELECTED_STATION_NAME;
 	protected static String THE_URL_LIVE_STREAM;
 	protected static String THE_URL_HOMEPAGE;

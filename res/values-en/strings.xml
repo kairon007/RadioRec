@@ -12,7 +12,7 @@
     <string name="weiterHoeren">Continue in background</string>
     <string name="onAir">On-Air...</string>
     <string name="info">Info</string>
-    <string name="info_copyright"> (c) 2011 by Koni</string>
+    <string name="info_copyright"> &#169; 2011 by Koni</string>
     <string name="info_design">Thanks to rakudave for the perfect GUI !!</string>
     <string name="ende">End</string>
     <string name="settings">Settings</string>
@@ -63,11 +63,12 @@
 	<string name="donate_options">Donation Options</string>	
 	<string name="bufferZwischenspeicher">Buffer size for recording</string>
 	<string name="bufferText">Before writing the mp3 file the data is ongoing stored in a buffer. Here you can configure the buffer size. If you have no problem with recording or you\'re not sure leave it 8192 bytes.</string>
-	<string name="errorZahlEingeben">ERROR: Enter a number between\n0 - 1000000 (1 million) !</string>
-	<string name="verbinde">Connecting...</string>
-	<string name="senderNach">Stations by...</string>
+	<string name="errorZahlEingeben">ERROR: Enter a number between\n0 &#8211; 1000000 (1 million) !</string>
+	<string name="verbinde">Connecting&#8230;</string>
+	<string name="senderNach">Stations by&#8230;</string>
 	<string name="laender">Countries</string>
-	<string name="favorit">Favourite</string>
-	<string name="favoriten">Favourites</string>
+	<string name="favorit">Favorite</string>
+	<string name="favoriten">Favorites</string>
+	<string name="stil">Genre</string>
 	<string name="allStations">All Stations</string>	
 </resources>

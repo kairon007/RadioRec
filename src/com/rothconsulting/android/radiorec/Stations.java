@@ -7,36 +7,47 @@ import android.os.Build;
 
 public class Stations {
 
-	private final static String TAG = "Stations";
-	private final static String STIL_POP = "Pop";
-	private final static String STIL_ROCK = "Rock";
-	private final static String STIL_VOLKSTUEMLICH = "Laendler";
-	private final static String STIL_SWISS = "Swiss";
-	private final static String STIL_LOUNGE = "Lounge";
-	private final static String STIL_TRANCE = "Trance";
-	private final static String STIL_RELIGION = "Religion";
-	private final static String STIL_SPORT = "Sport";
-	private final static String SPRACHE_DE = "de";
-	private final static String SPRACHE_FR = "fr";
-	private final static String SPRACHE_IT = "it";
-	private final static String SPRACHE_ES = "es";
-	private final static String SPRACHE_EN = "en";
-	private final static String LAND_DE = "de";
-	private final static String LAND_CH = "ch";
-	private final static String LAND_AT = "at";
-	private final static String LAND_ES = "es";
-	private final static String LAND_IT = "it";
-	private final static String LAND_DIV = "div";
+	ArrayList<HashMap<String, Object>> returnLandListCh;
+	ArrayList<HashMap<String, Object>> returnLandListDe;
+	ArrayList<HashMap<String, Object>> returnLandListAt;
+	ArrayList<HashMap<String, Object>> returnLandListDiv;
+	ArrayList<HashMap<String, Object>> returnStilListPop;
+	ArrayList<HashMap<String, Object>> returnStilListRock;
+	ArrayList<HashMap<String, Object>> returnStilListLounge;
 
-	static ArrayList<HashMap<String, Object>> returnLandListCh = new ArrayList<HashMap<String, Object>>();
-	static ArrayList<HashMap<String, Object>> returnLandListDe = new ArrayList<HashMap<String, Object>>();
-	static ArrayList<HashMap<String, Object>> returnLandListAt = new ArrayList<HashMap<String, Object>>();
-	static ArrayList<HashMap<String, Object>> returnLandListDiv = new ArrayList<HashMap<String, Object>>();
-	static ArrayList<HashMap<String, Object>> returnStilListPop = new ArrayList<HashMap<String, Object>>();
-	static ArrayList<HashMap<String, Object>> returnStilListRock = new ArrayList<HashMap<String, Object>>();
-	static ArrayList<HashMap<String, Object>> returnStilListLounge = new ArrayList<HashMap<String, Object>>();
+	public Stations() {
+		returnLandListCh = new ArrayList<HashMap<String, Object>>();
+		returnLandListDe = new ArrayList<HashMap<String, Object>>();
+		returnLandListAt = new ArrayList<HashMap<String, Object>>();
+		returnLandListDiv = new ArrayList<HashMap<String, Object>>();
+		returnStilListPop = new ArrayList<HashMap<String, Object>>();
+		returnStilListRock = new ArrayList<HashMap<String, Object>>();
+		returnStilListLounge = new ArrayList<HashMap<String, Object>>();
+	}
 
-	private static void fillLandStilList(HashMap<String, Object> m) {
+	private final String TAG = "Stations";
+
+	public static final String STIL_POP = "Pop";
+	public static final String STIL_ROCK = "Rock";
+	public static final String STIL_VOLKSTUEMLICH = "Laendler";
+	public static final String STIL_SWISS = "Swiss";
+	public static final String STIL_LOUNGE = "Lounge";
+	public static final String STIL_TRANCE = "Trance";
+	public static final String STIL_RELIGION = "Religion";
+	public static final String STIL_SPORT = "Sport";
+	public static final String SPRACHE_DE = "de";
+	public static final String SPRACHE_FR = "fr";
+	public static final String SPRACHE_IT = "it";
+	public static final String SPRACHE_ES = "es";
+	public static final String SPRACHE_EN = "en";
+	public static final String LAND_DE = "de";
+	public static final String LAND_CH = "ch";
+	public static final String LAND_AT = "at";
+	public static final String LAND_ES = "es";
+	public static final String LAND_IT = "it";
+	public static final String LAND_DIV = "div";
+
+	private void fillLandStilList(HashMap<String, Object> m) {
 		if (m.get("land").equals("ch")) {
 			returnLandListCh.add(m);
 		} else if (m.get("land").equals("de")) {
@@ -54,23 +65,23 @@ public class Stations {
 		}
 	}
 
-	public static ArrayList<HashMap<String, Object>> getLandListCh() {
+	public ArrayList<HashMap<String, Object>> getLandListCh() {
 		return returnLandListCh;
 	}
 
-	public static ArrayList<HashMap<String, Object>> getLandListDe() {
+	public ArrayList<HashMap<String, Object>> getLandListDe() {
 		return returnLandListDe;
 	}
 
-	public static ArrayList<HashMap<String, Object>> getLandListAt() {
+	public ArrayList<HashMap<String, Object>> getLandListAt() {
 		return returnLandListAt;
 	}
 
-	public static ArrayList<HashMap<String, Object>> getLandListDiv() {
+	public ArrayList<HashMap<String, Object>> getLandListDiv() {
 		return returnLandListDiv;
 	}
 
-	public static ArrayList<HashMap<String, Object>> getStilPop() {
+	public ArrayList<HashMap<String, Object>> getStilPop() {
 		return returnStilListPop;
 	}
 
@@ -88,7 +99,7 @@ public class Stations {
 	 * 
 	 * @return
 	 */
-	public static ArrayList<HashMap<String, Object>> getAllStations() {
+	public ArrayList<HashMap<String, Object>> getAllStations() {
 		ArrayList<HashMap<String, Object>> stationList = new ArrayList<HashMap<String, Object>>();
 		HashMap<String, Object> m;
 
@@ -1342,7 +1353,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_bigfm_small);
 		m.put("stream", "http://srv05.bigstreams.de/bigfm-mp3-96");
 		m.put("homepage", "http://www.bigfm.de");
-		m.put("webcam", "http://static.bigfm.de/webcam/cam6/webcam06.jpg");
+		m.put("webcam", "http://.bigfm.de/webcam/cam6/webcam06.jpg");
 		m.put("email",
 				"http://www.bigfm.de/content/html/shared/studiomail/index.html");
 		m.put("sprache", SPRACHE_DE);

@@ -35,6 +35,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import com.rothconsulting.android.radiorec.sqlitedb.DBHelper;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
 
 public class RadioRecPlus extends Activity implements OnClickListener,
@@ -44,7 +45,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	private boolean playing, recording, firstStart;
 	private Spinner spnAllStations, spnFavoriten, spnLaender, spnStil;
-	private Button btnFavoriten, btnLaender, btnStil;
 	private ArrayList<HashMap<String, Object>> stationList, favList, landList,
 			stilList;
 	private ImageView logo;
@@ -53,6 +53,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private AsyncTask<URL, Integer, Long> recordTask;
 	private String origRT1steam = null;
 	private ToggleButton favIcon = null;
+	private int gcCounter;
 
 	Utils utils = new Utils();
 
@@ -64,6 +65,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
+		getApplicationContext().deleteDatabase(DBHelper.DATABASE_NAME);
+		gcCounter = 0;
 		super.onCreate(savedInstanceState);
 		if (Build.VERSION.SDK_INT < 7) {
 			getApplicationContext().deleteDatabase("webview.db");
@@ -84,12 +87,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Constants.SPINNER_LAENDER = spnLaender.getId();
 		spnStil = (Spinner) findViewById(R.id.spinnerStil);
 		Constants.SPINNER_STIL = spnStil.getId();
-		btnFavoriten = (Button) findViewById(R.id.buttonFav);
-		btnFavoriten.setOnClickListener(this);
-		btnLaender = (Button) findViewById(R.id.buttonLand);
-		btnLaender.setOnClickListener(this);
-		btnStil = (Button) findViewById(R.id.buttonStil);
-		btnStil.setOnClickListener(this);
+		((Button) findViewById(R.id.buttonFav)).setOnClickListener(this);
+		((Button) findViewById(R.id.buttonLand)).setOnClickListener(this);
+		((Button) findViewById(R.id.buttonStil)).setOnClickListener(this);
 		logo = (ImageView) findViewById(R.id.logo);
 		((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
 		((TextView) findViewById(R.id.webcam)).setOnClickListener(this);
@@ -106,6 +106,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// set first image
 		if (Constants.THE_SELECTED_STATION_ICON == 0x0) {
 			Constants.THE_SELECTED_STATION_ICON = R.drawable.radio_32;
+		}
+		if (Constants.THE_SELECTED_STATION_ICON_SMALL == 0x0) {
+			Constants.THE_SELECTED_STATION_ICON_SMALL = R.drawable.radio_32_small;
 		}
 		// avoiding OutOfMemory
 		// http://stackoverflow.com/questions/477572/android-strange-out-of-memory-issue
@@ -125,16 +128,14 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Log.d(TAG, "Name=" + Constants.THE_SELECTED_STATION_NAME);
 		Log.d(TAG, "Index=" + Constants.THE_SELECTED_STATION_INDEX);
 
-		// construct list of maps for the spinner (DropDown-Selector)
-		stationList = new ArrayList<HashMap<String, Object>>();
-
 		AdMob admob = new AdMob();
 		admob.showRemoveAds(this);
 
 		Log.d(TAG, "getAllStations()");
-		stationList = Stations.getAllStations();
-		landList = Stations.getLandListCh();
-		stilList = Stations.getStilPop();
+		Stations theStations = new Stations();
+		stationList = theStations.getAllStations();
+		landList = theStations.getLandListCh();
+		stilList = theStations.getStilPop();
 
 		SimpleAdapter laenderAdapter = new SimpleAdapter(this, landList,
 				R.layout.station_listitem,
@@ -322,7 +323,12 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				Log.d(TAG, "isChecked -> instertStation");
 				dbadapter.open();
 				dbadapter.insertStation(Constants.THE_SELECTED_STATION_ICON,
-						Constants.THE_SELECTED_STATION_NAME);
+						Constants.THE_SELECTED_STATION_ICON_SMALL,
+						Constants.THE_SELECTED_STATION_NAME,
+						Constants.THE_URL_LIVE_STREAM,
+						Constants.THE_URL_HOMEPAGE, Constants.THE_URL_WEBCAM,
+						Constants.THE_URL_CONTACT, true, Stations.LAND_CH,
+						Stations.SPRACHE_DE, Stations.STIL_POP);
 				dbadapter.close();
 			} else {
 				favIcon.setButtonDrawable(android.R.drawable.star_big_off);
@@ -372,10 +378,61 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.buttonFav:
 			Log.d(TAG,
-					"Button Favoriten pressed. Firts="
+					"Button Favoriten pressed. First="
 							+ spnFavoriten.getFirstVisiblePosition());
 
+			dbadapter = new DbAdapter(this);
+			dbadapter.open();
+			Cursor cursor = null;
+			cursor = dbadapter.fetchAllStations();
+			favList = new ArrayList<HashMap<String, Object>>();
+
+			if (cursor != null && cursor.getCount() > 0) {
+
+				cursor.moveToFirst();
+
+				do {
+
+					String name = cursor.getString(cursor
+							.getColumnIndex(DbAdapter.KEY_STATION_NAME));
+					int icon = cursor.getInt(cursor
+							.getColumnIndex(DbAdapter.KEY_STATION_ICON));
+					int iconSmall = cursor.getInt(cursor
+							.getColumnIndex(DbAdapter.KEY_STATION_ICON_SMALL));
+					String stream = cursor.getString(cursor
+							.getColumnIndex(DbAdapter.KEY_STATION_STEAM));
+					String homepage = cursor.getString(cursor
+							.getColumnIndex(DbAdapter.KEY_STATION_HOMEPAGE));
+					String webcam = cursor.getString(cursor
+							.getColumnIndex(DbAdapter.KEY_STATION_WEBCAM));
+					String contact = cursor.getString(cursor
+							.getColumnIndex(DbAdapter.KEY_STATION_CONTACT));
+					String sprache = cursor.getString(cursor
+							.getColumnIndex(DbAdapter.KEY_LANGUAGE));
+					String land = cursor.getString(cursor
+							.getColumnIndex(DbAdapter.KEY_COUNTRY));
+					String stil = cursor.getString(cursor
+							.getColumnIndex(DbAdapter.KEY_GENRE));
+
+					HashMap<String, Object> map = utils.fillStationHashMap(
+							name, icon, iconSmall, stream, homepage, webcam,
+							contact, sprache, land, stil);
+
+					favList.add(map);
+				} while (cursor.moveToNext());
+
+			}
+			cursor.close();
+			dbadapter.close();
+
+			SimpleAdapter favoritesAdapter = new SimpleAdapter(this, favList,
+					R.layout.station_listitem, new String[] { "icon_small",
+							"name" }, new int[] { R.id.option_icon,
+							R.id.option_text });
+			spnFavoriten.setAdapter(favoritesAdapter);
+			spnFavoriten.setOnItemSelectedListener(this);
 			spnFavoriten.performClick();
+
 			break;
 		case R.id.buttonLand:
 			Log.d(TAG,
@@ -399,8 +456,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Log.d(TAG, "****************");
 		Log.d(TAG, "onItemSelected(AdapterView<?> arg0 = " + arg0);
 		Constants.SPINNER_SELECTION = arg0.getId();
-		AdapterView aview = arg0;
-		SimpleAdapter sa = (SimpleAdapter) aview.getAdapter();
 		Log.d(TAG, "onItemSelected(View arg1 = " + arg1);
 		Log.d(TAG, "onItemSelected(int arg2 = " + arg2);
 		Log.d(TAG, "onItemSelected(long arg0 = " + arg3);
@@ -454,7 +509,14 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 		Log.d(TAG, "Sender=" + Constants.THE_SELECTED_STATION_NAME);
 		Constants.THE_SELECTED_STATION_ICON = (Integer) map.get("icon");
+		Constants.THE_SELECTED_STATION_ICON_SMALL = (Integer) map
+				.get("icon_small");
+
 		// avoiding OutOfMemory
+		if (gcCounter % 2 == 0) { // call gc only at even numbers
+			System.gc();
+			gcCounter++;
+		}
 		// http://stackoverflow.com/questions/477572/android-strange-out-of-memory-issue
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inTempStorage = new byte[16 * 1024];

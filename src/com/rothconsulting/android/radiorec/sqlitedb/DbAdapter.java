@@ -12,15 +12,16 @@ public class DbAdapter {
 	private static final String TAG = "DbAdapter";
 	// Database fields
 	public static final String KEY_ROWID = "_id";
-	public static final String KEY_STATION_ICON = "station_icon";
-	public static final String KEY_STATION_NAME = "station_name";
-	public static final String KEY_STATION_URL = "station_url";
-	public static final String KEY_STATION_STEAM = "station_stream";
-	public static final String KEY_STATION_WEBCAM = "station_webcam";
-	public static final String KEY_STATION_CONTACT = "station_contact";
-	public static final String KEY_LANGUAGE = "station_language";
-	public static final String KEY_COUNTRY = "station_country";
-	public static final String KEY_GENRE = "station_genre";
+	public static final String KEY_STATION_ICON = "icon";
+	public static final String KEY_STATION_ICON_SMALL = "icon_small";
+	public static final String KEY_STATION_NAME = "name";
+	public static final String KEY_STATION_HOMEPAGE = "homepage";
+	public static final String KEY_STATION_STEAM = "stream";
+	public static final String KEY_STATION_WEBCAM = "webcam";
+	public static final String KEY_STATION_CONTACT = "contact";
+	public static final String KEY_LANGUAGE = "language";
+	public static final String KEY_COUNTRY = "country";
+	public static final String KEY_GENRE = "genre";
 	public static final String KEY_FAVORITE = "favorite";
 	public static final String T_STATION = "station";
 	private final Context context;
@@ -47,11 +48,24 @@ public class DbAdapter {
 	 * Create a new station. If the station is successfully created return the
 	 * new rowId for that note, otherwise return a -1 to indicate failure.
 	 */
-	public long insertStation(int stationIcon, String stationName) {
-		ContentValues initialValues = createContentValues(stationIcon,
-				stationName);
+	public long insertStation(int icon, int iconSmall, String stationName,
+			String stream, String homepage, String webcam, String contact,
+			boolean favorite, String country, String language, String genre) {
 
-		return database.insert(T_STATION, null, initialValues);
+		ContentValues values = new ContentValues();
+		values.put(KEY_STATION_ICON, icon);
+		values.put(KEY_STATION_ICON_SMALL, iconSmall);
+		values.put(KEY_STATION_NAME, stationName);
+		values.put(KEY_STATION_STEAM, stream);
+		values.put(KEY_STATION_HOMEPAGE, homepage);
+		values.put(KEY_STATION_WEBCAM, webcam);
+		values.put(KEY_STATION_CONTACT, contact);
+		values.put(KEY_FAVORITE, favorite);
+		values.put(KEY_COUNTRY, country);
+		values.put(KEY_LANGUAGE, language);
+		values.put(KEY_GENRE, genre);
+
+		return database.insert(T_STATION, null, values);
 	}
 
 	/**
@@ -72,9 +86,7 @@ public class DbAdapter {
 	 * @return Cursor over all station
 	 */
 	public Cursor fetchAllStations() {
-		return database.query(T_STATION, new String[] { KEY_ROWID,
-				KEY_STATION_ICON, KEY_STATION_NAME }, null, null, null, null,
-				null);
+		return database.rawQuery("SELECT * FROM " + T_STATION, null);
 	}
 
 	/**
@@ -93,11 +105,4 @@ public class DbAdapter {
 		return mCursor;
 	}
 
-	private ContentValues createContentValues(int stationIcon,
-			String stationName) {
-		ContentValues values = new ContentValues();
-		values.put(KEY_STATION_ICON, stationIcon);
-		values.put(KEY_STATION_NAME, stationName);
-		return values;
-	}
 }
