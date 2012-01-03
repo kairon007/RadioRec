@@ -124,7 +124,7 @@ public class Utils {
 				Constants.DEFAULT_BUFFER);
 	}
 
-	public String getAppVersionName(Context context, Class<?> cls) {
+	protected String getAppVersionName(Context context, Class<?> cls) {
 		try {
 			ComponentName comp = new ComponentName(context, cls);
 			PackageInfo pinfo = context.getPackageManager().getPackageInfo(

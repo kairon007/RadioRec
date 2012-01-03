@@ -1457,8 +1457,7 @@ public class Stations {
 		m.put("name", Constants.RADIO_INSIDE);
 		m.put("icon", R.drawable.radio_inside);
 		m.put("icon_small", R.drawable.radio_inside_small);
-		m.put("stream",
-				"http://rs43.stream24.org:8310/;stream0.238134464714676.mp3");
+		m.put("stream", "http://fra.radiostream.de:37499/");
 		m.put("homepage", "http://www.radioinside.ch");
 		m.put("webcam", "http://www.radioinside.ch/~kamera/studio1.jpg");
 		m.put("email", "http://www.radioinside.ch/index.php/studiomail");
@@ -2631,7 +2630,7 @@ public class Stations {
 		m.put("name", Constants.RADIO_TOP100STATION);
 		m.put("icon", R.drawable.radio_top100station);
 		m.put("icon_small", R.drawable.radio_top100station_small);
-		m.put("stream", "http://87.230.101.11:8000");
+		m.put("stream", "http://87.230.101.49:80");
 		m.put("homepage", "http://www.top100station.de");
 		m.put("webcam", "");
 		m.put("email", "http://mobile.top100station.de/index.php?mobilesite=20");
@@ -2776,15 +2775,13 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_RT1_SUEDSCHWABEN);
-		m.put("icon", R.drawable.radio_rt1_suedschwaben);
-		m.put("icon_small", R.drawable.radio_rt1_suedschwaben_small);
-		m.put("stream",
-				"http://62.27.44.60/rt1suedschwaben/livestream.mp3?token=");
-		m.put("homepage", "http://www.rt1-suedschwaben.de");
-		m.put("webcam", "");
-		m.put("email",
-				"http://www.rt1-suedschwaben.de/index.php?pageid=174&puid=7");
+		m.put("name", Constants.RADIO_RT1_HITRADIO);
+		m.put("icon", R.drawable.radio_rt1_hitradio);
+		m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
+		m.put("stream", "http://62.27.44.59/hitradiort1/livestream.mp3?token=");
+		m.put("homepage", "http://www.rt1.de");
+		m.put("webcam", "http://www.rt1.de/studiocam1.htm");
+		m.put("email", "http://www.rt1.de/index.php?pageid=70&puid=1");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);

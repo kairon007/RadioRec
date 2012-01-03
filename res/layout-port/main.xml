@@ -3,27 +3,27 @@
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:background="@drawable/bg_port">
 
-	<LinearLayout android:orientation="horizontal"
-		android:background="@color/transparent" android:paddingLeft="0dp"
-		android:paddingTop="2dp" android:paddingRight="0dp"
-		android:paddingBottom="0dp" android:layout_width="fill_parent"
-		android:layout_height="wrap_content">
-		<Spinner android:layout_height="0dp" android:prompt="@string/favoriten"
-			android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerFav" />
-		<Spinner android:layout_height="0dp" android:prompt="@string/laender"
-			android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerLand" />
-		<Spinner android:layout_height="wrap_content" android:prompt="@string/stil"
-			android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerStil" />
-   		<Button android:id="@+id/buttonFav" android:layout_width="0dp"
-			android:layout_height="40dp" android:text="@string/favoriten"
-			android:layout_weight="1.0" />
-		<Button android:id="@+id/buttonLand" android:layout_width="0dp"
-			android:layout_height="40dp" android:text="@string/laender"
-			android:layout_weight="1.0" />
-		<Button android:id="@+id/buttonStil" android:layout_width="0dp"
-			android:layout_height="40dp" android:text="@string/stil"
-			android:layout_weight="1.0" />
-	</LinearLayout>
+<!-- 	<LinearLayout android:orientation="horizontal" -->
+<!-- 		android:background="@color/transparent" android:paddingLeft="0dp" -->
+<!-- 		android:paddingTop="2dp" android:paddingRight="0dp" -->
+<!-- 		android:paddingBottom="0dp" android:layout_width="fill_parent" -->
+<!-- 		android:layout_height="wrap_content"> -->
+<!-- 		<Spinner android:layout_height="0dp" android:prompt="@string/favoriten" -->
+<!-- 			android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerFav" /> -->
+<!-- 		<Spinner android:layout_height="0dp" android:prompt="@string/laender" -->
+<!-- 			android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerLand" /> -->
+<!-- 		<Spinner android:layout_height="wrap_content" android:prompt="@string/stil" -->
+<!-- 			android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerStil" /> -->
+<!--    		<Button android:id="@+id/buttonFav" android:layout_width="0dp" -->
+<!-- 			android:layout_height="40dp" android:text="@string/favoriten" -->
+<!-- 			android:layout_weight="1.0" /> -->
+<!-- 		<Button android:id="@+id/buttonLand" android:layout_width="0dp" -->
+<!-- 			android:layout_height="40dp" android:text="@string/laender" -->
+<!-- 			android:layout_weight="1.0" /> -->
+<!-- 		<Button android:id="@+id/buttonStil" android:layout_width="0dp" -->
+<!-- 			android:layout_height="40dp" android:text="@string/stil" -->
+<!-- 			android:layout_weight="1.0" /> -->
+<!-- 	</LinearLayout> -->
 
 	<LinearLayout android:orientation="horizontal"
 		android:background="@color/transparent" android:paddingLeft="0dp"
@@ -33,16 +33,16 @@
 		<Spinner android:layout_height="wrap_content" android:prompt="@string/allStations"
 			android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/stations"
 			android:layout_weight="1.8" />
-		<ToggleButton
-		    android:id="@+id/toggleButtonFavorit"
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content"
-		    android:layout_weight="0.2"
-		    android:background="@color/transparent"
-		    android:src="@android:drawable/star_big_off"
-		    android:text=""
-		    android:textOff=""
-		    android:textOn="" />
+<!-- 		<ToggleButton -->
+<!-- 		    android:id="@+id/toggleButtonFavorit" -->
+<!-- 		    android:layout_width="wrap_content" -->
+<!-- 		    android:layout_height="wrap_content" -->
+<!-- 		    android:layout_weight="0.2" -->
+<!-- 		    android:background="@color/transparent" -->
+<!-- 		    android:src="@android:drawable/star_big_off" -->
+<!-- 		    android:text="" -->
+<!-- 		    android:textOff="" -->
+<!-- 		    android:textOn="" /> -->
 	</LinearLayout>
 
 	<LinearLayout android:layout_width="fill_parent"

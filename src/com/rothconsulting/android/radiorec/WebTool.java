@@ -213,11 +213,14 @@ public class WebTool {
 		Utils utils = new Utils();
 		String token = "";
 		if (utils.isNetworkAvailable(context)) {
-			String url = "http://edge.download.newmedia.nacamar.net/sltokens/flashplayer/stream-mp3-player.php?stream=rt1suedschwaben/livestream.mp3";
+			String url = "http://edge.download.newmedia.nacamar.net/sltokens/flashplayer/stream-mp3-player.php?stream=hitradiort1/livestream.mp3";
 			String findString = "var token = \"";
 			String endString = "\";";
 			token = getStringFromWebsite(url, null, findString, endString);
-			token = token.substring(13, token.length() - 2);
+			if (token != null) {
+				token = token.trim();
+				token = token.substring(13, token.length() - 2);
+			}
 			Log.d(TAG, "** Token=" + token);
 		}
 		return token;

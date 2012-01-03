@@ -12,7 +12,7 @@
     <string name="weiterHoeren">Weiter hören/aufnehmen</string>
     <string name="onAir">On-Air...</string>
     <string name="info">Info</string>
-    <string name="info_copyright"> (c) 2011 by Koni</string>
+    <string name="info_copyright"> (c) 2012 by Koni</string>
     <string name="info_design">Danke an rakudave für das tolle GUI !!</string>
     <string name="ende">Ende</string>
     <string name="settings">Einstellungen</string>
@@ -28,7 +28,7 @@
 	<string name="keineEingabe">Keine Eingabe ??</string>
 	<string name="danke">Danke !!!</string>
 	<string name="infoSDCard">Beim aufnehmen werden die Dateien auf die SD-Card gespeichert.\nDu findest sie standardmässig im Verzeichnis "RadioRecorder". In den Einstellungen kannst du diesen Pfad ändern.</string>
-	<string name="infoFeatureEmail">Fehlt dir ein Sender, ein Feature oder hast du sonst Anregungen? Klick auf folgende E-Mail-Adresse und teile mir dein Anligen mit. \n\n---  androider@wolke7.net  ---</string>
+	<string name="infoFeatureEmail">Fehlt dir ein Sender, ein Feature oder hast du sonst Anregungen? Klick auf folgende E-Mail-Adresse und teile mir dein Anliegen mit. \n\n---  androider@wolke7.net  ---</string>
 	<string name="infoDatenverbrauchFrage">Folgende Frage wurde mir gestellt: Wieviel Daten werden verbraucht beim Radio hören mit RadioRec+ ?? </string>
 	<string name="infoDatenverbrauchAntwort">Antwort: Knapp 60MB/Std. Die Radio-Sender streamen mit 128kbps. Daraus rechnet sich der Verbrauch folgendermassen: 128\'000 Bit/s : 8 = 16\'000 Byte/s. Das entspricht 57.6 MB/Stunde (16\'000x3200 : 1\'000\'000). Tipp: Verwende WLAN, dann ist der Datenverbrauch kein Thema :-)</string>
 	<string name="speicherOrt">Speicher-Ort</string>

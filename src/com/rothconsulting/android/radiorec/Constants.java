@@ -144,10 +144,10 @@ public class Constants {
 	public static String ADMOB_PUBLISHER_ID = "a14dc9885936cd9";
 
 	public static int SPINNER_SELECTION = -1;
-	public static int SPINNER_ALL_STATIONS = -1;
-	public static int SPINNER_FAVORITEN = -1;
-	public static int SPINNER_LAENDER = -1;
-	public static int SPINNER_STIL = -1;
+	public static int SPINNER_ALL_STATIONS = -2;
+	public static int SPINNER_FAVORITEN = -3;
+	public static int SPINNER_LAENDER = -4;
+	public static int SPINNER_STIL = -5;
 
 	public static final String RADIO_32 = "Radio 32";
 	public static final String RADIO_32_GOLDIES = "Radio 32 Goldies";
@@ -273,7 +273,7 @@ public class Constants {
 	public static final String RADIO_7 = "Radio 7";
 	public static final String RADIO_SALUE = "Salü";
 	public static final String RADIO_FFH = "FFH";
-	public static final String RADIO_RT1_SUEDSCHWABEN = "rt1 Südschwaben";
+	public static final String RADIO_RT1_HITRADIO = "rt1 Hitradio";
 	public static final String RADIO_HR_3 = "HR 3";
 	public static final String RADIO_STAR_FM = "Star FM";
 	public static final String RADIO_STAR_FM_FROM_HELL = "Star FM From Hell";
