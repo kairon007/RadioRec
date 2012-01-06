@@ -7,23 +7,23 @@ import android.os.Build;
 
 public class Stations {
 
-	ArrayList<HashMap<String, Object>> returnLandListCh;
-	ArrayList<HashMap<String, Object>> returnLandListDe;
-	ArrayList<HashMap<String, Object>> returnLandListAt;
-	ArrayList<HashMap<String, Object>> returnLandListDiv;
-	ArrayList<HashMap<String, Object>> returnStilListPop;
-	ArrayList<HashMap<String, Object>> returnStilListRock;
-	ArrayList<HashMap<String, Object>> returnStilListLounge;
-
-	public Stations() {
-		returnLandListCh = new ArrayList<HashMap<String, Object>>();
-		returnLandListDe = new ArrayList<HashMap<String, Object>>();
-		returnLandListAt = new ArrayList<HashMap<String, Object>>();
-		returnLandListDiv = new ArrayList<HashMap<String, Object>>();
-		returnStilListPop = new ArrayList<HashMap<String, Object>>();
-		returnStilListRock = new ArrayList<HashMap<String, Object>>();
-		returnStilListLounge = new ArrayList<HashMap<String, Object>>();
-	}
+	// ArrayList<HashMap<String, Object>> returnLandListCh;
+	// ArrayList<HashMap<String, Object>> returnLandListDe;
+	// ArrayList<HashMap<String, Object>> returnLandListAt;
+	// ArrayList<HashMap<String, Object>> returnLandListDiv;
+	// ArrayList<HashMap<String, Object>> returnStilListPop;
+	// ArrayList<HashMap<String, Object>> returnStilListRock;
+	// ArrayList<HashMap<String, Object>> returnStilListLounge;
+	//
+	// public Stations() {
+	// returnLandListCh = new ArrayList<HashMap<String, Object>>();
+	// returnLandListDe = new ArrayList<HashMap<String, Object>>();
+	// returnLandListAt = new ArrayList<HashMap<String, Object>>();
+	// returnLandListDiv = new ArrayList<HashMap<String, Object>>();
+	// returnStilListPop = new ArrayList<HashMap<String, Object>>();
+	// returnStilListRock = new ArrayList<HashMap<String, Object>>();
+	// returnStilListLounge = new ArrayList<HashMap<String, Object>>();
+	// }
 
 	private final String TAG = "Stations";
 
@@ -35,6 +35,7 @@ public class Stations {
 	public static final String STIL_TRANCE = "Trance";
 	public static final String STIL_RELIGION = "Religion";
 	public static final String STIL_SPORT = "Sport";
+	public static final String STIL_KLASSIK = "Klassik";
 	public static final String SPRACHE_DE = "de";
 	public static final String SPRACHE_FR = "fr";
 	public static final String SPRACHE_IT = "it";
@@ -47,43 +48,43 @@ public class Stations {
 	public static final String LAND_IT = "it";
 	public static final String LAND_DIV = "div";
 
-	private void fillLandStilList(HashMap<String, Object> m) {
-		if (m.get("land").equals("ch")) {
-			returnLandListCh.add(m);
-		} else if (m.get("land").equals("de")) {
-			returnLandListDe.add(m);
-		} else if (m.get("land").equals("at")) {
-			returnLandListAt.add(m);
-		} else if (m.get("land").equals("div")) {
-			returnLandListDiv.add(m);
-		} else if (m.get("stil").equals(STIL_POP)) {
-			returnStilListPop.add(m);
-		} else if (m.get("stil").equals(STIL_ROCK)) {
-			returnStilListRock.add(m);
-		} else if (m.get("stil").equals(STIL_LOUNGE)) {
-			returnStilListLounge.add(m);
-		}
-	}
-
-	public ArrayList<HashMap<String, Object>> getLandListCh() {
-		return returnLandListCh;
-	}
-
-	public ArrayList<HashMap<String, Object>> getLandListDe() {
-		return returnLandListDe;
-	}
-
-	public ArrayList<HashMap<String, Object>> getLandListAt() {
-		return returnLandListAt;
-	}
-
-	public ArrayList<HashMap<String, Object>> getLandListDiv() {
-		return returnLandListDiv;
-	}
-
-	public ArrayList<HashMap<String, Object>> getStilPop() {
-		return returnStilListPop;
-	}
+	// private void fillLandStilList(HashMap<String, Object> m) {
+	// if (m.get("land").equals("ch")) {
+	// returnLandListCh.add(m);
+	// } else if (m.get("land").equals("de")) {
+	// returnLandListDe.add(m);
+	// } else if (m.get("land").equals("at")) {
+	// returnLandListAt.add(m);
+	// } else if (m.get("land").equals("div")) {
+	// returnLandListDiv.add(m);
+	// } else if (m.get("stil").equals(STIL_POP)) {
+	// returnStilListPop.add(m);
+	// } else if (m.get("stil").equals(STIL_ROCK)) {
+	// returnStilListRock.add(m);
+	// } else if (m.get("stil").equals(STIL_LOUNGE)) {
+	// returnStilListLounge.add(m);
+	// }
+	// }
+	//
+	// public ArrayList<HashMap<String, Object>> getLandListCh() {
+	// return returnLandListCh;
+	// }
+	//
+	// public ArrayList<HashMap<String, Object>> getLandListDe() {
+	// return returnLandListDe;
+	// }
+	//
+	// public ArrayList<HashMap<String, Object>> getLandListAt() {
+	// return returnLandListAt;
+	// }
+	//
+	// public ArrayList<HashMap<String, Object>> getLandListDiv() {
+	// return returnLandListDiv;
+	// }
+	//
+	// public ArrayList<HashMap<String, Object>> getStilPop() {
+	// return returnStilListPop;
+	// }
 
 	/**
 	 * name<br>
@@ -121,7 +122,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -143,7 +144,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -164,7 +165,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -185,7 +186,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -206,7 +207,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -229,7 +230,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -252,7 +253,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -274,7 +275,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -298,7 +299,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -322,7 +323,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -346,7 +347,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -360,7 +361,7 @@ public class Stations {
 				"http://www.drs2.ch/www/de/drs2/kontakt/kundendienst.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
+		m.put("stil", STIL_KLASSIK);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -368,7 +369,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -390,7 +391,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -413,7 +414,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -436,7 +437,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -459,7 +460,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -481,7 +482,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -503,7 +504,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -525,7 +526,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -546,7 +547,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -568,7 +569,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -590,7 +591,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -612,7 +613,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -634,7 +635,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -655,7 +656,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -676,7 +677,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -697,7 +698,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -718,7 +719,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -740,7 +741,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -761,7 +762,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -782,7 +783,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -803,7 +804,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -824,7 +825,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -845,7 +846,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -867,7 +868,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -889,7 +890,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -910,7 +911,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -931,7 +932,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -952,7 +953,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -973,7 +974,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -994,7 +995,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1016,7 +1017,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1037,7 +1038,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1058,7 +1059,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1080,7 +1081,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1102,7 +1103,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1124,7 +1125,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1147,7 +1148,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1169,7 +1170,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1191,7 +1192,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1214,7 +1215,29 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_BAYERN_4_KLASSIK);
+		m.put("icon", R.drawable.radio_bayern4);
+		m.put("icon_small", R.drawable.radio_bayern4_small);
+		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w13a");
+		m.put("homepage", "http://www.bayern4.de");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.br.de/radio/br-klassik/service/kontakt/br-klassik-kontakt-service100.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_KLASSIK);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1235,7 +1258,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1257,7 +1280,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1279,7 +1302,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1301,7 +1324,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1323,7 +1346,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1344,7 +1367,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1366,7 +1389,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1387,7 +1410,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1408,7 +1431,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1429,7 +1452,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1450,7 +1473,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1471,7 +1494,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1493,7 +1516,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1506,7 +1529,7 @@ public class Stations {
 		m.put("email",
 				"http://www.radio.li/hoererservice/mein-musikwunsch.html?type=3");
 		m.put("sprache", SPRACHE_DE);
-		m.put("land", "li");
+		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
@@ -1515,7 +1538,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1537,7 +1560,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1558,7 +1581,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1579,7 +1602,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1600,7 +1623,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1621,7 +1644,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1642,7 +1665,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1664,7 +1687,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1685,7 +1708,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1706,7 +1729,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1727,7 +1750,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1749,7 +1772,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1770,7 +1793,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1792,7 +1815,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1813,7 +1836,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1834,7 +1857,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1855,7 +1878,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1877,7 +1900,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1898,7 +1921,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1921,7 +1944,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1943,7 +1966,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1964,7 +1987,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -1987,7 +2010,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2009,7 +2032,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2030,7 +2053,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2051,7 +2074,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2072,7 +2095,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2093,7 +2116,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2114,7 +2137,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2135,7 +2158,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2156,7 +2179,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2177,7 +2200,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2198,7 +2221,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2220,7 +2243,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2241,7 +2264,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2262,7 +2285,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2283,7 +2306,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2304,7 +2327,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2325,7 +2348,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2346,7 +2369,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2367,7 +2390,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2388,7 +2411,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2409,7 +2432,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2431,7 +2454,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2452,7 +2475,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2473,7 +2496,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2495,7 +2518,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2516,7 +2539,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2537,7 +2560,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2559,7 +2582,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2580,7 +2603,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2601,7 +2624,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2623,7 +2646,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2644,7 +2667,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2665,29 +2688,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SKYLIVE);
-		m.put("icon", R.drawable.radio_skylive);
-		m.put("icon_small", R.drawable.radio_skylive_small);
-		m.put("stream", "http://s10.pop-stream.de:10242");
-		m.put("homepage", "http://www.skylive.ch");
-		m.put("webcam", "http://www.skylive.ch/viewpage.php?page_id=6");
-		m.put("email",
-				"http://skylive.ch/infusions/ls_tinychat_panel/ls_tinychat.php");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2708,7 +2709,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2729,7 +2730,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2750,7 +2751,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2771,7 +2772,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2792,7 +2793,30 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_HR_2);
+		m.put("icon", R.drawable.radio_hr2);
+		m.put("icon_small", R.drawable.radio_hr2_small);
+		m.put("stream",
+				"http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w68a");
+		m.put("homepage", "http://www.hr2.de");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.hr-online.de/website/radio/hr2/index.jsp?rubrik=3688");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_KLASSIK);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2815,7 +2839,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2836,7 +2860,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2857,7 +2881,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2878,7 +2902,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2899,7 +2923,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2920,7 +2944,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2943,7 +2967,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2964,7 +2988,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -2985,7 +3009,28 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_OBERKRAIN);
+		m.put("icon", R.drawable.radio_oberkrain);
+		m.put("icon_small", R.drawable.radio_oberkrain_small);
+		m.put("stream", "http://89.149.226.229:80");
+		m.put("homepage", "http://www.radio-oberkrain.com/");
+		m.put("webcam", "");
+		m.put("email", "service@radio-oberkrain.de");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_VOLKSTUEMLICH);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3006,7 +3051,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3029,7 +3074,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3051,7 +3096,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3073,7 +3118,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3095,7 +3140,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3108,7 +3153,7 @@ public class Stations {
 		m.put("email",
 				"http://www.celticradio.net/php/service_mod.php?type=contact");
 		m.put("sprache", SPRACHE_DE);
-		m.put("land", "ir");
+		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
@@ -3117,17 +3162,17 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_MITTELALTERKLANG);
-		m.put("icon", R.drawable.radio_mittelalterklang);
-		m.put("icon_small", R.drawable.radio_mittelalterklang_small);
-		m.put("stream", "http://62.75.216.154:8050");
-		m.put("homepage", "http://www.mittelalterklang.de");
+		m.put("name", Constants.RADIO_LEGENDE);
+		m.put("icon", R.drawable.radio_legende);
+		m.put("icon_small", R.drawable.radio_legende_small);
+		m.put("stream", "http://87.106.65.11:7000/");
+		m.put("homepage", "http://www.radio-legende.de");
 		m.put("webcam", "");
-		m.put("email", "administration@mittelalterklang.de");
+		m.put("email", "info@radio-legende.de");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -3138,7 +3183,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3159,7 +3204,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3180,7 +3225,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3201,7 +3246,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3222,7 +3267,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3244,7 +3289,7 @@ public class Stations {
 
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
 		}
 
 		m = new HashMap<String, Object>();
@@ -3256,7 +3301,7 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email", "http://www.novaplanet.com/content/contact");
 		m.put("sprache", SPRACHE_FR);
-		m.put("land", "fr");
+		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
@@ -3264,7 +3309,27 @@ public class Stations {
 			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
 		} else {
 			stationList.add(m);
-			fillLandStilList(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_PULS_RADIO);
+		m.put("icon", R.drawable.radio_puls_radio);
+		m.put("icon_small", R.drawable.radio_puls_radio_small);
+		m.put("stream", "http://stream.pulsradio.com:5000");
+		m.put("homepage", "http://www.pulsradio.com/");
+		m.put("webcam", "");
+		m.put("email", "");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
 		}
 
 		return stationList;

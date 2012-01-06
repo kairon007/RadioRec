@@ -59,7 +59,6 @@ public class Constants {
 		ignoreList.add(RADIO_WAVE);
 		ignoreList.add(RADIO_TOP100STATION);
 		ignoreList.add(RADIO_ROCK_STATION);
-		ignoreList.add(RADIO_SKYLIVE);
 		ignoreList.add(RADIO_TRANCERADIO);
 		ignoreList.add(RADIO_STAR_FM);
 		ignoreList.add(RADIO_STAR_FM_FROM_HELL);
@@ -68,11 +67,13 @@ public class Constants {
 		ignoreList.add(RADIO_BLUE_MARLIN);
 		ignoreList.add(RADIO_TIROL_IT);
 		ignoreList.add(RADIO_CELITIC_MUSIC);
-		ignoreList.add(RADIO_MITTELALTERKLANG);
+		ignoreList.add(RADIO_LEGENDE);
 		ignoreList.add(RADIO_SECRETTUBE);
 		ignoreList.add(RADIO_GONG_NUERNBERG);
 		ignoreList.add(RADIO_PALOMA);
 		ignoreList.add(RADIO_DREYECKLAND);
+		ignoreList.add(RADIO_PULS_RADIO);
+		ignoreList.add(RADIO_OBERKRAIN);
 		return ignoreList;
 	}
 
@@ -201,6 +202,7 @@ public class Constants {
 	public static final String RADIO_BAYERN_1 = "Bayern 1";
 	public static final String RADIO_BAYERN_2 = "Bayern 2";
 	public static final String RADIO_BAYERN_3 = "Bayern 3";
+	public static final String RADIO_BAYERN_4_KLASSIK = "Bayern 4 Klassik";
 	public static final String RADIO_ON_3 = "On-3";
 	public static final String RADIO_SWR_1 = "SWR 1";
 	public static final String RADIO_SWR_2 = "SWR 2";
@@ -268,12 +270,12 @@ public class Constants {
 	public static final String RADIO_1LIVE = "1Live";
 	public static final String RADIO_TOP100STATION = "Top 100 Station";
 	public static final String RADIO_ROCK_STATION = "Rockstation";
-	public static final String RADIO_SKYLIVE = "SkyLive";
 	public static final String RADIO_TRANCERADIO = "TranceRadio";
 	public static final String RADIO_7 = "Radio 7";
 	public static final String RADIO_SALUE = "Salü";
 	public static final String RADIO_FFH = "FFH";
 	public static final String RADIO_RT1_HITRADIO = "rt1 Hitradio";
+	public static final String RADIO_HR_2 = "HR 2";
 	public static final String RADIO_HR_3 = "HR 3";
 	public static final String RADIO_STAR_FM = "Star FM";
 	public static final String RADIO_STAR_FM_FROM_HELL = "Star FM From Hell";
@@ -283,17 +285,19 @@ public class Constants {
 	public static final String RADIO_REGENBOGEN = "Regenbogen";
 	public static final String RADIO_FANTASY_DANCE = "Fantasy Dance FM";
 	public static final String RADIO_TIROL_IT = "Radio Tirol (IT)";
+	public static final String RADIO_OBERKRAIN = "Radio Oberkrain";
 	public static final String RADIO_DELTA_RADIO = "Delta Radio";
 	public static final String RADIO_NDR_1 = "NDR 1";
 	public static final String RADIO_NDR_2 = "NDR 2";
 	public static final String RADIO_N_JOY = "N-Joy";
 	public static final String RADIO_STEPHANSDOM = "Stephansdom";
 	public static final String RADIO_CELITIC_MUSIC = "Celtic Music Radio";
-	public static final String RADIO_MITTELALTERKLANG = "Mittelalterklang";
+	public static final String RADIO_LEGENDE = "Radio Legende";
 	public static final String RADIO_SECRETTUBE = "Secrettube";
 	public static final String RADIO_GONG_NUERNBERG = "Gong Nürnberg";
 	public static final String RADIO_PALOMA = "Radio Paloma";
 	public static final String RADIO_EINS_RBB = "eins rbb";
 	public static final String RADIO_DREYECKLAND = "Dreyeckland";
 	public static final String RADIO_NOVAPLANET = "Novaplanet";
+	public static final String RADIO_PULS_RADIO = "Puls'Radio";
 }
