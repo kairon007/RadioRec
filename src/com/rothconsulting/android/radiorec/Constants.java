@@ -277,6 +277,7 @@ public class Constants {
 	public static final String RADIO_RT1_HITRADIO = "rt1 Hitradio";
 	public static final String RADIO_HR_2 = "HR 2";
 	public static final String RADIO_HR_3 = "HR 3";
+	public static final String RADIO_WDR_3 = "WDR 3";
 	public static final String RADIO_STAR_FM = "Star FM";
 	public static final String RADIO_STAR_FM_FROM_HELL = "Star FM From Hell";
 	public static final String RADIO_IBIZA_SONICA = "Ibiza Sonica";
@@ -297,7 +298,11 @@ public class Constants {
 	public static final String RADIO_GONG_NUERNBERG = "Gong Nürnberg";
 	public static final String RADIO_PALOMA = "Radio Paloma";
 	public static final String RADIO_EINS_RBB = "eins rbb";
+	public static final String RADIO_KULTURRADIO_RBB = "Kulturradio rbb";
+	public static final String RADIO_DEUTSCHLANDFUNK = "Deutschlandfunk";
+	public static final String RADIO_DEUTSCHLANDRADIO_KULTUR = "Deutschlandradio Kultur";
 	public static final String RADIO_DREYECKLAND = "Dreyeckland";
 	public static final String RADIO_NOVAPLANET = "Novaplanet";
 	public static final String RADIO_PULS_RADIO = "Puls'Radio";
+	public static final String RADIO_EUROPE_1 = "Europe 1";
 }

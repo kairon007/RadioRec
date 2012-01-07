@@ -829,27 +829,6 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_20MIN);
-		m.put("icon", R.drawable.radio_20_min);
-		m.put("icon_small", R.drawable.radio_20_min_small);
-		m.put("stream", "http://ch4.streamhosting.ch:8080/20min_ger");
-		m.put("homepage", "http://www.20min.ch/radio/radio.tmpl");
-		m.put("webcam", "");
-		m.put("email", "feedback@20minuten.ch");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
 		m.put("name", Constants.RADIO_NEO_1);
 		m.put("icon", R.drawable.radio_neo_1);
 		m.put("icon_small", R.drawable.radio_neo_1_small);
@@ -897,7 +876,7 @@ public class Stations {
 		m.put("name", Constants.RADIO_BASEL);
 		m.put("icon", R.drawable.radio_basel);
 		m.put("icon_small", R.drawable.radio_basel_small);
-		m.put("stream", "http://stream3.radiobasel.ch:8000/rb13");
+		m.put("stream", "http://stream1.radiobasel.ch:8000/rb01");
 		m.put("homepage", "http://www.radiobasel.ch");
 		m.put("webcam", "http://radiobasel.ch/webcam/studio2.jpg");
 		m.put("email", "http://radiobasel.ch/kontakt?cid=Studio");
@@ -2843,6 +2822,28 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_WDR_3);
+		m.put("icon", R.drawable.radio_wdr3);
+		m.put("icon_small", R.drawable.radio_wdr3_small);
+		m.put("stream",
+				"http://wdr-3-320.akacast.akamaistream.net/7/827/119437/v1/gnl.akacast.akamaistream.net/wdr-3-320");
+		m.put("homepage", "http://www.wdr3.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.wdr3.de/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_KLASSIK);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", Constants.RADIO_STAR_FM);
 		m.put("icon", R.drawable.radio_starfm);
 		m.put("icon_small", R.drawable.radio_starfm_small);
@@ -3271,6 +3272,70 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_KULTURRADIO_RBB);
+		m.put("icon", R.drawable.radio_kulturradio_rbb);
+		m.put("icon_small", R.drawable.radio_kulturradio_rbb_small);
+		m.put("stream",
+				"http://rbb.ic.llnwd.net/stream/rbb_kulturradio_mp3_m_a");
+		m.put("homepage", "http://www.kulturradio.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.kulturradio.de/kontakt/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_KLASSIK);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_DEUTSCHLANDRADIO_KULTUR);
+		m.put("icon", R.drawable.radio_deutschlandradio_kultur);
+		m.put("icon_small", R.drawable.radio_deutschlandradio_kultur_small);
+		m.put("stream", "http://dradio.ic.llnwd.net/stream/dradio_dkultur_m_b");
+		m.put("homepage", "http://www.dradio.de/dkultur");
+		m.put("webcam", "");
+		m.put("email", "http://www.dradio.de/kontakt/");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_KLASSIK);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_DEUTSCHLANDFUNK);
+		m.put("icon", R.drawable.radio_deutschlandfunk);
+		m.put("icon_small", R.drawable.radio_deutschlandfunk_small);
+		m.put("stream", "http://dradio.ic.llnwd.net/stream/dradio_dlf_m_b");
+		m.put("homepage", "http://www.dradio.de/dlf");
+		m.put("webcam", "");
+		m.put("email", "http://www.dradio.de/kontakt/");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", Constants.RADIO_DREYECKLAND);
 		m.put("icon", R.drawable.radio_dreyeckland);
 		m.put("icon_small", R.drawable.radio_dreyeckland_small);
@@ -3319,7 +3384,29 @@ public class Stations {
 		m.put("stream", "http://stream.pulsradio.com:5000");
 		m.put("homepage", "http://www.pulsradio.com/");
 		m.put("webcam", "");
-		m.put("email", "");
+		m.put("email",
+				"http://www.pulsradio.com/page-dance_trance-contact.html");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_EUROPE_1);
+		m.put("icon", R.drawable.radio_europe_1);
+		m.put("icon_small", R.drawable.radio_europe_1_small);
+		m.put("stream", "http://vipicecast.yacast.net/europe1");
+		m.put("homepage", "http://www.europe1.fr");
+		m.put("webcam",
+				"http://http5.europe1.yacast.net/europe1video/webcams/webcam1_c1.jpg");
+		m.put("email", "http://www.europe1.fr/Contacts/");
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
