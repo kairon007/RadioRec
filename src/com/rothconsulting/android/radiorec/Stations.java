@@ -2343,7 +2343,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_bigfm_small);
 		m.put("stream", "http://srv05.bigstreams.de/bigfm-mp3-96");
 		m.put("homepage", "http://www.bigfm.de");
-		m.put("webcam", "http://.bigfm.de/webcam/cam6/webcam06.jpg");
+		m.put("webcam", "http://static.bigfm.de/webcam/cam6/webcam06.jpg");
 		m.put("email",
 				"http://www.bigfm.de/content/html/shared/studiomail/index.html");
 		m.put("sprache", SPRACHE_DE);
