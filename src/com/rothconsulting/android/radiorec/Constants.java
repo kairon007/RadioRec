@@ -183,7 +183,6 @@ public class Constants {
 	public static final String RADIO_BEO = "Radio BeO";
 	public static final String RADIO_TOP = "Top";
 	public static final String RADIO_TOP_TWO = "Top Two";
-	public static final String RADIO_20MIN = "20 Minuten";
 	public static final String RADIO_BASEL = "Radio Basel";
 	public static final String RADIO_NEO_1 = "neo 1";
 	public static final String RADIO_NEO_ZWEI = "neo zwei";

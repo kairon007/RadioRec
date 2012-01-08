@@ -31,6 +31,10 @@ public class Webcam extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.webcam);
 		Utils utils = new Utils();
+		if (!utils.isNetworkAvailable(this, getIntent(), true)) {
+			finish();
+			return;
+		}
 		progressDialog = utils.prepareProgressDialog(this);
 		progressDialog
 				.setTitle("Webcam " + Constants.THE_SELECTED_STATION_NAME);
@@ -61,11 +65,9 @@ public class Webcam extends Activity {
 	}
 
 	private void showWebCam() {
-		Utils utils = new Utils();
 		Log.d(TAG, "RadioPlayer.URL_WEBCAM=" + Constants.THE_URL_WEBCAM);
 		if (Constants.THE_URL_WEBCAM != null
-				&& !Constants.THE_URL_WEBCAM.equals("")
-				&& utils.isNetworkAvailable(this)) {
+				&& !Constants.THE_URL_WEBCAM.equals("")) {
 			WebView myWebView = new WebView(this);
 			myWebView.clearCache(Boolean.TRUE);
 			myWebView = (WebView) findViewById(R.id.webkitWebViewWebCam);

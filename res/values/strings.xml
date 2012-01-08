@@ -70,5 +70,5 @@
 	<string name="favorit">Favorit</string>
 	<string name="favoriten">Favoriten</string>
 	<string name="stil">Stil</string>
-	<string name="allStations">Alle Sender</string>
+	<string name="sortByCountry">Sortiert nach Länder</string>
 </resources>

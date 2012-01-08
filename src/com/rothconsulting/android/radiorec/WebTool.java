@@ -212,7 +212,7 @@ public class WebTool {
 	protected String getRT1token(Context context) {
 		Utils utils = new Utils();
 		String token = "";
-		if (utils.isNetworkAvailable(context)) {
+		if (utils.isNetworkAvailable(context, null, false)) {
 			String url = "http://edge.download.newmedia.nacamar.net/sltokens/flashplayer/stream-mp3-player.php?stream=hitradiort1/livestream.mp3";
 			String findString = "var token = \"";
 			String endString = "\";";

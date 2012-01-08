@@ -352,6 +352,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.play:
 			playing = !playing;
+			if (playing && !utils.isNetworkAvailable(this, getIntent(), true)) {
+				playing = false;
+			}
 			((ImageButton) v).setImageResource(playing ? R.drawable.button_stop
 					: R.drawable.button_play);
 			changeStation();
@@ -359,14 +362,15 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		case R.id.rec:
 			recording = !recording;
 			if (recording) {
-				doStartRecording();
+				recording = doStartRecording();
+			}
+			// recording can change in doStartRecording()
+			if (!recording) {
+				doStopRecording();
 			}
 			((ImageButton) v)
 					.setImageResource(recording ? R.drawable.button_record_on
 							: R.drawable.button_record);
-			if (!recording) {
-				doStopRecording();
-			}
 			break;
 		case R.id.fwd:
 			if (spnAllStations.getSelectedItemPosition() < stationList.size() - 1) {
@@ -596,6 +600,12 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private boolean doStartRecording() {
 		Log.d(TAG, "startRecording");
 
+		if (!utils.isNetworkAvailable(this, getIntent(), true)) {
+			return false;
+		} else {
+			Notifications noti = new Notifications(this, getIntent());
+			noti.hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
+		}
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd_HHmmss");
 		String dateTime = formatter.format(new Date());
 

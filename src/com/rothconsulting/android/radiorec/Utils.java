@@ -27,7 +27,16 @@ public class Utils {
 
 	private static final String TAG = Utils.class.getSimpleName();
 
-	protected boolean isNetworkAvailable(Context context) {
+	/**
+	 * Wenn showNotification false, kann der Intent null sein!
+	 * 
+	 * @param context
+	 * @param intent
+	 * @param showNotification
+	 * @return
+	 */
+	protected boolean isNetworkAvailable(Context context, Intent intent,
+			boolean showNotification) {
 		ConnectivityManager connectivity = (ConnectivityManager) context
 				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		if (connectivity != null) {
@@ -42,6 +51,12 @@ public class Utils {
 			}
 		}
 		Log.d(TAG, "Keine Connectivity");
+
+		if (showNotification) {
+			Notifications notifications = new Notifications(context, intent);
+			notifications
+					.showStatusBarNotificationError(R.string.networkNotAvailable);
+		}
 		return false;
 	}
 

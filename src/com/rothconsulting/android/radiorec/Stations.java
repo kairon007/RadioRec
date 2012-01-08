@@ -1042,6 +1042,994 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_TOXIC_FM);
+		m.put("icon", R.drawable.radio_toxic_fm);
+		m.put("icon_small", R.drawable.radio_toxic_fm_small);
+		m.put("stream", "http://toxicfm.ice.infomaniak.ch:80/toxicfm-128.mp3");
+		m.put("homepage", "http://www.toxicfm.ch");
+		m.put("webcam", "");
+		m.put("email", "studio@toxic.fm");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_X);
+		m.put("icon", R.drawable.radio_x);
+		m.put("icon_small", R.drawable.radio_x_small);
+		m.put("stream", "http://mp3.radiox.ch/standard.mp3");
+		m.put("homepage", "http://www.radiox.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiox.ch/service/wuko");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_KANAL_K);
+		m.put("icon", R.drawable.radio_kanal_k);
+		m.put("icon_small", R.drawable.radio_kanal_k_small);
+		m.put("stream", "http://82.197.165.150");
+		m.put("homepage", "http://www.kanalk.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.kanalk.ch/ueber-uns/kontakt/");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_INSIDE);
+		m.put("icon", R.drawable.radio_inside);
+		m.put("icon_small", R.drawable.radio_inside_small);
+		m.put("stream", "http://fra.radiostream.de:37499/");
+		m.put("homepage", "http://www.radioinside.ch");
+		m.put("webcam", "http://www.radioinside.ch/~kamera/studio1.jpg");
+		m.put("email", "http://www.radioinside.ch/index.php/studiomail");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_STADTFILTER);
+		m.put("icon", R.drawable.radio_stadtfilter);
+		m.put("icon_small", R.drawable.radio_stadtfilter_small);
+		m.put("stream", "http://stream.stadtfilter.net:8000");
+		m.put("homepage", "http://www.stadtfilter.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.stadtfilter.ch/StadtfilterKontakt/Kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_LORA);
+		m.put("icon", R.drawable.radio_lora);
+		m.put("icon_small", R.drawable.radio_lora_small);
+		m.put("stream", "http://h1788467.stratoserver.net:8100");
+		m.put("homepage", "http://www.lora.ch");
+		m.put("webcam", "");
+		m.put("email", "http://lora.ch/ueberuns/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_KAISEREGG);
+		m.put("icon", R.drawable.radio_kaiseregg);
+		m.put("icon_small", R.drawable.radio_kaiseregg_small);
+		m.put("stream", "http://kaiseregg.ice.infomaniak.ch/stream128k.mp3");
+		m.put("homepage", "http://www.kaiseregg.ch");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.kaiseregg.ch/index.php?option=com_contact&view=contact&id=1&Itemid=7");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SUNSHINE);
+		m.put("icon", R.drawable.radio_sunshine);
+		m.put("icon_small", R.drawable.radio_sunshine_small);
+		m.put("stream", "http://mp3stream.sunshine.ch:80");
+		m.put("homepage", "http://www.sunshine.ch");
+		m.put("webcam", "http://www.sunshine.ch/data/webcam/studio2.jpg");
+		m.put("email", "http://www.sunshine.ch/dynasite.cfm?dsmid=98592");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_TROPIC);
+		m.put("icon", R.drawable.radio_tropic);
+		m.put("icon_small", R.drawable.radio_tropic_small);
+		m.put("stream", "http://tropic.ice.infomaniak.ch:80/tropic-high.mp3");
+		m.put("homepage", "http://www.radio-tropic.ch");
+		m.put("webcam", "");
+		m.put("email", "http://radio-tropic.ch/contact");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_DJRADIO);
+		m.put("icon", R.drawable.radio_djradio);
+		m.put("icon_small", R.drawable.radio_djradio_small);
+		m.put("stream", "http://streamplus16.leonex.de:17130");
+		m.put("homepage", "http://www.djradio.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.djradio.ch/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_LOUNGE_RADIO);
+		m.put("icon", R.drawable.radio_loungeradio);
+		m.put("icon_small", R.drawable.radio_loungeradio_small);
+		m.put("stream", "http://ch3.streamhosting.ch:8080");
+		m.put("homepage", "http://www.lounge-radio.com");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.lounge-radio.com/index.php?option=com_contact&Itemid=42");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SWISS_GROOVE);
+		m.put("icon", R.drawable.radio_swissgroove);
+		m.put("icon_small", R.drawable.radio_swissgroove_small);
+		m.put("stream", "http://server4.digital-webstream.de:13600");
+		m.put("homepage", "http://www.swissgroove.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.swissgroove.ch/index.php?content=main&id=17");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_FREIBURG);
+		m.put("icon", R.drawable.radio_fr);
+		m.put("icon_small", R.drawable.radio_fr_small);
+		m.put("stream",
+				"http://radiofreiburg.ice.infomaniak.ch:80/radiofreiburg-high.mp3");
+		m.put("homepage", "http://www.radiofr.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiofr.ch/de/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_COULEUR_3);
+		m.put("icon", R.drawable.radio_couleur3);
+		m.put("icon_small", R.drawable.radio_couleur3_small);
+		m.put("stream", "http://broadcast.infomaniak.ch/rsr-couleur3-high.mp3");
+		m.put("homepage", "http://www.couleur3.ch");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.rsr.ch/#/corporate/contact/?contact=couleur3");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_RFJ);
+		m.put("icon", R.drawable.radio_rfj);
+		m.put("icon_small", R.drawable.radio_rfj_small);
+		m.put("stream", "http://broadcast.infomaniak.net/rfj-high.mp3");
+		m.put("homepage", "http://www.rfj.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.rfj.ch/rfj/Radio/Contact.html");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ROUGE_FM);
+		m.put("icon", R.drawable.radio_rougefm);
+		m.put("icon_small", R.drawable.radio_rougefm_small);
+		m.put("stream", "http://broadcast.infomaniak.ch/rougefm-high.mp3");
+		m.put("homepage", "http://www.rougefm.com");
+		m.put("webcam", "");
+		m.put("email", "http://www.rougefm.com/radio/contact.php");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_RSI_RETE_3);
+		m.put("icon", R.drawable.radio_rete3);
+		m.put("icon_small", R.drawable.radio_rete3_small);
+		m.put("stream", "http://glb-stream12.streamserver.ch/1/retetre/mp3_128");
+		m.put("homepage", "http://retetre.rtsi.ch.ch");
+		m.put("webcam", "");
+		m.put("email",
+				"http://retetre.rtsi.ch/index.php?option=com_contact&catid=12&Itemid=30");
+		m.put("sprache", SPRACHE_IT);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ROCK_NATION);
+		m.put("icon", R.drawable.radio_rocknation);
+		m.put("icon_small", R.drawable.radio_rocknation_small);
+		m.put("stream", "http://105-stream-02.datacomm.ch:8000/rocknation");
+		m.put("homepage", "http://www.rocknation.ch");
+		m.put("webcam", "");
+		m.put("email", "info@rocknation.ch");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_3FACH);
+		m.put("icon", R.drawable.radio_3fach);
+		m.put("icon_small", R.drawable.radio_3fach_small);
+		m.put("stream", "http://94.126.18.195:8000");
+		m.put("homepage", "http://www.3fach.ch");
+		m.put("webcam", "");
+		m.put("email", "https://radio3fach.wordpress.com/kontakt/");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_COUNTRY_RADIO);
+		m.put("icon", R.drawable.radio_country_radio_switzerland);
+		m.put("icon_small", R.drawable.radio_country_radio_switzerland_small);
+		m.put("stream", "http://rs3.radiostreamer.com:9330");
+		m.put("homepage", "http://www.countryradio.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.countryradio.ch/index.php?id=22");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_LIFE_CHANNEL);
+		m.put("icon", R.drawable.radio_life_channel);
+		m.put("icon_small", R.drawable.radio_life_channel_small);
+		m.put("stream", "http://mp3.lifechannel.ch/LC128");
+		m.put("homepage", "http://www.lifechannel.ch");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.lifechannel.ch/fenster_zum_sonntag-feedback___kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_RELIGION);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_GLORIA);
+		m.put("icon", R.drawable.radio_gloria);
+		m.put("icon_small", R.drawable.radio_gloria_small);
+		m.put("stream", "http://live-two.dmd2.ch:8080/radiogloria_lo");
+		m.put("homepage", "http://www.radiogloria.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiogloria.ch/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_RELIGION);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_GELB_SCHWARZ);
+		m.put("icon", R.drawable.radio_gelb_schwarz_yb);
+		m.put("icon_small", R.drawable.radio_gelb_schwarz_yb_small);
+		m.put("stream",
+				"http://radiogelb-schwarz.ice.infomaniak.ch:80/radiogelbschwarz.mp3");
+		m.put("homepage", "http://www.radio-gelb-schwarz.ch");
+		m.put("webcam",
+				"http://data.bkw-fmb.ch/opd/camPics/Stade-de-suisse.jpg");
+		m.put("email", "rgs@im-stadion.ch");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_SPORT);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_FCB_LIVE_RADIO);
+		m.put("icon", R.drawable.radio_fcb_live_radio);
+		m.put("icon_small", R.drawable.radio_fcb_live_radio_small);
+		m.put("stream", "http://195.49.27.25:8000");
+		m.put("homepage", "http://www.fcbliveradio.ch");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.fcbliveradio.ch/index.php?option=com_contact&view=category&catid=12&Itemid=53");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_SPORT);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_FC_ZUERICH);
+		m.put("icon", R.drawable.radio_fc_zuerich);
+		m.put("icon_small", R.drawable.radio_fc_zuerich_small);
+		m.put("stream", "http://stream.fcz.ch:8000/fcz01");
+		m.put("homepage", "http://www.fcz.ch/radio");
+		m.put("webcam", "");
+		m.put("email", "http://www.fcz.ch/tv/fcz_radio_kontakt.htm");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_SPORT);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_BACKSTAGE_RADIO);
+		m.put("icon", R.drawable.radio_backstage_radio);
+		m.put("icon_small", R.drawable.radio_backstage_radio_small);
+		m.put("stream",
+				"http://broadcast.infomaniak.ch/backstageradio-high.mp3");
+		m.put("homepage", "http://www.backstageradio.ch");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.facebook.com/apps/application.php?id=194482473899008");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_RRO);
+		m.put("icon", R.drawable.radio_rro);
+		m.put("icon_small", R.drawable.radio_rro_small);
+		m.put("stream",
+				"http://stream.rro.ch/shoutcast/radiostation2.stream/playlist.m3u8");
+		m.put("homepage", "http://www.rro.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.rro.ch/cms/?page=kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_MONTE_CARLO);
+		m.put("icon", R.drawable.radio_monte_carlo);
+		m.put("icon_small", R.drawable.radio_monte_carlo_small);
+		m.put("stream", "http://212.40.13.22:11000");
+		m.put("homepage", "http://www.radiomontecarlo.ch");
+		m.put("webcam", "");
+		m.put("email", "info@radiomontecarlo.ch");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_RASA);
+		m.put("icon", R.drawable.radio_rasa);
+		m.put("icon_small", R.drawable.radio_rasa_small);
+		m.put("stream", "http://s7.pop-stream.de:7830");
+		m.put("homepage", "http://www.rasa.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.rasa.ch/feedback.php");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_BLIND_POWER);
+		m.put("icon", R.drawable.radio_blindpower);
+		m.put("icon_small", R.drawable.radio_blindpower_small);
+		m.put("stream", "http://live-two.dmd2.ch:8080/rbp_hi");
+		m.put("homepage", "http://www.radioblindpower.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.radioblindpower.ch/studio/studiomail.php");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_CENTRAL);
+		m.put("icon", R.drawable.radio_central);
+		m.put("icon_small", R.drawable.radio_central_small);
+		m.put("stream", "http://central128.mp3.green.ch");
+		m.put("homepage", "http://www.radiocenral.ch");
+		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
+		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_CENTRAL_ROCK);
+		m.put("icon", R.drawable.radio_central_rock);
+		m.put("icon_small", R.drawable.radio_central_rock_small);
+		m.put("stream", "http://sp7128.mp3.green.ch");
+		m.put("homepage", "http://www.radiocenral.ch");
+		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
+		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_CENTRAL_SWISS);
+		m.put("icon", R.drawable.radio_central_swiss);
+		m.put("icon_small", R.drawable.radio_central_swiss_small);
+		m.put("stream", "http://sp3128.mp3.green.ch");
+		m.put("homepage", "http://www.radiocenral.ch");
+		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
+		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_EVIVA);
+		m.put("icon", R.drawable.radio_eviva);
+		m.put("icon_small", R.drawable.radio_eviva_small);
+		m.put("stream", "http://eviva128.mp3.green.ch");
+		m.put("homepage", "http://www.eviva.ch");
+		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
+		m.put("email", "http://eviva.ch/dynasite.cfm?dsmid=78524");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_GRISCHA);
+		m.put("icon", R.drawable.radio_grischa);
+		m.put("icon_small", R.drawable.radio_grischa_small);
+		m.put("stream", "http://grischa.mp3.green.ch");
+		m.put("homepage", "http://www.radiogrischa.ch");
+		m.put("webcam",
+				"http://www.radiogrischa.ch/sites/default/files/webcams/studio_1.jpg");
+		m.put("email", "http://www.radiogrischa.ch/adresseanfahrt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_BUURERADIO);
+		m.put("icon", R.drawable.radio_buureradio);
+		m.put("icon_small", R.drawable.radio_buureradio_small);
+		m.put("stream", "http://live-three.dmd2.ch");
+		m.put("homepage", "http://www.buureradio.ch");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.buureradio.ch/buureradio20/module/songs/searchform.asp");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_VOLKSTUEMLICH);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_INDUSTRIE);
+		m.put("icon", R.drawable.radio_industrie);
+		m.put("icon_small", R.drawable.radio_industrie_small);
+		m.put("stream", "http://96.31.83.87:8063");
+		m.put("homepage", "http://www.radioindustrie.ch");
+		m.put("webcam", "");
+		m.put("email", "info@radioindustrie.ch");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_AUDIOASYL);
+		m.put("icon", R.drawable.radio_audioasyl);
+		m.put("icon_small", R.drawable.radio_audioasyl_small);
+		m.put("stream", "http://stream.audioasyl.net/audioasyl");
+		m.put("homepage", "http://www.audioasyl.net");
+		m.put("webcam", "");
+		m.put("email", "info@audioasyl.net");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_PIRATENRADIO);
+		m.put("icon", R.drawable.radio_piratenradio);
+		m.put("icon_small", R.drawable.radio_piratenradio_small);
+		m.put("stream",
+				"http://piratenradioch.ice.infomaniak.ch/piratenradioch-128.mp3");
+		m.put("homepage", "http://www.piratenradio.ch");
+		m.put("webcam", "");
+		m.put("email", "info@piratenradio.ch");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_21);
+		m.put("icon", R.drawable.radio_21);
+		m.put("icon_small", R.drawable.radio_21_small);
+		m.put("stream", "http://rs3.stream24.org:8690");
+		m.put("homepage", "http://www.radio21.ch");
+		m.put("webcam", "");
+		m.put("email", "http://radio21.ch/wp/?page_id=481");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_WAVE);
+		m.put("icon", R.drawable.radio_wave);
+		m.put("icon_small", R.drawable.radio_wave_small);
+		m.put("stream", "http://212.83.60.57:2100");
+		m.put("homepage", "http://www.radio-wave.ch");
+		m.put("webcam", "http://www.radiowave.ch/studio.jpg");
+		m.put("email",
+				"http://www.radio-wave.ch/cms/index.php?section=contact&cmd=8");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_ROCK_STATION);
+		m.put("icon", R.drawable.radio_rockstation);
+		m.put("icon_small", R.drawable.radio_rockstation_small);
+		m.put("stream", "http://rs11.stream24.org:8130");
+		m.put("homepage", "http://www.rockstation.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.rockstation.ch/pages/contact.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_ROCK);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_TRANCERADIO);
+		m.put("icon", R.drawable.radio_tranceradio);
+		m.put("icon_small", R.drawable.radio_tranceradio_small);
+		m.put("stream", "http://stream3144.init7.net");
+		m.put("homepage", "http://www.tranceradio.ch");
+		m.put("webcam", "");
+		m.put("email", "http://technoradio.ch/contact.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_TRANCE);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_DELTA_RADIO);
+		m.put("icon", R.drawable.radio_delta_radio);
+		m.put("icon_small", R.drawable.radio_delta_radio_small);
+		m.put("stream", "http://stream.hoerradar.de/deltaradio128");
+		m.put("homepage", "http://www.deltaradio.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.deltaradio.de/delta/kontakt/mail/index.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SECRETTUBE);
+		m.put("icon", R.drawable.radio_secrettube);
+		m.put("icon_small", R.drawable.radio_secrettube_small);
+		m.put("stream", "http://secrettube.ch:6010");
+		m.put("homepage", "http://radio.secrettube.ch");
+		m.put("webcam", "");
+		m.put("email", "webmaster@secrettube.ch");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_LIECHSTENSTEIN);
+		m.put("icon", R.drawable.radio_li);
+		m.put("icon_small", R.drawable.radio_li_small);
+		m.put("stream", "http://live.radiol.li:8000/live");
+		m.put("homepage", "http://www.radio.li");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.radio.li/hoererservice/mein-musikwunsch.html?type=3");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		// ******************************************************************************************************
+		// *
+		// * DEUTSCHLAND
+		// *
+		// ******************************************************************************************************
+		m = new HashMap<String, Object>();
 		m.put("name", Constants.RADIO_ANTENNE_BAYERN);
 		m.put("icon", R.drawable.radio_antenne_bayern);
 		m.put("icon_small", R.drawable.radio_antenne_bayern_small);
@@ -1372,69 +2360,6 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_TOXIC_FM);
-		m.put("icon", R.drawable.radio_toxic_fm);
-		m.put("icon_small", R.drawable.radio_toxic_fm_small);
-		m.put("stream", "http://toxicfm.ice.infomaniak.ch:80/toxicfm-128.mp3");
-		m.put("homepage", "http://www.toxicfm.ch");
-		m.put("webcam", "");
-		m.put("email", "studio@toxic.fm");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_X);
-		m.put("icon", R.drawable.radio_x);
-		m.put("icon_small", R.drawable.radio_x_small);
-		m.put("stream", "http://mp3.radiox.ch/standard.mp3");
-		m.put("homepage", "http://www.radiox.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.radiox.ch/service/wuko");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_KANAL_K);
-		m.put("icon", R.drawable.radio_kanal_k);
-		m.put("icon_small", R.drawable.radio_kanal_k_small);
-		m.put("stream", "http://82.197.165.150");
-		m.put("homepage", "http://www.kanalk.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.kanalk.ch/ueber-uns/kontakt/");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
 		m.put("name", Constants.RADIO_SEEFUNK);
 		m.put("icon", R.drawable.radio_seefunk);
 		m.put("icon_small", R.drawable.radio_seefunk_small);
@@ -1444,628 +2369,6 @@ public class Stations {
 		m.put("email", "http://www.radio-seefunk.de/default.aspx?ID=11550");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_INSIDE);
-		m.put("icon", R.drawable.radio_inside);
-		m.put("icon_small", R.drawable.radio_inside_small);
-		m.put("stream", "http://fra.radiostream.de:37499/");
-		m.put("homepage", "http://www.radioinside.ch");
-		m.put("webcam", "http://www.radioinside.ch/~kamera/studio1.jpg");
-		m.put("email", "http://www.radioinside.ch/index.php/studiomail");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_FREIBURG);
-		m.put("icon", R.drawable.radio_fr);
-		m.put("icon_small", R.drawable.radio_fr_small);
-		m.put("stream",
-				"http://radiofreiburg.ice.infomaniak.ch:80/radiofreiburg-high.mp3");
-		m.put("homepage", "http://www.radiofr.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.radiofr.ch/de/kontakt.html");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_LIECHSTENSTEIN);
-		m.put("icon", R.drawable.radio_li);
-		m.put("icon_small", R.drawable.radio_li_small);
-		m.put("stream", "http://live.radiol.li:8000/live");
-		m.put("homepage", "http://www.radio.li");
-		m.put("webcam", "");
-		m.put("email",
-				"http://www.radio.li/hoererservice/mein-musikwunsch.html?type=3");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_DIV);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_COULEUR_3);
-		m.put("icon", R.drawable.radio_couleur3);
-		m.put("icon_small", R.drawable.radio_couleur3_small);
-		m.put("stream", "http://broadcast.infomaniak.ch/rsr-couleur3-high.mp3");
-		m.put("homepage", "http://www.couleur3.ch");
-		m.put("webcam", "");
-		m.put("email",
-				"http://www.rsr.ch/#/corporate/contact/?contact=couleur3");
-		m.put("sprache", SPRACHE_FR);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_RFJ);
-		m.put("icon", R.drawable.radio_rfj);
-		m.put("icon_small", R.drawable.radio_rfj_small);
-		m.put("stream", "http://broadcast.infomaniak.net/rfj-high.mp3");
-		m.put("homepage", "http://www.rfj.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.rfj.ch/rfj/Radio/Contact.html");
-		m.put("sprache", SPRACHE_FR);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ROUGE_FM);
-		m.put("icon", R.drawable.radio_rougefm);
-		m.put("icon_small", R.drawable.radio_rougefm_small);
-		m.put("stream", "http://broadcast.infomaniak.ch/rougefm-high.mp3");
-		m.put("homepage", "http://www.rougefm.com");
-		m.put("webcam", "");
-		m.put("email", "http://www.rougefm.com/radio/contact.php");
-		m.put("sprache", SPRACHE_FR);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SOMA_FM);
-		m.put("icon", R.drawable.radio_somafm_sgoa);
-		m.put("icon_small", R.drawable.radio_somafm_sgoa_small);
-		m.put("stream", "http://ice.somafm.com/suburbsofgoa");
-		m.put("homepage", "http://www.somafm.com");
-		m.put("webcam", "");
-		m.put("email", "http://somafm.com/contact");
-		m.put("sprache", SPRACHE_EN);
-		m.put("land", LAND_DE);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_STADTFILTER);
-		m.put("icon", R.drawable.radio_stadtfilter);
-		m.put("icon_small", R.drawable.radio_stadtfilter_small);
-		m.put("stream", "http://stream.stadtfilter.net:8000");
-		m.put("homepage", "http://www.stadtfilter.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.stadtfilter.ch/StadtfilterKontakt/Kontakt");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_LORA);
-		m.put("icon", R.drawable.radio_lora);
-		m.put("icon_small", R.drawable.radio_lora_small);
-		m.put("stream", "http://h1788467.stratoserver.net:8100");
-		m.put("homepage", "http://www.lora.ch");
-		m.put("webcam", "");
-		m.put("email", "http://lora.ch/ueberuns/kontakt");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_KAISEREGG);
-		m.put("icon", R.drawable.radio_kaiseregg);
-		m.put("icon_small", R.drawable.radio_kaiseregg_small);
-		m.put("stream", "http://kaiseregg.ice.infomaniak.ch/stream128k.mp3");
-		m.put("homepage", "http://www.kaiseregg.ch");
-		m.put("webcam", "");
-		m.put("email",
-				"http://www.kaiseregg.ch/index.php?option=com_contact&view=contact&id=1&Itemid=7");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SUNSHINE);
-		m.put("icon", R.drawable.radio_sunshine);
-		m.put("icon_small", R.drawable.radio_sunshine_small);
-		m.put("stream", "http://mp3stream.sunshine.ch:80");
-		m.put("homepage", "http://www.sunshine.ch");
-		m.put("webcam", "http://www.sunshine.ch/data/webcam/studio2.jpg");
-		m.put("email", "http://www.sunshine.ch/dynasite.cfm?dsmid=98592");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_TROPIC);
-		m.put("icon", R.drawable.radio_tropic);
-		m.put("icon_small", R.drawable.radio_tropic_small);
-		m.put("stream", "http://tropic.ice.infomaniak.ch:80/tropic-high.mp3");
-		m.put("homepage", "http://www.radio-tropic.ch");
-		m.put("webcam", "");
-		m.put("email", "http://radio-tropic.ch/contact");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DJRADIO);
-		m.put("icon", R.drawable.radio_djradio);
-		m.put("icon_small", R.drawable.radio_djradio_small);
-		m.put("stream", "http://streamplus16.leonex.de:17130");
-		m.put("homepage", "http://www.djradio.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.djradio.ch/kontakt");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_LOUNGE_RADIO);
-		m.put("icon", R.drawable.radio_loungeradio);
-		m.put("icon_small", R.drawable.radio_loungeradio_small);
-		m.put("stream", "http://ch3.streamhosting.ch:8080");
-		m.put("homepage", "http://www.lounge-radio.com");
-		m.put("webcam", "");
-		m.put("email",
-				"http://www.lounge-radio.com/index.php?option=com_contact&Itemid=42");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SWISS_GROOVE);
-		m.put("icon", R.drawable.radio_swissgroove);
-		m.put("icon_small", R.drawable.radio_swissgroove_small);
-		m.put("stream", "http://server4.digital-webstream.de:13600");
-		m.put("homepage", "http://www.swissgroove.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.swissgroove.ch/index.php?content=main&id=17");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_RSI_RETE_3);
-		m.put("icon", R.drawable.radio_rete3);
-		m.put("icon_small", R.drawable.radio_rete3_small);
-		m.put("stream", "http://glb-stream12.streamserver.ch/1/retetre/mp3_128");
-		m.put("homepage", "http://retetre.rtsi.ch.ch");
-		m.put("webcam", "");
-		m.put("email",
-				"http://retetre.rtsi.ch/index.php?option=com_contact&catid=12&Itemid=30");
-		m.put("sprache", SPRACHE_IT);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ROCK_NATION);
-		m.put("icon", R.drawable.radio_rocknation);
-		m.put("icon_small", R.drawable.radio_rocknation_small);
-		m.put("stream", "http://105-stream-02.datacomm.ch:8000/rocknation");
-		m.put("homepage", "http://www.rocknation.ch");
-		m.put("webcam", "");
-		m.put("email", "info@rocknation.ch");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_3FACH);
-		m.put("icon", R.drawable.radio_3fach);
-		m.put("icon_small", R.drawable.radio_3fach_small);
-		m.put("stream", "http://94.126.18.195:8000");
-		m.put("homepage", "http://www.3fach.ch");
-		m.put("webcam", "");
-		m.put("email", "https://radio3fach.wordpress.com/kontakt/");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_COUNTRY_RADIO);
-		m.put("icon", R.drawable.radio_country_radio_switzerland);
-		m.put("icon_small", R.drawable.radio_country_radio_switzerland_small);
-		m.put("stream", "http://rs3.radiostreamer.com:9330");
-		m.put("homepage", "http://www.countryradio.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.countryradio.ch/index.php?id=22");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_LIFE_CHANNEL);
-		m.put("icon", R.drawable.radio_life_channel);
-		m.put("icon_small", R.drawable.radio_life_channel_small);
-		m.put("stream", "http://mp3.lifechannel.ch/LC128");
-		m.put("homepage", "http://www.lifechannel.ch");
-		m.put("webcam", "");
-		m.put("email",
-				"http://www.lifechannel.ch/fenster_zum_sonntag-feedback___kontakt.html");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_RELIGION);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_GLORIA);
-		m.put("icon", R.drawable.radio_gloria);
-		m.put("icon_small", R.drawable.radio_gloria_small);
-		m.put("stream", "http://live-two.dmd2.ch:8080/radiogloria_lo");
-		m.put("homepage", "http://www.radiogloria.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.radiogloria.ch/kontakt.html");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_RELIGION);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_GELB_SCHWARZ);
-		m.put("icon", R.drawable.radio_gelb_schwarz_yb);
-		m.put("icon_small", R.drawable.radio_gelb_schwarz_yb_small);
-		m.put("stream",
-				"http://radiogelb-schwarz.ice.infomaniak.ch:80/radiogelbschwarz.mp3");
-		m.put("homepage", "http://www.radio-gelb-schwarz.ch");
-		m.put("webcam",
-				"http://data.bkw-fmb.ch/opd/camPics/Stade-de-suisse.jpg");
-		m.put("email", "rgs@im-stadion.ch");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_SPORT);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_FCB_LIVE_RADIO);
-		m.put("icon", R.drawable.radio_fcb_live_radio);
-		m.put("icon_small", R.drawable.radio_fcb_live_radio_small);
-		m.put("stream", "http://195.49.27.25:8000");
-		m.put("homepage", "http://www.fcbliveradio.ch");
-		m.put("webcam", "");
-		m.put("email",
-				"http://www.fcbliveradio.ch/index.php?option=com_contact&view=category&catid=12&Itemid=53");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_SPORT);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_FC_ZUERICH);
-		m.put("icon", R.drawable.radio_fc_zuerich);
-		m.put("icon_small", R.drawable.radio_fc_zuerich_small);
-		m.put("stream", "http://stream.fcz.ch:8000/fcz01");
-		m.put("homepage", "http://www.fcz.ch/radio");
-		m.put("webcam", "");
-		m.put("email", "http://www.fcz.ch/tv/fcz_radio_kontakt.htm");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_SPORT);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BACKSTAGE_RADIO);
-		m.put("icon", R.drawable.radio_backstage_radio);
-		m.put("icon_small", R.drawable.radio_backstage_radio_small);
-		m.put("stream",
-				"http://broadcast.infomaniak.ch/backstageradio-high.mp3");
-		m.put("homepage", "http://www.backstageradio.ch");
-		m.put("webcam", "");
-		m.put("email",
-				"http://www.facebook.com/apps/application.php?id=194482473899008");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_RRO);
-		m.put("icon", R.drawable.radio_rro);
-		m.put("icon_small", R.drawable.radio_rro_small);
-		m.put("stream",
-				"http://stream.rro.ch/shoutcast/radiostation2.stream/playlist.m3u8");
-		m.put("homepage", "http://www.rro.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.rro.ch/cms/?page=kontakt");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_MONTE_CARLO);
-		m.put("icon", R.drawable.radio_monte_carlo);
-		m.put("icon_small", R.drawable.radio_monte_carlo_small);
-		m.put("stream", "http://212.40.13.22:11000");
-		m.put("homepage", "http://www.radiomontecarlo.ch");
-		m.put("webcam", "");
-		m.put("email", "info@radiomontecarlo.ch");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_RASA);
-		m.put("icon", R.drawable.radio_rasa);
-		m.put("icon_small", R.drawable.radio_rasa_small);
-		m.put("stream", "http://s7.pop-stream.de:7830");
-		m.put("homepage", "http://www.rasa.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.rasa.ch/feedback.php");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BLIND_POWER);
-		m.put("icon", R.drawable.radio_blindpower);
-		m.put("icon_small", R.drawable.radio_blindpower_small);
-		m.put("stream", "http://live-two.dmd2.ch:8080/rbp_hi");
-		m.put("homepage", "http://www.radioblindpower.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.radioblindpower.ch/studio/studiomail.php");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
@@ -2120,112 +2423,6 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_CENTRAL);
-		m.put("icon", R.drawable.radio_central);
-		m.put("icon_small", R.drawable.radio_central_small);
-		m.put("stream", "http://central128.mp3.green.ch");
-		m.put("homepage", "http://www.radiocenral.ch");
-		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
-		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_CENTRAL_ROCK);
-		m.put("icon", R.drawable.radio_central_rock);
-		m.put("icon_small", R.drawable.radio_central_rock_small);
-		m.put("stream", "http://sp7128.mp3.green.ch");
-		m.put("homepage", "http://www.radiocenral.ch");
-		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
-		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_CENTRAL_SWISS);
-		m.put("icon", R.drawable.radio_central_swiss);
-		m.put("icon_small", R.drawable.radio_central_swiss_small);
-		m.put("stream", "http://sp3128.mp3.green.ch");
-		m.put("homepage", "http://www.radiocenral.ch");
-		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
-		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_EVIVA);
-		m.put("icon", R.drawable.radio_eviva);
-		m.put("icon_small", R.drawable.radio_eviva_small);
-		m.put("stream", "http://eviva128.mp3.green.ch");
-		m.put("homepage", "http://www.eviva.ch");
-		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
-		m.put("email", "http://eviva.ch/dynasite.cfm?dsmid=78524");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_GRISCHA);
-		m.put("icon", R.drawable.radio_grischa);
-		m.put("icon_small", R.drawable.radio_grischa_small);
-		m.put("stream", "http://grischa.mp3.green.ch");
-		m.put("homepage", "http://www.radiogrischa.ch");
-		m.put("webcam",
-				"http://www.radiogrischa.ch/sites/default/files/webcams/studio_1.jpg");
-		m.put("email", "http://www.radiogrischa.ch/adresseanfahrt");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
 		m.put("name", Constants.RADIO_SUNSHINE_LIVE);
 		m.put("icon", R.drawable.radio_sunshinelive);
 		m.put("icon_small", R.drawable.radio_sunshinelive_small);
@@ -2247,281 +2444,6 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_OE1);
-		m.put("icon", R.drawable.radio_oe1);
-		m.put("icon_small", R.drawable.radio_oe1_small);
-		m.put("stream", "http://mp3stream3.apasf.apa.at:8000");
-		m.put("homepage", "http://oe1.orf.at");
-		m.put("webcam", "");
-		m.put("email", "http://oe1.orf.at/kontakt");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_AT);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_OE3);
-		m.put("icon", R.drawable.radio_oe3);
-		m.put("icon_small", R.drawable.radio_oe3_small);
-		m.put("stream", "http://mp3stream7.apasf.apa.at:8000");
-		m.put("homepage", "http://oe3.orf.at");
-		m.put("webcam", "http://onapp1.orf.at/webcam/oe3/cam2_oe3.jpg");
-		m.put("email", "http://cluboe3.orf.at/song/index.php?round=24");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_AT);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_FM4);
-		m.put("icon", R.drawable.radio_oe_fm4);
-		m.put("icon_small", R.drawable.radio_oe_fm4_small);
-		m.put("stream", "http://mp3stream1.apasf.apa.at:8000");
-		m.put("homepage", "http://http://fm4.orf.at");
-		m.put("webcam", "");
-		m.put("email", "http://our.orf.at/mailform/fm4_kontakt");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_AT);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_TIROL);
-		m.put("icon", R.drawable.radio_orf_tirol);
-		m.put("icon_small", R.drawable.radio_orf_tirol_small);
-		m.put("stream", "http://mp3stream2.apasf.apa.at:8000");
-		m.put("homepage", "http://tirol.orf.at");
-		m.put("webcam", "");
-		m.put("email", "publikumsservice.tirol@orf.at");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_AT);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_WIEN);
-		m.put("icon", R.drawable.radio_orf_wien);
-		m.put("icon_small", R.drawable.radio_orf_wien_small);
-		m.put("stream", "http://194.232.200.145:8000");
-		m.put("homepage", "http://wien.orf.at");
-		m.put("webcam", "");
-		m.put("email", "899953@orf.at");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_AT);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_KAERNTEN);
-		m.put("icon", R.drawable.radio_orf_kaernten);
-		m.put("icon_small", R.drawable.radio_orf_kaernten_small);
-		m.put("stream", "http://194.232.200.159:8000");
-		m.put("homepage", "http://kaernten.orf.at");
-		m.put("webcam", "");
-		m.put("email", "service.kaernten@orf.at");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_AT);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SALZBURG);
-		m.put("icon", R.drawable.radio_orf_salzburg);
-		m.put("icon_small", R.drawable.radio_orf_salzburg_small);
-		m.put("stream", "http://194.232.200.147:8000");
-		m.put("homepage", "http://salzburg.orf.at");
-		m.put("webcam", "");
-		m.put("email", "publikumsservice.salzburg@orf.at");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_AT);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_NIEDEROESTERREICH);
-		m.put("icon", R.drawable.radio_orf_niederoesterreich);
-		m.put("icon_small", R.drawable.radio_orf_niederoesterreich_small);
-		m.put("stream", "http://194.232.200.147:8000");
-		m.put("homepage", "http://noe.orf.at");
-		m.put("webcam", "");
-		m.put("email", "noe-publikum@orf.at");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_AT);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BUURERADIO);
-		m.put("icon", R.drawable.radio_buureradio);
-		m.put("icon_small", R.drawable.radio_buureradio_small);
-		m.put("stream", "http://live-three.dmd2.ch");
-		m.put("homepage", "http://www.buureradio.ch");
-		m.put("webcam", "");
-		m.put("email",
-				"http://www.buureradio.ch/buureradio20/module/songs/searchform.asp");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_VOLKSTUEMLICH);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_INDUSTRIE);
-		m.put("icon", R.drawable.radio_industrie);
-		m.put("icon_small", R.drawable.radio_industrie_small);
-		m.put("stream", "http://96.31.83.87:8063");
-		m.put("homepage", "http://www.radioindustrie.ch");
-		m.put("webcam", "");
-		m.put("email", "info@radioindustrie.ch");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_AUDIOASYL);
-		m.put("icon", R.drawable.radio_audioasyl);
-		m.put("icon_small", R.drawable.radio_audioasyl_small);
-		m.put("stream", "http://stream.audioasyl.net/audioasyl");
-		m.put("homepage", "http://www.audioasyl.net");
-		m.put("webcam", "");
-		m.put("email", "info@audioasyl.net");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_PIRATENRADIO);
-		m.put("icon", R.drawable.radio_piratenradio);
-		m.put("icon_small", R.drawable.radio_piratenradio_small);
-		m.put("stream",
-				"http://piratenradioch.ice.infomaniak.ch/piratenradioch-128.mp3");
-		m.put("homepage", "http://www.piratenradio.ch");
-		m.put("webcam", "");
-		m.put("email", "info@piratenradio.ch");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_21);
-		m.put("icon", R.drawable.radio_21);
-		m.put("icon_small", R.drawable.radio_21_small);
-		m.put("stream", "http://rs3.stream24.org:8690");
-		m.put("homepage", "http://www.radio21.ch");
-		m.put("webcam", "");
-		m.put("email", "http://radio21.ch/wp/?page_id=481");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
 		m.put("name", Constants.RADIO_ALLGAEUHIT);
 		m.put("icon", R.drawable.radio_allgaeuhit);
 		m.put("icon_small", R.drawable.radio_allgaeuhit_small);
@@ -2531,70 +2453,6 @@ public class Stations {
 		m.put("email", "http://www.allgaeuhit.de/wugru.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_WAVE);
-		m.put("icon", R.drawable.radio_wave);
-		m.put("icon_small", R.drawable.radio_wave_small);
-		m.put("stream", "http://212.83.60.57:2100");
-		m.put("homepage", "http://www.radio-wave.ch");
-		m.put("webcam", "http://www.radiowave.ch/studio.jpg");
-		m.put("email",
-				"http://www.radio-wave.ch/cms/index.php?section=contact&cmd=8");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_HELSINKI_GRAZ);
-		m.put("icon", R.drawable.radio_helsinki_graz);
-		m.put("icon_small", R.drawable.radio_helsinki_graz_small);
-		m.put("stream", "http://live.helsinki.at:8088/live128.mp3");
-		m.put("homepage", "http://www.helsinki.at");
-		m.put("webcam", "");
-		m.put("email", "http://helsinki.at/info/kontakt");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_AT);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SOUNDPORTAL);
-		m.put("icon", R.drawable.radio_soundportal);
-		m.put("icon_small", R.drawable.radio_soundportal_small);
-		m.put("stream", "http://netradio01.soundportal.at:8100/live160");
-		m.put("homepage", "http://www.soundportal.at");
-		m.put("webcam", "http://soundportal.at/service/webcam");
-		m.put("email", "http://soundportal.at/service/musikwunsch/");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
@@ -2639,48 +2497,6 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ROCK_STATION);
-		m.put("icon", R.drawable.radio_rockstation);
-		m.put("icon_small", R.drawable.radio_rockstation_small);
-		m.put("stream", "http://rs11.stream24.org:8130");
-		m.put("homepage", "http://www.rockstation.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.rockstation.ch/pages/contact.html");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_ROCK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_TRANCERADIO);
-		m.put("icon", R.drawable.radio_tranceradio);
-		m.put("icon_small", R.drawable.radio_tranceradio_small);
-		m.put("stream", "http://stream3144.init7.net");
-		m.put("homepage", "http://www.tranceradio.ch");
-		m.put("webcam", "");
-		m.put("email", "http://technoradio.ch/contact.html");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_TRANCE);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -2886,69 +2702,6 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_IBIZA_SONICA);
-		m.put("icon", R.drawable.radio_ibizasonica);
-		m.put("icon_small", R.drawable.radio_ibizasonica_small);
-		m.put("stream", "http://stream.wft.es:7005");
-		m.put("homepage", "http://www.ibizasonica.com");
-		m.put("webcam", "");
-		m.put("email", "https://www.facebook.com/ibizasonicaradio");
-		m.put("sprache", SPRACHE_ES);
-		m.put("land", LAND_ES);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_AMNESIA);
-		m.put("icon", R.drawable.radio_amnesia);
-		m.put("icon_small", R.drawable.radio_amnesia_small);
-		m.put("stream", "http://stream.estudiosonico.com:7015");
-		m.put("homepage", "http://www.amnesia.es");
-		m.put("webcam", "");
-		m.put("email", "http://www.amnesia.es/webapp/contact");
-		m.put("sprache", SPRACHE_ES);
-		m.put("land", LAND_ES);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BLUE_MARLIN);
-		m.put("icon", R.drawable.radio_bluemarlin);
-		m.put("icon_small", R.drawable.radio_bluemarlin_small);
-		m.put("stream", "http://89.238.146.142:8635");
-		m.put("homepage", "http://www.bluemarlinibiza.com");
-		m.put("webcam", "");
-		m.put("email", "http://www.bluemarlinibiza.com/contact/contact");
-		m.put("sprache", SPRACHE_ES);
-		m.put("land", LAND_ES);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
 		m.put("name", Constants.RADIO_REGENBOGEN);
 		m.put("icon", R.drawable.radio_regenbogen);
 		m.put("icon_small", R.drawable.radio_regenbogen_small);
@@ -2993,27 +2746,6 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_TIROL_IT);
-		m.put("icon", R.drawable.radio_tirol_it);
-		m.put("icon_small", R.drawable.radio_tirol_it_small);
-		m.put("stream", "http://str2.creacast.com/radiotirol_a");
-		m.put("homepage", "http://www.radiotirol.it");
-		m.put("webcam", "");
-		m.put("email", "http://www.radiotirol.it/index.php?id=18");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_IT);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
 		m.put("name", Constants.RADIO_OBERKRAIN);
 		m.put("icon", R.drawable.radio_oberkrain);
 		m.put("icon_small", R.drawable.radio_oberkrain_small);
@@ -3033,28 +2765,6 @@ public class Stations {
 			stationList.add(m);
 			// fillLandStilList(m);
 		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DELTA_RADIO);
-		m.put("icon", R.drawable.radio_delta_radio);
-		m.put("icon_small", R.drawable.radio_delta_radio_small);
-		m.put("stream", "http://stream.hoerradar.de/deltaradio128");
-		m.put("homepage", "http://www.deltaradio.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.deltaradio.de/delta/kontakt/mail/index.html");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
 		m = new HashMap<String, Object>();
 		m.put("name", Constants.RADIO_NDR_1);
 		m.put("icon", R.drawable.radio_ndr1);
@@ -3121,93 +2831,6 @@ public class Stations {
 			stationList.add(m);
 			// fillLandStilList(m);
 		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_STEPHANSDOM);
-		m.put("icon", R.drawable.radio_stephansdom);
-		m.put("icon_small", R.drawable.radio_stephansdom_small);
-		m.put("stream",
-				"http://srvhost24.serverhosting.apa.net:8000/rsdstream128");
-		m.put("homepage", "http://www.radiostephansdom.at");
-		m.put("webcam", "");
-		m.put("email", "http://www.radiostephansdom.at/kontakt");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_AT);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_CELITIC_MUSIC);
-		m.put("icon", R.drawable.radio_celtic_radio);
-		m.put("icon_small", R.drawable.radio_celtic_radio_small);
-		m.put("stream", "http://173.192.224.123:8214");
-		m.put("homepage", "http://www.celticmusicradio.com");
-		m.put("webcam", "");
-		m.put("email",
-				"http://www.celticradio.net/php/service_mod.php?type=contact");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_DIV);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_LEGENDE);
-		m.put("icon", R.drawable.radio_legende);
-		m.put("icon_small", R.drawable.radio_legende_small);
-		m.put("stream", "http://87.106.65.11:7000/");
-		m.put("homepage", "http://www.radio-legende.de");
-		m.put("webcam", "");
-		m.put("email", "info@radio-legende.de");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_DE);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SECRETTUBE);
-		m.put("icon", R.drawable.radio_secrettube);
-		m.put("icon_small", R.drawable.radio_secrettube_small);
-		m.put("stream", "http://secrettube.ch:6010");
-		m.put("homepage", "http://radio.secrettube.ch");
-		m.put("webcam", "");
-		m.put("email", "webmaster@secrettube.ch");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
 		m = new HashMap<String, Object>();
 		m.put("name", Constants.RADIO_GONG_NUERNBERG);
 		m.put("icon", R.drawable.radio_gong_nuernberg);
@@ -3346,6 +2969,397 @@ public class Stations {
 				"http://www.rdl.de/index.php?option=com_content&view=article&id=8825&Itemid=466");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		// ******************************************************************************************************
+		// *
+		// * ÖSTERREICH
+		// *
+		// ******************************************************************************************************
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_OE1);
+		m.put("icon", R.drawable.radio_oe1);
+		m.put("icon_small", R.drawable.radio_oe1_small);
+		m.put("stream", "http://mp3stream3.apasf.apa.at:8000");
+		m.put("homepage", "http://oe1.orf.at");
+		m.put("webcam", "");
+		m.put("email", "http://oe1.orf.at/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_OE3);
+		m.put("icon", R.drawable.radio_oe3);
+		m.put("icon_small", R.drawable.radio_oe3_small);
+		m.put("stream", "http://mp3stream7.apasf.apa.at:8000");
+		m.put("homepage", "http://oe3.orf.at");
+		m.put("webcam", "http://onapp1.orf.at/webcam/oe3/cam2_oe3.jpg");
+		m.put("email", "http://cluboe3.orf.at/song/index.php?round=24");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_FM4);
+		m.put("icon", R.drawable.radio_oe_fm4);
+		m.put("icon_small", R.drawable.radio_oe_fm4_small);
+		m.put("stream", "http://mp3stream1.apasf.apa.at:8000");
+		m.put("homepage", "http://http://fm4.orf.at");
+		m.put("webcam", "");
+		m.put("email", "http://our.orf.at/mailform/fm4_kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_TIROL);
+		m.put("icon", R.drawable.radio_orf_tirol);
+		m.put("icon_small", R.drawable.radio_orf_tirol_small);
+		m.put("stream", "http://mp3stream2.apasf.apa.at:8000");
+		m.put("homepage", "http://tirol.orf.at");
+		m.put("webcam", "");
+		m.put("email", "publikumsservice.tirol@orf.at");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_WIEN);
+		m.put("icon", R.drawable.radio_orf_wien);
+		m.put("icon_small", R.drawable.radio_orf_wien_small);
+		m.put("stream", "http://194.232.200.145:8000");
+		m.put("homepage", "http://wien.orf.at");
+		m.put("webcam", "");
+		m.put("email", "899953@orf.at");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_KAERNTEN);
+		m.put("icon", R.drawable.radio_orf_kaernten);
+		m.put("icon_small", R.drawable.radio_orf_kaernten_small);
+		m.put("stream", "http://194.232.200.159:8000");
+		m.put("homepage", "http://kaernten.orf.at");
+		m.put("webcam", "");
+		m.put("email", "service.kaernten@orf.at");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SALZBURG);
+		m.put("icon", R.drawable.radio_orf_salzburg);
+		m.put("icon_small", R.drawable.radio_orf_salzburg_small);
+		m.put("stream", "http://194.232.200.147:8000");
+		m.put("homepage", "http://salzburg.orf.at");
+		m.put("webcam", "");
+		m.put("email", "publikumsservice.salzburg@orf.at");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_NIEDEROESTERREICH);
+		m.put("icon", R.drawable.radio_orf_niederoesterreich);
+		m.put("icon_small", R.drawable.radio_orf_niederoesterreich_small);
+		m.put("stream", "http://194.232.200.147:8000");
+		m.put("homepage", "http://noe.orf.at");
+		m.put("webcam", "");
+		m.put("email", "noe-publikum@orf.at");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_HELSINKI_GRAZ);
+		m.put("icon", R.drawable.radio_helsinki_graz);
+		m.put("icon_small", R.drawable.radio_helsinki_graz_small);
+		m.put("stream", "http://live.helsinki.at:8088/live128.mp3");
+		m.put("homepage", "http://www.helsinki.at");
+		m.put("webcam", "");
+		m.put("email", "http://helsinki.at/info/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SOUNDPORTAL);
+		m.put("icon", R.drawable.radio_soundportal);
+		m.put("icon_small", R.drawable.radio_soundportal_small);
+		m.put("stream", "http://netradio01.soundportal.at:8100/live160");
+		m.put("homepage", "http://www.soundportal.at");
+		m.put("webcam", "http://soundportal.at/service/webcam");
+		m.put("email", "http://soundportal.at/service/musikwunsch/");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_STEPHANSDOM);
+		m.put("icon", R.drawable.radio_stephansdom);
+		m.put("icon_small", R.drawable.radio_stephansdom_small);
+		m.put("stream",
+				"http://srvhost24.serverhosting.apa.net:8000/rsdstream128");
+		m.put("homepage", "http://www.radiostephansdom.at");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiostephansdom.at/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		// ******************************************************************************************************
+		// *
+		// * DIVERSE
+		// *
+		// ******************************************************************************************************
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_TIROL_IT);
+		m.put("icon", R.drawable.radio_tirol_it);
+		m.put("icon_small", R.drawable.radio_tirol_it_small);
+		m.put("stream", "http://str2.creacast.com/radiotirol_a");
+		m.put("homepage", "http://www.radiotirol.it");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiotirol.it/index.php?id=18");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_IT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_SOMA_FM);
+		m.put("icon", R.drawable.radio_somafm_sgoa);
+		m.put("icon_small", R.drawable.radio_somafm_sgoa_small);
+		m.put("stream", "http://ice.somafm.com/suburbsofgoa");
+		m.put("homepage", "http://www.somafm.com");
+		m.put("webcam", "");
+		m.put("email", "http://somafm.com/contact");
+		m.put("sprache", SPRACHE_EN);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_IBIZA_SONICA);
+		m.put("icon", R.drawable.radio_ibizasonica);
+		m.put("icon_small", R.drawable.radio_ibizasonica_small);
+		m.put("stream", "http://stream.wft.es:7005");
+		m.put("homepage", "http://www.ibizasonica.com");
+		m.put("webcam", "");
+		m.put("email", "https://www.facebook.com/ibizasonicaradio");
+		m.put("sprache", SPRACHE_ES);
+		m.put("land", LAND_ES);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_AMNESIA);
+		m.put("icon", R.drawable.radio_amnesia);
+		m.put("icon_small", R.drawable.radio_amnesia_small);
+		m.put("stream", "http://stream.estudiosonico.com:7015");
+		m.put("homepage", "http://www.amnesia.es");
+		m.put("webcam", "");
+		m.put("email", "http://www.amnesia.es/webapp/contact");
+		m.put("sprache", SPRACHE_ES);
+		m.put("land", LAND_ES);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_BLUE_MARLIN);
+		m.put("icon", R.drawable.radio_bluemarlin);
+		m.put("icon_small", R.drawable.radio_bluemarlin_small);
+		m.put("stream", "http://89.238.146.142:8635");
+		m.put("homepage", "http://www.bluemarlinibiza.com");
+		m.put("webcam", "");
+		m.put("email", "http://www.bluemarlinibiza.com/contact/contact");
+		m.put("sprache", SPRACHE_ES);
+		m.put("land", LAND_ES);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_CELITIC_MUSIC);
+		m.put("icon", R.drawable.radio_celtic_radio);
+		m.put("icon_small", R.drawable.radio_celtic_radio_small);
+		m.put("stream", "http://173.192.224.123:8214");
+		m.put("homepage", "http://www.celticmusicradio.com");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.celticradio.net/php/service_mod.php?type=contact");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Constants.RADIO_LEGENDE);
+		m.put("icon", R.drawable.radio_legende);
+		m.put("icon_small", R.drawable.radio_legende_small);
+		m.put("stream", "http://87.106.65.11:7000/");
+		m.put("homepage", "http://www.radio-legende.de");
+		m.put("webcam", "");
+		m.put("email", "info@radio-legende.de");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(

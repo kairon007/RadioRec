@@ -70,5 +70,5 @@
 	<string name="favorit">Favorite</string>
 	<string name="favoriten">Favorites</string>
 	<string name="stil">Genre</string>
-	<string name="allStations">All Stations</string>	
+	<string name="sortByCountry">Sorted by country</string>
 </resources>

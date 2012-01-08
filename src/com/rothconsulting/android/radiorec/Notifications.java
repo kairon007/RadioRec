@@ -18,6 +18,9 @@ public class Notifications {
 
 	protected void showStatusBarNotificationError(int errorRessourceString) {
 
+		// möglich Notification löschen und danach neu anzeigen
+		this.hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
+
 		int icon = android.R.drawable.stat_sys_warning;
 		CharSequence tickerText = context.getString(errorRessourceString);
 
