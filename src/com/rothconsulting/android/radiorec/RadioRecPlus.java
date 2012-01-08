@@ -559,7 +559,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				showDialog(Constants.LIVE_STREAM_STATION);
 			}
 			if (Constants.THE_SELECTED_STATION_NAME
-					.equalsIgnoreCase(Constants.RADIO_KINGSTONHOT)) {
+					.equalsIgnoreCase(Stations.RADIO_KINGSTONHOT)) {
 				// Kingstonhot.de hat immer Donnerstags eine Live Sendung. Ab
 				// Freitag kann man diese als mp3 hören. Daher ist die URL
 				// dynamisch.
@@ -569,7 +569,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 						+ Constants.THE_URL_LIVE_STREAM);
 			}
 			if (Constants.THE_SELECTED_STATION_NAME
-					.equalsIgnoreCase(Constants.RADIO_RT1_HITRADIO)) {
+					.equalsIgnoreCase(Stations.RADIO_RT1_HITRADIO)) {
 				WebTool webtool = new WebTool();
 				// rt1 ist geschützt und braucht login token damit man den
 				// Stream
@@ -615,7 +615,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		try {
 
 			if (Constants.THE_SELECTED_STATION_NAME
-					.equalsIgnoreCase(Constants.RADIO_RT1_HITRADIO)) {
+					.equalsIgnoreCase(Stations.RADIO_RT1_HITRADIO)) {
 				WebTool webtool = new WebTool();
 				// rt1 ist geschützt und braucht login token damit man den
 				// Stream abspielen kann.

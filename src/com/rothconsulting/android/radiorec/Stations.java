@@ -25,8 +25,6 @@ public class Stations {
 	// returnStilListLounge = new ArrayList<HashMap<String, Object>>();
 	// }
 
-	private final String TAG = "Stations";
-
 	public static final String STIL_POP = "Pop";
 	public static final String STIL_ROCK = "Rock";
 	public static final String STIL_VOLKSTUEMLICH = "Laendler";
@@ -47,6 +45,163 @@ public class Stations {
 	public static final String LAND_ES = "es";
 	public static final String LAND_IT = "it";
 	public static final String LAND_DIV = "div";
+
+	public static final String RADIO_32 = "Radio 32";
+	public static final String RADIO_32_GOLDIES = "Radio 32 Goldies";
+	public static final String RADIO_24 = "Radio 24";
+	public static final String RADIO_24_ROCK = "Radio 24 Rock";
+	public static final String RADIO_RABE = "Radio RaBe";
+	public static final String RADIO_CAPITAL_FM = "Capital FM";
+	public static final String RADIO_DRS1 = "DRS1";
+	public static final String RADIO_DRS1_AGSO = "DRS1 AG/SO";
+	public static final String RADIO_DRS1_BSBL = "DRS1 BS/BL";
+	public static final String RADIO_DRS1_BEFRVS = "DRS1 BE/FR/VS";
+	public static final String RADIO_DRS2 = "DRS2";
+	public static final String RADIO_DRS3 = "DRS3";
+	public static final String RADIO_DRS4 = "DRS4 News";
+	public static final String RADIO_DRS_VIRUS = "DRS Virus";
+	public static final String RADIO_DRS_MUSIKWELLE = "DRS Musikwelle";
+	public static final String RADIO_HOCH2 = "Radio Hoch2";
+	public static final String RADIO_ENERGY_BERN = "Energy Bern";
+	public static final String RADIO_ENERGY_ZUERICH = "Energy Zürich";
+	public static final String RADIO_ENERGY_SWISS = "Energy Swiss";
+	public static final String RADIO_ENERGY_CHARTS = "Energy Charts";
+	public static final String RADIO_ENERGY_LOVE = "Energy Love";
+	public static final String RADIO_ENERGY_80 = "Energy 80s";
+	public static final String RADIO_ENERGY_90 = "Energy 90s";
+	public static final String RADIO_ENERGY_ITALY = "Energy Italy";
+	public static final String RADIO_SWISS_CLASSIC = "Swiss Classic";
+	public static final String RADIO_SWISS_JAZZ = "Swiss Jazz";
+	public static final String RADIO_SWISS_POP = "Swiss Pop";
+	public static final String RADIO_1 = "Radio 1";
+	public static final String RADIO_ZUERISEE = "Radio Zürisee";
+	public static final String RADIO_PILATUS = "Radio Pilatus";
+	public static final String RADIO_BEO = "Radio BeO";
+	public static final String RADIO_TOP = "Top";
+	public static final String RADIO_TOP_TWO = "Top Two";
+	public static final String RADIO_BASEL = "Radio Basel";
+	public static final String RADIO_NEO_1 = "neo 1";
+	public static final String RADIO_NEO_ZWEI = "neo zwei";
+	public static final String RADIO_ARGOVIA = "Argovia";
+	public static final String RADIO_ARGOVIA_HITMIX = "Argovia Hitmix";
+	public static final String RADIO_ARGOVIA_CLASSIC_ROCK = "Argovia Classic Rock";
+	public static final String RADIO_105 = "105";
+	public static final String RADIO_105_CLASSICS = "105 Classics";
+	public static final String RADIO_FM1 = "FM1";
+	public static final String RADIO_FM1_MELODY = "FM1 Melody";
+	public static final String RADIO_ANTENNE_BAYERN = "Antenne Bayern";
+	public static final String RADIO_ANTENNE_CHILLOUT = "Antenne Cillout";
+	public static final String RADIO_ANTENNE_ROCK = "Antenne Rock";
+	public static final String RADIO_ANTENNE_CLASSIC_ROCK = "Antenne Classic Rock";
+	public static final String RADIO_KANAL_K = "Kanal K";
+	public static final String RADIO_BAYERN_1 = "Bayern 1";
+	public static final String RADIO_BAYERN_2 = "Bayern 2";
+	public static final String RADIO_BAYERN_3 = "Bayern 3";
+	public static final String RADIO_BAYERN_4_KLASSIK = "Bayern 4 Klassik";
+	public static final String RADIO_ON_3 = "On-3";
+	public static final String RADIO_SWR_1 = "SWR 1";
+	public static final String RADIO_SWR_2 = "SWR 2";
+	public static final String RADIO_SWR_3 = "SWR 3";
+	public static final String RADIO_SWR_4 = "SWR 4";
+	public static final String RADIO_DAS_DING = "DasDing";
+	public static final String RADIO_BIG_FM = "BigFM";
+	public static final String RADIO_TOXIC_FM = "Toxic FM";
+	public static final String RADIO_X = "Radio X";
+	public static final String RADIO_SEEFUNK = "Seefunk";
+	public static final String RADIO_INSIDE = "Inside";
+	public static final String RADIO_FREIBURG = "Radio Freiburg";
+	public static final String RADIO_LIECHSTENSTEIN = "Radio Liechtenstein";
+	public static final String RADIO_COULEUR_3 = "Couleur  3";
+	public static final String RADIO_RFJ = "RFJ - Frequence Jura";
+	public static final String RADIO_ROUGE_FM = "Rouge FM";
+	public static final String RADIO_SOMA_FM = "soma fm - Sound of Goa";
+	public static final String RADIO_STADTFILTER = "Stadtfilter";
+	public static final String RADIO_LORA = "LoRa";
+	public static final String RADIO_KAISEREGG = "Kaiseregg";
+	public static final String RADIO_SUNSHINE = "Sunshine";
+	public static final String RADIO_TROPIC = "Tropic";
+	public static final String RADIO_DJRADIO = "DJ Radio";
+	public static final String RADIO_LOUNGE_RADIO = "Lounge Radio";
+	public static final String RADIO_RSI_RETE_3 = "RSI Rete 3";
+	public static final String RADIO_SWISS_GROOVE = "SwissGroove";
+	public static final String RADIO_ROCK_NATION = "Rock Nation";
+	public static final String RADIO_3FACH = "3fach";
+	public static final String RADIO_COUNTRY_RADIO = "Country Radio";
+	public static final String RADIO_LIFE_CHANNEL = "Life Channel";
+	public static final String RADIO_GLORIA = "Radio Gloria";
+	public static final String RADIO_GELB_SCHWARZ = "Gelb-Schwarz YB";
+	public static final String RADIO_FCB_LIVE_RADIO = "FC Basel Live Radio";
+	public static final String RADIO_FC_ZUERICH = "FC Zürich";
+	public static final String RADIO_BACKSTAGE_RADIO = "Backstage Radio";
+	public static final String RADIO_RRO = "Radio Rottu Oberwallis";
+	public static final String RADIO_MONTE_CARLO = "Monte Carlo";
+	public static final String RADIO_RASA = "Radio RaSa";
+	public static final String RADIO_BLIND_POWER = "Blind Power";
+	public static final String RADIO_SINE_MUSIC = "Sine-Music";
+	public static final String RADIO_CENTRAL = "Central";
+	public static final String RADIO_CENTRAL_ROCK = "Central Rock";
+	public static final String RADIO_CENTRAL_SWISS = "Central Swiss";
+	public static final String RADIO_EVIVA = "Eviva";
+	public static final String RADIO_GRISCHA = "Grischa";
+	public static final String RADIO_SUNSHINE_LIVE = "sunshine-live";
+	public static final String RADIO_OE3 = "Ö3 - ORF";
+	public static final String RADIO_OE1 = "Ö1 - ORF";
+	public static final String RADIO_FM4 = "FM4 - ORF";
+	public static final String RADIO_WIEN = "Wien - ORF";
+	public static final String RADIO_TIROL = "Tirol - ORF";
+	public static final String RADIO_KAERNTEN = "Kärnten - ORF";
+	public static final String RADIO_SALZBURG = "Salzburg - ORF";
+	public static final String RADIO_NIEDEROESTERREICH = "Niederösterreich - ORF";
+	public static final String RADIO_BUURERADIO = "BuureRadio";
+	public static final String RADIO_INDUSTRIE = "Industrie";
+	public static final String RADIO_AUDIOASYL = "Audioasyl";
+	public static final String RADIO_PIRATENRADIO = "Piratenradio";
+	public static final String RADIO_21 = "Radio 21";
+	public static final String RADIO_KINGSTONHOT = "Kingston Hot";
+	public static final String RADIO_ALLGAEUHIT = "AllgäuHIT";
+	public static final String RADIO_WAVE = "Wave";
+	public static final String RADIO_HELSINKI_GRAZ = "Helsinki Graz";
+	public static final String RADIO_SOUNDPORTAL = "Soundportal";
+	public static final String RADIO_TOP100STATION = "Top 100 Station";
+	public static final String RADIO_ROCK_STATION = "Rockstation";
+	public static final String RADIO_TRANCERADIO = "TranceRadio";
+	public static final String RADIO_7 = "Radio 7";
+	public static final String RADIO_SALUE = "Salü";
+	public static final String RADIO_FFH = "FFH";
+	public static final String RADIO_RT1_HITRADIO = "rt1 Hitradio";
+	public static final String RADIO_HR_2 = "HR 2";
+	public static final String RADIO_HR_3 = "HR 3";
+	public static final String RADIO_1LIVE = "1Live";
+	public static final String RADIO_WDR_2 = "WDR 2";
+	public static final String RADIO_WDR_3 = "WDR 3";
+	public static final String RADIO_STAR_FM = "Star FM";
+	public static final String RADIO_STAR_FM_FROM_HELL = "Star FM From Hell";
+	public static final String RADIO_IBIZA_SONICA = "Ibiza Sonica";
+	public static final String RADIO_AMNESIA = "Amnesia";
+	public static final String RADIO_BLUE_MARLIN = "Blue Marlin Ibiza";
+	public static final String RADIO_REGENBOGEN = "Regenbogen";
+	public static final String RADIO_FANTASY_DANCE = "Fantasy Dance FM";
+	public static final String RADIO_TIROL_IT = "Radio Tirol (IT)";
+	public static final String RADIO_OBERKRAIN = "Radio Oberkrain";
+	public static final String RADIO_DELTA_RADIO = "Delta Radio";
+	public static final String RADIO_NDR_1 = "NDR 1";
+	public static final String RADIO_NDR_2 = "NDR 2";
+	public static final String RADIO_N_JOY = "N-Joy";
+	public static final String RADIO_STEPHANSDOM = "Stephansdom";
+	public static final String RADIO_CELITIC_MUSIC = "Celtic Music Radio";
+	public static final String RADIO_LEGENDE = "Radio Legende";
+	public static final String RADIO_SECRETTUBE = "Secrettube";
+	public static final String RADIO_GONG_NUERNBERG = "Gong Nürnberg";
+	public static final String RADIO_PALOMA = "Radio Paloma";
+	public static final String RADIO_EINS_RBB = "eins rbb";
+	public static final String RADIO_KULTURRADIO_RBB = "Kulturradio rbb";
+	public static final String RADIO_DEUTSCHLANDFUNK = "Deutschlandfunk";
+	public static final String RADIO_DEUTSCHLANDRADIO_KULTUR = "Deutschlandradio Kultur";
+	public static final String RADIO_DREYECKLAND = "Dreyeckland";
+	public static final String RADIO_NOVAPLANET = "Novaplanet";
+	public static final String RADIO_PULS_RADIO = "Puls'Radio";
+	public static final String RADIO_EUROPE_1 = "Europe 1";
+	public static final String RADIO_100_5_DAS_HITRADIO = "100'5 Das Hitradio";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -105,7 +260,7 @@ public class Stations {
 		HashMap<String, Object> m;
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_32);
+		m.put("name", Stations.RADIO_32);
 		m.put("icon", R.drawable.radio_32);
 		m.put("icon_small", R.drawable.radio_32_small);
 		m.put("stream", "http://radio32-stream.customer.solnet.ch:8000/radio32");
@@ -126,7 +281,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_32_GOLDIES);
+		m.put("name", Stations.RADIO_32_GOLDIES);
 		m.put("icon", R.drawable.radio_32_goldies);
 		m.put("icon_small", R.drawable.radio_32_goldies_small);
 		m.put("stream",
@@ -148,7 +303,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_HOCH2);
+		m.put("name", Stations.RADIO_HOCH2);
 		m.put("icon", R.drawable.radio_hoch_2);
 		m.put("icon_small", R.drawable.radio_hoch_2_small);
 		m.put("stream", "http://stream1.radiohoch2.ch:80/web");
@@ -169,7 +324,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_CAPITAL_FM);
+		m.put("name", Stations.RADIO_CAPITAL_FM);
 		m.put("icon", R.drawable.radio_capital_fm);
 		m.put("icon_small", R.drawable.radio_capital_fm_small);
 		m.put("stream", "http://capitalfm.ice.infomaniak.ch/capitalfm-high.mp3");
@@ -190,7 +345,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_RABE);
+		m.put("name", Stations.RADIO_RABE);
 		m.put("icon", R.drawable.radio_rabe);
 		m.put("icon_small", R.drawable.radio_rabe_small);
 		m.put("stream", "http://stream.rabe.ch:8000/livestream/rabe-mid.mp3");
@@ -211,7 +366,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_24);
+		m.put("name", Stations.RADIO_24);
 		m.put("icon", R.drawable.radio_24);
 		m.put("icon_small", R.drawable.radio_24_small);
 		m.put("stream", "http://live.radio24.ch/radio24");
@@ -234,7 +389,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_24_ROCK);
+		m.put("name", Stations.RADIO_24_ROCK);
 		m.put("icon", R.drawable.radio_24_rock);
 		m.put("icon_small", R.drawable.radio_24_rock_small);
 		m.put("stream", "http://live.radio24.ch:80/radio24Rock");
@@ -257,7 +412,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DRS1);
+		m.put("name", Stations.RADIO_DRS1);
 		m.put("icon", R.drawable.radio_drs_1);
 		m.put("icon_small", R.drawable.radio_drs_1_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs1/mp3_128");
@@ -279,7 +434,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DRS1_AGSO);
+		m.put("name", Stations.RADIO_DRS1_AGSO);
 		m.put("icon", R.drawable.radio_drs_1_ag_so);
 		m.put("icon_small", R.drawable.radio_drs_1_ag_so_small);
 		m.put("stream",
@@ -303,7 +458,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DRS1_BSBL);
+		m.put("name", Stations.RADIO_DRS1_BSBL);
 		m.put("icon", R.drawable.radio_drs_1_bs_bl);
 		m.put("icon_small", R.drawable.radio_drs_1_bs_bl_small);
 		m.put("stream",
@@ -327,7 +482,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DRS1_BEFRVS);
+		m.put("name", Stations.RADIO_DRS1_BEFRVS);
 		m.put("icon", R.drawable.radio_drs_1_be_fr_vs);
 		m.put("icon_small", R.drawable.radio_drs_1_be_fr_vs_small);
 		m.put("stream",
@@ -351,7 +506,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DRS2);
+		m.put("name", Stations.RADIO_DRS2);
 		m.put("icon", R.drawable.radio_drs_2);
 		m.put("icon_small", R.drawable.radio_drs_2_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs2/mp3_128");
@@ -373,7 +528,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DRS3);
+		m.put("name", Stations.RADIO_DRS3);
 		m.put("icon", R.drawable.radio_drs_3);
 		m.put("icon_small", R.drawable.radio_drs_3_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs3/mp3_128");
@@ -395,7 +550,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DRS4);
+		m.put("name", Stations.RADIO_DRS4);
 		m.put("icon", R.drawable.radio_drs_4_news);
 		m.put("icon_small", R.drawable.radio_drs_4_news_small);
 		m.put("stream",
@@ -418,7 +573,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DRS_VIRUS);
+		m.put("name", Stations.RADIO_DRS_VIRUS);
 		m.put("icon", R.drawable.radio_drs_virus);
 		m.put("icon_small", R.drawable.radio_drs_virus_small);
 		m.put("stream",
@@ -441,7 +596,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DRS_MUSIKWELLE);
+		m.put("name", Stations.RADIO_DRS_MUSIKWELLE);
 		m.put("icon", R.drawable.radio_drs_musikwelle);
 		m.put("icon_small", R.drawable.radio_drs_musikwelle_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/drsmw/mp3_128");
@@ -464,7 +619,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ENERGY_BERN);
+		m.put("name", Stations.RADIO_ENERGY_BERN);
 		m.put("icon", R.drawable.radio_energy_bern);
 		m.put("icon_small", R.drawable.radio_energy_bern_small);
 		m.put("stream",
@@ -486,7 +641,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ENERGY_ZUERICH);
+		m.put("name", Stations.RADIO_ENERGY_ZUERICH);
 		m.put("icon", R.drawable.radio_energy_zurich);
 		m.put("icon_small", R.drawable.radio_energy_zurich_small);
 		m.put("stream",
@@ -508,7 +663,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ENERGY_SWISS);
+		m.put("name", Stations.RADIO_ENERGY_SWISS);
 		m.put("icon", R.drawable.radio_energy_swiss);
 		m.put("icon_small", R.drawable.radio_energy_swiss_small);
 		m.put("stream",
@@ -530,7 +685,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ENERGY_CHARTS);
+		m.put("name", Stations.RADIO_ENERGY_CHARTS);
 		m.put("icon", R.drawable.radio_energy_charts);
 		m.put("icon_small", R.drawable.radio_energy_charts_small);
 		m.put("stream", "http://broadcast.infomaniak.net/energycharts-high.mp3");
@@ -551,7 +706,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ENERGY_LOVE);
+		m.put("name", Stations.RADIO_ENERGY_LOVE);
 		m.put("icon", R.drawable.radio_energy_love);
 		m.put("icon_small", R.drawable.radio_energy_love_small);
 		m.put("stream",
@@ -573,7 +728,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ENERGY_80);
+		m.put("name", Stations.RADIO_ENERGY_80);
 		m.put("icon", R.drawable.radio_energy_80s);
 		m.put("icon_small", R.drawable.radio_energy_80s_small);
 		m.put("stream",
@@ -595,7 +750,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ENERGY_90);
+		m.put("name", Stations.RADIO_ENERGY_90);
 		m.put("icon", R.drawable.radio_energy_90s);
 		m.put("icon_small", R.drawable.radio_energy_90s_small);
 		m.put("stream",
@@ -617,7 +772,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ENERGY_ITALY);
+		m.put("name", Stations.RADIO_ENERGY_ITALY);
 		m.put("icon", R.drawable.radio_energy_italy);
 		m.put("icon_small", R.drawable.radio_energy_italy_small);
 		m.put("stream",
@@ -639,7 +794,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SWISS_CLASSIC);
+		m.put("name", Stations.RADIO_SWISS_CLASSIC);
 		m.put("icon", R.drawable.radio_swiss_classic);
 		m.put("icon_small", R.drawable.radio_swiss_classic_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/rsc_de/mp3_128");
@@ -660,7 +815,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SWISS_JAZZ);
+		m.put("name", Stations.RADIO_SWISS_JAZZ);
 		m.put("icon", R.drawable.radio_swiss_jazz);
 		m.put("icon_small", R.drawable.radio_swiss_jazz_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/rsj/mp3_128");
@@ -681,7 +836,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SWISS_POP);
+		m.put("name", Stations.RADIO_SWISS_POP);
 		m.put("icon", R.drawable.radio_swiss_pop);
 		m.put("icon_small", R.drawable.radio_swiss_pop_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/rsp/mp3_128");
@@ -702,7 +857,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_1);
+		m.put("name", Stations.RADIO_1);
 		m.put("icon", R.drawable.radio_1);
 		m.put("icon_small", R.drawable.radio_1_small);
 		m.put("stream", "http://stream.radio1.ch:8000/128k");
@@ -723,7 +878,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ZUERISEE);
+		m.put("name", Stations.RADIO_ZUERISEE);
 		m.put("icon", R.drawable.radio_zuerichsee);
 		m.put("icon_small", R.drawable.radio_zuerichsee_small);
 		m.put("stream", "http://mp3.radio.ch:80/radiozuerisee128k");
@@ -745,7 +900,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_PILATUS);
+		m.put("name", Stations.RADIO_PILATUS);
 		m.put("icon", R.drawable.radio_pilatus);
 		m.put("icon_small", R.drawable.radio_pilatus_small);
 		m.put("stream", "http://media.radiopilatus.ch:80/pilatus128");
@@ -766,7 +921,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BEO);
+		m.put("name", Stations.RADIO_BEO);
 		m.put("icon", R.drawable.radio_beo);
 		m.put("icon_small", R.drawable.radio_beo_small);
 		m.put("stream", "http://87.237.169.123:8000/radiobeo.mp3");
@@ -787,7 +942,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_TOP);
+		m.put("name", Stations.RADIO_TOP);
 		m.put("icon", R.drawable.radio_top);
 		m.put("icon_small", R.drawable.radio_top_small);
 		m.put("stream", "http://icecast.radiotop.ch:8000/radiotop");
@@ -808,7 +963,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_TOP_TWO);
+		m.put("name", Stations.RADIO_TOP_TWO);
 		m.put("icon", R.drawable.radio_top_two);
 		m.put("icon_small", R.drawable.radio_top_two_small);
 		m.put("stream", "http://icecast.radiotop.ch:8000/toptwo");
@@ -829,7 +984,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_NEO_1);
+		m.put("name", Stations.RADIO_NEO_1);
 		m.put("icon", R.drawable.radio_neo_1);
 		m.put("icon_small", R.drawable.radio_neo_1_small);
 		m.put("stream", "http://stream-02.neo1.ch:80/neo1");
@@ -851,7 +1006,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_NEO_ZWEI);
+		m.put("name", Stations.RADIO_NEO_ZWEI);
 		m.put("icon", R.drawable.radio_neo_2);
 		m.put("icon_small", R.drawable.radio_neo_2_small);
 		m.put("stream", "http://stream-02.neo1.ch:80/neo2");
@@ -873,7 +1028,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BASEL);
+		m.put("name", Stations.RADIO_BASEL);
 		m.put("icon", R.drawable.radio_basel);
 		m.put("icon_small", R.drawable.radio_basel_small);
 		m.put("stream", "http://stream1.radiobasel.ch:8000/rb01");
@@ -894,7 +1049,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ARGOVIA);
+		m.put("name", Stations.RADIO_ARGOVIA);
 		m.put("icon", R.drawable.radio_argovia);
 		m.put("icon_small", R.drawable.radio_argovia_small);
 		m.put("stream", "http://argovia.mp3.green.ch");
@@ -915,7 +1070,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ARGOVIA_HITMIX);
+		m.put("name", Stations.RADIO_ARGOVIA_HITMIX);
 		m.put("icon", R.drawable.radio_argovia_hitmix);
 		m.put("icon_small", R.drawable.radio_argovia_hitmix_small);
 		m.put("stream", "http://shoutcast.argovia.ch:8095");
@@ -936,7 +1091,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ARGOVIA_CLASSIC_ROCK);
+		m.put("name", Stations.RADIO_ARGOVIA_CLASSIC_ROCK);
 		m.put("icon", R.drawable.radio_argovia_swissclassicrock);
 		m.put("icon_small", R.drawable.radio_argovia_swissclassicrock_small);
 		m.put("stream", "http://shoutcast.argovia.ch:8090");
@@ -957,7 +1112,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_105);
+		m.put("name", Stations.RADIO_105);
 		m.put("icon", R.drawable.radio_105);
 		m.put("icon_small", R.drawable.radio_105_small);
 		m.put("stream", "http://bas-flu-stream-01.datacomm.ch:8000/105fm");
@@ -978,7 +1133,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_105_CLASSICS);
+		m.put("name", Stations.RADIO_105_CLASSICS);
 		m.put("icon", R.drawable.radio_105_classics);
 		m.put("icon_small", R.drawable.radio_105_classics_small);
 		m.put("stream", "http://bas-flu-stream-01.datacomm.ch:8000/105classics");
@@ -1000,7 +1155,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_FM1);
+		m.put("name", Stations.RADIO_FM1);
 		m.put("icon", R.drawable.radio_fm_1);
 		m.put("icon_small", R.drawable.radio_fm_1_small);
 		m.put("stream", "http://radiofm1.ice.infomaniak.ch:80/radiofm1-128.mp3");
@@ -1021,7 +1176,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_FM1_MELODY);
+		m.put("name", Stations.RADIO_FM1_MELODY);
 		m.put("icon", R.drawable.radio_fm1_melody);
 		m.put("icon_small", R.drawable.radio_fm1_melody_small);
 		m.put("stream", "http://fm1melody.ice.infomaniak.ch/fm1melody-128.mp3");
@@ -1042,7 +1197,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_TOXIC_FM);
+		m.put("name", Stations.RADIO_TOXIC_FM);
 		m.put("icon", R.drawable.radio_toxic_fm);
 		m.put("icon_small", R.drawable.radio_toxic_fm_small);
 		m.put("stream", "http://toxicfm.ice.infomaniak.ch:80/toxicfm-128.mp3");
@@ -1063,7 +1218,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_X);
+		m.put("name", Stations.RADIO_X);
 		m.put("icon", R.drawable.radio_x);
 		m.put("icon_small", R.drawable.radio_x_small);
 		m.put("stream", "http://mp3.radiox.ch/standard.mp3");
@@ -1084,7 +1239,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_KANAL_K);
+		m.put("name", Stations.RADIO_KANAL_K);
 		m.put("icon", R.drawable.radio_kanal_k);
 		m.put("icon_small", R.drawable.radio_kanal_k_small);
 		m.put("stream", "http://82.197.165.150");
@@ -1105,7 +1260,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_INSIDE);
+		m.put("name", Stations.RADIO_INSIDE);
 		m.put("icon", R.drawable.radio_inside);
 		m.put("icon_small", R.drawable.radio_inside_small);
 		m.put("stream", "http://fra.radiostream.de:37499/");
@@ -1126,7 +1281,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_STADTFILTER);
+		m.put("name", Stations.RADIO_STADTFILTER);
 		m.put("icon", R.drawable.radio_stadtfilter);
 		m.put("icon_small", R.drawable.radio_stadtfilter_small);
 		m.put("stream", "http://stream.stadtfilter.net:8000");
@@ -1147,7 +1302,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_LORA);
+		m.put("name", Stations.RADIO_LORA);
 		m.put("icon", R.drawable.radio_lora);
 		m.put("icon_small", R.drawable.radio_lora_small);
 		m.put("stream", "http://h1788467.stratoserver.net:8100");
@@ -1168,7 +1323,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_KAISEREGG);
+		m.put("name", Stations.RADIO_KAISEREGG);
 		m.put("icon", R.drawable.radio_kaiseregg);
 		m.put("icon_small", R.drawable.radio_kaiseregg_small);
 		m.put("stream", "http://kaiseregg.ice.infomaniak.ch/stream128k.mp3");
@@ -1190,7 +1345,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SUNSHINE);
+		m.put("name", Stations.RADIO_SUNSHINE);
 		m.put("icon", R.drawable.radio_sunshine);
 		m.put("icon_small", R.drawable.radio_sunshine_small);
 		m.put("stream", "http://mp3stream.sunshine.ch:80");
@@ -1211,7 +1366,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_TROPIC);
+		m.put("name", Stations.RADIO_TROPIC);
 		m.put("icon", R.drawable.radio_tropic);
 		m.put("icon_small", R.drawable.radio_tropic_small);
 		m.put("stream", "http://tropic.ice.infomaniak.ch:80/tropic-high.mp3");
@@ -1232,7 +1387,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DJRADIO);
+		m.put("name", Stations.RADIO_DJRADIO);
 		m.put("icon", R.drawable.radio_djradio);
 		m.put("icon_small", R.drawable.radio_djradio_small);
 		m.put("stream", "http://streamplus16.leonex.de:17130");
@@ -1253,7 +1408,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_LOUNGE_RADIO);
+		m.put("name", Stations.RADIO_LOUNGE_RADIO);
 		m.put("icon", R.drawable.radio_loungeradio);
 		m.put("icon_small", R.drawable.radio_loungeradio_small);
 		m.put("stream", "http://ch3.streamhosting.ch:8080");
@@ -1275,7 +1430,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SWISS_GROOVE);
+		m.put("name", Stations.RADIO_SWISS_GROOVE);
 		m.put("icon", R.drawable.radio_swissgroove);
 		m.put("icon_small", R.drawable.radio_swissgroove_small);
 		m.put("stream", "http://server4.digital-webstream.de:13600");
@@ -1296,7 +1451,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_FREIBURG);
+		m.put("name", Stations.RADIO_FREIBURG);
 		m.put("icon", R.drawable.radio_fr);
 		m.put("icon_small", R.drawable.radio_fr_small);
 		m.put("stream",
@@ -1318,7 +1473,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_COULEUR_3);
+		m.put("name", Stations.RADIO_COULEUR_3);
 		m.put("icon", R.drawable.radio_couleur3);
 		m.put("icon_small", R.drawable.radio_couleur3_small);
 		m.put("stream", "http://broadcast.infomaniak.ch/rsr-couleur3-high.mp3");
@@ -1340,7 +1495,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_RFJ);
+		m.put("name", Stations.RADIO_RFJ);
 		m.put("icon", R.drawable.radio_rfj);
 		m.put("icon_small", R.drawable.radio_rfj_small);
 		m.put("stream", "http://broadcast.infomaniak.net/rfj-high.mp3");
@@ -1361,7 +1516,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ROUGE_FM);
+		m.put("name", Stations.RADIO_ROUGE_FM);
 		m.put("icon", R.drawable.radio_rougefm);
 		m.put("icon_small", R.drawable.radio_rougefm_small);
 		m.put("stream", "http://broadcast.infomaniak.ch/rougefm-high.mp3");
@@ -1382,7 +1537,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_RSI_RETE_3);
+		m.put("name", Stations.RADIO_RSI_RETE_3);
 		m.put("icon", R.drawable.radio_rete3);
 		m.put("icon_small", R.drawable.radio_rete3_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/1/retetre/mp3_128");
@@ -1404,7 +1559,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ROCK_NATION);
+		m.put("name", Stations.RADIO_ROCK_NATION);
 		m.put("icon", R.drawable.radio_rocknation);
 		m.put("icon_small", R.drawable.radio_rocknation_small);
 		m.put("stream", "http://105-stream-02.datacomm.ch:8000/rocknation");
@@ -1425,7 +1580,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_3FACH);
+		m.put("name", Stations.RADIO_3FACH);
 		m.put("icon", R.drawable.radio_3fach);
 		m.put("icon_small", R.drawable.radio_3fach_small);
 		m.put("stream", "http://94.126.18.195:8000");
@@ -1446,7 +1601,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_COUNTRY_RADIO);
+		m.put("name", Stations.RADIO_COUNTRY_RADIO);
 		m.put("icon", R.drawable.radio_country_radio_switzerland);
 		m.put("icon_small", R.drawable.radio_country_radio_switzerland_small);
 		m.put("stream", "http://rs3.radiostreamer.com:9330");
@@ -1467,7 +1622,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_LIFE_CHANNEL);
+		m.put("name", Stations.RADIO_LIFE_CHANNEL);
 		m.put("icon", R.drawable.radio_life_channel);
 		m.put("icon_small", R.drawable.radio_life_channel_small);
 		m.put("stream", "http://mp3.lifechannel.ch/LC128");
@@ -1489,7 +1644,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_GLORIA);
+		m.put("name", Stations.RADIO_GLORIA);
 		m.put("icon", R.drawable.radio_gloria);
 		m.put("icon_small", R.drawable.radio_gloria_small);
 		m.put("stream", "http://live-two.dmd2.ch:8080/radiogloria_lo");
@@ -1510,7 +1665,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_GELB_SCHWARZ);
+		m.put("name", Stations.RADIO_GELB_SCHWARZ);
 		m.put("icon", R.drawable.radio_gelb_schwarz_yb);
 		m.put("icon_small", R.drawable.radio_gelb_schwarz_yb_small);
 		m.put("stream",
@@ -1533,7 +1688,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_FCB_LIVE_RADIO);
+		m.put("name", Stations.RADIO_FCB_LIVE_RADIO);
 		m.put("icon", R.drawable.radio_fcb_live_radio);
 		m.put("icon_small", R.drawable.radio_fcb_live_radio_small);
 		m.put("stream", "http://195.49.27.25:8000");
@@ -1555,7 +1710,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_FC_ZUERICH);
+		m.put("name", Stations.RADIO_FC_ZUERICH);
 		m.put("icon", R.drawable.radio_fc_zuerich);
 		m.put("icon_small", R.drawable.radio_fc_zuerich_small);
 		m.put("stream", "http://stream.fcz.ch:8000/fcz01");
@@ -1576,7 +1731,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BACKSTAGE_RADIO);
+		m.put("name", Stations.RADIO_BACKSTAGE_RADIO);
 		m.put("icon", R.drawable.radio_backstage_radio);
 		m.put("icon_small", R.drawable.radio_backstage_radio_small);
 		m.put("stream",
@@ -1599,7 +1754,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_RRO);
+		m.put("name", Stations.RADIO_RRO);
 		m.put("icon", R.drawable.radio_rro);
 		m.put("icon_small", R.drawable.radio_rro_small);
 		m.put("stream",
@@ -1621,7 +1776,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_MONTE_CARLO);
+		m.put("name", Stations.RADIO_MONTE_CARLO);
 		m.put("icon", R.drawable.radio_monte_carlo);
 		m.put("icon_small", R.drawable.radio_monte_carlo_small);
 		m.put("stream", "http://212.40.13.22:11000");
@@ -1642,7 +1797,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_RASA);
+		m.put("name", Stations.RADIO_RASA);
 		m.put("icon", R.drawable.radio_rasa);
 		m.put("icon_small", R.drawable.radio_rasa_small);
 		m.put("stream", "http://s7.pop-stream.de:7830");
@@ -1663,7 +1818,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BLIND_POWER);
+		m.put("name", Stations.RADIO_BLIND_POWER);
 		m.put("icon", R.drawable.radio_blindpower);
 		m.put("icon_small", R.drawable.radio_blindpower_small);
 		m.put("stream", "http://live-two.dmd2.ch:8080/rbp_hi");
@@ -1684,7 +1839,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_CENTRAL);
+		m.put("name", Stations.RADIO_CENTRAL);
 		m.put("icon", R.drawable.radio_central);
 		m.put("icon_small", R.drawable.radio_central_small);
 		m.put("stream", "http://central128.mp3.green.ch");
@@ -1705,7 +1860,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_CENTRAL_ROCK);
+		m.put("name", Stations.RADIO_CENTRAL_ROCK);
 		m.put("icon", R.drawable.radio_central_rock);
 		m.put("icon_small", R.drawable.radio_central_rock_small);
 		m.put("stream", "http://sp7128.mp3.green.ch");
@@ -1726,7 +1881,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_CENTRAL_SWISS);
+		m.put("name", Stations.RADIO_CENTRAL_SWISS);
 		m.put("icon", R.drawable.radio_central_swiss);
 		m.put("icon_small", R.drawable.radio_central_swiss_small);
 		m.put("stream", "http://sp3128.mp3.green.ch");
@@ -1747,7 +1902,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_EVIVA);
+		m.put("name", Stations.RADIO_EVIVA);
 		m.put("icon", R.drawable.radio_eviva);
 		m.put("icon_small", R.drawable.radio_eviva_small);
 		m.put("stream", "http://eviva128.mp3.green.ch");
@@ -1768,7 +1923,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_GRISCHA);
+		m.put("name", Stations.RADIO_GRISCHA);
 		m.put("icon", R.drawable.radio_grischa);
 		m.put("icon_small", R.drawable.radio_grischa_small);
 		m.put("stream", "http://grischa.mp3.green.ch");
@@ -1790,7 +1945,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BUURERADIO);
+		m.put("name", Stations.RADIO_BUURERADIO);
 		m.put("icon", R.drawable.radio_buureradio);
 		m.put("icon_small", R.drawable.radio_buureradio_small);
 		m.put("stream", "http://live-three.dmd2.ch");
@@ -1812,7 +1967,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_INDUSTRIE);
+		m.put("name", Stations.RADIO_INDUSTRIE);
 		m.put("icon", R.drawable.radio_industrie);
 		m.put("icon_small", R.drawable.radio_industrie_small);
 		m.put("stream", "http://96.31.83.87:8063");
@@ -1833,7 +1988,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_AUDIOASYL);
+		m.put("name", Stations.RADIO_AUDIOASYL);
 		m.put("icon", R.drawable.radio_audioasyl);
 		m.put("icon_small", R.drawable.radio_audioasyl_small);
 		m.put("stream", "http://stream.audioasyl.net/audioasyl");
@@ -1854,7 +2009,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_PIRATENRADIO);
+		m.put("name", Stations.RADIO_PIRATENRADIO);
 		m.put("icon", R.drawable.radio_piratenradio);
 		m.put("icon_small", R.drawable.radio_piratenradio_small);
 		m.put("stream",
@@ -1876,7 +2031,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_21);
+		m.put("name", Stations.RADIO_21);
 		m.put("icon", R.drawable.radio_21);
 		m.put("icon_small", R.drawable.radio_21_small);
 		m.put("stream", "http://rs3.stream24.org:8690");
@@ -1897,7 +2052,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_WAVE);
+		m.put("name", Stations.RADIO_WAVE);
 		m.put("icon", R.drawable.radio_wave);
 		m.put("icon_small", R.drawable.radio_wave_small);
 		m.put("stream", "http://212.83.60.57:2100");
@@ -1919,7 +2074,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ROCK_STATION);
+		m.put("name", Stations.RADIO_ROCK_STATION);
 		m.put("icon", R.drawable.radio_rockstation);
 		m.put("icon_small", R.drawable.radio_rockstation_small);
 		m.put("stream", "http://rs11.stream24.org:8130");
@@ -1940,7 +2095,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_TRANCERADIO);
+		m.put("name", Stations.RADIO_TRANCERADIO);
 		m.put("icon", R.drawable.radio_tranceradio);
 		m.put("icon_small", R.drawable.radio_tranceradio_small);
 		m.put("stream", "http://stream3144.init7.net");
@@ -1961,7 +2116,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DELTA_RADIO);
+		m.put("name", Stations.RADIO_DELTA_RADIO);
 		m.put("icon", R.drawable.radio_delta_radio);
 		m.put("icon_small", R.drawable.radio_delta_radio_small);
 		m.put("stream", "http://stream.hoerradar.de/deltaradio128");
@@ -1982,7 +2137,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SECRETTUBE);
+		m.put("name", Stations.RADIO_SECRETTUBE);
 		m.put("icon", R.drawable.radio_secrettube);
 		m.put("icon_small", R.drawable.radio_secrettube_small);
 		m.put("stream", "http://secrettube.ch:6010");
@@ -2003,7 +2158,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_LIECHSTENSTEIN);
+		m.put("name", Stations.RADIO_LIECHSTENSTEIN);
 		m.put("icon", R.drawable.radio_li);
 		m.put("icon_small", R.drawable.radio_li_small);
 		m.put("stream", "http://live.radiol.li:8000/live");
@@ -2030,7 +2185,7 @@ public class Stations {
 		// *
 		// ******************************************************************************************************
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ANTENNE_BAYERN);
+		m.put("name", Stations.RADIO_ANTENNE_BAYERN);
 		m.put("icon", R.drawable.radio_antenne_bayern);
 		m.put("icon_small", R.drawable.radio_antenne_bayern_small);
 		m.put("stream", "http://mp3.webradio.antenne.de:80");
@@ -2052,7 +2207,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ANTENNE_CHILLOUT);
+		m.put("name", Stations.RADIO_ANTENNE_CHILLOUT);
 		m.put("icon", R.drawable.radio_antenne_chillout);
 		m.put("icon_small", R.drawable.radio_antenne_chillout_small);
 		m.put("stream", "http://mp3channels.webradio.antenne.de/chillout");
@@ -2074,7 +2229,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ANTENNE_ROCK);
+		m.put("name", Stations.RADIO_ANTENNE_ROCK);
 		m.put("icon", R.drawable.radio_antenne_rock);
 		m.put("icon_small", R.drawable.radio_antenne_rock_small);
 		m.put("stream", "http://mp3.webradio.rockantenne.de:80");
@@ -2096,7 +2251,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ANTENNE_CLASSIC_ROCK);
+		m.put("name", Stations.RADIO_ANTENNE_CLASSIC_ROCK);
 		m.put("icon", R.drawable.radio_antenne_classic_rock);
 		m.put("icon_small", R.drawable.radio_antenne_classic_rock_small);
 		m.put("stream",
@@ -2119,7 +2274,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BAYERN_1);
+		m.put("name", Stations.RADIO_BAYERN_1);
 		m.put("icon", R.drawable.radio_bayern1);
 		m.put("icon_small", R.drawable.radio_bayern1_small);
 		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w10b");
@@ -2141,7 +2296,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BAYERN_2);
+		m.put("name", Stations.RADIO_BAYERN_2);
 		m.put("icon", R.drawable.radio_bayern2);
 		m.put("icon_small", R.drawable.radio_bayern2_small);
 		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w11b");
@@ -2163,7 +2318,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BAYERN_3);
+		m.put("name", Stations.RADIO_BAYERN_3);
 		m.put("icon", R.drawable.radio_bayern3);
 		m.put("icon_small", R.drawable.radio_bayern3_small);
 		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w12b");
@@ -2186,7 +2341,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BAYERN_4_KLASSIK);
+		m.put("name", Stations.RADIO_BAYERN_4_KLASSIK);
 		m.put("icon", R.drawable.radio_bayern4);
 		m.put("icon_small", R.drawable.radio_bayern4_small);
 		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w13a");
@@ -2208,7 +2363,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ON_3);
+		m.put("name", Stations.RADIO_ON_3);
 		m.put("icon", R.drawable.radio_bayern_on3);
 		m.put("icon_small", R.drawable.radio_bayern_on3_small);
 		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w9a");
@@ -2229,7 +2384,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SWR_1);
+		m.put("name", Stations.RADIO_SWR_1);
 		m.put("icon", R.drawable.radio_swr1);
 		m.put("icon_small", R.drawable.radio_swr1_small);
 		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_swr1bwb");
@@ -2251,7 +2406,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SWR_2);
+		m.put("name", Stations.RADIO_SWR_2);
 		m.put("icon", R.drawable.radio_swr2);
 		m.put("icon_small", R.drawable.radio_swr2_small);
 		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_swr2b");
@@ -2273,7 +2428,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SWR_3);
+		m.put("name", Stations.RADIO_SWR_3);
 		m.put("icon", R.drawable.radio_swr3);
 		m.put("icon_small", R.drawable.radio_swr3_small);
 		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_swr3b");
@@ -2295,7 +2450,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SWR_4);
+		m.put("name", Stations.RADIO_SWR_4);
 		m.put("icon", R.drawable.radio_swr4);
 		m.put("icon_small", R.drawable.radio_swr4_small);
 		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_swr4bwb");
@@ -2317,7 +2472,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DAS_DING);
+		m.put("name", Stations.RADIO_DAS_DING);
 		m.put("icon", R.drawable.radio_dasding);
 		m.put("icon_small", R.drawable.radio_dasding_small);
 		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_dasdinga");
@@ -2338,7 +2493,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BIG_FM);
+		m.put("name", Stations.RADIO_BIG_FM);
 		m.put("icon", R.drawable.radio_bigfm);
 		m.put("icon_small", R.drawable.radio_bigfm_small);
 		m.put("stream", "http://srv05.bigstreams.de/bigfm-mp3-96");
@@ -2360,7 +2515,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SEEFUNK);
+		m.put("name", Stations.RADIO_SEEFUNK);
 		m.put("icon", R.drawable.radio_seefunk);
 		m.put("icon_small", R.drawable.radio_seefunk_small);
 		m.put("stream", "http://webradio.radio-seefunk.de:8000");
@@ -2381,7 +2536,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SINE_MUSIC);
+		m.put("name", Stations.RADIO_SINE_MUSIC);
 		m.put("icon", R.drawable.radio_sinemusic);
 		m.put("icon_small", R.drawable.radio_sinemusic_small);
 		m.put("stream", "http://stream.laut.fm/sine-music");
@@ -2402,7 +2557,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_KINGSTONHOT);
+		m.put("name", Stations.RADIO_KINGSTONHOT);
 		m.put("icon", R.drawable.radio_kingston_hot);
 		m.put("icon_small", R.drawable.radio_kingston_hot_small);
 		m.put("stream", "http://www.kingstonhot.de/shows/");
@@ -2423,7 +2578,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SUNSHINE_LIVE);
+		m.put("name", Stations.RADIO_SUNSHINE_LIVE);
 		m.put("icon", R.drawable.radio_sunshinelive);
 		m.put("icon_small", R.drawable.radio_sunshinelive_small);
 		m.put("stream", "http://62.27.47.15/sunshinelive/livestream.mp3");
@@ -2444,7 +2599,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_ALLGAEUHIT);
+		m.put("name", Stations.RADIO_ALLGAEUHIT);
 		m.put("icon", R.drawable.radio_allgaeuhit);
 		m.put("icon_small", R.drawable.radio_allgaeuhit_small);
 		m.put("stream", "http://81.169.132.81:7000/dsl");
@@ -2465,29 +2620,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_1LIVE);
-		m.put("icon", R.drawable.radio_1live);
-		m.put("icon_small", R.drawable.radio_1live_small);
-		m.put("stream",
-				"http://1live.akacast.akamaistream.net/7/706/119434/v1/gnl.akacast.akamaistream.net/1live");
-		m.put("homepage", "http://www.einslive.de");
-		m.put("webcam", "http://www.einslive.de/webcam/studio_a_1.jpg");
-		m.put("email", "http://www.einslive.de/team/kontakt");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_DE);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_TOP100STATION);
+		m.put("name", Stations.RADIO_TOP100STATION);
 		m.put("icon", R.drawable.radio_top100station);
 		m.put("icon_small", R.drawable.radio_top100station_small);
 		m.put("stream", "http://87.230.101.49:80");
@@ -2508,7 +2641,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_7);
+		m.put("name", Stations.RADIO_7);
 		m.put("icon", R.drawable.radio_7);
 		m.put("icon_small", R.drawable.radio_7_small);
 		m.put("stream", "http://stream.hoerradar.de:80/mp3-radio7-128");
@@ -2529,7 +2662,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SALUE);
+		m.put("name", Stations.RADIO_SALUE);
 		m.put("icon", R.drawable.radio_salue);
 		m.put("icon_small", R.drawable.radio_salue_small);
 		m.put("stream", "http://62.27.26.45/radiosalue/livestream64m.mp3");
@@ -2550,7 +2683,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_FFH);
+		m.put("name", Stations.RADIO_FFH);
 		m.put("icon", R.drawable.radio_ffh);
 		m.put("icon_small", R.drawable.radio_ffh_small);
 		m.put("stream", "http://mp3.ffh.de/radioffh/hqlivestream.mp3");
@@ -2571,7 +2704,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_RT1_HITRADIO);
+		m.put("name", Stations.RADIO_RT1_HITRADIO);
 		m.put("icon", R.drawable.radio_rt1_hitradio);
 		m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
 		m.put("stream", "http://62.27.44.59/hitradiort1/livestream.mp3?token=");
@@ -2592,7 +2725,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_HR_2);
+		m.put("name", Stations.RADIO_HR_2);
 		m.put("icon", R.drawable.radio_hr2);
 		m.put("icon_small", R.drawable.radio_hr2_small);
 		m.put("stream",
@@ -2615,7 +2748,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_HR_3);
+		m.put("name", Stations.RADIO_HR_3);
 		m.put("icon", R.drawable.radio_hr3);
 		m.put("icon_small", R.drawable.radio_hr3_small);
 		m.put("stream",
@@ -2638,7 +2771,51 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_WDR_3);
+		m.put("name", Stations.RADIO_1LIVE);
+		m.put("icon", R.drawable.radio_1live);
+		m.put("icon_small", R.drawable.radio_1live_small);
+		m.put("stream",
+				"http://1live.akacast.akamaistream.net/7/706/119434/v1/gnl.akacast.akamaistream.net/1live");
+		m.put("homepage", "http://www.einslive.de");
+		m.put("webcam", "http://www.einslive.de/webcam/studio_a_1.jpg");
+		m.put("email", "http://www.einslive.de/team/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_WDR_2);
+		m.put("icon", R.drawable.radio_wdr2);
+		m.put("icon_small", R.drawable.radio_wdr2_small);
+		m.put("stream",
+				"http://wdr-mp3-m-wdr2-koeln.akacast.akamaistream.net/7/812/119456/v1/gnl.akacast.akamaistream.net/wdr-mp3-m-wdr2-koeln");
+		m.put("homepage", "http://www.wdr2.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.wdr2.de/kontakt/kontakt102.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_WDR_3);
 		m.put("icon", R.drawable.radio_wdr3);
 		m.put("icon_small", R.drawable.radio_wdr3_small);
 		m.put("stream",
@@ -2660,7 +2837,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_STAR_FM);
+		m.put("name", Stations.RADIO_STAR_FM);
 		m.put("icon", R.drawable.radio_starfm);
 		m.put("icon_small", R.drawable.radio_starfm_small);
 		m.put("stream", "http://87.230.53.43:8004");
@@ -2681,7 +2858,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_STAR_FM_FROM_HELL);
+		m.put("name", Stations.RADIO_STAR_FM_FROM_HELL);
 		m.put("icon", R.drawable.radio_starfm_hell);
 		m.put("icon_small", R.drawable.radio_starfm_hell_small);
 		m.put("stream", "http://87.230.53.43:7000");
@@ -2702,7 +2879,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_REGENBOGEN);
+		m.put("name", Stations.RADIO_REGENBOGEN);
 		m.put("icon", R.drawable.radio_regenbogen);
 		m.put("icon_small", R.drawable.radio_regenbogen_small);
 		m.put("stream", "http://217.151.151.91:80/live");
@@ -2710,7 +2887,7 @@ public class Stations {
 		m.put("webcam",
 				"http://www.regenbogen.de/content/html/shared/webcams/index.html");
 		m.put("email",
-				"http://www.regenbogen.de/views/service-navigation/kontakt/e-mail.html");
+				"http://www.regenbogen.de/content/html/shared/studiomail/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2725,7 +2902,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_FANTASY_DANCE);
+		m.put("name", Stations.RADIO_FANTASY_DANCE);
 		m.put("icon", R.drawable.radio_fantasy_dance);
 		m.put("icon_small", R.drawable.radio_fantasy_dance_small);
 		m.put("stream", "http://dancefmwebradio.de:8000/dsl_stream.mp3");
@@ -2746,7 +2923,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_OBERKRAIN);
+		m.put("name", Stations.RADIO_OBERKRAIN);
 		m.put("icon", R.drawable.radio_oberkrain);
 		m.put("icon_small", R.drawable.radio_oberkrain_small);
 		m.put("stream", "http://89.149.226.229:80");
@@ -2766,7 +2943,7 @@ public class Stations {
 			// fillLandStilList(m);
 		}
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_NDR_1);
+		m.put("name", Stations.RADIO_NDR_1);
 		m.put("icon", R.drawable.radio_ndr1);
 		m.put("icon_small", R.drawable.radio_ndr1_small);
 		m.put("stream",
@@ -2789,7 +2966,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_NDR_2);
+		m.put("name", Stations.RADIO_NDR_2);
 		m.put("icon", R.drawable.radio_ndr2);
 		m.put("icon_small", R.drawable.radio_ndr2_small);
 		m.put("stream",
@@ -2811,7 +2988,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_N_JOY);
+		m.put("name", Stations.RADIO_N_JOY);
 		m.put("icon", R.drawable.radio_n_joy);
 		m.put("icon_small", R.drawable.radio_n_joy_small);
 		m.put("stream",
@@ -2832,7 +3009,7 @@ public class Stations {
 			// fillLandStilList(m);
 		}
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_GONG_NUERNBERG);
+		m.put("name", Stations.RADIO_GONG_NUERNBERG);
 		m.put("icon", R.drawable.radio_gong_nuernberg);
 		m.put("icon_small", R.drawable.radio_gong_nuernberg_small);
 		m.put("stream", "http://webradio.gong971.de:8000");
@@ -2853,7 +3030,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_PALOMA);
+		m.put("name", Stations.RADIO_PALOMA);
 		m.put("icon", R.drawable.radio_paloma);
 		m.put("icon_small", R.drawable.radio_paloma_small);
 		m.put("stream", "http://he-srv1.radiopaloma.de:80");
@@ -2874,7 +3051,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_EINS_RBB);
+		m.put("name", Stations.RADIO_EINS_RBB);
 		m.put("icon", R.drawable.radio_eins_rbb);
 		m.put("icon_small", R.drawable.radio_eins_rbb_small);
 		m.put("stream", "http://rbb.ic.llnwd.net/stream/rbb_radioeins_mp3_m_a");
@@ -2895,7 +3072,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_KULTURRADIO_RBB);
+		m.put("name", Stations.RADIO_KULTURRADIO_RBB);
 		m.put("icon", R.drawable.radio_kulturradio_rbb);
 		m.put("icon_small", R.drawable.radio_kulturradio_rbb_small);
 		m.put("stream",
@@ -2917,7 +3094,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DEUTSCHLANDRADIO_KULTUR);
+		m.put("name", Stations.RADIO_DEUTSCHLANDRADIO_KULTUR);
 		m.put("icon", R.drawable.radio_deutschlandradio_kultur);
 		m.put("icon_small", R.drawable.radio_deutschlandradio_kultur_small);
 		m.put("stream", "http://dradio.ic.llnwd.net/stream/dradio_dkultur_m_b");
@@ -2938,7 +3115,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DEUTSCHLANDFUNK);
+		m.put("name", Stations.RADIO_DEUTSCHLANDFUNK);
 		m.put("icon", R.drawable.radio_deutschlandfunk);
 		m.put("icon_small", R.drawable.radio_deutschlandfunk_small);
 		m.put("stream", "http://dradio.ic.llnwd.net/stream/dradio_dlf_m_b");
@@ -2959,7 +3136,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_DREYECKLAND);
+		m.put("name", Stations.RADIO_DREYECKLAND);
 		m.put("icon", R.drawable.radio_dreyeckland);
 		m.put("icon_small", R.drawable.radio_dreyeckland_small);
 		m.put("stream", "http://85.214.250.73:8000/rdl");
@@ -2968,7 +3145,28 @@ public class Stations {
 		m.put("email",
 				"http://www.rdl.de/index.php?option=com_content&view=article&id=8825&Itemid=466");
 		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_100_5_DAS_HITRADIO);
+		m.put("icon", R.drawable.radio_100_5_das_hitradio);
+		m.put("icon_small", R.drawable.radio_100_5_das_hitradio_small);
+		m.put("stream", "http://skyserver5.skydisc.net:8000/");
+		m.put("homepage", "http://www.dashitradio.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.dashitradio.de/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
@@ -2986,7 +3184,7 @@ public class Stations {
 		// *
 		// ******************************************************************************************************
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_OE1);
+		m.put("name", Stations.RADIO_OE1);
 		m.put("icon", R.drawable.radio_oe1);
 		m.put("icon_small", R.drawable.radio_oe1_small);
 		m.put("stream", "http://mp3stream3.apasf.apa.at:8000");
@@ -3007,7 +3205,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_OE3);
+		m.put("name", Stations.RADIO_OE3);
 		m.put("icon", R.drawable.radio_oe3);
 		m.put("icon_small", R.drawable.radio_oe3_small);
 		m.put("stream", "http://mp3stream7.apasf.apa.at:8000");
@@ -3028,7 +3226,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_FM4);
+		m.put("name", Stations.RADIO_FM4);
 		m.put("icon", R.drawable.radio_oe_fm4);
 		m.put("icon_small", R.drawable.radio_oe_fm4_small);
 		m.put("stream", "http://mp3stream1.apasf.apa.at:8000");
@@ -3049,7 +3247,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_TIROL);
+		m.put("name", Stations.RADIO_TIROL);
 		m.put("icon", R.drawable.radio_orf_tirol);
 		m.put("icon_small", R.drawable.radio_orf_tirol_small);
 		m.put("stream", "http://mp3stream2.apasf.apa.at:8000");
@@ -3070,7 +3268,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_WIEN);
+		m.put("name", Stations.RADIO_WIEN);
 		m.put("icon", R.drawable.radio_orf_wien);
 		m.put("icon_small", R.drawable.radio_orf_wien_small);
 		m.put("stream", "http://194.232.200.145:8000");
@@ -3091,7 +3289,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_KAERNTEN);
+		m.put("name", Stations.RADIO_KAERNTEN);
 		m.put("icon", R.drawable.radio_orf_kaernten);
 		m.put("icon_small", R.drawable.radio_orf_kaernten_small);
 		m.put("stream", "http://194.232.200.159:8000");
@@ -3112,7 +3310,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SALZBURG);
+		m.put("name", Stations.RADIO_SALZBURG);
 		m.put("icon", R.drawable.radio_orf_salzburg);
 		m.put("icon_small", R.drawable.radio_orf_salzburg_small);
 		m.put("stream", "http://194.232.200.147:8000");
@@ -3133,7 +3331,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_NIEDEROESTERREICH);
+		m.put("name", Stations.RADIO_NIEDEROESTERREICH);
 		m.put("icon", R.drawable.radio_orf_niederoesterreich);
 		m.put("icon_small", R.drawable.radio_orf_niederoesterreich_small);
 		m.put("stream", "http://194.232.200.147:8000");
@@ -3154,7 +3352,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_HELSINKI_GRAZ);
+		m.put("name", Stations.RADIO_HELSINKI_GRAZ);
 		m.put("icon", R.drawable.radio_helsinki_graz);
 		m.put("icon_small", R.drawable.radio_helsinki_graz_small);
 		m.put("stream", "http://live.helsinki.at:8088/live128.mp3");
@@ -3175,7 +3373,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SOUNDPORTAL);
+		m.put("name", Stations.RADIO_SOUNDPORTAL);
 		m.put("icon", R.drawable.radio_soundportal);
 		m.put("icon_small", R.drawable.radio_soundportal_small);
 		m.put("stream", "http://netradio01.soundportal.at:8100/live160");
@@ -3196,7 +3394,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_STEPHANSDOM);
+		m.put("name", Stations.RADIO_STEPHANSDOM);
 		m.put("icon", R.drawable.radio_stephansdom);
 		m.put("icon_small", R.drawable.radio_stephansdom_small);
 		m.put("stream",
@@ -3224,7 +3422,7 @@ public class Stations {
 		// ******************************************************************************************************
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_TIROL_IT);
+		m.put("name", Stations.RADIO_TIROL_IT);
 		m.put("icon", R.drawable.radio_tirol_it);
 		m.put("icon_small", R.drawable.radio_tirol_it_small);
 		m.put("stream", "http://str2.creacast.com/radiotirol_a");
@@ -3245,7 +3443,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_SOMA_FM);
+		m.put("name", Stations.RADIO_SOMA_FM);
 		m.put("icon", R.drawable.radio_somafm_sgoa);
 		m.put("icon_small", R.drawable.radio_somafm_sgoa_small);
 		m.put("stream", "http://ice.somafm.com/suburbsofgoa");
@@ -3266,7 +3464,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_IBIZA_SONICA);
+		m.put("name", Stations.RADIO_IBIZA_SONICA);
 		m.put("icon", R.drawable.radio_ibizasonica);
 		m.put("icon_small", R.drawable.radio_ibizasonica_small);
 		m.put("stream", "http://stream.wft.es:7005");
@@ -3287,7 +3485,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_AMNESIA);
+		m.put("name", Stations.RADIO_AMNESIA);
 		m.put("icon", R.drawable.radio_amnesia);
 		m.put("icon_small", R.drawable.radio_amnesia_small);
 		m.put("stream", "http://stream.estudiosonico.com:7015");
@@ -3308,7 +3506,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_BLUE_MARLIN);
+		m.put("name", Stations.RADIO_BLUE_MARLIN);
 		m.put("icon", R.drawable.radio_bluemarlin);
 		m.put("icon_small", R.drawable.radio_bluemarlin_small);
 		m.put("stream", "http://89.238.146.142:8635");
@@ -3329,7 +3527,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_CELITIC_MUSIC);
+		m.put("name", Stations.RADIO_CELITIC_MUSIC);
 		m.put("icon", R.drawable.radio_celtic_radio);
 		m.put("icon_small", R.drawable.radio_celtic_radio_small);
 		m.put("stream", "http://173.192.224.123:8214");
@@ -3351,7 +3549,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_LEGENDE);
+		m.put("name", Stations.RADIO_LEGENDE);
 		m.put("icon", R.drawable.radio_legende);
 		m.put("icon_small", R.drawable.radio_legende_small);
 		m.put("stream", "http://87.106.65.11:7000/");
@@ -3372,7 +3570,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_NOVAPLANET);
+		m.put("name", Stations.RADIO_NOVAPLANET);
 		m.put("icon", R.drawable.radio_novaplanet);
 		m.put("icon_small", R.drawable.radio_novaplanet_small);
 		m.put("stream", "http://broadcast.infomaniak.ch/radionova-high.mp3");
@@ -3392,7 +3590,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_PULS_RADIO);
+		m.put("name", Stations.RADIO_PULS_RADIO);
 		m.put("icon", R.drawable.radio_puls_radio);
 		m.put("icon_small", R.drawable.radio_puls_radio_small);
 		m.put("stream", "http://stream.pulsradio.com:5000");
@@ -3413,7 +3611,7 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Constants.RADIO_EUROPE_1);
+		m.put("name", Stations.RADIO_EUROPE_1);
 		m.put("icon", R.drawable.radio_europe_1);
 		m.put("icon_small", R.drawable.radio_europe_1_small);
 		m.put("stream", "http://vipicecast.yacast.net/europe1");

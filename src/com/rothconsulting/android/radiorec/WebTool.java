@@ -34,16 +34,14 @@ public class WebTool {
 
 		if (radioStation != null) {
 
-			if (radioStation.equalsIgnoreCase(Constants.RADIO_32)) {
+			if (radioStation.equalsIgnoreCase(Stations.RADIO_32)) {
 				result += getStringFromWebsite(urlHomepage, urlHomepage,
 						"nowplaying", "</div>");
-			} else if (radioStation
-					.equalsIgnoreCase(Constants.RADIO_32_GOLDIES)) {
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_32_GOLDIES)) {
 				result += getStringFromWebsite(
 						"http://www.radio32.ch/?rub=124", urlHomepage,
 						"nowplaying", "</div>");
-			} else if (radioStation
-					.equalsIgnoreCase(Constants.RADIO_CAPITAL_FM)) {
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_CAPITAL_FM)) {
 
 				// Braucht noch eine style class
 				result = new String(
@@ -56,12 +54,12 @@ public class WebTool {
 				// "http://www.radio24.ch/player/index.html",
 				// Constants.URL_HOMEPAGE_RADIO_24, "headerBottomRight",
 				// "</script>");
-			} else if (radioStation.equalsIgnoreCase(Constants.RADIO_24_ROCK)) {
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_24_ROCK)) {
 
 				result += getStringFromWebsite(
 						"http://www.radio24.ch/player/index.html?channel=rock",
 						"", "mainContainer", "</script>");
-			} else if (radioStation.equalsIgnoreCase(Constants.RADIO_RABE)) {
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_RABE)) {
 
 				result += getStringFromWebsite(
 						"http://www.rabe.ch/nc/songticker.html", "",
@@ -69,9 +67,9 @@ public class WebTool {
 
 				// result = Constants.URL_SONGTICKER_RABE;
 				// return result;
-			} else if (radioStation.equalsIgnoreCase(Constants.RADIO_DRS1)) {
-			} else if (radioStation.equalsIgnoreCase(Constants.RADIO_DRS2)) {
-			} else if (radioStation.equalsIgnoreCase(Constants.RADIO_DRS3)) {
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_DRS1)) {
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_DRS2)) {
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_DRS3)) {
 
 				String parseResult = new String();
 				parseResult += getStringFromWebsite(
@@ -97,8 +95,8 @@ public class WebTool {
 
 				result += result + parseResult;
 
-			} else if (radioStation.equalsIgnoreCase(Constants.RADIO_DRS4)) {
-			} else if (radioStation.equalsIgnoreCase(Constants.RADIO_TOP)) {
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_DRS4)) {
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_TOP)) {
 
 				String findString = "<td>Current Song:</td>";
 
