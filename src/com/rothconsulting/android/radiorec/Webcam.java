@@ -3,7 +3,6 @@ package com.rothconsulting.android.radiorec;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -57,6 +56,7 @@ public class Webcam extends Activity {
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				finish();
 			}
@@ -97,7 +97,7 @@ public class Webcam extends Activity {
 		@Override
 		public void onPageFinished(WebView view, String url) {
 			Log.i(TAG, "Finished loading URL: " + url);
-			if (progressDialog.isShowing()) {
+			if (progressDialog != null && progressDialog.isShowing()) {
 				progressDialog.dismiss();
 			}
 		}
@@ -107,15 +107,11 @@ public class Webcam extends Activity {
 				String description, String failingUrl) {
 			Log.e(TAG, "Error: " + description);
 			Toast.makeText(getApplicationContext(), "Oh no! " + description,
-					Toast.LENGTH_SHORT).show();
-			alertDialog.setTitle("Error beim laden!");
-			alertDialog.setMessage(description);
-			alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int which) {
-					return;
-				}
-			});
-			alertDialog.show();
+					Toast.LENGTH_LONG).show();
+
+			if (progressDialog != null && progressDialog.isShowing()) {
+				progressDialog.dismiss();
+			}
 		}
 	}
 

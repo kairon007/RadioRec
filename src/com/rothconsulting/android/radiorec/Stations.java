@@ -202,6 +202,11 @@ public class Stations {
 	public static final String RADIO_PULS_RADIO = "Puls'Radio";
 	public static final String RADIO_EUROPE_1 = "Europe 1";
 	public static final String RADIO_100_5_DAS_HITRADIO = "100'5 Das Hitradio";
+	public static final String RADIO_JAM_FM_BLACK_N_DANCE = "Jam Fm Black & Dance";
+	public static final String RADIO_JAM_FM_NEW_MUSIC_RADIO = "Jam Fm New Music Radio";
+	public static final String RADIO_HOPE_FM = "Hope FM";
+	public static final String RADIO_WDR_FUNKHAUS_EUROPA = "Funkhaus Europa";
+	public static final String RADIO_KIEPENKERL = "Kiepenkerl";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -2837,6 +2842,28 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_WDR_FUNKHAUS_EUROPA);
+		m.put("icon", R.drawable.radio_wdr_funkhaus_europa);
+		m.put("icon_small", R.drawable.radio_wdr_funkhaus_europa_small);
+		m.put("stream",
+				"http://funkhaus-europa.akacast.akamaistream.net/7/264/119440/v1/gnl.akacast.akamaistream.net/funkhaus-europa");
+		m.put("homepage", "http://www.funkhauseuropa.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.funkhauseuropa.de/kontakt/index.phtml");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", Stations.RADIO_STAR_FM);
 		m.put("icon", R.drawable.radio_starfm);
 		m.put("icon_small", R.drawable.radio_starfm_small);
@@ -3165,6 +3192,69 @@ public class Stations {
 		m.put("homepage", "http://www.dashitradio.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.dashitradio.de/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_JAM_FM_BLACK_N_DANCE);
+		m.put("icon", R.drawable.radio_jam_fm_bnd);
+		m.put("icon_small", R.drawable.radio_jam_fm_bnd_small);
+		m.put("stream", "http://static.src.88.cdn.3qsdn.com/jam-bnd-mp3");
+		m.put("homepage", "http://www.jam.fm");
+		m.put("webcam", "");
+		m.put("email", "http://www.jam.fm/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_JAM_FM_NEW_MUSIC_RADIO);
+		m.put("icon", R.drawable.radio_jam_fm_nmr);
+		m.put("icon_small", R.drawable.radio_jam_fm_nmr_small);
+		m.put("stream", "http://static.src.88.cdn.3qsdn.com/jam-nmr-mp3");
+		m.put("homepage", "http://www.jam.fm");
+		m.put("webcam", "");
+		m.put("email", "http://www.jam.fm/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_KIEPENKERL);
+		m.put("icon", R.drawable.radio_kiepenkerl);
+		m.put("icon_small", R.drawable.radio_kiepenkerl_small);
+		m.put("stream", "http://server2.inparty-fm.de:8002");
+		m.put("homepage", "http://www.radiokiepenkerl-online.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiokiepenkerl-online.de/index.php?id=24");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -3622,6 +3712,27 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_HOPE_FM);
+		m.put("icon", R.drawable.radio_hopefm);
+		m.put("icon_small", R.drawable.radio_hopefm_small);
+		m.put("stream", "http://icy-e-01.sharp-stream.com/hopefm.mp3");
+		m.put("homepage", "http://www.hopefm.org");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.hopefm.org/index2.php?option=com_contact&view=contact&id=1&Itemid=8");
+		m.put("sprache", SPRACHE_EN);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_RELIGION);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
