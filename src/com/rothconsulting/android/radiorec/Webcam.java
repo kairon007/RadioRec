@@ -108,10 +108,6 @@ public class Webcam extends Activity {
 			Log.e(TAG, "Error: " + description);
 			Toast.makeText(getApplicationContext(), "Oh no! " + description,
 					Toast.LENGTH_LONG).show();
-
-			if (progressDialog != null && progressDialog.isShowing()) {
-				progressDialog.dismiss();
-			}
 		}
 	}
 

@@ -24,6 +24,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ImageButton;
@@ -194,6 +195,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 					.setPositiveButton(
 							this.getResources().getString(R.string.wegDamit),
 							new DialogInterface.OnClickListener() {
+								@Override
 								public void onClick(
 										final DialogInterface dialog,
 										final int id) {
@@ -207,6 +209,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 							this.getResources()
 									.getString(R.string.weiterHoeren),
 							new DialogInterface.OnClickListener() {
+								@Override
 								public void onClick(
 										final DialogInterface dialog,
 										final int id) {
@@ -232,6 +235,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 					this.getResources().getString(android.R.string.ok),
 					new DialogInterface.OnClickListener() {
 						// do something when the button is clicked
+						@Override
 						public void onClick(DialogInterface arg0, int arg1) {
 							return;
 						}
@@ -281,6 +285,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
 	public void onClick(View v) {
 		firstStart = false;
 
@@ -457,6 +462,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 	}
 
+	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3) {
 		Log.d(TAG, "****************");
@@ -488,12 +494,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		changeStation();
 	}
 
+	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
 	}
 
 	private void changeStation() {
 		int index = Constants.THE_SELECTED_STATION_INDEX;
-		if (index < 0 || index > stationList.size()) {
+		if (index < 0 || index >= stationList.size()) {
 			index = 0;
 			Constants.THE_SELECTED_STATION_INDEX = index;
 		}
@@ -581,6 +588,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 						+ Constants.THE_URL_LIVE_STREAM);
 			}
 			getRadioPlayer().doStartPlay(this);
+			getWindow()
+					.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
 		} else {
 			getRadioPlayer().doStopPlay(this);
 		}

@@ -76,6 +76,9 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_OBERKRAIN);
 		ignoreList.add(Stations.RADIO_100_5_DAS_HITRADIO);
 		ignoreList.add(Stations.RADIO_KIEPENKERL);
+		ignoreList.add(Stations.RADIO_HOPE_FM);
+		ignoreList.add(Stations.RADIO_ANTENNE_STEIERMARK);
+		ignoreList.add(Stations.RADIO_ANTENNE_KAERNTEN);
 		return ignoreList;
 	}
 

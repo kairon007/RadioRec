@@ -2,7 +2,6 @@ package com.rothconsulting.android.radiorec;
 
 import java.io.IOException;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +9,7 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.util.Log;
 
-public class RadioPlayer extends Activity {
+public class RadioPlayer {
 
 	private final static String TAG = "RadioPlayer";
 
@@ -29,6 +28,7 @@ public class RadioPlayer extends Activity {
 		Log.d(TAG, "doStartPlay()");
 
 		createThread(context);
+
 		Log.d(TAG, "prepareProgressDialog");
 		Utils utils = new Utils();
 		progressDialog = utils.prepareProgressDialog(context);

@@ -186,6 +186,7 @@ public class Stations {
 	public static final String RADIO_DELTA_RADIO = "Delta Radio";
 	public static final String RADIO_NDR_1 = "NDR 1";
 	public static final String RADIO_NDR_2 = "NDR 2";
+	public static final String RADIO_NDR_KULTUR = "NDR Kultur";
 	public static final String RADIO_N_JOY = "N-Joy";
 	public static final String RADIO_STEPHANSDOM = "Stephansdom";
 	public static final String RADIO_CELITIC_MUSIC = "Celtic Music Radio";
@@ -207,6 +208,8 @@ public class Stations {
 	public static final String RADIO_HOPE_FM = "Hope FM";
 	public static final String RADIO_WDR_FUNKHAUS_EUROPA = "Funkhaus Europa";
 	public static final String RADIO_KIEPENKERL = "Kiepenkerl";
+	public static final String RADIO_ANTENNE_STEIERMARK = "Antenne Steiermark";
+	public static final String RADIO_ANTENNE_KAERNTEN = "Antenne Kärnten";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -3015,6 +3018,28 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_NDR_KULTUR);
+		m.put("icon", R.drawable.radio_ndr_kultur);
+		m.put("icon_small", R.drawable.radio_ndr_kultur_small);
+		m.put("stream",
+				"http://ndrstream.ic.llnwd.net/stream/ndrstream_ndrkultur_hi_mp3");
+		m.put("homepage", "http://www.ndr.de/ndrkultur");
+		m.put("webcam", "");
+		m.put("email", "http://www.ndr.de/ndrkultur/service/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_KLASSIK);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", Stations.RADIO_N_JOY);
 		m.put("icon", R.drawable.radio_n_joy);
 		m.put("icon_small", R.drawable.radio_n_joy_small);
@@ -3492,6 +3517,49 @@ public class Stations {
 		m.put("homepage", "http://www.radiostephansdom.at");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiostephansdom.at/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_ANTENNE_STEIERMARK);
+		m.put("icon", R.drawable.radio_antenne_steiermark);
+		m.put("icon_small", R.drawable.radio_antenne_steiermark_small);
+		m.put("stream", "http://streamplus34.leonex.de:32688");
+		m.put("homepage", "http://www.antenne.at");
+		m.put("webcam",
+				"http://www.antenne.at/fileadmin/user_upload/webcam/aswebcam.jpg");
+		m.put("email", "http://www.antenne.at/index.php?id=140");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_ANTENNE_KAERNTEN);
+		m.put("icon", R.drawable.radio_antenne_kaernten);
+		m.put("icon_small", R.drawable.radio_antenne_kaernten_small);
+		m.put("stream", "http://www.antennestream.at:8002");
+		m.put("homepage", "http://www.antenne.at");
+		m.put("webcam", "");
+		m.put("email", "http://www.antenne.at/index.php?id=311");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
