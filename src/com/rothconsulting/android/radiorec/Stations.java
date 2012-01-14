@@ -64,6 +64,7 @@ public class Stations {
 	public static final String RADIO_HOCH2 = "Radio Hoch2";
 	public static final String RADIO_ENERGY_BERN = "Energy Bern";
 	public static final String RADIO_ENERGY_ZUERICH = "Energy Zürich";
+	public static final String RADIO_ENERGY_BASEL = "Energy Basel";
 	public static final String RADIO_ENERGY_SWISS = "Energy Swiss";
 	public static final String RADIO_ENERGY_CHARTS = "Energy Charts";
 	public static final String RADIO_ENERGY_LOVE = "Energy Love";
@@ -79,7 +80,6 @@ public class Stations {
 	public static final String RADIO_BEO = "Radio BeO";
 	public static final String RADIO_TOP = "Top";
 	public static final String RADIO_TOP_TWO = "Top Two";
-	public static final String RADIO_BASEL = "Radio Basel";
 	public static final String RADIO_NEO_1 = "neo 1";
 	public static final String RADIO_NEO_ZWEI = "neo zwei";
 	public static final String RADIO_ARGOVIA = "Argovia";
@@ -631,7 +631,7 @@ public class Stations {
 		m.put("icon", R.drawable.radio_energy_bern);
 		m.put("icon_small", R.drawable.radio_energy_bern_small);
 		m.put("stream",
-				"http://energybern.ice.infomaniak.ch:80/energybern-high.mp3");
+				"http://energybern.ice.infomaniak.ch/energybern-high.mp3");
 		m.put("homepage", "http://www.energy.ch/bern");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/bern/inside/kontakt");
@@ -653,10 +653,32 @@ public class Stations {
 		m.put("icon", R.drawable.radio_energy_zurich);
 		m.put("icon_small", R.drawable.radio_energy_zurich_small);
 		m.put("stream",
-				"http://energyzuerich.ice.infomaniak.ch:80/energyzuerich-high.mp3");
+				"http://energyzuerich.ice.infomaniak.ch/energyzuerich-high.mp3");
 		m.put("homepage", "http://www.energy.ch/zuerich");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_ENERGY_BASEL);
+		m.put("icon", R.drawable.radio_energy_basel);
+		m.put("icon_small", R.drawable.radio_energy_basel_small);
+		m.put("stream",
+				"http://energybasel.ice.infomaniak.ch/energybasel-high.mp3");
+		m.put("homepage", "http://www.energy.ch/basel");
+		m.put("webcam", "");
+		m.put("email", "http://www.energy.ch/basel/inside/kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -1022,27 +1044,6 @@ public class Stations {
 		m.put("webcam",
 				"http://www.neo1.ch/index.php?eID=tx_cms_showpic&file=fileadmin%2Fuser_upload%2Fwebcam%2Fwebcam.jpg&md5=94dde500b68cb331ee6493b0e7f2604282c29723&parameters[0]=YTo0OntzOjU6IndpZHRoIjtzOjM6IjYwMCI7czo2OiJoZWlnaHQiO3M6MzoiNjAw&parameters[1]=IjtzOjc6ImJvZHlUYWciO3M6NjoiPGJvZHk%2BIjtzOjQ6IndyYXAiO3M6MzU6Ijxh&parameters[2]=IGhyZWY9ImphdmFzY3JpcHQ6Y2xvc2UoKTsiPnw8L2E%2BIjt9");
 		m.put("email", "http://www.neozwei.ch/index.php?id=314");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", Stations.RADIO_BASEL);
-		m.put("icon", R.drawable.radio_basel);
-		m.put("icon_small", R.drawable.radio_basel_small);
-		m.put("stream", "http://stream1.radiobasel.ch:8000/rb01");
-		m.put("homepage", "http://www.radiobasel.ch");
-		m.put("webcam", "http://radiobasel.ch/webcam/studio2.jpg");
-		m.put("email", "http://radiobasel.ch/kontakt?cid=Studio");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
