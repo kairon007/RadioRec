@@ -223,4 +223,29 @@ public class WebTool {
 		}
 		return token;
 	}
+
+	/**
+	 * Radio Kingstonhot.de hat immer Donnerstags eine Live Sendung. Ab Freitag
+	 * kann man diese als mp3 hören.
+	 * 
+	 * @return Dateiname 'KingstonHotRadioYYMMDD.mp3'
+	 */
+	protected String getKingstonHotFileName(Context context) {
+		Utils utils = new Utils();
+		String token = "";
+		if (utils.isNetworkAvailable(context, null, false)) {
+			String url = "http://kingstonhot.de/php/view/";
+			String findString = "<a href=\"http://www.kingstonhot.de/shows/KingstonHotRadio";
+			String endString = ".mp3";
+			token = getStringFromWebsite(url, null, findString, endString);
+			if (token != null) {
+				token = token.trim();
+				token = token.substring(57, token.length() - 29);
+				token = "KingstonHotRadio" + token;
+			}
+			Log.d(TAG, "** Token=" + token);
+		}
+		return token;
+	}
+
 }

@@ -570,8 +570,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				// Kingstonhot.de hat immer Donnerstags eine Live Sendung. Ab
 				// Freitag kann man diese als mp3 hören. Daher ist die URL
 				// dynamisch.
+				WebTool webtool = new WebTool();
 				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
-						+ utils.getKingstonHotFileName();
+						+ webtool.getKingstonHotFileName(this);
 				Log.d(TAG, "*********** new Stream="
 						+ Constants.THE_URL_LIVE_STREAM);
 			}
