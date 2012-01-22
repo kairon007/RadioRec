@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.rothconsulting.android.radiorec" android:versionCode="117"
-	android:versionName="1.1.7" android:installLocation="auto">
+	package="com.rothconsulting.android.radiorec" android:versionCode="118"
+	android:versionName="1.1.8" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="4" />
 	<supports-screens android:resizeable="true"
 		android:smallScreens="true" android:normalScreens="true"
@@ -13,8 +13,9 @@
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
 	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
-
+	
 	<application android:label="@string/app_name" android:icon="@drawable/jukebox">
 		<activity android:name="com.rothconsulting.android.radiorec.RadioRecPlus"
 			android:label="@string/app_name" android:configChanges="keyboard|keyboardHidden|orientation">
@@ -31,8 +32,9 @@
 		<activity android:name=".Donate" />
 		<activity android:name=".Tabs" />
 		<activity android:name=".TabCategories" />
+		<activity android:name=".filechooser.FileChooser" />
 		<activity android:name="com.rothconsulting.android.marketbilling.MarketSpende" />
-
+		
 		<service android:name="com.rothconsulting.android.marketbilling.BillingService" />
 
 		<receiver android:name="com.rothconsulting.android.marketbilling.BillingReceiver">

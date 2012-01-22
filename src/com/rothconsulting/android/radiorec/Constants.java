@@ -129,7 +129,7 @@ public class Constants {
 	protected static String THE_URL_CONTACT;
 	protected static String THE_URL_SONGTICKER;
 	protected static String THE_ANTI_ADS_KEY;
-	protected static String THE_SD_CARD_PATH;
+	public static String THE_SD_CARD_PATH;
 	protected static int THE_BUFFER;
 
 	public static int CURRENT_TAB = 0;

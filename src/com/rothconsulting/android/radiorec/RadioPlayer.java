@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.os.PowerManager;
 import android.util.Log;
 
 public class RadioPlayer {
@@ -102,6 +103,8 @@ public class RadioPlayer {
 					Log.d(TAG, "URL: " + Constants.THE_URL_LIVE_STREAM);
 					mediaPlayer.setDataSource(Constants.THE_URL_LIVE_STREAM);
 					mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+					mediaPlayer.setWakeMode(context,
+							PowerManager.PARTIAL_WAKE_LOCK);
 					Log.d(TAG, "prepare()");
 					mediaPlayer.prepare();
 					Log.d(TAG, "start()");

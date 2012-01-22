@@ -71,4 +71,9 @@
 	<string name="favoriten">Favorites</string>
 	<string name="stil">Genre</string>
 	<string name="sortByCountry">Sorted by country</string>
+	<string name="currentDir">Current Dir</string>
+	<string name="folder">Folder</string>
+	<string name="fileSize">File Size</string>
+	<string name="parentFolder">Parent Folder</string>
+	<string name="musicBrowser">Music Browser</string>
 </resources>

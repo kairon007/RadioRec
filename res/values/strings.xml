@@ -71,4 +71,9 @@
 	<string name="favoriten">Favoriten</string>
 	<string name="stil">Stil</string>
 	<string name="sortByCountry">Sortiert nach Länder</string>
+	<string name="currentDir">Verzeichnis</string>
+	<string name="folder">Verzeichnis</string>
+	<string name="fileSize">Datei Grösse</string>
+	<string name="parentFolder">Übergeordnetes Verzeichnis</string>
+	<string name="musicBrowser">Musik Browser</string>
 </resources>

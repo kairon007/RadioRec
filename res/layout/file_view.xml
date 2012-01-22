@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="fill_parent" android:orientation="vertical"
+	android:layout_width="fill_parent" android:background="@color/blue">
+
+	<LinearLayout android:id="@+id/linearLayout2"
+		android:layout_width="match_parent" android:layout_height="wrap_content">
+		<ImageView android:text="@+id/ImageViewFileicon" android:id="@+id/ImageViewFileicon"
+			android:contentDescription="@string/info" android:layout_width="wrap_content"
+			android:layout_height="25dp" android:layout_marginTop="5dip"
+			android:layout_marginLeft="5dip" />
+		<TextView android:text="@+id/TextViewFilename" android:id="@+id/TextViewFilename"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:textStyle="bold" android:layout_marginTop="5dip"
+			android:layout_marginLeft="5dip" android:gravity="bottom" />
+	</LinearLayout>
+
+	<TextView android:text="@+id/TextViewFiletypeSize" android:id="@+id/TextViewFiletypeSize"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_marginLeft="10dip" />
+</LinearLayout>
