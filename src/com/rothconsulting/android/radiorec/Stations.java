@@ -2056,26 +2056,26 @@ public class Stations {
 			// fillLandStilList(m);
 		}
 
-		m = new HashMap<String, Object>();
-		m.put("name", Stations.RADIO_21);
-		m.put("icon", R.drawable.radio_21);
-		m.put("icon_small", R.drawable.radio_21_small);
-		m.put("stream", "http://rs3.stream24.org:8690");
-		m.put("homepage", "http://www.radio21.ch");
-		m.put("webcam", "");
-		m.put("email", "http://radio21.ch/wp/?page_id=481");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		// m = new HashMap<String, Object>();
+		// m.put("name", Stations.RADIO_21);
+		// m.put("icon", R.drawable.radio_21);
+		// m.put("icon_small", R.drawable.radio_21_small);
+		// m.put("stream", "http://rs3.stream24.org:8690");
+		// m.put("homepage", "http://www.radio21.ch");
+		// m.put("webcam", "");
+		// m.put("email", "http://radio21.ch/wp/?page_id=481");
+		// m.put("sprache", SPRACHE_DE);
+		// m.put("land", LAND_CH);
+		// m.put("stil", STIL_POP);
+		// if (Build.VERSION.SDK_INT < 8
+		// && Constants.getIgnoreListKleinerAndroid22().contains(
+		// m.get("name"))) {
+		// // wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		//
+		// } else {
+		// stationList.add(m);
+		// // fillLandStilList(m);
+		// }
 
 		m = new HashMap<String, Object>();
 		m.put("name", Stations.RADIO_WAVE);
@@ -3685,7 +3685,7 @@ public class Stations {
 		m.put("name", Stations.RADIO_BLUE_MARLIN);
 		m.put("icon", R.drawable.radio_bluemarlin);
 		m.put("icon_small", R.drawable.radio_bluemarlin_small);
-		m.put("stream", "http://89.238.146.142:8635");
+		m.put("stream", "http://159.253.145.177:8635");
 		m.put("homepage", "http://www.bluemarlinibiza.com");
 		m.put("webcam", "");
 		m.put("email", "http://www.bluemarlinibiza.com/contact/contact");
