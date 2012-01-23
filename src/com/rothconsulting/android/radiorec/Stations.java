@@ -137,6 +137,7 @@ public class Stations {
 	public static final String RADIO_TRANCERADIO = "TranceRadio";
 	public static final String RADIO_DELTA_RADIO = "Delta Radio";
 	public static final String RADIO_SECRETTUBE = "Secrettube";
+	public static final String RADIO_H1_RADIO_HITTNAU = "H1 Radio Hittnau";
 	public static final String RADIO_LIECHSTENSTEIN = "Radio Liechtenstein";
 
 	// ***********************************************
@@ -144,8 +145,8 @@ public class Stations {
 	// ***********************************************
 	public static final String RADIO_ANTENNE_BAYERN = "Antenne Bayern";
 	public static final String RADIO_ANTENNE_CHILLOUT = "Antenne Cillout";
-	public static final String RADIO_ANTENNE_ROCK = "Antenne Rock";
 	public static final String RADIO_ANTENNE_CLASSIC_ROCK = "Antenne Classic Rock";
+	public static final String RADIO_ANTENNE_ROCK = "Antenne Rock";
 	public static final String RADIO_ANTENNE_ROCK_HEAVY_METAL = "Antenne Rock Heavy Metal";
 	public static final String RADIO_BAYERN_1 = "Bayern 1";
 	public static final String RADIO_BAYERN_2 = "Bayern 2";
@@ -2174,6 +2175,27 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_H1_RADIO_HITTNAU);
+		m.put("icon", R.drawable.radio_h1);
+		m.put("icon_small", R.drawable.radio_h1_small);
+		m.put("stream", "http://webradio.h1radio.ch:8340");
+		m.put("homepage", "http://www.h1radio.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.h1radio.ch/kontakt.htm");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_ROCK);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
