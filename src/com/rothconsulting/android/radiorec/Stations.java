@@ -146,6 +146,7 @@ public class Stations {
 	public static final String RADIO_ANTENNE_CHILLOUT = "Antenne Cillout";
 	public static final String RADIO_ANTENNE_ROCK = "Antenne Rock";
 	public static final String RADIO_ANTENNE_CLASSIC_ROCK = "Antenne Classic Rock";
+	public static final String RADIO_ANTENNE_ROCK_HEAVY_METAL = "Antenne Rock Heavy Metal";
 	public static final String RADIO_BAYERN_1 = "Bayern 1";
 	public static final String RADIO_BAYERN_2 = "Bayern 2";
 	public static final String RADIO_BAYERN_3 = "Bayern 3";
@@ -2255,6 +2256,29 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_ANTENNE_CLASSIC_ROCK);
+		m.put("icon", R.drawable.radio_antenne_classic_rock);
+		m.put("icon_small", R.drawable.radio_antenne_classic_rock_small);
+		m.put("stream",
+				"http://mp3channels.webradio.antenne.de/classic-rock-live");
+		m.put("homepage", "http://www.antenne.de");
+		m.put("webcam",
+				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
+		m.put("email", "http://www.antenne.de/antenne/radio/kontakt/index.php");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_ROCK);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", Stations.RADIO_ANTENNE_ROCK);
 		m.put("icon", R.drawable.radio_antenne_rock);
 		m.put("icon_small", R.drawable.radio_antenne_rock_small);
@@ -2277,15 +2301,14 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Stations.RADIO_ANTENNE_CLASSIC_ROCK);
-		m.put("icon", R.drawable.radio_antenne_classic_rock);
-		m.put("icon_small", R.drawable.radio_antenne_classic_rock_small);
+		m.put("name", Stations.RADIO_ANTENNE_ROCK_HEAVY_METAL);
+		m.put("icon", R.drawable.radio_antenne_rock_heavy_metal);
+		m.put("icon_small", R.drawable.radio_antenne_rock_heavy_metal_small);
 		m.put("stream",
-				"http://mp3channels.webradio.antenne.de/classic-rock-live");
-		m.put("homepage", "http://www.antenne.de");
-		m.put("webcam",
-				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
-		m.put("email", "http://www.antenne.de/antenne/radio/kontakt/index.php");
+				"http://mp3channels.webradio.rockantenne.de/heavy-metal");
+		m.put("homepage", "http://www.rockantenne.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.rockantenne.de/mailinsstudio");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_ROCK);
