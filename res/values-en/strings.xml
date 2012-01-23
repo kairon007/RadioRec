@@ -76,4 +76,6 @@
 	<string name="fileSize">File Size</string>
 	<string name="parentFolder">Parent Folder</string>
 	<string name="musicBrowser">Music Browser</string>
+	<string name="delete">Delete</string>
+	<string name="deleted">deleted</string>
 </resources>

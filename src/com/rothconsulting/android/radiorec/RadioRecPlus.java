@@ -703,4 +703,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	public boolean isPlaying() {
 		return playing;
 	}
+
+	@Override
+	public void onLowMemory() {
+		super.onLowMemory();
+	}
 }

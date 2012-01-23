@@ -44,6 +44,7 @@ public class Settings extends Activity implements
 		edittextSdCardPath.setText(Constants.THE_SD_CARD_PATH);
 		final Button saveButtonPath = (Button) findViewById(R.id.buttonSavePath);
 		saveButtonPath.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				Constants.THE_SD_CARD_PATH = "" + edittextSdCardPath.getText();
 				SharedPreferences settings = getSharedPreferences(
@@ -62,6 +63,7 @@ public class Settings extends Activity implements
 
 		final Button resetButtonPath = (Button) findViewById(R.id.buttonResetPath);
 		resetButtonPath.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				edittextSdCardPath.setText(Constants.DEFAULT_SD_CARD_PATH);
 			}
@@ -72,6 +74,7 @@ public class Settings extends Activity implements
 		editTextBufferSize.setInputType(InputType.TYPE_CLASS_PHONE);
 		final Button saveButtonBuffer = (Button) findViewById(R.id.buttonSaveBuffer);
 		saveButtonBuffer.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				editTextBufferSize.setTextColor(Color.BLACK);
 				editTextBufferSize.setBackgroundColor(Color.WHITE);
@@ -107,13 +110,17 @@ public class Settings extends Activity implements
 
 		final Button resetButtonBuffer = (Button) findViewById(R.id.buttonResetBuffer);
 		resetButtonBuffer.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
+				editTextBufferSize.setTextColor(Color.BLACK);
+				editTextBufferSize.setBackgroundColor(Color.WHITE);
 				editTextBufferSize.setText("" + Constants.DEFAULT_BUFFER);
 			}
 		});
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				finish();
 			}
@@ -148,6 +155,7 @@ public class Settings extends Activity implements
 		}
 	}
 
+	@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		if (checkedId == R.id.radioImmerAn) {
 			android.provider.Settings.System.putInt(getContentResolver(),

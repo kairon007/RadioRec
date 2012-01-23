@@ -76,4 +76,6 @@
 	<string name="fileSize">Datei Grösse</string>
 	<string name="parentFolder">Übergeordnetes Verzeichnis</string>
 	<string name="musicBrowser">Musik Browser</string>
+	<string name="delete">Löschen</string>
+	<string name="deleted">gelöscht</string>
 </resources>

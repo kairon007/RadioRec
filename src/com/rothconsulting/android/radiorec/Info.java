@@ -16,6 +16,7 @@ public class Info extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.info);
 
@@ -29,6 +30,7 @@ public class Info extends Activity {
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				finish();
 			}
@@ -36,6 +38,7 @@ public class Info extends Activity {
 
 		final TextView featureText = (TextView) findViewById(R.id.textViewFeatureEmail);
 		featureText.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				startEmailActivity();
 			}
