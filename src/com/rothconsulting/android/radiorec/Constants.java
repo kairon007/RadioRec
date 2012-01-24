@@ -79,6 +79,10 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_HOPE_FM);
 		ignoreList.add(Stations.RADIO_ANTENNE_STEIERMARK);
 		ignoreList.add(Stations.RADIO_ANTENNE_KAERNTEN);
+		ignoreList.add(Stations.RADIO_H1_RADIO_HITTNAU);
+		ignoreList.add(Stations.RADIO_IISCHERS_RADIO);
+		ignoreList.add(Stations.RADIO_VOLKSMUSIKNET);
+		ignoreList.add(Stations.RADIO_GUGGE_SOUND);
 		return ignoreList;
 	}
 

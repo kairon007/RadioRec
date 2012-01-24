@@ -138,6 +138,9 @@ public class Stations {
 	public static final String RADIO_DELTA_RADIO = "Delta Radio";
 	public static final String RADIO_SECRETTUBE = "Secrettube";
 	public static final String RADIO_H1_RADIO_HITTNAU = "H1 Radio Hittnau";
+	public static final String RADIO_GUGGE_SOUND = "Guggesound";
+	public static final String RADIO_VOLKSMUSIKNET = "Volksmusiknet";
+	public static final String RADIO_IISCHERS_RADIO = "Iischers Radio";
 	public static final String RADIO_LIECHSTENSTEIN = "Radio Liechtenstein";
 
 	// ***********************************************
@@ -2196,6 +2199,69 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_ROCK);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_GUGGE_SOUND);
+		m.put("icon", R.drawable.radio_guggesound);
+		m.put("icon_small", R.drawable.radio_guggesound_small);
+		m.put("stream", "http://188.40.107.252:8900");
+		m.put("homepage", "http://www.guggesound.com");
+		m.put("webcam", "");
+		m.put("email", "info@guggesound.com");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_VOLKSTUEMLICH);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_IISCHERS_RADIO);
+		m.put("icon", R.drawable.radio_iischers_radio);
+		m.put("icon_small", R.drawable.radio_iischers_radio_small);
+		m.put("stream", "http://stream.iischers.ch:8000");
+		m.put("homepage", "http://www.iischers.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.iischers.ch/feedback/");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_VOLKSMUSIKNET);
+		m.put("icon", R.drawable.radio_volksmusiknet);
+		m.put("icon_small", R.drawable.radio_volksmusiknet_small);
+		m.put("stream", "http://50.7.234.130:8188");
+		m.put("homepage", "http://www.volksmusiknet.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.volksmusiknet.ch/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_VOLKSTUEMLICH);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
