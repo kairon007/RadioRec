@@ -185,6 +185,7 @@ public class Stations {
 	public static final String RADIO_OBERKRAIN = "Radio Oberkrain";
 	public static final String RADIO_NDR_1 = "NDR 1";
 	public static final String RADIO_NDR_2 = "NDR 2";
+	public static final String RADIO_NDR_INFO = "NDR Info";
 	public static final String RADIO_NDR_KULTUR = "NDR Kultur";
 	public static final String RADIO_N_JOY = "N-Joy";
 	public static final String RADIO_GONG_NUERNBERG = "Gong Nürnberg";
@@ -2061,27 +2062,6 @@ public class Stations {
 			// fillLandStilList(m);
 		}
 
-		// m = new HashMap<String, Object>();
-		// m.put("name", Stations.RADIO_21);
-		// m.put("icon", R.drawable.radio_21);
-		// m.put("icon_small", R.drawable.radio_21_small);
-		// m.put("stream", "http://rs3.stream24.org:8690");
-		// m.put("homepage", "http://www.radio21.ch");
-		// m.put("webcam", "");
-		// m.put("email", "http://radio21.ch/wp/?page_id=481");
-		// m.put("sprache", SPRACHE_DE);
-		// m.put("land", LAND_CH);
-		// m.put("stil", STIL_POP);
-		// if (Build.VERSION.SDK_INT < 8
-		// && Constants.getIgnoreListKleinerAndroid22().contains(
-		// m.get("name"))) {
-		// // wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		//
-		// } else {
-		// stationList.add(m);
-		// // fillLandStilList(m);
-		// }
-
 		m = new HashMap<String, Object>();
 		m.put("name", Stations.RADIO_WAVE);
 		m.put("icon", R.drawable.radio_wave);
@@ -3136,6 +3116,28 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_NDR_INFO);
+		m.put("icon", R.drawable.radio_ndr_info);
+		m.put("icon_small", R.drawable.radio_ndr_info_small);
+		m.put("stream",
+				"http://ndrstream.ic.llnwd.net/stream/ndrstream_ndrinfo_hi_mp3");
+		m.put("homepage", "http://www.ndr.de/info");
+		m.put("webcam", "");
+		m.put("email", "http://www.ndr.de/info/service/kontakt/index.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_KLASSIK);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
