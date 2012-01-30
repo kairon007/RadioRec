@@ -210,6 +210,7 @@ public class Stations {
 	public static final String RADIO_WIEN = "Wien - ORF";
 	public static final String RADIO_KAERNTEN = "Kärnten - ORF";
 	public static final String RADIO_SALZBURG = "Salzburg - ORF";
+	public static final String RADIO_OBEROESTERREICH = "Oberösterreich - ORF";
 	public static final String RADIO_NIEDEROESTERREICH = "Niederösterreich - ORF";
 	public static final String RADIO_HELSINKI_GRAZ = "Helsinki Graz";
 	public static final String RADIO_SOUNDPORTAL = "Soundportal";
@@ -3563,6 +3564,27 @@ public class Stations {
 		m.put("homepage", "http://salzburg.orf.at");
 		m.put("webcam", "");
 		m.put("email", "publikumsservice.salzburg@orf.at");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_OBEROESTERREICH);
+		m.put("icon", R.drawable.radio_orf_oberoesterreich);
+		m.put("icon_small", R.drawable.radio_orf_oberoesterreich_small);
+		m.put("stream", "http://194.232.200.148:8000");
+		m.put("homepage", "http://ooe.orf.at");
+		m.put("webcam", "");
+		m.put("email", "studio.ooe@orf.at");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
