@@ -78,4 +78,6 @@
 	<string name="musicBrowser">Musik Browser</string>
 	<string name="delete">Löschen</string>
 	<string name="deleted">gelöscht</string>
+	<string name="recordFolderNotFound">Verzeichnis mit Aufnahmen nicht gefunden!</string>
+	<string name="recordFolderNotFoundMessage">Es wurde kein Verzeichnis gefunden mit RadioRec+ aufnahmen.\nEntweder hast du noch nichts aufgenommen oder der Pfad zur SD-Card ist falsch. Den Pfad zur SD Card kannst du in den Einstellungen konfigurieren.</string>
 </resources>

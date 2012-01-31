@@ -37,46 +37,58 @@ public class FileChooser extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		currentDir = new File(Constants.THE_SD_CARD_PATH);
 
-		try {
-			fill(currentDir);
-
-			ListView list = getListView();
-			list.setOnItemLongClickListener(new OnItemLongClickListener() {
-
-				@Override
-				public boolean onItemLongClick(AdapterView<?> parent,
-						View view, final int position, long id) {
-
-					LinearLayout linearLayout = (LinearLayout) ((LinearLayout) view)
-							.getChildAt(0); // 0 = Das zweite LinearLayout.
-
-					// child 1 = Die TextView.
-					final String filename = ""
-							+ ((TextView) linearLayout.getChildAt(1)).getText();
-
-					if (isKnownMusicFile(filename)) {
-						deleteFileDialog(filename).show();
-					}
-					// Return true to consume the click event. In this case the
-					// onListItemClick listener is not called anymore.
-					return true;
-				}
-			});
-		} catch (Exception e) {
+		if (Constants.THE_SD_CARD_PATH == null) {
+			Log.d(TAG, "THE_SDCARD_PATH is null!");
 			pathNotValidDialog().show();
-		}
+		} else {
 
+			try {
+				currentDir = new File(Constants.THE_SD_CARD_PATH);
+				fill(currentDir);
+				ListView list = getListView();
+
+				list.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+					@Override
+					public boolean onItemLongClick(AdapterView<?> parent,
+							View view, final int position, long id) {
+
+						LinearLayout linearLayout = (LinearLayout) ((LinearLayout) view)
+								.getChildAt(0); // 0 = Das zweite LinearLayout.
+
+						// child 1 = Die TextView.
+						final String filename = ""
+								+ ((TextView) linearLayout.getChildAt(1))
+										.getText();
+
+						if (isKnownMusicFile(filename)) {
+							deleteFileDialog(filename).show();
+						}
+						// Return true to consume the click event. In this case
+						// the
+						// onListItemClick listener is not called anymore.
+						return true;
+					}
+				});
+			} catch (Exception e) {
+				Log.d(TAG, "Exception! THE_SD_CARD_PATH="
+						+ Constants.THE_SD_CARD_PATH + "\nException=\n" + e);
+				pathNotValidDialog().show();
+			}
+		}
 	}
 
 	private void fill(File f) {
-		File[] dirs = f.listFiles();
-		this.setTitle(getString(R.string.musicBrowser) + ", "
-				+ getString(R.string.currentDir) + ": " + f.getName());
+
 		List<Option> dir = new ArrayList<Option>();
 		List<Option> fls = new ArrayList<Option>();
+
 		try {
+			File[] dirs = f.listFiles();
+			this.setTitle(getString(R.string.musicBrowser) + ", "
+					+ getString(R.string.currentDir) + ": " + f.getName());
+
 			for (File ff : dirs) {
 				if (ff.isDirectory() && !ff.getName().startsWith(".")) {
 					dir.add(new Option(R.drawable.icon_folder, ff.getName(),
@@ -94,7 +106,6 @@ public class FileChooser extends ListActivity {
 			}
 		} catch (Exception e) {
 			pathNotValidDialog().show();
-
 		}
 		Collections.sort(dir);
 		Collections.sort(fls);
@@ -163,11 +174,8 @@ public class FileChooser extends ListActivity {
 
 	private AlertDialog pathNotValidDialog() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle("Verzeichnis mit Aufnahmen nicht gefunden!")
-				.setMessage(
-						"Es wurde kein Verzeichnis gefunden mit RadioRec+ aufnahmen.\n"//
-								+ "Entweder hast du noch nichts aufgenommen oder der Pfad zur SD-Card ist falsch."//
-								+ " Den Pfad zur SD Card kannst du in den Einstellungen konfigurieren\n")
+		builder.setTitle(getString(R.string.recordFolderNotFound))
+				.setMessage(getString(R.string.recordFolderNotFoundMessage))
 				.setCancelable(true)
 				.setIcon(android.R.drawable.ic_dialog_alert)
 				.setPositiveButton(getString(R.string.settings),

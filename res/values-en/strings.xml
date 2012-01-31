@@ -32,7 +32,7 @@
 	<string name="infoDatenverbrauchFrage">How much data is used while listening with RadioRec+ ?? </string>
 	<string name="infoDatenverbrauchAntwort">Answer: Around 60MB/h. The Radio stations are streaming with 128kbps. So calculate : 128\'000 Bit/s : 8 = 16\'000 Byte/s. It is 57.6 MB/hour (16\'000x3200 : 1\'000\'000). Tip: Use WLAN, so data consumption is no problem :-)</string>
 	<string name="speicherOrt">Save location</string>
-	<string name="sdcardPath">By default the MP3 recordings are stored on the SD-Card in the path \"sdcard/RadioRecorder\" \n. Here you can change this path. \nAttention: The path to the storage location must match exactly!</string>
+	<string name="sdcardPath">By default the MP3 recordings are stored on the SD-Card in the path \"sdcard/RadioRecorder\".\nHere you can change this path.\nAttention: The path to the storage location must be valid and match exactly!</string>
 	<string name="reset">Reset</string>
 	<string name="wifiVorsicht">With this 3 options you can set the Wireless behavior. Attention: If \'WiFi always on\' your battery will be used more. Switch it off here or at the advanced wireless settings to save power.</string>
 	<string name="wifi">WiFi</string>
@@ -78,4 +78,6 @@
 	<string name="musicBrowser">Music Browser</string>
 	<string name="delete">Delete</string>
 	<string name="deleted">deleted</string>
+	<string name="recordFolderNotFound">Record-Folder Not Found!</string>
+	<string name="recordFolderNotFoundMessage">Could not find any folder with RadioRec+ recordings.\nEither you have not recorded anything or the path to the sd card is wrong. The path to the sd card can be configured in the settings.</string>
 </resources>
