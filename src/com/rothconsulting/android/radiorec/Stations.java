@@ -199,6 +199,7 @@ public class Stations {
 	public static final String RADIO_JAM_FM_BLACK_N_DANCE = "Jam Fm Black & Dance";
 	public static final String RADIO_JAM_FM_NEW_MUSIC_RADIO = "Jam Fm New Music Radio";
 	public static final String RADIO_KIEPENKERL = "Kiepenkerl";
+	public static final String RADIO_ENERGY_SACHSEN = "Energy Sachsen";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3412,6 +3413,27 @@ public class Stations {
 		m.put("homepage", "http://www.radiokiepenkerl-online.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiokiepenkerl-online.de/index.php?id=24");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_ENERGY_SACHSEN);
+		m.put("icon", R.drawable.radio_energy_sachsen);
+		m.put("icon_small", R.drawable.radio_energy_sachsen_small);
+		m.put("stream", "http://149.5.240.22/WR-DE-WR57");
+		m.put("homepage", "www.energy.de/sachsen");
+		m.put("webcam", "http://www.energy.de/sachsen/on-air/webcam/");
+		m.put("email", "hotline@nrjmail.de");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
