@@ -52,6 +52,7 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_WIEN);
 		ignoreList.add(Stations.RADIO_KAERNTEN);
 		ignoreList.add(Stations.RADIO_SALZBURG);
+		ignoreList.add(Stations.RADIO_OBEROESTERREICH);
 		ignoreList.add(Stations.RADIO_NIEDEROESTERREICH);
 		ignoreList.add(Stations.RADIO_BUURERADIO);
 		ignoreList.add(Stations.RADIO_INDUSTRIE);
