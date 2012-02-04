@@ -223,7 +223,9 @@ public class Stations {
 	// DIVERSE
 	// ***********************************************
 	public static final String RADIO_TIROL_IT = "Radio Tirol (IT)";
-	public static final String RADIO_SOMA_FM = "soma fm - Sound of Goa";
+	public static final String RADIO_SOMA_FM_SOG = "soma fm - Sound of Goa";
+	public static final String RADIO_SOMA_FM_POPTRON = "soma fm - Poptron";
+	public static final String RADIO_SOMA_FM_SECRET_AGENT = "soma fm - Secret Agent";
 	public static final String RADIO_IBIZA_SONICA = "Ibiza Sonica";
 	public static final String RADIO_AMNESIA = "Amnesia";
 	public static final String RADIO_BLUE_MARLIN = "Blue Marlin Ibiza";
@@ -3776,10 +3778,52 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Stations.RADIO_SOMA_FM);
+		m.put("name", Stations.RADIO_SOMA_FM_SOG);
 		m.put("icon", R.drawable.radio_somafm_sgoa);
 		m.put("icon_small", R.drawable.radio_somafm_sgoa_small);
 		m.put("stream", "http://ice.somafm.com/suburbsofgoa");
+		m.put("homepage", "http://www.somafm.com");
+		m.put("webcam", "");
+		m.put("email", "http://somafm.com/contact");
+		m.put("sprache", SPRACHE_EN);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_SOMA_FM_POPTRON);
+		m.put("icon", R.drawable.radio_somafm_poptron);
+		m.put("icon_small", R.drawable.radio_somafm_poptron_small);
+		m.put("stream", "http://ice.somafm.com/poptron");
+		m.put("homepage", "http://www.somafm.com");
+		m.put("webcam", "");
+		m.put("email", "http://somafm.com/contact");
+		m.put("sprache", SPRACHE_EN);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_SOMA_FM_SECRET_AGENT);
+		m.put("icon", R.drawable.radio_somafm_secretagent);
+		m.put("icon_small", R.drawable.radio_somafm_secretagent_small);
+		m.put("stream", "http://ice.somafm.com/secretagent");
 		m.put("homepage", "http://www.somafm.com");
 		m.put("webcam", "");
 		m.put("email", "http://somafm.com/contact");
