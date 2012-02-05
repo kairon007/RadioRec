@@ -131,7 +131,6 @@ public class Stations {
 	public static final String RADIO_INDUSTRIE = "Industrie";
 	public static final String RADIO_AUDIOASYL = "Audioasyl";
 	public static final String RADIO_PIRATENRADIO = "Piratenradio";
-	public static final String RADIO_21 = "Radio 21";
 	public static final String RADIO_WAVE = "Wave";
 	public static final String RADIO_ROCK_STATION = "Rockstation";
 	public static final String RADIO_TRANCERADIO = "TranceRadio";
