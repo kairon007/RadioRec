@@ -199,6 +199,7 @@ public class Stations {
 	public static final String RADIO_JAM_FM_NEW_MUSIC_RADIO = "Jam Fm New Music Radio";
 	public static final String RADIO_KIEPENKERL = "Kiepenkerl";
 	public static final String RADIO_ENERGY_SACHSEN = "Energy Sachsen";
+	public static final String RADIO_FFN_NIEDERSACHSEN = "FFN Niedersachsen";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3443,6 +3444,26 @@ public class Stations {
 						m.get("name"))) {
 			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
 
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_FFN_NIEDERSACHSEN);
+		m.put("icon", R.drawable.radio_ffn_niedersachsen);
+		m.put("icon_small", R.drawable.radio_ffn_niedersachsen_small);
+		m.put("stream", "http://rs35.stream24.org/stream");
+		m.put("homepage", "www.ffn.de");
+		m.put("webcam", "http://www.ffn.de/fileadmin/content/webcam/studio.jpg");
+		m.put("email", "radio@ffn.de");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
 		} else {
 			stationList.add(m);
 			// fillLandStilList(m);
