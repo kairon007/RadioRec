@@ -108,6 +108,8 @@ public class Stations {
 	public static final String RADIO_COULEUR_3 = "Couleur  3";
 	public static final String RADIO_RFJ = "RFJ - Frequence Jura";
 	public static final String RADIO_ROUGE_FM = "Rouge FM";
+	public static final String RADIO_RSI_RETE_1 = "RSI Rete 1";
+	public static final String RADIO_RSI_RETE_2 = "RSI Rete 2";
 	public static final String RADIO_RSI_RETE_3 = "RSI Rete 3";
 	public static final String RADIO_ROCK_NATION = "Rock Nation";
 	public static final String RADIO_3FACH = "3fach";
@@ -1559,6 +1561,48 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email", "http://www.rougefm.com/radio/contact.php");
 		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_RSI_RETE_1);
+		m.put("icon", R.drawable.radio_rete1);
+		m.put("icon_small", R.drawable.radio_rete1_small);
+		m.put("stream", "http://glb-stream12.streamserver.ch/2/reteuno/mp3_128");
+		m.put("homepage", "http://reteuno.rsi.ch");
+		m.put("webcam", "");
+		m.put("email", "reteuno@rsi.ch");
+		m.put("sprache", SPRACHE_IT);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_RSI_RETE_2);
+		m.put("icon", R.drawable.radio_rete2);
+		m.put("icon_small", R.drawable.radio_rete2_small);
+		m.put("stream", "http://glb-stream12.streamserver.ch/2/retedue/mp3_128");
+		m.put("homepage", "http://retedue.rsi.ch");
+		m.put("webcam", "");
+		m.put("email", "retedue@rsi.ch");
+		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
