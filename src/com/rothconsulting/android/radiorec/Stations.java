@@ -178,6 +178,7 @@ public class Stations {
 	public static final String RADIO_1LIVE = "1Live";
 	public static final String RADIO_WDR_2 = "WDR 2";
 	public static final String RADIO_WDR_3 = "WDR 3";
+	public static final String RADIO_WDR_5 = "WDR 5";
 	public static final String RADIO_WDR_FUNKHAUS_EUROPA = "Funkhaus Europa";
 	public static final String RADIO_STAR_FM = "Star FM";
 	public static final String RADIO_STAR_FM_FROM_HELL = "Star FM From Hell";
@@ -202,6 +203,7 @@ public class Stations {
 	public static final String RADIO_KIEPENKERL = "Kiepenkerl";
 	public static final String RADIO_ENERGY_SACHSEN = "Energy Sachsen";
 	public static final String RADIO_FFN_NIEDERSACHSEN = "FFN Niedersachsen";
+	public static final String RADIO_TECHNOBASE_FM = "Technobase FM";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -220,6 +222,7 @@ public class Stations {
 	public static final String RADIO_STEPHANSDOM = "Stephansdom";
 	public static final String RADIO_ANTENNE_STEIERMARK = "Antenne Steiermark";
 	public static final String RADIO_ANTENNE_KAERNTEN = "Antenne Kärnten";
+	public static final String RADIO_ARABELLA = "Radio Arabella";
 
 	// ***********************************************
 	// DIVERSE
@@ -3002,6 +3005,28 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_WDR_5);
+		m.put("icon", R.drawable.radio_wdr5);
+		m.put("icon_small", R.drawable.radio_wdr5_small);
+		m.put("stream",
+				"http://wdr-5.akacast.akamaistream.net/7/41/119439/v1/gnl.akacast.akamaistream.net/wdr-5");
+		m.put("homepage", "http://www.wdr5.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.wdr5.de/nc/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", Stations.RADIO_WDR_FUNKHAUS_EUROPA);
 		m.put("icon", R.drawable.radio_wdr_funkhaus_europa);
 		m.put("icon_small", R.drawable.radio_wdr_funkhaus_europa_small);
@@ -3513,6 +3538,26 @@ public class Stations {
 			// fillLandStilList(m);
 		}
 
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_TECHNOBASE_FM);
+		m.put("icon", R.drawable.radio_technobase_fm);
+		m.put("icon_small", R.drawable.radio_technobase_fm_small);
+		m.put("stream", "http://85.17.26.115");
+		m.put("homepage", "http://www.technobase.fm");
+		m.put("webcam", "");
+		m.put("email", "http://www.technobase.fm/contact");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_TRANCE);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
 		// ******************************************************************************************************
 		// *
 		// * ÖSTERREICH
@@ -3585,7 +3630,7 @@ public class Stations {
 		m.put("name", Stations.RADIO_TIROL);
 		m.put("icon", R.drawable.radio_orf_tirol);
 		m.put("icon_small", R.drawable.radio_orf_tirol_small);
-		m.put("stream", "http://mp3stream2.apasf.apa.at:8000");
+		m.put("stream", "http://194.232.200.159:8000");
 		m.put("homepage", "http://tirol.orf.at");
 		m.put("webcam", "");
 		m.put("email", "publikumsservice.tirol@orf.at");
@@ -3606,7 +3651,7 @@ public class Stations {
 		m.put("name", Stations.RADIO_WIEN);
 		m.put("icon", R.drawable.radio_orf_wien);
 		m.put("icon_small", R.drawable.radio_orf_wien_small);
-		m.put("stream", "http://194.232.200.145:8000");
+		m.put("stream", "http://mp3stream2.apasf.apa.at:8000");
 		m.put("homepage", "http://wien.orf.at");
 		m.put("webcam", "");
 		m.put("email", "899953@orf.at");
@@ -3627,7 +3672,7 @@ public class Stations {
 		m.put("name", Stations.RADIO_KAERNTEN);
 		m.put("icon", R.drawable.radio_orf_kaernten);
 		m.put("icon_small", R.drawable.radio_orf_kaernten_small);
-		m.put("stream", "http://194.232.200.159:8000");
+		m.put("stream", "http://194.232.200.145:8000");
 		m.put("homepage", "http://kaernten.orf.at");
 		m.put("webcam", "");
 		m.put("email", "service.kaernten@orf.at");
@@ -3801,6 +3846,27 @@ public class Stations {
 		m.put("homepage", "http://www.antenne.at");
 		m.put("webcam", "");
 		m.put("email", "http://www.antenne.at/index.php?id=311");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_ARABELLA);
+		m.put("icon", R.drawable.radio_arabella);
+		m.put("icon_small", R.drawable.radio_arabella_small);
+		m.put("stream", "http://stream01.arabella-at.vss.kapper.net:8000");
+		m.put("homepage", "http://www.arabella.at");
+		m.put("webcam", "");
+		m.put("email", "http://www.arabella.at/wien/kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
