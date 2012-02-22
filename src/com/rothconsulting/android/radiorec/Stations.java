@@ -222,6 +222,8 @@ public class Stations {
 	public static final String RADIO_STEPHANSDOM = "Stephansdom";
 	public static final String RADIO_ANTENNE_STEIERMARK = "Antenne Steiermark";
 	public static final String RADIO_ANTENNE_KAERNTEN = "Antenne Kärnten";
+	public static final String RADIO_ANTENNE_SALZBURG = "Antenne Salzburg";
+	public static final String RADIO_ANTENNE_TIROL = "Antenne Tirol";
 	public static final String RADIO_ARABELLA = "Radio Arabella";
 
 	// ***********************************************
@@ -240,7 +242,7 @@ public class Stations {
 	public static final String RADIO_PULS_RADIO = "Puls'Radio";
 	public static final String RADIO_EUROPE_1 = "Europe 1";
 	public static final String RADIO_HOPE_FM = "Hope FM";
-	public static final String RADIO_MARTINI_IN_THE_MORNING = "Martini in the Morning";
+	public static final String RADIO_RTL_LUXEMBOURG = "RTL Luxembourg";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -3860,6 +3862,50 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_ANTENNE_SALZBURG);
+		m.put("icon", R.drawable.radio_antenne_salzburg);
+		m.put("icon_small", R.drawable.radio_antenne_salzburg_small);
+		m.put("stream", "http://streamplus14.leonex.de:24946");
+		m.put("homepage", "http://antennesalzburg.oe24.at");
+		m.put("webcam", "");
+		m.put("email",
+				"http://antennesalzburg.oe24.at/service/Antenne-Salzburg-Kontakt/5310673");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_ANTENNE_TIROL);
+		m.put("icon", R.drawable.radio_antenne_tirol);
+		m.put("icon_small", R.drawable.radio_antenne_tirol_small);
+		m.put("stream", "http://streamplus30.leonex.de:14840");
+		m.put("homepage", "http://antennetirol.oe24.at");
+		m.put("webcam", "");
+		m.put("email",
+				"http://antennetirol.oe24.at/service/Antenne-Tirol-Kontakt/5310689");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", Stations.RADIO_ARABELLA);
 		m.put("icon", R.drawable.radio_arabella);
 		m.put("icon_small", R.drawable.radio_arabella_small);
@@ -4159,25 +4205,25 @@ public class Stations {
 			// fillLandStilList(m);
 		}
 
-		// m = new HashMap<String, Object>();
-		// m.put("name", Stations.RADIO_MARTINI_IN_THE_MORNING);
-		// m.put("icon", R.drawable.radio_martini_in_the_morning);
-		// m.put("icon_small", R.drawable.radio_martini_in_the_morning_small);
-		// m.put("stream", "http://178.159.0.13:7464");
-		// m.put("homepage", "http://martiniinthemorning.com");
-		// m.put("webcam", "");
-		// m.put("email", "http://martiniinthemorning.com/songrequest.php");
-		// m.put("sprache", SPRACHE_EN);
-		// m.put("land", LAND_DIV);
-		// m.put("stil", STIL_POP);
-		// if (Build.VERSION.SDK_INT < 8
-		// && Constants.getIgnoreListKleinerAndroid22().contains(
-		// m.get("name"))) {
-		// // wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		// } else {
-		// stationList.add(m);
-		// // fillLandStilList(m);
-		// }
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_RTL_LUXEMBOURG);
+		m.put("icon", R.drawable.radio_rtl_luxembourg);
+		m.put("icon_small", R.drawable.radio_rtl_luxembourg_small);
+		m.put("stream", "http://live.newmedia.lu");
+		m.put("homepage", "http://www.rtl.lu");
+		m.put("webcam", "");
+		m.put("email", "http://www.rtl.lu/feedback");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
 
 		return stationList;
 	}
