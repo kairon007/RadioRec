@@ -207,7 +207,7 @@ public class WebTool {
 
 	}
 
-	protected String getRT1token(Context context) {
+	protected String getRT1Token(Context context) {
 		Utils utils = new Utils();
 		String token = "";
 		if (utils.isNetworkAvailable(context, null, false)) {
@@ -218,6 +218,23 @@ public class WebTool {
 			if (token != null) {
 				token = token.trim();
 				token = token.substring(13, token.length() - 2);
+			}
+			Log.d(TAG, "** Token=" + token);
+		}
+		return token;
+	}
+
+	protected String getPlanetradioToken(Context context) {
+		Utils utils = new Utils();
+		String token = "";
+		if (utils.isNetworkAvailable(context, null, false)) {
+			String url = "http://webradio.planetradio.de/planetradio-webradio/wController/Webradio/wAction/showstation/wFormat/ajax/wWebradio/planet/wNewquality/hq/webradioAjax.html";
+			String findString = "'file': '";
+			String endString = "'";
+			token = getStringFromWebsite(url, null, findString, endString);
+			if (token != null) {
+				token = token.trim();
+				token = token.substring(93, token.length() - 1);
 			}
 			Log.d(TAG, "** Token=" + token);
 		}

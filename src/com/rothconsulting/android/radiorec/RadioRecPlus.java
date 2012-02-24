@@ -51,6 +51,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private RadioPlayer radioPlayer;
 	private AsyncTask<URL, Integer, Long> recordTask;
 	private String origRT1steam = null;
+	private String origPlanetradioSteam = null;
 	// private final ToggleButton favIcon = null;
 	private int gcCounter;
 
@@ -587,11 +588,21 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 					.equalsIgnoreCase(Stations.RADIO_RT1_HITRADIO)) {
 				WebTool webtool = new WebTool();
 				// rt1 ist geschützt und braucht login token damit man den
-				// Stream
-				// abspielen kann.
+				// Stream abspielen kann.
 				origRT1steam = Constants.THE_URL_LIVE_STREAM;
 				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
-						+ webtool.getRT1token(this);
+						+ webtool.getRT1Token(this);
+				Log.d(TAG, "*********** new Stream="
+						+ Constants.THE_URL_LIVE_STREAM);
+			}
+			if (Constants.THE_SELECTED_STATION_NAME
+					.equalsIgnoreCase(Stations.RADIO_PLANET_RADIO)) {
+				WebTool webtool = new WebTool();
+				// planet radio ist geschützt und braucht login token damit man
+				// den Stream abspielen kann.
+				origPlanetradioSteam = Constants.THE_URL_LIVE_STREAM;
+				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
+						+ webtool.getPlanetradioToken(this);
 				Log.d(TAG, "*********** new Stream="
 						+ Constants.THE_URL_LIVE_STREAM);
 			}
@@ -641,7 +652,21 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 					origRT1steam = Constants.THE_URL_LIVE_STREAM;
 				}
 				Constants.THE_URL_LIVE_STREAM = origRT1steam
-						+ webtool.getRT1token(this);
+						+ webtool.getRT1Token(this);
+				Log.d(TAG, "*********** new Stream="
+						+ Constants.THE_URL_LIVE_STREAM);
+			}
+
+			if (Constants.THE_SELECTED_STATION_NAME
+					.equalsIgnoreCase(Stations.RADIO_PLANET_RADIO)) {
+				WebTool webtool = new WebTool();
+				// rt1 ist geschützt und braucht login token damit man den
+				// Stream abspielen kann.
+				if (origPlanetradioSteam == null) {
+					origPlanetradioSteam = Constants.THE_URL_LIVE_STREAM;
+				}
+				Constants.THE_URL_LIVE_STREAM = origPlanetradioSteam
+						+ webtool.getPlanetradioToken(this);
 				Log.d(TAG, "*********** new Stream="
 						+ Constants.THE_URL_LIVE_STREAM);
 			}

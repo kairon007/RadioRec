@@ -204,6 +204,8 @@ public class Stations {
 	public static final String RADIO_ENERGY_SACHSEN = "Energy Sachsen";
 	public static final String RADIO_FFN_NIEDERSACHSEN = "FFN Niedersachsen";
 	public static final String RADIO_TECHNOBASE_FM = "Technobase FM";
+	public static final String RADIO_PLANET_RADIO = "Planet Radio";
+	public static final String RADIO_GALAXY_ASCHAFFENBURG = "Galaxy Aschaffenburg";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3560,6 +3562,48 @@ public class Stations {
 			// fillLandStilList(m);
 		}
 
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_PLANET_RADIO);
+		m.put("icon", R.drawable.radio_planet_radio);
+		m.put("icon_small", R.drawable.radio_planet_radio_small);
+		m.put("stream",
+				"http://edge.live.mp3.mdn.newmedia.nacamar.net/fs_planetradio/hqlivestream.mp3?token=");
+		m.put("homepage", "http://www.planetradio.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.planetradio.de/contact/info.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_GALAXY_ASCHAFFENBURG);
+		m.put("icon", R.drawable.radio_galaxy);
+		m.put("icon_small", R.drawable.radio_galaxy_small);
+		m.put("stream", "http://62.75.162.209:8000/galaxy");
+		m.put("homepage",
+				"http://www.radio-galaxy.de/home.html?tx_fhgalaxy_pi[gcid]=3");
+		m.put("webcam", "");
+		m.put("email", "http://www.radio-galaxy.de/info/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
 		// ******************************************************************************************************
 		// *
 		// * ÖSTERREICH
@@ -4083,8 +4127,10 @@ public class Stations {
 		m.put("name", Stations.RADIO_CELITIC_MUSIC);
 		m.put("icon", R.drawable.radio_celtic_radio);
 		m.put("icon_small", R.drawable.radio_celtic_radio_small);
-		m.put("stream", "http://173.192.224.123:8214");
-		m.put("homepage", "http://www.celticmusicradio.com");
+		// m.put("stream", "http://173.192.224.123:8214");
+		m.put("stream",
+				"http://216.235.91.36/play?now=81&membername=&session=celticmusicradio:0&tag=web&s=celticmusicradio&d=LIVE365&r=0&app_id=web%3ABROWSER&token=0d6651a1b1d8b35d3cb125518d9153f0-5900240080101248&AuthType=NORMAL&lid=zh-che&SaneID=89.217.173.62-13300450793219544880226&rnd=0.9155704504810274");
+		m.put("homepage", "http://www.celticradio.net");
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.celticradio.net/php/service_mod.php?type=contact");
