@@ -226,6 +226,7 @@ public class Stations {
 	public static final String RADIO_ANTENNE_KAERNTEN = "Antenne Kärnten";
 	public static final String RADIO_ANTENNE_SALZBURG = "Antenne Salzburg";
 	public static final String RADIO_ANTENNE_TIROL = "Antenne Tirol";
+	public static final String RADIO_ANTENNE_VORARLBERG = "Antenne Vorarlberg";
 	public static final String RADIO_ARABELLA = "Radio Arabella";
 
 	// ***********************************************
@@ -3906,6 +3907,28 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", Stations.RADIO_ANTENNE_TIROL);
+		m.put("icon", R.drawable.radio_antenne_tirol);
+		m.put("icon_small", R.drawable.radio_antenne_tirol_small);
+		m.put("stream", "http://streamplus30.leonex.de:14840");
+		m.put("homepage", "http://antennetirol.oe24.at");
+		m.put("webcam", "");
+		m.put("email",
+				"http://antennetirol.oe24.at/service/Antenne-Tirol-Kontakt/5310689");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", Stations.RADIO_ANTENNE_SALZBURG);
 		m.put("icon", R.drawable.radio_antenne_salzburg);
 		m.put("icon_small", R.drawable.radio_antenne_salzburg_small);
@@ -3928,14 +3951,13 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", Stations.RADIO_ANTENNE_TIROL);
-		m.put("icon", R.drawable.radio_antenne_tirol);
-		m.put("icon_small", R.drawable.radio_antenne_tirol_small);
-		m.put("stream", "http://streamplus30.leonex.de:14840");
-		m.put("homepage", "http://antennetirol.oe24.at");
+		m.put("name", Stations.RADIO_ANTENNE_VORARLBERG);
+		m.put("icon", R.drawable.radio_antenne_vorarlberg);
+		m.put("icon_small", R.drawable.radio_antenne_vorarlberg_small);
+		m.put("stream", "http://194.208.21.29:8060");
+		m.put("homepage", "http://antenne.vol.at");
 		m.put("webcam", "");
-		m.put("email",
-				"http://antennetirol.oe24.at/service/Antenne-Tirol-Kontakt/5310689");
+		m.put("email", "http://antenne.vol.at/werbung/kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
