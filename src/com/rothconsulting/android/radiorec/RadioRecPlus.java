@@ -52,6 +52,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private AsyncTask<URL, Integer, Long> recordTask;
 	private String origRT1steam = null;
 	private String origPlanetradioSteam = null;
+	private String origRadioEuskirchen = null;
 	// private final ToggleButton favIcon = null;
 	private int gcCounter;
 
@@ -606,6 +607,17 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				Log.d(TAG, "*********** new Stream="
 						+ Constants.THE_URL_LIVE_STREAM);
 			}
+			if (Constants.THE_SELECTED_STATION_NAME
+					.equalsIgnoreCase(Stations.RADIO_EUSKIRCHEN)) {
+				WebTool webtool = new WebTool();
+				// planet radio ist geschützt und braucht login token damit man
+				// den Stream abspielen kann.
+				origRadioEuskirchen = Constants.THE_URL_LIVE_STREAM;
+				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
+						+ webtool.getRadioEuskirchen(this);
+				Log.d(TAG, "*********** new Stream="
+						+ Constants.THE_URL_LIVE_STREAM);
+			}
 			getRadioPlayer().doStartPlay(this);
 			getWindow()
 					.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -667,6 +679,21 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				}
 				Constants.THE_URL_LIVE_STREAM = origPlanetradioSteam
 						+ webtool.getPlanetradioToken(this);
+				Log.d(TAG, "*********** new Stream="
+						+ Constants.THE_URL_LIVE_STREAM);
+			}
+
+			if (Constants.THE_SELECTED_STATION_NAME
+					.equalsIgnoreCase(Stations.RADIO_EUSKIRCHEN)) {
+				WebTool webtool = new WebTool();
+				// euskirchen ist geschützt und braucht login token damit man
+				// den
+				// Stream abspielen kann.
+				if (origRadioEuskirchen == null) {
+					origRadioEuskirchen = Constants.THE_URL_LIVE_STREAM;
+				}
+				Constants.THE_URL_LIVE_STREAM = origRadioEuskirchen
+						+ webtool.getRadioEuskirchen(this);
 				Log.d(TAG, "*********** new Stream="
 						+ Constants.THE_URL_LIVE_STREAM);
 			}
