@@ -130,7 +130,7 @@ public class Stations {
 	public static final String RADIO_CENTRAL_SWISS = "Central Swiss";
 	public static final String RADIO_EVIVA = "Eviva";
 	public static final String RADIO_GRISCHA = "Grischa";
-	public static final String RADIO_BUURERADIO = "BuureRadio";
+	public static final String RADIO_TELL = "Radio Tell";
 	public static final String RADIO_INDUSTRIE = "Industrie";
 	public static final String RADIO_AUDIOASYL = "Audioasyl";
 	public static final String RADIO_PIRATENRADIO = "Piratenradio";
@@ -2047,14 +2047,15 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_BUURERADIO);
-		m.put("icon", R.drawable.radio_buureradio);
-		m.put("icon_small", R.drawable.radio_buureradio_small);
-		m.put("stream", "http://live-three.dmd2.ch");
-		m.put("homepage", "http://www.buureradio.ch");
+		m.put("name", RADIO_TELL);
+		m.put("icon", R.drawable.radio_tell);
+		m.put("icon_small", R.drawable.radio_tell_small);
+		// m.put("stream", "http://live-three.dmd2.ch");
+		m.put("stream", "http://stream.radiotell.ch/radiotell.mp3");
+		m.put("homepage", "http://www.radiotell.ch");
 		m.put("webcam", "");
 		m.put("email",
-				"http://www.buureradio.ch/buureradio20/module/songs/searchform.asp");
+				"http://radiotell.ch/radiotell/module/pages/detail.asp?IDPage=12&PageKatalogeID=10&menuid=10&parentid=&pnx=&TopPnx=10_0&banner=&button=");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_VOLKSTUEMLICH);
