@@ -34,6 +34,7 @@ public class Stations {
 	public static final String STIL_RELIGION = "Religion";
 	public static final String STIL_SPORT = "Sport";
 	public static final String STIL_KLASSIK = "Klassik";
+	public static final String STIL_JAZZ = "Jazz";
 	public static final String SPRACHE_DE = "de";
 	public static final String SPRACHE_FR = "fr";
 	public static final String SPRACHE_IT = "it";
@@ -257,6 +258,9 @@ public class Stations {
 	public static final String RADIO_SHOUTED_FM_BREAK = "ShoutedFM - Break";
 	public static final String RADIO_SHOUTED_FM_CLUB = "ShoutedFM - Club";
 	public static final String RADIO_SHOUTED_FM_ELECTRO = "ShoutedFM - Electro";
+	public static final String RADIO_WHISPERINGS_SOLOPIANO = "Whisperings Solo Piano Radio";
+	public static final String RADIO_JAZZ_WELT = "Jazz Welt Radio";
+	public static final String RADIO_JAZZ_LOFT = "Jazz Loft Radio";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -901,7 +905,7 @@ public class Stations {
 		m.put("email", "http://www.radioswissjazz.ch/de/feedback");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
+		m.put("stil", STIL_JAZZ);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
@@ -4520,6 +4524,66 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_WHISPERINGS_SOLOPIANO);
+		m.put("icon", R.drawable.radio_whisperings_solopiano);
+		m.put("icon_small", R.drawable.radio_whisperings_solopiano_small);
+		m.put("stream", "http://pianosolo.streamguys.net:80/live");
+		m.put("homepage", "http://www.solopianoradio.com");
+		m.put("webcam", "");
+		m.put("email", "dnevue@rainmusic.com");
+		m.put("sprache", SPRACHE_EN);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_JAZZ);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_JAZZ_LOFT);
+		m.put("icon", R.drawable.radio_jazz_loft);
+		m.put("icon_small", R.drawable.radio_jazz_loft_small);
+		m.put("stream", "http://www.laut.fm/jazzloft");
+		m.put("homepage", "http://www.jazzloft.de");
+		m.put("webcam", "");
+		m.put("email", "mike@jazzloft.de");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_JAZZ);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_JAZZ_WELT);
+		m.put("icon", R.drawable.radio_jazz_welt);
+		m.put("icon_small", R.drawable.radio_jazz_welt_small);
+		m.put("stream", "http://www.laut.fm/jazzwelt");
+		m.put("homepage", "http://www.laut.fm/jazzwelt");
+		m.put("webcam", "");
+		m.put("email", "http://www.jrsk.de");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_JAZZ);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
