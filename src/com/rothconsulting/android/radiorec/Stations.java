@@ -174,7 +174,7 @@ public class Stations {
 	public static final String RADIO_7 = "Radio 7";
 	public static final String RADIO_SALUE = "Salü";
 	public static final String RADIO_FFH = "FFH";
-	public static final String RADIO_RT1_HITRADIO = "rt1 Hitradio";
+	// public static final String RADIO_RT1_HITRADIO = "rt1 Hitradio";
 	public static final String RADIO_HR_2 = "HR 2";
 	public static final String RADIO_HR_3 = "HR 3";
 	public static final String RADIO_1LIVE = "1Live";
@@ -261,6 +261,11 @@ public class Stations {
 	public static final String RADIO_WHISPERINGS_SOLOPIANO = "Whisperings Solo Piano Radio";
 	public static final String RADIO_JAZZ_WELT = "Jazz Welt Radio";
 	public static final String RADIO_JAZZ_LOFT = "Jazz Loft Radio";
+	public static final String RADIO_JAZZ_RADIO = "Jazz Radio";
+	public static final String RADIO_JAZZ_RADIO_FUNK = "Jazz Radio Funk";
+	public static final String RADIO_JAZZ_RADIO_SOUL = "Jazz Radio Soul";
+	public static final String RADIO_JAZZ_RADIO_GROOVE = "Jazz Radio Groove";
+	public static final String RADIO_JAZZ_RADIO_BLUES = "Jazz Radio Blues";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -2914,26 +2919,29 @@ public class Stations {
 			// fillLandStilList(m);
 		}
 
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_RT1_HITRADIO);
-		m.put("icon", R.drawable.radio_rt1_hitradio);
-		m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
-		m.put("stream", "http://62.27.44.59/hitradiort1/livestream.mp3?token=");
-		m.put("homepage", "http://www.rt1.de");
-		m.put("webcam", "http://www.rt1.de/studiocam1.htm");
-		m.put("email", "http://www.rt1.de/index.php?pageid=70&puid=1");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_DE);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		// m = new HashMap<String, Object>();
+		// m.put("name", RADIO_RT1_HITRADIO);
+		// m.put("icon", R.drawable.radio_rt1_hitradio);
+		// m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
+		// // m.put("stream",
+		// // "http://62.27.44.59/hitradiort1/livestream.mp3?token=");
+		// m.put("stream",
+		// "http://edge.live.mp3.mdn.newmedia.nacamar.net/hitradiort1/livestream.mp3?token=");
+		// m.put("homepage", "http://www.rt1.de");
+		// m.put("webcam", "http://www.rt1.de/studiocam1.htm");
+		// m.put("email", "http://www.rt1.de/index.php?pageid=70&puid=1");
+		// m.put("sprache", SPRACHE_DE);
+		// m.put("land", LAND_DE);
+		// m.put("stil", STIL_POP);
+		// if (Build.VERSION.SDK_INT < 8
+		// && Constants.getIgnoreListKleinerAndroid22().contains(
+		// m.get("name"))) {
+		// // wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		//
+		// } else {
+		// stationList.add(m);
+		// // fillLandStilList(m);
+		// }
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_HR_2);
@@ -4584,6 +4592,106 @@ public class Stations {
 		m.put("email", "http://www.jrsk.de");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
+		m.put("stil", STIL_JAZZ);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_JAZZ_RADIO);
+		m.put("icon", R.drawable.radio_jazz_radio);
+		m.put("icon_small", R.drawable.radio_jazz_radio_small);
+		m.put("stream", "http://jazzradio.ice.infomaniak.ch/jazzradio-high.mp3");
+		m.put("homepage", "http://www.jazzradio.fr");
+		m.put("webcam", "");
+		m.put("email", "http://www.jazzradio.fr/radio/contact");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_JAZZ);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_JAZZ_RADIO_FUNK);
+		m.put("icon", R.drawable.radio_jazz_radio_funk);
+		m.put("icon_small", R.drawable.radio_jazz_radio_small);
+		m.put("stream", "http://jazz-wr06.ice.infomaniak.ch/jazz-wr06-128.mp3");
+		m.put("homepage", "http://www.jazzradio.fr");
+		m.put("webcam", "");
+		m.put("email", "http://www.jazzradio.fr/radio/contact");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_JAZZ);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_JAZZ_RADIO_SOUL);
+		m.put("icon", R.drawable.radio_jazz_radio_soul);
+		m.put("icon_small", R.drawable.radio_jazz_radio_small);
+		m.put("stream", "http://jazz-wr10.ice.infomaniak.ch/jazz-wr10-128.mp3");
+		m.put("homepage", "http://www.jazzradio.fr");
+		m.put("webcam", "");
+		m.put("email", "http://www.jazzradio.fr/radio/contact");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_JAZZ);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_JAZZ_RADIO_GROOVE);
+		m.put("icon", R.drawable.radio_jazz_radio_groove);
+		m.put("icon_small", R.drawable.radio_jazz_radio_small);
+		m.put("stream", "http://jazz-wr08.ice.infomaniak.ch/jazz-wr08-128.mp3");
+		m.put("homepage", "http://www.jazzradio.fr");
+		m.put("webcam", "");
+		m.put("email", "http://www.jazzradio.fr/radio/contact");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_JAZZ);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_JAZZ_RADIO_BLUES);
+		m.put("icon", R.drawable.radio_jazz_radio_blues);
+		m.put("icon_small", R.drawable.radio_jazz_radio_small);
+		m.put("stream", "http://jazzblues.ice.infomaniak.ch/jazzblues-high.mp3");
+		m.put("homepage", "http://www.jazzradio.fr");
+		m.put("webcam", "");
+		m.put("email", "http://www.jazzradio.fr/radio/contact");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_DIV);
 		m.put("stil", STIL_JAZZ);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(

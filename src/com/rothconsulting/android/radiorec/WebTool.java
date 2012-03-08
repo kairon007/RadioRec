@@ -207,22 +207,23 @@ public class WebTool {
 
 	}
 
-	protected String getRT1Token(Context context) {
-		Utils utils = new Utils();
-		String token = "";
-		if (utils.isNetworkAvailable(context, null, false)) {
-			String url = "http://edge.download.newmedia.nacamar.net/sltokens/flashplayer/stream-mp3-player.php?stream=hitradiort1/livestream.mp3";
-			String findString = "var token = \"";
-			String endString = "\";";
-			token = getStringFromWebsite(url, null, findString, endString);
-			if (token != null) {
-				token = token.trim();
-				token = token.substring(13, token.length() - 2);
-			}
-			Log.d(TAG, "** Token=" + token);
-		}
-		return token;
-	}
+	// protected String getRT1Token(Context context) {
+	// Utils utils = new Utils();
+	// String token = "";
+	// if (utils.isNetworkAvailable(context, null, false)) {
+	// String url =
+	// "http://edge.download.newmedia.nacamar.net/sltokens/flashplayer/stream-mp3-player.php?stream=hitradiort1/livestream.mp3";
+	// String findString = "var token = \"";
+	// String endString = "\";";
+	// token = getStringFromWebsite(url, null, findString, endString);
+	// if (token != null) {
+	// token = token.trim();
+	// token = token.substring(13, token.length() - 2);
+	// }
+	// Log.d(TAG, "** Token=" + token);
+	// }
+	// return token;
+	// }
 
 	protected String getPlanetradioToken(Context context) {
 		Utils utils = new Utils();
@@ -269,13 +270,13 @@ public class WebTool {
 		String token = "";
 		if (utils.isNetworkAvailable(context, null, false)) {
 			String url = "http://kingstonhot.de/php/view/";
-			String findString = "<a href=\"http://www.kingstonhot.de/shows/KingstonHotRadio";
+			String findString = "<a href=\"http://www.kingstonhot.de/shows/";
 			String endString = ".mp3";
 			token = getStringFromWebsite(url, null, findString, endString);
 			if (token != null) {
 				token = token.trim();
-				token = token.substring(57, token.length() - 29);
-				token = "KingstonHotRadio" + token;
+				token = token.substring(41, token.length() - 29);
+				token = token.trim();
 			}
 			Log.d(TAG, "** Token=" + token);
 		}
