@@ -575,13 +575,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				showDialog(Constants.LIVE_STREAM_STATION);
 			}
 			if (Constants.THE_SELECTED_STATION_NAME
-					.equalsIgnoreCase(Stations.RADIO_KINGSTONHOT)) {
-				// Kingstonhot.de hat immer Donnerstags eine Live Sendung. Ab
+					.equalsIgnoreCase(Stations.RADIO_JUGGLERZ)) {
+				// jugglerz.de hat immer Donnerstags eine Live Sendung. Ab
 				// Freitag kann man diese als mp3 hören. Daher ist die URL
 				// dynamisch.
 				WebTool webtool = new WebTool();
 				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
-						+ webtool.getKingstonHotFileName(this);
+						+ webtool.getJugglerzFileName(this);
 				Log.d(TAG, "*********** new Stream="
 						+ Constants.THE_URL_LIVE_STREAM);
 			}

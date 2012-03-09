@@ -260,22 +260,22 @@ public class WebTool {
 	}
 
 	/**
-	 * Radio Kingstonhot.de hat immer Donnerstags eine Live Sendung. Ab Freitag
+	 * Radio jugglerz.de hat immer Donnerstags eine Live Sendung. Ab Freitag
 	 * kann man diese als mp3 hören.
 	 * 
-	 * @return Dateiname 'KingstonHotRadioYYMMDD.mp3'
+	 * @return Dateiname 'xxxx.mp3'
 	 */
-	protected String getKingstonHotFileName(Context context) {
+	protected String getJugglerzFileName(Context context) {
 		Utils utils = new Utils();
 		String token = "";
 		if (utils.isNetworkAvailable(context, null, false)) {
-			String url = "http://kingstonhot.de/php/view/";
-			String findString = "<a href=\"http://www.kingstonhot.de/shows/";
+			String url = "http://www.jugglerz.de/php/view/";
+			String findString = "<a href=\"http://www.jugglerz.de/shows/";
 			String endString = ".mp3";
 			token = getStringFromWebsite(url, null, findString, endString);
-			if (token != null) {
+			if (!token.equals("") && token.length() > 11) {
 				token = token.trim();
-				token = token.substring(41, token.length() - 29);
+				token = token.substring(38, token.length() - 29);
 				token = token.trim();
 			}
 			Log.d(TAG, "** Token=" + token);

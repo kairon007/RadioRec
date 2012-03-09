@@ -167,7 +167,7 @@ public class Stations {
 	public static final String RADIO_BIG_FM = "BigFM";
 	public static final String RADIO_SEEFUNK = "Seefunk";
 	public static final String RADIO_SINE_MUSIC = "Sine-Music";
-	public static final String RADIO_KINGSTONHOT = "Kingston Hot";
+	public static final String RADIO_JUGGLERZ = "Jugglerz Radio (KingstonHot)";
 	public static final String RADIO_SUNSHINE_LIVE = "sunshine-live";
 	public static final String RADIO_ALLGAEUHIT = "AllgäuHIT";
 	public static final String RADIO_TOP100STATION = "Top 100 Station";
@@ -266,6 +266,9 @@ public class Stations {
 	public static final String RADIO_JAZZ_RADIO_SOUL = "Jazz Radio Soul";
 	public static final String RADIO_JAZZ_RADIO_GROOVE = "Jazz Radio Groove";
 	public static final String RADIO_JAZZ_RADIO_BLUES = "Jazz Radio Blues";
+	public static final String RADIO_JAZZ_RADIO_GROOVUP = "Jazz Radio Groov'Up";
+	public static final String RADIO_JAZZ_RADIO_LATINJAZZ = "Jazz Radio Latin Jazz";
+	public static final String RADIO_JAZZ_RADIO_SOULFOOD = "Jazz Radio Soul Food";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -2773,11 +2776,11 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_KINGSTONHOT);
-		m.put("icon", R.drawable.radio_kingston_hot);
-		m.put("icon_small", R.drawable.radio_kingston_hot_small);
-		m.put("stream", "http://www.kingstonhot.de/shows/");
-		m.put("homepage", "http://www.kingstonhot.de");
+		m.put("name", RADIO_JUGGLERZ);
+		m.put("icon", R.drawable.radio_jugglerz_radio);
+		m.put("icon_small", R.drawable.radio_jugglerz_radio_small);
+		m.put("stream", "http://www.jugglerz.de/shows/");
+		m.put("homepage", "http://www.jugglerz.de");
 		m.put("webcam", "");
 		m.put("email", "http://34073.speechbox.de");
 		m.put("sprache", SPRACHE_DE);
@@ -4687,6 +4690,66 @@ public class Stations {
 		m.put("icon", R.drawable.radio_jazz_radio_blues);
 		m.put("icon_small", R.drawable.radio_jazz_radio_small);
 		m.put("stream", "http://jazzblues.ice.infomaniak.ch/jazzblues-high.mp3");
+		m.put("homepage", "http://www.jazzradio.fr");
+		m.put("webcam", "");
+		m.put("email", "http://www.jazzradio.fr/radio/contact");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_JAZZ);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_JAZZ_RADIO_GROOVUP);
+		m.put("icon", R.drawable.radio_jazz_radio_groovup);
+		m.put("icon_small", R.drawable.radio_jazz_radio_small);
+		m.put("stream", "http://jazz-wr13.ice.infomaniak.ch/jazz-wr13-128.mp3");
+		m.put("homepage", "http://www.jazzradio.fr");
+		m.put("webcam", "");
+		m.put("email", "http://www.jazzradio.fr/radio/contact");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_JAZZ);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_JAZZ_RADIO_LATINJAZZ);
+		m.put("icon", R.drawable.radio_jazz_radio_latinjazz);
+		m.put("icon_small", R.drawable.radio_jazz_radio_small);
+		m.put("stream", "http://jazz-wr09.ice.infomaniak.ch/jazz-wr09-128.mp3");
+		m.put("homepage", "http://www.jazzradio.fr");
+		m.put("webcam", "");
+		m.put("email", "http://www.jazzradio.fr/radio/contact");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_JAZZ);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_JAZZ_RADIO_SOULFOOD);
+		m.put("icon", R.drawable.radio_jazz_radio_soulfood);
+		m.put("icon_small", R.drawable.radio_jazz_radio_small);
+		m.put("stream", "http://jazz-wr12.ice.infomaniak.ch/jazz-wr12-128.mp3");
 		m.put("homepage", "http://www.jazzradio.fr");
 		m.put("webcam", "");
 		m.put("email", "http://www.jazzradio.fr/radio/contact");
