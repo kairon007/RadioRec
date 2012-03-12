@@ -64,7 +64,7 @@
 	<string name="donate_options">Possibilità Donazione</string>
 	<string name="bufferZwischenspeicher">Memoria intermedia registrazione</string>
 	<string name="bufferText">I dati di registrazione vengono dapprima memorizzati in una memoria intermedia e poi regisrati nel file MP3 indicato. Questo assicura la continuità della registrazione in caso di interruzioni d rete. Qui puoi definire la dimensione di questa memoria intermedia. In caso che non hai problemi di registrazione, oppure non sei sicuro di che si tratta, lascia l\'impostazione a 8192 Bytes.</string>
-	<string name="errorZahlEingeben">ERRORE: Indica un numero tra \n0 - 1000000 (1 Mio)!</string>
+	<string name="errorZahlEingeben">ERRORE: Indica un numero tra \n1 - 1000000 (1 Mio)!</string>
 	<string name="verbinde">Connessione...</string>
 	<string name="senderNach">Emittenti in ordine di...</string>
 	<string name="laender">Paesi</string>
@@ -81,4 +81,5 @@
 	<string name="deleted">eliminato</string>
 	<string name="recordFolderNotFound">Percorso di registrazione introvabile!</string>
 	<string name="recordFolderNotFoundMessage">Non é stato possibile trovar cartelle con registrazioni RadioRec+.\nO non hai ancora registrato nulla, o il percorso alla cartella é invalido. Il percorso può essere definito nel e impostazioni.</string>
+	<string name="stop">Stop</string>
 </resources>

@@ -3658,8 +3658,8 @@ public class Stations {
 		m.put("name", RADIO_EUSKIRCHEN);
 		m.put("icon", R.drawable.radio_euskirchen);
 		m.put("icon_small", R.drawable.radio_euskirchen_small);
-		m.put("stream",
-				"http://edge.live.mp3.mdn.newmedia.nacamar.net/radioeuskirchen/livestream.mp3?token=");
+		m.put("stream", "http://62.27.44.8/radioeuskirchen/livestream.mp3");
+		// "http://edge.live.mp3.mdn.newmedia.nacamar.net/radioeuskirchen/livestream.mp3?token=");
 		m.put("homepage", "http://www.radioeuskirchen.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radioeuskirchen.de/eus/re/25090/studiomail");

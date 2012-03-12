@@ -64,7 +64,7 @@
 	<string name="donate_options">Spende Möglichkeiten</string>	
 	<string name="bufferZwischenspeicher">Buffer-Grösse für Aufnahme</string>
 	<string name="bufferText">Die Daten für die Aufnahme einer MP3 Datei werden zuerst in einen Buffer (Zwischenspeicher) gelesen und erst dann als MP3 gespeichert. Das soll sicherstellen, dass bei kurzen Netzunterbrechungen die Aufnahme dennoch weiter geht. Hier kannst du die Buffer-Grösse selber konfigurieren. Falls du keine Probleme mit dem Aufnehmen hast oder du nicht sicher bist, lass es auf 8192 Bytes.</string>
-	<string name="errorZahlEingeben">ERROR: Bitte gib eine Zahl zwischen\n0 - 1000000 (1 Mio) ein!</string>
+	<string name="errorZahlEingeben">ERROR: Bitte gib eine Zahl zwischen\n1 - 1000000 (1 Mio) ein!</string>
 	<string name="verbinde">Verbinde...</string>
 	<string name="senderNach">Sender nach...</string>
 	<string name="laender">Länder</string>
@@ -81,4 +81,5 @@
 	<string name="deleted">gelöscht</string>
 	<string name="recordFolderNotFound">Verzeichnis mit Aufnahmen nicht gefunden!</string>
 	<string name="recordFolderNotFoundMessage">Es wurde kein Verzeichnis gefunden mit RadioRec+ aufnahmen.\nEntweder hast du noch nichts aufgenommen oder der Pfad zur SD-Card ist falsch. Den Pfad zur SD Card kannst du in den Einstellungen konfigurieren.</string>
+	<string name="stop">Stop</string>
 </resources>

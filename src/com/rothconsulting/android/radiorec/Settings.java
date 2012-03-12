@@ -81,7 +81,7 @@ public class Settings extends Activity implements
 				try {
 					int bufferSize = new Integer(""
 							+ editTextBufferSize.getText());
-					if (bufferSize < 0 || bufferSize > 1000000) {
+					if (bufferSize <= 0 || bufferSize > 1000000) {
 						throw new NumberFormatException();
 					} else {
 						Constants.THE_BUFFER = bufferSize;

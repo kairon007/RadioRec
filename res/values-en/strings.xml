@@ -64,7 +64,7 @@
 	<string name="donate_options">Donation Options</string>	
 	<string name="bufferZwischenspeicher">Buffer size for recording</string>
 	<string name="bufferText">Before writing the mp3 file the data is ongoing stored in a buffer. Here you can configure the buffer size. If you have no problem with recording or you\'re not sure leave it 8192 bytes.</string>
-	<string name="errorZahlEingeben">ERROR: Enter a number between\n0 &#8211; 1000000 (1 million) !</string>
+	<string name="errorZahlEingeben">ERROR: Enter a number between\n1 &#8211; 1000000 (1 million) !</string>
 	<string name="verbinde">Connecting&#8230;</string>
 	<string name="senderNach">Stations by&#8230;</string>
 	<string name="laender">Countries</string>
@@ -81,4 +81,5 @@
 	<string name="deleted">deleted</string>
 	<string name="recordFolderNotFound">Record-Folder Not Found!</string>
 	<string name="recordFolderNotFoundMessage">Could not find any folder with RadioRec+ recordings.\nEither you have not recorded anything or the path to the sd card is wrong. The path to the sd card can be configured in the settings.</string>
+	<string name="stop">Stop</string>
 </resources>

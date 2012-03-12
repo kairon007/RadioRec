@@ -10,6 +10,7 @@ import java.util.HashMap;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -41,22 +42,26 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	static final String TAG = "RadioRecPlus";
 
-	private boolean playing, recording, firstStart;
+	private boolean playing;
+
+	private static boolean recording;
+
+	private boolean firstStart;
 	private Spinner spnAllStations;
 	// private Spinner spnFavoriten, spnLaender, spnStil;
 	private ArrayList<HashMap<String, Object>> stationList;
 	// private ArrayList<HashMap<String, Object>> favList, landList, stilList;
 	private ImageView logo;
 	private ImageButton back, fwd;
-	private RadioPlayer radioPlayer;
-	private AsyncTask<URL, Integer, Long> recordTask;
+	private static RadioPlayer radioPlayer;
+	private static AsyncTask<URL, Integer, Long> recordTask;
 	private final String origRT1steam = null;
 	private String origPlanetradioSteam = null;
-	private String origRadioEuskirchen = null;
+	// private String origRadioEuskirchen = null;
 	// private final ToggleButton favIcon = null;
 	private int gcCounter;
 
-	Utils utils = new Utils();
+	static Utils utils = new Utils();
 
 	public Spinner getStations() {
 		return spnAllStations;
@@ -174,7 +179,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				return true;
 			} else {
 				getRadioPlayer().doStopPlay(this);
-				doStopRecording();
+				doStopRecording(this);
 				finish();
 			}
 		}
@@ -204,7 +209,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 										final int id) {
 									getRadioPlayer().doStopPlay(
 											getApplicationContext());
-									doStopRecording();
+									doStopRecording(getApplicationContext());
 									finish();
 								}
 							})
@@ -287,7 +292,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		case -5:
 			Log.i(TAG, "exit");
 			getRadioPlayer().doStopPlay(this);
-			doStopRecording();
+			doStopRecording(this);
 			finish();
 			break;
 		}
@@ -380,7 +385,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			}
 			// recording can change in doStartRecording()
 			if (!recording) {
-				doStopRecording();
+				doStopRecording(this);
 			}
 			((ImageButton) v)
 					.setImageResource(recording ? R.drawable.button_record_on
@@ -607,17 +612,17 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				Log.d(TAG, "*********** new Stream="
 						+ Constants.THE_URL_LIVE_STREAM);
 			}
-			if (Constants.THE_SELECTED_STATION_NAME
-					.equalsIgnoreCase(Stations.RADIO_EUSKIRCHEN)) {
-				WebTool webtool = new WebTool();
-				// planet radio ist geschützt und braucht login token damit man
-				// den Stream abspielen kann.
-				origRadioEuskirchen = Constants.THE_URL_LIVE_STREAM;
-				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
-						+ webtool.getRadioEuskirchen(this);
-				Log.d(TAG, "*********** new Stream="
-						+ Constants.THE_URL_LIVE_STREAM);
-			}
+			// if (Constants.THE_SELECTED_STATION_NAME
+			// .equalsIgnoreCase(Stations.RADIO_EUSKIRCHEN)) {
+			// WebTool webtool = new WebTool();
+			// // planet radio ist geschützt und braucht login token damit man
+			// // den Stream abspielen kann.
+			// origRadioEuskirchen = Constants.THE_URL_LIVE_STREAM;
+			// Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
+			// + webtool.getRadioEuskirchen(this);
+			// Log.d(TAG, "*********** new Stream="
+			// + Constants.THE_URL_LIVE_STREAM);
+			// }
 			getRadioPlayer().doStartPlay(this);
 			getWindow()
 					.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -631,7 +636,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		utils.storePreferences(this);
 	}
 
-	protected RadioPlayer getRadioPlayer() {
+	protected static RadioPlayer getRadioPlayer() {
 		if (radioPlayer == null) {
 			radioPlayer = new RadioPlayer();
 		}
@@ -683,20 +688,20 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 						+ Constants.THE_URL_LIVE_STREAM);
 			}
 
-			if (Constants.THE_SELECTED_STATION_NAME
-					.equalsIgnoreCase(Stations.RADIO_EUSKIRCHEN)) {
-				WebTool webtool = new WebTool();
-				// euskirchen ist geschützt und braucht login token damit man
-				// den
-				// Stream abspielen kann.
-				if (origRadioEuskirchen == null) {
-					origRadioEuskirchen = Constants.THE_URL_LIVE_STREAM;
-				}
-				Constants.THE_URL_LIVE_STREAM = origRadioEuskirchen
-						+ webtool.getRadioEuskirchen(this);
-				Log.d(TAG, "*********** new Stream="
-						+ Constants.THE_URL_LIVE_STREAM);
-			}
+			// if (Constants.THE_SELECTED_STATION_NAME
+			// .equalsIgnoreCase(Stations.RADIO_EUSKIRCHEN)) {
+			// WebTool webtool = new WebTool();
+			// // euskirchen ist geschützt und braucht login token damit man
+			// // den
+			// // Stream abspielen kann.
+			// if (origRadioEuskirchen == null) {
+			// origRadioEuskirchen = Constants.THE_URL_LIVE_STREAM;
+			// }
+			// Constants.THE_URL_LIVE_STREAM = origRadioEuskirchen
+			// + webtool.getRadioEuskirchen(this);
+			// Log.d(TAG, "*********** new Stream="
+			// + Constants.THE_URL_LIVE_STREAM);
+			// }
 
 			Log.d(TAG, "Constants.THE_URL_LIVE_STREAM="
 					+ Constants.THE_URL_LIVE_STREAM);
@@ -724,10 +729,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		return recording;
 	}
 
-	protected void doStopRecording() {
+	protected static void doStopRecording(Context context) {
 		if (recordTask != null) {
 			recordTask.cancel(true);
-			utils.getNotifInstance(this, RadioRecPlus.class)
+			utils.getNotifInstance(context, RadioRecPlus.class)
 					.hideStatusBarNotification(
 							Constants.NOTIFICATION_ID_RECORDING);
 			recording = false;

@@ -54,6 +54,9 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 					+ Constants.THE_SD_CARD_PATH + "/");
 			radioRecorderDirectory.mkdirs();
 			Log.d(TAG, "Stream Buffer=" + Constants.THE_BUFFER);
+			if (Constants.THE_BUFFER <= 0) {
+				Constants.THE_BUFFER = Constants.DEFAULT_BUFFER;
+			}
 			buffInputStream = new BufferedInputStream(urls[0].openStream(),
 					Constants.THE_BUFFER);
 			Log.d(TAG, "url.openStream()");

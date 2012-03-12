@@ -106,6 +106,7 @@ public class Tabs extends ActivityGroup {
 			preExisting = view;
 		}
 
+		@Override
 		public View createTabContent(String tag) {
 			return preExisting;
 		}
@@ -133,7 +134,7 @@ public class Tabs extends ActivityGroup {
 				return true;
 			} else {
 				rrp.getRadioPlayer().doStopPlay(this);
-				rrp.doStopRecording();
+				rrp.doStopRecording(this);
 				finish();
 			}
 		}

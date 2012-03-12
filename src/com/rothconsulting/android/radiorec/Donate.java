@@ -60,6 +60,7 @@ public class Donate extends Activity {
 
 		final ImageButton buttonPayPal = (ImageButton) findViewById(R.id.imageButtonPaypal);
 		buttonPayPal.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				Intent intentHomepage = new Intent(Intent.ACTION_VIEW);
 				intentHomepage.setData(Uri
@@ -70,6 +71,7 @@ public class Donate extends Activity {
 
 		final ImageButton buttonBitcoin = (ImageButton) findViewById(R.id.imageButtonBitcoin);
 		buttonBitcoin.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				donateBitcoin();
 			}
@@ -78,6 +80,7 @@ public class Donate extends Activity {
 		final ImageButton buttonAndroidMarket = (ImageButton) findViewById(R.id.imageButtonAndroidMarket);
 		final Intent intentSpende = new Intent(this, MarketSpende.class);
 		buttonAndroidMarket.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				startActivity(intentSpende);
 			}
@@ -87,6 +90,7 @@ public class Donate extends Activity {
 
 		final Button saveButton = (Button) findViewById(R.id.buttonSaveAntiAdsKey);
 		saveButton.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				Constants.THE_ANTI_ADS_KEY = "" + edittext.getText();
 				if (Constants.THE_ANTI_ADS_KEY != null
@@ -111,6 +115,7 @@ public class Donate extends Activity {
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				finish();
 			}
@@ -127,6 +132,7 @@ public class Donate extends Activity {
 		b.setPositiveButton(R.string.neinDanke, null);
 		b.setNeutralButton(R.string.copy_to_clipboard,
 				new DialogInterface.OnClickListener() {
+					@Override
 					public void onClick(final DialogInterface dialog,
 							final int which) {
 						ClipboardManager cbm = (ClipboardManager) //
@@ -139,6 +145,7 @@ public class Donate extends Activity {
 		if (i.resolveActivity(this.getPackageManager()) != null) {
 			b.setNegativeButton(R.string.send_now,
 					new DialogInterface.OnClickListener() {
+						@Override
 						public void onClick(final DialogInterface dialog,
 								final int which) {
 							startActivity(i);
@@ -156,6 +163,8 @@ public class Donate extends Activity {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.backmenu, menu);
 		menu.removeItem(R.id.donate_adfree);
+		menu.add(0, -2, 0, this.getResources().getString(R.string.stop))
+				.setIcon(android.R.drawable.ic_menu_close_clear_cancel);
 		return true;
 	}
 
@@ -165,6 +174,11 @@ public class Donate extends Activity {
 		case R.id.zurueck:
 			finish();
 			return true;
+		case -2:
+			RadioRecPlus.getRadioPlayer().doStopPlay(this);
+			RadioRecPlus.doStopRecording(this);
+			finish();
+			break;
 		}
 		return super.onOptionsItemSelected(item);
 	}
