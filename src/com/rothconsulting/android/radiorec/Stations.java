@@ -234,6 +234,7 @@ public class Stations {
 	public static final String RADIO_ANTENNE_TIROL = "Antenne Tirol";
 	public static final String RADIO_ANTENNE_VORARLBERG = "Antenne Vorarlberg";
 	public static final String RADIO_ARABELLA = "Radio Arabella";
+	public static final String RADIO_KRONEHIT = "KroneHit";
 
 	// ***********************************************
 	// DIVERSE
@@ -2995,6 +2996,27 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_YOU_FM);
+		m.put("icon", R.drawable.radio_you_fm);
+		m.put("icon_small", R.drawable.radio_you_fm_small);
+		m.put("stream",
+				"http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w72a");
+		m.put("homepage", "http://www.you-fm.de");
+		m.put("webcam", "http://www.hrfoto.dunkel.de/webcams/xxl/studio1.jpg");
+		m.put("email", "http://www.you-fm.de/index.jsp?rubrik=12182");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_1LIVE);
 		m.put("icon", R.drawable.radio_1live);
 		m.put("icon_small", R.drawable.radio_1live_small);
@@ -3719,27 +3741,6 @@ public class Stations {
 			// fillLandStilList(m);
 		}
 
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_YOU_FM);
-		m.put("icon", R.drawable.radio_you_fm);
-		m.put("icon_small", R.drawable.radio_you_fm_small);
-		m.put("stream",
-				"http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w72a");
-		m.put("homepage", "http://www.you-fm.de");
-		m.put("webcam", "http://www.hrfoto.dunkel.de/webcams/xxl/studio1.jpg");
-		m.put("email", "http://www.you-fm.de/index.jsp?rubrik=12182");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_DE);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
 		// ******************************************************************************************************
 		// *
 		// * ÖSTERREICH
@@ -4114,6 +4115,27 @@ public class Stations {
 		m.put("homepage", "http://www.arabella.at");
 		m.put("webcam", "");
 		m.put("email", "http://www.arabella.at/wien/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_KRONEHIT);
+		m.put("icon", R.drawable.radio_kronehit);
+		m.put("icon_small", R.drawable.radio_kronehit_small);
+		m.put("stream", "http://onair.krone.at/kronehit.mp3");
+		m.put("homepage", "http://www.kronehit.at");
+		m.put("webcam", "");
+		m.put("email", "http://www.kronehit.at/kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
