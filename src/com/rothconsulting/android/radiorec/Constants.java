@@ -34,7 +34,7 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_FCB_LIVE_RADIO);
 		ignoreList.add(Stations.RADIO_FC_ZUERICH);
 		ignoreList.add(Stations.RADIO_BACKSTAGE_RADIO);
-		ignoreList.add(Stations.RADIO_RRO);
+		// ignoreList.add(Stations.RADIO_RRO);
 		ignoreList.add(Stations.RADIO_MONTE_CARLO);
 		ignoreList.add(Stations.RADIO_RASA);
 		ignoreList.add(Stations.RADIO_BLIND_POWER);

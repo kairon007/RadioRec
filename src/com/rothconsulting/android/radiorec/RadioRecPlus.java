@@ -55,9 +55,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private ImageButton back, fwd;
 	private static RadioPlayer radioPlayer;
 	private static AsyncTask<URL, Integer, Long> recordTask;
-	private final String origRT1steam = null;
 	private String origPlanetradioSteam = null;
-	// private String origRadioEuskirchen = null;
+	private String origOstseewelle = null;
 	// private final ToggleButton favIcon = null;
 	private int gcCounter;
 
@@ -590,17 +589,17 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				Log.d(TAG, "*********** new Stream="
 						+ Constants.THE_URL_LIVE_STREAM);
 			}
-			// if (Constants.THE_SELECTED_STATION_NAME
-			// .equalsIgnoreCase(Stations.RADIO_RT1_HITRADIO)) {
-			// WebTool webtool = new WebTool();
-			// // rt1 ist geschützt und braucht login token damit man den
-			// // Stream abspielen kann.
-			// origRT1steam = Constants.THE_URL_LIVE_STREAM;
-			// Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
-			// + webtool.getRT1Token(this);
-			// Log.d(TAG, "*********** new Stream="
-			// + Constants.THE_URL_LIVE_STREAM);
-			// }
+			if (Constants.THE_SELECTED_STATION_NAME
+					.equalsIgnoreCase(Stations.RADIO_OSTSEEWELLE)) {
+				WebTool webtool = new WebTool();
+				// radio ist geschützt und braucht login token damit man den
+				// Stream abspielen kann.
+				origOstseewelle = Constants.THE_URL_LIVE_STREAM;
+				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
+						+ webtool.getOstseewelleToken(this);
+				Log.d(TAG, "*********** new Stream="
+						+ Constants.THE_URL_LIVE_STREAM);
+			}
 			if (Constants.THE_SELECTED_STATION_NAME
 					.equalsIgnoreCase(Stations.RADIO_PLANET_RADIO)) {
 				WebTool webtool = new WebTool();
@@ -660,19 +659,19 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 		try {
 
-			// if (Constants.THE_SELECTED_STATION_NAME
-			// .equalsIgnoreCase(Stations.RADIO_RT1_HITRADIO)) {
-			// WebTool webtool = new WebTool();
-			// // rt1 ist geschützt und braucht login token damit man den
-			// // Stream abspielen kann.
-			// if (origRT1steam == null) {
-			// origRT1steam = Constants.THE_URL_LIVE_STREAM;
-			// }
-			// Constants.THE_URL_LIVE_STREAM = origRT1steam
-			// + webtool.getRT1Token(this);
-			// Log.d(TAG, "*********** new Stream="
-			// + Constants.THE_URL_LIVE_STREAM);
-			// }
+			if (Constants.THE_SELECTED_STATION_NAME
+					.equalsIgnoreCase(Stations.RADIO_OSTSEEWELLE)) {
+				WebTool webtool = new WebTool();
+				// radio ist geschützt und braucht login token damit man den
+				// Stream abspielen kann.
+				if (origOstseewelle == null) {
+					origOstseewelle = Constants.THE_URL_LIVE_STREAM;
+				}
+				Constants.THE_URL_LIVE_STREAM = origOstseewelle
+						+ webtool.getOstseewelleToken(this);
+				Log.d(TAG, "*********** new Stream="
+						+ Constants.THE_URL_LIVE_STREAM);
+			}
 
 			if (Constants.THE_SELECTED_STATION_NAME
 					.equalsIgnoreCase(Stations.RADIO_PLANET_RADIO)) {

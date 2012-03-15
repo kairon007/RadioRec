@@ -121,7 +121,7 @@ public class Stations {
 	public static final String RADIO_FCB_LIVE_RADIO = "FC Basel Live Radio";
 	public static final String RADIO_FC_ZUERICH = "FC Zürich";
 	public static final String RADIO_BACKSTAGE_RADIO = "Backstage Radio";
-	public static final String RADIO_RRO = "Radio Rottu Oberwallis";
+	// public static final String RADIO_RRO = "Radio Rottu Oberwallis";
 	public static final String RADIO_MONTE_CARLO = "Monte Carlo";
 	public static final String RADIO_RASA = "Radio RaSa";
 	public static final String RADIO_BLIND_POWER = "Blind Power";
@@ -210,6 +210,8 @@ public class Stations {
 	public static final String RADIO_GALAXY_ASCHAFFENBURG = "Galaxy Aschaffenburg";
 	public static final String RADIO_EUSKIRCHEN = "Radio Euskirchen";
 	public static final String RADIO_SPREERADIO = "Spreeradio";
+	public static final String RADIO_OSTSEEWELLE = "Ostseewelle";
+	public static final String RADIO_YOU_FM = "You FM";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -236,7 +238,7 @@ public class Stations {
 	// ***********************************************
 	// DIVERSE
 	// ***********************************************
-	public static final String RADIO_TIROL_IT = "Radio Tirol (IT)";
+	public static final String RADIO_TIROL_IT = "Radio (Süd-)Tirol";
 	public static final String RADIO_SOMA_FM_SOG = "soma fm - Sound of Goa";
 	public static final String RADIO_SOMA_FM_POPTRON = "soma fm - Poptron";
 	public static final String RADIO_SOMA_FM_SECRET_AGENT = "soma fm - Secret Agent";
@@ -1863,27 +1865,27 @@ public class Stations {
 			// fillLandStilList(m);
 		}
 
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_RRO);
-		m.put("icon", R.drawable.radio_rro);
-		m.put("icon_small", R.drawable.radio_rro_small);
-		m.put("stream",
-				"http://stream.rro.ch/shoutcast/radiostation2.stream/playlist.m3u8");
-		m.put("homepage", "http://www.rro.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.rro.ch/cms/?page=kontakt");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		// m = new HashMap<String, Object>();
+		// m.put("name", RADIO_RRO);
+		// m.put("icon", R.drawable.radio_rro);
+		// m.put("icon_small", R.drawable.radio_rro_small);
+		// m.put("stream",
+		// "httplive://stream.rro.ch/shoutcast/radiostation2.stream/playlist.m3u8");
+		// m.put("homepage", "http://www.rro.ch");
+		// m.put("webcam", "");
+		// m.put("email", "http://www.rro.ch/cms/?page=kontakt");
+		// m.put("sprache", SPRACHE_DE);
+		// m.put("land", LAND_CH);
+		// m.put("stil", STIL_POP);
+		// if (Build.VERSION.SDK_INT < 8
+		// && Constants.getIgnoreListKleinerAndroid22().contains(
+		// m.get("name"))) {
+		// // wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		//
+		// } else {
+		// stationList.add(m);
+		// // fillLandStilList(m);
+		// }
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_MONTE_CARLO);
@@ -3684,6 +3686,48 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.spreeradio.de/content/html/contact/studio.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_OSTSEEWELLE);
+		m.put("icon", R.drawable.radio_ostseewelle);
+		m.put("icon_small", R.drawable.radio_ostseewelle_small);
+		m.put("stream",
+				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ostseewelle/livestream.mp3?token=");
+		m.put("homepage", "http://www.ostseewelle.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.ostseewelle.de/kontakt_programm");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_YOU_FM);
+		m.put("icon", R.drawable.radio_you_fm);
+		m.put("icon_small", R.drawable.radio_you_fm_small);
+		m.put("stream",
+				"http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w72a");
+		m.put("homepage", "http://www.you-fm.de");
+		m.put("webcam", "http://www.hrfoto.dunkel.de/webcams/xxl/studio1.jpg");
+		m.put("email", "http://www.you-fm.de/index.jsp?rubrik=12182");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
