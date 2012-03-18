@@ -143,6 +143,7 @@ public class Stations {
 	public static final String RADIO_GUGGE_SOUND = "Guggesound";
 	public static final String RADIO_VOLKSMUSIKNET = "Volksmusiknet";
 	public static final String RADIO_IISCHERS_RADIO = "Iischers Radio";
+	public static final String RADIO_RADIUS = "Radio Radius";
 	public static final String RADIO_LIECHSTENSTEIN = "Radio Liechtenstein";
 
 	// ***********************************************
@@ -2325,6 +2326,27 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_VOLKSTUEMLICH);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RADIUS);
+		m.put("icon", R.drawable.radio_radius);
+		m.put("icon_small", R.drawable.radio_radius_small);
+		m.put("stream", "http://relay.radio.ethz.ch/sender.mp3");
+		m.put("homepage", "http://www.radioradius.ch");
+		m.put("webcam", "http://sender.ethz.ch/studio/cam2.jpg");
+		m.put("email", "info@radio.ethz.ch");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
