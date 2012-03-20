@@ -175,9 +175,9 @@ public class Stations {
 	public static final String RADIO_7 = "Radio 7";
 	public static final String RADIO_SALUE = "Salü";
 	public static final String RADIO_FFH = "FFH";
-	// public static final String RADIO_RT1_HITRADIO = "rt1 Hitradio";
 	public static final String RADIO_HR_2 = "HR 2";
 	public static final String RADIO_HR_3 = "HR 3";
+	public static final String RADIO_YOU_FM = "You FM";
 	public static final String RADIO_1LIVE = "1Live";
 	public static final String RADIO_WDR_2 = "WDR 2";
 	public static final String RADIO_WDR_3 = "WDR 3";
@@ -212,7 +212,9 @@ public class Stations {
 	public static final String RADIO_EUSKIRCHEN = "Radio Euskirchen";
 	public static final String RADIO_SPREERADIO = "Spreeradio";
 	public static final String RADIO_OSTSEEWELLE = "Ostseewelle";
-	public static final String RADIO_YOU_FM = "You FM";
+	public static final String RADIO_APOLLORADIO = "Apollo Radio";
+	public static final String RADIO_DEFJAY = "Defjay";
+	public static final String RADIO_DELUXERADIO = "Deluxe Radio";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3751,6 +3753,67 @@ public class Stations {
 		m.put("homepage", "http://www.ostseewelle.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.ostseewelle.de/kontakt_programm");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_APOLLORADIO);
+		m.put("icon", R.drawable.radio_apollo_radio);
+		m.put("icon_small", R.drawable.radio_apollo_radio_small);
+		m.put("stream", "http://217.68.161.222:6300");
+		m.put("homepage", "http://www.apolloradio.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.apolloradio.de/kontakt.php");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_DEFJAY);
+		m.put("icon", R.drawable.radio_defjay);
+		m.put("icon_small", R.drawable.radio_defjay_small);
+		m.put("stream", "http://he-srv2.defjay.de");
+		m.put("homepage", "http://www.defjay.de");
+		m.put("webcam", "");
+		m.put("email", "http://defjay.de/anschrift.asp");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_DELUXERADIO);
+		m.put("icon", R.drawable.radio_deluexeradio);
+		m.put("icon_small", R.drawable.radio_deluexeradio_small);
+		m.put("stream",
+				"http://radio.cdn.deluxemusic.tv:8000/deluxemusic.tv/mp3");
+		m.put("homepage", "http://www.deluexeradio.de");
+		m.put("webcam", "");
+		m.put("email", "http://deluxemusic.tv/service/kontakt/");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
