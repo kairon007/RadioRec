@@ -57,7 +57,7 @@
 	<string name="billing_not_supported_message">Il servizio Market al momento non é raggiungibile. Riprova più tardi oppure dona tramite PayPal o carta di credito.</string>
 	<string name="cannot_connect_title">Impossibile connettere a Market</string>
 	<string name="cannot_connect_message">RadioRec+ non può connettere Market. La tua versione Market é troppo vecchia oppure il Market ɠintrovabile. \nDona tramite PayPal o carta di credito.</string>
-	<string name="help_url" formatted="false">http://market.android.com/support/bin/answer.py?answer=1050566&amp;hl=%lang%&amp;dl=%region%</string>
+	<string name="help_url" formatted="false">https://support.google.com/googleplay/bin/answer.py?hl=de&amp;answer=1050566</string>
 	<string name="learn_more">Più informazioni</string>
 	<string name="restoring_transactions">Ripristino transazioni</string>
 	<string name="select">Selezione</string>

@@ -215,6 +215,8 @@ public class Stations {
 	public static final String RADIO_APOLLORADIO = "Apollo Radio";
 	public static final String RADIO_DEFJAY = "Defjay";
 	public static final String RADIO_DELUXERADIO = "Deluxe Radio";
+	public static final String RADIO_BALLERMANN_RADIO = "Ballermann Radio";
+	public static final String RADIO_PARTYRADIO_24 = "Partyradio 24";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -1807,11 +1809,11 @@ public class Stations {
 		m.put("name", RADIO_FCB_LIVE_RADIO);
 		m.put("icon", R.drawable.radio_fcb_live_radio);
 		m.put("icon_small", R.drawable.radio_fcb_live_radio_small);
-		m.put("stream", "http://195.49.27.25:8000");
+		m.put("stream", "http://46.4.14.142:8800");
 		m.put("homepage", "http://www.fcbliveradio.ch");
 		m.put("webcam", "");
 		m.put("email",
-				"http://www.fcbliveradio.ch/index.php?option=com_contact&view=category&catid=12&Itemid=53");
+				"https://www.facebook.com/pages/FCB-Live-Radio/294028969601");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_SPORT);
@@ -3814,6 +3816,46 @@ public class Stations {
 		m.put("homepage", "http://www.deluexeradio.de");
 		m.put("webcam", "");
 		m.put("email", "http://deluxemusic.tv/service/kontakt/");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_BALLERMANN_RADIO);
+		m.put("icon", R.drawable.radio_ballermann);
+		m.put("icon_small", R.drawable.radio_ballermann_small);
+		m.put("stream", "http://party.bmr-radio.de:8100");
+		m.put("homepage", "http://www.ballermann-radio.com");
+		m.put("webcam", "");
+		m.put("email", "info@ballermann-radio.com");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_PARTYRADIO_24);
+		m.put("icon", R.drawable.radio_partyradio24);
+		m.put("icon_small", R.drawable.radio_partyradio24_small);
+		m.put("stream", "http://212.48.110.70:8070");
+		m.put("homepage", "http://www.partyradio24.de/");
+		m.put("webcam", "");
+		m.put("email", "");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);

@@ -149,9 +149,9 @@ public class WebTool {
 			// Webseite parsen
 			scanner = new Scanner(inputStream);
 			int lineNr = 0;
-			boolean hasTreffer = false;
 			boolean ende = false;
 			while (scanner.hasNextLine() && !ende) {
+				boolean hasTreffer = false;
 				lineNr++;
 				String line = scanner.nextLine();
 				Log.d(TAG, "lineNr=" + lineNr + " / line=" + line);
@@ -165,15 +165,15 @@ public class WebTool {
 				if (hasTreffer) {
 					if (line.indexOf(endStringOrTagAfterMatch) >= 0) {
 						ende = true;
+						result.append(line);
 					}
-					if (line.indexOf("<img src=") >= 0) {
-						line = line.replace("<img src=\"", "<img src=\""
-								+ imgUrl);
-						Log.d(TAG, "lineNr=" + lineNr + " / line=" + line);
-					}
-					result.append(line);
+					// if (line.indexOf("<img src=") >= 0) {
+					// line = line.replace("<img src=\"", "<img src=\""
+					// + imgUrl);
+					// Log.d(TAG, "lineNr=" + lineNr + " / line=" + line);
+					// result.append(line);
+					// }
 				}
-
 			}
 		} catch (ClientProtocolException e) {
 			// TODO Auto-generated catch block
@@ -271,8 +271,10 @@ public class WebTool {
 		if (utils.isNetworkAvailable(context, null, false)) {
 			String url = "http://www.jugglerz.de/php/view/";
 			String findString = "<a href=\"http://www.jugglerz.de/shows/";
-			String endString = ".mp3";
+			String endString = ".mp3\">Download Radioshow";
 			token = getStringFromWebsite(url, null, findString, endString);
+			Log.d(TAG, "++++++++++++ Token 1 =" + token);
+
 			if (!token.equals("") && token.length() > 11) { // 13-2=11
 				token = token.trim();
 				token = token.substring(38, token.length() - 29);
