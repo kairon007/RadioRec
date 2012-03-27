@@ -1897,7 +1897,7 @@ public class Stations {
 		m.put("name", RADIO_MONTE_CARLO);
 		m.put("icon", R.drawable.radio_monte_carlo);
 		m.put("icon_small", R.drawable.radio_monte_carlo_small);
-		m.put("stream", "http://212.40.13.22:11000");
+		m.put("stream", "http://105-stream-02.datacomm.ch:8000/rmc");
 		m.put("homepage", "http://www.radiomontecarlo.ch");
 		m.put("webcam", "");
 		m.put("email", "info@radiomontecarlo.ch");
@@ -3751,7 +3751,7 @@ public class Stations {
 		m.put("icon", R.drawable.radio_ostseewelle);
 		m.put("icon_small", R.drawable.radio_ostseewelle_small);
 		m.put("stream",
-				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ostseewelle/livestream.mp3?token=");
+				"http://62.27.44.59:8000/ostseewellelive/livestream.mp3");
 		m.put("homepage", "http://www.ostseewelle.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.ostseewelle.de/kontakt_programm");

@@ -242,23 +242,6 @@ public class WebTool {
 		return token;
 	}
 
-	protected String getOstseewelleToken(Context context) {
-		Utils utils = new Utils();
-		String token = "";
-		if (utils.isNetworkAvailable(context, null, false)) {
-			String url = "http://edge.download.newmedia.nacamar.net/sltokens/flashplayer/stream-mp3-player.php?stream=ostseewelle/livestream.mp3";
-			String findString = "var token = \"";
-			String endString = "\";";
-			token = getStringFromWebsite(url, null, findString, endString);
-			if (!token.equals("") && token.length() > 11) { // 13-2=11
-				token = token.trim();
-				token = token.substring(13, token.length() - 2);
-			}
-			Log.d(TAG, "** Token=" + token);
-		}
-		return token;
-	}
-
 	/**
 	 * Radio jugglerz.de hat immer Donnerstags eine Live Sendung. Ab Freitag
 	 * kann man diese als mp3 hören.

@@ -56,7 +56,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private static RadioPlayer radioPlayer;
 	private static AsyncTask<URL, Integer, Long> recordTask;
 	private String origPlanetradioSteam = null;
-	private String origOstseewelle = null;
 	// private final ToggleButton favIcon = null;
 	private int gcCounter;
 
@@ -590,17 +589,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 						+ Constants.THE_URL_LIVE_STREAM);
 			}
 			if (Constants.THE_SELECTED_STATION_NAME
-					.equalsIgnoreCase(Stations.RADIO_OSTSEEWELLE)) {
-				WebTool webtool = new WebTool();
-				// radio ist geschützt und braucht login token damit man den
-				// Stream abspielen kann.
-				origOstseewelle = Constants.THE_URL_LIVE_STREAM;
-				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
-						+ webtool.getOstseewelleToken(this);
-				Log.d(TAG, "*********** new Stream="
-						+ Constants.THE_URL_LIVE_STREAM);
-			}
-			if (Constants.THE_SELECTED_STATION_NAME
 					.equalsIgnoreCase(Stations.RADIO_PLANET_RADIO)) {
 				WebTool webtool = new WebTool();
 				// planet radio ist geschützt und braucht login token damit man
@@ -658,21 +646,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		URL outputUrl = null;
 
 		try {
-
-			if (Constants.THE_SELECTED_STATION_NAME
-					.equalsIgnoreCase(Stations.RADIO_OSTSEEWELLE)) {
-				WebTool webtool = new WebTool();
-				// radio ist geschützt und braucht login token damit man den
-				// Stream abspielen kann.
-				if (origOstseewelle == null) {
-					origOstseewelle = Constants.THE_URL_LIVE_STREAM;
-				}
-				Constants.THE_URL_LIVE_STREAM = origOstseewelle
-						+ webtool.getOstseewelleToken(this);
-				Log.d(TAG, "*********** new Stream="
-						+ Constants.THE_URL_LIVE_STREAM);
-			}
-
 			if (Constants.THE_SELECTED_STATION_NAME
 					.equalsIgnoreCase(Stations.RADIO_PLANET_RADIO)) {
 				WebTool webtool = new WebTool();
