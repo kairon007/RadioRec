@@ -173,6 +173,7 @@ public class Stations {
 	public static final String RADIO_ALLGAEUHIT = "AllgäuHIT";
 	public static final String RADIO_TOP100STATION = "Top 100 Station";
 	public static final String RADIO_7 = "Radio 7";
+	public static final String RADIO_7_BESCHLEUNIGER = "Radio 7 - Beschleuniger";
 	public static final String RADIO_SALUE = "Salü";
 	public static final String RADIO_FFH = "FFH";
 	public static final String RADIO_HR_2 = "HR 2";
@@ -209,6 +210,7 @@ public class Stations {
 	public static final String RADIO_TECHNOBASE_FM = "Technobase FM";
 	public static final String RADIO_PLANET_RADIO = "Planet Radio";
 	public static final String RADIO_GALAXY_ASCHAFFENBURG = "Galaxy Aschaffenburg";
+	public static final String RADIO_GALAXY_KEMPTEN = "Galaxy Kempten";
 	public static final String RADIO_EUSKIRCHEN = "Radio Euskirchen";
 	public static final String RADIO_SPREERADIO = "Spreeradio";
 	public static final String RADIO_OSTSEEWELLE = "Ostseewelle";
@@ -2910,6 +2912,27 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_7_BESCHLEUNIGER);
+		m.put("icon", R.drawable.radio_7_beschleuniger);
+		m.put("icon_small", R.drawable.radio_7_beschleuniger_small);
+		m.put("stream", "http://str0.creacast.com:80/radio7_upa");
+		m.put("homepage", "http://www.radio7.de");
+		m.put("webcam", "");
+		m.put("email", "http://radio7.de/index.php?id=75");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SALUE);
 		m.put("icon", R.drawable.radio_salue);
 		m.put("icon_small", R.drawable.radio_salue_small);
@@ -3692,6 +3715,27 @@ public class Stations {
 				"http://www.radio-galaxy.de/home.html?tx_fhgalaxy_pi[gcid]=3");
 		m.put("webcam", "");
 		m.put("email", "http://www.radio-galaxy.de/info/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_GALAXY_KEMPTEN);
+		m.put("icon", R.drawable.radio_galaxy);
+		m.put("icon_small", R.drawable.radio_galaxy_small);
+		m.put("stream", "http://80.190.249.100:7000/galaxy");
+		m.put("homepage", "http://www.galaxy-kempten.de");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.radio-galaxy.de/galaxy-cities/kempten/kontakt.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
