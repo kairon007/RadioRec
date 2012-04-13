@@ -3459,8 +3459,7 @@ public class Stations {
 		m.put("name", RADIO_INFORADIO_RBB);
 		m.put("icon", R.drawable.radio_inforadio_rbb);
 		m.put("icon_small", R.drawable.radio_inforadio_rbb_small);
-		m.put("stream",
-				"http: // rbb.ic.llnwd.net/stream/rbb_inforadio_mp3_m_a");
+		m.put("stream", "http://rbb.ic.llnwd.net/stream/rbb_inforadio_mp3_m_a");
 		m.put("homepage", "http://www.inforadio.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.inforadio.de/kontakt/index.html");
