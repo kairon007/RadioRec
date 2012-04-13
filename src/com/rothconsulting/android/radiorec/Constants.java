@@ -88,6 +88,7 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_ARABELLA);
 		ignoreList.add(Stations.RADIO_TECHNOBASE_FM);
 		ignoreList.add(Stations.RADIO_PLANET_FM);
+		ignoreList.add(Stations.RADIO_HITFM);
 
 		return ignoreList;
 	}

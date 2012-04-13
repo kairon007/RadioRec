@@ -168,7 +168,7 @@ public class Stations {
 	public static final String RADIO_BIG_FM = "BigFM";
 	public static final String RADIO_SEEFUNK = "Seefunk";
 	public static final String RADIO_SINE_MUSIC = "Sine-Music";
-	public static final String RADIO_JUGGLERZ = "Jugglerz Radio (KingstonHot)";
+	public static final String RADIO_JUGGLERZ = "Jugglerz (KingstonHot)";
 	public static final String RADIO_SUNSHINE_LIVE = "sunshine-live";
 	public static final String RADIO_ALLGAEUHIT = "AllgäuHIT";
 	public static final String RADIO_TOP100STATION = "Top 100 Station";
@@ -197,6 +197,7 @@ public class Stations {
 	public static final String RADIO_GONG_NUERNBERG = "Gong Nürnberg";
 	public static final String RADIO_PALOMA = "Radio Paloma";
 	public static final String RADIO_EINS_RBB = "eins rbb";
+	public static final String RADIO_INFORADIO_RBB = "Info Radio rbb";
 	public static final String RADIO_KULTURRADIO_RBB = "Kulturradio rbb";
 	public static final String RADIO_DEUTSCHLANDRADIO_KULTUR = "Deutschlandradio Kultur";
 	public static final String RADIO_DEUTSCHLANDFUNK = "Deutschlandfunk";
@@ -211,7 +212,6 @@ public class Stations {
 	public static final String RADIO_PLANET_RADIO = "Planet Radio";
 	public static final String RADIO_GALAXY_ASCHAFFENBURG = "Galaxy Aschaffenburg";
 	public static final String RADIO_GALAXY_KEMPTEN = "Galaxy Kempten";
-	public static final String RADIO_EUSKIRCHEN = "Radio Euskirchen";
 	public static final String RADIO_SPREERADIO = "Spreeradio";
 	public static final String RADIO_OSTSEEWELLE = "Ostseewelle";
 	public static final String RADIO_APOLLORADIO = "Apollo Radio";
@@ -242,7 +242,7 @@ public class Stations {
 	public static final String RADIO_ANTENNE_VORARLBERG = "Antenne Vorarlberg";
 	public static final String RADIO_ARABELLA = "Radio Arabella";
 	public static final String RADIO_KRONEHIT = "KroneHit";
-
+	public static final String RADIO_HITFM = "Hit FM";
 	// ***********************************************
 	// DIVERSE
 	// ***********************************************
@@ -263,6 +263,7 @@ public class Stations {
 	public static final String RADIO_PLANET_FM = "Radio Planet FM";
 	public static final String RADIO_OTTO_FM = "Otto FM";
 	public static final String RADIO_FIUME_TICINO = "Radio Fiume Ticino";
+	public static final String RADIO_DEEJAY = "Radio Deejay";
 	public static final String RADIO_SHOUTED_FM = "ShoutedFM";
 	public static final String RADIO_SHOUTED_FM_HOUSE = "ShoutedFM - House";
 	public static final String RADIO_SHOUTED_FM_BREAK = "ShoutedFM - Break";
@@ -2808,8 +2809,8 @@ public class Stations {
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JUGGLERZ);
-		m.put("icon", R.drawable.radio_jugglerz_radio);
-		m.put("icon_small", R.drawable.radio_jugglerz_radio_small);
+		m.put("icon", R.drawable.radio_jugglerz);
+		m.put("icon_small", R.drawable.radio_jugglerz_small);
 		m.put("stream", "http://www.jugglerz.de/shows/");
 		m.put("homepage", "http://www.jugglerz.de");
 		m.put("webcam", "");
@@ -3455,6 +3456,28 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_INFORADIO_RBB);
+		m.put("icon", R.drawable.radio_inforadio_rbb);
+		m.put("icon_small", R.drawable.radio_inforadio_rbb_small);
+		m.put("stream",
+				"http: // rbb.ic.llnwd.net/stream/rbb_inforadio_mp3_m_a");
+		m.put("homepage", "http://www.inforadio.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.inforadio.de/kontakt/index.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_KULTURRADIO_RBB);
 		m.put("icon", R.drawable.radio_kulturradio_rbb);
 		m.put("icon_small", R.drawable.radio_kulturradio_rbb_small);
@@ -3736,27 +3759,6 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.radio-galaxy.de/galaxy-cities/kempten/kontakt.html");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_DE);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_EUSKIRCHEN);
-		m.put("icon", R.drawable.radio_euskirchen);
-		m.put("icon_small", R.drawable.radio_euskirchen_small);
-		m.put("stream", "http://62.27.44.8/radioeuskirchen/livestream.mp3");
-		// "http://edge.live.mp3.mdn.newmedia.nacamar.net/radioeuskirchen/livestream.mp3?token=");
-		m.put("homepage", "http://www.radioeuskirchen.de");
-		m.put("webcam", "");
-		m.put("email", "http://www.radioeuskirchen.de/eus/re/25090/studiomail");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -4320,6 +4322,27 @@ public class Stations {
 			// fillLandStilList(m);
 		}
 
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_HITFM);
+		m.put("icon", R.drawable.radio_hitfm);
+		m.put("icon_small", R.drawable.radio_hitfm_small);
+		m.put("stream", "http://hitfm.biosnet.at:8000");
+		m.put("homepage", "http://www.hitfm.at");
+		m.put("webcam", "");
+		m.put("email", "http://www.hitfm.at/content/show/9");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
 		// ******************************************************************************************************
 		// *
 		// * DIVERSE
@@ -4670,6 +4693,26 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.radioticino.com/interna.asp?idarticolo=498046");
+		m.put("sprache", SPRACHE_IT);
+		m.put("land", LAND_IT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_DEEJAY);
+		m.put("icon", R.drawable.radio_deejay);
+		m.put("icon_small", R.drawable.radio_deejay_small);
+		m.put("stream", "http://mp3.kataweb.it:8000/RadioDeejay");
+		m.put("homepage", "http://www.deejay.it");
+		m.put("webcam", "");
+		m.put("email", "http://www.deejay.it/dj/info/contatti");
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
