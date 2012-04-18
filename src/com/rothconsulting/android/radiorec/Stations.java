@@ -219,6 +219,8 @@ public class Stations {
 	public static final String RADIO_DELUXERADIO = "Deluxe Radio";
 	public static final String RADIO_BALLERMANN_RADIO = "Ballermann Radio";
 	public static final String RADIO_PARTYRADIO_24 = "Partyradio 24";
+	public static final String RADIO_ZWICKAU = "Radio Zwickau";
+	public static final String RADIO_PSR = "Radio PSR";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3901,6 +3903,47 @@ public class Stations {
 		m.put("homepage", "http://www.partyradio24.de/");
 		m.put("webcam", "");
 		m.put("email", "");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_ZWICKAU);
+		m.put("icon", R.drawable.radio_zwickau);
+		m.put("icon_small", R.drawable.radio_zwickau_small);
+		m.put("stream", "http://radiozwickau.mp3.green.ch:80");
+		m.put("homepage", "http://www.radiozwickau.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiozwickau.de/?id=1651");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_PSR);
+		m.put("icon", R.drawable.radio_psr);
+		m.put("icon_small", R.drawable.radio_psr_small);
+		m.put("stream", "http://stream.hoerradar.de/psr128");
+		m.put("homepage", "http://www.radiopsr.de");
+		m.put("webcam",
+				"http://www.radiopsr.de/images/PSR2010/webcam/webcam.jpg.php?cam=1");
+		m.put("email", "service@radiopsr.de");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
