@@ -176,6 +176,9 @@ public class Stations {
 	public static final String RADIO_7_BESCHLEUNIGER = "Radio 7 - Beschleuniger";
 	public static final String RADIO_SALUE = "Salü";
 	public static final String RADIO_FFH = "FFH";
+	public static final String RADIO_RT1_HITRADIO = "rt1 Hitradio";
+	public static final String RADIO_RT1_SUEDSCHWABEN = "rt1 Südschwaben";
+	public static final String RADIO_RT1_IN_THE_MIX = "rt1 in the mix";
 	public static final String RADIO_HR_2 = "HR 2";
 	public static final String RADIO_HR_3 = "HR 3";
 	public static final String RADIO_YOU_FM = "You FM";
@@ -2977,29 +2980,74 @@ public class Stations {
 			// fillLandStilList(m);
 		}
 
-		// m = new HashMap<String, Object>();
-		// m.put("name", RADIO_RT1_HITRADIO);
-		// m.put("icon", R.drawable.radio_rt1_hitradio);
-		// m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
-		// // m.put("stream",
-		// // "http://62.27.44.59/hitradiort1/livestream.mp3?token=");
-		// m.put("stream",
-		// "http://edge.live.mp3.mdn.newmedia.nacamar.net/hitradiort1/livestream.mp3?token=");
-		// m.put("homepage", "http://www.rt1.de");
-		// m.put("webcam", "http://www.rt1.de/studiocam1.htm");
-		// m.put("email", "http://www.rt1.de/index.php?pageid=70&puid=1");
-		// m.put("sprache", SPRACHE_DE);
-		// m.put("land", LAND_DE);
-		// m.put("stil", STIL_POP);
-		// if (Build.VERSION.SDK_INT < 8
-		// && Constants.getIgnoreListKleinerAndroid22().contains(
-		// m.get("name"))) {
-		// // wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		//
-		// } else {
-		// stationList.add(m);
-		// // fillLandStilList(m);
-		// }
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RT1_HITRADIO);
+		m.put("icon", R.drawable.radio_rt1_hitradio);
+		m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
+		m.put("stream",
+				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-hitradiort1/livestream.mp3");
+		m.put("homepage", "http://www.rt1.de");
+		m.put("webcam",
+				"http://www.rt1.de/hitradio/bilder/bilder_webcam/cam1fullsize.jpg");
+		m.put("email", "http://www.rt1.de/index.php?pageid=70&puid=1");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RT1_SUEDSCHWABEN);
+		m.put("icon", R.drawable.radio_rt1_suedschwaben);
+		m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
+		m.put("stream",
+				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-rt1suedschwaben/livestream.mp3");
+		m.put("homepage", "http://www.rt1-suedschwaben.de");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.rt1-suedschwaben.de/index.php?pageid=174&puid=7");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RT1_IN_THE_MIX);
+		m.put("icon", R.drawable.radio_rt1_hitradio);
+		m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
+		m.put("stream",
+				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-inthemix/livestream.mp3");
+		m.put("homepage", "http://www.rt1.de");
+		m.put("webcam",
+				"http://www.rt1.de/hitradio/bilder/bilder_webcam/cam1fullsize.jpg");
+		m.put("email", "http://www.rt1.de/index.php?pageid=70&puid=1");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_HR_2);
