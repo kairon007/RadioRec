@@ -42,7 +42,7 @@
 	<string name="wifiAutomatischAus"> Automatisch aus bei Bildschirm aus</string>
 	<string name="wifiSleepNotYetDefined">WiFi Policy noch nicht gesetzt (Default).</string>
 	<string name="donate_paypal_cc">Spende via PayPal oder Keditkarte</string>
-	<string name="donate_android_market">Spende via Android Market</string>
+	<string name="donate_android_market">Spende via Google Play Store</string>
 	<string name="donate_bitcoin">Spende via Bitcoin</string>
 	<string name="donate_bitcoin_text">Sende einfach ein paar BTC an die unten stehende Adresse und gib mir per E-Mail Bescheid.</string>
 	<string name="copy_to_clipboard">In die Zwischenablage kopieren</string>
@@ -54,9 +54,9 @@
 	<string name="donate_silver">CHF 20.00 - Silber Spende</string>
 	<string name="donate_gold">CHF 50.00 - Gold Spende</string>
     <string name="billing_not_supported_title">Spende momentan nicht möglich</string>
-    <string name="billing_not_supported_message">Der Market Service ist momentan nicht verfügbar. Veruchen sie es bitte später nochmal oder spenden sie via PayPal oder Kreditkarte.</string>
-    <string name="cannot_connect_title">Kann nicht zum Market verbinden</string>
-    <string name="cannot_connect_message">RadioRec+ kann nicht zum Market verbinden. Ihre Market Version ist entweder zu alt oder der Market kann nicht gefunden werden. \nSpenden sie bitte via PayPal oder Kreditkarte.</string>
+    <string name="billing_not_supported_message">Der Google Play Service ist momentan nicht verfügbar. Veruchen sie es bitte später nochmal oder spenden sie via PayPal oder Kreditkarte.</string>
+    <string name="cannot_connect_title">Kann nicht zu Google Play verbinden</string>
+    <string name="cannot_connect_message">RadioRec+ kann nicht zum Google Play Store verbinden. Ihre Play Store Version ist entweder zu alt oder der Play Store kann nicht gefunden werden. \nSpenden sie bitte via PayPal oder Kreditkarte.</string>
     <string name="help_url" formatted="false">https://support.google.com/googleplay/bin/answer.py?hl=de&amp;answer=1050566</string>
     <string name="learn_more">Mehr Infos</string>
     <string name="restoring_transactions">Restoring transactions</string>
@@ -82,4 +82,5 @@
 	<string name="recordFolderNotFound">Verzeichnis mit Aufnahmen nicht gefunden!</string>
 	<string name="recordFolderNotFoundMessage">Es wurde kein Verzeichnis gefunden mit RadioRec+ aufnahmen.\nEntweder hast du noch nichts aufgenommen oder der Pfad zur SD-Card ist falsch. Den Pfad zur SD Card kannst du in den Einstellungen konfigurieren.</string>
 	<string name="stop">Stop</string>
+	<string name="timerText">Sleep-Timer: Abschaltung nach %1$d Min.</string>
 </resources>

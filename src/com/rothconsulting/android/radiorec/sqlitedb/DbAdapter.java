@@ -93,6 +93,11 @@ public class DbAdapter {
 	 * Return a Cursor positioned at the defined station
 	 */
 	public Cursor fetchStation(String stationName) throws SQLException {
+		// Escaping
+		if (stationName != null) {
+			stationName = stationName.replaceAll("'", "''");
+		}
+
 		Cursor mCursor = null;
 		mCursor = database.query(true, T_STATION, new String[] {
 				KEY_STATION_ICON, KEY_STATION_NAME }, KEY_STATION_NAME + "= '"

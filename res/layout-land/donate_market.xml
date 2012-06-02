@@ -38,7 +38,7 @@
 			android:text="@string/zurueck" android:layout_marginTop="0dip"
 			android:layout_gravity="center" />
 	</LinearLayout>
-	<ImageView android:src="@drawable/button_android_market"
+	<ImageView android:src="@drawable/button_google_play"
 		android:id="@+id/imageAndroidMarket" android:layout_gravity="center"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:layout_margin="5dip" android:background="@android:color/transparent" />

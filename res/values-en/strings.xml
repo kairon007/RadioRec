@@ -42,7 +42,7 @@
 	<string name="wifiAutomatischAus"> Automatically off when screen turns off</string>
 	<string name="wifiSleepNotYetDefined">WiFi Policy not set yet (Default).</string>
 	<string name="donate_paypal_cc">Donate via PayPal or credit card</string>
-	<string name="donate_android_market">Donate via Android Market</string>
+	<string name="donate_android_market">Donate via Google Play Store</string>
 	<string name="donate_bitcoin">Donate via Bitcoin</string>
 	<string name="donate_bitcoin_text">Simply send some BTC to the following address and drop me an email.</string>
 	<string name="copy_to_clipboard">Copy to clipboard</string>
@@ -54,9 +54,9 @@
 	<string name="donate_silver">CHF 20.00 - Silver  Donation</string>
 	<string name="donate_gold">CHF 50.00 - Gold  Donation</string>
     <string name="billing_not_supported_title">Donation not possible at the moment</string>
-    <string name="billing_not_supported_message">The Market billing service is not available at this time. Please try later or donate by PayPal or credit card.</string>
-    <string name="cannot_connect_title">Cannot connect to the market</string>
-    <string name="cannot_connect_message">RadioRec+ cannot connect to the market. Your market version is out of date or I cannot find the market app. \nPlease donate by using PayPal or credit card.</string>
+    <string name="billing_not_supported_message">The Play Store billing service is not available at this time. Please try later or donate by PayPal or credit card.</string>
+    <string name="cannot_connect_title">Cannot connect to the Play Store</string>
+    <string name="cannot_connect_message">RadioRec+ cannot connect to the Play Store. Your Play Store version is out of date or I cannot find the Play Store app. \nPlease donate by using PayPal or credit card.</string>
     <string name="help_url" formatted="false">https://support.google.com/googleplay/bin/answer.py?hl=de&amp;answer=1050566</string>
     <string name="learn_more">More Info</string>
     <string name="restoring_transactions">Restoring transactions</string>

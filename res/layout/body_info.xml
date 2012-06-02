@@ -24,7 +24,7 @@
 				android:text="@string/info_design" android:id="@+id/textViewDesign"
 				android:layout_margin="5dip" />
 			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:layout_gravity="center"
+				android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
 				android:text="@string/info_translation_it" android:id="@+id/textViewTranslationIt"
 				android:layout_margin="5dip" />
 			<TextView android:layout_width="wrap_content"
@@ -41,10 +41,10 @@
 					android:gravity="center" ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER"
 					ads:loadAdOnCreate="false" />
 			</LinearLayout>
-			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:gravity="center"
-				android:layout_gravity="center" android:id="@+id/textViewFeatureEmail"
-				android:layout_marginTop="5dip" android:text="@string/infoFeatureEmail" />
+<!-- 			<TextView android:layout_height="wrap_content" -->
+<!-- 				android:layout_width="wrap_content" android:gravity="center" -->
+<!-- 				android:layout_gravity="center" android:id="@+id/textViewFeatureEmail" -->
+<!-- 				android:layout_marginTop="5dip" android:text="@string/infoFeatureEmail" /> -->
 			<TextView android:layout_height="wrap_content"
 				android:layout_width="wrap_content" android:layout_gravity="center"
 				android:gravity="center" android:text="@string/infoDatenverbrauchFrage"

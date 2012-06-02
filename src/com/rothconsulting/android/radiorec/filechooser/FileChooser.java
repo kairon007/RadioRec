@@ -9,6 +9,7 @@ import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,6 +48,15 @@ public class FileChooser extends ListActivity {
 				currentDir = new File(Constants.THE_SD_CARD_PATH);
 				fill(currentDir);
 				ListView list = getListView();
+
+				int currentOrient = this.getResources().getConfiguration().orientation;
+
+				if (currentOrient == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+						|| currentOrient == ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT) {
+					list.setBackgroundResource(R.drawable.bg_port);
+				} else {
+					list.setBackgroundResource(R.drawable.bg_land);
+				}
 
 				list.setOnItemLongClickListener(new OnItemLongClickListener() {
 

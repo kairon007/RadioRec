@@ -13,7 +13,7 @@
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:paddingLeft="2dip"
 	android:paddingRight="2dip" android:background="@drawable/bg_port">
-	<ImageView android:src="@drawable/button_android_market"
+	<ImageView android:src="@drawable/button_google_play"
 		android:id="@+id/imageAndroidMarket" android:layout_gravity="center"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
 		android:layout_margin="5dip" android:background="@android:color/transparent" />

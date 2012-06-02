@@ -187,6 +187,8 @@ public class Stations {
 	public static final String RADIO_WDR_3 = "WDR 3";
 	public static final String RADIO_WDR_5 = "WDR 5";
 	public static final String RADIO_WDR_FUNKHAUS_EUROPA = "Funkhaus Europa";
+	public static final String RADIO_NORDWESTRADIO = "Nordwestradio";
+	public static final String RADIO_BREMEN_VIER = "Bremen Vier";
 	public static final String RADIO_STAR_FM = "Star FM";
 	public static final String RADIO_STAR_FM_FROM_HELL = "Star FM From Hell";
 	public static final String RADIO_REGENBOGEN = "Regenbogen";
@@ -1839,7 +1841,8 @@ public class Stations {
 		m.put("name", RADIO_FC_ZUERICH);
 		m.put("icon", R.drawable.radio_fc_zuerich);
 		m.put("icon_small", R.drawable.radio_fc_zuerich_small);
-		m.put("stream", "http://stream.fcz.ch:8000/fcz01");
+		// m.put("stream", "http://stream.fcz.ch:8000/fcz01");
+		m.put("stream", "http://212.25.23.22:8000/fcz01");
 		m.put("homepage", "http://www.fcz.ch/radio");
 		m.put("webcam", "");
 		m.put("email", "http://www.fcz.ch/tv/fcz_radio_kontakt.htm");
@@ -3227,6 +3230,52 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_NORDWESTRADIO);
+		m.put("icon", R.drawable.radio_nordwestradio);
+		m.put("icon_small", R.drawable.radio_nordwestradio_small);
+		m.put("stream",
+				"http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w50b");
+		m.put("homepage", "http://www.radiobremen.de/nordwestradio/");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.radiobremen.de/nordwestradio/info/kontakt/kontakt132.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_BREMEN_VIER);
+		m.put("icon", R.drawable.radio_bremen_vier);
+		m.put("icon_small", R.drawable.radio_bremen_vier_small);
+		m.put("stream",
+				"http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w49b");
+		m.put("homepage", "http://www.radiobremen.de/radio/bremenvier/");
+		m.put("webcam", "http://www.radiobremen.de/bremenvier/cam/rb4cam1.jpg");
+		m.put("email",
+				"http://www.radiobremen.de/bremenvier/ueber-uns/kontakt/index.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_STAR_FM);
 		m.put("icon", R.drawable.radio_starfm);
 		m.put("icon_small", R.drawable.radio_starfm_small);
@@ -3442,6 +3491,7 @@ public class Stations {
 			stationList.add(m);
 			// fillLandStilList(m);
 		}
+
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_GONG_NUERNBERG);
 		m.put("icon", R.drawable.radio_gong_nuernberg);

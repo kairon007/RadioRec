@@ -2,6 +2,7 @@ package com.rothconsulting.android.radiorec;
 
 import android.app.Activity;
 import android.util.Log;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.google.ads.AdRequest;
@@ -15,9 +16,10 @@ public class AdMob {
 	public void showRemoveAds(Activity context) {
 		Utils utils = new Utils();
 		if (utils.hasValidKey()) {
-			LinearLayout layout = (LinearLayout) context
+			LinearLayout adsLayout = (LinearLayout) context
 					.findViewById(R.id.adsLayout);
-			layout.removeAllViews();
+			adsLayout.removeAllViews();
+			adsLayout.setVisibility(View.GONE);
 		} else {
 			// Create the adView
 			AdView adView = new AdView(context, AdSize.BANNER,

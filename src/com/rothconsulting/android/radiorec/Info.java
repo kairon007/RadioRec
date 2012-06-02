@@ -36,27 +36,28 @@ public class Info extends Activity {
 			}
 		});
 
-		final TextView featureText = (TextView) findViewById(R.id.textViewFeatureEmail);
-		featureText.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				startEmailActivity();
-			}
-		});
+		// final TextView featureText = (TextView)
+		// findViewById(R.id.textViewFeatureEmail);
+		// featureText.setOnClickListener(new View.OnClickListener() {
+		// @Override
+		// public void onClick(View v) {
+		// startEmailActivity();
+		// }
+		// });
 	}
 
-	private void startEmailActivity() {
-		final Intent emailIntent = new Intent(
-				android.content.Intent.ACTION_SEND);
-		emailIntent.setType("plain/text");
-		emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
-				new String[] { getString(R.string.email_androider) });
-		emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "RadioRec+");
-		emailIntent.putExtra(android.content.Intent.EXTRA_TEXT,
-				"Hallo Koni\n\nMir fehlt folgender Sender: \n\n\n\n");
-		emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-	}
+	// private void startEmailActivity() {
+	// final Intent emailIntent = new Intent(
+	// android.content.Intent.ACTION_SEND);
+	// emailIntent.setType("plain/text");
+	// emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
+	// new String[] { getString(R.string.email_androider) });
+	// emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "RadioRec+");
+	// emailIntent.putExtra(android.content.Intent.EXTRA_TEXT,
+	// "Hallo Koni\n\nMir fehlt folgender Sender: \n\n\n\n");
+	// emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	// startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+	// }
 
 	// ------------------------------------------------------------
 	// Menu Stuff
