@@ -12,7 +12,7 @@
     <string name="weiterHoeren">Weiter hören/aufnehmen</string>
     <string name="onAir">On-Air...</string>
     <string name="info">Info</string>
-    <string name="info_copyright"> (c) 2012 by Koni</string>
+    <string name="info_copyright"> © 2012 by Koni</string>
     <string name="info_design">Danke an rakudave für das tolle GUI !!</string>
     <string name="info_translation_it">Danke an Manfred M. für die italienische Übersetzung!</string>
     <string name="ende">Ende</string>
@@ -64,9 +64,9 @@
 	<string name="donate_options">Spende Möglichkeiten</string>	
 	<string name="bufferZwischenspeicher">Buffer-Grösse für Aufnahme</string>
 	<string name="bufferText">Die Daten für die Aufnahme einer MP3 Datei werden zuerst in einen Buffer (Zwischenspeicher) gelesen und erst dann als MP3 gespeichert. Das soll sicherstellen, dass bei kurzen Netzunterbrechungen die Aufnahme dennoch weiter geht. Hier kannst du die Buffer-Grösse selber konfigurieren. Falls du keine Probleme mit dem Aufnehmen hast oder du nicht sicher bist, lass es auf 8192 Bytes.</string>
-	<string name="errorZahlEingeben">ERROR: Bitte gib eine Zahl zwischen\n1 - 1000000 (1 Mio) ein!</string>
-	<string name="verbinde">Verbinde...</string>
-	<string name="senderNach">Sender nach...</string>
+	<string name="errorZahlEingeben">ERROR: Bitte gib eine Zahl zwischen\n1 – 1000000 (1 Mio) ein!</string>
+	<string name="verbinde">Verbinde…</string>
+	<string name="senderNach">Sender nach…</string>
 	<string name="laender">Länder</string>
 	<string name="favorit">Favorit</string>
 	<string name="favoriten">Favoriten</string>
@@ -83,4 +83,5 @@
 	<string name="recordFolderNotFoundMessage">Es wurde kein Verzeichnis gefunden mit RadioRec+ aufnahmen.\nEntweder hast du noch nichts aufgenommen oder der Pfad zur SD-Card ist falsch. Den Pfad zur SD Card kannst du in den Einstellungen konfigurieren.</string>
 	<string name="stop">Stop</string>
 	<string name="timerText">Sleep-Timer: Abschaltung nach %1$d Min.</string>
+	<string name="radio">Radio</string>
 </resources>
