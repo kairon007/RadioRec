@@ -1,18 +1,12 @@
 package com.rothconsulting.android.radiorec;
 
-import java.io.DataInputStream;
-import java.io.IOException;
-import java.util.Scanner;
+import java.util.concurrent.ExecutionException;
 
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.util.Log;
 
 public class WebTool {
@@ -35,10 +29,11 @@ public class WebTool {
 		if (radioStation != null) {
 
 			if (radioStation.equalsIgnoreCase(Stations.RADIO_32)) {
-				result += getStringFromWebsite(urlHomepage, urlHomepage,
+
+				result += new WebsiteParser().execute(urlHomepage, urlHomepage,
 						"nowplaying", "</div>");
 			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_32_GOLDIES)) {
-				result += getStringFromWebsite(
+				result += new WebsiteParser().execute(
 						"http://www.radio32.ch/?rub=124", urlHomepage,
 						"nowplaying", "</div>");
 			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_CAPITAL_FM)) {
@@ -47,7 +42,7 @@ public class WebTool {
 				result = new String(
 						"<html><head><style>.hidden {display:none;}</style></head><body><center>");
 
-				result += getStringFromWebsite(urlHomepage, urlHomepage,
+				result += new WebsiteParser().execute(urlHomepage, urlHomepage,
 						"summary=\"Capital FM Airplay\">", "</table>");
 			} else if (radioStation.equalsIgnoreCase("Radio 24")) {
 				// result += getAktuellerSong(
@@ -56,12 +51,12 @@ public class WebTool {
 				// "</script>");
 			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_24_ROCK)) {
 
-				result += getStringFromWebsite(
+				result += new WebsiteParser().execute(
 						"http://www.radio24.ch/player/index.html?channel=rock",
 						"", "mainContainer", "</script>");
 			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_RABE)) {
 
-				result += getStringFromWebsite(
+				result += new WebsiteParser().execute(
 						"http://www.rabe.ch/nc/songticker.html", "",
 						"playlist-latest-item", "</div>");
 
@@ -72,9 +67,11 @@ public class WebTool {
 			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_DRS3)) {
 
 				String parseResult = new String();
-				parseResult += getStringFromWebsite(
-						"http://www.drs.ch/lib/player/radio.php?audiourl=http%3A%2F%2Fstream.srg-ssr.ch%2Fdrs3%2Fmp3_128.m3u&stream=drs3&design=drs3&type=popup&type=popup&skin=srdrs",
-						"", "<span class=\"active_with_icon\"", "</span>");
+				parseResult += new WebsiteParser()
+						.execute(
+								"http://www.drs.ch/lib/player/radio.php?audiourl=http%3A%2F%2Fstream.srg-ssr.ch%2Fdrs3%2Fmp3_128.m3u&stream=drs3&design=drs3&type=popup&type=popup&skin=srdrs",
+								"", "<span class=\"active_with_icon\"",
+								"</span>");
 
 				// aus einer langen Zeile den Text rausholen
 				int index1 = parseResult
@@ -100,8 +97,9 @@ public class WebTool {
 
 				String findString = "<td>Current Song:</td>";
 
-				result += getStringFromWebsite("http://icecast.radiotop.ch",
-						null, findString, "</div>");
+				result += new WebsiteParser().execute(
+						"http://icecast.radiotop.ch", null, findString,
+						"</div>");
 			}
 		}
 
@@ -112,87 +110,6 @@ public class WebTool {
 		}
 		return result;
 
-	}
-
-	/**
-	 * 
-	 * @param songUrl
-	 * @param imgUrl
-	 * @param findString
-	 * @param endTagAfterMatch
-	 * @return
-	 */
-	private String getStringFromWebsite(String songUrl, String imgUrl,
-			String findString, String endStringOrTagAfterMatch) {
-
-		StringBuilder result = new StringBuilder();
-		Scanner scanner = null;
-
-		if (imgUrl == null) {
-			imgUrl = songUrl;
-		}
-
-		try {
-			// Webseite einlesen
-			HttpResponse response = null;
-			HttpUriRequest httpUriRequest = null;
-			Log.d(TAG, "songUrl=" + songUrl);
-			HttpClient httpClient = new DefaultHttpClient();
-			httpUriRequest = new HttpGet(songUrl);
-			String userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:2.0) Gecko/20100101 Firefox/4.0";
-			httpUriRequest.setHeader("User-Agent", userAgent);
-			response = httpClient.execute(httpUriRequest);
-			// getHeaders(response);
-			DataInputStream inputStream = new DataInputStream(response
-					.getEntity().getContent());
-
-			// Webseite parsen
-			scanner = new Scanner(inputStream);
-			int lineNr = 0;
-			boolean ende = false;
-			while (scanner.hasNextLine() && !ende) {
-				boolean hasTreffer = false;
-				lineNr++;
-				String line = scanner.nextLine();
-				Log.d(TAG, "lineNr=" + lineNr + " / line=" + line);
-
-				int index = line.indexOf(findString);
-				if (index >= 0) {
-					hasTreffer = true;
-					Log.d(TAG, "TREFFER!!! lineNr=" + lineNr + " / line="
-							+ line);
-				}
-				if (hasTreffer) {
-					if (line.indexOf(endStringOrTagAfterMatch) >= 0) {
-						ende = true;
-						result.append(line);
-					}
-					// if (line.indexOf("<img src=") >= 0) {
-					// line = line.replace("<img src=\"", "<img src=\""
-					// + imgUrl);
-					// Log.d(TAG, "lineNr=" + lineNr + " / line=" + line);
-					// result.append(line);
-					// }
-				}
-			}
-		} catch (ClientProtocolException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalStateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			if (scanner != null) {
-				scanner.close();
-				Log.d(TAG, "scanner closed!");
-			}
-		}
-
-		Log.d(TAG, "Result from parse=" + result.toString());
-		return result.toString();
 	}
 
 	private String getHeaders(HttpResponse response) {
@@ -232,7 +149,18 @@ public class WebTool {
 			String url = "http://webradio.planetradio.de/planetradio-webradio/wController/Webradio/wAction/showstation/wFormat/ajax/wWebradio/planet/wNewquality/hq/webradioAjax.html";
 			String findString = "'file': '";
 			String endString = "'";
-			token = getStringFromWebsite(url, null, findString, endString);
+			AsyncTask<String, Void, String> tokenAsyncTask = new WebsiteParser()
+					.execute(url, null, findString, endString);
+
+			try {
+				token = tokenAsyncTask.get();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			if (!token.equals("") && token.length() > 92) { // 93-1=92
 				token = token.trim();
 				token = token.substring(93, token.length() - 1);
@@ -252,18 +180,28 @@ public class WebTool {
 		Utils utils = new Utils();
 		String token = "";
 		if (utils.isNetworkAvailable(context, null, false)) {
-			String url = "http://www.jugglerz.de/php/view/";
+			String url = "http://www.jugglerz.de/";
 			String findString = "<a href=\"http://www.jugglerz.de/shows/";
-			String endString = ".mp3\">Download Radioshow";
-			token = getStringFromWebsite(url, null, findString, endString);
-			Log.d(TAG, "++++++++++++ Token 1 =" + token);
+			String endString = ".mp3\"><img ";
+			AsyncTask<String, Void, String> tokenAsyncTask = new WebsiteParser()
+					.execute(url, null, findString, endString);
 
-			if (!token.equals("") && token.length() > 11) { // 13-2=11
-				token = token.trim();
-				token = token.substring(38, token.length() - 29);
+			try {
+				token = tokenAsyncTask.get();
+				Log.d(TAG, "++++++++++++ Token found =" + token);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if (!token.equals("") && token.length() > 10) {
+				int index = token.indexOf(findString);
+				token = token.substring(index + 38, index + 61);// 38+23
 				token = token.trim();
 			}
-			Log.d(TAG, "** Token=" + token);
+			Log.d(TAG, "++++++++++++ Token parsed =" + token);
 		}
 		return token;
 	}
