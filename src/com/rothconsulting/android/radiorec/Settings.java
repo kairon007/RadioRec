@@ -79,7 +79,7 @@ public class Settings extends Activity implements
 				editTextBufferSize.setTextColor(Color.BLACK);
 				editTextBufferSize.setBackgroundColor(Color.WHITE);
 				try {
-					int bufferSize = new Integer(""
+					int bufferSize = Integer.valueOf(""
 							+ editTextBufferSize.getText());
 					if (bufferSize <= 0 || bufferSize > 1000000) {
 						throw new NumberFormatException();
