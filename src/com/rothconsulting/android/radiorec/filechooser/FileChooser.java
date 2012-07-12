@@ -51,8 +51,7 @@ public class FileChooser extends ListActivity {
 
 				int currentOrient = this.getResources().getConfiguration().orientation;
 
-				if (currentOrient == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-						|| currentOrient == ActivityInfo.SCREEN_ORIENTATION_REVERSE_PORTRAIT) {
+				if (currentOrient == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
 					list.setBackgroundResource(R.drawable.bg_port);
 				} else {
 					list.setBackgroundResource(R.drawable.bg_land);
