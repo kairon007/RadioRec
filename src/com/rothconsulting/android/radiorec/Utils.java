@@ -230,4 +230,28 @@ public class Utils {
 
 		return m;
 	}
+
+	protected static String getExceptionInfosAsString(Exception e) {
+		String result = "***** Exception-Info Start *****\n";
+		if (e != null && e.getStackTrace() != null) {
+			result += "--- Stacktrace Start ---\n";
+			for (StackTraceElement ste : e.getStackTrace()) {
+				result += "\n  " + ste;
+			}
+			result += "\n--- Stacktrace End ---\n";
+		}
+		result += "\n--- ";
+		result += "Message=" + e.getMessage();
+		result += "\n--- ";
+		result += "LocalizedMessage=" + e.getLocalizedMessage();
+		result += "\n--- ";
+		result += "Cause=" + e.getCause();
+		result += "\n--- ";
+		result += "toString=" + e.toString();
+		result += "\n--- ";
+		result += "\n***** Exception-Info End *****\n";
+
+		return result;
+
+	}
 }
