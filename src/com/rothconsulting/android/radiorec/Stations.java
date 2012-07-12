@@ -3752,7 +3752,8 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_energy_sachsen_small);
 		m.put("stream", "http://149.5.240.22/WR-DE-WR57");
 		m.put("homepage", "www.energy.de/sachsen");
-		m.put("webcam", "http://www.energy.de/sachsen/on-air/webcam/");
+		m.put("webcam",
+				"http://www.energy-sachsen.de/www/extapp/webcam/images/studio.jpg");
 		m.put("email", "hotline@nrjmail.de");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
