@@ -19,7 +19,7 @@
 				android:id="@+id/textViewTitlePayPalCC" android:layout_width="fill_parent"
 				android:layout_height="wrap_content" android:background="#0000A0"
 				android:textStyle="bold" android:gravity="center" />
-			<ImageButton android:src="@drawable/button_paypal_donate_cc_lg"
+			<ImageButton android:src="@drawable/button_paypal_donate_cc_lg" android:contentDescription="@string/donate_paypal_cc"
 				android:id="@+id/imageButtonPaypal" android:layout_gravity="center"
 				android:layout_width="fill_parent" android:layout_margin="5dip"
 				android:background="@android:color/transparent"
@@ -28,20 +28,20 @@
 				android:id="@+id/textViewTitleAndroidMarket" android:layout_width="fill_parent"
 				android:layout_height="wrap_content" android:background="#0000A0"
 				android:textStyle="bold" android:gravity="center" />
-			<ImageButton android:src="@drawable/button_google_play"
+			<ImageButton android:src="@drawable/button_google_play" android:contentDescription="@string/donate_android_market"
 				android:id="@+id/imageButtonAndroidMarket" android:layout_gravity="center"
 				android:layout_width="fill_parent" android:layout_margin="5dip"
 				android:background="@android:color/transparent"
 				android:layout_height="wrap_content" android:layout_weight="0.20" />
-			<TextView android:text="@string/donate_bitcoin"
-				android:gravity="center" android:id="@+id/textViewTitleBitcoin"
-				android:layout_width="fill_parent" android:layout_height="wrap_content"
-				android:background="#0000A0" android:textStyle="bold" />
-			<ImageButton android:src="@drawable/button_bitcoin"
-				android:id="@+id/imageButtonBitcoin" android:layout_gravity="center"
-				android:layout_width="fill_parent" android:layout_margin="5dip"
-				android:background="@android:color/transparent"
-				android:layout_height="wrap_content" android:layout_weight="0.20" />
+<!-- 			<TextView android:text="@string/donate_bitcoin" -->
+<!-- 				android:gravity="center" android:id="@+id/textViewTitleBitcoin" -->
+<!-- 				android:layout_width="fill_parent" android:layout_height="wrap_content" -->
+<!-- 				android:background="#0000A0" android:textStyle="bold" /> -->
+<!-- 			<ImageButton android:src="@drawable/button_bitcoin" -->
+<!-- 				android:id="@+id/imageButtonBitcoin" android:layout_gravity="center" -->
+<!-- 				android:layout_width="fill_parent" android:layout_margin="5dip" -->
+<!-- 				android:background="@android:color/transparent" -->
+<!-- 				android:layout_height="wrap_content" android:layout_weight="0.20" /> -->
 			<TextView android:text="@string/antiWerbungKey"
 				android:gravity="center" android:id="@+id/textViewTitleAntiAds"
 				android:layout_width="fill_parent" android:layout_height="wrap_content"
