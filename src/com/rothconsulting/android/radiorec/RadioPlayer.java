@@ -102,6 +102,8 @@ public class RadioPlayer {
 					mediaPlayer.reset();
 					Log.d(TAG, "URL: " + Constants.THE_URL_LIVE_STREAM);
 					mediaPlayer.setDataSource(Constants.THE_URL_LIVE_STREAM);
+					Log.d(TAG, "THE_URL_LIVE_STREAM="
+							+ Constants.THE_URL_LIVE_STREAM);
 					mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 					mediaPlayer.setWakeMode(context,
 							PowerManager.PARTIAL_WAKE_LOCK);
@@ -151,7 +153,9 @@ public class RadioPlayer {
 					Log.d(TAG,
 							"doStartPlay - IOException: "
 									+ context
-											.getString(R.string.internetadresseNichtErreichbar));
+											.getString(R.string.internetadresseNichtErreichbar)
+									+ "\n---\n"
+									+ Utils.getExceptionInfosAsString(e));
 					getNotifInstance(context).showStatusBarNotificationError(
 							R.string.internetadresseNichtErreichbar);
 					doStopPlay(context);
