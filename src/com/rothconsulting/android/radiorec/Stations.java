@@ -214,6 +214,7 @@ public class Stations {
 	public static final String RADIO_ENERGY_SACHSEN = "Energy Sachsen";
 	public static final String RADIO_FFN_NIEDERSACHSEN = "FFN Niedersachsen";
 	public static final String RADIO_TECHNOBASE_FM = "Technobase FM";
+	public static final String RADIO_HOUSETIME_FM = "HouseTime.FM";
 	public static final String RADIO_PLANET_RADIO = "Planet Radio";
 	public static final String RADIO_GALAXY_ASCHAFFENBURG = "Galaxy Aschaffenburg";
 	public static final String RADIO_GALAXY_KEMPTEN = "Galaxy Kempten";
@@ -226,6 +227,7 @@ public class Stations {
 	public static final String RADIO_PARTYRADIO_24 = "Partyradio 24";
 	public static final String RADIO_ZWICKAU = "Radio Zwickau";
 	public static final String RADIO_PSR = "Radio PSR";
+	public static final String RADIO_KOELN = "Radio Köln";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3809,6 +3811,26 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_HOUSETIME_FM);
+		m.put("icon", R.drawable.radio_housetime_fm);
+		m.put("icon_small", R.drawable.radio_housetime_fm_small);
+		m.put("stream", "http://listen.housetime.fm/tunein-dsl-pls");
+		m.put("homepage", "http://www.housetime.fm");
+		m.put("webcam", "");
+		m.put("email", "http://www.housetime.fm/contact/");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_TRANCE);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_PLANET_RADIO);
 		m.put("icon", R.drawable.radio_planet_radio);
 		m.put("icon_small", R.drawable.radio_planet_radio_small);
@@ -4043,6 +4065,28 @@ public class Stations {
 		m.put("webcam",
 				"http://www.radiopsr.de/images/PSR2010/webcam/webcam.jpg.php?cam=1");
 		m.put("email", "service@radiopsr.de");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_KOELN);
+		m.put("icon", R.drawable.radio_koeln);
+		m.put("icon_small", R.drawable.radio_koeln_small);
+		m.put("stream",
+				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radiokoeln/livestream.mp3");
+		m.put("homepage", "http://www.radiokoeln.de");
+		m.put("webcam", "");
+		m.put("email",
+				"http://radiokoeln.de/koeln/rk/10871/programm/studiomail");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);

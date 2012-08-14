@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
+	android:id="@+id/mainSreen" android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:background="@drawable/bg_port">
 
 <!-- 	<LinearLayout android:orientation="horizontal" -->
@@ -33,16 +33,16 @@
 		<Spinner android:layout_height="wrap_content" android:prompt="@string/sortByCountry"
 			android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/stations"
 			android:layout_weight="1.8" />
-<!-- 		<ToggleButton -->
-<!-- 		    android:id="@+id/toggleButtonFavorit" -->
-<!-- 		    android:layout_width="wrap_content" -->
-<!-- 		    android:layout_height="wrap_content" -->
-<!-- 		    android:layout_weight="0.2" -->
-<!-- 		    android:background="@color/transparent" -->
-<!-- 		    android:src="@android:drawable/star_big_off" -->
-<!-- 		    android:text="" -->
-<!-- 		    android:textOff="" -->
-<!-- 		    android:textOn="" /> -->
+		<ToggleButton
+		    android:id="@+id/toggleButtonFavorit"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="0.2"
+		    android:background="@color/transparent"
+		    android:src="@android:drawable/star_big_off"
+		    android:text=""
+		    android:textOff=""
+		    android:textOn="" />
 	</LinearLayout>
 
 	<LinearLayout android:layout_width="fill_parent"
@@ -69,9 +69,13 @@
 		android:focusableInTouchMode="true" android:text="Ticker... Buffering... 
 		Playing: SomeSong by SomeArtist..." android:gravity="center" android:layout_margin="2dp" 
 		/ -->
-	<ImageView android:layout_height="wrap_content" android:src="@drawable/icon"
+	<ImageView android:layout_height="0dp" android:src="@drawable/icon"
 		android:id="@+id/logo" android:layout_width="fill_parent"
 		android:layout_weight="1" android:scaleType="centerInside" />
+	<RelativeLayout android:id="@+id/timerBox" android:layout_gravity="bottom" android:background="@drawable/background_timer" android:visibility="invisible" android:layout_width="308.0dip" android:layout_height="77.0dip" android:layout_marginBottom="10.0dip">
+		<TextView android:id="@+id/timerText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="12.0sp" android:layout_marginLeft="75.0dip" android:layout_marginTop="16.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+		<SeekBar android:id="@+id/timerBar" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_below="@id/timerText" android:layout_alignLeft="@id/timerText" />
+	</RelativeLayout>
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
 		android:orientation="vertical" android:gravity="center"

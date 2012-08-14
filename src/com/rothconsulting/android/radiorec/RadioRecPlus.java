@@ -13,7 +13,9 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -30,15 +32,21 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.rothconsulting.android.radiorec.filechooser.FileChooser;
 import com.rothconsulting.android.radiorec.sqlitedb.DBHelper;
+import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
 
 public class RadioRecPlus extends Activity implements OnClickListener,
-		OnItemSelectedListener {
+		OnItemSelectedListener, OnSeekBarChangeListener {
 
 	static final String TAG = "RadioRecPlus";
 
@@ -56,7 +64,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private static RadioPlayer radioPlayer;
 	private static AsyncTask<URL, Integer, Long> recordTask;
 	private String origPlanetradioSteam = null;
-	// private final ToggleButton favIcon = null;
+	private ToggleButton favIcon = null;
+	private RelativeLayout timerBox;
+	private LinearLayout mainSreen;
+	private SeekBar timerSeekBar;
+	private TextView timerText;
 	private int gcCounter;
 
 	static Utils utils = new Utils();
@@ -94,8 +106,15 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// ((Button) findViewById(R.id.buttonFav)).setOnClickListener(this);
 		// ((Button) findViewById(R.id.buttonLand)).setOnClickListener(this);
 		// ((Button) findViewById(R.id.buttonStil)).setOnClickListener(this);
-		// favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
-		// favIcon.setOnClickListener(this);
+		favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
+		favIcon.setOnClickListener(this);
+		mainSreen = (LinearLayout) findViewById(R.id.mainSreen);
+		timerBox = (RelativeLayout) findViewById(R.id.timerBox);
+		timerSeekBar = (SeekBar) findViewById(R.id.timerBar);
+		timerSeekBar.setOnSeekBarChangeListener(this);
+		timerText = (TextView) findViewById(R.id.timerText);
+		// timerTrackingText = (TextView)findViewById(R.id.tracking);
+
 		logo = (ImageView) findViewById(R.id.logo);
 		((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
 		((TextView) findViewById(R.id.webcam)).setOnClickListener(this);
@@ -164,9 +183,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				R.layout.station_listitem,
 				new String[] { "icon_small", "name" }, new int[] {
 						R.id.option_icon, R.id.option_text });
+		spnAllStations.setBackgroundColor(Color.LTGRAY);
 		spnAllStations.setAdapter(adapter);
 		spnAllStations.setOnItemSelectedListener(this);
+		SimpleAdapter sa = (SimpleAdapter) spnAllStations.getAdapter();
 
+		View list = findViewById(R.layout.station_listitem);
+		String foo = "";
 	}
 
 	@Override
@@ -285,7 +308,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case -4:
 			Log.i(TAG, "settings");
-			this.startActivity(new Intent(this, Settings.class));
+			// this.startActivity(new Intent(this, Settings.class));
+			this.startActivity(new Intent(this, SleepTimer.class));
+
 			break;
 		case -5:
 			Log.i(TAG, "exit");
@@ -334,30 +359,31 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				startActivity(Intent.createChooser(emailIntent, "Send mail..."));
 			}
 			break;
-		// case R.id.toggleButtonFavorit:
-		// Log.i(TAG, "favorit");
-		// DbAdapter dbadapter = new DbAdapter(this);
-		// if (favIcon.isChecked()) {
-		// favIcon.setButtonDrawable(android.R.drawable.star_big_on);
-		// Log.d(TAG, "isChecked -> instertStation");
-		// dbadapter.open();
-		// dbadapter.insertStation(Constants.THE_SELECTED_STATION_ICON,
-		// Constants.THE_SELECTED_STATION_ICON_SMALL,
-		// Constants.THE_SELECTED_STATION_NAME,
-		// Constants.THE_URL_LIVE_STREAM,
-		// Constants.THE_URL_HOMEPAGE, Constants.THE_URL_WEBCAM,
-		// Constants.THE_URL_CONTACT, true, Stations.LAND_CH,
-		// Stations.SPRACHE_DE, Stations.STIL_POP);
-		// dbadapter.close();
-		// } else {
-		// favIcon.setButtonDrawable(android.R.drawable.star_big_off);
-		// Log.d(TAG, "is NOT Checked -> deleteStation");
-		// dbadapter.open();
-		// dbadapter.deleteStation(Constants.THE_SELECTED_STATION_NAME);
-		// dbadapter.close();
-		// }
-		// break;
+		case R.id.toggleButtonFavorit:
+			Log.i(TAG, "favorit");
+			DbAdapter dbadapter = new DbAdapter(this);
+			if (favIcon.isChecked()) {
+				favIcon.setButtonDrawable(android.R.drawable.star_big_on);
+				Log.d(TAG, "isChecked -> instertStation");
+				dbadapter.open();
+				dbadapter.insertStation(Constants.THE_SELECTED_STATION_ICON,
+						Constants.THE_SELECTED_STATION_ICON_SMALL,
+						Constants.THE_SELECTED_STATION_NAME,
+						Constants.THE_URL_LIVE_STREAM,
+						Constants.THE_URL_HOMEPAGE, Constants.THE_URL_WEBCAM,
+						Constants.THE_URL_CONTACT, true, Stations.LAND_CH,
+						Stations.SPRACHE_DE, Stations.STIL_POP);
+				dbadapter.close();
+			} else {
+				favIcon.setButtonDrawable(android.R.drawable.star_big_off);
+				Log.d(TAG, "is NOT Checked -> deleteStation");
+				dbadapter.open();
+				dbadapter.deleteStation(Constants.THE_SELECTED_STATION_NAME);
+				dbadapter.close();
+			}
+			break;
 		case R.id.back:
+			this.setTimerboxOn(true);
 			if (spnAllStations.getSelectedItemPosition() > 0) {
 				back.setEnabled(false);
 				spnAllStations.setSelection(spnAllStations
@@ -391,6 +417,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.fwd:
 			if (spnAllStations.getSelectedItemPosition() < stationList.size() - 1) {
+				this.setTimerboxOn(false);
 				fwd.setEnabled(false);
 				spnAllStations.setSelection(spnAllStations
 						.getSelectedItemPosition() + 1);
@@ -569,7 +596,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 		Constants.THE_URL_CONTACT = "" + map.get("email");
 
-		// this.setFavIcon();
+		this.setFavIcon();
 
 		if (!firstStart && playing) {
 			if (Constants.getLiveStreamStations().contains(
@@ -711,23 +738,34 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 	}
 
-	// private void setFavIcon() {
-	// DbAdapter dbadapter = new DbAdapter(this);
-	// dbadapter.open();
-	// Cursor cursor = null;
-	// cursor = dbadapter.fetchStation(Constants.THE_SELECTED_STATION_NAME);
-	// if (cursor != null && cursor.getCount() > 0) {
-	// favIcon.setChecked(true);
-	// Log.d(TAG, "favIcon.setChecked(true)");
-	// favIcon.setButtonDrawable(android.R.drawable.star_big_on);
-	// } else {
-	// favIcon.setChecked(false);
-	// Log.d(TAG, "favIcon.setChecked(false)");
-	// favIcon.setButtonDrawable(android.R.drawable.star_big_off);
-	// }
-	// cursor.close();
-	// dbadapter.close();
-	// }
+	private void setFavIcon() {
+		DbAdapter dbadapter = new DbAdapter(this);
+		dbadapter.open();
+		Cursor cursor = null;
+		cursor = dbadapter.fetchStation(Constants.THE_SELECTED_STATION_NAME);
+		if (cursor != null && cursor.getCount() > 0) {
+			favIcon.setChecked(true);
+			Log.d(TAG, "favIcon.setChecked(true)");
+			favIcon.setButtonDrawable(android.R.drawable.star_big_on);
+		} else {
+			favIcon.setChecked(false);
+			Log.d(TAG, "favIcon.setChecked(false)");
+			favIcon.setButtonDrawable(android.R.drawable.star_big_off);
+		}
+		cursor.close();
+		dbadapter.close();
+	}
+
+	private void setTimerboxOn(boolean on) {
+		if (on) {
+			timerBox.setVisibility(View.VISIBLE);
+			timerText.setVisibility(View.VISIBLE);
+			timerText.setText(R.string.timerText);
+		} else {
+			timerBox.setVisibility(View.GONE);
+			mainSreen.refreshDrawableState();
+		}
+	}
 
 	public boolean isPlaying() {
 		return playing;
@@ -737,4 +775,36 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	public void onLowMemory() {
 		super.onLowMemory();
 	}
+
+	// Timer SeekBar
+	@Override
+	public void onProgressChanged(SeekBar seekBar, int progress,
+			boolean fromTouch) {
+		timerText.setText(progress + " " + getString(R.string.timerText) + "="
+				+ fromTouch);
+	}
+
+	@Override
+	public void onStartTrackingTouch(SeekBar seekBar) {
+		// mTrackingText.setText(getString(R.string.seekbar_tracking_on));
+	}
+
+	@Override
+	public void onStopTrackingTouch(SeekBar seekBar) {
+		// mTrackingText.setText(getString(R.string.seekbar_tracking_off));
+	}
+
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		getRadioPlayer().doStopPlay(this);
+		doStopRecording(this);
+	}
+
+	// @Override
+	// public void onConfigurationChanged(Configuration _newConfig) {
+	// super.onConfigurationChanged(_newConfig);
+	// // setContentView(R.layout.main);
+	// }
+
 }
