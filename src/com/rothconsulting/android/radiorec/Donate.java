@@ -177,6 +177,8 @@ public class Donate extends Activity {
 		case -2:
 			RadioRecPlus.getRadioPlayer().doStopPlay(this);
 			RadioRecPlus.doStopRecording(this);
+			RadioRecPlus.playing = Boolean.FALSE;
+			RadioRecPlus.recording = Boolean.FALSE;
 			finish();
 			break;
 		}

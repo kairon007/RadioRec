@@ -82,6 +82,7 @@
 	<string name="recordFolderNotFound">Verzeichnis mit Aufnahmen nicht gefunden!</string>
 	<string name="recordFolderNotFoundMessage">Es wurde kein Verzeichnis gefunden mit RadioRec+ aufnahmen.\nEntweder hast du noch nichts aufgenommen oder der Pfad zur SD-Card ist falsch. Den Pfad zur SD Card kannst du in den Einstellungen konfigurieren.</string>
 	<string name="stop">Stop</string>
-	<string name="timerText">Sleep-Timer: Abschaltung nach %1$d Min.</string>
+	<string name="sleepTimerEndIn">Timer: Ende in %d Minuten</string>
+	<string name="timerEnd">Sleep Timer Ende! Gute Nacht ;-)</string>
 	<string name="radio">Radio</string>
 </resources>
