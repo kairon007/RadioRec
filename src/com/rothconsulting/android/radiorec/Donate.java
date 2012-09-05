@@ -59,7 +59,6 @@ public class Donate extends Activity {
 
 		final ImageButton buttonPayPal = (ImageButton) findViewById(R.id.imageButtonPaypal);
 		buttonPayPal.setOnClickListener(new View.OnClickListener() {
-			@Override
 			public void onClick(View v) {
 				Intent intentHomepage = new Intent(Intent.ACTION_VIEW);
 				intentHomepage.setData(Uri
@@ -80,7 +79,6 @@ public class Donate extends Activity {
 		final ImageButton buttonAndroidMarket = (ImageButton) findViewById(R.id.imageButtonAndroidMarket);
 		final Intent intentSpende = new Intent(this, MarketSpende.class);
 		buttonAndroidMarket.setOnClickListener(new View.OnClickListener() {
-			@Override
 			public void onClick(View v) {
 				startActivity(intentSpende);
 			}
@@ -90,7 +88,6 @@ public class Donate extends Activity {
 
 		final Button saveButton = (Button) findViewById(R.id.buttonSaveAntiAdsKey);
 		saveButton.setOnClickListener(new View.OnClickListener() {
-			@Override
 			public void onClick(View v) {
 				Constants.THE_ANTI_ADS_KEY = "" + edittext.getText();
 				if (Constants.THE_ANTI_ADS_KEY != null
@@ -115,7 +112,6 @@ public class Donate extends Activity {
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
-			@Override
 			public void onClick(View v) {
 				finish();
 			}

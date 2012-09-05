@@ -56,7 +56,6 @@ public class Webcam extends Activity {
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
-			@Override
 			public void onClick(View v) {
 				finish();
 			}

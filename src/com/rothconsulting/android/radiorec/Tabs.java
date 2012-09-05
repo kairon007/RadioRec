@@ -106,7 +106,6 @@ public class Tabs extends ActivityGroup {
 			preExisting = view;
 		}
 
-		@Override
 		public View createTabContent(String tag) {
 			return preExisting;
 		}

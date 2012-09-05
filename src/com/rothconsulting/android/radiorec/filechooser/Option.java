@@ -29,7 +29,6 @@ public class Option implements Comparable<Option> {
 		return icon;
 	}
 
-	@Override
 	public int compareTo(Option o) {
 		if (this.name != null)
 			return this.name.toLowerCase().compareTo(o.getName().toLowerCase());

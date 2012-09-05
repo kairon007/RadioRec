@@ -59,7 +59,6 @@ public class FileChooser extends ListActivity {
 
 				list.setOnItemLongClickListener(new OnItemLongClickListener() {
 
-					@Override
 					public boolean onItemLongClick(AdapterView<?> parent,
 							View view, final int position, long id) {
 
@@ -154,7 +153,6 @@ public class FileChooser extends ListActivity {
 				.setIcon(android.R.drawable.ic_delete)
 				.setPositiveButton(getString(R.string.delete),
 						new DialogInterface.OnClickListener() {
-							@Override
 							public void onClick(DialogInterface dialog, int id) {
 
 								File file = new File(currentDir + "/"
@@ -173,7 +171,6 @@ public class FileChooser extends ListActivity {
 						})
 				.setNegativeButton(getString(R.string.neinDanke),
 						new DialogInterface.OnClickListener() {
-							@Override
 							public void onClick(DialogInterface dialog, int id) {
 								dialog.cancel();
 							}
@@ -189,7 +186,6 @@ public class FileChooser extends ListActivity {
 				.setIcon(android.R.drawable.ic_dialog_alert)
 				.setPositiveButton(getString(R.string.settings),
 						new DialogInterface.OnClickListener() {
-							@Override
 							public void onClick(DialogInterface dialog, int id) {
 								finish();
 								startActivity(new Intent(
@@ -198,7 +194,6 @@ public class FileChooser extends ListActivity {
 						})
 				.setNegativeButton(getString(android.R.string.cancel),
 						new DialogInterface.OnClickListener() {
-							@Override
 							public void onClick(DialogInterface dialog, int id) {
 								dialog.cancel();
 								finish();
