@@ -82,6 +82,7 @@
 	<string name="recordFolderNotFound">Percorso di registrazione introvabile!</string>
 	<string name="recordFolderNotFoundMessage">Non é stato possibile trovar cartelle con registrazioni RadioRec+.\nO non hai ancora registrato nulla, o il percorso alla cartella é invalido. Il percorso può essere definito nel e impostazioni.</string>
 	<string name="stop">Stop</string>
+	<string name="sleepTimerEinstellen">Timer: si prega di spingere</string>
 	<string name="sleepTimerEndIn">Timer: fine tra %d minuti</string>
 	<string name="timerEnd">Sleep timer fine! Buona notte ;-)</string>
 	<string name="radio">Radio</string>

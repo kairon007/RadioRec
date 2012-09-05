@@ -50,6 +50,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	static boolean playing;
 	static boolean recording;
+	static boolean showCountdown;
 	private Context context;
 
 	private boolean firstStart;
@@ -63,10 +64,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private static AsyncTask<URL, Integer, Long> recordTask;
 	private String origPlanetradioSteam = null;
 	// private ToggleButton favIcon = null;
-	private RelativeLayout timerBoxLayout;
 	private LinearLayout mainSreen;
-	private SeekBar timerSeekBar;
-	private TextView timerText;
+	private RelativeLayout timerSeekbarLayout;
+	private RelativeLayout timerLayoutWhole;
+	private SeekBar timerSeekbar;
+	private TextView timerSeekbarText;
 	private ImageButton imageButtonUhr;
 	private CountDownTimer countDownTimer;
 	private int gcCounter;
@@ -110,10 +112,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
 		// favIcon.setOnClickListener(this);
 		mainSreen = (LinearLayout) findViewById(R.id.mainSreen);
-		timerBoxLayout = (RelativeLayout) findViewById(R.id.timerBox);
-		timerSeekBar = (SeekBar) findViewById(R.id.timerBar);
-		timerSeekBar.setOnSeekBarChangeListener(this);
-		timerText = (TextView) findViewById(R.id.timerText);
+		timerLayoutWhole = (RelativeLayout) findViewById(R.id.timerLayoutWhole);
+		timerSeekbarLayout = (RelativeLayout) findViewById(R.id.timerSeekbarLayout);
+		timerSeekbar = (SeekBar) findViewById(R.id.timerSeekbar);
+		timerSeekbar.setOnSeekBarChangeListener(this);
+		timerSeekbarText = (TextView) findViewById(R.id.timerSeekbarText);
 		imageButtonUhr = (ImageButton) findViewById(R.id.imageButtonUhr);
 		imageButtonUhr.setOnClickListener(this);
 
@@ -188,6 +191,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// spnAllStations.setBackgroundColor(Color.LTGRAY);
 		spnAllStations.setAdapter(adapter);
 		spnAllStations.setOnItemSelectedListener(this);
+
 	}
 
 	@Override
@@ -225,8 +229,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 								public void onClick(
 										final DialogInterface dialog,
 										final int id) {
-									getRadioPlayer().doStopPlay(context);
-									doStopRecording(context);
+									stopPlay();
+									stopRecord();
 									finish();
 								}
 							})
@@ -401,7 +405,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			}
 			// recording can change in doStartRecording()
 			if (!recording) {
-				doStopRecording(this);
+				stopRecord();
 			}
 			((ImageButton) v)
 					.setImageResource(recording ? R.drawable.button_record_on
@@ -409,7 +413,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.fwd:
 			if (spnAllStations.getSelectedItemPosition() < stationList.size() - 1) {
-				this.setTimerboxOn(false);
 				fwd.setEnabled(false);
 				spnAllStations.setSelection(spnAllStations
 						.getSelectedItemPosition() + 1);
@@ -419,8 +422,12 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			}
 			break;
 		case R.id.imageButtonUhr:
-			setTimerboxOn(true);
-			stopTimer();
+			showCountdown = !showCountdown;
+			if (showCountdown) {
+				this.showTimerbox(true);
+			} else {
+				this.showTimerbox(false);
+			}
 			break;
 		// case R.id.buttonFav:
 		// Log.d(TAG,
@@ -638,10 +645,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 					.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
 		} else {
-			getRadioPlayer().doStopPlay(this);
-			playing = Boolean.FALSE;
-			((ImageButton) findViewById(R.id.play))
-					.setImageResource(R.drawable.button_play);
+			this.stopPlay();
 		}
 		firstStart = false;
 		back.setEnabled(index > 0);
@@ -755,51 +759,44 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	// dbadapter.close();
 	// }
 
-	private void setTimerboxOn(boolean on) {
+	private void showTimerbox(boolean on) {
 		if (on) {
-			timerBoxLayout.setVisibility(View.VISIBLE);
-			timerSeekBar.setVisibility(View.VISIBLE);
-			timerSeekBar.setProgress(0);
-			timerText.setVisibility(View.VISIBLE);
-			timerText.setText(getString(R.string.sleepTimerEndIn, 0));
-
+			timerLayoutWhole.setVisibility(View.VISIBLE);
+			timerSeekbarLayout.setVisibility(View.VISIBLE);
+			timerSeekbarText.setVisibility(View.VISIBLE);
+			timerSeekbar.setVisibility(View.VISIBLE);
 		} else {
-			timerBoxLayout.setVisibility(View.GONE);
+			timerSeekbarLayout.setVisibility(View.GONE);
+			showCountdown = false;
 			mainSreen.refreshDrawableState();
 		}
-	}
-
-	public boolean isPlaying() {
-		return playing;
 	}
 
 	// Timer SeekBar
 	@Override
 	public void onProgressChanged(SeekBar seekBar, int progress,
 			boolean fromTouch) {
-		timerText.setText(getString(R.string.sleepTimerEndIn, progress));
+		timerSeekbarText.setText(getString(R.string.sleepTimerEndIn, progress));
 	}
 
 	@Override
 	public void onStartTrackingTouch(SeekBar seekBar) {
 		stopTimer();
-		setTimerboxOn(true);
+		showTimerbox(true);
 	}
 
 	@Override
 	public void onStopTrackingTouch(SeekBar seekBar) {
-		startTimer(seekBar);
+		this.startTimer(seekBar);
 	}
 
 	private void startTimer(final SeekBar seekBar) {
-
 		long millisInFuture = seekBar.getProgress() * 60 * 1000;
-
 		countDownTimer = new CountDownTimer(millisInFuture, 1000) {
 
 			@Override
 			public void onTick(long millisUntilFinished) {
-				timerText.setText(getString(R.string.sleepTimerEndIn,
+				timerSeekbarText.setText(getString(R.string.sleepTimerEndIn,
 						(millisUntilFinished / 60 / 1000) + 1));
 			}
 
@@ -807,7 +804,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			public void onFinish() {
 				Toast.makeText(context, R.string.timerEnd, Toast.LENGTH_LONG)
 						.show();
-				timerBoxLayout.setVisibility(View.GONE);
+				timerSeekbarLayout.setVisibility(View.GONE);
+				showCountdown = true;
 				stopPlayAndRecord();
 			}
 		};
@@ -832,20 +830,56 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	}
 
 	// @Override
+	// public Object onRetainNonConfigurationInstance() {
+	// Boolean wasPlaying = playing;
+	// return wasPlaying;
+	// }
+	//
+	// private void checkWasPlayinBeforeOrientationChange() {
+	// final Object data = getLastNonConfigurationInstance();
+	//
+	// if (data != null && (Boolean) data) {
+	// startPlay();
+	// } else {
+	// stopPlayAndRecord();
+	// }
+	// }
+	//
+	// @Override
 	// public void onConfigurationChanged(Configuration _newConfig) {
 	// super.onConfigurationChanged(_newConfig);
 	// // setContentView(R.layout.main);
+	// mainSreen.refreshDrawableState();
+	// showCountdown = true;
 	// }
 
+	public boolean isPlaying() {
+		return playing;
+	}
+
 	private void stopPlayAndRecord() {
+		stopPlay();
+		stopRecord();
+	}
+
+	private void stopPlay() {
 		getRadioPlayer().doStopPlay(this);
-		doStopRecording(this);
 		playing = Boolean.FALSE;
-		recording = Boolean.FALSE;
 		((ImageButton) findViewById(R.id.play))
 				.setImageResource(R.drawable.button_play);
+	}
+
+	private void stopRecord() {
+		doStopRecording(this);
+		recording = Boolean.FALSE;
 		((ImageButton) findViewById(R.id.rec))
 				.setImageResource(R.drawable.button_record);
 	}
 
+	private void startPlay() {
+		getRadioPlayer().doStartPlay(this);
+		playing = Boolean.TRUE;
+		((ImageButton) findViewById(R.id.play))
+				.setImageResource(R.drawable.button_stop);
+	}
 }
