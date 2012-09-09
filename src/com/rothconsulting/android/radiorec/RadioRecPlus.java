@@ -778,7 +778,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	}
 
 	public void onStopTrackingTouch(SeekBar seekBar) {
-		this.startTimer(seekBar);
+		if (seekBar.getProgress() > 0){
+			this.startTimer(seekBar);
+		} else {
+			timerSeekbarLayout.setVisibility(View.GONE);
+		}
 	}
 
 	private void startTimer(final SeekBar seekBar) {
