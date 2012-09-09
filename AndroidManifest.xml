@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.rothconsulting.android.radiorec" android:versionCode="133"
-	android:versionName="1.3.3" android:installLocation="auto">
+	package="com.rothconsulting.android.radiorec" android:versionCode="140"
+	android:versionName="1.4.0" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="4" />
 	<supports-screens android:resizeable="true"
 		android:smallScreens="true" android:normalScreens="true"
@@ -30,8 +30,6 @@
 		<activity android:name=".Webcam" />
 		<activity android:name=".Settings" />
 		<activity android:name=".Donate" />
-		<activity android:name=".Tabs" />
-		<activity android:name=".TabCategories" />
 		<activity android:name=".filechooser.FileChooser" />
 		<activity android:name="com.rothconsulting.android.marketbilling.MarketSpende" />
 		

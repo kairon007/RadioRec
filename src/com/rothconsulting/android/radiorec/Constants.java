@@ -88,7 +88,7 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_ARABELLA);
 		ignoreList.add(Stations.RADIO_TECHNOBASE_FM);
 		ignoreList.add(Stations.RADIO_PLANET_FM);
-		ignoreList.add(Stations.RADIO_HITFM);
+		ignoreList.add(Stations.RADIO_886);
 		ignoreList.add(Stations.RADIO_SHOUTED_FM);
 		ignoreList.add(Stations.RADIO_SHOUTED_FM_BREAK);
 		ignoreList.add(Stations.RADIO_SHOUTED_FM_CLUB);
@@ -103,6 +103,8 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_DELUXERADIO);
 		ignoreList.add(Stations.RADIO_APOLLORADIO);
 		ignoreList.add(Stations.RADIO_DEFJAY);
+		ignoreList.add(Stations.RADIO_MARGHERITA);
+		ignoreList.add(Stations.RADIO_TECHNO_4_EVER);
 
 		return ignoreList;
 	}

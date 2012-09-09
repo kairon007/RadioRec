@@ -176,6 +176,7 @@ public class Stations {
 	public static final String RADIO_7_BESCHLEUNIGER = "Radio 7 - Beschleuniger";
 	public static final String RADIO_SALUE = "Salü";
 	public static final String RADIO_FFH = "FFH";
+	public static final String RADIO_FFH_LOUNGE = "FFH Lounge";
 	public static final String RADIO_RT1_HITRADIO = "rt1 Hitradio";
 	public static final String RADIO_RT1_SUEDSCHWABEN = "rt1 Südschwaben";
 	public static final String RADIO_RT1_IN_THE_MIX = "rt1 in the mix";
@@ -251,11 +252,15 @@ public class Stations {
 	public static final String RADIO_ANTENNE_VORARLBERG = "Antenne Vorarlberg";
 	public static final String RADIO_ARABELLA = "Radio Arabella";
 	public static final String RADIO_KRONEHIT = "KroneHit";
-	public static final String RADIO_HITFM = "Hit FM";
+	public static final String RADIO_886 = "Radio 88.6";
+	public static final String RADIO_ENRGY_WIEN = "Energy Wien";
+
 	// ***********************************************
 	// DIVERSE
 	// ***********************************************
 	public static final String RADIO_TIROL_IT = "Radio (Süd-)Tirol";
+	public static final String RADIO_SUEDTIROL_1 = "Radio Südtirol 1";
+	public static final String RADIO_HOLIDAY = "Radio Holiday";
 	public static final String RADIO_SOMA_FM_SOG = "soma fm - Sound of Goa";
 	public static final String RADIO_SOMA_FM_POPTRON = "soma fm - Poptron";
 	public static final String RADIO_SOMA_FM_SECRET_AGENT = "soma fm - Secret Agent";
@@ -273,6 +278,7 @@ public class Stations {
 	public static final String RADIO_OTTO_FM = "Otto FM";
 	public static final String RADIO_FIUME_TICINO = "Radio Fiume Ticino";
 	public static final String RADIO_DEEJAY = "Radio Deejay";
+	public static final String RADIO_MARGHERITA = "Radio Margherita";
 	public static final String RADIO_SHOUTED_FM = "ShoutedFM";
 	public static final String RADIO_SHOUTED_FM_HOUSE = "ShoutedFM - House";
 	public static final String RADIO_SHOUTED_FM_BREAK = "ShoutedFM - Break";
@@ -289,6 +295,7 @@ public class Stations {
 	public static final String RADIO_JAZZ_RADIO_GROOVUP = "Jazz Radio Groov'Up";
 	public static final String RADIO_JAZZ_RADIO_LATINJAZZ = "Jazz Radio Latin Jazz";
 	public static final String RADIO_JAZZ_RADIO_SOULFOOD = "Jazz Radio Soul Food";
+	public static final String RADIO_TECHNO_4_EVER = "Techno4Ever";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -2986,6 +2993,27 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_FFH_LOUNGE);
+		m.put("icon", R.drawable.radio_ffh_lounge);
+		m.put("icon_small", R.drawable.radio_ffh_lounge_small);
+		m.put("stream", "http://mp3ad.ffh.c.nmdn.net/ffhchannels/hqlounge.mp3");
+		m.put("homepage", "http://webradio.ffh.de");
+		m.put("webcam", "http://resource.ffh.de/webcams/ffh/cam1-fullsize.jpg");
+		m.put("email", "http://www.ffh.de/ffh-welt/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RT1_HITRADIO);
 		m.put("icon", R.drawable.radio_rt1_hitradio);
 		m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
@@ -4508,13 +4536,34 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_HITFM);
-		m.put("icon", R.drawable.radio_hitfm);
-		m.put("icon_small", R.drawable.radio_hitfm_small);
-		m.put("stream", "http://hitfm.biosnet.at:8000");
-		m.put("homepage", "http://www.hitfm.at");
+		m.put("name", RADIO_886);
+		m.put("icon", R.drawable.radio_886);
+		m.put("icon_small", R.drawable.radio_886_small);
+		m.put("stream", "http://fra.radiostream.de:37540");
+		m.put("homepage", "http://www.radio886regional.at");
 		m.put("webcam", "");
-		m.put("email", "http://www.hitfm.at/content/show/9");
+		m.put("email", "http://www.radio886regional.at/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_ENRGY_WIEN);
+		m.put("icon", R.drawable.radio_energy_wien);
+		m.put("icon_small", R.drawable.radio_energy_wien_small);
+		m.put("stream", "http://149.5.240.33/WR-AT-WR81");
+		m.put("homepage", "http://www.energy.at");
+		m.put("webcam", "");
+		m.put("email", "http://www.energy.at/home/kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
@@ -4542,6 +4591,48 @@ public class Stations {
 		m.put("homepage", "http://www.radiotirol.it");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiotirol.it/index.php?id=18");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_IT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SUEDTIROL_1);
+		m.put("icon", R.drawable.radio_suedtirol_1);
+		m.put("icon_small", R.drawable.radio_suedtirol_1_small);
+		m.put("stream", "http://str2.creacast.com:80/sudtirol1a");
+		m.put("homepage", "http://www.suedtirol1.it");
+		m.put("webcam", "");
+		m.put("email", "http://www.facebook.com/suedtirol1");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_IT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_HOLIDAY);
+		m.put("icon", R.drawable.radio_holiday);
+		m.put("icon_small", R.drawable.radio_holiday_small);
+		m.put("stream", "http://server6.digital-webstream.de:18260");
+		m.put("homepage", "http://www.radioholiday.it");
+		m.put("webcam", "");
+		m.put("email", "http://www.radioholiday.it/kontakt.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
@@ -4911,6 +5002,27 @@ public class Stations {
 		}
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_MARGHERITA);
+		m.put("icon", R.drawable.radio_margherita);
+		m.put("icon_small", R.drawable.radio_margherita_small);
+		m.put("stream", "http://shoutcast.streamingmedia.it:7072");
+		m.put("homepage", "http://www.radiomargherita.com");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.radiomargherita.com/index.php?option=com_content&view=article&id=51&Itemid=57&lang=it");
+		m.put("sprache", SPRACHE_IT);
+		m.put("land", LAND_IT);
+		m.put("stil", STIL_POP);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SHOUTED_FM);
 		m.put("icon", R.drawable.radio_shouted_fm);
 		m.put("icon_small", R.drawable.radio_shouted_fm_small);
@@ -5221,6 +5333,26 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_JAZZ);
+		if (Build.VERSION.SDK_INT < 8
+				&& Constants.getIgnoreListKleinerAndroid22().contains(
+						m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		} else {
+			stationList.add(m);
+			// fillLandStilList(m);
+		}
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_TECHNO_4_EVER);
+		m.put("icon", R.drawable.radio_techno_4_ever);
+		m.put("icon_small", R.drawable.radio_techno_4_ever_small);
+		m.put("stream", "http://node05.t4e.dj");
+		m.put("homepage", "http://www.techno4ever.fm");
+		m.put("webcam", "");
+		m.put("email", "http://www.techno4ever.fm/Kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_TRANCE);
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
