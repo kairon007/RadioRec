@@ -209,6 +209,7 @@ public class Stations {
 	public static final String RADIO_FRITZ_VOM_RBB = "Fritz vom rbb";
 	public static final String RADIO_DEUTSCHLANDRADIO_KULTUR = "Deutschlandradio Kultur";
 	public static final String RADIO_DEUTSCHLANDFUNK = "Deutschlandfunk";
+	public static final String RADIO_DRADIO_WISSEN = "DRadio Wissen";
 	public static final String RADIO_DREYECKLAND = "Dreyeckland";
 	public static final String RADIO_100_5_DAS_HITRADIO = "100'5 Das Hitradio";
 	public static final String RADIO_JAM_FM_BLACK_N_DANCE = "Jam Fm Black & Dance";
@@ -244,6 +245,10 @@ public class Stations {
 	public static final String RADIO_ERF_POP = "ERF Pop";
 	public static final String RADIO_BVB_NETRADIO = "BVB Netradio";
 	public static final String RADIO_EGO_FM = "EGO FM";
+	public static final String RADIO_ALPENRADIO_VOLKSMUSIK = "Alpenradio Volksmusik";
+	public static final String RADIO_MDR_INFO = "MDR Info";
+	public static final String RADIO_MDR_JUMP = "MDR Jump";
+	public static final String RADIO_FRANK_ZAPPA_STREAM = "Frank Zappa Stream";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -321,7 +326,7 @@ public class Stations {
 	public static final String RADIO_JAZZ_RADIO_LATINJAZZ = "Jazz Radio Latin Jazz";
 	public static final String RADIO_JAZZ_RADIO_SOULFOOD = "Jazz Radio Soul Food";
 	public static final String RADIO_TECHNO_4_EVER = "Techno4Ever";
-	public static final String RADIO_HOT_97 = "HOT 97";
+	public static final String RADIO_MRS_905 = "MRS.se 90.5";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -885,10 +890,10 @@ public class Stations {
 		m.put("name", RADIO_ARGOVIA);
 		m.put("icon", R.drawable.radio_argovia);
 		m.put("icon_small", R.drawable.radio_argovia_small);
-		m.put("stream", "http://argovia.mp3.green.ch");
+		m.put("stream", "http://shoutcast.argovia.ch");
 		m.put("homepage", "http://www.argovia.ch");
 		m.put("webcam", "http://www.argovia.ch/live/");
-		m.put("email", "http://www.argovia.ch/miniwin-jukes.php");
+		m.put("email", "http://www.argovia.ch/ajax/studiomail");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -901,7 +906,7 @@ public class Stations {
 		m.put("stream", "http://shoutcast.argovia.ch:8095");
 		m.put("homepage", "http://www.argovia.ch");
 		m.put("webcam", "http://www.argovia.ch/live/");
-		m.put("email", "http://www.argovia.ch/miniwin-jukes.php");
+		m.put("email", "http://www.argovia.ch/ajax/studiomail");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -914,7 +919,7 @@ public class Stations {
 		m.put("stream", "http://shoutcast.argovia.ch:8090");
 		m.put("homepage", "http://www.argovia.ch");
 		m.put("webcam", "http://www.argovia.ch/live/");
-		m.put("email", "http://www.argovia.ch/miniwin-jukes.php");
+		m.put("email", "http://www.argovia.ch/ajax/studiomail");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -1042,7 +1047,7 @@ public class Stations {
 		m.put("name", RADIO_LORA);
 		m.put("icon", R.drawable.radio_lora);
 		m.put("icon_small", R.drawable.radio_lora_small);
-		m.put("stream", "http://h1788467.stratoserver.net:8100");
+		m.put("stream", "http://livestream.lora.ch:12220");
 		m.put("homepage", "http://www.lora.ch");
 		m.put("webcam", "");
 		m.put("email", "http://lora.ch/ueberuns/kontakt");
@@ -1122,7 +1127,8 @@ public class Stations {
 		m.put("name", RADIO_SWISS_GROOVE);
 		m.put("icon", R.drawable.radio_swissgroove);
 		m.put("icon_small", R.drawable.radio_swissgroove_small);
-		m.put("stream", "http://server4.digital-webstream.de:13600");
+		m.put("stream",
+				"http://swissgroove.ice.infomaniak.ch:80/swissgroove-128");
 		m.put("homepage", "http://www.swissgroove.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.swissgroove.ch/index.php?content=main&id=17");
@@ -1664,6 +1670,19 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_TRAXX_HITS);
+		m.put("icon", R.drawable.radio_traxx_fm);
+		m.put("icon_small", R.drawable.radio_traxx_fm_small);
+		m.put("stream", "http://traxx011.ice.infomaniak.ch/traxx010-high.mp3");
+		m.put("homepage", "http://www.traxx.fm/hits");
+		m.put("webcam", "");
+		m.put("email", "http://www.traxx.fm/contact");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_LIECHSTENSTEIN);
 		m.put("icon", R.drawable.radio_li);
 		m.put("icon_small", R.drawable.radio_li_small);
@@ -1674,19 +1693,6 @@ public class Stations {
 				"http://www.radio.li/hoererservice/mein-musikwunsch.html?type=3");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DIV);
-		m.put("stil", STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_TRAXX_HITS);
-		m.put("icon", R.drawable.radio_traxx_fm);
-		m.put("icon_small", R.drawable.radio_traxx_fm_small);
-		m.put("stream", "http://traxx011.ice.infomaniak.ch/traxx010-high.mp3");
-		m.put("homepage", "http://www.traxx.fm/hits");
-		m.put("webcam", "");
-		m.put("email", "http://www.traxx.fm/contact");
-		m.put("sprache", SPRACHE_FR);
-		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
@@ -2015,7 +2021,8 @@ public class Stations {
 		m.put("name", RADIO_7);
 		m.put("icon", R.drawable.radio_7);
 		m.put("icon_small", R.drawable.radio_7_small);
-		m.put("stream", "http://stream.hoerradar.de:80/mp3-radio7-128");
+		m.put("stream",
+				"http://srv01.radio7.fmstreams.de/stream1/livestream.mp3");
 		m.put("homepage", "http://www.radio7.de");
 		m.put("webcam", "");
 		m.put("email", "http://radio7.de/index.php?id=75");
@@ -2523,6 +2530,19 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_DRADIO_WISSEN);
+		m.put("icon", R.drawable.radio_dradio_wissen);
+		m.put("icon_small", R.drawable.radio_dradio_wissen_small);
+		m.put("stream", "http://dradio.ic.llnwd.net/stream/dradio_dwissen_m_a");
+		m.put("homepage", "http://wissen.dradio.de");
+		m.put("webcam", "");
+		m.put("email", "http://wissen.dradio.de/kontakt.17.de.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DREYECKLAND);
 		m.put("icon", R.drawable.radio_dreyeckland);
 		m.put("icon_small", R.drawable.radio_dreyeckland_small);
@@ -2978,6 +2998,61 @@ public class Stations {
 		m.put("homepage", "http://www.egofm.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.egofm.de/default.aspx?ID=6083");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_ALPENRADIO_VOLKSMUSIK);
+		m.put("icon", R.drawable.radio_alpenradio_volksmusik);
+		m.put("icon_small", R.drawable.radio_alpenradio_volksmusik_small);
+		m.put("stream", "http://listen.radionomy.com/alpenradio-volksmusik");
+		m.put("homepage", "http://www.alpenradio.net");
+		m.put("webcam", "");
+		m.put("email", "http://www.alpenradio.net/index.php/kontakt-zu-uns");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_MDR_INFO);
+		m.put("icon", R.drawable.radio_mdr_info);
+		m.put("icon_small", R.drawable.radio_mdr_info_small);
+		m.put("stream",
+				"http://c22033-l.i.core.cdn.streamfarm.net/22006mdr/live/3087mdr_info/live_de_128.mp3");
+		m.put("homepage", "http://www.mdr.de/mdr-info/");
+		m.put("webcam", "");
+		m.put("email", "http://www.mdr.de/mdr-info/index.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_MDR_JUMP);
+		m.put("icon", R.drawable.radio_mdr_jump);
+		m.put("icon_small", R.drawable.radio_mdr_jump_small);
+		m.put("stream",
+				"http://c22033-l.i.core.cdn.streamfarm.net/22004mdrjump/live/3087mdr_jump/live_de_128.mp3");
+		m.put("homepage", "http://www.jumpradio.de");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.jumpradio.de/web/service/inhalt/hotline.shtml");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_FRANK_ZAPPA_STREAM);
+		m.put("icon", R.drawable.radio_frank_zappa_stream);
+		m.put("icon_small", R.drawable.radio_frank_zappa_stream_small);
+		m.put("stream", "http://176.28.48.138:8000/zappa.mp3");
+		m.put("homepage", "http://norbert.de/index.php?id=18");
+		m.put("webcam", "");
+		m.put("email", "norbert@norbert.de");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_SPORT);
@@ -3524,20 +3599,6 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_FIUME_TICINO);
-		m.put("icon", R.drawable.radio_fiume_ticino);
-		m.put("icon_small", R.drawable.radio_fiume_ticino_small);
-		m.put("stream", "http://91.208.130.229:80");
-		m.put("homepage", "http://www.radioticino.com");
-		m.put("webcam", "");
-		m.put("email",
-				"http://www.radioticino.com/interna.asp?idarticolo=498046");
-		m.put("sprache", SPRACHE_IT);
-		m.put("land", LAND_IT);
-		m.put("stil", STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DEEJAY);
 		m.put("icon", R.drawable.radio_deejay);
 		m.put("icon_small", R.drawable.radio_deejay_small);
@@ -3846,6 +3907,19 @@ public class Stations {
 		m.put("homepage", "http://www.techno4ever.fm");
 		m.put("webcam", "");
 		m.put("email", "http://www.techno4ever.fm/Kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_MRS_905);
+		m.put("icon", R.drawable.radio_mrs_905);
+		m.put("icon_small", R.drawable.radio_mrs_905_small);
+		m.put("stream", "http://radiostreamone.mine.nu:19050");
+		m.put("homepage", "http://www.mrs.se");
+		m.put("webcam", "");
+		m.put("email", "mrs@broadcast.net");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_TRANCE);
