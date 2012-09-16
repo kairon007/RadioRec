@@ -62,10 +62,8 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_STAR_FM);
 		ignoreList.add(Stations.RADIO_STAR_FM_FROM_HELL);
 		ignoreList.add(Stations.RADIO_IBIZA_SONICA);
-		ignoreList.add(Stations.RADIO_AMNESIA);
 		ignoreList.add(Stations.RADIO_BLUE_MARLIN);
 		ignoreList.add(Stations.RADIO_TIROL_IT);
-		ignoreList.add(Stations.RADIO_CELITIC_MUSIC);
 		ignoreList.add(Stations.RADIO_LEGENDE);
 		ignoreList.add(Stations.RADIO_SECRETTUBE);
 		ignoreList.add(Stations.RADIO_GONG_NUERNBERG);
@@ -105,6 +103,10 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_DEFJAY);
 		ignoreList.add(Stations.RADIO_MARGHERITA);
 		ignoreList.add(Stations.RADIO_TECHNO_4_EVER);
+		ignoreList.add(Stations.RADIO_IBIZA_GLOBAL_RADIO);
+		ignoreList.add(Stations.RADIO_FRESH_BEATZ);
+		ignoreList.add(Stations.RADIO_RTL_IT);
+		ignoreList.add(Stations.RADIO_SOUND_CITY);
 
 		return ignoreList;
 	}
@@ -119,6 +121,7 @@ public class Constants {
 		liveStreamStationList.add(Stations.RADIO_GELB_SCHWARZ);
 		liveStreamStationList.add(Stations.RADIO_FCB_LIVE_RADIO);
 		liveStreamStationList.add(Stations.RADIO_FC_ZUERICH);
+		liveStreamStationList.add(Stations.RADIO_BVB_NETRADIO);
 		return liveStreamStationList;
 	}
 

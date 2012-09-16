@@ -186,6 +186,7 @@ public class Stations {
 	public static final String RADIO_1LIVE = "1Live";
 	public static final String RADIO_WDR_2 = "WDR 2";
 	public static final String RADIO_WDR_3 = "WDR 3";
+	public static final String RADIO_WDR_4 = "WDR 4";
 	public static final String RADIO_WDR_5 = "WDR 5";
 	public static final String RADIO_WDR_FUNKHAUS_EUROPA = "Funkhaus Europa";
 	public static final String RADIO_NORDWESTRADIO = "Nordwestradio";
@@ -205,6 +206,7 @@ public class Stations {
 	public static final String RADIO_EINS_RBB = "eins rbb";
 	public static final String RADIO_INFORADIO_RBB = "Info Radio rbb";
 	public static final String RADIO_KULTURRADIO_RBB = "Kulturradio rbb";
+	public static final String RADIO_FRITZ_VOM_RBB = "Fritz vom rbb";
 	public static final String RADIO_DEUTSCHLANDRADIO_KULTUR = "Deutschlandradio Kultur";
 	public static final String RADIO_DEUTSCHLANDFUNK = "Deutschlandfunk";
 	public static final String RADIO_DREYECKLAND = "Dreyeckland";
@@ -219,6 +221,7 @@ public class Stations {
 	public static final String RADIO_PLANET_RADIO = "Planet Radio";
 	public static final String RADIO_GALAXY_ASCHAFFENBURG = "Galaxy Aschaffenburg";
 	public static final String RADIO_GALAXY_KEMPTEN = "Galaxy Kempten";
+	public static final String RADIO_GALAXY_BAMBERG = "Galaxy Bamberg/Coburg";
 	public static final String RADIO_SPREERADIO = "Spreeradio";
 	public static final String RADIO_OSTSEEWELLE = "Ostseewelle";
 	public static final String RADIO_APOLLORADIO = "Apollo Radio";
@@ -229,6 +232,16 @@ public class Stations {
 	public static final String RADIO_ZWICKAU = "Radio Zwickau";
 	public static final String RADIO_PSR = "Radio PSR";
 	public static final String RADIO_KOELN = "Radio Köln";
+	public static final String RADIO_SAW = "Radio SAW";
+	public static final String RADIO_SAW_ROCK = "Radio SAW Rock";
+	public static final String RADIO_SAW_NEUHEITEN = "Radio SAW Neuheiten";
+	public static final String RADIO_SAW_PARTY = "Radio SAW Party";
+	public static final String RADIO_HITRADIO_RTL_SACHSEN = "Hitradio RTL Sachsen";
+	public static final String RADIO_MULTICULT = "Radio Multicult";
+	public static final String RADIO_TRAXX_HITS = "Traxx FM Hits";
+	public static final String RADIO_BLACKBEATS_FM = "Blackbeats FM";
+	public static final String RADIO_ERF_POP = "ERF Pop";
+	public static final String RADIO_BVB_NETRADIO = "BVB Netradio";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -254,6 +267,18 @@ public class Stations {
 	public static final String RADIO_KRONEHIT = "KroneHit";
 	public static final String RADIO_886 = "Radio 88.6";
 	public static final String RADIO_ENRGY_WIEN = "Energy Wien";
+	public static final String RADIO_FRESH_BEATZ = "FreshBeatz.fm";
+
+	// ***********************************************
+	// ITALIEN
+	// ***********************************************
+	public static final String RADIO_PLANET_FM = "Radio Planet FM";
+	public static final String RADIO_OTTO_FM = "Otto FM";
+	public static final String RADIO_FIUME_TICINO = "Radio Fiume Ticino";
+	public static final String RADIO_DEEJAY = "Radio Deejay";
+	public static final String RADIO_MARGHERITA = "Radio Margherita";
+	public static final String RADIO_RTL_IT = "RTL.it 102.5";
+	public static final String RADIO_SOUND_CITY = "Sound City";
 
 	// ***********************************************
 	// DIVERSE
@@ -265,25 +290,20 @@ public class Stations {
 	public static final String RADIO_SOMA_FM_POPTRON = "soma fm - Poptron";
 	public static final String RADIO_SOMA_FM_SECRET_AGENT = "soma fm - Secret Agent";
 	public static final String RADIO_IBIZA_SONICA = "Ibiza Sonica";
-	public static final String RADIO_AMNESIA = "Amnesia";
+	public static final String RADIO_IBIZA_GLOBAL_RADIO = "Ibiza Global Radio";
 	public static final String RADIO_BLUE_MARLIN = "Blue Marlin Ibiza";
-	public static final String RADIO_CELITIC_MUSIC = "Celtic Music Radio";
 	public static final String RADIO_LEGENDE = "Radio Legende";
 	public static final String RADIO_NOVAPLANET = "Novaplanet";
 	public static final String RADIO_PULS_RADIO = "Puls'Radio";
 	public static final String RADIO_EUROPE_1 = "Europe 1";
 	public static final String RADIO_HOPE_FM = "Hope FM";
 	public static final String RADIO_RTL_LUXEMBOURG = "RTL Luxembourg";
-	public static final String RADIO_PLANET_FM = "Radio Planet FM";
-	public static final String RADIO_OTTO_FM = "Otto FM";
-	public static final String RADIO_FIUME_TICINO = "Radio Fiume Ticino";
-	public static final String RADIO_DEEJAY = "Radio Deejay";
-	public static final String RADIO_MARGHERITA = "Radio Margherita";
 	public static final String RADIO_SHOUTED_FM = "ShoutedFM";
 	public static final String RADIO_SHOUTED_FM_HOUSE = "ShoutedFM - House";
 	public static final String RADIO_SHOUTED_FM_BREAK = "ShoutedFM - Break";
 	public static final String RADIO_SHOUTED_FM_CLUB = "ShoutedFM - Club";
 	public static final String RADIO_SHOUTED_FM_ELECTRO = "ShoutedFM - Electro";
+	public static final String RADIO_SHOUTED_FM_ALTERNATIVE = "ShoutedFM - Alternative";
 	public static final String RADIO_WHISPERINGS_SOLOPIANO = "Whisperings Solo Piano Radio";
 	public static final String RADIO_JAZZ_WELT = "Jazz Welt Radio";
 	public static final String RADIO_JAZZ_LOFT = "Jazz Loft Radio";
@@ -364,15 +384,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_32_GOLDIES);
@@ -386,15 +398,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_HOCH2);
@@ -407,15 +411,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_CAPITAL_FM);
@@ -428,15 +424,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RABE);
@@ -449,15 +437,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_24);
@@ -472,15 +452,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_24_ROCK);
@@ -495,15 +467,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS1);
@@ -517,15 +481,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS1_AGSO);
@@ -541,15 +497,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS1_BSBL);
@@ -565,15 +513,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS1_BEFRVS);
@@ -589,15 +529,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS2);
@@ -611,15 +543,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_KLASSIK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS3);
@@ -633,15 +557,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS4);
@@ -656,15 +572,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS_VIRUS);
@@ -679,15 +587,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS_MUSIKWELLE);
@@ -702,15 +602,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ENERGY_BERN);
@@ -724,15 +616,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ENERGY_ZUERICH);
@@ -746,15 +630,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ENERGY_BASEL);
@@ -768,15 +644,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ENERGY_SWISS);
@@ -790,15 +658,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ENERGY_CHARTS);
@@ -811,15 +671,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ENERGY_LOVE);
@@ -833,15 +685,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ENERGY_80);
@@ -855,15 +699,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ENERGY_90);
@@ -877,15 +713,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ENERGY_ITALY);
@@ -899,15 +727,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SWISS_CLASSIC);
@@ -920,15 +740,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SWISS_JAZZ);
@@ -941,15 +753,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_JAZZ);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SWISS_POP);
@@ -962,15 +766,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_1);
@@ -983,15 +779,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ZUERISEE);
@@ -1005,15 +793,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_PILATUS);
@@ -1026,15 +806,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_BEO);
@@ -1047,15 +819,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_TOP);
@@ -1068,15 +832,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_TOP_TWO);
@@ -1089,15 +845,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_NEO_1);
@@ -1111,15 +859,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_NEO_ZWEI);
@@ -1133,15 +873,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ARGOVIA);
@@ -1154,15 +886,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ARGOVIA_HITMIX);
@@ -1175,15 +899,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ARGOVIA_CLASSIC_ROCK);
@@ -1196,15 +912,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_105);
@@ -1217,15 +925,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_105_CLASSICS);
@@ -1239,15 +939,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_FM1);
@@ -1260,15 +952,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_FM1_MELODY);
@@ -1281,15 +965,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_VOLKSTUEMLICH);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_TOXIC_FM);
@@ -1302,15 +978,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_X);
@@ -1323,15 +991,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_KANAL_K);
@@ -1344,15 +1004,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_INSIDE);
@@ -1365,15 +1017,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_STADTFILTER);
@@ -1386,15 +1030,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_LORA);
@@ -1407,15 +1043,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_KAISEREGG);
@@ -1429,15 +1057,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SUNSHINE);
@@ -1450,15 +1070,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_TROPIC);
@@ -1471,15 +1083,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DJRADIO);
@@ -1492,15 +1096,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_LOUNGE_RADIO);
@@ -1514,15 +1110,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SWISS_GROOVE);
@@ -1535,15 +1123,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_FREIBURG);
@@ -1557,15 +1137,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_COULEUR_3);
@@ -1579,15 +1151,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RFJ);
@@ -1600,15 +1164,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ROUGE_FM);
@@ -1621,15 +1177,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RSI_RETE_1);
@@ -1642,15 +1190,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RSI_RETE_2);
@@ -1663,15 +1203,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RSI_RETE_3);
@@ -1685,15 +1217,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ROCK_NATION);
@@ -1706,15 +1230,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_3FACH);
@@ -1727,15 +1243,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_COUNTRY_RADIO);
@@ -1748,15 +1256,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_LIFE_CHANNEL);
@@ -1770,15 +1270,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_RELIGION);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_GLORIA);
@@ -1791,15 +1283,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_RELIGION);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_GELB_SCHWARZ);
@@ -1814,15 +1298,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_SPORT);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_FCB_LIVE_RADIO);
@@ -1836,15 +1312,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_SPORT);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_FC_ZUERICH);
@@ -1858,15 +1326,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_SPORT);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_BACKSTAGE_RADIO);
@@ -1881,15 +1341,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		// m = new HashMap<String, Object>();
 		// m.put("name", RADIO_RRO);
@@ -1903,15 +1355,15 @@ public class Stations {
 		// m.put("sprache", SPRACHE_DE);
 		// m.put("land", LAND_CH);
 		// m.put("stil", STIL_POP);
-		// if (Build.VERSION.SDK_INT < 8
-		// && Constants.getIgnoreListKleinerAndroid22().contains(
-		// m.get("name"))) {
-		// // wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		// setStationlist(stationList, m);
 		//
-		// } else {
-		// stationList.add(m);
-		// // fillLandStilList(m);
-		// }
+		//
+		//
+		//
+		//
+		//
+		//
+		//
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_MONTE_CARLO);
@@ -1924,15 +1376,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RASA);
@@ -1945,15 +1389,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_BLIND_POWER);
@@ -1966,15 +1402,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_CENTRAL);
@@ -1987,15 +1415,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_CENTRAL_ROCK);
@@ -2008,15 +1428,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_CENTRAL_SWISS);
@@ -2029,15 +1441,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_EVIVA);
@@ -2050,15 +1454,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_GRISCHA);
@@ -2072,15 +1468,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_TELL);
@@ -2095,15 +1483,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_VOLKSTUEMLICH);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_INDUSTRIE);
@@ -2117,15 +1497,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_AUDIOASYL);
@@ -2138,15 +1510,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_PIRATENRADIO);
@@ -2160,15 +1524,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_WAVE);
@@ -2182,15 +1538,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ROCK_STATION);
@@ -2203,15 +1551,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_ROCK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_TRANCERADIO);
@@ -2224,15 +1564,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_TRANCE);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DELTA_RADIO);
@@ -2245,15 +1577,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SECRETTUBE);
@@ -2266,15 +1590,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_H1_RADIO_HITTNAU);
@@ -2287,15 +1603,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_ROCK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_GUGGE_SOUND);
@@ -2308,15 +1616,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_VOLKSTUEMLICH);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_IISCHERS_RADIO);
@@ -2329,15 +1629,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_VOLKSMUSIKNET);
@@ -2350,15 +1642,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_VOLKSTUEMLICH);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RADIUS);
@@ -2371,15 +1655,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_LIECHSTENSTEIN);
@@ -2393,15 +1669,20 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		setStationlist(stationList, m);
 
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_TRAXX_HITS);
+		m.put("icon", R.drawable.radio_traxx_fm);
+		m.put("icon_small", R.drawable.radio_traxx_fm_small);
+		m.put("stream", "http://traxx011.ice.infomaniak.ch/traxx010-high.mp3");
+		m.put("homepage", "http://www.traxx.fm/hits");
+		m.put("webcam", "");
+		m.put("email", "http://www.traxx.fm/contact");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
 
 		// ******************************************************************************************************
 		// *
@@ -2420,15 +1701,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ANTENNE_CHILLOUT);
@@ -2442,15 +1715,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ANTENNE_CLASSIC_ROCK);
@@ -2465,15 +1730,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_ROCK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ANTENNE_ROCK);
@@ -2487,15 +1744,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_ROCK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ANTENNE_ROCK_HEAVY_METAL);
@@ -2509,15 +1758,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_ROCK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_BAYERN_1);
@@ -2531,15 +1772,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_BAYERN_2);
@@ -2553,15 +1786,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_BAYERN_3);
@@ -2576,15 +1801,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_BAYERN_4_KLASSIK);
@@ -2598,15 +1815,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_KLASSIK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_BAYERN_5_AKTUELL);
@@ -2620,15 +1829,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ON_3);
@@ -2641,15 +1842,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SWR_1);
@@ -2663,15 +1856,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SWR_2);
@@ -2685,15 +1870,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SWR_3);
@@ -2707,15 +1884,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SWR_4);
@@ -2729,15 +1898,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DAS_DING);
@@ -2750,15 +1911,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_BIG_FM);
@@ -2772,15 +1925,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SEEFUNK);
@@ -2793,15 +1938,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SINE_MUSIC);
@@ -2814,15 +1951,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JUGGLERZ);
@@ -2835,15 +1964,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SUNSHINE_LIVE);
@@ -2856,15 +1977,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ALLGAEUHIT);
@@ -2877,15 +1990,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_TOP100STATION);
@@ -2898,15 +2003,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_7);
@@ -2919,15 +2016,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_7_BESCHLEUNIGER);
@@ -2940,15 +2029,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SALUE);
@@ -2961,15 +2042,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_FFH);
@@ -2982,15 +2055,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_FFH_LOUNGE);
@@ -3003,15 +2068,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RT1_HITRADIO);
@@ -3026,15 +2083,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RT1_SUEDSCHWABEN);
@@ -3049,15 +2098,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RT1_IN_THE_MIX);
@@ -3072,15 +2113,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_HR_2);
@@ -3095,15 +2128,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_KLASSIK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_HR_3);
@@ -3118,15 +2143,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_YOU_FM);
@@ -3140,14 +2157,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_1LIVE);
@@ -3161,15 +2171,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_WDR_2);
@@ -3183,15 +2185,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_WDR_3);
@@ -3205,15 +2199,21 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_KLASSIK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		setStationlist(stationList, m);
 
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_WDR_4);
+		m.put("icon", R.drawable.radio_wdr4);
+		m.put("icon_small", R.drawable.radio_wdr4_small);
+		m.put("stream",
+				"http://wdr-4.akacast.akamaistream.net/7/42/119438/v1/gnl.akacast.akamaistream.net/wdr-4");
+		m.put("homepage", "http://www.wdr4.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.wdr4.de/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_KLASSIK);
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_WDR_5);
@@ -3227,15 +2227,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_WDR_FUNKHAUS_EUROPA);
@@ -3249,15 +2241,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_NORDWESTRADIO);
@@ -3272,15 +2256,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_BREMEN_VIER);
@@ -3295,15 +2271,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_STAR_FM);
@@ -3316,15 +2284,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_STAR_FM_FROM_HELL);
@@ -3337,15 +2297,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_REGENBOGEN);
@@ -3360,15 +2312,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_FANTASY_DANCE);
@@ -3381,15 +2325,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_OBERKRAIN);
@@ -3402,15 +2338,8 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_VOLKSTUEMLICH);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		setStationlist(stationList, m);
 
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_NDR_1);
 		m.put("icon", R.drawable.radio_ndr1);
@@ -3424,15 +2353,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_NDR_2);
@@ -3446,15 +2367,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_NDR_INFO);
@@ -3468,15 +2381,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_KLASSIK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_NDR_KULTUR);
@@ -3490,15 +2395,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_KLASSIK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_N_JOY);
@@ -3512,15 +2409,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_GONG_NUERNBERG);
@@ -3533,15 +2422,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_PALOMA);
@@ -3554,15 +2435,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_EINS_RBB);
@@ -3575,15 +2448,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_INFORADIO_RBB);
@@ -3596,15 +2461,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_KULTURRADIO_RBB);
@@ -3618,15 +2475,20 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_KLASSIK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		setStationlist(stationList, m);
 
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_FRITZ_VOM_RBB);
+		m.put("icon", R.drawable.radio_fritz_rbb);
+		m.put("icon_small", R.drawable.radio_fritz_rbb_small);
+		m.put("stream", "http://rbb.ic.llnwd.net/stream/rbb_fritz_mp3_m_a");
+		m.put("homepage", "http://www.fritz.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.fritz.de/kontakt/index.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_KLASSIK);
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DEUTSCHLANDRADIO_KULTUR);
@@ -3639,15 +2501,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_KLASSIK);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DEUTSCHLANDFUNK);
@@ -3660,15 +2514,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DREYECKLAND);
@@ -3682,15 +2528,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_100_5_DAS_HITRADIO);
@@ -3703,15 +2541,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JAM_FM_BLACK_N_DANCE);
@@ -3724,15 +2554,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JAM_FM_NEW_MUSIC_RADIO);
@@ -3745,15 +2567,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_KIEPENKERL);
@@ -3766,15 +2580,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ENERGY_SACHSEN);
@@ -3788,15 +2594,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_FFN_NIEDERSACHSEN);
@@ -3809,14 +2607,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_TECHNOBASE_FM);
@@ -3829,14 +2620,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_TRANCE);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_HOUSETIME_FM);
@@ -3849,14 +2633,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_TRANCE);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_PLANET_RADIO);
@@ -3870,14 +2647,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_GALAXY_ASCHAFFENBURG);
@@ -3891,14 +2661,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_GALAXY_KEMPTEN);
@@ -3912,14 +2675,22 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_GALAXY_BAMBERG);
+		m.put("icon", R.drawable.radio_galaxy);
+		m.put("icon_small", R.drawable.radio_galaxy_small);
+		m.put("stream", "http://rs1.stream24.net:8000/stream");
+		m.put("homepage",
+				"http://www.radio-galaxy.de/galaxy-cities/bambergcoburg.html");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.radio-galaxy.de/galaxy-cities/bambergcoburg/contact.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SPREERADIO);
@@ -3933,14 +2704,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_OSTSEEWELLE);
@@ -3954,14 +2718,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_APOLLORADIO);
@@ -3974,14 +2731,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DEFJAY);
@@ -3994,14 +2744,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DELUXERADIO);
@@ -4015,14 +2758,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_BALLERMANN_RADIO);
@@ -4035,14 +2771,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_PARTYRADIO_24);
@@ -4055,14 +2784,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ZWICKAU);
@@ -4075,14 +2797,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_PSR);
@@ -4096,14 +2811,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_KOELN);
@@ -4118,14 +2826,128 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SAW);
+		m.put("icon", R.drawable.radio_saw);
+		m.put("icon_small", R.drawable.radio_saw_small);
+		m.put("stream", "http://stream.radiosaw.de");
+		m.put("homepage", "http://www.radiosaw.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		// http:www.radiosaw.de/start.php?dbview,radio-SAW-App-Sonstige-429
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SAW_ROCK);
+		m.put("icon", R.drawable.radio_saw_rock);
+		m.put("icon_small", R.drawable.radio_saw_small);
+		m.put("stream", "http://stream.saw-musikwelt.de/saw-rock");
+		m.put("homepage", "http://www.radiosaw.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SAW_NEUHEITEN);
+		m.put("icon", R.drawable.radio_saw_neuheiten);
+		m.put("icon_small", R.drawable.radio_saw_small);
+		m.put("stream", "http://stream.saw-musikwelt.de/saw-neuheiten");
+		m.put("homepage", "http://www.radiosaw.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SAW_PARTY);
+		m.put("icon", R.drawable.radio_saw_party);
+		m.put("icon_small", R.drawable.radio_saw_small);
+		m.put("stream", "http://stream.radiosaw.de");
+		m.put("homepage", "http://www.radiosaw.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_HITRADIO_RTL_SACHSEN);
+		m.put("icon", R.drawable.radio_hitradio_rtl_sachsen);
+		m.put("icon_small", R.drawable.radio_hitradio_rtl_sachsen_small);
+		m.put("stream", "http://hitradio-rtl.mp3.green.ch:80");
+		m.put("homepage", "http://www.hitradio-rtl.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.hitradio-rtl.de/service/hoererservice/");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_MULTICULT);
+		m.put("icon", R.drawable.radio_multicult);
+		m.put("icon_small", R.drawable.radio_multicult_small);
+		m.put("stream", "http://stream.multicult.fm:8000/hifi");
+		m.put("homepage", "http://www.multicult.fm");
+		m.put("webcam", "");
+		m.put("email", "http://www.multicult.fm/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_BLACKBEATS_FM);
+		m.put("icon", R.drawable.radio_blackbeats_fm);
+		m.put("icon_small", R.drawable.radio_blackbeats_fm_small);
+		m.put("stream", "http://stream.blackbeats.fm/");
+		m.put("homepage", "http://blackbeats.fm");
+		m.put("webcam", "");
+		m.put("email", "http://blackbeats.fm/ueberuns/");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_ERF_POP);
+		m.put("icon", R.drawable.radio_erf_pop);
+		m.put("icon_small", R.drawable.radio_erf_pop_small);
+		m.put("stream",
+				"http://c14000-l.i.core.cdn.streamfarm.net/14000cina/live/2908erfpop/live_de_96.mp3");
+		m.put("homepage", "http://www.erf.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.erf.de/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_BVB_NETRADIO);
+		m.put("icon", R.drawable.radio_bvb_netradio);
+		m.put("icon_small", R.drawable.radio_bvb_netradio_small);
+		m.put("stream",
+				"http://lsd.newmedia.tiscali-business.com/bb/redirect.lsc?stream=bvb$home32k&content=live&media=ms");
+		m.put("homepage", "http://www.bvb.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.bvb.de/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
 
 		// ******************************************************************************************************
 		// *
@@ -4143,15 +2965,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_OE3);
@@ -4164,15 +2978,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_FM4);
@@ -4185,15 +2991,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_TIROL);
@@ -4206,15 +3004,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_WIEN);
@@ -4227,15 +3017,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_KAERNTEN);
@@ -4248,15 +3030,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SALZBURG);
@@ -4269,15 +3043,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_OBEROESTERREICH);
@@ -4290,15 +3056,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_NIEDEROESTERREICH);
@@ -4311,15 +3069,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_HELSINKI_GRAZ);
@@ -4332,15 +3082,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SOUNDPORTAL);
@@ -4353,15 +3095,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_STEPHANSDOM);
@@ -4375,15 +3109,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ANTENNE_STEIERMARK);
@@ -4397,15 +3123,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ANTENNE_KAERNTEN);
@@ -4418,15 +3136,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ANTENNE_TIROL);
@@ -4440,15 +3150,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ANTENNE_SALZBURG);
@@ -4462,15 +3164,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ANTENNE_VORARLBERG);
@@ -4483,15 +3177,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ARABELLA);
@@ -4504,15 +3190,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_KRONEHIT);
@@ -4525,15 +3203,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_886);
@@ -4546,15 +3216,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_ENRGY_WIEN);
@@ -4567,15 +3229,21 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+		setStationlist(stationList, m);
 
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_FRESH_BEATZ);
+		m.put("icon", R.drawable.radio_freshbeatz);
+		m.put("icon_small", R.drawable.radio_freshbeatz_small);
+		m.put("stream", "http://rs2.stream24.org:8300");
+		m.put("homepage", "http://freshbeatz.fm");
+		m.put("webcam", "http://katec.bplaced.net/studiosteyr.jpg");
+		m.put("email",
+				"http://www.pop-tools.de/kundenaddon/Grussbox2.0/?y92V3aaY0rh8i5am0tmakp8=");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
 
 		// ******************************************************************************************************
 		// *
@@ -4594,15 +3262,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SUEDTIROL_1);
@@ -4615,15 +3275,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_HOLIDAY);
@@ -4636,15 +3288,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SOMA_FM_SOG);
@@ -4657,15 +3301,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_EN);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SOMA_FM_POPTRON);
@@ -4678,15 +3314,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_EN);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SOMA_FM_SECRET_AGENT);
@@ -4699,15 +3327,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_EN);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_IBIZA_SONICA);
@@ -4720,36 +3340,21 @@ public class Stations {
 		m.put("sprache", SPRACHE_ES);
 		m.put("land", LAND_ES);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_AMNESIA);
-		m.put("icon", R.drawable.radio_amnesia);
-		m.put("icon_small", R.drawable.radio_amnesia_small);
-		m.put("stream", "http://stream.estudiosonico.com:7015");
-		m.put("homepage", "http://www.amnesia.es");
+		m.put("name", RADIO_IBIZA_GLOBAL_RADIO);
+		m.put("icon", R.drawable.radio_ibiza_global_radio);
+		m.put("icon_small", R.drawable.radio_ibiza_global_radio_small);
+		m.put("stream", "http://ibgr.001.oye.fm:8024");
+		m.put("homepage", "http://www.ibizaglobalradio.com");
 		m.put("webcam", "");
-		m.put("email", "http://www.amnesia.es/webapp/contact");
+		m.put("email",
+				"http://www.ibizaglobalradio.com/index.php/paginaPie/en/8/contact");
 		m.put("sprache", SPRACHE_ES);
 		m.put("land", LAND_ES);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_BLUE_MARLIN);
@@ -4762,39 +3367,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_ES);
 		m.put("land", LAND_ES);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
-
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_CELITIC_MUSIC);
-		m.put("icon", R.drawable.radio_celtic_radio);
-		m.put("icon_small", R.drawable.radio_celtic_radio_small);
-		// m.put("stream", "http://173.192.224.123:8214");
-		m.put("stream",
-				"http://216.235.91.36/play?now=81&membername=&session=celticmusicradio:0&tag=web&s=celticmusicradio&d=LIVE365&r=0&app_id=web%3ABROWSER&token=0d6651a1b1d8b35d3cb125518d9153f0-5900240080101248&AuthType=NORMAL&lid=zh-che&SaneID=89.217.173.62-13300450793219544880226&rnd=0.9155704504810274");
-		m.put("homepage", "http://www.celticradio.net");
-		m.put("webcam", "");
-		m.put("email",
-				"http://www.celticradio.net/php/service_mod.php?type=contact");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_DIV);
-		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_LEGENDE);
@@ -4807,15 +3380,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_NOVAPLANET);
@@ -4828,14 +3393,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_PULS_RADIO);
@@ -4849,14 +3407,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_EUROPE_1);
@@ -4870,14 +3421,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_HOPE_FM);
@@ -4891,14 +3435,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_EN);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_RELIGION);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RTL_LUXEMBOURG);
@@ -4911,14 +3448,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_PLANET_FM);
@@ -4931,14 +3461,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_OTTO_FM);
@@ -4951,20 +3474,13 @@ public class Stations {
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_FIUME_TICINO);
 		m.put("icon", R.drawable.radio_fiume_ticino);
 		m.put("icon_small", R.drawable.radio_fiume_ticino_small);
-		m.put("stream", "http://91.208.130.244");
+		m.put("stream", "http://91.208.130.229:80");
 		m.put("homepage", "http://www.radioticino.com");
 		m.put("webcam", "");
 		m.put("email",
@@ -4972,14 +3488,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DEEJAY);
@@ -4992,14 +3501,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_MARGHERITA);
@@ -5013,14 +3515,33 @@ public class Stations {
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RTL_IT);
+		m.put("icon", R.drawable.radio_rtl_it);
+		m.put("icon_small", R.drawable.radio_rtl_it_small);
+		m.put("stream", "http://shoutcast.rtl.it:3010/stream/1/");
+		m.put("homepage", "http://www.rtl.it");
+		m.put("webcam", "");
+		m.put("email", "http://www.rtl.it/chi-siamo");
+		m.put("sprache", SPRACHE_IT);
+		m.put("land", LAND_IT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SOUND_CITY);
+		m.put("icon", R.drawable.radio_soundcity);
+		m.put("icon_small", R.drawable.radio_soundcity_small);
+		m.put("stream", "http://94.23.32.31:3276/");
+		m.put("homepage", "http://www.radiosoundcity.net");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiosoundcity.net/radio/contattaci");
+		m.put("sprache", SPRACHE_IT);
+		m.put("land", LAND_IT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SHOUTED_FM);
@@ -5033,14 +3554,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SHOUTED_FM_CLUB);
@@ -5053,14 +3567,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SHOUTED_FM_ELECTRO);
@@ -5073,14 +3580,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SHOUTED_FM_BREAK);
@@ -5093,14 +3593,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SHOUTED_FM_HOUSE);
@@ -5113,14 +3606,20 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SHOUTED_FM_ALTERNATIVE);
+		m.put("icon", R.drawable.radio_shouted_fm_mirror);
+		m.put("icon_small", R.drawable.radio_shouted_fm_small);
+		m.put("stream", "http://alternative.mthn.net:8700");
+		m.put("homepage", "http://www.shouted.fm/index.php?area=alternative");
+		m.put("webcam", "");
+		m.put("email", "http://www.shouted.fm/index.php?module=contact");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_WHISPERINGS_SOLOPIANO);
@@ -5133,14 +3632,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_EN);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_JAZZ);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JAZZ_LOFT);
@@ -5153,14 +3645,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_JAZZ);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JAZZ_WELT);
@@ -5173,14 +3658,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_JAZZ);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JAZZ_RADIO);
@@ -5193,14 +3671,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_JAZZ);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JAZZ_RADIO_FUNK);
@@ -5213,14 +3684,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_JAZZ);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JAZZ_RADIO_SOUL);
@@ -5233,14 +3697,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_JAZZ);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JAZZ_RADIO_GROOVE);
@@ -5253,14 +3710,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_JAZZ);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JAZZ_RADIO_BLUES);
@@ -5273,14 +3723,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_JAZZ);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JAZZ_RADIO_GROOVUP);
@@ -5293,14 +3736,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_JAZZ);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JAZZ_RADIO_LATINJAZZ);
@@ -5313,14 +3749,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_JAZZ);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_JAZZ_RADIO_SOULFOOD);
@@ -5333,14 +3762,7 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_JAZZ);
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
-		}
+		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_TECHNO_4_EVER);
@@ -5353,15 +3775,22 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		return stationList;
+	}
+
+	private void setStationlist(ArrayList<HashMap<String, Object>> stationList,
+			HashMap<String, Object> m) {
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
 			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+
 		} else {
 			stationList.add(m);
 			// fillLandStilList(m);
 		}
-
-		return stationList;
 	}
+
 }
