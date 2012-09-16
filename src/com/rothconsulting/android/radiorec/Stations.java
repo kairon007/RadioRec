@@ -224,6 +224,7 @@ public class Stations {
 	public static final String RADIO_GALAXY_BAMBERG = "Galaxy Bamberg/Coburg";
 	public static final String RADIO_SPREERADIO = "Spreeradio";
 	public static final String RADIO_OSTSEEWELLE = "Ostseewelle";
+	public static final String RADIO_EUSKIRCHEN = "Euskirchen";
 	public static final String RADIO_APOLLORADIO = "Apollo Radio";
 	public static final String RADIO_DEFJAY = "Defjay";
 	public static final String RADIO_DELUXERADIO = "Deluxe Radio";
@@ -242,6 +243,7 @@ public class Stations {
 	public static final String RADIO_BLACKBEATS_FM = "Blackbeats FM";
 	public static final String RADIO_ERF_POP = "ERF Pop";
 	public static final String RADIO_BVB_NETRADIO = "BVB Netradio";
+	public static final String RADIO_EGO_FM = "EGO FM";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -268,6 +270,7 @@ public class Stations {
 	public static final String RADIO_886 = "Radio 88.6";
 	public static final String RADIO_ENRGY_WIEN = "Energy Wien";
 	public static final String RADIO_FRESH_BEATZ = "FreshBeatz.fm";
+	public static final String RADIO_LIFE_RADIO = "Life Radio";
 
 	// ***********************************************
 	// ITALIEN
@@ -279,6 +282,8 @@ public class Stations {
 	public static final String RADIO_MARGHERITA = "Radio Margherita";
 	public static final String RADIO_RTL_IT = "RTL.it 102.5";
 	public static final String RADIO_SOUND_CITY = "Sound City";
+	public static final String RADIO_CITTA_FUTURA = "Citta Futura";
+	public static final String RADIO_POPOLARE_ROMA = "Popolare Roma";
 
 	// ***********************************************
 	// DIVERSE
@@ -316,6 +321,7 @@ public class Stations {
 	public static final String RADIO_JAZZ_RADIO_LATINJAZZ = "Jazz Radio Latin Jazz";
 	public static final String RADIO_JAZZ_RADIO_SOULFOOD = "Jazz Radio Soul Food";
 	public static final String RADIO_TECHNO_4_EVER = "Techno4Ever";
+	public static final String RADIO_HOT_97 = "HOT 97";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -2721,6 +2727,20 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_EUSKIRCHEN);
+		m.put("icon", R.drawable.radio_euskirchen);
+		m.put("icon_small", R.drawable.radio_euskirchen_small);
+		m.put("stream",
+				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radioeuskirchen/livestream.mp3");
+		m.put("homepage", "http://www.euskirchen.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.radioeuskirchen.de/eus/re/25090/studiomail");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_APOLLORADIO);
 		m.put("icon", R.drawable.radio_apollo_radio);
 		m.put("icon_small", R.drawable.radio_apollo_radio_small);
@@ -2944,6 +2964,20 @@ public class Stations {
 		m.put("homepage", "http://www.bvb.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.bvb.de/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_EGO_FM);
+		m.put("icon", R.drawable.radio_ego_fm);
+		m.put("icon_small", R.drawable.radio_ego_fm_small);
+		m.put("stream",
+				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-egofm_192/livestream.mp3");
+		m.put("homepage", "http://www.egofm.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.egofm.de/default.aspx?ID=6083");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_SPORT);
@@ -3245,6 +3279,19 @@ public class Stations {
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_LIFE_RADIO);
+		m.put("icon", R.drawable.radio_life_radio);
+		m.put("icon_small", R.drawable.radio_life_radio_small);
+		m.put("stream", "http://liferadio.liwest.at:8000/liferadio2");
+		m.put("homepage", "http://www.liferadio.at/index.html");
+		m.put("webcam", "http://www.liferadio.at/imports/webcam/image.jpg");
+		m.put("email", "http://www.liferadio.at/programm/mail-ins-studio/");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
 		// ******************************************************************************************************
 		// *
 		// * DIVERSE
@@ -3538,6 +3585,33 @@ public class Stations {
 		m.put("homepage", "http://www.radiosoundcity.net");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiosoundcity.net/radio/contattaci");
+		m.put("sprache", SPRACHE_IT);
+		m.put("land", LAND_IT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_CITTA_FUTURA);
+		m.put("icon", R.drawable.radio_citta_futura);
+		m.put("icon_small", R.drawable.radio_citta_futura_small);
+		m.put("stream", "http://onair18.xdevel.com:8002");
+		m.put("homepage", "http://www.radiocittafutura.it");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.radiocittafutura.it/ViewCategory.aspx?catid=61b16947c3384cbe9afefd0aea856145");
+		m.put("sprache", SPRACHE_IT);
+		m.put("land", LAND_IT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_POPOLARE_ROMA);
+		m.put("icon", R.drawable.radio_popolare_roma);
+		m.put("icon_small", R.drawable.radio_popolare_roma_small);
+		m.put("stream", "http://stream.radiopopolareroma.it:80/bbs");
+		m.put("homepage", "http://www.radiopopolareroma.it");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiopopolareroma.it/contatti");
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
