@@ -248,7 +248,11 @@ public class Stations {
 	public static final String RADIO_ALPENRADIO_VOLKSMUSIK = "Alpenradio Volksmusik";
 	public static final String RADIO_MDR_INFO = "MDR Info";
 	public static final String RADIO_MDR_JUMP = "MDR Jump";
+	public static final String RADIO_MDR_SPUTNIK = "MDR Sputnik";
 	public static final String RADIO_FRANK_ZAPPA_STREAM = "Frank Zappa Stream";
+	public static final String RADIO_KRAUTROCK_WORLD = "Krautrock World";
+	public static final String RADIO_DRAGONDEVIL = "DrAgOnDeViL";
+	public static final String RADIO_890_RTL = "89.0 RTL";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3046,6 +3050,20 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_MDR_SPUTNIK);
+		m.put("icon", R.drawable.radio_mdr_sputnik);
+		m.put("icon_small", R.drawable.radio_mdr_sputnik_small);
+		m.put("stream",
+				"http://c22033-l.i.core.cdn.streamfarm.net/22005mdrsputnik/live/3087mdr_sputnik/live_de_128.mp3");
+		m.put("homepage", "http://www.sputnik.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.sputnik.de/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_FRANK_ZAPPA_STREAM);
 		m.put("icon", R.drawable.radio_frank_zappa_stream);
 		m.put("icon_small", R.drawable.radio_frank_zappa_stream_small);
@@ -3053,6 +3071,45 @@ public class Stations {
 		m.put("homepage", "http://norbert.de/index.php?id=18");
 		m.put("webcam", "");
 		m.put("email", "norbert@norbert.de");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_KRAUTROCK_WORLD);
+		m.put("icon", R.drawable.radio_krautrock_world);
+		m.put("icon_small", R.drawable.radio_krautrock_world_small);
+		m.put("stream", "http://87.230.55.91:7592");
+		m.put("homepage", "http://www.krautrock-world.com");
+		m.put("webcam", "");
+		m.put("email", "http://www.krautrock-world.com/impressum.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_DRAGONDEVIL);
+		m.put("icon", R.drawable.radio_dragondevil);
+		m.put("icon_small", R.drawable.radio_dragondevil_small);
+		m.put("stream", "http://178.63.97.18:8100");
+		m.put("homepage", "http://dragondevil.dyndns.org");
+		m.put("webcam", "");
+		m.put("email", "");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_890_RTL);
+		m.put("icon", R.drawable.radio_890_rtl);
+		m.put("icon_small", R.drawable.radio_890_rtl_small);
+		m.put("stream", "http://80.237.158.40/890rtl-128.mp3");
+		m.put("homepage", "http://www.89.0rtl.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.89.0rtl.de/formular/mail-ins-studio");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_SPORT);
