@@ -80,7 +80,7 @@
 	<RelativeLayout android:id="@+id/timerLayoutWhole"
 		android:layout_width="fill_parent" android:layout_height="77dp"
 		android:layout_gravity="bottom" android:layout_marginBottom="10.0dip">
-	
+
 		<RelativeLayout android:id="@+id/timerSeekbarLayout"
 			android:layout_width="fill_parent" android:layout_height="75dp"
 			android:layout_gravity="bottom" android:layout_marginBottom="10dp"
@@ -94,7 +94,7 @@
 				android:text="@string/sleepTimerEinstellen" />
 			<SeekBar android:id="@+id/timerSeekbar" android:layout_width="match_parent"
 				android:max="120" android:visibility="gone" android:layout_height="wrap_content"
-				android:layout_marginLeft="10dp" android:layout_marginTop="40dp" android:layout_marginRight="10dp" />
+				android:layout_marginLeft="10dp" android:layout_marginTop="30dp" android:layout_marginRight="10dp" />
 		</RelativeLayout>
 	
 	<ImageButton android:id="@+id/imageButtonUhr" android:layout_alignParentRight="true" 

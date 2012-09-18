@@ -35,27 +35,39 @@
 		android:layout_width="fill_parent" android:layout_height="77dp"
 		android:layout_gravity="bottom" android:layout_marginBottom="10.0dip">
 	
+		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+				android:orientation="vertical" android:layout_width="fill_parent"
+				android:gravity="center" android:layout_height="fill_parent"
+				android:id="@+id/adsLayout">
+			<com.google.ads.AdView android:id="@+id/adView"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:gravity="center" ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER"
+					ads:loadAdOnCreate="false" />
+		</LinearLayout>
+	    	    
 		<RelativeLayout android:id="@+id/timerSeekbarLayout"
 			android:layout_width="fill_parent" android:layout_height="77dp"
 			android:layout_gravity="bottom" android:layout_marginBottom="10dp"
 			android:layout_marginLeft="10dp" android:layout_marginRight="64dp"
 			android:background="@color/darkBlue" android:visibility="gone">
-	
+
+   			<SeekBar android:id="@+id/timerSeekbar" android:layout_width="match_parent"
+				android:max="120" android:visibility="gone" android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp" android:layout_marginRight="10dp"  />
 			<TextView android:id="@+id/timerSeekbarText" android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:layout_alignParentLeft="true"
 				android:layout_alignParentBottom="true" android:layout_marginLeft="30dp"
 				android:layout_marginTop="10dp" android:layout_marginBottom="10dp" android:textSize="12dp"
 				android:visibility="gone" android:textColor="@android:color/white"
 				android:text="@string/sleepTimerEinstellen" />
-			<SeekBar android:id="@+id/timerSeekbar" android:layout_width="match_parent"
-				android:max="120" android:visibility="gone" 
-				android:layout_height="wrap_content" />
 		</RelativeLayout>
 	
 	<ImageButton android:id="@+id/imageButtonUhr" android:layout_alignParentRight="true" 
 	    	android:layout_width="wrap_content" android:layout_height="wrap_content"
     	    android:contentDescription="Uhr" android:src="@drawable/button_uhr_weiss"
     	    android:background="@color/transparent"/>
+
 	</RelativeLayout>
 		
 	<ToggleButton android:id="@+id/toggleButtonFavorit"
@@ -115,16 +127,6 @@
 				<ImageButton android:layout_weight="1"
 					android:layout_height="wrap_content" android:src="@drawable/button_forward"
 					android:layout_width="wrap_content" android:id="@+id/fwd" />
-			</LinearLayout>
-			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-				xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-				android:orientation="vertical" android:layout_width="fill_parent"
-				android:gravity="center" android:layout_height="fill_parent"
-				android:id="@+id/adsLayout">
-				<com.google.ads.AdView android:id="@+id/adView"
-					android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:gravity="center" ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER"
-					ads:loadAdOnCreate="false" />
 			</LinearLayout>
 						
 		</LinearLayout>
