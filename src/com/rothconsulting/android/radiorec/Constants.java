@@ -107,6 +107,8 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_FRESH_BEATZ);
 		ignoreList.add(Stations.RADIO_RTL_IT);
 		ignoreList.add(Stations.RADIO_SOUND_CITY);
+		ignoreList.add(Stations.RADIO_DANCEFOX_RADIO);
+		ignoreList.add(Stations.RADIO_U1_TIROL);
 
 		return ignoreList;
 	}
