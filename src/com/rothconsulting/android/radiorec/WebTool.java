@@ -79,7 +79,7 @@ public class WebTool {
 				if (index1 >= 0) {
 					parseResult = parseResult.substring(index1 + 50,
 							index1 + 200);
-					Log.d(TAG, "********* parseResult 1= " + parseResult);
+					Utils.log(TAG, "********* parseResult 1= " + parseResult);
 				}
 				int index2 = parseResult.indexOf("</span");
 				if (index2 >= 0) {
@@ -87,7 +87,7 @@ public class WebTool {
 					if (parseResult != null) {
 						parseResult = parseResult.trim();
 					}
-					Log.d(TAG, "********* parseResult 2=" + parseResult);
+					Utils.log(TAG, "********* parseResult 2=" + parseResult);
 				}
 
 				result += result + parseResult;
@@ -119,7 +119,7 @@ public class WebTool {
 		}
 		ret += "\nend of headers";
 
-		Log.d(TAG, ret);
+		Utils.log(TAG, ret);
 		return ret;
 
 	}
@@ -137,7 +137,7 @@ public class WebTool {
 	// token = token.trim();
 	// token = token.substring(13, token.length() - 2);
 	// }
-	// Log.d(TAG, "** Token=" + token);
+	// Utils.log(TAG, "** Token=" + token);
 	// }
 	// return token;
 	// }
@@ -165,7 +165,7 @@ public class WebTool {
 				token = token.trim();
 				token = token.substring(93, token.length() - 1);
 			}
-			Log.d(TAG, "** Token=" + token);
+			Utils.log(TAG, "** Token=" + token);
 		}
 		return token;
 	}
@@ -188,7 +188,7 @@ public class WebTool {
 
 			try {
 				token = tokenAsyncTask.get();
-				Log.d(TAG, "++++++++++++ Token found =" + token);
+				Utils.log(TAG, "++++++++++++ Token found =" + token);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -201,7 +201,7 @@ public class WebTool {
 				token = token.substring(index + 38, index + 61);// 38+23
 				token = token.trim();
 			}
-			Log.d(TAG, "++++++++++++ Token parsed =" + token);
+			Utils.log(TAG, "++++++++++++ Token parsed =" + token);
 		}
 		return token;
 	}

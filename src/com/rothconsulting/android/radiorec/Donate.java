@@ -33,7 +33,7 @@ public class Donate extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.donate);
 		Intent fromIntent = getIntent();
-		Log.d(TAG, "fromIntent=" + fromIntent);
+		Utils.log(TAG, "fromIntent=" + fromIntent);
 		Utils utils = new Utils();
 		// if it comes from the notification and isDonator go to the main screen
 		if (fromIntent != null) {
@@ -43,10 +43,10 @@ public class Donate extends Activity {
 					&& extraBundle.getString(Constants.FROM_NOTIFICATION)
 							.equals(Constants.FROM_NOTIFICATION)
 					&& utils.hasValidKey()) {
-				Log.d(TAG, "*** finish (fromNotification und validKey)");
+				Utils.log(TAG, "*** finish (fromNotification und validKey)");
 				finish();
 			} else {
-				Log.d(TAG,
+				Utils.log(TAG,
 						"*** not fromNotification or not validKey) validKey="
 								+ utils.hasValidKey());
 			}

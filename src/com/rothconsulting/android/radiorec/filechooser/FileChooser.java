@@ -12,7 +12,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -28,6 +27,7 @@ import com.rothconsulting.android.radiorec.Constants;
 import com.rothconsulting.android.radiorec.Donate;
 import com.rothconsulting.android.radiorec.R;
 import com.rothconsulting.android.radiorec.Settings;
+import com.rothconsulting.android.radiorec.Utils;
 
 public class FileChooser extends ListActivity {
 
@@ -40,7 +40,7 @@ public class FileChooser extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		if (Constants.THE_SD_CARD_PATH == null) {
-			Log.d(TAG, "THE_SDCARD_PATH is null!");
+			Utils.log(TAG, "THE_SDCARD_PATH is null!");
 			pathNotValidDialog().show();
 		} else {
 
@@ -59,6 +59,7 @@ public class FileChooser extends ListActivity {
 
 				list.setOnItemLongClickListener(new OnItemLongClickListener() {
 
+					@Override
 					public boolean onItemLongClick(AdapterView<?> parent,
 							View view, final int position, long id) {
 
@@ -80,7 +81,7 @@ public class FileChooser extends ListActivity {
 					}
 				});
 			} catch (Exception e) {
-				Log.d(TAG, "Exception! THE_SD_CARD_PATH="
+				Utils.log(TAG, "Exception! THE_SD_CARD_PATH="
 						+ Constants.THE_SD_CARD_PATH + "\nException=\n" + e);
 				pathNotValidDialog().show();
 			}
@@ -153,11 +154,12 @@ public class FileChooser extends ListActivity {
 				.setIcon(android.R.drawable.ic_delete)
 				.setPositiveButton(getString(R.string.delete),
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog, int id) {
 
 								File file = new File(currentDir + "/"
 										+ filename);
-								Log.d(TAG, "File=" + file.getName());
+								Utils.log(TAG, "File=" + file.getName());
 								file.delete();
 								adapter.notifyDataSetChanged();
 								fill(currentDir);
@@ -171,6 +173,7 @@ public class FileChooser extends ListActivity {
 						})
 				.setNegativeButton(getString(R.string.neinDanke),
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog, int id) {
 								dialog.cancel();
 							}
@@ -186,6 +189,7 @@ public class FileChooser extends ListActivity {
 				.setIcon(android.R.drawable.ic_dialog_alert)
 				.setPositiveButton(getString(R.string.settings),
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog, int id) {
 								finish();
 								startActivity(new Intent(
@@ -194,6 +198,7 @@ public class FileChooser extends ListActivity {
 						})
 				.setNegativeButton(getString(android.R.string.cancel),
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog, int id) {
 								dialog.cancel();
 								finish();
@@ -225,7 +230,7 @@ public class FileChooser extends ListActivity {
 		// opens a music player on the device
 		Intent intent = new Intent();
 		intent.setAction(android.content.Intent.ACTION_VIEW);
-		Log.d(TAG, "path=" + o.getPath());
+		Utils.log(TAG, "path=" + o.getPath());
 		File file = new File(o.getPath());
 		intent.setDataAndType(Uri.fromFile(file), "audio/*");
 		startActivity(intent);

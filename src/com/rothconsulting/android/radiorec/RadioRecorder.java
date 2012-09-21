@@ -42,7 +42,7 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 	@Override
 	protected Long doInBackground(URL... urls) {
 
-		Log.d(TAG, "startRecording");
+		Utils.log(TAG, "startRecording");
 		BufferedInputStream buffInputStream = null;
 		BufferedOutputStream buffOutputStream = null;
 		bytesRead = 0;
@@ -53,17 +53,17 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 			File radioRecorderDirectory = new File("/"
 					+ Constants.THE_SD_CARD_PATH + "/");
 			radioRecorderDirectory.mkdirs();
-			Log.d(TAG, "Stream Buffer=" + Constants.THE_BUFFER);
+			Utils.log(TAG, "Stream Buffer=" + Constants.THE_BUFFER);
 			if (Constants.THE_BUFFER <= 0) {
 				Constants.THE_BUFFER = Constants.DEFAULT_BUFFER;
 			}
 			buffInputStream = new BufferedInputStream(urls[0].openStream(),
 					Constants.THE_BUFFER);
-			Log.d(TAG, "url.openStream()");
+			Utils.log(TAG, "url.openStream()");
 
 			buffOutputStream = new BufferedOutputStream(new FileOutputStream(
 					urls[1].getFile()), Constants.THE_BUFFER);
-			Log.d(TAG, "FileOutputStream: " + urls[1].getFile());
+			Utils.log(TAG, "FileOutputStream: " + urls[1].getFile());
 			Utils utils = new Utils();
 			utils.getNotifInstance(context, RadioRecorder.class)
 					.showStatusBarNotificationRecording();
@@ -71,7 +71,7 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 			connectionProgressDialog.dismiss();
 			int c = 0;
 			while ((c = buffInputStream.read()) != -1 && !isCancelled()) {
-				// Log.d(LOG_TAG, "bytesRead=" + bytesRead);
+				// Utils.log(LOG_TAG, "bytesRead=" + bytesRead);
 				buffOutputStream.write(c);
 				bytesRead++;
 				bytesReadTmp++;
@@ -80,11 +80,11 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 					bytesReadTmp = 0;
 				}
 			}
-			Log.d(TAG, "******* End reading stream. bytesRead=" + bytesRead);
+			Utils.log(TAG, "******* End reading stream. bytesRead=" + bytesRead);
 			if (isCancelled()) {
-				Log.d(TAG, "******* Task cancelled!!!");
+				Utils.log(TAG, "******* Task cancelled!!!");
 			} else {
-				Log.d(TAG, "******* End of inputStream. c=" + c);
+				Utils.log(TAG, "******* End of inputStream. c=" + c);
 				Notifications not = new Notifications(this.context, intent);
 				not.showStatusBarNotificationError(R.string.aufnahmeUnterbrochen);
 				not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
@@ -142,7 +142,7 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 
 	@Override
 	protected void onPostExecute(Long result) {
-		Log.d(TAG, "onPostExecute");
+		Utils.log(TAG, "onPostExecute");
 		result = bytesRead;
 	}
 
@@ -153,7 +153,7 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 
 	@Override
 	protected void onPreExecute() {
-		Log.d(TAG, "prepareProgressDialog");
+		Utils.log(TAG, "prepareProgressDialog");
 		Utils utils = new Utils();
 		connectionProgressDialog = utils.prepareProgressDialog(context);
 		connectionProgressDialog.show();

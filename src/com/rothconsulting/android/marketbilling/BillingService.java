@@ -35,6 +35,7 @@ import com.android.vending.billing.IMarketBillingService;
 import com.rothconsulting.android.marketbilling.Constants.PurchaseState;
 import com.rothconsulting.android.marketbilling.Constants.ResponseCode;
 import com.rothconsulting.android.marketbilling.Security.VerifiedPurchase;
+import com.rothconsulting.android.radiorec.Utils;
 
 /**
  * This class sends messages to Android Market on behalf of the application by
@@ -112,13 +113,13 @@ public class BillingService extends Service implements ServiceConnection {
 		 */
 		public boolean runIfConnected() {
 			if (Constants.DEBUG) {
-				Log.d(TAG, getClass().getSimpleName());
+				Utils.log(TAG, getClass().getSimpleName());
 			}
 			if (mService != null) {
 				try {
 					mRequestId = run();
 					if (Constants.DEBUG) {
-						Log.d(TAG, "request id: " + mRequestId);
+						Utils.log(TAG, "request id: " + mRequestId);
 					}
 					if (mRequestId >= 0) {
 						mSentRequests.put(mRequestId, this);
@@ -396,11 +397,13 @@ public class BillingService extends Service implements ServiceConnection {
 			String notifyId = intent.getStringExtra(Constants.NOTIFICATION_ID);
 			getPurchaseInformation(startId, new String[] { notifyId });
 		} else if (Constants.ACTION_PURCHASE_STATE_CHANGED.equals(action)) {
-			String signedData = intent.getStringExtra(Constants.INAPP_SIGNED_DATA);
+			String signedData = intent
+					.getStringExtra(Constants.INAPP_SIGNED_DATA);
 			String signature = intent.getStringExtra(Constants.INAPP_SIGNATURE);
 			purchaseStateChanged(startId, signedData, signature);
 		} else if (Constants.ACTION_RESPONSE_CODE.equals(action)) {
-			long requestId = intent.getLongExtra(Constants.INAPP_REQUEST_ID, -1);
+			long requestId = intent
+					.getLongExtra(Constants.INAPP_REQUEST_ID, -1);
 			int responseCodeIndex = intent.getIntExtra(
 					Constants.INAPP_RESPONSE_CODE,
 					ResponseCode.RESULT_ERROR.ordinal());
@@ -446,8 +449,8 @@ public class BillingService extends Service implements ServiceConnection {
 	/**
 	 * Requests that the given item be offered to the user for purchase. When
 	 * the purchase succeeds (or is canceled) the {@link BillingReceiver}
-	 * receives an intent with the action {@link Constants#ACTION_NOTIFY}. Returns
-	 * false if there was an error trying to connect to Android Market.
+	 * receives an intent with the action {@link Constants#ACTION_NOTIFY}.
+	 * Returns false if there was an error trying to connect to Android Market.
 	 * 
 	 * @param productId
 	 *            an identifier for the item being offered for purchase
@@ -564,7 +567,7 @@ public class BillingService extends Service implements ServiceConnection {
 		BillingRequest request = mSentRequests.get(requestId);
 		if (request != null) {
 			if (Constants.DEBUG) {
-				Log.d(TAG, request.getClass().getSimpleName() + ": "
+				Utils.log(TAG, request.getClass().getSimpleName() + ": "
 						+ responseCode);
 			}
 			request.responseCodeReceived(responseCode);
@@ -612,9 +615,10 @@ public class BillingService extends Service implements ServiceConnection {
 	 * This is called when we are connected to the MarketBillingService. This
 	 * runs in the main UI thread.
 	 */
+	@Override
 	public void onServiceConnected(ComponentName name, IBinder service) {
 		if (Constants.DEBUG) {
-			Log.d(TAG, "Billing service connected");
+			Utils.log(TAG, "Billing service connected");
 		}
 		mService = IMarketBillingService.Stub.asInterface(service);
 		runPendingRequests();
@@ -623,6 +627,7 @@ public class BillingService extends Service implements ServiceConnection {
 	/**
 	 * This is called when we are disconnected from the MarketBillingService.
 	 */
+	@Override
 	public void onServiceDisconnected(ComponentName name) {
 		Log.w(TAG, "Billing service disconnected");
 		mService = null;

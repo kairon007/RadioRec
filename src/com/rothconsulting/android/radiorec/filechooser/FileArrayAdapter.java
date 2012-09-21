@@ -3,7 +3,6 @@ package com.rothconsulting.android.radiorec.filechooser;
 import java.util.List;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.rothconsulting.android.radiorec.R;
+import com.rothconsulting.android.radiorec.Utils;
 
 public class FileArrayAdapter extends ArrayAdapter<Option> {
 
@@ -52,7 +52,7 @@ public class FileArrayAdapter extends ArrayAdapter<Option> {
 				i1.setImageResource(o.getIcon());
 			if (t1 != null)
 				t1.setText(o.getName());
-			Log.d(TAG, "Name=" + o.getName());
+			Utils.log(TAG, "Name=" + o.getName());
 			if (t2 != null)
 				t2.setText(o.getData());
 

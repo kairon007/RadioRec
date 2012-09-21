@@ -53,6 +53,7 @@ import com.rothconsulting.android.marketbilling.Constants.PurchaseState;
 import com.rothconsulting.android.marketbilling.Constants.ResponseCode;
 import com.rothconsulting.android.radiorec.AdMob;
 import com.rothconsulting.android.radiorec.R;
+import com.rothconsulting.android.radiorec.Utils;
 
 /**
  * A sample application that demonstrates in-app billing.
@@ -156,7 +157,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 		public void onRequestPurchaseResponse(RequestPurchase request,
 				ResponseCode responseCode) {
 			if (Constants.DEBUG) {
-				Log.d(TAG, request.mProductId + ": " + responseCode);
+				Utils.log(TAG, request.mProductId + ": " + responseCode);
 			}
 			if (responseCode == ResponseCode.RESULT_OK) {
 				if (Constants.DEBUG) {
@@ -184,7 +185,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 				ResponseCode responseCode) {
 			if (responseCode == ResponseCode.RESULT_OK) {
 				if (Constants.DEBUG) {
-					Log.d(TAG, "completed RestoreTransactions request");
+					Utils.log(TAG, "completed RestoreTransactions request");
 				}
 				// Update the shared preferences so that we don't perform
 				// a RestoreTransactions again.
@@ -194,7 +195,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 				edit.commit();
 			} else {
 				if (Constants.DEBUG) {
-					Log.d(TAG, "RestoreTransactions error: " + responseCode);
+					Utils.log(TAG, "RestoreTransactions error: " + responseCode);
 				}
 			}
 		}
@@ -480,7 +481,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 	public void onClick(View v) {
 
 		if (Constants.DEBUG) {
-			Log.d(TAG, "buying: " + mItemName + " sku: " + mSku);
+			Utils.log(TAG, "buying: " + mItemName + " sku: " + mSku);
 		}
 		if (!mBillingService.requestPurchase(mSku, mPayloadContents)) {
 			showDialog(DIALOG_BILLING_NOT_SUPPORTED_ID);

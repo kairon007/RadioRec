@@ -5,7 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
+
+import com.rothconsulting.android.radiorec.Utils;
 
 public class DbAdapter {
 
@@ -34,9 +35,9 @@ public class DbAdapter {
 
 	public DbAdapter open() throws SQLException {
 		dbHelper = new DBHelper(context);
-		Log.d(TAG, "dbHelper=" + dbHelper);
+		Utils.log(TAG, "dbHelper=" + dbHelper);
 		database = dbHelper.getWritableDatabase();
-		Log.d(TAG, "database=" + database);
+		Utils.log(TAG, "database=" + database);
 		return this;
 	}
 
@@ -72,10 +73,10 @@ public class DbAdapter {
 	 * Deletes station
 	 */
 	public int deleteStation(String stationName) {
-		Log.d(TAG, "delete stationName=" + stationName);
+		Utils.log(TAG, "delete stationName=" + stationName);
 		int affected = database.delete(T_STATION, KEY_STATION_NAME + "='"
 				+ stationName + "'", null);
-		Log.d(TAG, "rows deleted=" + affected);
+		Utils.log(TAG, "rows deleted=" + affected);
 
 		return affected;
 	}
@@ -104,9 +105,9 @@ public class DbAdapter {
 				+ stationName + "'", null, null, null, null, null);
 		if (mCursor != null) {
 			mCursor.moveToFirst();
-			Log.d(TAG, "cursor.getCount()=" + mCursor.getCount());
+			Utils.log(TAG, "cursor.getCount()=" + mCursor.getCount());
 		}
-		Log.d(TAG, "cursor=" + mCursor);
+		Utils.log(TAG, "cursor=" + mCursor);
 		return mCursor;
 	}
 

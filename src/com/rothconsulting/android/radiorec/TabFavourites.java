@@ -21,7 +21,7 @@ public class TabFavourites extends ListActivity {
 
 	@Override
 	public void onCreate(Bundle bundle) {
-		Log.d(TAG, "*********** TabFavourites onCreate ***************");
+		Utils.log(TAG, "*********** TabFavourites onCreate ***************");
 		super.onCreate(bundle);
 
 		// getApplicationContext().deleteDatabase(DBHelper.DATABASE_NAME);

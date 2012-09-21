@@ -60,7 +60,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private ArrayList<HashMap<String, Object>> stationList;
 	// private ArrayList<HashMap<String, Object>> favList, landList, stilList;
 	private ImageView logo;
-	private ImageButton back, fwd;
+	private ImageButton buttonBack, buttonFwd, buttonRec, buttonPlay;
 	private static RadioPlayer radioPlayer;
 	private static AsyncTask<URL, Integer, Long> recordTask;
 	private String origPlanetradioSteam = null;
@@ -130,13 +130,20 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
 		((TextView) findViewById(R.id.webcam)).setOnClickListener(this);
 		((TextView) findViewById(R.id.mail)).setOnClickListener(this);
-		back = (ImageButton) findViewById(R.id.back);
-		back.setOnClickListener(this);
-		back.setEnabled(false);
-		((ImageButton) findViewById(R.id.play)).setOnClickListener(this);
-		((ImageButton) findViewById(R.id.rec)).setOnClickListener(this);
-		fwd = (ImageButton) findViewById(R.id.fwd);
-		fwd.setOnClickListener(this);
+		buttonBack = (ImageButton) findViewById(R.id.back);
+		buttonBack.setOnClickListener(this);
+		buttonBack.setEnabled(false);
+		buttonFwd = (ImageButton) findViewById(R.id.fwd);
+		buttonFwd.setOnClickListener(this);
+		buttonPlay = (ImageButton) findViewById(R.id.play);
+		buttonPlay.setOnClickListener(this);
+		buttonPlay.setImageResource(playing ? R.drawable.button_stop
+				: R.drawable.button_play);
+		buttonRec = (ImageButton) findViewById(R.id.rec);
+		buttonRec.setOnClickListener(this);
+		buttonRec.setImageResource(recording ? R.drawable.button_record_on
+				: R.drawable.button_record);
+
 		// set first image
 		if (Constants.THE_SELECTED_STATION_ICON == 0x0) {
 			Constants.THE_SELECTED_STATION_ICON = R.drawable.radio_32;
@@ -387,7 +394,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// break;
 		case R.id.back:
 			if (spnAllStations.getSelectedItemPosition() > 0) {
-				back.setEnabled(false);
+				buttonBack.setEnabled(false);
 				spnAllStations.setSelection(spnAllStations
 						.getSelectedItemPosition() - 1);
 				Constants.THE_SELECTED_STATION_INDEX = spnAllStations
@@ -419,7 +426,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.fwd:
 			if (spnAllStations.getSelectedItemPosition() < stationList.size() - 1) {
-				fwd.setEnabled(false);
+				buttonFwd.setEnabled(false);
 				spnAllStations.setSelection(spnAllStations
 						.getSelectedItemPosition() + 1);
 				Constants.THE_SELECTED_STATION_INDEX = spnAllStations
@@ -651,8 +658,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			this.stopPlay();
 		}
 		firstStart = false;
-		back.setEnabled(index > 0);
-		fwd.setEnabled(index < stationList.size() - 1);
+		buttonBack.setEnabled(index > 0);
+		buttonFwd.setEnabled(index < stationList.size() - 1);
 		utils.storePreferences(this);
 	}
 
@@ -844,21 +851,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	protected void onDestroy() {
 		super.onDestroy();
 		stopPlayAndRecord();
-	}
-
-	@Override
-	public Object onRetainNonConfigurationInstance() {
-		Boolean wasPlaying = playing;
-		return wasPlaying;
-	}
-
-	private void checkWasPlayinBeforeOrientationChange() {
-		final Object data = getLastNonConfigurationInstance();
-		Utils.log(TAG, "*************************************playing=" + data);
-		if (data == null || !((Boolean) data)) {
-			initGui();
-			setSeekBarProgress();
-		}
 	}
 
 	@Override

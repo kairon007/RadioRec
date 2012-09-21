@@ -18,7 +18,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -43,13 +42,13 @@ public class Utils {
 			if (infos != null) {
 				for (NetworkInfo ni : infos) {
 					if (ni.getState() == NetworkInfo.State.CONNECTED) {
-						Log.d(TAG, "Wir sind connected!");
+						Utils.log(TAG, "Wir sind connected!");
 						return true;
 					}
 				}
 			}
 		}
-		Log.d(TAG, "Keine Connectivity");
+		Utils.log(TAG, "Keine Connectivity");
 
 		if (showNotification) {
 			Notifications notifications = new Notifications(context, intent);
@@ -161,7 +160,7 @@ public class Utils {
 	// String dateiName = "KingstonHotRadio";
 	// Calendar cal = Calendar.getInstance();
 	// int dayOfWeek = cal.get(Calendar.DAY_OF_WEEK);
-	// Log.d(TAG, "Calendar.DAY_OF_WEEK=" + dayOfWeek);
+	// Utils.log(TAG, "Calendar.DAY_OF_WEEK=" + dayOfWeek);
 	// if (dayOfWeek > 5) {
 	// cal.add(Calendar.DAY_OF_WEEK, -(dayOfWeek - 5));
 	// } else if (dayOfWeek <= 5) {
@@ -177,7 +176,7 @@ public class Utils {
 	// if (day.length() == 1) {
 	// day = "0" + day;
 	// }
-	// Log.d(TAG, year + "-" + month + "-" + day);
+	// Utils.log(TAG, year + "-" + month + "-" + day);
 	// return dateiName + year + month + day + ".mp3";
 	// }
 
@@ -255,6 +254,6 @@ public class Utils {
 	}
 
 	public static void log(String tag, String message) {
-		Log.d(tag, message);
+		// Log.d(tag, message);
 	}
 }

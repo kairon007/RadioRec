@@ -26,62 +26,62 @@ public class RadioPlayer {
 	}
 
 	protected void doStartPlay(final Context context) {
-		Log.d(TAG, "doStartPlay()");
+		Utils.log(TAG, "doStartPlay()");
 
 		createThread(context);
 
-		Log.d(TAG, "prepareProgressDialog");
+		Utils.log(TAG, "prepareProgressDialog");
 		Utils utils = new Utils();
 		progressDialog = utils.prepareProgressDialog(context);
 		progressDialog.setTitle(Constants.THE_SELECTED_STATION_NAME);
-		Log.d(TAG, "progressDialog.show()");
+		Utils.log(TAG, "progressDialog.show()");
 		progressDialog.show();
-		Log.d(TAG, "--- threadDoStartPlay.start()");
+		Utils.log(TAG, "--- threadDoStartPlay.start()");
 		threadDoStartPlay.start();
 		// if (mediaPlayer != null) {
-		// Log.d(TAG, "*********** isRadioRunning2=" +
+		// Utils.log(TAG, "*********** isRadioRunning2=" +
 		// mediaPlayer.isPlaying());
 		// } else {
-		// Log.d(TAG, "*********** isRadioRunning2=false");
+		// Utils.log(TAG, "*********** isRadioRunning2=false");
 		// }
 	}
 
 	protected void doStopPlay(Context context) {
-		Log.d(TAG, "doStopPlay()");
+		Utils.log(TAG, "doStopPlay()");
 		try {
 			if (threadDoStartPlay != null && threadDoStartPlay.isAlive()) {
-				Log.d(TAG, "++ threadDoStartPlay.interrupt()");
+				Utils.log(TAG, "++ threadDoStartPlay.interrupt()");
 				threadDoStartPlay.interrupt();
 			}
 			if (mediaPlayer != null) {
-				Log.d(TAG, "mediaPlayer.isPlaying()=" + mediaPlayer.isPlaying());
+				Utils.log(TAG, "mediaPlayer.isPlaying()=" + mediaPlayer.isPlaying());
 
 				if (mediaPlayer.isPlaying()) {
-					Log.d(TAG, "stop()");
+					Utils.log(TAG, "stop()");
 					mediaPlayer.stop();
-					Log.d(TAG, "release()");
+					Utils.log(TAG, "release()");
 					mediaPlayer.release();
 					// if (!isRadioRecording) {
 					// hideSongTicker();
 					// }
 				}
 			} else {
-				Log.d(TAG,
+				Utils.log(TAG,
 						"Ich will stoppen aber der mediaPlayer ist null!! Macht nix!");
 			}
 
 		} catch (IllegalStateException e) {
-			Log.d(TAG, "Exception at doStopPlay -> IllegalStateException");
-			Log.d(TAG, "cause=" + e.getCause());
-			Log.d(TAG, "message=" + e.getMessage());
-			Log.d(TAG, "e.getStackTrace()[0]=" + e.getStackTrace()[0]);
-			Log.d(TAG, "e.getStackTrace()[1]=" + e.getStackTrace()[1]);
+			Utils.log(TAG, "Exception at doStopPlay -> IllegalStateException");
+			Utils.log(TAG, "cause=" + e.getCause());
+			Utils.log(TAG, "message=" + e.getMessage());
+			Utils.log(TAG, "e.getStackTrace()[0]=" + e.getStackTrace()[0]);
+			Utils.log(TAG, "e.getStackTrace()[1]=" + e.getStackTrace()[1]);
 		} finally {
-			Log.d(TAG,
+			Utils.log(TAG,
 					"hideStatusBarNotification NOTIFICATION_ID_RADIO_IS_PLAYING");
 			getNotifInstance(context).hideStatusBarNotification(
 					Constants.NOTIFICATION_ID_RADIO_IS_PLAYING);
-			Log.d(TAG,
+			Utils.log(TAG,
 					"hideStatusBarNotification NOTIFICATION_ID_ERROR_CONNECTION");
 			getNotifInstance(context).hideStatusBarNotification(
 					Constants.NOTIFICATION_ID_ERROR_CONNECTION);
@@ -98,22 +98,22 @@ public class RadioPlayer {
 				try {
 					doStopPlay(context);
 					mediaPlayer = new MediaPlayer();
-					Log.d(TAG, "reset()");
+					Utils.log(TAG, "reset()");
 					mediaPlayer.reset();
-					Log.d(TAG, "URL: " + Constants.THE_URL_LIVE_STREAM);
+					Utils.log(TAG, "URL: " + Constants.THE_URL_LIVE_STREAM);
 					mediaPlayer.setDataSource(Constants.THE_URL_LIVE_STREAM);
-					Log.d(TAG, "THE_URL_LIVE_STREAM="
+					Utils.log(TAG, "THE_URL_LIVE_STREAM="
 							+ Constants.THE_URL_LIVE_STREAM);
 					mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 					mediaPlayer.setWakeMode(context,
 							PowerManager.PARTIAL_WAKE_LOCK);
-					Log.d(TAG, "prepare()");
+					Utils.log(TAG, "prepare()");
 					mediaPlayer.prepare();
-					Log.d(TAG, "start()");
+					Utils.log(TAG, "start()");
 					mediaPlayer.start();
 					getNotifInstance(context)
 							.showStatusBarNotificationIsRunning();
-					// Log.d(TAG,
+					// Utils.log(TAG,
 					// "*********** isRadioRunning1="
 					// + mediaPlayer.isPlaying());
 
@@ -129,7 +129,7 @@ public class RadioPlayer {
 							Constants.NOTIFICATION_ID_ERROR_CONNECTION);
 
 				} catch (IllegalArgumentException e) {
-					Log.d(TAG,
+					Utils.log(TAG,
 							"IllegalArgumentException: "
 									+ context
 											.getString(R.string.networkNotAvailable));
@@ -137,20 +137,20 @@ public class RadioPlayer {
 							R.string.networkNotAvailable);
 					doStopPlay(context);
 				} catch (IllegalStateException e) {
-					Log.d(TAG,
+					Utils.log(TAG,
 							"IllegalStateException 1: "
 									+ context
 											.getString(R.string.internetadresseNichtErreichbar));
 					getNotifInstance(context).showStatusBarNotificationError(
 							R.string.internetadresseNichtErreichbar);
-					Log.d(TAG, "cause=" + e.getCause());
+					Utils.log(TAG, "cause=" + e.getCause());
 					if (e.getStackTrace() != null
 							&& e.getStackTrace().length >= 2)
-						Log.d(TAG, "getStackTrace[0]" + e.getStackTrace()[0]);
-					Log.d(TAG, "getStackTrace[1]" + e.getStackTrace()[1]);
+						Utils.log(TAG, "getStackTrace[0]" + e.getStackTrace()[0]);
+					Utils.log(TAG, "getStackTrace[1]" + e.getStackTrace()[1]);
 					doStopPlay(context);
 				} catch (IOException e) {
-					Log.d(TAG,
+					Utils.log(TAG,
 							"doStartPlay - IOException: "
 									+ context
 											.getString(R.string.internetadresseNichtErreichbar)
@@ -160,14 +160,14 @@ public class RadioPlayer {
 							R.string.internetadresseNichtErreichbar);
 					doStopPlay(context);
 				} finally {
-					Log.d(TAG, "createThread in finally");
+					Utils.log(TAG, "createThread in finally");
 					if (mediaPlayer == null || !mediaPlayer.isPlaying()) {
 						getNotifInstance(context)
 								.showStatusBarNotificationError(
 										R.string.internetadresseNichtErreichbar);
 					}
 				}
-				Log.d(TAG, "progressDialog.dismiss()");
+				Utils.log(TAG, "progressDialog.dismiss()");
 				progressDialog.dismiss();
 			}
 		};

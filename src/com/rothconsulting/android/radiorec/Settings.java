@@ -134,7 +134,7 @@ public class Settings extends Activity implements
 			setRadioButtons(wifiSleepPolicy);
 
 		} catch (SettingNotFoundException e) {
-			Log.d(TAG,
+			Utils.log(TAG,
 					"SettingNotFoundException: WIFI_SLEEP_POLICY ist noch nicht konfiguriert. Kein Problem!");
 			radioAutomatischAus.setChecked(true);
 		}

@@ -42,7 +42,7 @@ public class WebsiteParser extends AsyncTask<String, Void, String> {
 			// Webseite einlesen
 			HttpResponse response = null;
 			HttpUriRequest httpUriRequest = null;
-			Log.d(TAG, "songUrl=" + songUrl);
+			Utils.log(TAG, "songUrl=" + songUrl);
 			HttpClient httpClient = new DefaultHttpClient();
 			httpUriRequest = new HttpGet(songUrl);
 			String userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:2.0) Gecko/20100101 Firefox/4.0";
@@ -60,12 +60,12 @@ public class WebsiteParser extends AsyncTask<String, Void, String> {
 				boolean hasTreffer = false;
 				lineNr++;
 				String line = scanner.nextLine();
-				Log.d(TAG, "lineNr=" + lineNr + " / line=" + line);
+				Utils.log(TAG, "lineNr=" + lineNr + " / line=" + line);
 
 				int index = line.indexOf(findString);
 				if (index >= 0) {
 					hasTreffer = true;
-					Log.d(TAG, "TREFFER!!! lineNr=" + lineNr + " / line="
+					Utils.log(TAG, "TREFFER!!! lineNr=" + lineNr + " / line="
 							+ line);
 				}
 				if (hasTreffer) {
@@ -76,7 +76,7 @@ public class WebsiteParser extends AsyncTask<String, Void, String> {
 					// if (line.indexOf("<img src=") >= 0) {
 					// line = line.replace("<img src=\"", "<img src=\""
 					// + imgUrl);
-					// Log.d(TAG, "lineNr=" + lineNr + " / line=" + line);
+					// Utils.log(TAG, "lineNr=" + lineNr + " / line=" + line);
 					// result.append(line);
 					// }
 				}
@@ -93,11 +93,11 @@ public class WebsiteParser extends AsyncTask<String, Void, String> {
 		} finally {
 			if (scanner != null) {
 				scanner.close();
-				Log.d(TAG, "scanner closed!");
+				Utils.log(TAG, "scanner closed!");
 			}
 		}
 
-		Log.d(TAG, "Result from parse=" + result.toString());
+		Utils.log(TAG, "Result from parse=" + result.toString());
 		return result.toString();
 	}
 }

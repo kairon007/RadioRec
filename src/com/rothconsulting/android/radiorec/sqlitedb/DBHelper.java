@@ -5,6 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.rothconsulting.android.radiorec.Utils;
+
 public class DBHelper extends SQLiteOpenHelper {
 
 	private static final String TAG = "DBHelper";
@@ -35,7 +37,7 @@ public class DBHelper extends SQLiteOpenHelper {
 	// Method is called during creation of the database
 	@Override
 	public void onCreate(SQLiteDatabase database) {
-		Log.d(TAG, "executeSQL. database=" + database);
+		Utils.log(TAG, "executeSQL. database=" + database);
 		database.execSQL(DATABASE_CREATE);
 	}
 
