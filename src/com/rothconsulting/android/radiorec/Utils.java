@@ -252,6 +252,9 @@ public class Utils {
 		result += "\n***** Exception-Info End *****\n";
 
 		return result;
+	}
 
+	public static void log(String tag, String message) {
+		Log.d(tag, message);
 	}
 }

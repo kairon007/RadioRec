@@ -208,6 +208,7 @@ public class Stations {
 	public static final String RADIO_INFORADIO_RBB = "Info Radio rbb";
 	public static final String RADIO_KULTURRADIO_RBB = "Kulturradio rbb";
 	public static final String RADIO_FRITZ_VOM_RBB = "Fritz vom rbb";
+	public static final String RADIO_BERLIN_RBB = "Berlin rbb";
 	public static final String RADIO_DEUTSCHLANDRADIO_KULTUR = "Deutschlandradio Kultur";
 	public static final String RADIO_DEUTSCHLANDFUNK = "Deutschlandfunk";
 	public static final String RADIO_DRADIO_WISSEN = "DRadio Wissen";
@@ -2526,6 +2527,21 @@ public class Stations {
 		m.put("homepage", "http://www.fritz.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.fritz.de/kontakt/index.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_KLASSIK);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_BERLIN_RBB);
+		m.put("icon", R.drawable.radio_berlin_rbb);
+		m.put("icon_small", R.drawable.radio_berlin_rbb_small);
+		m.put("stream",
+				"http://rbb.ic.llnwd.net/stream/rbb_radioberlin_mp3_m_a");
+		m.put("homepage", "http://www.radioberlin.de");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.radioberlin.de/kontakt/kontakt/e_mail/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_KLASSIK);

@@ -46,7 +46,6 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rothconsulting.android.marketbilling.BillingService.RequestPurchase;
 import com.rothconsulting.android.marketbilling.BillingService.RestoreTransactions;
@@ -237,6 +236,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				finish();
 			}
@@ -338,6 +338,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 				.setPositiveButton(android.R.string.ok, null)
 				.setNegativeButton(R.string.learn_more,
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog,
 									int which) {
 								Intent intent = new Intent(Intent.ACTION_VIEW,
@@ -419,8 +420,8 @@ public class MarketSpende extends Activity implements OnClickListener,
 		boolean initialized = prefs.getBoolean(DB_INITIALIZED, false);
 		if (!initialized) {
 			mBillingService.restoreTransactions();
-			Toast.makeText(this, R.string.restoring_transactions,
-					Toast.LENGTH_LONG).show();
+			// Toast.makeText(this, R.string.restoring_transactions,
+			// Toast.LENGTH_LONG).show();
 		}
 	}
 
@@ -430,6 +431,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 	 */
 	private void initializeOwnedItems() {
 		new Thread(new Runnable() {
+			@Override
 			public void run() {
 				doInitializeOwnedItems();
 			}
@@ -463,6 +465,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 		// the UI thread so that we don't need to synchronize access to
 		// mOwnedItems.
 		mHandler.post(new Runnable() {
+			@Override
 			public void run() {
 				mOwnedItems.addAll(ownedItems);
 				mCatalogAdapter.setOwnedItems(mOwnedItems);
@@ -473,6 +476,7 @@ public class MarketSpende extends Activity implements OnClickListener,
 	/**
 	 * Called when a button is pressed.
 	 */
+	@Override
 	public void onClick(View v) {
 
 		if (Constants.DEBUG) {
@@ -486,12 +490,14 @@ public class MarketSpende extends Activity implements OnClickListener,
 	/**
 	 * Called when an item in the spinner is selected.
 	 */
+	@Override
 	public void onItemSelected(AdapterView<?> parent, View view, int position,
 			long id) {
 		mItemName = getString(CATALOG[position].nameId);
 		mSku = CATALOG[position].sku;
 	}
 
+	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
 	}
 

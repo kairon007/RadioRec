@@ -13,6 +13,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -64,13 +65,14 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private static AsyncTask<URL, Integer, Long> recordTask;
 	private String origPlanetradioSteam = null;
 	// private ToggleButton favIcon = null;
-	private LinearLayout mainSreen;
+	private LinearLayout mainScreen;
 	private RelativeLayout timerSeekbarLayout;
 	private RelativeLayout timerLayoutWhole;
 	private SeekBar timerSeekbar;
 	private TextView timerSeekbarText;
 	private ImageButton imageButtonUhr;
 	private CountDownTimer countDownTimer;
+	private int countDownTimerTick = 0;
 	private int gcCounter;
 
 	static Utils utils = new Utils();
@@ -91,8 +93,12 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			context.deleteDatabase("webview.db");
 			context.deleteDatabase("webviewCache.db");
 		}
-		Log.d(TAG, "RadioRePlus");
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		initGui();
+	}
+
+	private void initGui() {
+		Utils.log(TAG, "RadioRePlus");
 		setContentView(R.layout.main);
 		firstStart = true;
 		Utils utils = new Utils();
@@ -111,7 +117,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// ((Button) findViewById(R.id.buttonStil)).setOnClickListener(this);
 		// favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
 		// favIcon.setOnClickListener(this);
-		mainSreen = (LinearLayout) findViewById(R.id.mainSreen);
+		mainScreen = (LinearLayout) findViewById(R.id.mainScreen);
 		timerLayoutWhole = (RelativeLayout) findViewById(R.id.timerLayoutWhole);
 		timerSeekbarLayout = (RelativeLayout) findViewById(R.id.timerSeekbarLayout);
 		timerSeekbar = (SeekBar) findViewById(R.id.timerSeekbar);
@@ -152,14 +158,14 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 							options), 0));
 		}
 
-		Log.d(TAG, "Icon=" + Constants.THE_SELECTED_STATION_ICON);
-		Log.d(TAG, "Name=" + Constants.THE_SELECTED_STATION_NAME);
-		Log.d(TAG, "Index=" + Constants.THE_SELECTED_STATION_INDEX);
+		Utils.log(TAG, "Icon=" + Constants.THE_SELECTED_STATION_ICON);
+		Utils.log(TAG, "Name=" + Constants.THE_SELECTED_STATION_NAME);
+		Utils.log(TAG, "Index=" + Constants.THE_SELECTED_STATION_INDEX);
 
 		AdMob admob = new AdMob();
 		admob.showRemoveAds(this);
 
-		Log.d(TAG, "getAllStations()");
+		Utils.log(TAG, "getAllStations()");
 		Stations theStations = new Stations();
 		stationList = theStations.getAllStations();
 		// landList = theStations.getLandListCh();
@@ -225,6 +231,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 					.setPositiveButton(
 							this.getResources().getString(R.string.wegDamit),
 							new DialogInterface.OnClickListener() {
+								@Override
 								public void onClick(
 										final DialogInterface dialog,
 										final int id) {
@@ -237,6 +244,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 							this.getResources()
 									.getString(R.string.weiterHoeren),
 							new DialogInterface.OnClickListener() {
+								@Override
 								public void onClick(
 										final DialogInterface dialog,
 										final int id) {
@@ -262,6 +270,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 					this.getResources().getString(android.R.string.ok),
 					new DialogInterface.OnClickListener() {
 						// do something when the button is clicked
+						@Override
 						public void onClick(DialogInterface arg0, int arg1) {
 							return;
 						}
@@ -316,6 +325,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		return super.onOptionsItemSelected(item);
 	}
 
+	@Override
 	public void onClick(View v) {
 		firstStart = false;
 
@@ -357,7 +367,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// DbAdapter dbadapter = new DbAdapter(this);
 		// if (favIcon.isChecked()) {
 		// favIcon.setButtonDrawable(android.R.drawable.star_big_on);
-		// Log.d(TAG, "isChecked -> instertStation");
+		// Utils.log(TAG, "isChecked -> instertStation");
 		// dbadapter.open();
 		// dbadapter.insertStation(Constants.THE_SELECTED_STATION_ICON,
 		// Constants.THE_SELECTED_STATION_ICON_SMALL,
@@ -369,7 +379,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// dbadapter.close();
 		// } else {
 		// favIcon.setButtonDrawable(android.R.drawable.star_big_off);
-		// Log.d(TAG, "is NOT Checked -> deleteStation");
+		// Utils.log(TAG, "is NOT Checked -> deleteStation");
 		// dbadapter.open();
 		// dbadapter.deleteStation(Constants.THE_SELECTED_STATION_NAME);
 		// dbadapter.close();
@@ -382,7 +392,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 						.getSelectedItemPosition() - 1);
 				Constants.THE_SELECTED_STATION_INDEX = spnAllStations
 						.getSelectedItemPosition();
-				Log.d(TAG, "back");
+				Utils.log(TAG, "back");
 			}
 			break;
 		case R.id.play:
@@ -414,19 +424,15 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 						.getSelectedItemPosition() + 1);
 				Constants.THE_SELECTED_STATION_INDEX = spnAllStations
 						.getSelectedItemPosition();
-				Log.d(TAG, "fwd");
+				Utils.log(TAG, "fwd");
 			}
 			break;
 		case R.id.imageButtonUhr:
 			showCountdown = !showCountdown;
-			if (showCountdown) {
-				this.showTimerbox(true);
-			} else {
-				this.showTimerbox(false);
-			}
+			this.showTimerbox(showCountdown);
 			break;
 		// case R.id.buttonFav:
-		// Log.d(TAG,
+		// Utils.log(TAG,
 		// "Button Favoriten pressed. First="
 		// + spnFavoriten.getFirstVisiblePosition());
 		//
@@ -484,14 +490,14 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		//
 		// break;
 		// case R.id.buttonLand:
-		// Log.d(TAG,
+		// Utils.log(TAG,
 		// "Button Land pressed. Firts="
 		// + spnLaender.getFirstVisiblePosition());
 		//
 		// spnLaender.performClick();
 		// break;
 		// case R.id.buttonStil:
-		// Log.d(TAG,
+		// Utils.log(TAG,
 		// "Button Stil pressed. Firts="
 		// + spnStil.getFirstVisiblePosition());
 		//
@@ -500,21 +506,23 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 	}
 
+	@Override
 	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
 			long arg3) {
-		Log.d(TAG, "****************");
-		Log.d(TAG, "onItemSelected(AdapterView<?> arg0 = " + arg0);
+		Utils.log(TAG, "****************");
+		Utils.log(TAG, "onItemSelected(AdapterView<?> arg0 = " + arg0);
 		Constants.SPINNER_SELECTION = arg0.getId();
-		Log.d(TAG, "onItemSelected(View arg1 = " + arg1);
-		Log.d(TAG, "onItemSelected(int arg2 = " + arg2);
-		Log.d(TAG, "onItemSelected(long arg0 = " + arg3);
-		Log.d(TAG, "getSelectedItemPosition1=" + arg0.getSelectedItemPosition());
-		Log.d(TAG, "THE_SELECTED_STATION_INDEX1="
+		Utils.log(TAG, "onItemSelected(View arg1 = " + arg1);
+		Utils.log(TAG, "onItemSelected(int arg2 = " + arg2);
+		Utils.log(TAG, "onItemSelected(long arg0 = " + arg3);
+		Utils.log(TAG,
+				"getSelectedItemPosition1=" + arg0.getSelectedItemPosition());
+		Utils.log(TAG, "THE_SELECTED_STATION_INDEX1="
 				+ Constants.THE_SELECTED_STATION_INDEX);
-		Log.d(TAG, "****************");
+		Utils.log(TAG, "****************");
 
 		if (firstStart) {
-			Log.d(TAG,
+			Utils.log(TAG,
 					"firstStart -> arg0.setSelection(THE_SELECTED_STATION_INDEX)");
 			if (Constants.THE_SELECTED_STATION_INDEX > stationList.size()) {
 				Constants.THE_SELECTED_STATION_INDEX = 0;
@@ -524,13 +532,15 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			Constants.THE_SELECTED_STATION_INDEX = arg0
 					.getSelectedItemPosition();
 		}
-		Log.d(TAG, "getSelectedItemPosition2=" + arg0.getSelectedItemPosition());
-		Log.d(TAG, "SELECTED_STATION_INDEX2="
+		Utils.log(TAG,
+				"getSelectedItemPosition2=" + arg0.getSelectedItemPosition());
+		Utils.log(TAG, "SELECTED_STATION_INDEX2="
 				+ Constants.THE_SELECTED_STATION_INDEX);
 
 		changeStation();
 	}
 
+	@Override
 	public void onNothingSelected(AdapterView<?> arg0) {
 	}
 
@@ -541,9 +551,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			Constants.THE_SELECTED_STATION_INDEX = index;
 		}
 
-		Log.d(TAG,
-				"index=" + index + " / stationList.size()="
-						+ stationList.size());
+		Utils.log(TAG, "index=" + index + " / stationList.size()="
+				+ stationList.size());
 
 		HashMap<String, Object> map = stationList.get(index);
 
@@ -560,7 +569,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// map = stilList.get(index);
 		// }
 
-		Log.d(TAG, "!!! Sender=" + Constants.THE_SELECTED_STATION_NAME);
+		Utils.log(TAG, "!!! Sender=" + Constants.THE_SELECTED_STATION_NAME);
 		Constants.THE_SELECTED_STATION_ICON = (Integer) map.get("icon");
 		Constants.THE_SELECTED_STATION_ICON_SMALL = (Integer) map
 				.get("icon_small");
@@ -577,7 +586,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
 				getResources(), Constants.THE_SELECTED_STATION_ICON, options),
 				0));
-		Log.d(TAG, "*********** Stream=" + map.get("stream"));
+		Utils.log(TAG, "*********** Stream=" + map.get("stream"));
 
 		Constants.THE_SELECTED_STATION_NAME = "" + map.get("name");
 		Constants.THE_URL_LIVE_STREAM = "" + map.get("stream");
@@ -598,7 +607,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		if (!firstStart && playing) {
 			if (Constants.getLiveStreamStations().contains(
 					Constants.THE_SELECTED_STATION_NAME)) {
-				Log.d(TAG, "------ ist Radio Gelb-Schwarz");
+				Utils.log(TAG, "------ ist Radio Gelb-Schwarz");
 				showDialog(Constants.LIVE_STREAM_STATION);
 			}
 			if (Constants.THE_SELECTED_STATION_NAME
@@ -609,7 +618,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				WebTool webtool = new WebTool();
 				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
 						+ webtool.getJugglerzFileName(this);
-				Log.d(TAG, "*********** new Stream="
+				Utils.log(TAG, "*********** new Stream="
 						+ Constants.THE_URL_LIVE_STREAM);
 			}
 			if (Constants.THE_SELECTED_STATION_NAME
@@ -620,7 +629,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				origPlanetradioSteam = Constants.THE_URL_LIVE_STREAM;
 				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
 						+ webtool.getPlanetradioToken(this);
-				Log.d(TAG, "*********** new Stream="
+				Utils.log(TAG, "*********** new Stream="
 						+ Constants.THE_URL_LIVE_STREAM);
 			}
 			// if (Constants.THE_SELECTED_STATION_NAME
@@ -631,7 +640,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			// origRadioEuskirchen = Constants.THE_URL_LIVE_STREAM;
 			// Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
 			// + webtool.getRadioEuskirchen(this);
-			// Log.d(TAG, "*********** new Stream="
+			// Utils.log(TAG, "*********** new Stream="
 			// + Constants.THE_URL_LIVE_STREAM);
 			// }
 			getRadioPlayer().doStartPlay(this);
@@ -655,7 +664,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	}
 
 	private boolean doStartRecording() {
-		Log.d(TAG, "startRecording");
+		Utils.log(TAG, "startRecording");
 
 		if (!utils.isNetworkAvailable(this, getIntent(), true)) {
 			return false;
@@ -680,7 +689,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				}
 				Constants.THE_URL_LIVE_STREAM = origPlanetradioSteam
 						+ webtool.getPlanetradioToken(this);
-				Log.d(TAG, "*********** new Stream="
+				Utils.log(TAG, "*********** new Stream="
 						+ Constants.THE_URL_LIVE_STREAM);
 			}
 
@@ -695,11 +704,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			// }
 			// Constants.THE_URL_LIVE_STREAM = origRadioEuskirchen
 			// + webtool.getRadioEuskirchen(this);
-			// Log.d(TAG, "*********** new Stream="
+			// Utils.log(TAG, "*********** new Stream="
 			// + Constants.THE_URL_LIVE_STREAM);
 			// }
 
-			Log.d(TAG, "Constants.THE_URL_LIVE_STREAM="
+			Utils.log(TAG, "Constants.THE_URL_LIVE_STREAM="
 					+ Constants.THE_URL_LIVE_STREAM);
 			inputUrl = new URL(Constants.THE_URL_LIVE_STREAM);
 		} catch (MalformedURLException e) {
@@ -720,7 +729,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 		recordTask = new RadioRecorder(this, this.getIntent()).execute(
 				inputUrl, outputUrl);
-		Log.d(TAG, "*********** isRadioRecording2=" + recording);
+		Utils.log(TAG, "*********** isRadioRecording2=" + recording);
 
 		return recording;
 	}
@@ -742,11 +751,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	// cursor = dbadapter.fetchStation(Constants.THE_SELECTED_STATION_NAME);
 	// if (cursor != null && cursor.getCount() > 0) {
 	// favIcon.setChecked(true);
-	// Log.d(TAG, "favIcon.setChecked(true)");
+	// Utils.log(TAG, "favIcon.setChecked(true)");
 	// favIcon.setButtonDrawable(android.R.drawable.star_big_on);
 	// } else {
 	// favIcon.setChecked(false);
-	// Log.d(TAG, "favIcon.setChecked(false)");
+	// Utils.log(TAG, "favIcon.setChecked(false)");
 	// favIcon.setButtonDrawable(android.R.drawable.star_big_off);
 	// }
 	// cursor.close();
@@ -762,23 +771,26 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		} else {
 			timerSeekbarLayout.setVisibility(View.GONE);
 			showCountdown = false;
-			mainSreen.refreshDrawableState();
+			// mainScreen.refreshDrawableState();
 		}
 	}
 
 	// Timer SeekBar
+	@Override
 	public void onProgressChanged(SeekBar seekBar, int progress,
 			boolean fromTouch) {
 		timerSeekbarText.setText(getString(R.string.sleepTimerEndIn, progress));
 	}
 
+	@Override
 	public void onStartTrackingTouch(SeekBar seekBar) {
 		stopTimer();
 		showTimerbox(true);
 	}
 
+	@Override
 	public void onStopTrackingTouch(SeekBar seekBar) {
-		if (seekBar.getProgress() > 0){
+		if (seekBar.getProgress() > 0) {
 			this.startTimer(seekBar);
 		} else {
 			timerSeekbarLayout.setVisibility(View.GONE);
@@ -793,6 +805,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			public void onTick(long millisUntilFinished) {
 				timerSeekbarText.setText(getString(R.string.sleepTimerEndIn,
 						(millisUntilFinished / 60 / 1000) + 1));
+				countDownTimerTick = Integer.valueOf(""
+						+ (millisUntilFinished / 60 / 1000 + 1));
+				setSeekBarProgress();
+				Utils.log(TAG, "countDownTimerTick=" + countDownTimerTick);
 			}
 
 			@Override
@@ -805,6 +821,12 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			}
 		};
 		countDownTimer.start();
+	}
+
+	private void setSeekBarProgress() {
+		if (timerSeekbar != null) {
+			timerSeekbar.setProgress(countDownTimerTick);
+		}
 	}
 
 	private void stopTimer() {
@@ -824,29 +846,33 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		stopPlayAndRecord();
 	}
 
-	// @Override
-	// public Object onRetainNonConfigurationInstance() {
-	// Boolean wasPlaying = playing;
-	// return wasPlaying;
-	// }
-	//
-	// private void checkWasPlayinBeforeOrientationChange() {
-	// final Object data = getLastNonConfigurationInstance();
-	//
-	// if (data != null && (Boolean) data) {
-	// startPlay();
-	// } else {
-	// stopPlayAndRecord();
-	// }
-	// }
-	//
-	// @Override
-	// public void onConfigurationChanged(Configuration _newConfig) {
-	// super.onConfigurationChanged(_newConfig);
-	// // setContentView(R.layout.main);
-	// mainSreen.refreshDrawableState();
-	// showCountdown = true;
-	// }
+	@Override
+	public Object onRetainNonConfigurationInstance() {
+		Boolean wasPlaying = playing;
+		return wasPlaying;
+	}
+
+	private void checkWasPlayinBeforeOrientationChange() {
+		final Object data = getLastNonConfigurationInstance();
+		Utils.log(TAG, "*************************************playing=" + data);
+		if (data == null || !((Boolean) data)) {
+			initGui();
+			setSeekBarProgress();
+		}
+	}
+
+	@Override
+	public void onConfigurationChanged(Configuration _newConfig) {
+		super.onConfigurationChanged(_newConfig);
+
+		Utils.log(TAG, "**+*+*+*+*+*+* playing=" + playing);
+		if (!playing) {
+			initGui();
+			setSeekBarProgress();
+			mainScreen.refreshDrawableState();
+			showCountdown = false;
+		}
+	}
 
 	public boolean isPlaying() {
 		return playing;
@@ -877,4 +903,5 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		((ImageButton) findViewById(R.id.play))
 				.setImageResource(R.drawable.button_stop);
 	}
+
 }
