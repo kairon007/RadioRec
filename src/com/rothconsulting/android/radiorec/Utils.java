@@ -18,7 +18,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -263,7 +262,7 @@ public class Utils {
 	}
 
 	public static void log(String tag, String message) {
-		Log.d(tag, message);
+		// Log.d(tag, message);
 	}
 
 	public static String getHhMmFromMinutes(int minutes) {
