@@ -7,13 +7,13 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings.SettingNotFoundException;
 import android.text.InputType;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -33,7 +33,7 @@ public class Settings extends Activity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings);
 
-		// hide keyboard
+		// hide keyboard when opening page
 		getWindow().setSoftInputMode(
 				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
@@ -41,16 +41,18 @@ public class Settings extends Activity implements
 		admob.showRemoveAds(this);
 
 		final EditText edittextSdCardPath = (EditText) findViewById(R.id.editTextSdcardPath);
-		edittextSdCardPath.setText(Constants.THE_SD_CARD_PATH);
+		edittextSdCardPath.setText(Constants.SD_CARD_PATH_VALUE);
 		final Button saveButtonPath = (Button) findViewById(R.id.buttonSavePath);
 		saveButtonPath.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
-				Constants.THE_SD_CARD_PATH = "" + edittextSdCardPath.getText();
+				Constants.SD_CARD_PATH_VALUE = ""
+						+ edittextSdCardPath.getText();
 				SharedPreferences settings = getSharedPreferences(
 						Constants.PREFERENCES_FILE, 0);
 				SharedPreferences.Editor editor = settings.edit();
-				editor.putString(Constants.SD_CARD_PATH,
-						Constants.THE_SD_CARD_PATH);
+				editor.putString(Constants.SD_CARD_PATH_VALUE,
+						Constants.SD_CARD_PATH_VALUE);
 				editor.commit();
 				Toast.makeText(
 						Settings.this,
@@ -62,16 +64,33 @@ public class Settings extends Activity implements
 
 		final Button resetButtonPath = (Button) findViewById(R.id.buttonResetPath);
 		resetButtonPath.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				edittextSdCardPath.setText(Constants.DEFAULT_SD_CARD_PATH);
 			}
 		});
 
+		final CheckBox cbAppOffWhenTimerEnds = (CheckBox) findViewById(R.id.checkboxAppOffAtTimeEnd);
+		cbAppOffWhenTimerEnds.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				SharedPreferences settings = getSharedPreferences(
+						Constants.PREFERENCES_FILE, 0);
+				SharedPreferences.Editor editor = settings.edit();
+				editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY,
+						((CheckBox) v).isChecked());
+				editor.commit();
+			}
+		});
+
+		cbAppOffWhenTimerEnds.setChecked(Constants.CLOSE_APP_TIMER_END_VALUE);
+
 		final EditText editTextBufferSize = (EditText) findViewById(R.id.editTextBuffer);
-		editTextBufferSize.setText("" + Constants.THE_BUFFER);
+		editTextBufferSize.setText("" + Constants.BUFFER_VALUE);
 		editTextBufferSize.setInputType(InputType.TYPE_CLASS_PHONE);
 		final Button saveButtonBuffer = (Button) findViewById(R.id.buttonSaveBuffer);
 		saveButtonBuffer.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				editTextBufferSize.setTextColor(Color.BLACK);
 				editTextBufferSize.setBackgroundColor(Color.WHITE);
@@ -81,11 +100,12 @@ public class Settings extends Activity implements
 					if (bufferSize <= 0 || bufferSize > 1000000) {
 						throw new NumberFormatException();
 					} else {
-						Constants.THE_BUFFER = bufferSize;
+						Constants.BUFFER_VALUE = bufferSize;
 						SharedPreferences settings = getSharedPreferences(
 								Constants.PREFERENCES_FILE, 0);
 						SharedPreferences.Editor editor = settings.edit();
-						editor.putInt(Constants.BUFFER, Constants.THE_BUFFER);
+						editor.putInt(Constants.BUFFER_KEY,
+								Constants.BUFFER_VALUE);
 						editor.commit();
 						Toast.makeText(
 								Settings.this,
@@ -107,6 +127,7 @@ public class Settings extends Activity implements
 
 		final Button resetButtonBuffer = (Button) findViewById(R.id.buttonResetBuffer);
 		resetButtonBuffer.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				editTextBufferSize.setTextColor(Color.BLACK);
 				editTextBufferSize.setBackgroundColor(Color.WHITE);
@@ -116,6 +137,7 @@ public class Settings extends Activity implements
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				finish();
 			}
@@ -134,7 +156,8 @@ public class Settings extends Activity implements
 			setRadioButtons(wifiSleepPolicy);
 
 		} catch (SettingNotFoundException e) {
-			Utils.log(TAG,
+			Utils.log(
+					TAG,
 					"SettingNotFoundException: WIFI_SLEEP_POLICY ist noch nicht konfiguriert. Kein Problem!");
 			radioAutomatischAus.setChecked(true);
 		}
@@ -150,6 +173,7 @@ public class Settings extends Activity implements
 		}
 	}
 
+	@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		if (checkedId == R.id.radioImmerAn) {
 			android.provider.Settings.System.putInt(getContentResolver(),

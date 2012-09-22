@@ -35,8 +35,8 @@ public class Webcam extends Activity {
 			return;
 		}
 		progressDialog = utils.prepareProgressDialog(this);
-		progressDialog
-				.setTitle("Webcam " + Constants.THE_SELECTED_STATION_NAME);
+		progressDialog.setTitle("Webcam "
+				+ Constants.SELECTED_STATION_NAME_VALUE);
 		progressDialog.show();
 		alertDialog = new AlertDialog.Builder(this).create();
 
@@ -52,10 +52,11 @@ public class Webcam extends Activity {
 		threadShowWebcam.start();
 
 		TextView radiostation = (TextView) findViewById(R.id.textViewWebcamRadioStation);
-		radiostation.setText(Constants.THE_SELECTED_STATION_NAME);
+		radiostation.setText(Constants.SELECTED_STATION_NAME_VALUE);
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				finish();
 			}
@@ -64,9 +65,9 @@ public class Webcam extends Activity {
 	}
 
 	private void showWebCam() {
-		Utils.log(TAG, "RadioPlayer.URL_WEBCAM=" + Constants.THE_URL_WEBCAM);
-		if (Constants.THE_URL_WEBCAM != null
-				&& !Constants.THE_URL_WEBCAM.equals("")) {
+		Utils.log(TAG, "RadioPlayer.URL_WEBCAM=" + Constants.URL_WEBCAM_VALUE);
+		if (Constants.URL_WEBCAM_VALUE != null
+				&& !Constants.URL_WEBCAM_VALUE.equals("")) {
 			WebView myWebView = new WebView(this);
 			myWebView.clearCache(Boolean.TRUE);
 			myWebView = (WebView) findViewById(R.id.webkitWebViewWebCam);
@@ -79,7 +80,7 @@ public class Webcam extends Activity {
 			myWebView.setInitialScale(80);
 			myWebView.getSettings().setJavaScriptEnabled(true);
 
-			myWebView.loadUrl(Constants.THE_URL_WEBCAM);
+			myWebView.loadUrl(Constants.URL_WEBCAM_VALUE);
 
 			myWebView.setBackgroundColor(0);
 			myWebView.setWebViewClient(new MyWebViewClient());

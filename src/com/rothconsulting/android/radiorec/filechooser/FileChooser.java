@@ -39,13 +39,13 @@ public class FileChooser extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		if (Constants.THE_SD_CARD_PATH == null) {
-			Utils.log(TAG, "THE_SDCARD_PATH is null!");
+		if (Constants.SD_CARD_PATH_VALUE == null) {
+			Utils.log(TAG, "SDCARD_PATH is null!");
 			pathNotValidDialog().show();
 		} else {
 
 			try {
-				currentDir = new File(Constants.THE_SD_CARD_PATH);
+				currentDir = new File(Constants.SD_CARD_PATH_VALUE);
 				fill(currentDir);
 				ListView list = getListView();
 
@@ -81,8 +81,8 @@ public class FileChooser extends ListActivity {
 					}
 				});
 			} catch (Exception e) {
-				Utils.log(TAG, "Exception! THE_SD_CARD_PATH="
-						+ Constants.THE_SD_CARD_PATH + "\nException=\n" + e);
+				Utils.log(TAG, "Exception! SD_CARD_PATH="
+						+ Constants.SD_CARD_PATH_VALUE + "\nException=\n" + e);
 				pathNotValidDialog().show();
 			}
 		}

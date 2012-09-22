@@ -41,13 +41,13 @@ public class Notifications {
 
 		int icon = R.drawable.jukebox;
 		CharSequence tickerText = context.getString(R.string.onAir) + " "
-				+ Constants.THE_SELECTED_STATION_NAME;
+				+ Constants.SELECTED_STATION_NAME_VALUE;
 
 		// int notificationFlags = Notification.FLAG_ONGOING_EVENT;
 
 		CharSequence contentTitle = context.getString(R.string.app_name);
 		CharSequence contentText = context.getString(R.string.onAir) + " "
-				+ Constants.THE_SELECTED_STATION_NAME;
+				+ Constants.SELECTED_STATION_NAME_VALUE;
 
 		showStatusBarNotification(icon, tickerText, contentTitle, contentText,
 				Constants.NOTIFICATION_ID_RADIO_IS_PLAYING, -1);
@@ -58,13 +58,13 @@ public class Notifications {
 
 		int icon = R.drawable.button_record_on;
 		CharSequence tickerText = "Recording... "
-				+ Constants.THE_SELECTED_STATION_NAME;
+				+ Constants.SELECTED_STATION_NAME_VALUE;
 
 		// int notificationFlags = Notification.FLAG_ONGOING_EVENT;
 
 		CharSequence contentTitle = "Recording...";
 		CharSequence contentText = "Recording "
-				+ Constants.THE_SELECTED_STATION_NAME;
+				+ Constants.SELECTED_STATION_NAME_VALUE;
 
 		showStatusBarNotification(icon, tickerText, contentTitle, contentText,
 				Constants.NOTIFICATION_ID_RECORDING, -1);

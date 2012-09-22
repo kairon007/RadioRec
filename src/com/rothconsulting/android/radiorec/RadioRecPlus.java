@@ -145,11 +145,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				: R.drawable.button_record);
 
 		// set first image
-		if (Constants.THE_SELECTED_STATION_ICON == 0x0) {
-			Constants.THE_SELECTED_STATION_ICON = R.drawable.radio_32;
+		if (Constants.SELECTED_STATION_ICON_VALUE == 0x0) {
+			Constants.SELECTED_STATION_ICON_VALUE = R.drawable.radio_32;
 		}
-		if (Constants.THE_SELECTED_STATION_ICON_SMALL == 0x0) {
-			Constants.THE_SELECTED_STATION_ICON_SMALL = R.drawable.radio_32_small;
+		if (Constants.SELECTED_STATION_ICON_SMALL_VALUE == 0x0) {
+			Constants.SELECTED_STATION_ICON_SMALL_VALUE = R.drawable.radio_32_small;
 		}
 		// avoiding OutOfMemory
 		// http://stackoverflow.com/questions/477572/android-strange-out-of-memory-issue
@@ -158,16 +158,16 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		try {
 			logo.setImageBitmap(Images.addReflection(BitmapFactory
 					.decodeResource(getResources(),
-							Constants.THE_SELECTED_STATION_ICON, options), 0));
+							Constants.SELECTED_STATION_ICON_VALUE, options), 0));
 		} catch (Exception e) {
 			logo.setImageBitmap(Images.addReflection(BitmapFactory
 					.decodeResource(getResources(), R.drawable.radio_32,
 							options), 0));
 		}
 
-		Utils.log(TAG, "Icon=" + Constants.THE_SELECTED_STATION_ICON);
-		Utils.log(TAG, "Name=" + Constants.THE_SELECTED_STATION_NAME);
-		Utils.log(TAG, "Index=" + Constants.THE_SELECTED_STATION_INDEX);
+		Utils.log(TAG, "Icon=" + Constants.SELECTED_STATION_ICON_VALUE);
+		Utils.log(TAG, "Name=" + Constants.SELECTED_STATION_NAME_VALUE);
+		Utils.log(TAG, "Index=" + Constants.SELECTED_STATION_INDEX_VALUE);
 
 		AdMob admob = new AdMob();
 		admob.showRemoveAds(this);
@@ -340,9 +340,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		case R.id.homepage:
 			Log.i(TAG, "homepage");
 			Intent intentHomepage = new Intent(Intent.ACTION_VIEW);
-			if (Constants.THE_URL_HOMEPAGE != null
-					&& !Constants.THE_URL_HOMEPAGE.equals("")) {
-				intentHomepage.setData(Uri.parse(Constants.THE_URL_HOMEPAGE));
+			if (Constants.URL_HOMEPAGE_VALUE != null
+					&& !Constants.URL_HOMEPAGE_VALUE.equals("")) {
+				intentHomepage.setData(Uri.parse(Constants.URL_HOMEPAGE_VALUE));
 				startActivity(intentHomepage);
 			}
 			break;
@@ -353,16 +353,16 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.mail:
 			Log.i(TAG, "mail");
-			if (Constants.THE_URL_CONTACT.startsWith("http")) {
+			if (Constants.URL_CONTACT_VALUE.startsWith("http")) {
 				Intent emailIntent = new Intent(Intent.ACTION_VIEW);
-				emailIntent.setData(Uri.parse(Constants.THE_URL_CONTACT));
+				emailIntent.setData(Uri.parse(Constants.URL_CONTACT_VALUE));
 				startActivity(emailIntent);
 			} else {
 				Intent emailIntent = new Intent(
 						android.content.Intent.ACTION_SEND);
 				emailIntent.setType("plain/text");
 				emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
-						new String[] { Constants.THE_URL_CONTACT });
+						new String[] { Constants.URL_CONTACT_VALUE });
 				emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,
 						"Mein Wunsch");
 				emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "");
@@ -376,19 +376,19 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// favIcon.setButtonDrawable(android.R.drawable.star_big_on);
 		// Utils.log(TAG, "isChecked -> instertStation");
 		// dbadapter.open();
-		// dbadapter.insertStation(Constants.THE_SELECTED_STATION_ICON,
-		// Constants.THE_SELECTED_STATION_ICON_SMALL,
-		// Constants.THE_SELECTED_STATION_NAME,
-		// Constants.THE_URL_LIVE_STREAM,
-		// Constants.THE_URL_HOMEPAGE, Constants.THE_URL_WEBCAM,
-		// Constants.THE_URL_CONTACT, true, Stations.LAND_CH,
+		// dbadapter.insertStation(Constants.SELECTED_STATION_ICON_VALUE,
+		// Constants.SELECTED_STATION_ICON_VALUE_SMALL,
+		// Constants.SELECTED_STATION_NAME_VALUE,
+		// Constants.URL_LIVE_STREAM_VALUE,
+		// Constants.URL_HOMEPAGE_VALUE, Constants.URL_WEBCAM_VALUE,
+		// Constants.URL_CONTACT_VALUE, true, Stations.LAND_CH,
 		// Stations.SPRACHE_DE, Stations.STIL_POP);
 		// dbadapter.close();
 		// } else {
 		// favIcon.setButtonDrawable(android.R.drawable.star_big_off);
 		// Utils.log(TAG, "is NOT Checked -> deleteStation");
 		// dbadapter.open();
-		// dbadapter.deleteStation(Constants.THE_SELECTED_STATION_NAME);
+		// dbadapter.deleteStation(Constants.SELECTED_STATION_NAME_VALUE);
 		// dbadapter.close();
 		// }
 		// break;
@@ -397,7 +397,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				buttonBack.setEnabled(false);
 				spnAllStations.setSelection(spnAllStations
 						.getSelectedItemPosition() - 1);
-				Constants.THE_SELECTED_STATION_INDEX = spnAllStations
+				Constants.SELECTED_STATION_INDEX_VALUE = spnAllStations
 						.getSelectedItemPosition();
 				Utils.log(TAG, "back");
 			}
@@ -429,7 +429,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				buttonFwd.setEnabled(false);
 				spnAllStations.setSelection(spnAllStations
 						.getSelectedItemPosition() + 1);
-				Constants.THE_SELECTED_STATION_INDEX = spnAllStations
+				Constants.SELECTED_STATION_INDEX_VALUE = spnAllStations
 						.getSelectedItemPosition();
 				Utils.log(TAG, "fwd");
 			}
@@ -524,25 +524,25 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Utils.log(TAG, "onItemSelected(long arg0 = " + arg3);
 		Utils.log(TAG,
 				"getSelectedItemPosition1=" + arg0.getSelectedItemPosition());
-		Utils.log(TAG, "THE_SELECTED_STATION_INDEX1="
-				+ Constants.THE_SELECTED_STATION_INDEX);
+		Utils.log(TAG, "SELECTED_STATION_INDEX_VALUE1="
+				+ Constants.SELECTED_STATION_INDEX_VALUE);
 		Utils.log(TAG, "****************");
 
 		if (firstStart) {
 			Utils.log(TAG,
-					"firstStart -> arg0.setSelection(THE_SELECTED_STATION_INDEX)");
-			if (Constants.THE_SELECTED_STATION_INDEX > stationList.size()) {
-				Constants.THE_SELECTED_STATION_INDEX = 0;
+					"firstStart -> arg0.setSelection(SELECTED_STATION_INDEX_VALUE)");
+			if (Constants.SELECTED_STATION_INDEX_VALUE > stationList.size()) {
+				Constants.SELECTED_STATION_INDEX_VALUE = 0;
 			}
-			arg0.setSelection(Constants.THE_SELECTED_STATION_INDEX);
+			arg0.setSelection(Constants.SELECTED_STATION_INDEX_VALUE);
 		} else {
-			Constants.THE_SELECTED_STATION_INDEX = arg0
+			Constants.SELECTED_STATION_INDEX_VALUE = arg0
 					.getSelectedItemPosition();
 		}
 		Utils.log(TAG,
 				"getSelectedItemPosition2=" + arg0.getSelectedItemPosition());
 		Utils.log(TAG, "SELECTED_STATION_INDEX2="
-				+ Constants.THE_SELECTED_STATION_INDEX);
+				+ Constants.SELECTED_STATION_INDEX_VALUE);
 
 		changeStation();
 	}
@@ -552,10 +552,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	}
 
 	private void changeStation() {
-		int index = Constants.THE_SELECTED_STATION_INDEX;
+		int index = Constants.SELECTED_STATION_INDEX_VALUE;
 		if (index < 0 || index >= stationList.size()) {
 			index = 0;
-			Constants.THE_SELECTED_STATION_INDEX = index;
+			Constants.SELECTED_STATION_INDEX_VALUE = index;
 		}
 
 		Utils.log(TAG, "index=" + index + " / stationList.size()="
@@ -576,9 +576,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// map = stilList.get(index);
 		// }
 
-		Utils.log(TAG, "!!! Sender=" + Constants.THE_SELECTED_STATION_NAME);
-		Constants.THE_SELECTED_STATION_ICON = (Integer) map.get("icon");
-		Constants.THE_SELECTED_STATION_ICON_SMALL = (Integer) map
+		Utils.log(TAG, "!!! Sender=" + Constants.SELECTED_STATION_NAME_VALUE);
+		Constants.SELECTED_STATION_ICON_VALUE = (Integer) map.get("icon");
+		Constants.SELECTED_STATION_ICON_SMALL_VALUE = (Integer) map
 				.get("icon_small");
 
 		// avoiding OutOfMemory
@@ -590,65 +590,65 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inTempStorage = new byte[16 * 1024];
 
-		logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(
-				getResources(), Constants.THE_SELECTED_STATION_ICON, options),
-				0));
+		logo.setImageBitmap(Images.addReflection(
+				BitmapFactory.decodeResource(getResources(),
+						Constants.SELECTED_STATION_ICON_VALUE, options), 0));
 		Utils.log(TAG, "*********** Stream=" + map.get("stream"));
 
-		Constants.THE_SELECTED_STATION_NAME = "" + map.get("name");
-		Constants.THE_URL_LIVE_STREAM = "" + map.get("stream");
+		Constants.SELECTED_STATION_NAME_VALUE = "" + map.get("name");
+		Constants.URL_LIVE_STREAM_VALUE = "" + map.get("stream");
 
-		Constants.THE_URL_HOMEPAGE = "" + map.get("homepage");
-		Constants.THE_URL_WEBCAM = "" + map.get("webcam");
+		Constants.URL_HOMEPAGE_VALUE = "" + map.get("homepage");
+		Constants.URL_WEBCAM_VALUE = "" + map.get("webcam");
 		final TextView textViewWebcam = (TextView) findViewById(R.id.webcam);
-		if (Build.VERSION.SDK_INT < 5 || Constants.THE_URL_WEBCAM == null
-				|| Constants.THE_URL_WEBCAM.trim().equals("")) {
+		if (Build.VERSION.SDK_INT < 5 || Constants.URL_WEBCAM_VALUE == null
+				|| Constants.URL_WEBCAM_VALUE.trim().equals("")) {
 			textViewWebcam.setVisibility(View.INVISIBLE);
 		} else {
 			textViewWebcam.setVisibility(View.VISIBLE);
 		}
-		Constants.THE_URL_CONTACT = "" + map.get("email");
+		Constants.URL_CONTACT_VALUE = "" + map.get("email");
 
 		// this.setFavIcon();
 
 		if (!firstStart && playing) {
 			if (Constants.getLiveStreamStations().contains(
-					Constants.THE_SELECTED_STATION_NAME)) {
+					Constants.SELECTED_STATION_NAME_VALUE)) {
 				Utils.log(TAG, "------ ist Radio Gelb-Schwarz");
 				showDialog(Constants.LIVE_STREAM_STATION);
 			}
-			if (Constants.THE_SELECTED_STATION_NAME
+			if (Constants.SELECTED_STATION_NAME_VALUE
 					.equalsIgnoreCase(Stations.RADIO_JUGGLERZ)) {
 				// jugglerz.de hat immer Donnerstags eine Live Sendung. Ab
 				// Freitag kann man diese als mp3 hören. Daher ist die URL
 				// dynamisch.
 				WebTool webtool = new WebTool();
-				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
+				Constants.URL_LIVE_STREAM_VALUE = Constants.URL_LIVE_STREAM_VALUE
 						+ webtool.getJugglerzFileName(this);
 				Utils.log(TAG, "*********** new Stream="
-						+ Constants.THE_URL_LIVE_STREAM);
+						+ Constants.URL_LIVE_STREAM_VALUE);
 			}
-			if (Constants.THE_SELECTED_STATION_NAME
+			if (Constants.SELECTED_STATION_NAME_VALUE
 					.equalsIgnoreCase(Stations.RADIO_PLANET_RADIO)) {
 				WebTool webtool = new WebTool();
 				// planet radio ist geschützt und braucht login token damit man
 				// den Stream abspielen kann.
-				origPlanetradioSteam = Constants.THE_URL_LIVE_STREAM;
-				Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
+				origPlanetradioSteam = Constants.URL_LIVE_STREAM_VALUE;
+				Constants.URL_LIVE_STREAM_VALUE = Constants.URL_LIVE_STREAM_VALUE
 						+ webtool.getPlanetradioToken(this);
 				Utils.log(TAG, "*********** new Stream="
-						+ Constants.THE_URL_LIVE_STREAM);
+						+ Constants.URL_LIVE_STREAM_VALUE);
 			}
-			// if (Constants.THE_SELECTED_STATION_NAME
+			// if (Constants.SELECTED_STATION_NAME_VALUE
 			// .equalsIgnoreCase(Stations.RADIO_EUSKIRCHEN)) {
 			// WebTool webtool = new WebTool();
 			// // planet radio ist geschützt und braucht login token damit man
 			// // den Stream abspielen kann.
-			// origRadioEuskirchen = Constants.THE_URL_LIVE_STREAM;
-			// Constants.THE_URL_LIVE_STREAM = Constants.THE_URL_LIVE_STREAM
+			// origRadioEuskirchen = Constants.URL_LIVE_STREAM_VALUE;
+			// Constants.URL_LIVE_STREAM_VALUE = Constants.URL_LIVE_STREAM_VALUE
 			// + webtool.getRadioEuskirchen(this);
 			// Utils.log(TAG, "*********** new Stream="
-			// + Constants.THE_URL_LIVE_STREAM);
+			// + Constants.URL_LIVE_STREAM_VALUE);
 			// }
 			getRadioPlayer().doStartPlay(this);
 			getWindow()
@@ -686,38 +686,38 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		URL outputUrl = null;
 
 		try {
-			if (Constants.THE_SELECTED_STATION_NAME
+			if (Constants.SELECTED_STATION_NAME_VALUE
 					.equalsIgnoreCase(Stations.RADIO_PLANET_RADIO)) {
 				WebTool webtool = new WebTool();
 				// rt1 ist geschützt und braucht login token damit man den
 				// Stream abspielen kann.
 				if (origPlanetradioSteam == null) {
-					origPlanetradioSteam = Constants.THE_URL_LIVE_STREAM;
+					origPlanetradioSteam = Constants.URL_LIVE_STREAM_VALUE;
 				}
-				Constants.THE_URL_LIVE_STREAM = origPlanetradioSteam
+				Constants.URL_LIVE_STREAM_VALUE = origPlanetradioSteam
 						+ webtool.getPlanetradioToken(this);
 				Utils.log(TAG, "*********** new Stream="
-						+ Constants.THE_URL_LIVE_STREAM);
+						+ Constants.URL_LIVE_STREAM_VALUE);
 			}
 
-			// if (Constants.THE_SELECTED_STATION_NAME
+			// if (Constants.SELECTED_STATION_NAME_VALUE
 			// .equalsIgnoreCase(Stations.RADIO_EUSKIRCHEN)) {
 			// WebTool webtool = new WebTool();
 			// // euskirchen ist geschützt und braucht login token damit man
 			// // den
 			// // Stream abspielen kann.
 			// if (origRadioEuskirchen == null) {
-			// origRadioEuskirchen = Constants.THE_URL_LIVE_STREAM;
+			// origRadioEuskirchen = Constants.URL_LIVE_STREAM_VALUE;
 			// }
-			// Constants.THE_URL_LIVE_STREAM = origRadioEuskirchen
+			// Constants.URL_LIVE_STREAM_VALUE = origRadioEuskirchen
 			// + webtool.getRadioEuskirchen(this);
 			// Utils.log(TAG, "*********** new Stream="
-			// + Constants.THE_URL_LIVE_STREAM);
+			// + Constants.URL_LIVE_STREAM_VALUE);
 			// }
 
-			Utils.log(TAG, "Constants.THE_URL_LIVE_STREAM="
-					+ Constants.THE_URL_LIVE_STREAM);
-			inputUrl = new URL(Constants.THE_URL_LIVE_STREAM);
+			Utils.log(TAG, "Constants.URL_LIVE_STREAM_VALUE="
+					+ Constants.URL_LIVE_STREAM_VALUE);
+			inputUrl = new URL(Constants.URL_LIVE_STREAM_VALUE);
 		} catch (MalformedURLException e) {
 			utils.getNotifInstance(this, RadioRecPlus.class)
 					.showStatusBarNotificationError(
@@ -725,8 +725,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 
 		try {
-			outputUrl = new URL("file:///" + Constants.THE_SD_CARD_PATH + "/"
-					+ Constants.THE_SELECTED_STATION_NAME.replaceAll(" ", "")
+			outputUrl = new URL("file:///" + Constants.SD_CARD_PATH_VALUE + "/"
+					+ Constants.SELECTED_STATION_NAME_VALUE.replaceAll(" ", "")
 					+ "-" + dateTime + ".mp3");
 		} catch (MalformedURLException e) {
 			utils.getNotifInstance(this, RadioRecPlus.class)
@@ -755,7 +755,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	// DbAdapter dbadapter = new DbAdapter(this);
 	// dbadapter.open();
 	// Cursor cursor = null;
-	// cursor = dbadapter.fetchStation(Constants.THE_SELECTED_STATION_NAME);
+	// cursor = dbadapter.fetchStation(Constants.SELECTED_STATION_NAME_VALUE);
 	// if (cursor != null && cursor.getCount() > 0) {
 	// favIcon.setChecked(true);
 	// Utils.log(TAG, "favIcon.setChecked(true)");
@@ -786,7 +786,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	@Override
 	public void onProgressChanged(SeekBar seekBar, int progress,
 			boolean fromTouch) {
-		timerSeekbarText.setText(getString(R.string.sleepTimerEndIn, progress));
+		timerSeekbarText.setText(getString(R.string.sleepTimerEndIn,
+				Utils.getHhMmFromMinutes(progress)));
 	}
 
 	@Override
@@ -806,15 +807,16 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	private void startTimer(final SeekBar seekBar) {
 		long millisInFuture = seekBar.getProgress() * 60 * 1000;
+
 		countDownTimer = new CountDownTimer(millisInFuture, 1000) {
 
 			@Override
 			public void onTick(long millisUntilFinished) {
 				timerSeekbarText.setText(getString(R.string.sleepTimerEndIn,
-						(millisUntilFinished / 60 / 1000) + 1));
+						Utils.getHhMmSs(millisUntilFinished)));
 				countDownTimerTick = Integer.valueOf(""
-						+ (millisUntilFinished / 60 / 1000 + 1));
-				setSeekBarProgress();
+						+ (millisUntilFinished / 60 / 1000));
+				setSeekBarProgress(countDownTimerTick);
 				Utils.log(TAG, "countDownTimerTick=" + countDownTimerTick);
 			}
 
@@ -822,17 +824,24 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			public void onFinish() {
 				Toast.makeText(context, R.string.timerEnd, Toast.LENGTH_LONG)
 						.show();
-				timerSeekbarLayout.setVisibility(View.GONE);
 				showCountdown = true;
+				timerSeekbarText
+						.setText(getString(R.string.sleepTimerEinstellen));
+				seekBar.setProgress(0);
+				setSeekBarProgress(0);
+				timerSeekbarLayout.setVisibility(View.GONE);
 				stopPlayAndRecord();
+				if (Constants.CLOSE_APP_TIMER_END_VALUE) {
+					finish();
+				}
 			}
 		};
 		countDownTimer.start();
 	}
 
-	private void setSeekBarProgress() {
+	private void setSeekBarProgress(int progress) {
 		if (timerSeekbar != null) {
-			timerSeekbar.setProgress(countDownTimerTick);
+			timerSeekbar.setProgress(progress);
 		}
 	}
 
@@ -856,11 +865,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	@Override
 	public void onConfigurationChanged(Configuration _newConfig) {
 		super.onConfigurationChanged(_newConfig);
-
 		Utils.log(TAG, "**+*+*+*+*+*+* playing=" + playing);
 		if (!playing) {
 			initGui();
-			setSeekBarProgress();
+			setSeekBarProgress(countDownTimerTick);
 			mainScreen.refreshDrawableState();
 			showCountdown = false;
 		}

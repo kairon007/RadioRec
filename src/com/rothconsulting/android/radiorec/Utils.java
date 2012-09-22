@@ -18,6 +18,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -79,7 +80,7 @@ public class Utils {
 	}
 
 	protected boolean hasValidKey() {
-		String key = Constants.THE_ANTI_ADS_KEY;
+		String key = Constants.ANTI_ADS_KEY;
 		if (key != null && key.startsWith("rR+") && key.endsWith("so@p")) {
 			return true;
 		}
@@ -90,23 +91,26 @@ public class Utils {
 		SharedPreferences settings = context.getSharedPreferences(
 				Constants.PREFERENCES_FILE, 0);
 		SharedPreferences.Editor editor = settings.edit();
-		editor.putInt(Constants.SELECTED_STATION_INDEX,
-				Constants.THE_SELECTED_STATION_INDEX);
-		editor.putInt(Constants.SELECTED_STATION_ICON,
-				Constants.THE_SELECTED_STATION_ICON);
-		editor.putString(Constants.SELECTED_STATION_NAME,
-				Constants.THE_SELECTED_STATION_NAME);
-		editor.putString(Constants.SELECTED_STATION_STREAM,
-				Constants.THE_URL_LIVE_STREAM);
-		editor.putString(Constants.SELECTED_STATION_HOMEPAGE,
-				Constants.THE_URL_HOMEPAGE);
-		editor.putString(Constants.SELECTED_STATION_WEBCAM,
-				Constants.THE_URL_WEBCAM);
-		editor.putString(Constants.SELECTED_STATION_CONTACT,
-				Constants.THE_URL_CONTACT);
-		editor.putString(Constants.ANTI_ADS_KEY, Constants.THE_ANTI_ADS_KEY);
-		editor.putString(Constants.SD_CARD_PATH, Constants.THE_SD_CARD_PATH);
-		editor.putInt(Constants.BUFFER, Constants.THE_BUFFER);
+		editor.putInt(Constants.SELECTED_STATION_INDEX_KEY,
+				Constants.SELECTED_STATION_INDEX_VALUE);
+		editor.putInt(Constants.SELECTED_STATION_ICON_KEY,
+				Constants.SELECTED_STATION_ICON_VALUE);
+		editor.putString(Constants.SELECTED_STATION_NAME_KEY,
+				Constants.SELECTED_STATION_NAME_VALUE);
+		editor.putString(Constants.SELECTED_STATION_STREAM_KEY,
+				Constants.URL_LIVE_STREAM_VALUE);
+		editor.putString(Constants.SELECTED_STATION_HOMEPAGE_KEY,
+				Constants.URL_HOMEPAGE_VALUE);
+		editor.putString(Constants.SELECTED_STATION_WEBCAM_KEY,
+				Constants.URL_WEBCAM_VALUE);
+		editor.putString(Constants.SELECTED_STATION_CONTACT_KEY,
+				Constants.URL_CONTACT_VALUE);
+		editor.putString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_KEY_VALUE);
+		editor.putString(Constants.SD_CARD_PATH_KEY,
+				Constants.SD_CARD_PATH_VALUE);
+		editor.putInt(Constants.BUFFER_KEY, Constants.BUFFER_VALUE);
+		editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY,
+				Constants.CLOSE_APP_TIMER_END_VALUE);
 		editor.commit();
 	}
 
@@ -114,27 +118,32 @@ public class Utils {
 		// Restore preferences
 		SharedPreferences settings = context.getSharedPreferences(
 				Constants.PREFERENCES_FILE, 0);
-		Constants.THE_SELECTED_STATION_INDEX = settings.getInt(
-				Constants.SELECTED_STATION_INDEX, -1);
-		Constants.THE_SELECTED_STATION_NAME = settings.getString(
-				Constants.SELECTED_STATION_NAME,
-				Constants.THE_SELECTED_STATION_NAME);
-		Constants.THE_URL_LIVE_STREAM = settings.getString(
-				Constants.SELECTED_STATION_STREAM,
-				Constants.THE_URL_LIVE_STREAM);
-		Constants.THE_URL_HOMEPAGE = settings
-				.getString(Constants.SELECTED_STATION_HOMEPAGE,
-						Constants.THE_URL_HOMEPAGE);
-		Constants.THE_URL_WEBCAM = settings.getString(
-				Constants.SELECTED_STATION_WEBCAM, Constants.THE_URL_WEBCAM);
-		Constants.THE_URL_CONTACT = settings.getString(
-				Constants.SELECTED_STATION_CONTACT, Constants.THE_URL_CONTACT);
-		Constants.THE_ANTI_ADS_KEY = settings.getString(Constants.ANTI_ADS_KEY,
-				Constants.THE_ANTI_ADS_KEY);
-		Constants.THE_SD_CARD_PATH = settings.getString(Constants.SD_CARD_PATH,
-				Constants.DEFAULT_SD_CARD_PATH);
-		Constants.THE_BUFFER = settings.getInt(Constants.BUFFER,
+		Constants.SELECTED_STATION_INDEX_VALUE = settings.getInt(
+				Constants.SELECTED_STATION_INDEX_KEY, -1);
+		Constants.SELECTED_STATION_NAME_VALUE = settings.getString(
+				Constants.SELECTED_STATION_NAME_KEY,
+				Constants.SELECTED_STATION_NAME_VALUE);
+		Constants.URL_LIVE_STREAM_VALUE = settings.getString(
+				Constants.SELECTED_STATION_STREAM_KEY,
+				Constants.URL_LIVE_STREAM_VALUE);
+		Constants.URL_HOMEPAGE_VALUE = settings.getString(
+				Constants.SELECTED_STATION_HOMEPAGE_KEY,
+				Constants.URL_HOMEPAGE_VALUE);
+		Constants.URL_WEBCAM_VALUE = settings.getString(
+				Constants.SELECTED_STATION_WEBCAM_KEY,
+				Constants.URL_WEBCAM_VALUE);
+		Constants.URL_CONTACT_VALUE = settings.getString(
+				Constants.SELECTED_STATION_CONTACT_KEY,
+				Constants.URL_CONTACT_VALUE);
+		Constants.ANTI_ADS_KEY_VALUE = settings.getString(
+				Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_KEY_VALUE);
+		Constants.SD_CARD_PATH_VALUE = settings.getString(
+				Constants.SD_CARD_PATH_KEY, Constants.DEFAULT_SD_CARD_PATH);
+		Constants.BUFFER_VALUE = settings.getInt(Constants.BUFFER_KEY,
 				Constants.DEFAULT_BUFFER);
+		Constants.CLOSE_APP_TIMER_END_VALUE = settings.getBoolean(
+				Constants.CLOSE_APP_TIMER_END_KEY,
+				Constants.CLOSE_APP_TIMER_END_VALUE);
 	}
 
 	protected String getAppVersionName(Context context, Class<?> cls) {
@@ -254,6 +263,29 @@ public class Utils {
 	}
 
 	public static void log(String tag, String message) {
-		// Log.d(tag, message);
+		Log.d(tag, message);
 	}
+
+	public static String getHhMmFromMinutes(int minutes) {
+		int hours = minutes / 60;
+		int min = minutes % 60;
+		return hours + ":" + getFormatedMinSec(min);
+	}
+
+	public static String getHhMmSs(long millis) {
+		int seconds = (int) (millis / 1000) % 60;
+		int minutes = (int) ((millis / (1000 * 60)) % 60);
+		int hours = (int) ((millis / (1000 * 60 * 60)) % 24);
+		return hours + ":" + getFormatedMinSec(minutes) + ":"
+				+ getFormatedMinSec(seconds);
+	}
+
+	public static String getFormatedMinSec(int minSec) {
+		if (minSec < 10) {
+			return "0" + minSec;
+		} else {
+			return "" + minSec;
+		}
+	}
+
 }

@@ -22,7 +22,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.util.Log;
 
 public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 
@@ -51,18 +50,18 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 
 		try {
 			File radioRecorderDirectory = new File("/"
-					+ Constants.THE_SD_CARD_PATH + "/");
+					+ Constants.SD_CARD_PATH_VALUE + "/");
 			radioRecorderDirectory.mkdirs();
-			Utils.log(TAG, "Stream Buffer=" + Constants.THE_BUFFER);
-			if (Constants.THE_BUFFER <= 0) {
-				Constants.THE_BUFFER = Constants.DEFAULT_BUFFER;
+			Utils.log(TAG, "Stream Buffer=" + Constants.BUFFER_VALUE);
+			if (Constants.BUFFER_VALUE <= 0) {
+				Constants.BUFFER_VALUE = Constants.DEFAULT_BUFFER;
 			}
 			buffInputStream = new BufferedInputStream(urls[0].openStream(),
-					Constants.THE_BUFFER);
+					Constants.BUFFER_VALUE);
 			Utils.log(TAG, "url.openStream()");
 
 			buffOutputStream = new BufferedOutputStream(new FileOutputStream(
-					urls[1].getFile()), Constants.THE_BUFFER);
+					urls[1].getFile()), Constants.BUFFER_VALUE);
 			Utils.log(TAG, "FileOutputStream: " + urls[1].getFile());
 			Utils utils = new Utils();
 			utils.getNotifInstance(context, RadioRecorder.class)

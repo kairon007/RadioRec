@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.PowerManager;
-import android.util.Log;
 
 public class RadioPlayer {
 
@@ -33,7 +32,7 @@ public class RadioPlayer {
 		Utils.log(TAG, "prepareProgressDialog");
 		Utils utils = new Utils();
 		progressDialog = utils.prepareProgressDialog(context);
-		progressDialog.setTitle(Constants.THE_SELECTED_STATION_NAME);
+		progressDialog.setTitle(Constants.SELECTED_STATION_NAME_VALUE);
 		Utils.log(TAG, "progressDialog.show()");
 		progressDialog.show();
 		Utils.log(TAG, "--- threadDoStartPlay.start()");
@@ -54,7 +53,8 @@ public class RadioPlayer {
 				threadDoStartPlay.interrupt();
 			}
 			if (mediaPlayer != null) {
-				Utils.log(TAG, "mediaPlayer.isPlaying()=" + mediaPlayer.isPlaying());
+				Utils.log(TAG,
+						"mediaPlayer.isPlaying()=" + mediaPlayer.isPlaying());
 
 				if (mediaPlayer.isPlaying()) {
 					Utils.log(TAG, "stop()");
@@ -100,10 +100,10 @@ public class RadioPlayer {
 					mediaPlayer = new MediaPlayer();
 					Utils.log(TAG, "reset()");
 					mediaPlayer.reset();
-					Utils.log(TAG, "URL: " + Constants.THE_URL_LIVE_STREAM);
-					mediaPlayer.setDataSource(Constants.THE_URL_LIVE_STREAM);
-					Utils.log(TAG, "THE_URL_LIVE_STREAM="
-							+ Constants.THE_URL_LIVE_STREAM);
+					Utils.log(TAG, "URL: " + Constants.URL_LIVE_STREAM_VALUE);
+					mediaPlayer.setDataSource(Constants.URL_LIVE_STREAM_VALUE);
+					Utils.log(TAG, "URL_LIVE_STREAM_VALUE="
+							+ Constants.URL_LIVE_STREAM_VALUE);
 					mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 					mediaPlayer.setWakeMode(context,
 							PowerManager.PARTIAL_WAKE_LOCK);
@@ -129,7 +129,8 @@ public class RadioPlayer {
 							Constants.NOTIFICATION_ID_ERROR_CONNECTION);
 
 				} catch (IllegalArgumentException e) {
-					Utils.log(TAG,
+					Utils.log(
+							TAG,
 							"IllegalArgumentException: "
 									+ context
 											.getString(R.string.networkNotAvailable));
@@ -137,7 +138,8 @@ public class RadioPlayer {
 							R.string.networkNotAvailable);
 					doStopPlay(context);
 				} catch (IllegalStateException e) {
-					Utils.log(TAG,
+					Utils.log(
+							TAG,
 							"IllegalStateException 1: "
 									+ context
 											.getString(R.string.internetadresseNichtErreichbar));
@@ -146,11 +148,13 @@ public class RadioPlayer {
 					Utils.log(TAG, "cause=" + e.getCause());
 					if (e.getStackTrace() != null
 							&& e.getStackTrace().length >= 2)
-						Utils.log(TAG, "getStackTrace[0]" + e.getStackTrace()[0]);
+						Utils.log(TAG, "getStackTrace[0]"
+								+ e.getStackTrace()[0]);
 					Utils.log(TAG, "getStackTrace[1]" + e.getStackTrace()[1]);
 					doStopPlay(context);
 				} catch (IOException e) {
-					Utils.log(TAG,
+					Utils.log(
+							TAG,
 							"doStartPlay - IOException: "
 									+ context
 											.getString(R.string.internetadresseNichtErreichbar)

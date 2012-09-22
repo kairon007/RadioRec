@@ -128,34 +128,36 @@ public class Constants {
 	}
 
 	public static final String PREFERENCES_FILE = "RadioRecPrefs";
-	public static final String SELECTED_STATION_INDEX = "MySelectedStationIndex";
-	public static final String SELECTED_STATION_NAME = "MySelectedStationName";
-	public static final String SELECTED_STATION_ICON = "MySelectedStationIcon";
-	public static final String SELECTED_STATION_HOMEPAGE = "MySelectedStationHomepage";
-	public static final String SELECTED_STATION_STREAM = "MySelectedStationStream";
-	public static final String SELECTED_STATION_WEBCAM = "MySelectedStationWebcam";
-	public static final String SELECTED_STATION_CONTACT = "MySelectedStationContact";
+	public static final String SELECTED_STATION_INDEX_KEY = "MySelectedStationIndex";
+	public static final String SELECTED_STATION_NAME_KEY = "MySelectedStationName";
+	public static final String SELECTED_STATION_ICON_KEY = "MySelectedStationIcon";
+	public static final String SELECTED_STATION_HOMEPAGE_KEY = "MySelectedStationHomepage";
+	public static final String SELECTED_STATION_STREAM_KEY = "MySelectedStationStream";
+	public static final String SELECTED_STATION_WEBCAM_KEY = "MySelectedStationWebcam";
+	public static final String SELECTED_STATION_CONTACT_KEY = "MySelectedStationContact";
 	public static final String ANTI_ADS_KEY = "MyAntiAdsKey";
-	public static final String SD_CARD_PATH = "MySdCardPath";
-	public static final String BUFFER = "MyBuffer";
+	public static final String SD_CARD_PATH_KEY = "MySdCardPath";
+	public static final String BUFFER_KEY = "MyBuffer";
+	public static final String CLOSE_APP_TIMER_END_KEY = "CloseAppWhenTimerEnds";
 
 	// Default Constants
-	protected static int THE_SELECTED_STATION_INDEX;
-	protected static int THE_SELECTED_STATION_ICON;
-	protected static int THE_SELECTED_STATION_ICON_SMALL;
-	protected static String THE_SELECTED_STATION_NAME;
-	protected static String THE_URL_LIVE_STREAM;
-	protected static String THE_URL_HOMEPAGE;
-	protected static String THE_URL_WEBCAM;
-	protected static String THE_URL_CONTACT;
-	protected static String THE_URL_SONGTICKER;
-	protected static String THE_ANTI_ADS_KEY;
-	public static String THE_SD_CARD_PATH;
-	protected static int THE_BUFFER;
+	protected static int SELECTED_STATION_INDEX_VALUE;
+	protected static int SELECTED_STATION_ICON_VALUE;
+	protected static int SELECTED_STATION_ICON_SMALL_VALUE;
+	protected static String SELECTED_STATION_NAME_VALUE;
+	protected static String URL_LIVE_STREAM_VALUE;
+	protected static String URL_HOMEPAGE_VALUE;
+	protected static String URL_WEBCAM_VALUE;
+	protected static String URL_CONTACT_VALUE;
+	protected static String URL_SONGTICKER_VALUE;
+	protected static String ANTI_ADS_KEY_VALUE;
+	public static String SD_CARD_PATH_VALUE;
+	protected static int BUFFER_VALUE;
+	protected static boolean CLOSE_APP_TIMER_END_VALUE;
 
 	public static int CURRENT_TAB = 0;
 
-	public static final String DEFAULT_SD_CARD_PATH = "sdcard/RadioRecorder";
+	public static final String DEFAULT_SD_CARD_PATH = "sdcard/RadioRec";
 	public static final int DEFAULT_BUFFER = 8192;
 
 	public static final int NOTIFICATION_ID_RADIO_IS_PLAYING = 1;

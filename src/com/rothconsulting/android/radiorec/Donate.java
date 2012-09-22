@@ -8,7 +8,6 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.ClipboardManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -88,22 +87,22 @@ public class Donate extends Activity {
 		});
 
 		final EditText edittext = (EditText) findViewById(R.id.editTextAntiAdsKey);
-		if (Constants.THE_ANTI_ADS_KEY != null) {
-			edittext.setText(Constants.THE_ANTI_ADS_KEY);
+		if (Constants.ANTI_ADS_KEY_VALUE != null) {
+			edittext.setText(Constants.ANTI_ADS_KEY_VALUE);
 		}
 
 		final Button saveButton = (Button) findViewById(R.id.buttonSaveAntiAdsKey);
 		saveButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Constants.THE_ANTI_ADS_KEY = "" + edittext.getText();
+				Constants.ANTI_ADS_KEY_VALUE = "" + edittext.getText();
 				SharedPreferences settings = getSharedPreferences(
 						Constants.PREFERENCES_FILE, 0);
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putString(Constants.ANTI_ADS_KEY,
-						Constants.THE_ANTI_ADS_KEY);
+						Constants.ANTI_ADS_KEY_VALUE);
 				editor.commit();
-				if ("".equals(Constants.THE_ANTI_ADS_KEY)) {
+				if ("".equals(Constants.ANTI_ADS_KEY_VALUE)) {
 					Toast.makeText(Donate.this,
 							getResources().getString(R.string.keineEingabe),
 							Toast.LENGTH_SHORT).show();
