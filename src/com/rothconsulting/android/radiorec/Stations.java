@@ -150,7 +150,7 @@ public class Stations {
 	// DEUTSCHLAND
 	// ***********************************************
 	public static final String RADIO_ANTENNE_BAYERN = "Antenne Bayern";
-	public static final String RADIO_ANTENNE_CHILLOUT = "Antenne Cillout";
+	public static final String RADIO_ANTENNE_CHILLOUT = "Antenne Chillout";
 	public static final String RADIO_ANTENNE_CLASSIC_ROCK = "Antenne Classic Rock";
 	public static final String RADIO_ANTENNE_ROCK = "Antenne Rock";
 	public static final String RADIO_ANTENNE_ROCK_HEAVY_METAL = "Antenne Rock Heavy Metal";
