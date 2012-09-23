@@ -241,6 +241,7 @@ public class Stations {
 	public static final String RADIO_SAW_ROCK = "Radio SAW Rock";
 	public static final String RADIO_SAW_NEUHEITEN = "Radio SAW Neuheiten";
 	public static final String RADIO_SAW_PARTY = "Radio SAW Party";
+	public static final String RADIO_HOCHSTIFT = "Radio Hochstift";
 	public static final String RADIO_HITRADIO_RTL_SACHSEN = "Hitradio RTL Sachsen";
 	public static final String RADIO_MULTICULT = "Radio Multicult";
 	public static final String RADIO_TRAXX_HITS = "Traxx FM Hits";
@@ -2975,6 +2976,20 @@ public class Stations {
 		m.put("homepage", "http://www.radiosaw.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_HOCHSTIFT);
+		m.put("icon", R.drawable.radio_hochstift);
+		m.put("icon_small", R.drawable.radio_hochstift_small);
+		m.put("stream",
+				"http://mp3.radiohochstift.c.nmdn.net/ps-radiohochstift/livestream.mp3");
+		m.put("homepage", "http://www.radiohochstift.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiohochstift.de/studiomail.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
