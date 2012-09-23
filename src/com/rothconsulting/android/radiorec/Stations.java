@@ -262,6 +262,7 @@ public class Stations {
 	public static final String RADIO_KLASSIK_RADIO = "Klassik Radio";
 	public static final String RADIO_KLASSIK_RADIO_LOUNGE = "Klassik Radio Lounge";
 	public static final String RADIO_JUST_90 = "Just 90s";
+	public static final String RADIO_CLUB_LOUNGE_RADIO_HOUSE = "Club Lounge Radio House";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3251,6 +3252,19 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_CLUB_LOUNGE_RADIO_HOUSE);
+		m.put("icon", R.drawable.radio_club_lounge_radio_house);
+		m.put("icon_small", R.drawable.radio_club_lounge_radio_house_small);
+		m.put("stream", "http://62.75.221.6:9999");
+		m.put("homepage", "http://www.club-lounge-radio.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.club-lounge-radio.de/e-Mail_schreiben.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_LOUNGE);
 		setStationlist(stationList, m);
 
 		// ******************************************************************************************************

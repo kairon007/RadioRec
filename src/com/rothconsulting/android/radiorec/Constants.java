@@ -150,7 +150,7 @@ public class Constants {
 	protected static String URL_WEBCAM_VALUE;
 	protected static String URL_CONTACT_VALUE;
 	protected static String URL_SONGTICKER_VALUE;
-	protected static String ANTI_ADS_KEY_VALUE;
+	protected static String ANTI_ADS_VALUE;
 	public static String SD_CARD_PATH_VALUE;
 	protected static int BUFFER_VALUE;
 	protected static boolean CLOSE_APP_TIMER_END_VALUE;

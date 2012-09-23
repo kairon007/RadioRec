@@ -79,7 +79,7 @@ public class Utils {
 	}
 
 	protected boolean hasValidKey() {
-		String key = Constants.ANTI_ADS_KEY;
+		String key = Constants.ANTI_ADS_VALUE;
 		if (key != null && key.startsWith("rR+") && key.endsWith("so@p")) {
 			return true;
 		}
@@ -104,7 +104,7 @@ public class Utils {
 				Constants.URL_WEBCAM_VALUE);
 		editor.putString(Constants.SELECTED_STATION_CONTACT_KEY,
 				Constants.URL_CONTACT_VALUE);
-		editor.putString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_KEY_VALUE);
+		editor.putString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_VALUE);
 		editor.putString(Constants.SD_CARD_PATH_KEY,
 				Constants.SD_CARD_PATH_VALUE);
 		editor.putInt(Constants.BUFFER_KEY, Constants.BUFFER_VALUE);
@@ -134,8 +134,8 @@ public class Utils {
 		Constants.URL_CONTACT_VALUE = settings.getString(
 				Constants.SELECTED_STATION_CONTACT_KEY,
 				Constants.URL_CONTACT_VALUE);
-		Constants.ANTI_ADS_KEY_VALUE = settings.getString(
-				Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_KEY_VALUE);
+		Constants.ANTI_ADS_VALUE = settings.getString(Constants.ANTI_ADS_KEY,
+				Constants.ANTI_ADS_VALUE);
 		Constants.SD_CARD_PATH_VALUE = settings.getString(
 				Constants.SD_CARD_PATH_KEY, Constants.DEFAULT_SD_CARD_PATH);
 		Constants.BUFFER_VALUE = settings.getInt(Constants.BUFFER_KEY,

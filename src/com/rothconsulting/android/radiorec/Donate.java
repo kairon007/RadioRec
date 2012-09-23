@@ -87,22 +87,22 @@ public class Donate extends Activity {
 		});
 
 		final EditText edittext = (EditText) findViewById(R.id.editTextAntiAdsKey);
-		if (Constants.ANTI_ADS_KEY_VALUE != null) {
-			edittext.setText(Constants.ANTI_ADS_KEY_VALUE);
+		if (Constants.ANTI_ADS_VALUE != null) {
+			edittext.setText(Constants.ANTI_ADS_VALUE);
 		}
 
 		final Button saveButton = (Button) findViewById(R.id.buttonSaveAntiAdsKey);
 		saveButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Constants.ANTI_ADS_KEY_VALUE = "" + edittext.getText();
+				Constants.ANTI_ADS_VALUE = "" + edittext.getText();
 				SharedPreferences settings = getSharedPreferences(
 						Constants.PREFERENCES_FILE, 0);
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putString(Constants.ANTI_ADS_KEY,
-						Constants.ANTI_ADS_KEY_VALUE);
+						Constants.ANTI_ADS_VALUE);
 				editor.commit();
-				if ("".equals(Constants.ANTI_ADS_KEY_VALUE)) {
+				if ("".equals(Constants.ANTI_ADS_VALUE)) {
 					Toast.makeText(Donate.this,
 							getResources().getString(R.string.keineEingabe),
 							Toast.LENGTH_SHORT).show();
