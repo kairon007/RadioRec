@@ -112,6 +112,7 @@ public class Stations {
 	public static final String RADIO_RSI_RETE_1 = "RSI Rete 1";
 	public static final String RADIO_RSI_RETE_2 = "RSI Rete 2";
 	public static final String RADIO_RSI_RETE_3 = "RSI Rete 3";
+	public static final String RADIO_FIUME_TICINO = "Radio Fiume Ticino";
 	public static final String RADIO_ROCK_NATION = "Rock Nation";
 	public static final String RADIO_3FACH = "3fach";
 	public static final String RADIO_COUNTRY_RADIO = "Country Radio";
@@ -295,7 +296,6 @@ public class Stations {
 	// ***********************************************
 	public static final String RADIO_PLANET_FM = "Radio Planet FM";
 	public static final String RADIO_OTTO_FM = "Otto FM";
-	public static final String RADIO_FIUME_TICINO = "Radio Fiume Ticino";
 	public static final String RADIO_DEEJAY = "Radio Deejay";
 	public static final String RADIO_MARGHERITA = "Radio Margherita";
 	public static final String RADIO_RTL_IT = "RTL.it 102.5";
@@ -1243,6 +1243,20 @@ public class Stations {
 				"http://retetre.rtsi.ch/index.php?option=com_contact&catid=12&Itemid=30");
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_FIUME_TICINO);
+		m.put("icon", R.drawable.radio_fiume_ticino);
+		m.put("icon_small", R.drawable.radio_fiume_ticino_small);
+		m.put("stream", "http://91.208.130.229");
+		m.put("homepage", "http://www.radioticino.com");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.radioticino.com/interna.asp?idarticolo=498046");
+		m.put("sprache", SPRACHE_IT);
+		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
