@@ -276,6 +276,7 @@ public class Stations {
 	public static final String RADIO_SALZBURG = "Salzburg - ORF";
 	public static final String RADIO_OBEROESTERREICH = "Oberösterreich - ORF";
 	public static final String RADIO_NIEDEROESTERREICH = "Niederösterreich - ORF";
+	public static final String RADIO_VORARLBERG = "Vorarlberg - ORF";
 	public static final String RADIO_HELSINKI_GRAZ = "Helsinki Graz";
 	public static final String RADIO_SOUNDPORTAL = "Soundportal";
 	public static final String RADIO_STEPHANSDOM = "Stephansdom";
@@ -3384,6 +3385,19 @@ public class Stations {
 		m.put("homepage", "http://noe.orf.at");
 		m.put("webcam", "");
 		m.put("email", "noe-publikum@orf.at");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_VORARLBERG);
+		m.put("icon", R.drawable.radio_orf_vorarlberg);
+		m.put("icon_small", R.drawable.radio_orf_vorarlberg_small);
+		m.put("stream", "http://194.232.200.149:8000");
+		m.put("homepage", "http://vorarlberg.orf.at");
+		m.put("webcam", "");
+		m.put("email", "http://vorarlberg.orf.at/studio/tags/kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
