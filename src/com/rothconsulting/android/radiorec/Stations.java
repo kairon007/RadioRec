@@ -288,6 +288,7 @@ public class Stations {
 	public static final String RADIO_ARABELLA = "Radio Arabella";
 	public static final String RADIO_KRONEHIT = "KroneHit";
 	public static final String RADIO_KRONEHIT_90_DANCE = "KroneHit 90s Dance";
+	public static final String RADIO_KRONEHIT_VOLLGAS = "KroneHit Vollgas";
 	public static final String RADIO_886 = "Radio 88.6";
 	public static final String RADIO_ENRGY_WIEN = "Energy Wien";
 	public static final String RADIO_FRESH_BEATZ = "FreshBeatz.fm";
@@ -3543,6 +3544,19 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_kronehit_90s_dance_small);
 		m.put("stream", "http://onair.krone.at/kronehit-90sdance.mp3");
 		m.put("homepage", "http://90sdance.kronehit.at");
+		m.put("webcam", "");
+		m.put("email", "http://www.kronehit.at/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_KRONEHIT_VOLLGAS);
+		m.put("icon", R.drawable.radio_kronehit_vollgas);
+		m.put("icon_small", R.drawable.radio_kronehit_vollgas_small);
+		m.put("stream", "http://onair.krone.at/kronehit-vollgas.mp3");
+		m.put("homepage", "http://www.kronehit.at/vollgas");
 		m.put("webcam", "");
 		m.put("email", "http://www.kronehit.at/kontakt");
 		m.put("sprache", SPRACHE_DE);
