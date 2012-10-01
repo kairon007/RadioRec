@@ -88,4 +88,6 @@
 	<string name="radio">Radio</string>
 	<string name="timer">Timer</string>
 	<string name="appOffAtTimerEnd">Close RadioRec+ after timer ends</string>
+	<string name="search">Search</string>
+	<string name="searchHint">...search radio station...</string>
 </resources>

@@ -287,4 +287,19 @@ public class Utils {
 		}
 	}
 
+	public static List<String> getStationNameList(
+			ArrayList<HashMap<String, Object>> stationList, String searchName) {
+
+		List<String> result = new ArrayList<String>();
+
+		for (HashMap<String, Object> station : stationList) {
+			if (searchName == null
+					|| ((String) station.get("name")).toUpperCase().contains(
+							searchName.toUpperCase())) {
+				result.add("" + station.get("name"));
+			}
+		}
+
+		return result;
+	}
 }

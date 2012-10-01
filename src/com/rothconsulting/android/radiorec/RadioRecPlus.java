@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -28,8 +29,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -52,6 +55,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	static boolean playing;
 	static boolean recording;
 	static boolean showCountdown;
+	// static boolean isSearchVisible = false;
 	private Context context;
 
 	private boolean firstStart;
@@ -130,6 +134,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
 		((TextView) findViewById(R.id.webcam)).setOnClickListener(this);
 		((TextView) findViewById(R.id.mail)).setOnClickListener(this);
+		((TextView) findViewById(R.id.search)).setOnClickListener(this);
 		buttonBack = (ImageButton) findViewById(R.id.back);
 		buttonBack.setOnClickListener(this);
 		buttonBack.setEnabled(false);
@@ -369,6 +374,17 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				startActivity(Intent.createChooser(emailIntent, "Send mail..."));
 			}
 			break;
+		case R.id.search:
+			Log.i(TAG, "search");
+
+			prepareSearch();
+
+			// // Intent intentSearch = new Intent(this, SearchActivity.class);
+			// Intent intentSearch = new Intent(this, TestAutoComplete.class);
+			// intentSearch.putExtra("stationList", stationList);
+			// startActivity(intentSearch);
+			break;
+
 		// case R.id.toggleButtonFavorit:
 		// Log.i(TAG, "favorit");
 		// DbAdapter dbadapter = new DbAdapter(this);
@@ -600,13 +616,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 		Constants.URL_HOMEPAGE_VALUE = "" + map.get("homepage");
 		Constants.URL_WEBCAM_VALUE = "" + map.get("webcam");
-		final TextView textViewWebcam = (TextView) findViewById(R.id.webcam);
-		if (Build.VERSION.SDK_INT < 5 || Constants.URL_WEBCAM_VALUE == null
-				|| Constants.URL_WEBCAM_VALUE.trim().equals("")) {
-			textViewWebcam.setVisibility(View.INVISIBLE);
-		} else {
-			textViewWebcam.setVisibility(View.VISIBLE);
-		}
+		showHideCam();
 		Constants.URL_CONTACT_VALUE = "" + map.get("email");
 
 		// this.setFavIcon();
@@ -904,4 +914,45 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				.setImageResource(R.drawable.button_stop);
 	}
 
+	private void showHideCam() {
+		final TextView textViewWebcam = (TextView) findViewById(R.id.webcam);
+		if (Build.VERSION.SDK_INT < 5 || Constants.URL_WEBCAM_VALUE == null
+				|| Constants.URL_WEBCAM_VALUE.trim().equals("")) {
+			textViewWebcam.setVisibility(View.INVISIBLE);
+		} else {
+			textViewWebcam.setVisibility(View.VISIBLE);
+		}
+	}
+
+	private void prepareSearch() {
+
+		LinearLayout autocomplete = (LinearLayout) findViewById(R.id.linearLayoutAutocomplete);
+		LinearLayout spinner = (LinearLayout) findViewById(R.id.linearLayoutSpinner);
+		final SearchAutoComplete myAutoComplete = (SearchAutoComplete) findViewById(R.id.autocomplete);
+		final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+		if (autocomplete.getVisibility() == View.VISIBLE) {
+			imm.hideSoftInputFromWindow(myAutoComplete.getWindowToken(), 0);
+			autocomplete.setVisibility(View.GONE);
+			spinner.setVisibility(View.VISIBLE);
+		} else {
+			autocomplete.setVisibility(View.VISIBLE);
+			spinner.setVisibility(View.GONE);
+
+			getWindow().setSoftInputMode(
+					WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+
+			ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+					android.R.layout.simple_dropdown_item_1line);
+
+			List<String> stationNameList = Utils.getStationNameList(
+					this.stationList, null);
+			for (String stationName : stationNameList) {
+				adapter.add(stationName);
+			}
+			myAutoComplete.setAdapter(adapter);
+			myAutoComplete.requestFocus();
+			imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+		}
+	}
 }

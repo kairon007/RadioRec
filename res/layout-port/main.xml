@@ -29,11 +29,24 @@
 	<!-- android:layout_weight="1.0" /> -->
 	<!-- </LinearLayout> -->
 
+	<RelativeLayout android:id="@+id/relativeLayoutSearchAndSpinner"
+		android:layout_width="fill_parent" android:layout_height="50dp"
+		android:layout_gravity="bottom" android:layout_marginBottom="10.0dip">
+		
+	<LinearLayout
+		android:orientation="vertical" android:layout_width="fill_parent" android:visibility="gone"
+		android:layout_height="wrap_content" android:id="@+id/linearLayoutAutocomplete" >
+	
+		<com.rothconsulting.android.radiorec.SearchAutoComplete
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:id="@+id/autocomplete" android:hint="@string/searchHint" />
+	</LinearLayout>
+
 	<LinearLayout android:orientation="horizontal"
 		android:background="@color/transparent" android:paddingLeft="0dp"
 		android:paddingTop="0dp" android:paddingRight="0dp"
 		android:paddingBottom="0dp" android:layout_width="fill_parent"
-		android:layout_height="wrap_content">
+		android:layout_height="wrap_content" android:id="@+id/linearLayoutSpinner" >
 		<Spinner android:id="@+id/stations" android:prompt="@string/sortByCountry"
 		    android:layout_height="wrap_content" android:layout_width="fill_parent"
 			android:layout_marginTop="4dp"/>
@@ -49,22 +62,29 @@
 		<!-- android:textOn="" /> -->
 	</LinearLayout>
 
+	</RelativeLayout>
+	
 	<LinearLayout android:layout_width="fill_parent"
 		android:orientation="horizontal" android:layout_height="wrap_content">
 		<TextView android:layout_height="wrap_content"
 			android:layout_width="wrap_content" android:id="@+id/webcam"
 			android:drawableTop="@android:drawable/ic_menu_camera" android:text="Webcam"
-			android:gravity="center" android:layout_margin="4dp"
+			android:gravity="center" android:layout_margin="2dp"
 			android:layout_weight="1" />
 		<TextView android:layout_height="wrap_content"
 			android:layout_width="wrap_content" android:id="@+id/homepage"
 			android:drawableTop="@android:drawable/ic_menu_mapmode" android:text="Homepage"
-			android:gravity="center" android:layout_margin="4dp"
+			android:gravity="center" android:layout_margin="2dp"
 			android:layout_weight="1" />
 		<TextView android:layout_height="wrap_content"
 			android:layout_width="wrap_content" android:id="@+id/mail"
 			android:drawableTop="@android:drawable/ic_menu_send" android:text="Mail"
-			android:gravity="center" android:layout_margin="4dp"
+			android:gravity="center" android:layout_margin="2dp"
+			android:layout_weight="1" />
+		<TextView android:layout_height="wrap_content"
+			android:layout_width="wrap_content" android:id="@+id/search"
+			android:drawableTop="@android:drawable/ic_menu_search" android:text="@string/search"
+			android:gravity="center" android:layout_margin="2dp"
 			android:layout_weight="1" />
 	</LinearLayout>
 	<!-- TextView android:layout_height="wrap_content" android:layout_width="fill_parent" 
