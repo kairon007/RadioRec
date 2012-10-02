@@ -226,6 +226,7 @@ public class Stations {
 	public static final String RADIO_GALAXY_ASCHAFFENBURG = "Galaxy Aschaffenburg";
 	public static final String RADIO_GALAXY_KEMPTEN = "Galaxy Kempten";
 	public static final String RADIO_GALAXY_BAMBERG = "Galaxy Bamberg/Coburg";
+	public static final String RADIO_BAMBERG = "Radio Bamberg";
 	public static final String RADIO_SPREERADIO = "Spreeradio";
 	public static final String RADIO_OSTSEEWELLE = "Ostseewelle";
 	public static final String RADIO_EUSKIRCHEN = "Euskirchen";
@@ -2775,6 +2776,20 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.radio-galaxy.de/galaxy-cities/bambergcoburg/contact.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_BAMBERG);
+		m.put("icon", R.drawable.radio_bamberg);
+		m.put("icon_small", R.drawable.radio_bamberg_small);
+		m.put("stream", "http://rs1.stream24.net:80/stream");
+		m.put("homepage", "http://www.radio-bamberg.de/");
+		m.put("webcam",
+				"http://www.funkhaus-bamberg.de/ftp/webcam/bamberg1/image.jpg");
+		m.put("email", "http://www.radio-bamberg.de/default.aspx?ID=4321");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
