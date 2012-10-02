@@ -31,6 +31,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
@@ -109,7 +110,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		utils.getPreferences(this);
 		// get components and register clicks
 		spnAllStations = (Spinner) findViewById(R.id.stations);
-		Constants.SPINNER_ALL_STATIONS = spnAllStations.getId();
+		// Constants.SPINNER_ALL_STATIONS = spnAllStations.getId();
 		// spnFavoriten = (Spinner) findViewById(R.id.spinnerFav);
 		// Constants.SPINNER_FAVORITEN = spnFavoriten.getId();
 		// spnLaender = (Spinner) findViewById(R.id.spinnerLand);
@@ -926,10 +927,26 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	private void prepareSearch() {
 
-		LinearLayout autocomplete = (LinearLayout) findViewById(R.id.linearLayoutAutocomplete);
-		LinearLayout spinner = (LinearLayout) findViewById(R.id.linearLayoutSpinner);
-		final SearchAutoComplete myAutoComplete = (SearchAutoComplete) findViewById(R.id.autocomplete);
+		final LinearLayout autocomplete = (LinearLayout) findViewById(R.id.linearLayoutAutocomplete);
+		final LinearLayout spinner = (LinearLayout) findViewById(R.id.linearLayoutSpinner);
+		final SearchAutoCompleteTextView myAutoComplete = (SearchAutoCompleteTextView) findViewById(R.id.autocomplete);
+		myAutoComplete.setText("");
 		final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+		myAutoComplete.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View textView,
+					int arg2, long arg3) {
+
+				imm.hideSoftInputFromWindow(myAutoComplete.getWindowToken(), 0);
+				autocomplete.setVisibility(View.GONE);
+				spinner.setVisibility(View.VISIBLE);
+
+				spnAllStations.setSelection(Utils.getSpinnerPosition(
+						stationList, "" + ((TextView) textView).getText()));
+			}
+		});
 
 		if (autocomplete.getVisibility() == View.VISIBLE) {
 			imm.hideSoftInputFromWindow(myAutoComplete.getWindowToken(), 0);

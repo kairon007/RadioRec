@@ -302,4 +302,18 @@ public class Utils {
 
 		return result;
 	}
+
+	public static int getSpinnerPosition(
+			ArrayList<HashMap<String, Object>> stationList, String searchName) {
+
+		int position = 0;
+		for (int i = 0; i < stationList.size(); i++) {
+			HashMap<String, Object> stationMap = stationList.get(i);
+			String stationName = (String) stationMap.get("name");
+			if (stationName.toUpperCase().contains(searchName.toUpperCase())) {
+				return i;
+			}
+		}
+		return position;
+	}
 }

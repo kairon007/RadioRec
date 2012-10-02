@@ -5,26 +5,26 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.AutoCompleteTextView;
 
-public class SearchAutoComplete extends AutoCompleteTextView {
+public class SearchAutoCompleteTextView extends AutoCompleteTextView {
 
 	// http://techdroid.kbeanie.com/2010/04/custom-autocomplete-for-android.html
 
 	Context context;
 
-	public SearchAutoComplete(final Context context, final AttributeSet attrs,
+	public SearchAutoCompleteTextView(final Context context, final AttributeSet attrs,
 			final int defStyle) {
 		super(context, attrs, defStyle);
 		this.context = context;
 		this.setThreshold(0);
 	}
 
-	public SearchAutoComplete(final Context context, final AttributeSet attrs) {
+	public SearchAutoCompleteTextView(final Context context, final AttributeSet attrs) {
 		super(context, attrs);
 		this.context = context;
 		this.setThreshold(0);
 	}
 
-	public SearchAutoComplete(final Context context) {
+	public SearchAutoCompleteTextView(final Context context) {
 		super(context);
 		this.context = context;
 		this.setThreshold(0);

@@ -6,5 +6,5 @@
 
 	<com.rothconsulting.android.radiorec.SearchAutoComplete
 		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:id="@+id/autocomplete" android:textSize="22dp"/>
+		android:id="@+id/autocomplete"/>
 </LinearLayout>
