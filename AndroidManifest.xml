@@ -27,7 +27,7 @@
 		<activity android:name="com.google.ads.AdActivity"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
 		<activity android:name=".Info" />
-		<activity android:name=".Webcam" />
+		<activity android:name=".Webcam" android:configChanges="keyboard|keyboardHidden|orientation" />
 		<activity android:name=".Settings" />
 		<activity android:name=".Donate" />
 		<activity android:name=".filechooser.FileChooser" />

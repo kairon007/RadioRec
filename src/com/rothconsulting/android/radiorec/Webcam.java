@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
@@ -97,8 +98,15 @@ public class Webcam extends Activity {
 		@Override
 		public void onPageFinished(WebView view, String url) {
 			Log.i(TAG, "Finished loading URL: " + url);
-			if (progressDialog != null && progressDialog.isShowing()) {
-				progressDialog.dismiss();
+			try {
+				if (view != null && progressDialog != null
+						&& progressDialog.isShowing()) {
+					progressDialog.dismiss();
+				}
+			} catch (Exception e) {
+				// do nothing to avoid error:
+				// java.lang.IllegalArgumentException: View not attached to
+				// window manager
 			}
 		}
 
@@ -109,6 +117,13 @@ public class Webcam extends Activity {
 			Toast.makeText(getApplicationContext(), "Oh no! " + description,
 					Toast.LENGTH_LONG).show();
 		}
+	}
+
+	// Rotation
+	@Override
+	public void onConfigurationChanged(Configuration _newConfig) {
+		super.onConfigurationChanged(_newConfig);
+		// mach nix!
 	}
 
 	// ------------------------------------------------------------
