@@ -360,10 +360,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		switch (v.getId()) {
 		case R.id.homepage:
 			Log.i(TAG, "homepage");
-			Intent intentHomepage = new Intent(Intent.ACTION_VIEW);
 			if (Constants.URL_HOMEPAGE_VALUE != null
-					&& !Constants.URL_HOMEPAGE_VALUE.equals("")) {
-				intentHomepage.setData(Uri.parse(Constants.URL_HOMEPAGE_VALUE));
+					&& !Constants.URL_HOMEPAGE_VALUE.trim().equals("")) {
+				Uri uri = Uri.parse(Constants.URL_HOMEPAGE_VALUE);
+				Intent intentHomepage = new Intent(Intent.ACTION_VIEW, uri);
 				startActivity(intentHomepage);
 			}
 			break;

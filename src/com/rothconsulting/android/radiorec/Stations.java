@@ -2676,7 +2676,7 @@ public class Stations {
 		m.put("icon", R.drawable.radio_energy_sachsen);
 		m.put("icon_small", R.drawable.radio_energy_sachsen_small);
 		m.put("stream", "http://149.5.240.22/WR-DE-WR57");
-		m.put("homepage", "www.energy.de/sachsen");
+		m.put("homepage", "http://www.energy.de/sachsen");
 		m.put("webcam",
 				"http://www.energy-sachsen.de/www/extapp/webcam/images/studio.jpg");
 		m.put("email", "hotline@nrjmail.de");
@@ -2690,7 +2690,7 @@ public class Stations {
 		m.put("icon", R.drawable.radio_ffn_niedersachsen);
 		m.put("icon_small", R.drawable.radio_ffn_niedersachsen_small);
 		m.put("stream", "http://rs35.stream24.org/stream");
-		m.put("homepage", "www.ffn.de");
+		m.put("homepage", "http://www.ffn.de");
 		m.put("webcam", "http://www.ffn.de/fileadmin/content/webcam/studio.jpg");
 		m.put("email", "radio@ffn.de");
 		m.put("sprache", SPRACHE_DE);

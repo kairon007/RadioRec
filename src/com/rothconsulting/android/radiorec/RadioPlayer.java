@@ -37,12 +37,6 @@ public class RadioPlayer {
 		progressDialog.show();
 		Utils.log(TAG, "--- threadDoStartPlay.start()");
 		threadDoStartPlay.start();
-		// if (mediaPlayer != null) {
-		// Utils.log(TAG, "*********** isRadioRunning2=" +
-		// mediaPlayer.isPlaying());
-		// } else {
-		// Utils.log(TAG, "*********** isRadioRunning2=false");
-		// }
 	}
 
 	protected void doStopPlay(Context context) {
@@ -53,10 +47,10 @@ public class RadioPlayer {
 				threadDoStartPlay.interrupt();
 			}
 			if (mediaPlayer != null) {
-				Utils.log(TAG,
-						"mediaPlayer.isPlaying()=" + mediaPlayer.isPlaying());
+				Utils.log(TAG, "mediaPlayer.isPlaying="
+						+ isPlayerPlaying(mediaPlayer));
 
-				if (mediaPlayer.isPlaying()) {
+				if (isPlayerPlaying(mediaPlayer)) {
 					Utils.log(TAG, "stop()");
 					mediaPlayer.stop();
 					Utils.log(TAG, "release()");
@@ -113,9 +107,6 @@ public class RadioPlayer {
 					mediaPlayer.start();
 					getNotifInstance(context)
 							.showStatusBarNotificationIsRunning();
-					// Utils.log(TAG,
-					// "*********** isRadioRunning1="
-					// + mediaPlayer.isPlaying());
 
 					// Thread threadSongTicker = new Thread() {
 					// @Override
@@ -165,7 +156,7 @@ public class RadioPlayer {
 					doStopPlay(context);
 				} finally {
 					Utils.log(TAG, "createThread in finally");
-					if (mediaPlayer == null || !mediaPlayer.isPlaying()) {
+					if (!isPlayerPlaying(mediaPlayer)) {
 						getNotifInstance(context)
 								.showStatusBarNotificationError(
 										R.string.internetadresseNichtErreichbar);
@@ -177,4 +168,16 @@ public class RadioPlayer {
 		};
 	}
 
+	private boolean isPlayerPlaying(MediaPlayer mediaPlayer) {
+		boolean result = false;
+		try {
+			if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+				result = true;
+			}
+		} catch (Exception e) {
+			// do nothing because we do not know what to do...
+			return result;
+		}
+		return result;
+	}
 }
