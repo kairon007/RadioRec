@@ -19,16 +19,8 @@ public class DBHelper extends SQLiteOpenHelper {
 	private static final String DATABASE_CREATE = "create table "
 			+ DbAdapter.T_STATION + " (" + DbAdapter.KEY_ROWID
 			+ " integer primary key autoincrement, "
-			+ DbAdapter.KEY_STATION_ICON + " integer not null, "
 			+ DbAdapter.KEY_STATION_ICON_SMALL + " integer not null, "
-			+ DbAdapter.KEY_STATION_NAME + " text not null, "
-			+ DbAdapter.KEY_STATION_STEAM + " text not null, "
-			+ DbAdapter.KEY_STATION_HOMEPAGE + " text not null, "
-			+ DbAdapter.KEY_STATION_CONTACT + " text, "
-			+ DbAdapter.KEY_STATION_WEBCAM + " text, " + DbAdapter.KEY_COUNTRY
-			+ " text not null, " + DbAdapter.KEY_LANGUAGE + " text not null, "
-			+ DbAdapter.KEY_FAVORITE + " boolean, " + DbAdapter.KEY_GENRE
-			+ " text not null);";
+			+ DbAdapter.KEY_STATION_NAME + " text not null);";
 
 	public DBHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);

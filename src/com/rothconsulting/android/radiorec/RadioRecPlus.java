@@ -15,6 +15,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -44,9 +45,11 @@ import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.rothconsulting.android.radiorec.filechooser.FileChooser;
 import com.rothconsulting.android.radiorec.sqlitedb.DBHelper;
+import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
 
 public class RadioRecPlus extends Activity implements OnClickListener,
 		OnItemSelectedListener, OnSeekBarChangeListener {
@@ -68,7 +71,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private static RadioPlayer radioPlayer;
 	private static AsyncTask<URL, Integer, Long> recordTask;
 	private String origPlanetradioSteam = null;
-	// private ToggleButton favIcon = null;
+	private ToggleButton favIcon = null;
 	private LinearLayout mainScreen;
 	private LinearLayout autocomplete;
 	private LinearLayout spinner;
@@ -128,8 +131,8 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// ((Button) findViewById(R.id.buttonFav)).setOnClickListener(this);
 		// ((Button) findViewById(R.id.buttonLand)).setOnClickListener(this);
 		// ((Button) findViewById(R.id.buttonStil)).setOnClickListener(this);
-		// favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
-		// favIcon.setOnClickListener(this);
+		favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
+		favIcon.setOnClickListener(this);
 		mainScreen = (LinearLayout) findViewById(R.id.mainScreen);
 		autocomplete = (LinearLayout) findViewById(R.id.linearLayoutAutocomplete);
 		spinner = (LinearLayout) findViewById(R.id.linearLayoutSpinner);
@@ -395,29 +398,30 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			prepareSearch();
 			break;
 
-		// case R.id.toggleButtonFavorit:
-		// Log.i(TAG, "favorit");
-		// DbAdapter dbadapter = new DbAdapter(this);
-		// if (favIcon.isChecked()) {
-		// favIcon.setButtonDrawable(android.R.drawable.star_big_on);
-		// Utils.log(TAG, "isChecked -> instertStation");
-		// dbadapter.open();
-		// dbadapter.insertStation(Constants.SELECTED_STATION_ICON_VALUE,
-		// Constants.SELECTED_STATION_ICON_VALUE_SMALL,
-		// Constants.SELECTED_STATION_NAME_VALUE,
-		// Constants.URL_LIVE_STREAM_VALUE,
-		// Constants.URL_HOMEPAGE_VALUE, Constants.URL_WEBCAM_VALUE,
-		// Constants.URL_CONTACT_VALUE, true, Stations.LAND_CH,
-		// Stations.SPRACHE_DE, Stations.STIL_POP);
-		// dbadapter.close();
-		// } else {
-		// favIcon.setButtonDrawable(android.R.drawable.star_big_off);
-		// Utils.log(TAG, "is NOT Checked -> deleteStation");
-		// dbadapter.open();
-		// dbadapter.deleteStation(Constants.SELECTED_STATION_NAME_VALUE);
-		// dbadapter.close();
-		// }
-		// break;
+		case R.id.toggleButtonFavorit:
+			Log.i(TAG, "favorit");
+			DbAdapter dbadapter = new DbAdapter(this);
+			if (favIcon.isChecked()) {
+				favIcon.setButtonDrawable(android.R.drawable.star_big_on);
+				Utils.log(TAG, "isChecked -> instertStation");
+				dbadapter.open();
+				dbadapter.insertStation(Constants.SELECTED_STATION_ICON_VALUE,
+						Constants.SELECTED_STATION_ICON_VALUE,
+						Constants.SELECTED_STATION_NAME_VALUE,
+						Constants.URL_LIVE_STREAM_VALUE,
+						Constants.URL_HOMEPAGE_VALUE,
+						Constants.URL_WEBCAM_VALUE,
+						Constants.URL_CONTACT_VALUE, true, Stations.LAND_CH,
+						Stations.SPRACHE_DE, Stations.STIL_POP);
+				dbadapter.close();
+			} else {
+				favIcon.setButtonDrawable(android.R.drawable.star_big_off);
+				Utils.log(TAG, "is NOT Checked -> deleteStation");
+				dbadapter.open();
+				dbadapter.deleteStation(Constants.SELECTED_STATION_NAME_VALUE);
+				dbadapter.close();
+			}
+			break;
 		case R.id.back:
 			if (spnAllStations.getSelectedItemPosition() > 0) {
 				buttonBack.setEnabled(false);
@@ -629,7 +633,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		showHideCam();
 		Constants.URL_CONTACT_VALUE = "" + map.get("email");
 
-		// this.setFavIcon();
+		this.setFavIcon();
 
 		if (!firstStart && playing) {
 			if (Constants.getLiveStreamStations().contains(
@@ -771,23 +775,23 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 	}
 
-	// private void setFavIcon() {
-	// DbAdapter dbadapter = new DbAdapter(this);
-	// dbadapter.open();
-	// Cursor cursor = null;
-	// cursor = dbadapter.fetchStation(Constants.SELECTED_STATION_NAME_VALUE);
-	// if (cursor != null && cursor.getCount() > 0) {
-	// favIcon.setChecked(true);
-	// Utils.log(TAG, "favIcon.setChecked(true)");
-	// favIcon.setButtonDrawable(android.R.drawable.star_big_on);
-	// } else {
-	// favIcon.setChecked(false);
-	// Utils.log(TAG, "favIcon.setChecked(false)");
-	// favIcon.setButtonDrawable(android.R.drawable.star_big_off);
-	// }
-	// cursor.close();
-	// dbadapter.close();
-	// }
+	private void setFavIcon() {
+		DbAdapter dbadapter = new DbAdapter(this);
+		dbadapter.open();
+		Cursor cursor = null;
+		cursor = dbadapter.fetchStation(Constants.SELECTED_STATION_NAME_VALUE);
+		if (cursor != null && cursor.getCount() > 0) {
+			favIcon.setChecked(true);
+			Utils.log(TAG, "favIcon.setChecked(true)");
+			favIcon.setButtonDrawable(android.R.drawable.star_big_on);
+		} else {
+			favIcon.setChecked(false);
+			Utils.log(TAG, "favIcon.setChecked(false)");
+			favIcon.setButtonDrawable(android.R.drawable.star_big_off);
+		}
+		cursor.close();
+		dbadapter.close();
+	}
 
 	private void showTimerbox(boolean on) {
 		if (on) {

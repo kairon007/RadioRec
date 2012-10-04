@@ -13,17 +13,8 @@ public class DbAdapter {
 	private static final String TAG = "DbAdapter";
 	// Database fields
 	public static final String KEY_ROWID = "_id";
-	public static final String KEY_STATION_ICON = "icon";
 	public static final String KEY_STATION_ICON_SMALL = "icon_small";
 	public static final String KEY_STATION_NAME = "name";
-	public static final String KEY_STATION_HOMEPAGE = "homepage";
-	public static final String KEY_STATION_STEAM = "stream";
-	public static final String KEY_STATION_WEBCAM = "webcam";
-	public static final String KEY_STATION_CONTACT = "contact";
-	public static final String KEY_LANGUAGE = "language";
-	public static final String KEY_COUNTRY = "country";
-	public static final String KEY_GENRE = "genre";
-	public static final String KEY_FAVORITE = "favorite";
 	public static final String T_STATION = "station";
 	private final Context context;
 	private SQLiteDatabase database;
@@ -54,17 +45,8 @@ public class DbAdapter {
 			boolean favorite, String country, String language, String genre) {
 
 		ContentValues values = new ContentValues();
-		values.put(KEY_STATION_ICON, icon);
 		values.put(KEY_STATION_ICON_SMALL, iconSmall);
 		values.put(KEY_STATION_NAME, stationName);
-		values.put(KEY_STATION_STEAM, stream);
-		values.put(KEY_STATION_HOMEPAGE, homepage);
-		values.put(KEY_STATION_WEBCAM, webcam);
-		values.put(KEY_STATION_CONTACT, contact);
-		values.put(KEY_FAVORITE, favorite);
-		values.put(KEY_COUNTRY, country);
-		values.put(KEY_LANGUAGE, language);
-		values.put(KEY_GENRE, genre);
 
 		return database.insert(T_STATION, null, values);
 	}
@@ -101,8 +83,8 @@ public class DbAdapter {
 
 		Cursor mCursor = null;
 		mCursor = database.query(true, T_STATION, new String[] {
-				KEY_STATION_ICON, KEY_STATION_NAME }, KEY_STATION_NAME + "= '"
-				+ stationName + "'", null, null, null, null, null);
+				KEY_STATION_ICON_SMALL, KEY_STATION_NAME }, KEY_STATION_NAME
+				+ "= '" + stationName + "'", null, null, null, null, null);
 		if (mCursor != null) {
 			mCursor.moveToFirst();
 			Utils.log(TAG, "cursor.getCount()=" + mCursor.getCount());

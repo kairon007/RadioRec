@@ -32,38 +32,32 @@
 	<RelativeLayout android:id="@+id/relativeLayoutSearchAndSpinner"
 		android:layout_width="fill_parent" android:layout_height="50dp"
 		android:layout_gravity="bottom" android:layout_marginBottom="10.0dip">
-		
-	<LinearLayout
-		android:orientation="vertical" android:layout_width="fill_parent" android:visibility="gone"
-		android:layout_height="wrap_content" android:id="@+id/linearLayoutAutocomplete" >
-	
-		<com.rothconsulting.android.radiorec.SearchAutoCompleteTextView
-			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:id="@+id/autocomplete" android:hint="@string/searchHint" />
-	</LinearLayout>
 
-	<LinearLayout android:orientation="horizontal"
-		android:background="@color/transparent" android:paddingLeft="0dp"
-		android:paddingTop="0dp" android:paddingRight="0dp"
-		android:paddingBottom="0dp" android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:id="@+id/linearLayoutSpinner" >
-		<Spinner android:id="@+id/stations" android:prompt="@string/sortByCountry"
-		    android:layout_height="wrap_content" android:layout_width="fill_parent"
-			android:layout_marginTop="4dp"/>
-				<!-- <ToggleButton -->
-		<!-- android:id="@+id/toggleButtonFavorit" -->
-		<!-- android:layout_width="wrap_content" -->
-		<!-- android:layout_height="wrap_content" -->
-		<!-- android:layout_weight="0.2" -->
-		<!-- android:background="@color/transparent" -->
-		<!-- android:src="@android:drawable/star_big_off" -->
-		<!-- android:text="" -->
-		<!-- android:textOff="" -->
-		<!-- android:textOn="" /> -->
-	</LinearLayout>
+		<LinearLayout android:orientation="vertical"
+			android:layout_width="fill_parent" android:visibility="gone"
+			android:layout_height="wrap_content" android:id="@+id/linearLayoutAutocomplete">
+
+			<com.rothconsulting.android.radiorec.SearchAutoCompleteTextView
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:id="@+id/autocomplete" android:hint="@string/searchHint" />
+		</LinearLayout>
+
+		<LinearLayout android:orientation="horizontal"
+			android:background="@color/transparent" android:paddingLeft="0dp"
+			android:paddingTop="0dp" android:paddingRight="0dp"
+			android:paddingBottom="0dp" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:id="@+id/linearLayoutSpinner">
+			<Spinner android:id="@+id/stations" android:prompt="@string/sortByCountry"
+				android:layout_height="wrap_content" android:layout_width="0dp"
+				android:layout_marginTop="4dp" android:layout_weight="8" />
+			<ToggleButton android:id="@+id/toggleButtonFavorit"
+				android:layout_width="48dp" android:layout_height="fill_parent"
+				android:background="@color/transparent" android:src="@android:drawable/star_big_off"
+				android:text="" android:textOff="" android:textOn="" />
+		</LinearLayout>
 
 	</RelativeLayout>
-	
+
 	<LinearLayout android:layout_width="fill_parent"
 		android:orientation="horizontal" android:layout_height="wrap_content">
 		<TextView android:layout_height="wrap_content"
@@ -106,24 +100,25 @@
 			android:layout_gravity="bottom" android:layout_marginBottom="10dp"
 			android:layout_marginLeft="10dp" android:layout_marginRight="64dp"
 			android:background="@color/darkBlue" android:visibility="gone">
-	
-			<TextView android:id="@+id/timerSeekbarText" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:layout_marginLeft="30dp"
-				android:textSize="12dp" android:layout_marginTop="10dp"
-				android:visibility="gone" android:textColor="@android:color/white"
-				android:text="@string/sleepTimerEinstellen" />
+
+			<TextView android:id="@+id/timerSeekbarText"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_marginLeft="30dp" android:textSize="12dp"
+				android:layout_marginTop="10dp" android:visibility="gone"
+				android:textColor="@android:color/white" android:text="@string/sleepTimerEinstellen" />
 			<SeekBar android:id="@+id/timerSeekbar" android:layout_width="match_parent"
 				android:max="120" android:visibility="gone" android:layout_height="wrap_content"
-				android:layout_marginLeft="10dp" android:layout_marginTop="30dp" android:layout_marginRight="10dp" />
+				android:layout_marginLeft="10dp" android:layout_marginTop="30dp"
+				android:layout_marginRight="10dp" />
 		</RelativeLayout>
-	
-	<ImageButton android:id="@+id/imageButtonUhr" android:layout_alignParentRight="true" 
-	    	android:layout_width="wrap_content" android:layout_height="wrap_content"
-    	    android:contentDescription="Uhr" android:src="@drawable/button_uhr_weiss"
-    	    android:background="@color/transparent"/>
+
+		<ImageButton android:id="@+id/imageButtonUhr"
+			android:layout_alignParentRight="true" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:contentDescription="Uhr"
+			android:src="@drawable/button_uhr_weiss" android:background="@color/transparent" />
 	</RelativeLayout>
 
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
 		android:orientation="vertical" android:gravity="center"
 		android:layout_width="fill_parent" android:layout_height="wrap_content"

@@ -8,7 +8,6 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -32,7 +31,8 @@ public class TabFavourites extends ListActivity {
 		Cursor cursor = dbAdapter.fetchAllStations();
 		if (cursor.getCount() > 0) {
 			cursor.moveToFirst();
-			int colIcon = cursor.getColumnIndex(DbAdapter.KEY_STATION_ICON);
+			int colIcon = cursor
+					.getColumnIndex(DbAdapter.KEY_STATION_ICON_SMALL);
 			int colName = cursor.getColumnIndex(DbAdapter.KEY_STATION_NAME);
 			for (int i = 0; i < cursor.getCount(); i++) {
 				HashMap<String, Object> m = new HashMap<String, Object>();

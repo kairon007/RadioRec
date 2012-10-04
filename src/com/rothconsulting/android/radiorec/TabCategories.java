@@ -78,7 +78,7 @@ public class TabCategories extends ListActivity {
 		Cursor cursor = myDbAdapter.fetchAllStations();
 		if (cursor != null && cursor.getCount() > 0) {
 			int columnIndexIcon = cursor
-					.getColumnIndex(DbAdapter.KEY_STATION_ICON);
+					.getColumnIndex(DbAdapter.KEY_STATION_ICON_SMALL);
 			int columnIndexName = cursor
 					.getColumnIndex(DbAdapter.KEY_STATION_NAME);
 			cursor.moveToFirst();

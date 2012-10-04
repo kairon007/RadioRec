@@ -1,99 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/mainScreen" android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:background="@drawable/bg_land">
-	
-    
-<!-- 	<LinearLayout android:orientation="horizontal" -->
-<!-- 		android:background="@color/transparent" android:paddingLeft="0dp" -->
-<!-- 		android:paddingTop="2dp" android:paddingRight="0dp" -->
-<!-- 		android:paddingBottom="0dp" android:layout_width="fill_parent" -->
-<!-- 		android:layout_height="wrap_content"> -->
-<!-- 		<Spinner android:layout_height="0dp" android:prompt="@string/favoriten" -->
-<!-- 			android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerFav" /> -->
-<!-- 		<Spinner android:layout_height="0dp" android:prompt="@string/laender" -->
-<!-- 			android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerLand" /> -->
-<!-- 		<Spinner android:layout_height="wrap_content" android:prompt="@string/stil" -->
-<!-- 			android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerStil" /> -->
-<!--    		<Button android:id="@+id/buttonFav" android:layout_width="0dp" -->
-<!-- 			android:layout_height="40dp" android:text="@string/favoriten" -->
-<!-- 			android:layout_weight="1.0" /> -->
-<!-- 		<Button android:id="@+id/buttonLand" android:layout_width="0dp" -->
-<!-- 			android:layout_height="40dp" android:text="@string/laender" -->
-<!-- 			android:layout_weight="1.0" /> -->
-<!-- 		<Button android:id="@+id/buttonStil" android:layout_width="0dp" -->
-<!-- 			android:layout_height="40dp" android:text="@string/stil" -->
-<!-- 			android:layout_weight="1.0" /> -->
-<!-- 	</LinearLayout> -->
-    
-    <RelativeLayout android:id="@+id/relativeLayoutSearchAndSpinner"
+	android:id="@+id/mainScreen" android:orientation="vertical"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:background="@drawable/bg_land">
+
+	<!-- <LinearLayout android:orientation="horizontal" -->
+	<!-- android:background="@color/transparent" android:paddingLeft="0dp" -->
+	<!-- android:paddingTop="2dp" android:paddingRight="0dp" -->
+	<!-- android:paddingBottom="0dp" android:layout_width="fill_parent" -->
+	<!-- android:layout_height="wrap_content"> -->
+	<!-- <Spinner android:layout_height="0dp" android:prompt="@string/favoriten" -->
+	<!-- android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerFav" 
+		/> -->
+	<!-- <Spinner android:layout_height="0dp" android:prompt="@string/laender" -->
+	<!-- android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerLand" 
+		/> -->
+	<!-- <Spinner android:layout_height="wrap_content" android:prompt="@string/stil" -->
+	<!-- android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerStil" 
+		/> -->
+	<!-- <Button android:id="@+id/buttonFav" android:layout_width="0dp" -->
+	<!-- android:layout_height="40dp" android:text="@string/favoriten" -->
+	<!-- android:layout_weight="1.0" /> -->
+	<!-- <Button android:id="@+id/buttonLand" android:layout_width="0dp" -->
+	<!-- android:layout_height="40dp" android:text="@string/laender" -->
+	<!-- android:layout_weight="1.0" /> -->
+	<!-- <Button android:id="@+id/buttonStil" android:layout_width="0dp" -->
+	<!-- android:layout_height="40dp" android:text="@string/stil" -->
+	<!-- android:layout_weight="1.0" /> -->
+	<!-- </LinearLayout> -->
+
+	<RelativeLayout android:id="@+id/relativeLayoutSearchAndSpinner"
 		android:layout_width="fill_parent" android:layout_height="50dp"
 		android:layout_gravity="bottom" android:layout_marginBottom="10.0dip">
-		
-	<LinearLayout
-		android:orientation="vertical" android:layout_width="fill_parent" android:visibility="gone"
-		android:layout_height="wrap_content" android:id="@+id/linearLayoutAutocomplete" >
-	
-		<com.rothconsulting.android.radiorec.SearchAutoCompleteTextView
-			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:id="@+id/autocomplete" android:hint="@string/searchHint" />
-	</LinearLayout>
-    
-	<LinearLayout android:orientation="horizontal"
-		android:background="@color/transparent" android:paddingLeft="0dp"
-		android:paddingTop="0dp" android:paddingRight="0dp"
-		android:paddingBottom="0dp" android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:id="@+id/linearLayoutSpinner" >
-	<Spinner android:layout_height="wrap_content" android:prompt="@string/sortByCountry"
-		android:layout_marginTop="2dp" android:layout_width="fill_parent"
-		android:id="@+id/stations" />
-	</LinearLayout>
+
+		<LinearLayout android:orientation="vertical"
+			android:layout_width="fill_parent" android:visibility="gone"
+			android:layout_height="wrap_content" android:id="@+id/linearLayoutAutocomplete">
+
+			<com.rothconsulting.android.radiorec.SearchAutoCompleteTextView
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:id="@+id/autocomplete" android:hint="@string/searchHint" />
+		</LinearLayout>
+
+		<LinearLayout android:orientation="horizontal"
+			android:background="@color/transparent" android:paddingLeft="0dp"
+			android:paddingTop="0dp" android:paddingRight="0dp"
+			android:paddingBottom="0dp" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:id="@+id/linearLayoutSpinner">
+			<Spinner android:id="@+id/stations" android:prompt="@string/sortByCountry"
+				android:layout_height="wrap_content" android:layout_width="0dp"
+				android:layout_marginTop="2dp" android:layout_weight="8" />
+			<ToggleButton android:id="@+id/toggleButtonFavorit"
+				android:layout_width="48dp" android:layout_height="fill_parent"
+				android:background="@color/transparent" android:src="@android:drawable/star_big_off"
+				android:text="" android:textOff="" android:textOn="" />
+
+		</LinearLayout>
 	</RelativeLayout>
-	
+
 	<RelativeLayout android:id="@+id/timerLayoutWhole"
 		android:layout_width="fill_parent" android:layout_height="77dp"
 		android:layout_gravity="bottom" android:layout_marginBottom="10.0dip">
-	
+
 		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-				xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-				android:orientation="vertical" android:layout_width="fill_parent"
-				android:gravity="center" android:layout_height="fill_parent"
-				android:id="@+id/adsLayout">
+			xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+			android:orientation="vertical" android:layout_width="fill_parent"
+			android:gravity="center" android:layout_height="fill_parent"
+			android:id="@+id/adsLayout">
 			<com.google.ads.AdView android:id="@+id/adView"
-					android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:gravity="center" ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER"
-					ads:loadAdOnCreate="false" />
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:gravity="center" ads:adUnitId="a14dc9885936cd9" ads:adSize="BANNER"
+				ads:loadAdOnCreate="false" />
 		</LinearLayout>
-	    	    
+
 		<RelativeLayout android:id="@+id/timerSeekbarLayout"
 			android:layout_width="fill_parent" android:layout_height="77dp"
 			android:layout_gravity="bottom" android:layout_marginBottom="10dp"
 			android:layout_marginLeft="10dp" android:layout_marginRight="64dp"
 			android:background="@color/darkBlue" android:visibility="gone">
 
-   			<SeekBar android:id="@+id/timerSeekbar" android:layout_width="match_parent"
+			<SeekBar android:id="@+id/timerSeekbar" android:layout_width="match_parent"
 				android:max="120" android:visibility="gone" android:layout_height="wrap_content"
-				android:layout_marginLeft="10dp" android:layout_marginRight="10dp"  />
-			<TextView android:id="@+id/timerSeekbarText" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:layout_alignParentLeft="true"
+				android:layout_marginLeft="10dp" android:layout_marginRight="10dp" />
+			<TextView android:id="@+id/timerSeekbarText"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
 				android:layout_alignParentBottom="true" android:layout_marginLeft="30dp"
-				android:layout_marginTop="10dp" android:layout_marginBottom="10dp" android:textSize="12dp"
-				android:visibility="gone" android:textColor="@android:color/white"
+				android:layout_marginTop="10dp" android:layout_marginBottom="10dp"
+				android:textSize="12dp" android:visibility="gone" android:textColor="@android:color/white"
 				android:text="@string/sleepTimerEinstellen" />
 		</RelativeLayout>
-	
-	<ImageButton android:id="@+id/imageButtonUhr" android:layout_alignParentRight="true" 
-	    	android:layout_width="wrap_content" android:layout_height="wrap_content"
-    	    android:contentDescription="Uhr" android:src="@drawable/button_uhr_weiss"
-    	    android:background="@color/transparent"/>
+
+		<ImageButton android:id="@+id/imageButtonUhr"
+			android:layout_alignParentRight="true" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:contentDescription="@string/timer"
+			android:src="@drawable/button_uhr_weiss" android:background="@color/transparent" />
 
 	</RelativeLayout>
-		
-	<ToggleButton android:id="@+id/toggleButtonFavorit"
-		android:layout_width="wrap_content" android:layout_height="0dp"
-		android:layout_weight="1" android:background="@color/transparent"
-		android:src="@android:drawable/star_big_off" android:gravity="center|top"
-		android:textOn="" android:textOff="" android:text="" />
+
 	<LinearLayout android:layout_height="wrap_content"
 		android:layout_width="fill_parent" android:orientation="horizontal">
 		<ImageView android:layout_height="fill_parent" android:src="@drawable/icon"
@@ -102,8 +106,8 @@
 		<LinearLayout android:layout_height="wrap_content"
 			android:layout_weight="1" android:layout_width="fill_parent"
 			android:orientation="vertical">
-		    
-		    <LinearLayout android:layout_width="fill_parent"
+
+			<LinearLayout android:layout_width="fill_parent"
 				android:orientation="horizontal" android:layout_height="wrap_content">
 				<TextView android:layout_height="wrap_content"
 					android:layout_width="wrap_content" android:id="@+id/webcam"
@@ -122,9 +126,9 @@
 					android:layout_weight="1" />
 				<TextView android:layout_height="wrap_content"
 					android:layout_width="wrap_content" android:id="@+id/search"
-					android:drawableTop="@android:drawable/ic_menu_search" android:text="@string/search"
-					android:gravity="center" android:layout_margin="2dp"
-					android:layout_weight="1" />
+					android:drawableTop="@android:drawable/ic_menu_search"
+					android:text="@string/search" android:gravity="center"
+					android:layout_margin="2dp" android:layout_weight="1" />
 			</LinearLayout>
 			<!-- TextView android:layout_height="wrap_content" android:layout_width="fill_parent" 
 				android:id="@+id/ticker" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" 
@@ -152,7 +156,7 @@
 					android:layout_height="wrap_content" android:src="@drawable/button_forward"
 					android:layout_width="wrap_content" android:id="@+id/fwd" />
 			</LinearLayout>
-						
+
 		</LinearLayout>
 	</LinearLayout>
 </LinearLayout>
