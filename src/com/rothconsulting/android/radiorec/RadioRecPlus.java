@@ -56,7 +56,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	static boolean playing;
 	static boolean recording;
 	static boolean showCountdown;
-	// static boolean isSearchVisible = false;
 	private Context context;
 
 	private boolean firstStart;
@@ -71,6 +70,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private String origPlanetradioSteam = null;
 	// private ToggleButton favIcon = null;
 	private LinearLayout mainScreen;
+	private LinearLayout autocomplete;
+	private LinearLayout spinner;
+
 	private RelativeLayout timerSeekbarLayout;
 	private RelativeLayout timerLayoutWhole;
 	private SeekBar timerSeekbar;
@@ -102,6 +104,12 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		initGui();
 	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+		hideSearch();
+	}
+
 	private void initGui() {
 		Utils.log(TAG, "RadioRePlus");
 		setContentView(R.layout.main);
@@ -123,6 +131,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
 		// favIcon.setOnClickListener(this);
 		mainScreen = (LinearLayout) findViewById(R.id.mainScreen);
+		autocomplete = (LinearLayout) findViewById(R.id.linearLayoutAutocomplete);
+		spinner = (LinearLayout) findViewById(R.id.linearLayoutSpinner);
+
 		timerLayoutWhole = (RelativeLayout) findViewById(R.id.timerLayoutWhole);
 		timerSeekbarLayout = (RelativeLayout) findViewById(R.id.timerSeekbarLayout);
 		timerSeekbar = (SeekBar) findViewById(R.id.timerSeekbar);
@@ -210,7 +221,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// spnAllStations.setBackgroundColor(Color.LTGRAY);
 		spnAllStations.setAdapter(adapter);
 		spnAllStations.setOnItemSelectedListener(this);
-
+		hideSearch();
 	}
 
 	@Override
@@ -341,6 +352,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	@Override
 	public void onClick(View v) {
 		firstStart = false;
+		// always hide search
+		if (v.getId() != R.id.search) {
+			hideSearch();
+		}
 
 		switch (v.getId()) {
 		case R.id.homepage:
@@ -377,13 +392,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.search:
 			Log.i(TAG, "search");
-
 			prepareSearch();
-
-			// // Intent intentSearch = new Intent(this, SearchActivity.class);
-			// Intent intentSearch = new Intent(this, TestAutoComplete.class);
-			// intentSearch.putExtra("stationList", stationList);
-			// startActivity(intentSearch);
 			break;
 
 		// case R.id.toggleButtonFavorit:
@@ -873,6 +882,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		stopPlayAndRecord();
 	}
 
+	// Rotation
 	@Override
 	public void onConfigurationChanged(Configuration _newConfig) {
 		super.onConfigurationChanged(_newConfig);
@@ -926,9 +936,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	}
 
 	private void prepareSearch() {
-
-		final LinearLayout autocomplete = (LinearLayout) findViewById(R.id.linearLayoutAutocomplete);
-		final LinearLayout spinner = (LinearLayout) findViewById(R.id.linearLayoutSpinner);
 		final SearchAutoCompleteTextView myAutoComplete = (SearchAutoCompleteTextView) findViewById(R.id.autocomplete);
 		myAutoComplete.setText("");
 		final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -950,14 +957,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 		if (autocomplete.getVisibility() == View.VISIBLE) {
 			imm.hideSoftInputFromWindow(myAutoComplete.getWindowToken(), 0);
-			autocomplete.setVisibility(View.GONE);
-			spinner.setVisibility(View.VISIBLE);
+			hideSearch();
 		} else {
 			autocomplete.setVisibility(View.VISIBLE);
-			spinner.setVisibility(View.GONE);
+			spinner.setVisibility(View.INVISIBLE);
 
-			getWindow().setSoftInputMode(
-					WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+			// getWindow().setSoftInputMode(
+			// WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
 
 			ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
 					android.R.layout.simple_dropdown_item_1line);
@@ -971,5 +977,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			myAutoComplete.requestFocus();
 			imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
 		}
+	}
+
+	private void hideSearch() {
+		autocomplete.setVisibility(View.GONE);
+		spinner.setVisibility(View.VISIBLE);
+		// hide keyboard
+		getWindow().setSoftInputMode(
+				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 	}
 }
