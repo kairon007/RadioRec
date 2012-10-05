@@ -939,7 +939,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	private void showHideCam() {
 		final TextView textViewWebcam = (TextView) findViewById(R.id.webcam);
-		if (Build.VERSION.SDK_INT < 5 || Constants.URL_WEBCAM_VALUE == null
+		if (Build.VERSION.SDK_INT < 5) {
+			textViewWebcam.setVisibility(View.GONE);
+		} else if (Constants.URL_WEBCAM_VALUE == null
 				|| Constants.URL_WEBCAM_VALUE.trim().equals("")) {
 			textViewWebcam.setVisibility(View.INVISIBLE);
 		} else {
