@@ -51,7 +51,7 @@ public class Settings extends Activity implements
 				SharedPreferences settings = getSharedPreferences(
 						Constants.PREFERENCES_FILE, 0);
 				SharedPreferences.Editor editor = settings.edit();
-				editor.putString(Constants.SD_CARD_PATH_VALUE,
+				editor.putString(Constants.SD_CARD_PATH_KEY,
 						Constants.SD_CARD_PATH_VALUE);
 				editor.commit();
 				Toast.makeText(
