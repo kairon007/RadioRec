@@ -254,6 +254,7 @@ public class Stations {
 	public static final String RADIO_MDR_INFO = "MDR Info";
 	public static final String RADIO_MDR_JUMP = "MDR Jump";
 	public static final String RADIO_MDR_SPUTNIK = "MDR Sputnik";
+	public static final String RADIO_MDR_FIGARO = "MDR Figaro";
 	public static final String RADIO_FRANK_ZAPPA_STREAM = "Frank Zappa Stream";
 	public static final String RADIO_KRAUTROCK_WORLD = "Krautrock World";
 	public static final String RADIO_DRAGONDEVIL = "DrAgOnDeViL";
@@ -3148,6 +3149,20 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_MDR_FIGARO);
+		m.put("icon", R.drawable.radio_mdr_figaro);
+		m.put("icon_small", R.drawable.radio_mdr_figaro_small);
+		m.put("stream",
+				"http://c22033-l.i.core.cdn.streamfarm.net/22007mdrfigaro/live/3087mdr_figaro/live_de_128.mp3");
+		m.put("homepage", "http://www.mdr-figaro.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.mdr.de/mdr-figaro/kontakt/index.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_KLASSIK);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
