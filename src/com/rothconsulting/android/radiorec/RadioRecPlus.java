@@ -45,16 +45,16 @@ import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
 
 import com.rothconsulting.android.radiorec.filechooser.FileChooser;
-import com.rothconsulting.android.radiorec.sqlitedb.DBHelper;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
 
 public class RadioRecPlus extends Activity implements OnClickListener,
 		OnItemSelectedListener, OnSeekBarChangeListener {
 
 	static final String TAG = "RadioRecPlus";
+	static final String FAV_ON = "favOn";
+	static final String FAV_OFF = "favOff";
 
 	static boolean playing;
 	static boolean recording;
@@ -67,11 +67,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private ArrayList<HashMap<String, Object>> stationList;
 	// private ArrayList<HashMap<String, Object>> favList, landList, stilList;
 	private ImageView logo;
+	private TextView favIcon;
 	private ImageButton buttonBack, buttonFwd, buttonRec, buttonPlay;
 	private static RadioPlayer radioPlayer;
 	private static AsyncTask<URL, Integer, Long> recordTask;
 	private String origPlanetradioSteam = null;
-	private ToggleButton favIcon = null;
 	private LinearLayout mainScreen;
 	private LinearLayout autocomplete;
 	private LinearLayout spinner;
@@ -96,7 +96,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	public void onCreate(Bundle savedInstanceState) {
 
 		context = this;
-		context.deleteDatabase(DBHelper.DATABASE_NAME);
+		// context.deleteDatabase(DBHelper.DATABASE_NAME);
 		gcCounter = 0;
 		super.onCreate(savedInstanceState);
 		if (Build.VERSION.SDK_INT < 7) {
@@ -131,8 +131,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// ((Button) findViewById(R.id.buttonFav)).setOnClickListener(this);
 		// ((Button) findViewById(R.id.buttonLand)).setOnClickListener(this);
 		// ((Button) findViewById(R.id.buttonStil)).setOnClickListener(this);
-		favIcon = (ToggleButton) findViewById(R.id.toggleButtonFavorit);
-		favIcon.setOnClickListener(this);
 		mainScreen = (LinearLayout) findViewById(R.id.mainScreen);
 		autocomplete = (LinearLayout) findViewById(R.id.linearLayoutAutocomplete);
 		spinner = (LinearLayout) findViewById(R.id.linearLayoutSpinner);
@@ -146,9 +144,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		imageButtonUhr.setOnClickListener(this);
 
 		logo = (ImageView) findViewById(R.id.logo);
-		((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
 		((TextView) findViewById(R.id.webcam)).setOnClickListener(this);
 		((TextView) findViewById(R.id.mail)).setOnClickListener(this);
+		((TextView) findViewById(R.id.homepage)).setOnClickListener(this);
+		favIcon = ((TextView) findViewById(R.id.favoriten));
+		favIcon.setOnClickListener(this);
 		((TextView) findViewById(R.id.search)).setOnClickListener(this);
 		buttonBack = (ImageButton) findViewById(R.id.back);
 		buttonBack.setOnClickListener(this);
@@ -225,6 +225,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		spnAllStations.setAdapter(adapter);
 		spnAllStations.setOnItemSelectedListener(this);
 		hideSearch();
+		setFavIcon();
 	}
 
 	@Override
@@ -398,12 +399,15 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			prepareSearch();
 			break;
 
-		case R.id.toggleButtonFavorit:
+		case R.id.favoriten:
 			Log.i(TAG, "favorit");
 			DbAdapter dbadapter = new DbAdapter(this);
-			if (favIcon.isChecked()) {
-				favIcon.setButtonDrawable(android.R.drawable.star_big_on);
-				Utils.log(TAG, "isChecked -> instertStation");
+
+			if (favIcon.getTag().equals(FAV_OFF)) {
+				favIcon.setTag(FAV_ON);
+				favIcon.setCompoundDrawablesWithIntrinsicBounds(0,
+						android.R.drawable.star_big_on, 0, 0);
+				Utils.log(TAG, "favOn -> instertStation");
 				dbadapter.open();
 				dbadapter.insertStation(Constants.SELECTED_STATION_ICON_VALUE,
 						Constants.SELECTED_STATION_ICON_VALUE,
@@ -415,8 +419,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 						Stations.SPRACHE_DE, Stations.STIL_POP);
 				dbadapter.close();
 			} else {
-				favIcon.setButtonDrawable(android.R.drawable.star_big_off);
-				Utils.log(TAG, "is NOT Checked -> deleteStation");
+				favIcon.setTag(FAV_OFF);
+				favIcon.setCompoundDrawablesWithIntrinsicBounds(0,
+						android.R.drawable.star_big_off, 0, 0);
+				Utils.log(TAG, "favOff -> deleteStation");
 				dbadapter.open();
 				dbadapter.deleteStation(Constants.SELECTED_STATION_NAME_VALUE);
 				dbadapter.close();
@@ -781,13 +787,15 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Cursor cursor = null;
 		cursor = dbadapter.fetchStation(Constants.SELECTED_STATION_NAME_VALUE);
 		if (cursor != null && cursor.getCount() > 0) {
-			favIcon.setChecked(true);
-			Utils.log(TAG, "favIcon.setChecked(true)");
-			favIcon.setButtonDrawable(android.R.drawable.star_big_on);
+			Utils.log(TAG, "favIcon ON");
+			favIcon.setTag(FAV_ON);
+			favIcon.setCompoundDrawablesWithIntrinsicBounds(0,
+					android.R.drawable.star_big_on, 0, 0);
 		} else {
-			favIcon.setChecked(false);
-			Utils.log(TAG, "favIcon.setChecked(false)");
-			favIcon.setButtonDrawable(android.R.drawable.star_big_off);
+			Utils.log(TAG, "favIcon OFF");
+			favIcon.setTag(FAV_OFF);
+			favIcon.setCompoundDrawablesWithIntrinsicBounds(0,
+					android.R.drawable.star_big_off, 0, 0);
 		}
 		cursor.close();
 		dbadapter.close();

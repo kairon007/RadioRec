@@ -89,7 +89,7 @@ public class DbAdapter {
 			mCursor.moveToFirst();
 			Utils.log(TAG, "cursor.getCount()=" + mCursor.getCount());
 		}
-		Utils.log(TAG, "cursor=" + mCursor);
+		Utils.log(TAG, "cursor.position=" + mCursor.getPosition());
 		return mCursor;
 	}
 
