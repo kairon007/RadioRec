@@ -4,34 +4,30 @@
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:background="@drawable/bg_port">
 
-	<!-- <LinearLayout android:orientation="horizontal" -->
-	<!-- android:background="@color/transparent" android:paddingLeft="0dp" -->
-	<!-- android:paddingTop="2dp" android:paddingRight="0dp" -->
-	<!-- android:paddingBottom="0dp" android:layout_width="fill_parent" -->
-	<!-- android:layout_height="wrap_content"> -->
-	<!-- <Spinner android:layout_height="0dp" android:prompt="@string/favoriten" -->
-	<!-- android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerFav" 
-		/> -->
-	<!-- <Spinner android:layout_height="0dp" android:prompt="@string/laender" -->
-	<!-- android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerLand" 
-		/> -->
-	<!-- <Spinner android:layout_height="wrap_content" android:prompt="@string/stil" -->
-	<!-- android:layout_marginTop="0dp" android:layout_width="0dp" android:id="@+id/spinnerStil" 
-		/> -->
-	<!-- <Button android:id="@+id/buttonFav" android:layout_width="0dp" -->
-	<!-- android:layout_height="40dp" android:text="@string/favoriten" -->
-	<!-- android:layout_weight="1.0" /> -->
-	<!-- <Button android:id="@+id/buttonLand" android:layout_width="0dp" -->
-	<!-- android:layout_height="40dp" android:text="@string/laender" -->
-	<!-- android:layout_weight="1.0" /> -->
-	<!-- <Button android:id="@+id/buttonStil" android:layout_width="0dp" -->
-	<!-- android:layout_height="40dp" android:text="@string/stil" -->
-	<!-- android:layout_weight="1.0" /> -->
-	<!-- </LinearLayout> -->
+	<LinearLayout android:orientation="horizontal"
+		android:background="@color/transparent" android:padding="0dp"
+		android:layout_width="fill_parent" android:layout_height="wrap_content">
+		<Spinner android:layout_height="0dp" android:prompt="@string/favoriten"
+			android:layout_margin="0dp" android:layout_width="0dp" android:id="@+id/spinnerFav" />
+		<Spinner android:layout_height="0dp" android:prompt="@string/laender"
+			android:layout_margin="0dp" android:layout_width="0dp" android:id="@+id/spinnerLand"
+			android:visibility="gone" />
+		<Spinner android:layout_height="wrap_content" android:prompt="@string/alphabetisch"
+			android:layout_margin="0dp" android:layout_width="0dp" android:id="@+id/spinnerAlphabetisch" />
+		<Button android:id="@+id/buttonFav" android:layout_width="0dp"
+			android:layout_height="40dp" android:text="@string/favoriten"
+			android:layout_weight="1" />
+		<Button android:id="@+id/buttonLand" android:layout_width="0dp"
+			android:layout_height="40dp" android:text="@string/laender"
+			android:layout_weight="1" android:visibility="gone" />
+		<Button android:id="@+id/buttonAlphabetisch" android:layout_width="0dp"
+			android:layout_height="40dp" android:text="@string/alphabetisch"
+			android:layout_weight="1"/>
+	</LinearLayout>
 
 	<RelativeLayout android:id="@+id/relativeLayoutSearchAndSpinner"
-		android:layout_width="fill_parent" android:layout_height="50dp"
-		android:layout_gravity="bottom" android:layout_marginBottom="10.0dip">
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_margin="0dp" android:gravity="top" android:layout_gravity="top">
 
 		<LinearLayout android:orientation="vertical"
 			android:layout_width="fill_parent" android:visibility="gone"
@@ -43,44 +39,38 @@
 		</LinearLayout>
 
 		<LinearLayout android:orientation="horizontal"
-			android:background="@color/transparent" android:paddingLeft="0dp"
-			android:paddingTop="0dp" android:paddingRight="0dp"
-			android:paddingBottom="0dp" android:layout_width="fill_parent"
+			android:background="@color/transparent" 
+			android:padding="0dp" android:layout_width="fill_parent"
 			android:layout_height="wrap_content" android:id="@+id/linearLayoutSpinner">
 			<Spinner android:id="@+id/stations" android:prompt="@string/sortByCountry"
 				android:layout_height="wrap_content" android:layout_width="fill_parent"
-				android:layout_marginTop="4dp" />
+				android:layout_margin="0dp" android:gravity="top" />
 		</LinearLayout>
 
 	</RelativeLayout>
 
 	<LinearLayout android:layout_width="fill_parent"
 		android:orientation="horizontal" android:layout_height="wrap_content">
-   		<TextView  android:id="@+id/webcam"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:drawableTop="@android:drawable/ic_menu_camera" android:text="Webcam"
-			android:gravity="center" android:layout_margin="1dp"
+		<TextView android:id="@+id/webcam" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:drawableTop="@android:drawable/ic_menu_camera"
+			android:text="Webcam" android:gravity="center" android:layout_margin="1dp"
 			android:layout_weight="1" />
-   		<TextView android:id="@+id/mail"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:drawableTop="@android:drawable/ic_menu_send" android:text="Mail"
-			android:gravity="center" android:layout_margin="1dp"
+		<TextView android:id="@+id/mail" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:drawableTop="@android:drawable/ic_menu_send"
+			android:text="Mail" android:gravity="center" android:layout_margin="1dp"
 			android:layout_weight="1" />
-		<TextView android:id="@+id/homepage"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:drawableTop="@android:drawable/ic_menu_mapmode" android:text="Homepage"
-			android:gravity="center" android:layout_margin="1dp"
-			android:layout_weight="1" />
-		<TextView android:id="@+id/favoriten"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:drawableTop="@android:drawable/star_big_off" android:text="Favoriten"
-			android:gravity="center" android:layout_margin="1dp"
-			android:layout_weight="1" android:tag="favOff" />
-		<TextView android:id="@+id/search"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:drawableTop="@android:drawable/ic_menu_search" android:text="@string/search"
-			android:gravity="center" android:layout_margin="1dp"
-			android:layout_weight="1" />
+		<TextView android:id="@+id/homepage" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:drawableTop="@android:drawable/ic_menu_mapmode"
+			android:text="Homepage" android:gravity="center"
+			android:layout_margin="1dp" android:layout_weight="1" />
+		<TextView android:id="@+id/favoriten" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:drawableTop="@android:drawable/star_big_off"
+			android:text="Favoriten" android:gravity="center"
+			android:layout_margin="1dp" android:layout_weight="1" android:tag="favOff" />
+		<TextView android:id="@+id/search" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:drawableTop="@android:drawable/ic_menu_search"
+			android:text="@string/search" android:gravity="center"
+			android:layout_margin="1dp" android:layout_weight="1" />
 	</LinearLayout>
 	<!-- TextView android:layout_height="wrap_content" android:layout_width="fill_parent" 
 		android:id="@+id/ticker" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" 

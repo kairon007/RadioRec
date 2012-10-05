@@ -176,6 +176,7 @@ public class Constants {
 	public static int SPINNER_ALL_STATIONS = -2;
 	public static int SPINNER_FAVORITEN = -3;
 	public static int SPINNER_LAENDER = -4;
-	public static int SPINNER_STIL = -5;
+	public static int SPINNER_ALPHABETISCH = -5;
+	public static int SPINNER_SPRACHE = -6;
 
 }

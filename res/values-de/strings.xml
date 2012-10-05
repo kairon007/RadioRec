@@ -90,4 +90,6 @@
 	<string name="appOffAtTimerEnd">RadioRec+ schliessen wenn Timer endet</string>
 	<string name="search">Suchen</string>
 	<string name="searchHint">...Radio Station suchen...</string>
+	<string name="alphabetisch">Alphabetisch</string>
+	
 </resources>

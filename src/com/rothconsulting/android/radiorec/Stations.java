@@ -14,16 +14,16 @@ public class Stations {
 	// ArrayList<HashMap<String, Object>> returnStilListPop;
 	// ArrayList<HashMap<String, Object>> returnStilListRock;
 	// ArrayList<HashMap<String, Object>> returnStilListLounge;
-	//
-	// public Stations() {
-	// returnLandListCh = new ArrayList<HashMap<String, Object>>();
-	// returnLandListDe = new ArrayList<HashMap<String, Object>>();
-	// returnLandListAt = new ArrayList<HashMap<String, Object>>();
-	// returnLandListDiv = new ArrayList<HashMap<String, Object>>();
-	// returnStilListPop = new ArrayList<HashMap<String, Object>>();
-	// returnStilListRock = new ArrayList<HashMap<String, Object>>();
-	// returnStilListLounge = new ArrayList<HashMap<String, Object>>();
-	// }
+
+	public Stations() {
+		// returnLandListCh = new ArrayList<HashMap<String, Object>>();
+		// returnLandListDe = new ArrayList<HashMap<String, Object>>();
+		// returnLandListAt = new ArrayList<HashMap<String, Object>>();
+		// returnLandListDiv = new ArrayList<HashMap<String, Object>>();
+		// returnStilListPop = new ArrayList<HashMap<String, Object>>();
+		// returnStilListRock = new ArrayList<HashMap<String, Object>>();
+		// returnStilListLounge = new ArrayList<HashMap<String, Object>>();
+	}
 
 	public static final String STIL_POP = "Pop";
 	public static final String STIL_ROCK = "Rock";
@@ -385,6 +385,14 @@ public class Stations {
 	//
 	// public ArrayList<HashMap<String, Object>> getStilPop() {
 	// return returnStilListPop;
+	// }
+	//
+	// public ArrayList<HashMap<String, Object>> getStilRock() {
+	// return returnStilListRock;
+	// }
+	//
+	// public ArrayList<HashMap<String, Object>> getStilLounge() {
+	// return returnStilListLounge;
 	// }
 
 	/**

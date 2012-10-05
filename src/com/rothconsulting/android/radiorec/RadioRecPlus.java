@@ -35,6 +35,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -62,10 +63,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private Context context;
 
 	private boolean firstStart;
-	private Spinner spnAllStations;
-	// private Spinner spnFavoriten, spnLaender, spnStil;
-	private ArrayList<HashMap<String, Object>> stationList;
-	// private ArrayList<HashMap<String, Object>> favList, landList, stilList;
+	// private Spinner spnLaender;
+	private Spinner spnFavoriten, spnAllStations, spnAlphabetisch;
+	// ivate ArrayList<HashMap<String, Object>> landList;
+	private ArrayList<HashMap<String, Object>> favList, stationList,
+			alphabeticList;
 	private ImageView logo;
 	private TextView favIcon;
 	private ImageButton buttonBack, buttonFwd, buttonRec, buttonPlay;
@@ -121,16 +123,17 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		utils.getPreferences(this);
 		// get components and register clicks
 		spnAllStations = (Spinner) findViewById(R.id.stations);
-		// Constants.SPINNER_ALL_STATIONS = spnAllStations.getId();
-		// spnFavoriten = (Spinner) findViewById(R.id.spinnerFav);
-		// Constants.SPINNER_FAVORITEN = spnFavoriten.getId();
+		Constants.SPINNER_ALL_STATIONS = spnAllStations.getId();
+		spnFavoriten = (Spinner) findViewById(R.id.spinnerFav);
+		Constants.SPINNER_FAVORITEN = spnFavoriten.getId();
 		// spnLaender = (Spinner) findViewById(R.id.spinnerLand);
 		// Constants.SPINNER_LAENDER = spnLaender.getId();
-		// spnStil = (Spinner) findViewById(R.id.spinnerStil);
-		// Constants.SPINNER_STIL = spnStil.getId();
-		// ((Button) findViewById(R.id.buttonFav)).setOnClickListener(this);
-		// ((Button) findViewById(R.id.buttonLand)).setOnClickListener(this);
-		// ((Button) findViewById(R.id.buttonStil)).setOnClickListener(this);
+		spnAlphabetisch = (Spinner) findViewById(R.id.spinnerAlphabetisch);
+		Constants.SPINNER_ALPHABETISCH = spnAlphabetisch.getId();
+		((Button) findViewById(R.id.buttonFav)).setOnClickListener(this);
+		((Button) findViewById(R.id.buttonLand)).setOnClickListener(this);
+		((Button) findViewById(R.id.buttonAlphabetisch))
+				.setOnClickListener(this);
 		mainScreen = (LinearLayout) findViewById(R.id.mainScreen);
 		autocomplete = (LinearLayout) findViewById(R.id.linearLayoutAutocomplete);
 		spinner = (LinearLayout) findViewById(R.id.linearLayoutSpinner);
@@ -199,29 +202,27 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// landList.addAll(theStations.getLandListDe());
 		// landList.addAll(theStations.getLandListAt());
 		// landList.addAll(theStations.getLandListDiv());
-		//
-		// stilList = theStations.getStilPop();
-		// stilList.addAll(theStations.getStilPop());
-		//
+
+		alphabeticList = Utils.sortStationsByName(stationList);
+
 		// SimpleAdapter laenderAdapter = new SimpleAdapter(this, landList,
 		// R.layout.station_listitem,
 		// new String[] { "icon_small", "name" }, new int[] {
 		// R.id.option_icon, R.id.option_text });
 		// spnLaender.setAdapter(laenderAdapter);
 		// spnLaender.setOnItemSelectedListener(this);
-		//
-		// SimpleAdapter stilAdapter = new SimpleAdapter(this, stilList,
-		// R.layout.station_listitem,
-		// new String[] { "icon_small", "name" }, new int[] {
-		// R.id.option_icon, R.id.option_text });
-		// spnStil.setAdapter(stilAdapter);
-		// spnStil.setOnItemSelectedListener(this);
+
+		SimpleAdapter alphabetischAdapter = new SimpleAdapter(this,
+				alphabeticList, R.layout.station_listitem, new String[] {
+						"icon_small", "name" }, new int[] { R.id.option_icon,
+						R.id.option_text });
+		spnAlphabetisch.setAdapter(alphabetischAdapter);
+		spnAlphabetisch.setOnItemSelectedListener(this);
 
 		SimpleAdapter adapter = new SimpleAdapter(this, stationList,
 				R.layout.station_listitem,
 				new String[] { "icon_small", "name" }, new int[] {
 						R.id.option_icon, R.id.option_text });
-		// spnAllStations.setBackgroundColor(Color.LTGRAY);
 		spnAllStations.setAdapter(adapter);
 		spnAllStations.setOnItemSelectedListener(this);
 		hideSearch();
@@ -307,50 +308,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			alertbox.show();
 		}
 		return null;
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, -1, 0, this.getResources().getString(R.string.info))
-				.setIcon(android.R.drawable.ic_menu_info_details);
-		menu.add(0, -2, 0, this.getResources().getString(R.string.musicBrowser))
-				.setIcon(android.R.drawable.ic_menu_slideshow);
-		menu.add(0, -3, 0,
-				this.getResources().getString(R.string.donate_adfree)).setIcon(
-				android.R.drawable.ic_menu_agenda);
-		menu.add(0, -4, 0, this.getResources().getString(R.string.settings))
-				.setIcon(android.R.drawable.ic_menu_preferences);
-		menu.add(0, -5, 0, this.getResources().getString(R.string.ende))
-				.setIcon(android.R.drawable.ic_menu_close_clear_cancel);
-		return super.onCreateOptionsMenu(menu);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		case -1:
-			Log.i(TAG, "info");
-			this.startActivity(new Intent(this, Info.class));
-			break;
-		case -2:
-			Log.i(TAG, "file chooser");
-			this.startActivity(new Intent(this, FileChooser.class));
-			break;
-		case -3:
-			Log.i(TAG, "spende");
-			this.startActivity(new Intent(this, Donate.class));
-			break;
-		case -4:
-			Log.i(TAG, "settings");
-			this.startActivity(new Intent(this, Settings.class));
-			break;
-		case -5:
-			Log.i(TAG, "exit");
-			stopPlayAndRecord();
-			finish();
-			break;
-		}
-		return super.onOptionsItemSelected(item);
 	}
 
 	@Override
@@ -474,78 +431,64 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			showCountdown = !showCountdown;
 			this.showTimerbox(showCountdown);
 			break;
-		// case R.id.buttonFav:
-		// Utils.log(TAG,
-		// "Button Favoriten pressed. First="
-		// + spnFavoriten.getFirstVisiblePosition());
-		//
-		// dbadapter = new DbAdapter(this);
-		// dbadapter.open();
-		// Cursor cursor = null;
-		// cursor = dbadapter.fetchAllStations();
-		// favList = new ArrayList<HashMap<String, Object>>();
-		//
-		// if (cursor != null && cursor.getCount() > 0) {
-		//
-		// cursor.moveToFirst();
-		//
-		// do {
-		//
-		// String name = cursor.getString(cursor
-		// .getColumnIndex(DbAdapter.KEY_STATION_NAME));
-		// int icon = cursor.getInt(cursor
-		// .getColumnIndex(DbAdapter.KEY_STATION_ICON));
-		// int iconSmall = cursor.getInt(cursor
-		// .getColumnIndex(DbAdapter.KEY_STATION_ICON_SMALL));
-		// String stream = cursor.getString(cursor
-		// .getColumnIndex(DbAdapter.KEY_STATION_STEAM));
-		// String homepage = cursor.getString(cursor
-		// .getColumnIndex(DbAdapter.KEY_STATION_HOMEPAGE));
-		// String webcam = cursor.getString(cursor
-		// .getColumnIndex(DbAdapter.KEY_STATION_WEBCAM));
-		// String contact = cursor.getString(cursor
-		// .getColumnIndex(DbAdapter.KEY_STATION_CONTACT));
-		// String sprache = cursor.getString(cursor
-		// .getColumnIndex(DbAdapter.KEY_LANGUAGE));
-		// String land = cursor.getString(cursor
-		// .getColumnIndex(DbAdapter.KEY_COUNTRY));
-		// String stil = cursor.getString(cursor
-		// .getColumnIndex(DbAdapter.KEY_GENRE));
-		//
-		// HashMap<String, Object> map = utils.fillStationHashMap(
-		// name, icon, iconSmall, stream, homepage, webcam,
-		// contact, sprache, land, stil);
-		//
-		// favList.add(map);
-		// } while (cursor.moveToNext());
-		//
-		// }
-		// cursor.close();
-		// dbadapter.close();
-		//
-		// SimpleAdapter favoritesAdapter = new SimpleAdapter(this, favList,
-		// R.layout.station_listitem, new String[] { "icon_small",
-		// "name" }, new int[] { R.id.option_icon,
-		// R.id.option_text });
-		// spnFavoriten.setAdapter(favoritesAdapter);
-		// spnFavoriten.setOnItemSelectedListener(this);
-		// spnFavoriten.performClick();
-		//
-		// break;
+		case R.id.buttonFav:
+			Constants.SPINNER_SELECTION = Constants.SPINNER_FAVORITEN;
+
+			Utils.log(
+					TAG,
+					"Button Favoriten pressed. First="
+							+ spnFavoriten.getFirstVisiblePosition());
+
+			dbadapter = new DbAdapter(this);
+			dbadapter.open();
+			Cursor cursor = null;
+			cursor = dbadapter.fetchAllStations();
+			favList = new ArrayList<HashMap<String, Object>>();
+
+			if (cursor != null && cursor.getCount() > 0) {
+				cursor.moveToFirst();
+				do {
+					String name = cursor.getString(cursor
+							.getColumnIndex(DbAdapter.KEY_STATION_NAME));
+
+					HashMap<String, Object> map = Utils.getFullStation(
+							stationList, name);
+
+					favList.add(map);
+				} while (cursor.moveToNext());
+
+			}
+			cursor.close();
+			dbadapter.close();
+
+			SimpleAdapter favoritesAdapter = new SimpleAdapter(this, favList,
+					R.layout.station_listitem, new String[] { "icon_small",
+							"name" }, new int[] { R.id.option_icon,
+							R.id.option_text });
+			spnFavoriten.setAdapter(favoritesAdapter);
+			spnFavoriten.setOnItemSelectedListener(this);
+			spnFavoriten.performClick();
+			break;
 		// case R.id.buttonLand:
-		// Utils.log(TAG,
+		// Constants.SPINNER_SELECTION = Constants.SPINNER_LAENDER;
+		//
+		// Utils.log(
+		// TAG,
 		// "Button Land pressed. Firts="
 		// + spnLaender.getFirstVisiblePosition());
 		//
 		// spnLaender.performClick();
 		// break;
-		// case R.id.buttonStil:
-		// Utils.log(TAG,
-		// "Button Stil pressed. Firts="
-		// + spnStil.getFirstVisiblePosition());
-		//
-		// spnStil.performClick();
-		// break;
+		case R.id.buttonAlphabetisch:
+			Constants.SPINNER_SELECTION = Constants.SPINNER_ALPHABETISCH;
+
+			Utils.log(
+					TAG,
+					"Button Stil pressed. Firts="
+							+ spnAlphabetisch.getFirstVisiblePosition());
+
+			spnAlphabetisch.performClick();
+			break;
 		}
 	}
 
@@ -597,20 +540,22 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Utils.log(TAG, "index=" + index + " / stationList.size()="
 				+ stationList.size());
 
-		HashMap<String, Object> map = stationList.get(index);
+		// HashMap<String, Object> map = stationList.get(index);
 
-		// HashMap<String, Object> map = null;
-		// if (Constants.SPINNER_SELECTION == Constants.SPINNER_ALL_STATIONS) {
-		// map = stationList.get(index);
-		// } else if (Constants.SPINNER_SELECTION ==
-		// Constants.SPINNER_FAVORITEN) {
-		// map = favList.get(index);
-		// } else if (Constants.SPINNER_SELECTION == Constants.SPINNER_LAENDER)
-		// {
-		// map = landList.get(index);
-		// } else if (Constants.SPINNER_SELECTION == Constants.SPINNER_STIL) {
-		// map = stilList.get(index);
-		// }
+		HashMap<String, Object> map = null;
+		if (Constants.SPINNER_SELECTION == Constants.SPINNER_ALL_STATIONS) {
+			map = stationList.get(index);
+		} else if (Constants.SPINNER_SELECTION == Constants.SPINNER_FAVORITEN) {
+			map = favList.get(index);
+			// } else if (Constants.SPINNER_SELECTION ==
+			// Constants.SPINNER_LAENDER) {
+			// map = landList.get(index);
+		} else if (Constants.SPINNER_SELECTION == Constants.SPINNER_ALPHABETISCH) {
+			map = alphabeticList.get(index);
+		}
+
+		spnAllStations.setSelection(Utils.getSpinnerPosition(stationList,
+				(String) map.get("name")));
 
 		Utils.log(TAG, "!!! Sender=" + Constants.SELECTED_STATION_NAME_VALUE);
 		Constants.SELECTED_STATION_ICON_VALUE = (Integer) map.get("icon");
@@ -669,17 +614,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				Utils.log(TAG, "*********** new Stream="
 						+ Constants.URL_LIVE_STREAM_VALUE);
 			}
-			// if (Constants.SELECTED_STATION_NAME_VALUE
-			// .equalsIgnoreCase(Stations.RADIO_EUSKIRCHEN)) {
-			// WebTool webtool = new WebTool();
-			// // planet radio ist geschützt und braucht login token damit man
-			// // den Stream abspielen kann.
-			// origRadioEuskirchen = Constants.URL_LIVE_STREAM_VALUE;
-			// Constants.URL_LIVE_STREAM_VALUE = Constants.URL_LIVE_STREAM_VALUE
-			// + webtool.getRadioEuskirchen(this);
-			// Utils.log(TAG, "*********** new Stream="
-			// + Constants.URL_LIVE_STREAM_VALUE);
-			// }
+
 			getRadioPlayer().doStartPlay(this);
 			getWindow()
 					.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -729,21 +664,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				Utils.log(TAG, "*********** new Stream="
 						+ Constants.URL_LIVE_STREAM_VALUE);
 			}
-
-			// if (Constants.SELECTED_STATION_NAME_VALUE
-			// .equalsIgnoreCase(Stations.RADIO_EUSKIRCHEN)) {
-			// WebTool webtool = new WebTool();
-			// // euskirchen ist geschützt und braucht login token damit man
-			// // den
-			// // Stream abspielen kann.
-			// if (origRadioEuskirchen == null) {
-			// origRadioEuskirchen = Constants.URL_LIVE_STREAM_VALUE;
-			// }
-			// Constants.URL_LIVE_STREAM_VALUE = origRadioEuskirchen
-			// + webtool.getRadioEuskirchen(this);
-			// Utils.log(TAG, "*********** new Stream="
-			// + Constants.URL_LIVE_STREAM_VALUE);
-			// }
 
 			Utils.log(TAG, "Constants.URL_LIVE_STREAM_VALUE="
 					+ Constants.URL_LIVE_STREAM_VALUE);
@@ -900,6 +820,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		super.onConfigurationChanged(_newConfig);
 		Utils.log(TAG, "**+*+*+*+*+*+* playing=" + playing);
 		if (!playing) {
+			Constants.SPINNER_SELECTION = Constants.SPINNER_ALL_STATIONS;
 			initGui();
 			setSeekBarProgress(countDownTimerTick);
 			mainScreen.refreshDrawableState();
@@ -1000,4 +921,52 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		getWindow().setSoftInputMode(
 				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 	}
+
+	// ------------------------------------------------------------
+	// Menu Stuff
+	// ------------------------------------------------------------
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(0, -1, 0, this.getResources().getString(R.string.info))
+				.setIcon(android.R.drawable.ic_menu_info_details);
+		menu.add(0, -2, 0, this.getResources().getString(R.string.musicBrowser))
+				.setIcon(android.R.drawable.ic_menu_slideshow);
+		menu.add(0, -3, 0,
+				this.getResources().getString(R.string.donate_adfree)).setIcon(
+				android.R.drawable.ic_menu_agenda);
+		menu.add(0, -4, 0, this.getResources().getString(R.string.settings))
+				.setIcon(android.R.drawable.ic_menu_preferences);
+		menu.add(0, -5, 0, this.getResources().getString(R.string.ende))
+				.setIcon(android.R.drawable.ic_menu_close_clear_cancel);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case -1:
+			Log.i(TAG, "info");
+			this.startActivity(new Intent(this, Info.class));
+			break;
+		case -2:
+			Log.i(TAG, "file chooser");
+			this.startActivity(new Intent(this, FileChooser.class));
+			break;
+		case -3:
+			Log.i(TAG, "spende");
+			this.startActivity(new Intent(this, Donate.class));
+			break;
+		case -4:
+			Log.i(TAG, "settings");
+			this.startActivity(new Intent(this, Settings.class));
+			break;
+		case -5:
+			Log.i(TAG, "exit");
+			stopPlayAndRecord();
+			finish();
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
 }

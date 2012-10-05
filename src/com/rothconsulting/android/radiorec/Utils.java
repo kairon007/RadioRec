@@ -2,9 +2,8 @@ package com.rothconsulting.android.radiorec;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.TreeSet;
+import java.util.TreeMap;
 
 import android.app.ProgressDialog;
 import android.content.ComponentName;
@@ -147,26 +146,6 @@ public class Utils {
 		}
 	}
 
-	protected HashMap sortValuesInHashMap(HashMap hashMap) {
-
-		// to hold the result
-		HashMap sortedMap = new LinkedHashMap();
-
-		List yourMapKeys = new ArrayList(hashMap.keySet());
-		List yourMapValues = new ArrayList(hashMap.values());
-		TreeSet sortedSet = new TreeSet(yourMapValues);
-		Object[] sortedArray = sortedSet.toArray();
-		int size = sortedArray.length;
-
-		for (int i = 0; i < size; i++) {
-			sortedMap.put(
-					yourMapKeys.get(yourMapValues.indexOf(sortedArray[i])),
-					sortedArray[i]);
-		}
-
-		return sortedMap;
-	}
-
 	protected Drawable resizeImage(int resId, Context context, int width,
 			int height) {
 		Bitmap origBitmap = BitmapFactory.decodeResource(
@@ -264,6 +243,30 @@ public class Utils {
 		}
 
 		return result;
+	}
+
+	public static ArrayList<HashMap<String, Object>> sortStationsByName(
+			ArrayList<HashMap<String, Object>> stationList) {
+
+		TreeMap<String, HashMap<String, Object>> sortedMap = new TreeMap<String, HashMap<String, Object>>();
+		for (HashMap<String, Object> station : stationList) {
+			sortedMap.put((String) station.get("name"), station);
+		}
+		return new ArrayList(sortedMap.values());
+	}
+
+	public static HashMap<String, Object> getFullStation(
+			ArrayList<HashMap<String, Object>> stationList, String searchName) {
+
+		for (HashMap<String, Object> station : stationList) {
+			if (searchName == null
+					|| ((String) station.get("name")).toUpperCase().contains(
+							searchName.toUpperCase())) {
+
+				return station;
+			}
+		}
+		return null;
 	}
 
 	public static int getSpinnerPosition(
