@@ -28,12 +28,12 @@
 	<string name="antiAdsKeyHere">Dopo la tua donazione dovresti ricevere entro pochi giorni una \'Chiave Anti-Pubblicità\' da me. In caso non t dovesse arrivare, scrivimi una email (androider@wolke7.net).\n\nImmissione e memorizzazione Chiave Anti-Pubblicità qui.</string>
 	<string name="keineEingabe">Nessuna immissione ??</string>
 	<string name="danke">GRAZIE !!!</string>
-	<string name="infoSDCard">I files di registrazione vengono memorizzati sulla SD-Card.\nLi trovi usualmente nella cartella "RadioRec". Puoi cambiare questa locazione nelle impostazioni.</string>
+	<string name="infoSDCard">I files di registrazione vengono memorizzati sulla SD-Card.\nLi trovi usualmente nella cartella \"RadioRec\". Puoi cambiare questa locazione nelle impostazioni.</string>
 	<string name="infoFeatureEmail">Ti manca un\'emittente, un particolare, o hai proposte? Clicca il seguente indirizzo email e fammelo sapere.\n\n---androider@wolke7.net ---</string>
 	<string name="infoDatenverbrauchFrage">Sono spesso confrontato con la seguente domanda: Quanti dati vengono trasferiti ascoltando con RadioRec+ ??</string>
 	<string name="infoDatenverbrauchAntwort">Risposta: Ca. 60MB/ora. Le emittenti trasmettono a 128kbps. Quindi l\'mmontare dati si calcola: 128\'000 Bit/s : 8 = 16\'000 Byte/s. Quindi 57.6 MB/ora (16\'000x3200 :1\'000\'000). Consiglio: Usa WLAN (WiFi) di modo che il consumo dati non abbia importanza. :-)</string>
 	<string name="speicherOrt">Speicher-Ort</string>
-	<string name="sdcardPath">Normalmente le registrazioni vengono memorizzate sulla SD-Card nel percorso \n \"sdcard/RadioRecorder\" \n. In caso di bisogno questo può essere cambiato. \nAttenzione: Il percorso deve esser specificato correttamente!</string>
+	<string name="sdcardPath">Normalmente le registrazioni vengono memorizzate sulla SD-Card nel percorso \n \"sdcard/RadioRec\" \n. In caso di bisogno questo può essere cambiato. \nAttenzione: Il percorso deve esser specificato correttamente!</string>
 	<string name="reset">Reimpostare</string>
 	<string name="wifiVorsicht">Con queste 3 opzioni puoi impostare il comportamento su WiFi. Attenzione: Se WiFi é sempre attivo, la tua batteri si scarica più velocemente. Imposta tramite WLAN-Impostazioni/Etese s automatico per risparmiare batteria.</string>
 	<string name="wifi">WiFi</string>

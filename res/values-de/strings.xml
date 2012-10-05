@@ -28,12 +28,12 @@
     <string name="antiAdsKeyHere">Nach dem Spenden solltest du innerhalb ein paar Tage einen \'Anti-Werbung Schlüssel\' von mir erhalten. Falls der Schlüssel nicht bei dir eintrifft, schreib mir einfach ein E-Mail (androider@wolke7.net).\n\nAnti-Werbung Schlüssel hier eingeben und Speichern.</string>
 	<string name="keineEingabe">Keine Eingabe ??</string>
 	<string name="danke">Danke !!!</string>
-	<string name="infoSDCard">Beim aufnehmen werden die Dateien auf die SD-Card gespeichert.\nDu findest sie standardmässig im Verzeichnis "RadioRec". In den Einstellungen kannst du diesen Pfad ändern.</string>
+	<string name="infoSDCard">Beim aufnehmen werden die Dateien auf die SD-Card gespeichert.\nDu findest sie standardmässig im Verzeichnis \"RadioRec\". In den Einstellungen kannst du diesen Pfad ändern.</string>
 	<string name="infoFeatureEmail">Fehlt dir ein Sender, ein Feature oder hast du sonst Anregungen? Klick auf folgende E-Mail-Adresse und teile mir dein Anliegen mit. \n\n---  androider@wolke7.net  ---</string>
 	<string name="infoDatenverbrauchFrage">Folgende Frage wurde mir gestellt: Wieviel Daten werden verbraucht beim Radio hören mit RadioRec+ ?? </string>
 	<string name="infoDatenverbrauchAntwort">Antwort: Knapp 60MB/Std. Die Radio-Sender streamen mit 128kbps. Daraus rechnet sich der Verbrauch folgendermassen: 128\'000 Bit/s : 8 = 16\'000 Byte/s. Das entspricht 57.6 MB/Stunde (16\'000x3200 : 1\'000\'000). Tipp: Verwende WLAN, dann ist der Datenverbrauch kein Thema :-)</string>
 	<string name="speicherOrt">Speicher-Ort</string>
-	<string name="sdcardPath">Standardmässig werden die MP3 Aufnahmen auf die SD-Card mit dem Pfad \n \"sdcard/RadioRecorder\" \ngespeichert. Auf Wunsch kann dieser Pfad hier angepasst werden. \nVorsicht: Pfad zum Speichermedium muss exakt stimmen!</string>
+	<string name="sdcardPath">Standardmässig werden die MP3 Aufnahmen auf die SD-Card mit dem Pfad \n \"sdcard/RadioRec\" \ngespeichert. Auf Wunsch kann dieser Pfad hier angepasst werden. \nVorsicht: Pfad zum Speichermedium muss exakt stimmen!</string>
 	<string name="reset">Zurücksetzen</string>
 	<string name="wifiVorsicht">Mit diesen 3 Optionen kannst du das Verhalten des Wireless steuern. Vorsicht: Wenn WiFi immer eingeschaltet ist wird dein Akku mehr belastet. Schalte es hier oder bei den erweiterten WLAN-Einstellungen wieder auf automatisch um Strom zu sparen.</string>
 	<string name="wifi">WiFi</string>
