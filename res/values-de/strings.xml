@@ -91,5 +91,6 @@
 	<string name="search">Suchen</string>
 	<string name="searchHint">...Radio Station suchen...</string>
 	<string name="alphabetisch">Alphabetisch</string>
-	
+	<string name="nochKeineFavoriten">Du hast noch keine Favoriten definiert.\n\nDrücke einfach den Stern * bei deinen Lieblingssendern und schon sind sie bei deinen Favoriten.</string>
+		
 </resources>

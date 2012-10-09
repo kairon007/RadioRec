@@ -40,9 +40,7 @@ public class DbAdapter {
 	 * Create a new station. If the station is successfully created return the
 	 * new rowId for that note, otherwise return a -1 to indicate failure.
 	 */
-	public long insertStation(int icon, int iconSmall, String stationName,
-			String stream, String homepage, String webcam, String contact,
-			boolean favorite, String country, String language, String genre) {
+	public long insertStation(int iconSmall, String stationName) {
 
 		ContentValues values = new ContentValues();
 		values.put(KEY_STATION_ICON_SMALL, iconSmall);

@@ -48,6 +48,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rothconsulting.android.radiorec.filechooser.FileChooser;
+import com.rothconsulting.android.radiorec.sqlitedb.DBHelper;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
 
 public class RadioRecPlus extends Activity implements OnClickListener,
@@ -96,9 +97,12 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		// setContentView(R.layout.main);
+		Utils utils = new Utils();
+		utils.getPreferences(this);
 
 		context = this;
-		// context.deleteDatabase(DBHelper.DATABASE_NAME);
+		context.deleteDatabase(DBHelper.DATABASE_NAME);
 		gcCounter = 0;
 		super.onCreate(savedInstanceState);
 		if (Build.VERSION.SDK_INT < 7) {
@@ -119,8 +123,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		Utils.log(TAG, "RadioRePlus");
 		setContentView(R.layout.main);
 		firstStart = true;
-		Utils utils = new Utils();
-		utils.getPreferences(this);
 		// get components and register clicks
 		spnAllStations = (Spinner) findViewById(R.id.stations);
 		Constants.SPINNER_ALL_STATIONS = spnAllStations.getId();
@@ -250,9 +252,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
 		case Constants.PRESS_BACK_BUTTON:
-			final AlertDialog.Builder closeWindowBuilder = new AlertDialog.Builder(
-					this);
-			closeWindowBuilder
+			final AlertDialog.Builder alertBuilder = new AlertDialog.Builder(
+					context);
+			alertBuilder
 					.setMessage(
 							this.getResources().getString(
 									R.string.willstDuWeiterHoeren))
@@ -280,32 +282,15 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 									moveTaskToBack(true);
 									// Move the task containing this activity to
 									// the back of the activity stack. The
-									// activity’s order within the task is
+									// activity's order within the task is
 									// unchanged.
 								}
 							});
-			return closeWindowBuilder.create();
-
+			return alertBuilder.create();
 		case Constants.LIVE_STREAM_STATION:
-
-			// prepare the alert box
-			AlertDialog.Builder alertbox = new AlertDialog.Builder(this);
-			// set the title to display
-			alertbox.setTitle("Info");
-			// set the message to display
-			alertbox.setMessage(this.getResources().getString(R.string.nurLive));
-			// set a positive/yes button and create a listener
-			alertbox.setPositiveButton(
-					this.getResources().getString(android.R.string.ok),
-					new DialogInterface.OnClickListener() {
-						// do something when the button is clicked
-						@Override
-						public void onClick(DialogInterface arg0, int arg1) {
-							return;
-						}
-					});
-			// display box
-			alertbox.show();
+			String message1 = this.getResources().getString(R.string.nurLive);
+			SimpleAlertBox.showAlert(this, "Info", message1);
+			break;
 		}
 		return null;
 	}
@@ -366,14 +351,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 						android.R.drawable.star_big_on, 0, 0);
 				Utils.log(TAG, "favOn -> instertStation");
 				dbadapter.open();
-				dbadapter.insertStation(Constants.SELECTED_STATION_ICON_VALUE,
-						Constants.SELECTED_STATION_ICON_VALUE,
-						Constants.SELECTED_STATION_NAME_VALUE,
-						Constants.URL_LIVE_STREAM_VALUE,
-						Constants.URL_HOMEPAGE_VALUE,
-						Constants.URL_WEBCAM_VALUE,
-						Constants.URL_CONTACT_VALUE, true, Stations.LAND_CH,
-						Stations.SPRACHE_DE, Stations.STIL_POP);
+				dbadapter.insertStation(
+						Constants.SELECTED_STATION_ICON_SMALL_VALUE,
+						Constants.SELECTED_STATION_NAME_VALUE);
 				dbadapter.close();
 			} else {
 				favIcon.setTag(FAV_OFF);
@@ -433,7 +413,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			break;
 		case R.id.buttonFav:
 			Constants.SPINNER_SELECTION = Constants.SPINNER_FAVORITEN;
-
 			Utils.log(
 					TAG,
 					"Button Favoriten pressed. First="
@@ -461,12 +440,17 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			cursor.close();
 			dbadapter.close();
 
+			if (isEmptyFavorites()) {
+				return;
+			}
+
 			SimpleAdapter favoritesAdapter = new SimpleAdapter(this, favList,
 					R.layout.station_listitem, new String[] { "icon_small",
 							"name" }, new int[] { R.id.option_icon,
 							R.id.option_text });
 			spnFavoriten.setAdapter(favoritesAdapter);
 			spnFavoriten.setOnItemSelectedListener(this);
+			// spnFavoriten.performItemClick(v, -1, -1);
 			spnFavoriten.performClick();
 			break;
 		// case R.id.buttonLand:
@@ -493,16 +477,21 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	}
 
 	@Override
-	public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
-			long arg3) {
+	public void onItemSelected(AdapterView<?> spinner, View linearLayout,
+			int arg2, long arg3) {
+
+		// empty favorites will be ignored
+		if (isEmptyFavorites()) {
+			return;
+		}
+
 		Utils.log(TAG, "****************");
-		Utils.log(TAG, "onItemSelected(AdapterView<?> arg0 = " + arg0);
-		Constants.SPINNER_SELECTION = arg0.getId();
-		Utils.log(TAG, "onItemSelected(View arg1 = " + arg1);
+		Utils.log(TAG, "onItemSelected(AdapterView<?> arg0 = " + spinner);
+		Utils.log(TAG, "onItemSelected(View arg1 = " + linearLayout);
 		Utils.log(TAG, "onItemSelected(int arg2 = " + arg2);
 		Utils.log(TAG, "onItemSelected(long arg0 = " + arg3);
 		Utils.log(TAG,
-				"getSelectedItemPosition1=" + arg0.getSelectedItemPosition());
+				"getSelectedItemPosition1=" + spinner.getSelectedItemPosition());
 		Utils.log(TAG, "SELECTED_STATION_INDEX_VALUE1="
 				+ Constants.SELECTED_STATION_INDEX_VALUE);
 		Utils.log(TAG, "****************");
@@ -513,13 +502,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			if (Constants.SELECTED_STATION_INDEX_VALUE > stationList.size()) {
 				Constants.SELECTED_STATION_INDEX_VALUE = 0;
 			}
-			arg0.setSelection(Constants.SELECTED_STATION_INDEX_VALUE);
+			spinner.setSelection(Constants.SELECTED_STATION_INDEX_VALUE);
 		} else {
-			Constants.SELECTED_STATION_INDEX_VALUE = arg0
+			Constants.SELECTED_STATION_INDEX_VALUE = spinner
 					.getSelectedItemPosition();
 		}
 		Utils.log(TAG,
-				"getSelectedItemPosition2=" + arg0.getSelectedItemPosition());
+				"getSelectedItemPosition2=" + spinner.getSelectedItemPosition());
 		Utils.log(TAG, "SELECTED_STATION_INDEX2="
 				+ Constants.SELECTED_STATION_INDEX_VALUE);
 
@@ -532,9 +521,14 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	private void changeStation() {
 		int index = Constants.SELECTED_STATION_INDEX_VALUE;
+		// Check inex size
 		if (index < 0 || index >= stationList.size()) {
 			index = 0;
 			Constants.SELECTED_STATION_INDEX_VALUE = index;
+		}
+		// empty favorites will be ignored
+		if (isEmptyFavorites()) {
+			return;
 		}
 
 		Utils.log(TAG, "index=" + index + " / stationList.size()="
@@ -543,16 +537,16 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// HashMap<String, Object> map = stationList.get(index);
 
 		HashMap<String, Object> map = null;
-		if (Constants.SPINNER_SELECTION == Constants.SPINNER_ALL_STATIONS) {
-			map = stationList.get(index);
-		} else if (Constants.SPINNER_SELECTION == Constants.SPINNER_FAVORITEN) {
+		if (Constants.SPINNER_SELECTION == Constants.SPINNER_FAVORITEN) {
 			map = favList.get(index);
-			// } else if (Constants.SPINNER_SELECTION ==
-			// Constants.SPINNER_LAENDER) {
-			// map = landList.get(index);
 		} else if (Constants.SPINNER_SELECTION == Constants.SPINNER_ALPHABETISCH) {
 			map = alphabeticList.get(index);
+		} else {
+			map = stationList.get(index);
 		}
+
+		// reset Constants.SPINNER_SELECTION
+		Constants.SPINNER_SELECTION = Constants.SPINNER_ALL_STATIONS;
 
 		spnAllStations.setSelection(Utils.getSpinnerPosition(stationList,
 				(String) map.get("name")));
@@ -589,13 +583,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		if (!firstStart && playing) {
 			if (Constants.getLiveStreamStations().contains(
 					Constants.SELECTED_STATION_NAME_VALUE)) {
-				Utils.log(TAG, "------ ist Radio Gelb-Schwarz");
+				Utils.log(TAG, "------ ist Fussball Radio");
 				showDialog(Constants.LIVE_STREAM_STATION);
 			}
 			if (Constants.SELECTED_STATION_NAME_VALUE
 					.equalsIgnoreCase(Stations.RADIO_JUGGLERZ)) {
 				// jugglerz.de hat immer Donnerstags eine Live Sendung. Ab
-				// Freitag kann man diese als mp3 hören. Daher ist die URL
+				// Freitag kann man diese als mp3 hï¿½ren. Daher ist die URL
 				// dynamisch.
 				WebTool webtool = new WebTool();
 				Constants.URL_LIVE_STREAM_VALUE = Constants.URL_LIVE_STREAM_VALUE
@@ -606,7 +600,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			if (Constants.SELECTED_STATION_NAME_VALUE
 					.equalsIgnoreCase(Stations.RADIO_PLANET_RADIO)) {
 				WebTool webtool = new WebTool();
-				// planet radio ist geschützt und braucht login token damit man
+				// planet radio ist geschï¿½tzt und braucht login token damit man
 				// den Stream abspielen kann.
 				origPlanetradioSteam = Constants.URL_LIVE_STREAM_VALUE;
 				Constants.URL_LIVE_STREAM_VALUE = Constants.URL_LIVE_STREAM_VALUE
@@ -654,7 +648,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 			if (Constants.SELECTED_STATION_NAME_VALUE
 					.equalsIgnoreCase(Stations.RADIO_PLANET_RADIO)) {
 				WebTool webtool = new WebTool();
-				// rt1 ist geschützt und braucht login token damit man den
+				// rt1 ist geschï¿½tzt und braucht login token damit man den
 				// Stream abspielen kann.
 				if (origPlanetradioSteam == null) {
 					origPlanetradioSteam = Constants.URL_LIVE_STREAM_VALUE;
@@ -820,7 +814,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		super.onConfigurationChanged(_newConfig);
 		Utils.log(TAG, "**+*+*+*+*+*+* playing=" + playing);
 		if (!playing) {
-			Constants.SPINNER_SELECTION = Constants.SPINNER_ALL_STATIONS;
+			// Constants.SPINNER_SELECTION = Constants.SPINNER_ALL_STATIONS;
 			initGui();
 			setSeekBarProgress(countDownTimerTick);
 			mainScreen.refreshDrawableState();
@@ -920,6 +914,19 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// hide keyboard
 		getWindow().setSoftInputMode(
 				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+	}
+
+	private boolean isEmptyFavorites() {
+		// empty favorites will be ignored
+		if (Constants.SPINNER_SELECTION == Constants.SPINNER_FAVORITEN
+				&& (favList == null || favList.size() == 0)) {
+			String message = this.getResources().getString(
+					R.string.nochKeineFavoriten);
+			SimpleAlertBox.showAlert(context, "Info", message);
+			Constants.SPINNER_SELECTION = Constants.SPINNER_ALL_STATIONS;
+			return true;
+		}
+		return false;
 	}
 
 	// ------------------------------------------------------------

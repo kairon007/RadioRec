@@ -91,5 +91,6 @@
 	<string name="search">Ricerca</string>
 	<string name="searchHint">...ricerca di stazioni radio...</string>
 	<string name="alphabetisch">I.o.alfabetico</string>
-			
+	<string name="nochKeineFavoriten">Lei non è stata definita alcuna preferenza.\npremere il tasto stella le stazioni preferite e sarà aggiunto ai tuoi preferiti.</string>
+				
 </resources>

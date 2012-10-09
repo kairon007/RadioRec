@@ -52,9 +52,9 @@ public class Stations {
 	// ***********************************************
 	public static final String RADIO_32 = "Radio 32";
 	public static final String RADIO_32_GOLDIES = "Radio 32 Goldies";
-	public static final String RADIO_HOCH2 = "Radio Hoch2";
+	public static final String RADIO_HOCH2 = "Hoch2";
 	public static final String RADIO_CAPITAL_FM = "Capital FM";
-	public static final String RADIO_RABE = "Radio RaBe";
+	public static final String RADIO_RABE = "RaBe";
 	public static final String RADIO_24 = "Radio 24";
 	public static final String RADIO_24_ROCK = "Radio 24 Rock";
 	public static final String RADIO_DRS1 = "DRS1";
@@ -67,7 +67,7 @@ public class Stations {
 	public static final String RADIO_DRS_VIRUS = "DRS Virus";
 	public static final String RADIO_DRS_MUSIKWELLE = "DRS Musikwelle";
 	public static final String RADIO_ENERGY_BERN = "Energy Bern";
-	public static final String RADIO_ENERGY_ZUERICH = "Energy Zürich";
+	public static final String RADIO_ENERGY_ZUERICH = "Energy ZÃ¼rich";
 	public static final String RADIO_ENERGY_BASEL = "Energy Basel";
 	public static final String RADIO_ENERGY_SWISS = "Energy Swiss";
 	public static final String RADIO_ENERGY_CHARTS = "Energy Charts";
@@ -79,13 +79,13 @@ public class Stations {
 	public static final String RADIO_SWISS_JAZZ = "Swiss Jazz";
 	public static final String RADIO_SWISS_POP = "Swiss Pop";
 	public static final String RADIO_1 = "Radio 1";
-	public static final String RADIO_ZUERISEE = "Radio Zürisee";
-	public static final String RADIO_PILATUS = "Radio Pilatus";
-	public static final String RADIO_BEO = "Radio BeO";
+	public static final String RADIO_ZUERISEE = "ZÃ¼risee";
+	public static final String RADIO_PILATUS = "Pilatus";
+	public static final String RADIO_BEO = "BeO";
 	public static final String RADIO_TOP = "Top";
 	public static final String RADIO_TOP_TWO = "Top Two";
-	public static final String RADIO_NEO_1 = "neo 1";
-	public static final String RADIO_NEO_ZWEI = "neo zwei";
+	public static final String RADIO_NEO_1 = "Neo 1";
+	public static final String RADIO_NEO_ZWEI = "Neo zwei";
 	public static final String RADIO_ARGOVIA = "Argovia";
 	public static final String RADIO_ARGOVIA_HITMIX = "Argovia Hitmix";
 	public static final String RADIO_ARGOVIA_CLASSIC_ROCK = "Argovia Classic Rock";
@@ -105,33 +105,33 @@ public class Stations {
 	public static final String RADIO_DJRADIO = "DJ Radio";
 	public static final String RADIO_LOUNGE_RADIO = "Lounge Radio";
 	public static final String RADIO_SWISS_GROOVE = "SwissGroove";
-	public static final String RADIO_FREIBURG = "Radio Freiburg";
+	public static final String RADIO_FREIBURG = "Freiburg";
 	public static final String RADIO_COULEUR_3 = "Couleur  3";
 	public static final String RADIO_RFJ = "RFJ - Frequence Jura";
 	public static final String RADIO_ROUGE_FM = "Rouge FM";
 	public static final String RADIO_RSI_RETE_1 = "RSI Rete 1";
 	public static final String RADIO_RSI_RETE_2 = "RSI Rete 2";
 	public static final String RADIO_RSI_RETE_3 = "RSI Rete 3";
-	public static final String RADIO_FIUME_TICINO = "Radio Fiume Ticino";
+	public static final String RADIO_FIUME_TICINO = "Fiume Ticino";
 	public static final String RADIO_ROCK_NATION = "Rock Nation";
 	public static final String RADIO_3FACH = "3fach";
 	public static final String RADIO_COUNTRY_RADIO = "Country Radio";
 	public static final String RADIO_LIFE_CHANNEL = "Life Channel";
-	public static final String RADIO_GLORIA = "Radio Gloria";
+	public static final String RADIO_GLORIA = "Gloria";
 	public static final String RADIO_GELB_SCHWARZ = "Gelb-Schwarz YB";
 	public static final String RADIO_FCB_LIVE_RADIO = "FC Basel Live Radio";
-	public static final String RADIO_FC_ZUERICH = "FC Zürich";
+	public static final String RADIO_FC_ZUERICH = "FC ZÃ¼rich";
 	public static final String RADIO_BACKSTAGE_RADIO = "Backstage Radio";
 	// public static final String RADIO_RRO = "Radio Rottu Oberwallis";
 	public static final String RADIO_MONTE_CARLO = "Monte Carlo";
-	public static final String RADIO_RASA = "Radio RaSa";
+	public static final String RADIO_RASA = "RaSa";
 	public static final String RADIO_BLIND_POWER = "Blind Power";
 	public static final String RADIO_CENTRAL = "Central";
 	public static final String RADIO_CENTRAL_ROCK = "Central Rock";
 	public static final String RADIO_CENTRAL_SWISS = "Central Swiss";
 	public static final String RADIO_EVIVA = "Eviva";
 	public static final String RADIO_GRISCHA = "Grischa";
-	public static final String RADIO_TELL = "Radio Tell";
+	public static final String RADIO_TELL = "Tell";
 	public static final String RADIO_INDUSTRIE = "Industrie";
 	public static final String RADIO_AUDIOASYL = "Audioasyl";
 	public static final String RADIO_PIRATENRADIO = "Piratenradio";
@@ -144,8 +144,8 @@ public class Stations {
 	public static final String RADIO_GUGGE_SOUND = "Guggesound";
 	public static final String RADIO_VOLKSMUSIKNET = "Volksmusiknet";
 	public static final String RADIO_IISCHERS_RADIO = "Iischers Radio";
-	public static final String RADIO_RADIUS = "Radio Radius";
-	public static final String RADIO_LIECHSTENSTEIN = "Radio Liechtenstein";
+	public static final String RADIO_RADIUS = "Radius";
+	public static final String RADIO_LIECHSTENSTEIN = "Liechtenstein";
 
 	// ***********************************************
 	// DEUTSCHLAND
@@ -170,17 +170,17 @@ public class Stations {
 	public static final String RADIO_SEEFUNK = "Seefunk";
 	public static final String RADIO_SINE_MUSIC = "Sine-Music";
 	public static final String RADIO_JUGGLERZ = "Jugglerz (KingstonHot)";
-	public static final String RADIO_SUNSHINE_LIVE = "sunshine-live";
-	public static final String RADIO_ALLGAEUHIT = "AllgäuHIT";
+	public static final String RADIO_SUNSHINE_LIVE = "Sunshine-live";
+	public static final String RADIO_ALLGAEUHIT = "AllgÃ¤uHIT";
 	public static final String RADIO_TOP100STATION = "Top 100 Station";
 	public static final String RADIO_7 = "Radio 7";
 	public static final String RADIO_7_BESCHLEUNIGER = "Radio 7 - Beschleuniger";
-	public static final String RADIO_SALUE = "Salü";
+	public static final String RADIO_SALUE = "SalÃ¼";
 	public static final String RADIO_FFH = "FFH";
 	public static final String RADIO_FFH_LOUNGE = "FFH Lounge";
-	public static final String RADIO_RT1_HITRADIO = "rt1 Hitradio";
-	public static final String RADIO_RT1_SUEDSCHWABEN = "rt1 Südschwaben";
-	public static final String RADIO_RT1_IN_THE_MIX = "rt1 in the mix";
+	public static final String RADIO_RT1_HITRADIO = "Rt1 Hitradio";
+	public static final String RADIO_RT1_SUEDSCHWABEN = "Rt1 SÃ¼dschwaben";
+	public static final String RADIO_RT1_IN_THE_MIX = "Rt1 in the mix";
 	public static final String RADIO_HR_2 = "HR 2";
 	public static final String RADIO_HR_3 = "HR 3";
 	public static final String RADIO_YOU_FM = "You FM";
@@ -196,16 +196,16 @@ public class Stations {
 	public static final String RADIO_STAR_FM_FROM_HELL = "Star FM From Hell";
 	public static final String RADIO_REGENBOGEN = "Regenbogen";
 	public static final String RADIO_FANTASY_DANCE = "Fantasy Dance FM";
-	public static final String RADIO_OBERKRAIN = "Radio Oberkrain";
+	public static final String RADIO_OBERKRAIN = "Oberkrain";
 	public static final String RADIO_NDR_1_WELLE_NORD = "NDR 1 Welle Nord";
 	public static final String RADIO_NDR_1_NIEDERSACHSEN = "NDR 1 Niedersachsen";
 	public static final String RADIO_NDR_2 = "NDR 2";
 	public static final String RADIO_NDR_INFO = "NDR Info";
 	public static final String RADIO_NDR_KULTUR = "NDR Kultur";
 	public static final String RADIO_N_JOY = "N-Joy";
-	public static final String RADIO_GONG_NUERNBERG = "Gong Nürnberg";
-	public static final String RADIO_PALOMA = "Radio Paloma";
-	public static final String RADIO_EINS_RBB = "eins rbb";
+	public static final String RADIO_GONG_NUERNBERG = "Gong NÃ¼rnberg";
+	public static final String RADIO_PALOMA = "Paloma";
+	public static final String RADIO_EINS_RBB = "Eins rbb";
 	public static final String RADIO_INFORADIO_RBB = "Info Radio rbb";
 	public static final String RADIO_KULTURRADIO_RBB = "Kulturradio rbb";
 	public static final String RADIO_FRITZ_VOM_RBB = "Fritz vom rbb";
@@ -226,7 +226,7 @@ public class Stations {
 	public static final String RADIO_GALAXY_ASCHAFFENBURG = "Galaxy Aschaffenburg";
 	public static final String RADIO_GALAXY_KEMPTEN = "Galaxy Kempten";
 	public static final String RADIO_GALAXY_BAMBERG = "Galaxy Bamberg/Coburg";
-	public static final String RADIO_BAMBERG = "Radio Bamberg";
+	public static final String RADIO_BAMBERG = "Bamberg";
 	public static final String RADIO_SPREERADIO = "Spreeradio";
 	public static final String RADIO_OSTSEEWELLE = "Ostseewelle";
 	public static final String RADIO_EUSKIRCHEN = "Euskirchen";
@@ -235,16 +235,16 @@ public class Stations {
 	public static final String RADIO_DELUXERADIO = "Deluxe Radio";
 	public static final String RADIO_BALLERMANN_RADIO = "Ballermann Radio";
 	public static final String RADIO_PARTYRADIO_24 = "Partyradio 24";
-	public static final String RADIO_ZWICKAU = "Radio Zwickau";
-	public static final String RADIO_PSR = "Radio PSR";
-	public static final String RADIO_KOELN = "Radio Köln";
-	public static final String RADIO_SAW = "Radio SAW";
-	public static final String RADIO_SAW_ROCK = "Radio SAW Rock";
-	public static final String RADIO_SAW_NEUHEITEN = "Radio SAW Neuheiten";
-	public static final String RADIO_SAW_PARTY = "Radio SAW Party";
-	public static final String RADIO_HOCHSTIFT = "Radio Hochstift";
+	public static final String RADIO_ZWICKAU = "Zwickau";
+	public static final String RADIO_PSR = "PSR";
+	public static final String RADIO_KOELN = "KÃ¶ln";
+	public static final String RADIO_SAW = "SAW";
+	public static final String RADIO_SAW_ROCK = "SAW Rock";
+	public static final String RADIO_SAW_NEUHEITEN = "SAW Neuheiten";
+	public static final String RADIO_SAW_PARTY = "SAW Party";
+	public static final String RADIO_HOCHSTIFT = "Hochstift";
 	public static final String RADIO_HITRADIO_RTL_SACHSEN = "Hitradio RTL Sachsen";
-	public static final String RADIO_MULTICULT = "Radio Multicult";
+	public static final String RADIO_MULTICULT = "Multicult";
 	public static final String RADIO_TRAXX_HITS = "Traxx FM Hits";
 	public static final String RADIO_BLACKBEATS_FM = "Blackbeats FM";
 	public static final String RADIO_ERF_POP = "ERF Pop";
@@ -267,43 +267,45 @@ public class Stations {
 	public static final String RADIO_CLUB_LOUNGE_RADIO_HOUSE = "Club Lounge Radio House";
 
 	// ***********************************************
-	// ÖSTERREICH
+	// Ã–STERREICH
 	// ***********************************************
-	public static final String RADIO_OE1 = "Ö1 - ORF";
-	public static final String RADIO_OE3 = "Ö3 - ORF";
+	public static final String RADIO_OE1 = "Ã–1 - ORF";
+	public static final String RADIO_OE3 = "Ã–3 -ORF";
 	public static final String RADIO_FM4 = "FM4 - ORF";
 	public static final String RADIO_TIROL = "Tirol - ORF";
 	public static final String RADIO_WIEN = "Wien - ORF";
-	public static final String RADIO_KAERNTEN = "Kärnten - ORF";
+	public static final String RADIO_KAERNTEN = "KÃ¤rnten - ORF";
 	public static final String RADIO_SALZBURG = "Salzburg - ORF";
-	public static final String RADIO_OBEROESTERREICH = "Oberösterreich - ORF";
-	public static final String RADIO_NIEDEROESTERREICH = "Niederösterreich - ORF";
+	public static final String RADIO_OBEROESTERREICH = "OberÃ¶sterreich - ORF";
+	public static final String RADIO_NIEDEROESTERREICH = "NiederÃ¶sterreich - ORF";
 	public static final String RADIO_VORARLBERG = "Vorarlberg - ORF";
 	public static final String RADIO_HELSINKI_GRAZ = "Helsinki Graz";
 	public static final String RADIO_SOUNDPORTAL = "Soundportal";
 	public static final String RADIO_STEPHANSDOM = "Stephansdom";
 	public static final String RADIO_ANTENNE_STEIERMARK = "Antenne Steiermark";
-	public static final String RADIO_ANTENNE_KAERNTEN = "Antenne Kärnten";
+	public static final String RADIO_ANTENNE_KAERNTEN = "Antenne KÃ¤rnten";
 	public static final String RADIO_ANTENNE_SALZBURG = "Antenne Salzburg";
 	public static final String RADIO_ANTENNE_TIROL = "Antenne Tirol";
 	public static final String RADIO_ANTENNE_VORARLBERG = "Antenne Vorarlberg";
-	public static final String RADIO_ARABELLA = "Radio Arabella";
+	public static final String RADIO_ARABELLA = "Arabella";
 	public static final String RADIO_KRONEHIT = "KroneHit";
 	public static final String RADIO_KRONEHIT_90_DANCE = "KroneHit 90s Dance";
 	public static final String RADIO_KRONEHIT_VOLLGAS = "KroneHit Vollgas";
-	public static final String RADIO_886 = "Radio 88.6";
+	public static final String RADIO_886 = "88.6";
 	public static final String RADIO_ENRGY_WIEN = "Energy Wien";
 	public static final String RADIO_FRESH_BEATZ = "FreshBeatz.fm";
 	public static final String RADIO_LIFE_RADIO = "Life Radio";
-	public static final String RADIO_U1_TIROL = "Radio U1 Tirol";
+	public static final String RADIO_U1_TIROL = "U1 Tirol";
 
 	// ***********************************************
 	// ITALIEN
 	// ***********************************************
-	public static final String RADIO_PLANET_FM = "Radio Planet FM";
+	public static final String RADIO_TIROL_IT = "Tirol (SÃ¼dtirol)";
+	public static final String RADIO_SUEDTIROL_1 = "SÃ¼dtirol 1";
+	public static final String RADIO_PLANET_FM = "Planet FM";
 	public static final String RADIO_OTTO_FM = "Otto FM";
-	public static final String RADIO_DEEJAY = "Radio Deejay";
-	public static final String RADIO_MARGHERITA = "Radio Margherita";
+	public static final String RADIO_DEEJAY = "Deejay";
+	public static final String RADIO_MARGHERITA = "Margherita";
 	public static final String RADIO_RTL_IT = "RTL.it 102.5";
 	public static final String RADIO_SOUND_CITY = "Sound City";
 	public static final String RADIO_CITTA_FUTURA = "Citta Futura";
@@ -313,16 +315,14 @@ public class Stations {
 	// ***********************************************
 	// DIVERSE
 	// ***********************************************
-	public static final String RADIO_TIROL_IT = "Radio (Süd-)Tirol";
-	public static final String RADIO_SUEDTIROL_1 = "Radio Südtirol 1";
-	public static final String RADIO_HOLIDAY = "Radio Holiday";
-	public static final String RADIO_SOMA_FM_SOG = "soma fm - Sound of Goa";
-	public static final String RADIO_SOMA_FM_POPTRON = "soma fm - Poptron";
-	public static final String RADIO_SOMA_FM_SECRET_AGENT = "soma fm - Secret Agent";
+	public static final String RADIO_HOLIDAY = "Holiday";
+	public static final String RADIO_SOMA_FM_SOG = "Soma fm - Sound of Goa";
+	public static final String RADIO_SOMA_FM_POPTRON = "Soma fm - Poptron";
+	public static final String RADIO_SOMA_FM_SECRET_AGENT = "Soma fm - Secret Agent";
 	public static final String RADIO_IBIZA_SONICA = "Ibiza Sonica";
 	public static final String RADIO_IBIZA_GLOBAL_RADIO = "Ibiza Global Radio";
 	public static final String RADIO_BLUE_MARLIN = "Blue Marlin Ibiza";
-	public static final String RADIO_LEGENDE = "Radio Legende";
+	public static final String RADIO_LEGENDE = "Legende";
 	public static final String RADIO_NOVAPLANET = "Novaplanet";
 	public static final String RADIO_PULS_RADIO = "Puls'Radio";
 	public static final String RADIO_EUROPE_1 = "Europe 1";
@@ -3309,7 +3309,7 @@ public class Stations {
 
 		// ******************************************************************************************************
 		// *
-		// * ÖSTERREICH
+		// * ï¿½STERREICH
 		// *
 		// ******************************************************************************************************
 		m = new HashMap<String, Object>();
@@ -4247,7 +4247,7 @@ public class Stations {
 		if (Build.VERSION.SDK_INT < 8
 				&& Constants.getIgnoreListKleinerAndroid22().contains(
 						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufï¿½gen.
 
 		} else {
 			stationList.add(m);

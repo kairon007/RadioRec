@@ -155,28 +155,29 @@ public class Constants {
 	protected static int BUFFER_VALUE;
 	protected static boolean CLOSE_APP_TIMER_END_VALUE;
 
-	public static int CURRENT_TAB = 0;
-
 	public static final String DEFAULT_SD_CARD_PATH = "sdcard/RadioRec";
 	public static final int DEFAULT_BUFFER = 8192;
-
-	public static final int NOTIFICATION_ID_RADIO_IS_PLAYING = 1;
-	public static final int NOTIFICATION_ID_RECORDING = 2;
-	public static final int NOTIFICATION_ID_ERROR_CONNECTION = 3;
-	public static final int PRESS_BACK_BUTTON = 10;
-	public static final int LIVE_STREAM_STATION = 11;
-
-	public static final int INTENT_REQUEST_FROM_FAV = 1;
 
 	public static final String FROM_NOTIFICATION = "fromNotification";
 
 	public static String ADMOB_PUBLISHER_ID = "a14dc9885936cd9";
 
-	public static int SPINNER_SELECTION = -1;
-	public static int SPINNER_ALL_STATIONS = -2;
-	public static int SPINNER_FAVORITEN = -3;
-	public static int SPINNER_LAENDER = -4;
-	public static int SPINNER_ALPHABETISCH = -5;
-	public static int SPINNER_SPRACHE = -6;
+	public static int CURRENT_TAB = 0;
+
+	public static final int INTENT_REQUEST_FROM_FAV = -1;
+
+	public static final int NOTIFICATION_ID_RADIO_IS_PLAYING = -2;
+	public static final int NOTIFICATION_ID_RECORDING = -3;
+	public static final int NOTIFICATION_ID_ERROR_CONNECTION = -4;
+	public static final int PRESS_BACK_BUTTON = -10;
+	// public static final int PRESS_EMPTY_FAV = -11;
+	public static final int LIVE_STREAM_STATION = -20;
+
+	public static int SPINNER_SELECTION = -100;
+	public static int SPINNER_ALL_STATIONS = -200;
+	public static int SPINNER_FAVORITEN = -300;
+	public static int SPINNER_LAENDER = -400;
+	public static int SPINNER_ALPHABETISCH = -500;
+	public static int SPINNER_SPRACHE = -600;
 
 }

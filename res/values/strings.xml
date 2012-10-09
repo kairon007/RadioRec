@@ -91,5 +91,6 @@
 	<string name="search">Search</string>
 	<string name="searchHint">...search radio station...</string>
 	<string name="alphabetisch">Alphabetically</string>
-		
+	<string name="nochKeineFavoriten">You have not defined any favorites yet.\nJust press the star at your favorite stations and it will be added to your Favorites.</string>
+			
 </resources>

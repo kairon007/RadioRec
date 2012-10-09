@@ -248,11 +248,12 @@ public class Utils {
 	public static ArrayList<HashMap<String, Object>> sortStationsByName(
 			ArrayList<HashMap<String, Object>> stationList) {
 
-		TreeMap<String, HashMap<String, Object>> sortedMap = new TreeMap<String, HashMap<String, Object>>();
+		TreeMap<String, HashMap<String, Object>> sortedMap = new TreeMap<String, HashMap<String, Object>>(
+				new StringComperator());
 		for (HashMap<String, Object> station : stationList) {
 			sortedMap.put((String) station.get("name"), station);
 		}
-		return new ArrayList(sortedMap.values());
+		return new ArrayList<HashMap<String, Object>>(sortedMap.values());
 	}
 
 	public static HashMap<String, Object> getFullStation(
@@ -282,4 +283,5 @@ public class Utils {
 		}
 		return position;
 	}
+
 }
