@@ -133,7 +133,7 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		spnAlphabetisch = (Spinner) findViewById(R.id.spinnerAlphabetisch);
 		Constants.SPINNER_ALPHABETISCH = spnAlphabetisch.getId();
 		((Button) findViewById(R.id.buttonFav)).setOnClickListener(this);
-		((Button) findViewById(R.id.buttonLand)).setOnClickListener(this);
+		// ((Button) findViewById(R.id.buttonLand)).setOnClickListener(this);
 		((Button) findViewById(R.id.buttonAlphabetisch))
 				.setOnClickListener(this);
 		mainScreen = (LinearLayout) findViewById(R.id.mainScreen);
