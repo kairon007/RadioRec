@@ -74,7 +74,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	private ImageButton buttonBack, buttonFwd, buttonRec, buttonPlay;
 	private static RadioPlayer radioPlayer;
 	private static AsyncTask<URL, Integer, Long> recordTask;
-	private String origPlanetradioSteam = null;
 	private LinearLayout mainScreen;
 	private LinearLayout autocomplete;
 	private LinearLayout spinner;
@@ -597,18 +596,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				Utils.log(TAG, "*********** new Stream="
 						+ Constants.URL_LIVE_STREAM_VALUE);
 			}
-			if (Constants.SELECTED_STATION_NAME_VALUE
-					.equalsIgnoreCase(Stations.RADIO_PLANET_RADIO)) {
-				WebTool webtool = new WebTool();
-				// planet radio ist gesch�tzt und braucht login token damit man
-				// den Stream abspielen kann.
-				origPlanetradioSteam = Constants.URL_LIVE_STREAM_VALUE;
-				Constants.URL_LIVE_STREAM_VALUE = Constants.URL_LIVE_STREAM_VALUE
-						+ webtool.getPlanetradioToken(this);
-				Utils.log(TAG, "*********** new Stream="
-						+ Constants.URL_LIVE_STREAM_VALUE);
-			}
-
 			getRadioPlayer().doStartPlay(this);
 			getWindow()
 					.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -645,20 +632,6 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		URL outputUrl = null;
 
 		try {
-			if (Constants.SELECTED_STATION_NAME_VALUE
-					.equalsIgnoreCase(Stations.RADIO_PLANET_RADIO)) {
-				WebTool webtool = new WebTool();
-				// rt1 ist gesch�tzt und braucht login token damit man den
-				// Stream abspielen kann.
-				if (origPlanetradioSteam == null) {
-					origPlanetradioSteam = Constants.URL_LIVE_STREAM_VALUE;
-				}
-				Constants.URL_LIVE_STREAM_VALUE = origPlanetradioSteam
-						+ webtool.getPlanetradioToken(this);
-				Utils.log(TAG, "*********** new Stream="
-						+ Constants.URL_LIVE_STREAM_VALUE);
-			}
-
 			Utils.log(TAG, "Constants.URL_LIVE_STREAM_VALUE="
 					+ Constants.URL_LIVE_STREAM_VALUE);
 			inputUrl = new URL(Constants.URL_LIVE_STREAM_VALUE);
