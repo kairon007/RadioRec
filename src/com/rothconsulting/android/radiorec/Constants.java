@@ -145,7 +145,7 @@ public class Constants {
 	protected static int SELECTED_STATION_ICON_VALUE;
 	protected static int SELECTED_STATION_ICON_SMALL_VALUE;
 	protected static String SELECTED_STATION_NAME_VALUE;
-	protected static String URL_LIVE_STREAM_VALUE;
+	public static String URL_LIVE_STREAM_VALUE;
 	protected static String URL_HOMEPAGE_VALUE;
 	protected static String URL_WEBCAM_VALUE;
 	protected static String URL_CONTACT_VALUE;

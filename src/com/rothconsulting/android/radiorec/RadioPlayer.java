@@ -16,6 +16,11 @@ public class RadioPlayer {
 	MediaPlayer mediaPlayer;
 	Thread threadDoStartPlay;
 	ProgressDialog progressDialog;
+	boolean isRunning = false;
+
+	public boolean isRunning() {
+		return isRunning;
+	}
 
 	private Notifications getNotifInstance(Context context) {
 		Intent intent = new Intent(context, Donate.class);
@@ -24,7 +29,7 @@ public class RadioPlayer {
 		return new Notifications(context, intent);
 	}
 
-	protected void doStartPlay(final Context context) {
+	public boolean doStartPlay(final Context context) {
 		Utils.log(TAG, "doStartPlay()");
 
 		createThread(context);
@@ -34,12 +39,14 @@ public class RadioPlayer {
 		progressDialog = utils.prepareProgressDialog(context);
 		progressDialog.setTitle(Constants.SELECTED_STATION_NAME_VALUE);
 		Utils.log(TAG, "progressDialog.show()");
+		// temp disable for JUnit
 		progressDialog.show();
 		Utils.log(TAG, "--- threadDoStartPlay.start()");
 		threadDoStartPlay.start();
+		return isRunning;
 	}
 
-	protected void doStopPlay(Context context) {
+	public void doStopPlay(Context context) {
 		Utils.log(TAG, "doStopPlay()");
 		try {
 			if (threadDoStartPlay != null && threadDoStartPlay.isAlive()) {
@@ -160,6 +167,9 @@ public class RadioPlayer {
 						getNotifInstance(context)
 								.showStatusBarNotificationError(
 										R.string.internetadresseNichtErreichbar);
+						isRunning = false;
+					} else {
+						isRunning = true;
 					}
 				}
 				Utils.log(TAG, "progressDialog.dismiss()");

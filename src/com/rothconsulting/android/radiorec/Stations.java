@@ -1076,7 +1076,7 @@ public class Stations {
 		m.put("name", RADIO_LORA);
 		m.put("icon", R.drawable.radio_lora);
 		m.put("icon_small", R.drawable.radio_lora_small);
-		m.put("stream", "http://livestream.lora.ch:12220");
+		m.put("stream", "http://livestream.lora.ch/lora-192.mp3");
 		m.put("homepage", "http://www.lora.ch");
 		m.put("webcam", "");
 		m.put("email", "http://lora.ch/ueberuns/kontakt");
@@ -2025,7 +2025,7 @@ public class Stations {
 		m.put("name", RADIO_SUNSHINE_LIVE);
 		m.put("icon", R.drawable.radio_sunshinelive);
 		m.put("icon_small", R.drawable.radio_sunshinelive_small);
-		m.put("stream", "http://62.27.47.15/sunshinelive/livestream.mp3");
+		m.put("stream", "http://stream.hoerradar.de:80/sunshinelive-mp3-192");
 		m.put("homepage", "http://www.sunshine-live.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.sunshine-live.de/pop-ups/mail-ins-studio/");
@@ -2724,7 +2724,7 @@ public class Stations {
 		m.put("name", RADIO_HOUSETIME_FM);
 		m.put("icon", R.drawable.radio_housetime_fm);
 		m.put("icon_small", R.drawable.radio_housetime_fm_small);
-		m.put("stream", "http://listen.housetime.fm/tunein-dsl-pls");
+		m.put("stream", "http://listen.housetime.fm/tunein-mp3-pls");
 		m.put("homepage", "http://www.housetime.fm");
 		m.put("webcam", "");
 		m.put("email", "http://www.housetime.fm/contact/");
@@ -2738,7 +2738,7 @@ public class Stations {
 		m.put("icon", R.drawable.radio_planet_radio);
 		m.put("icon_small", R.drawable.radio_planet_radio_small);
 		m.put("stream",
-				"http://edge.live.mp3.mdn.newmedia.nacamar.net/fs_planetradio/hqlivestream.mp3?token=");
+				"http://mp3.planetradio.de/planetradio/hqlivestream.mp3");
 		m.put("homepage", "http://www.planetradio.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.planetradio.de/contact/info.html");
@@ -3093,8 +3093,7 @@ public class Stations {
 		m.put("name", RADIO_EGO_FM);
 		m.put("icon", R.drawable.radio_ego_fm);
 		m.put("icon_small", R.drawable.radio_ego_fm_small);
-		m.put("stream",
-				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-egofm_192/livestream.mp3");
+		m.put("stream", "http://62.27.26.45:8000/ps-egofm_128/livestream.mp3");
 		m.put("homepage", "http://www.egofm.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.egofm.de/default.aspx?ID=6083");
@@ -3527,7 +3526,7 @@ public class Stations {
 		m.put("name", RADIO_ANTENNE_SALZBURG);
 		m.put("icon", R.drawable.radio_antenne_salzburg);
 		m.put("icon_small", R.drawable.radio_antenne_salzburg_small);
-		m.put("stream", "http://streamplus14.leonex.de:24946");
+		m.put("stream", "http://streamplus14.leonex.de:24950");
 		m.put("homepage", "http://antennesalzburg.oe24.at");
 		m.put("webcam", "");
 		m.put("email",
@@ -3943,7 +3942,7 @@ public class Stations {
 		m.put("name", RADIO_SOUND_CITY);
 		m.put("icon", R.drawable.radio_soundcity);
 		m.put("icon_small", R.drawable.radio_soundcity_small);
-		m.put("stream", "http://94.23.32.31:3276/");
+		m.put("stream", "http://streaming.radiosoundcity.net:3276");
 		m.put("homepage", "http://www.radiosoundcity.net");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiosoundcity.net/radio/contattaci");

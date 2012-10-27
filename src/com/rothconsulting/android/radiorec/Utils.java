@@ -231,14 +231,25 @@ public class Utils {
 
 	public static List<String> getStationNameList(
 			ArrayList<HashMap<String, Object>> stationList, String searchName) {
+		return getStationAttributList(stationList, searchName, "name");
+	}
+
+	public static List<String> getStationStreamList(
+			ArrayList<HashMap<String, Object>> stationList, String searchName) {
+		return getStationAttributList(stationList, searchName, "stream");
+	}
+
+	private static List<String> getStationAttributList(
+			ArrayList<HashMap<String, Object>> stationList, String searchName,
+			String stationAttribut) {
 
 		List<String> result = new ArrayList<String>();
 
 		for (HashMap<String, Object> station : stationList) {
 			if (searchName == null
-					|| ((String) station.get("name")).toUpperCase().contains(
-							searchName.toUpperCase())) {
-				result.add("" + station.get("name"));
+					|| ((String) station.get(stationAttribut)).toUpperCase()
+							.contains(searchName.toUpperCase())) {
+				result.add("" + station.get(stationAttribut));
 			}
 		}
 
