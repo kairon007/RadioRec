@@ -39,8 +39,10 @@ public class RadioPlayer {
 		progressDialog = utils.prepareProgressDialog(context);
 		progressDialog.setTitle(Constants.SELECTED_STATION_NAME_VALUE);
 		Utils.log(TAG, "progressDialog.show()");
-		// temp disable for JUnit
-		progressDialog.show();
+		// disable for JUnit
+		if (!Constants.JUNIT_TEST) {
+			progressDialog.show();
+		}
 		Utils.log(TAG, "--- threadDoStartPlay.start()");
 		threadDoStartPlay.start();
 		return isRunning;

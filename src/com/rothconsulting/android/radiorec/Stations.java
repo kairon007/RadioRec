@@ -161,7 +161,8 @@ public class Stations {
 	public static final String RADIO_BAYERN_4_KLASSIK = "Bayern 4 Klassik";
 	public static final String RADIO_BAYERN_5_AKTUELL = "Bayern 5 Aktuell";
 	public static final String RADIO_ON_3 = "On-3";
-	public static final String RADIO_SWR_1 = "SWR 1";
+	public static final String RADIO_SWR_1_BW = "SWR 1 Baden Württemberg";
+	public static final String RADIO_SWR_1_RP = "SWR 1 Rheinland Pfalz";
 	public static final String RADIO_SWR_2 = "SWR 2";
 	public static final String RADIO_SWR_3 = "SWR 3";
 	public static final String RADIO_SWR_4 = "SWR 4";
@@ -1748,7 +1749,7 @@ public class Stations {
 		m.put("name", RADIO_ANTENNE_BAYERN);
 		m.put("icon", R.drawable.radio_antenne_bayern);
 		m.put("icon_small", R.drawable.radio_antenne_bayern_small);
-		m.put("stream", "http://mp3.webradio.antenne.de:80");
+		m.put("stream", "http://mp3.webradio.antenne.de");
 		m.put("homepage", "http://www.antenne.de");
 		m.put("webcam",
 				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
@@ -1900,10 +1901,26 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_SWR_1);
+		m.put("name", RADIO_SWR_1_BW);
 		m.put("icon", R.drawable.radio_swr1);
 		m.put("icon_small", R.drawable.radio_swr1_small);
-		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_swr1bwb");
+		m.put("stream",
+				"http://swr-mp3-m-swr1bw.akacast.akamaistream.net/7/245/137133/v1/gnl.akacast.akamaistream.net/swr-mp3-m-swr1bw");
+		m.put("homepage", "http://www.swr1.de");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.swr.de/swr1/bw/kontakt/-/id=446430/cf=42/s4inx1/index.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SWR_1_RP);
+		m.put("icon", R.drawable.radio_swr1);
+		m.put("icon_small", R.drawable.radio_swr1_small);
+		m.put("stream",
+				"http://swr-mp3-m-swr1rp.akacast.akamaistream.net/7/467/137134/v1/gnl.akacast.akamaistream.net/swr-mp3-m-swr1rp");
 		m.put("homepage", "http://www.swr1.de");
 		m.put("webcam", "");
 		m.put("email",

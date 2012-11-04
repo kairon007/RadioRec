@@ -180,4 +180,6 @@ public class Constants {
 	public static int SPINNER_ALPHABETISCH = -500;
 	public static int SPINNER_SPRACHE = -600;
 
+	public static Boolean JUNIT_TEST = Boolean.FALSE;
+
 }
