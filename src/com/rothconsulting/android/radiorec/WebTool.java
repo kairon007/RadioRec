@@ -7,7 +7,6 @@ import org.apache.http.HttpResponse;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
 public class WebTool {
 
@@ -62,9 +61,9 @@ public class WebTool {
 
 				// result = Constants.URL_SONGTICKER_RABE;
 				// return result;
-			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_DRS1)) {
-			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_DRS2)) {
-			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_DRS3)) {
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_SRF1)) {
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_SRF2)) {
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_SRF3)) {
 
 				String parseResult = new String();
 				parseResult += new WebsiteParser()
@@ -92,7 +91,7 @@ public class WebTool {
 
 				result += result + parseResult;
 
-			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_DRS4)) {
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_SRF4)) {
 			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_TOP)) {
 
 				String findString = "<td>Current Song:</td>";
@@ -172,7 +171,7 @@ public class WebTool {
 
 	/**
 	 * Radio jugglerz.de hat immer Donnerstags eine Live Sendung. Ab Freitag
-	 * kann man diese als mp3 hören.
+	 * kann man diese als mp3 hï¿½ren.
 	 * 
 	 * @return Dateiname 'xxxx.mp3'
 	 */

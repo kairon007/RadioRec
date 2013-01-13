@@ -57,15 +57,15 @@ public class Stations {
 	public static final String RADIO_RABE = "RaBe";
 	public static final String RADIO_24 = "Radio 24";
 	public static final String RADIO_24_ROCK = "Radio 24 Rock";
-	public static final String RADIO_DRS1 = "DRS1";
-	public static final String RADIO_DRS1_AGSO = "DRS1 AG/SO";
-	public static final String RADIO_DRS1_BSBL = "DRS1 BS/BL";
-	public static final String RADIO_DRS1_BEFRVS = "DRS1 BE/FR/VS";
-	public static final String RADIO_DRS2 = "DRS2";
-	public static final String RADIO_DRS3 = "DRS3";
-	public static final String RADIO_DRS4 = "DRS4 News";
-	public static final String RADIO_DRS_VIRUS = "DRS Virus";
-	public static final String RADIO_DRS_MUSIKWELLE = "DRS Musikwelle";
+	public static final String RADIO_SRF1 = "SRF1";
+	public static final String RADIO_SRF1_AGSO = "SRF1 AG/SO";
+	public static final String RADIO_SRF1_BSBL = "SRF1 BS/BL";
+	public static final String RADIO_SRF1_BEFRVS = "SRF1 BE/FR/VS";
+	public static final String RADIO_SRF2 = "SRF2";
+	public static final String RADIO_SRF3 = "SRF3";
+	public static final String RADIO_SRF4 = "SRF4 News";
+	public static final String RADIO_SRF_VIRUS = "SRF Virus";
+	public static final String RADIO_SRF_MUSIKWELLE = "SRF Musikwelle";
 	public static final String RADIO_ENERGY_BERN = "Energy Bern";
 	public static final String RADIO_ENERGY_ZUERICH = "Energy Zürich";
 	public static final String RADIO_ENERGY_BASEL = "Energy Basel";
@@ -512,43 +512,40 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_DRS1);
+		m.put("name", RADIO_SRF1);
 		m.put("icon", R.drawable.radio_srf_1);
 		m.put("icon_small", R.drawable.radio_srf_1_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs1/mp3_128");
-		m.put("homepage", "http://www.drs1.ch");
+		m.put("homepage", "http://www.srf1.ch");
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
-		m.put("email",
-				"http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html");
+		m.put("email", "http://www.srf.ch/radio-srf-1/mail-ins-studio");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_DRS1_AGSO);
+		m.put("name", RADIO_SRF1_AGSO);
 		m.put("icon", R.drawable.radio_srf_1_ag_so);
 		m.put("icon_small", R.drawable.radio_srf_1_small);
 		m.put("stream",
 				"http://glb-stream12.streamserver.ch/1/regi_ag_so/mp3_128");
-		m.put("homepage",
-				"http://www.drs1.ch/www/de/drs1/nachrichten/regional/aargau-solothurn.html");
+		m.put("homepage", "http://www.srf.ch/news/regional/aargau-solothurn");
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
 		m.put("email",
-				"http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html");
+				"http://www.srf.ch/sendungen/regionaljournal-aargau-solothurn/kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_DRS1_BSBL);
+		m.put("name", RADIO_SRF1_BSBL);
 		m.put("icon", R.drawable.radio_srf_1_bs_bl);
 		m.put("icon_small", R.drawable.radio_srf_1_small);
 		m.put("stream",
 				"http://glb-stream12.streamserver.ch/1/regi_bs_bl/mp3_128");
-		m.put("homepage",
-				"http://www.drs1.ch/www/de/drs1/nachrichten/regional/basel-baselland.html");
+		m.put("homepage", "http://www.srf.ch/news/regional/basel-baselland");
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
 		m.put("email",
 				"http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html");
@@ -558,66 +555,63 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_DRS1_BEFRVS);
+		m.put("name", RADIO_SRF1_BEFRVS);
 		m.put("icon", R.drawable.radio_srf_1_be_fr_vs);
 		m.put("icon_small", R.drawable.radio_srf_1_small);
 		m.put("stream",
 				"http://glb-stream12.streamserver.ch/1/regi_be_fr_vs/mp3_128");
 		m.put("homepage",
-				"http://www.drs1.ch/www/de/drs1/nachrichten/regional/bern-freiburg-wallis.html");
+				"http://www.srf.ch/news/regional/bern-freiburg-wallis");
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
 		m.put("email",
-				"http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html");
+				"http://www.srf.ch/sendungen/regionaljournal-bern-freiburg-wallis/kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_DRS2);
+		m.put("name", RADIO_SRF2);
 		m.put("icon", R.drawable.radio_srf_2);
 		m.put("icon_small", R.drawable.radio_srf_2_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs2/mp3_128");
-		m.put("homepage", "http://www.drs2.ch");
+		m.put("homepage", "http://www.srf2.ch");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.drs2.ch/www/de/drs2/kontakt/kundendienst.html");
+		m.put("email", "http://www.srf.ch/radio-srf-2-kultur/mail-ins-studio");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_KLASSIK);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_DRS3);
+		m.put("name", RADIO_SRF3);
 		m.put("icon", R.drawable.radio_srf_3);
 		m.put("icon_small", R.drawable.radio_srf_3_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs3/mp3_128");
-		m.put("homepage", "http://www.drs3.ch");
+		m.put("homepage", "http://www.srf3.ch");
 		m.put("webcam", "http://www.drs3.ch/import/webcam/drs3/webdrs3a.jpg");
-		m.put("email",
-				"http://www.drs3.ch/www/de/drs3/kontakt/mail-ins-studio.html");
+		m.put("email", "http://www.srf.ch/radio-srf-3/mail-ins-studio");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_DRS4);
+		m.put("name", RADIO_SRF4);
 		m.put("icon", R.drawable.radio_srf_4_news);
 		m.put("icon_small", R.drawable.radio_srf_4_news_small);
 		m.put("stream",
 				"http://glb-stream12.streamserver.ch/2/drs4news/mp3_128");
-		m.put("homepage", "http://www.drs4news.ch");
+		m.put("homepage", "http://www.srf4news.ch");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.drs4news.ch/www/de/drs4/kontakt/mail-ins-studio.html");
+		m.put("email", "http://www.srf.ch/radio-srf-4-news/mail-ins-studio");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_DRS_VIRUS);
+		m.put("name", RADIO_SRF_VIRUS);
 		m.put("icon", R.drawable.radio_srf_virus);
 		m.put("icon_small", R.drawable.radio_srf_virus_small);
 		m.put("stream",
@@ -632,15 +626,14 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_DRS_MUSIKWELLE);
+		m.put("name", RADIO_SRF_MUSIKWELLE);
 		m.put("icon", R.drawable.radio_srf_musikwelle);
 		m.put("icon_small", R.drawable.radio_srf_musikwelle_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/drsmw/mp3_128");
-		m.put("homepage", "http://www.drsmusikwelle.ch");
+		m.put("homepage", "http://www.srfmusikwelle.ch");
 		m.put("webcam",
 				"http://www.drsmusikwelle.ch/import/webcam/drsmw/webdrsmwb.jpg");
-		m.put("email",
-				"http://www.drsmusikwelle.ch/www/de/drsmusikwelle/kontakt/mail-ins-studio.html");
+		m.put("email", "http://www.srf.ch/radio-srf-musikwelle/mail-ins-studio");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
