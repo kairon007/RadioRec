@@ -222,6 +222,7 @@ public class Stations {
 	public static final String RADIO_ENERGY_SACHSEN = "Energy Sachsen";
 	public static final String RADIO_FFN_NIEDERSACHSEN = "FFN Niedersachsen";
 	public static final String RADIO_TECHNOBASE_FM = "Technobase FM";
+	public static final String RADIO_HARDBASE_FM = "Hardbase FM";
 	public static final String RADIO_HOUSETIME_FM = "HouseTime.FM";
 	public static final String RADIO_PLANET_RADIO = "Planet Radio";
 	public static final String RADIO_GALAXY_ASCHAFFENBURG = "Galaxy Aschaffenburg";
@@ -512,8 +513,8 @@ public class Stations {
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS1);
-		m.put("icon", R.drawable.radio_drs_1);
-		m.put("icon_small", R.drawable.radio_drs_1_small);
+		m.put("icon", R.drawable.radio_srf_1);
+		m.put("icon_small", R.drawable.radio_srf_1_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs1/mp3_128");
 		m.put("homepage", "http://www.drs1.ch");
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
@@ -526,8 +527,8 @@ public class Stations {
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS1_AGSO);
-		m.put("icon", R.drawable.radio_drs_1_ag_so);
-		m.put("icon_small", R.drawable.radio_drs_1_ag_so_small);
+		m.put("icon", R.drawable.radio_srf_1_ag_so);
+		m.put("icon_small", R.drawable.radio_srf_1_small);
 		m.put("stream",
 				"http://glb-stream12.streamserver.ch/1/regi_ag_so/mp3_128");
 		m.put("homepage",
@@ -542,8 +543,8 @@ public class Stations {
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS1_BSBL);
-		m.put("icon", R.drawable.radio_drs_1_bs_bl);
-		m.put("icon_small", R.drawable.radio_drs_1_bs_bl_small);
+		m.put("icon", R.drawable.radio_srf_1_bs_bl);
+		m.put("icon_small", R.drawable.radio_srf_1_small);
 		m.put("stream",
 				"http://glb-stream12.streamserver.ch/1/regi_bs_bl/mp3_128");
 		m.put("homepage",
@@ -558,8 +559,8 @@ public class Stations {
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS1_BEFRVS);
-		m.put("icon", R.drawable.radio_drs_1_be_fr_vs);
-		m.put("icon_small", R.drawable.radio_drs_1_be_fr_vs_small);
+		m.put("icon", R.drawable.radio_srf_1_be_fr_vs);
+		m.put("icon_small", R.drawable.radio_srf_1_small);
 		m.put("stream",
 				"http://glb-stream12.streamserver.ch/1/regi_be_fr_vs/mp3_128");
 		m.put("homepage",
@@ -574,8 +575,8 @@ public class Stations {
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS2);
-		m.put("icon", R.drawable.radio_drs_2);
-		m.put("icon_small", R.drawable.radio_drs_2_small);
+		m.put("icon", R.drawable.radio_srf_2);
+		m.put("icon_small", R.drawable.radio_srf_2_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs2/mp3_128");
 		m.put("homepage", "http://www.drs2.ch");
 		m.put("webcam", "");
@@ -588,8 +589,8 @@ public class Stations {
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS3);
-		m.put("icon", R.drawable.radio_drs_3);
-		m.put("icon_small", R.drawable.radio_drs_3_small);
+		m.put("icon", R.drawable.radio_srf_3);
+		m.put("icon_small", R.drawable.radio_srf_3_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs3/mp3_128");
 		m.put("homepage", "http://www.drs3.ch");
 		m.put("webcam", "http://www.drs3.ch/import/webcam/drs3/webdrs3a.jpg");
@@ -602,8 +603,8 @@ public class Stations {
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS4);
-		m.put("icon", R.drawable.radio_drs_4_news);
-		m.put("icon_small", R.drawable.radio_drs_4_news_small);
+		m.put("icon", R.drawable.radio_srf_4_news);
+		m.put("icon_small", R.drawable.radio_srf_4_news_small);
 		m.put("stream",
 				"http://glb-stream12.streamserver.ch/2/drs4news/mp3_128");
 		m.put("homepage", "http://www.drs4news.ch");
@@ -617,8 +618,8 @@ public class Stations {
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS_VIRUS);
-		m.put("icon", R.drawable.radio_drs_virus);
-		m.put("icon_small", R.drawable.radio_drs_virus_small);
+		m.put("icon", R.drawable.radio_srf_virus);
+		m.put("icon_small", R.drawable.radio_srf_virus_small);
 		m.put("stream",
 				"http://glb-stream12.streamserver.ch/2/drsvirus/mp3_128");
 		m.put("homepage", "http://www.virus.ch");
@@ -632,8 +633,8 @@ public class Stations {
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DRS_MUSIKWELLE);
-		m.put("icon", R.drawable.radio_drs_musikwelle);
-		m.put("icon_small", R.drawable.radio_drs_musikwelle_small);
+		m.put("icon", R.drawable.radio_srf_musikwelle);
+		m.put("icon_small", R.drawable.radio_srf_musikwelle_small);
 		m.put("stream", "http://glb-stream12.streamserver.ch/2/drsmw/mp3_128");
 		m.put("homepage", "http://www.drsmusikwelle.ch");
 		m.put("webcam",
@@ -1265,7 +1266,8 @@ public class Stations {
 		m.put("name", RADIO_FIUME_TICINO);
 		m.put("icon", R.drawable.radio_fiume_ticino);
 		m.put("icon_small", R.drawable.radio_fiume_ticino_small);
-		m.put("stream", "http://91.208.130.229");
+		m.put("stream", "http://www.rftstreaming.com/stream/1/;.mp3");
+		// m.put("stream", "http://91.208.130.229");
 		m.put("homepage", "http://www.radioticino.com");
 		m.put("webcam", "");
 		m.put("email",
@@ -1586,7 +1588,8 @@ public class Stations {
 		m.put("name", RADIO_WAVE);
 		m.put("icon", R.drawable.radio_wave);
 		m.put("icon_small", R.drawable.radio_wave_small);
-		m.put("stream", "http://212.83.60.57:2100");
+		// m.put("stream", "http://212.83.60.57:2100");
+		m.put("stream", "http://212.83.60.57:31900");
 		m.put("homepage", "http://www.radio-wave.ch");
 		m.put("webcam", "http://www.radiowave.ch/studio.jpg");
 		m.put("email",
@@ -2163,7 +2166,9 @@ public class Stations {
 		m.put("icon", R.drawable.radio_rt1_suedschwaben);
 		m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
 		m.put("stream",
-				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-rt1suedschwaben/livestream.mp3");
+				"http://62.27.47.15:8000/ps-rt1nordschwaben/livestream.mp3");
+		// m.put("stream",
+		// "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-rt1suedschwaben/livestream.mp3");
 		m.put("homepage", "http://www.rt1-suedschwaben.de");
 		m.put("webcam", "");
 		m.put("email",
@@ -2732,6 +2737,19 @@ public class Stations {
 		m.put("homepage", "http://www.technobase.fm");
 		m.put("webcam", "");
 		m.put("email", "http://www.technobase.fm/contact");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_HARDBASE_FM);
+		m.put("icon", R.drawable.radio_hardbase_fm);
+		m.put("icon_small", R.drawable.radio_hardbase_fm_small);
+		m.put("stream", "http://listen.hardbase.fm/tunein-mp3-pls");
+		m.put("homepage", "http://www.hardbase.fm");
+		m.put("webcam", "");
+		m.put("email", "http://www.hardbase.fm/contact");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_TRANCE);
