@@ -1540,7 +1540,8 @@ public class Stations {
 		m.put("name", RADIO_INDUSTRIE);
 		m.put("icon", R.drawable.radio_industrie);
 		m.put("icon_small", R.drawable.radio_industrie_small);
-		m.put("stream", "http://96.31.83.87:8063");
+		m.put("stream",
+				"http://radioindustrie.ice.infomaniak.ch/radioindustrie-128.mp3");
 		m.put("homepage", "http://www.radioindustrie.ch");
 		m.put("webcam",
 				"http://radioindustrie.dyndns.org:8090/SnapshotJPEG?Resolution=640x480&Quality=Clarity");
@@ -2713,7 +2714,8 @@ public class Stations {
 		m.put("name", RADIO_FFN_NIEDERSACHSEN);
 		m.put("icon", R.drawable.radio_ffn_niedersachsen);
 		m.put("icon_small", R.drawable.radio_ffn_niedersachsen_small);
-		m.put("stream", "http://rs35.stream24.org/stream");
+		m.put("stream",
+				"http://ads.radioffn.c.nmdn.net/ps-radioffn/livestream.mp3");
 		m.put("homepage", "http://www.ffn.de");
 		m.put("webcam", "http://www.ffn.de/fileadmin/content/webcam/studio.jpg");
 		m.put("email", "radio@ffn.de");
@@ -3217,7 +3219,7 @@ public class Stations {
 		m.put("name", RADIO_KRAUTROCK_WORLD);
 		m.put("icon", R.drawable.radio_krautrock_world);
 		m.put("icon_small", R.drawable.radio_krautrock_world_small);
-		m.put("stream", "http://87.230.55.91:7592");
+		m.put("stream", "http://80.237.157.67:7592");
 		m.put("homepage", "http://www.krautrock-world.com");
 		m.put("webcam", "");
 		m.put("email", "http://www.krautrock-world.com/impressum.html");
@@ -3917,7 +3919,7 @@ public class Stations {
 		m.put("name", RADIO_OTTO_FM);
 		m.put("icon", R.drawable.radio_otto_fm);
 		m.put("icon_small", R.drawable.radio_otto_fm_small);
-		m.put("stream", "http://91.208.130.119");
+		m.put("stream", "http://91.208.130.229:80");
 		m.put("homepage", "http://www.otto-fm.com");
 		m.put("webcam", "");
 		m.put("email", "info@otto-fm.com");
