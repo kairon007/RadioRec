@@ -244,6 +244,7 @@ public class Stations {
 	public static final String RADIO_SAW_ROCK = "SAW Rock";
 	public static final String RADIO_SAW_NEUHEITEN = "SAW Neuheiten";
 	public static final String RADIO_SAW_PARTY = "SAW Party";
+	public static final String RADIO_SAW_90 = "SAW 90s";
 	public static final String RADIO_HOCHSTIFT = "Hochstift";
 	public static final String RADIO_HITRADIO_RTL_SACHSEN = "Hitradio RTL Sachsen";
 	public static final String RADIO_MULTICULT = "Multicult";
@@ -267,6 +268,7 @@ public class Stations {
 	public static final String RADIO_KLASSIK_RADIO_LOUNGE = "Klassik Radio Lounge";
 	public static final String RADIO_JUST_90 = "Just 90s";
 	public static final String RADIO_CLUB_LOUNGE_RADIO_HOUSE = "Club Lounge Radio House";
+	public static final String RADIO_CLUB_93 = "Club 93";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3039,6 +3041,20 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SAW_90);
+		m.put("icon", R.drawable.radio_saw_90);
+		m.put("icon_small", R.drawable.radio_saw_small);
+		m.put("stream",
+				"http://stream.radiosaw.de/saw-90er/mp3-128/listenliveeu");
+		m.put("homepage", "http://www.radiosaw.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_HOCHSTIFT);
 		m.put("icon", R.drawable.radio_hochstift);
 		m.put("icon_small", R.drawable.radio_hochstift_small);
@@ -3336,6 +3352,19 @@ public class Stations {
 		m.put("stil", STIL_LOUNGE);
 		setStationlist(stationList, m);
 
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_CLUB_93);
+		m.put("icon", R.drawable.radio_club_93);
+		m.put("icon_small", R.drawable.radio_club_93_small);
+		m.put("stream", "http://stream.laut.fm/club93");
+		m.put("homepage", "http://laut.fm/club93");
+		m.put("webcam", "");
+		m.put("email", "https://twitter.com/laut_fm");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_TRANCE);
+		setStationlist(stationList, m);
+
 		// ******************************************************************************************************
 		// *
 		// * �STERREICH
@@ -3449,7 +3478,7 @@ public class Stations {
 		m.put("name", RADIO_NIEDEROESTERREICH);
 		m.put("icon", R.drawable.radio_orf_niederoesterreich);
 		m.put("icon_small", R.drawable.radio_orf_niederoesterreich_small);
-		m.put("stream", "http://194.232.200.147:8000");
+		m.put("stream", "http://mp3stream8.apasf.apa.at:8000");
 		m.put("homepage", "http://noe.orf.at");
 		m.put("webcam", "");
 		m.put("email", "noe-publikum@orf.at");
