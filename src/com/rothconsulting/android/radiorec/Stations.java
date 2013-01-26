@@ -277,6 +277,7 @@ public class Stations {
 	public static final String RADIO_JUST_90 = "Just 90s";
 	public static final String RADIO_CLUB_LOUNGE_RADIO_HOUSE = "Club Lounge Radio House";
 	public static final String RADIO_CLUB_93 = "Club 93";
+	public static final String RADIO_BASETRAX_CLUB = "BaseTrax.FM Club";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -303,6 +304,7 @@ public class Stations {
 	public static final String RADIO_KRONEHIT = "KroneHit";
 	public static final String RADIO_KRONEHIT_90_DANCE = "KroneHit 90s Dance";
 	public static final String RADIO_KRONEHIT_VOLLGAS = "KroneHit Vollgas";
+	public static final String RADIO_KRONEHIT_CLUBLAND = "KroneHit Clubland";
 	public static final String RADIO_886 = "88.6";
 	public static final String RADIO_ENRGY_WIEN = "Energy Wien";
 	public static final String RADIO_FRESH_BEATZ = "FreshBeatz.fm";
@@ -2839,6 +2841,20 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_BASETRAX_CLUB);
+		m.put("icon", R.drawable.radio_basetrax_club);
+		m.put("icon_small", R.drawable.radio_basetrax_club_small);
+		m.put("stream", "http://81.169.157.246:8100");
+		m.put("homepage", "http://www.basetrax.fm/Club/");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.basetrax.fm/Club/index.php?option=com_contact&view=contact&id=1&Itemid=83");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_TECHNOBASE_FM);
 		m.put("icon", R.drawable.radio_technobase_fm);
 		m.put("icon_small", R.drawable.radio_technobase_fm_small);
@@ -3765,6 +3781,19 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_kronehit_vollgas_small);
 		m.put("stream", "http://onair.krone.at/kronehit-vollgas.mp3");
 		m.put("homepage", "http://www.kronehit.at/vollgas");
+		m.put("webcam", "");
+		m.put("email", "http://www.kronehit.at/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_KRONEHIT_CLUBLAND);
+		m.put("icon", R.drawable.radio_kronehit_clubland);
+		m.put("icon_small", R.drawable.radio_kronehit_clubland_small);
+		m.put("stream", "http://onair.krone.at/kronehit-clubland.mp3");
+		m.put("homepage", "http://www.kronehit.at/clubland");
 		m.put("webcam", "");
 		m.put("email", "http://www.kronehit.at/kontakt");
 		m.put("sprache", SPRACHE_DE);
