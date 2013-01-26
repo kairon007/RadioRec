@@ -131,6 +131,7 @@ public class Stations {
 	public static final String RADIO_CENTRAL_SWISS = "Central Swiss";
 	public static final String RADIO_CENTRAL_LAENDLER = "Central Ländler";
 	public static final String RADIO_CENTRAL_JAZZ = "Central Jazz";
+	public static final String RADIO_CENTRAL_FUNK = "Central Funk";
 	public static final String RADIO_CENTRAL_HIP_HOP = "Central Hip Hop";
 	public static final String RADIO_CENTRAL_COUNTRY = "Central Country";
 	public static final String RADIO_CENTRAL_SPEZIAL = "Central Spezial";
@@ -1507,7 +1508,7 @@ public class Stations {
 		m.put("name", RADIO_CENTRAL_LAENDLER);
 		m.put("icon", R.drawable.radio_central_laendler);
 		m.put("icon_small", R.drawable.radio_central_laendler_small);
-		m.put("stream", "http://sp3128.mp3.green.ch");
+		m.put("stream", "http://eviva128.mp3.green.ch");
 		m.put("homepage", "http://www.radiocentral.ch");
 		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
 		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
@@ -1520,7 +1521,7 @@ public class Stations {
 		m.put("name", RADIO_CENTRAL_COUNTRY);
 		m.put("icon", R.drawable.radio_central_country);
 		m.put("icon_small", R.drawable.radio_central_country_small);
-		m.put("stream", "http://sp3128.mp3.green.ch");
+		m.put("stream", "http://sp9128.mp3.green.ch");
 		m.put("homepage", "http://www.radiocentral.ch");
 		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
 		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
@@ -1533,7 +1534,7 @@ public class Stations {
 		m.put("name", RADIO_CENTRAL_DANCE);
 		m.put("icon", R.drawable.radio_central_dance);
 		m.put("icon_small", R.drawable.radio_central_dance_small);
-		m.put("stream", "http://sp3128.mp3.green.ch");
+		m.put("stream", "http://sp8128.mp3.green.ch");
 		m.put("homepage", "http://www.radiocentral.ch");
 		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
 		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
@@ -1546,7 +1547,7 @@ public class Stations {
 		m.put("name", RADIO_CENTRAL_CHARTS);
 		m.put("icon", R.drawable.radio_central_charts);
 		m.put("icon_small", R.drawable.radio_central_charts_small);
-		m.put("stream", "http://sp3128.mp3.green.ch");
+		m.put("stream", "http://sp1128.mp3.green.ch");
 		m.put("homepage", "http://www.radiocentral.ch");
 		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
 		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
@@ -1559,7 +1560,7 @@ public class Stations {
 		m.put("name", RADIO_CENTRAL_HIP_HOP);
 		m.put("icon", R.drawable.radio_central_hip_hop);
 		m.put("icon_small", R.drawable.radio_central_hip_hop_small);
-		m.put("stream", "http://sp3128.mp3.green.ch");
+		m.put("stream", "http://sp5128.mp3.green.ch");
 		m.put("homepage", "http://www.radiocentral.ch");
 		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
 		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
@@ -1572,7 +1573,20 @@ public class Stations {
 		m.put("name", RADIO_CENTRAL_JAZZ);
 		m.put("icon", R.drawable.radio_central_jazz);
 		m.put("icon_small", R.drawable.radio_central_jazz_small);
-		m.put("stream", "http://sp3128.mp3.green.ch");
+		m.put("stream", "http://sp4128.mp3.green.ch");
+		m.put("homepage", "http://www.radiocentral.ch");
+		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
+		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_CENTRAL_FUNK);
+		m.put("icon", R.drawable.radio_central_funk);
+		m.put("icon_small", R.drawable.radio_central_funk_small);
+		m.put("stream", "http://sp6128.mp3.green.ch");
 		m.put("homepage", "http://www.radiocentral.ch");
 		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
 		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
@@ -1585,7 +1599,7 @@ public class Stations {
 		m.put("name", RADIO_CENTRAL_SPEZIAL);
 		m.put("icon", R.drawable.radio_central_special);
 		m.put("icon_small", R.drawable.radio_central_special_small);
-		m.put("stream", "http://sp3128.mp3.green.ch");
+		m.put("stream", "http://sp2128.mp3.green.ch");
 		m.put("homepage", "http://www.radiocentral.ch");
 		m.put("webcam", "http://www.radiocentral.ch/data/WebCam/brunnen.jpg");
 		m.put("email", "http://www.radiocentral.ch/dynasite.cfm?dsmid=77268");
