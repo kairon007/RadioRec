@@ -310,6 +310,7 @@ public class Stations {
 	public static final String RADIO_FRESH_BEATZ = "FreshBeatz.fm";
 	public static final String RADIO_LIFE_RADIO = "Life Radio";
 	public static final String RADIO_U1_TIROL = "U1 Tirol";
+	public static final String RADIO_U1_MELODIEN_AUS_DEN_BERGEN = "U1 Melodien aus den Bergen";
 
 	// ***********************************************
 	// ITALIEN
@@ -3866,6 +3867,20 @@ public class Stations {
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_U1_MELODIEN_AUS_DEN_BERGEN);
+		m.put("icon", R.drawable.radio_u1_melodien_aus_den_bergen);
+		m.put("icon_small", R.drawable.radio_u1_tirol_small);
+		m.put("stream", "http://streamplus4.ameus.de:10750");
+		m.put("homepage", "http://www.u1-radio.at");
+		m.put("webcam", "");
+		m.put("email", "http://www.u1-radio.at/feedback.0.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
 
 		// ******************************************************************************************************
 		// *
