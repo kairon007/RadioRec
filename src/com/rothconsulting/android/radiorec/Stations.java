@@ -279,6 +279,7 @@ public class Stations {
 	public static final String RADIO_CLUB_93 = "Club 93";
 	public static final String RADIO_BASETRAX_CLUB = "BaseTrax.FM Club";
 	public static final String RADIO_MUSICBASE_FM_DANCE = "Musicbase.FM - Dance";
+	public static final String RADIO_1046_RTL = "104,6 RTL";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -363,10 +364,12 @@ public class Stations {
 	public static final String RADIO_JAZZ_RADIO_SOULFOOD = "Jazz Radio Soul Food";
 	public static final String RADIO_TECHNO_4_EVER = "Techno4Ever";
 	public static final String RADIO_MRS_905 = "MRS.SE 90.5";
-	public static final String RADIO_ENERGY_981 = "Energy 98.1";
 	public static final String RADIO_FUN_RADIO_SK = "Fun Radio SK";
 	public static final String RADIO_EUROPA_2_SK = "Europa 2 SK";
 	public static final String RADIO_EXPRES_SK = "Expres SK";
+	public static final String RADIO_DANCE_RADIO_CZ = "Dance Radio CZ";
+	public static final String RADIO_ENERGY_98_USA = "Energy 98 USA";
+	public static final String RADIO_SKY_FM_DANCE_HITS = "Sky FM Dance Hits";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -4504,6 +4507,45 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email", "expres@expres.sk");
 		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_DANCE_RADIO_CZ);
+		m.put("icon", R.drawable.radio_dance_radio);
+		m.put("icon_small", R.drawable.radio_dance_radio_small);
+		m.put("stream", "http://pool.cdn.lagardere.cz/dance-radio128.mp3");
+		m.put("homepage", "http://www.danceradio.cz");
+		m.put("webcam", "");
+		m.put("email", "studio@danceradio.cz");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_ENERGY_98_USA);
+		m.put("icon", R.drawable.radio_energy_98);
+		m.put("icon_small", R.drawable.radio_energy_98_small);
+		m.put("stream", "http://relay.181.fm:8800");
+		m.put("homepage", "http://www.energy981.com");
+		m.put("webcam", "");
+		m.put("email", "http://www.energy981.com/request/index.php");
+		m.put("sprache", SPRACHE_EN);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SKY_FM_DANCE_HITS);
+		m.put("icon", R.drawable.radio_sky_fm_dance_hits);
+		m.put("icon_small", R.drawable.radio_sky_fm_dance_hits_small);
+		m.put("stream", "http://pub1.sky.fm:80/sky_dancehits");
+		m.put("homepage", "http://www.sky.fm");
+		m.put("webcam", "");
+		m.put("email", "http://www.sky.fm/contact");
+		m.put("sprache", SPRACHE_EN);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_TRANCE);
 		setStationlist(stationList, m);
