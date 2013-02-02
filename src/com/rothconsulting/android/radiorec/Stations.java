@@ -234,7 +234,7 @@ public class Stations {
 	public static final String RADIO_HOUSETIME_FM = "HouseTime.FM";
 	public static final String RADIO_PLANET_RADIO = "Planet Radio";
 	public static final String RADIO_GALAXY_ASCHAFFENBURG = "Galaxy Aschaffenburg";
-	public static final String RADIO_GALAXY_KEMPTEN = "Galaxy Kempten";
+	// public static final String RADIO_GALAXY_KEMPTEN = "Galaxy Kempten";
 	public static final String RADIO_GALAXY_BAMBERG = "Galaxy Bamberg/Coburg";
 	public static final String RADIO_BAMBERG = "Bamberg";
 	public static final String RADIO_SPREERADIO = "Spreeradio";
@@ -2866,7 +2866,7 @@ public class Stations {
 		m.put("name", RADIO_TECHNOBASE_FM);
 		m.put("icon", R.drawable.radio_technobase_fm);
 		m.put("icon_small", R.drawable.radio_technobase_fm_small);
-		m.put("stream", "http://85.17.26.115");
+		m.put("stream", "http://listen.technobase.fm/tunein-mp3-pls");
 		m.put("homepage", "http://www.technobase.fm");
 		m.put("webcam", "");
 		m.put("email", "http://www.technobase.fm/contact");
@@ -2929,19 +2929,19 @@ public class Stations {
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_GALAXY_KEMPTEN);
-		m.put("icon", R.drawable.radio_galaxy);
-		m.put("icon_small", R.drawable.radio_galaxy_small);
-		m.put("stream", "http://80.190.249.100:7000/galaxy");
-		m.put("homepage", "http://www.galaxy-kempten.de");
-		m.put("webcam", "");
-		m.put("email",
-				"http://www.radio-galaxy.de/galaxy-cities/kempten/kontakt.html");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_DE);
-		m.put("stil", STIL_POP);
-		setStationlist(stationList, m);
+		// m = new HashMap<String, Object>();
+		// m.put("name", RADIO_GALAXY_KEMPTEN);
+		// m.put("icon", R.drawable.radio_galaxy);
+		// m.put("icon_small", R.drawable.radio_galaxy_small);
+		// m.put("stream", "http://80.190.249.100:7000/galaxy");
+		// m.put("homepage", "http://www.galaxy-kempten.de");
+		// m.put("webcam", "");
+		// m.put("email",
+		// "http://www.radio-galaxy.de/galaxy-cities/kempten/kontakt.html");
+		// m.put("sprache", SPRACHE_DE);
+		// m.put("land", LAND_DE);
+		// m.put("stil", STIL_POP);
+		// setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_GALAXY_BAMBERG);
@@ -2991,7 +2991,7 @@ public class Stations {
 		m.put("icon", R.drawable.radio_ostseewelle);
 		m.put("icon_small", R.drawable.radio_ostseewelle_small);
 		m.put("stream",
-				"http://62.27.44.59:8000/ostseewellelive/livestream.mp3");
+				"http://62.27.87.79:8000/ostseewellelive/livestream.mp3");
 		m.put("homepage", "http://www.ostseewelle.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.ostseewelle.de/kontakt_programm");
@@ -3234,7 +3234,7 @@ public class Stations {
 		m.put("name", RADIO_BLACKBEATS_FM);
 		m.put("icon", R.drawable.radio_blackbeats_fm);
 		m.put("icon_small", R.drawable.radio_blackbeats_fm_small);
-		m.put("stream", "http://stream.blackbeats.fm/");
+		m.put("stream", "http://stream.blackbeatslive.de");
 		m.put("homepage", "http://blackbeats.fm");
 		m.put("webcam", "");
 		m.put("email", "http://blackbeats.fm/ueberuns/");
@@ -4450,7 +4450,7 @@ public class Stations {
 		m.put("name", RADIO_TECHNO_4_EVER);
 		m.put("icon", R.drawable.radio_techno_4_ever);
 		m.put("icon_small", R.drawable.radio_techno_4_ever_small);
-		m.put("stream", "http://node05.t4e.dj");
+		m.put("stream", "http://main01.t4e.dj:12000/high.mp3");
 		m.put("homepage", "http://www.techno4ever.fm");
 		m.put("webcam", "");
 		m.put("email", "http://www.techno4ever.fm/Kontakt");
