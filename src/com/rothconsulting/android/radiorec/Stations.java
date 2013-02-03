@@ -154,6 +154,7 @@ public class Stations {
 	public static final String RADIO_IISCHERS_RADIO = "Iischers Radio";
 	public static final String RADIO_RADIUS = "Radius";
 	public static final String RADIO_LIECHSTENSTEIN = "Liechtenstein";
+	public static final String RADIO_SWISSSOUND = "Swisssound.ch";
 
 	// ***********************************************
 	// DEUTSCHLAND
@@ -1844,6 +1845,19 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email", "http://www.traxx.fm/contact");
 		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SWISSSOUND);
+		m.put("icon", R.drawable.radio_swisssound);
+		m.put("icon_small", R.drawable.radio_swisssound_small);
+		m.put("stream", "http://www.swisssound.ipactive.ch:88/broadwave.mp3");
+		m.put("homepage", "http://www.swisssound.ch");
+		m.put("webcam", "");
+		m.put("email", "radio@swisssound.ch");
+		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
