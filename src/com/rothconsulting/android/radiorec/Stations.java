@@ -330,6 +330,8 @@ public class Stations {
 	public static final String RADIO_POPOLARE_ROMA = "Popolare Roma";
 	public static final String RADIO_M2O = "M2O";
 	public static final String RADIO_RAI_1 = "RAI 1";
+	public static final String RADIO_RAI_2 = "RAI 2";
+	public static final String RADIO_RAI_3 = "RAI 3";
 
 	// ***********************************************
 	// DIVERSE
@@ -4248,6 +4250,19 @@ public class Stations {
 		m.put("homepage", "http://www.radio1.rai.it");
 		m.put("webcam", "");
 		m.put("email", "http://www.rai1.rai.it/dl/RaiUno/contatti.html");
+		m.put("sprache", SPRACHE_IT);
+		m.put("land", LAND_IT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RAI_2);
+		m.put("icon", R.drawable.radio_rai_2);
+		m.put("icon_small", R.drawable.radio_rai_2_small);
+		m.put("stream", "http://212.162.68.230:80/2.mp3");
+		m.put("homepage", "http://www.radio2.rai.it");
+		m.put("webcam", "");
+		m.put("email", "http://www.rai2.rai.it/dl/RaiDue/contatti.html");
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
