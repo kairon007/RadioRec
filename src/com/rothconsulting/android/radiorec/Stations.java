@@ -281,6 +281,7 @@ public class Stations {
 	public static final String RADIO_BASETRAX_CLUB = "BaseTrax.FM Club";
 	public static final String RADIO_MUSICBASE_FM_DANCE = "Musicbase.FM - Dance";
 	public static final String RADIO_1046_RTL = "104,6 RTL";
+	public static final String RADIO_ENNEPE_RUHR = "Ennepe Ruhr";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3516,6 +3517,20 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_ENNEPE_RUHR);
+		m.put("icon", R.drawable.radio_ennepe_ruhr);
+		m.put("icon_small", R.drawable.radio_ennepe_ruhr_small);
+		m.put("stream",
+				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radioen_mobile_mp3/livestream.mp3");
+		m.put("homepage", "http://www.radioenneperuhr.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.radioenneperuhr.de/Kontakt.113.0.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
 		// ******************************************************************************************************
