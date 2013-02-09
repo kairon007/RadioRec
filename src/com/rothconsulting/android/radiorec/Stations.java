@@ -188,6 +188,7 @@ public class Stations {
 	public static final String RADIO_SALUE = "Salü";
 	public static final String RADIO_FFH = "FFH";
 	public static final String RADIO_FFH_LOUNGE = "FFH Lounge";
+	public static final String RADIO_FFH_DEUTSCH_PUR = "FFH Deutsch Pur";
 	public static final String RADIO_RT1_HITRADIO = "Rt1 Hitradio";
 	public static final String RADIO_RT1_SUEDSCHWABEN = "Rt1 Südschwaben";
 	public static final String RADIO_RT1_IN_THE_MIX = "Rt1 in the mix";
@@ -253,6 +254,7 @@ public class Stations {
 	public static final String RADIO_SAW_ROCK = "SAW Rock";
 	public static final String RADIO_SAW_NEUHEITEN = "SAW Neuheiten";
 	public static final String RADIO_SAW_PARTY = "SAW Party";
+	public static final String RADIO_SAW_80 = "SAW 80s";
 	public static final String RADIO_SAW_90 = "SAW 90s";
 	public static final String RADIO_HOCHSTIFT = "Hochstift";
 	public static final String RADIO_HITRADIO_RTL_SACHSEN = "Hitradio RTL Sachsen";
@@ -2283,6 +2285,19 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_FFH_DEUTSCH_PUR);
+		m.put("icon", R.drawable.radio_ffh_deutsch_pur);
+		m.put("icon_small", R.drawable.radio_ffh_deutsch_pur_small);
+		m.put("stream", "http://mp3.ffh.de/ffhchannels/hqdeutsch.mp3");
+		m.put("homepage", "http://webradio.ffh.de");
+		m.put("webcam", "http://resource.ffh.de/webcams/ffh/cam1-fullsize.jpg");
+		m.put("email", "http://www.ffh.de/ffh-welt/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RT1_HITRADIO);
 		m.put("icon", R.drawable.radio_rt1_hitradio);
 		m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
@@ -3186,6 +3201,20 @@ public class Stations {
 		m.put("icon", R.drawable.radio_saw_party);
 		m.put("icon_small", R.drawable.radio_saw_small);
 		m.put("stream", "http://stream.radiosaw.de");
+		m.put("homepage", "http://www.radiosaw.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SAW_80);
+		m.put("icon", R.drawable.radio_saw_80);
+		m.put("icon_small", R.drawable.radio_saw_small);
+		m.put("stream",
+				"http://stream.radiosaw.de/saw-80er/mp3-128/listenliveeu");
 		m.put("homepage", "http://www.radiosaw.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
