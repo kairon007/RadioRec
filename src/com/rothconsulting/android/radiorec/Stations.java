@@ -284,6 +284,8 @@ public class Stations {
 	public static final String RADIO_MUSICBASE_FM_DANCE = "Musicbase.FM - Dance";
 	public static final String RADIO_1046_RTL = "104,6 RTL";
 	public static final String RADIO_ENNEPE_RUHR = "Ennepe Ruhr";
+	public static final String RADIO_I_LOVE_2_DANCE_LOVE = "I Love 2 Dance - Love Radio";
+	public static final String RADIO_I_LOVE_2_DANCE_RADIO = "I Love 2 Dance - Dance Radio";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3557,6 +3559,32 @@ public class Stations {
 		m.put("homepage", "http://www.radioenneperuhr.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radioenneperuhr.de/Kontakt.113.0.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_I_LOVE_2_DANCE_RADIO);
+		m.put("icon", R.drawable.radio_i_love_2_dance_radio);
+		m.put("icon_small", R.drawable.radio_i_love_2_dance_small);
+		m.put("stream", "http://87.230.100.70/iloveradio1.mp3");
+		m.put("homepage", "http://www.iloveradio.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.iloveradio.de/index.php?id=72");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_I_LOVE_2_DANCE_LOVE);
+		m.put("icon", R.drawable.radio_i_love_2_dance);
+		m.put("icon_small", R.drawable.radio_i_love_2_dance_small);
+		m.put("stream", "http://80.237.157.81/iloveradio2.mp3");
+		m.put("homepage", "http://www.iloveradio.de");
+		m.put("webcam", "");
+		m.put("email", "http://www.iloveradio.de/index.php?id=72");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
