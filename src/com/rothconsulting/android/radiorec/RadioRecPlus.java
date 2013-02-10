@@ -14,6 +14,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -97,6 +98,11 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		// setContentView(R.layout.main);
 		Utils utils = new Utils();
 		utils.getPreferences(this);
+
+		if (Constants.ROTATION_OFF_VALUE) {
+			// Prevent from Rotation
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		}
 
 		context = this;
 		context.deleteDatabase(DBHelper.DATABASE_NAME);
@@ -784,6 +790,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 	public void onConfigurationChanged(Configuration _newConfig) {
 		super.onConfigurationChanged(_newConfig);
 		Utils.log(TAG, "**+*+*+*+*+*+* playing=" + playing);
+		if (Constants.ROTATION_OFF_VALUE) {
+			// Prevent from Rotation
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		}
 		if (!playing) {
 			// Constants.SPINNER_SELECTION = Constants.SPINNER_ALL_STATIONS;
 			initGui();

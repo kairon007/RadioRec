@@ -5,6 +5,7 @@ import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.ClipboardManager;
@@ -30,6 +31,10 @@ public class Donate extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		if (Constants.ROTATION_OFF_VALUE) {
+			// Prevent from Rotation
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		}
 		setContentView(R.layout.donate);
 		Intent fromIntent = getIntent();
 		Utils.log(TAG, "fromIntent=" + fromIntent);

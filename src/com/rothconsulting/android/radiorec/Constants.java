@@ -127,6 +127,7 @@ public class Constants {
 		return liveStreamStationList;
 	}
 
+	// Settings Keys!
 	public static final String PREFERENCES_FILE = "RadioRecPrefs";
 	public static final String SELECTED_STATION_INDEX_KEY = "MySelectedStationIndex";
 	public static final String SELECTED_STATION_NAME_KEY = "MySelectedStationName";
@@ -139,8 +140,9 @@ public class Constants {
 	public static final String SD_CARD_PATH_KEY = "MySdCardPath";
 	public static final String BUFFER_KEY = "MyBuffer";
 	public static final String CLOSE_APP_TIMER_END_KEY = "CloseAppWhenTimerEnds";
+	public static final String ROTATION_OFF_KEY = "RotationOff";
 
-	// Default Constants
+	// Settings Values!
 	protected static int SELECTED_STATION_INDEX_VALUE;
 	protected static int SELECTED_STATION_ICON_VALUE;
 	protected static int SELECTED_STATION_ICON_SMALL_VALUE;
@@ -154,6 +156,7 @@ public class Constants {
 	public static String SD_CARD_PATH_VALUE;
 	protected static int BUFFER_VALUE;
 	protected static boolean CLOSE_APP_TIMER_END_VALUE;
+	public static boolean ROTATION_OFF_VALUE;
 
 	public static final String DEFAULT_SD_CARD_PATH = "sdcard/RadioRec";
 	public static final int DEFAULT_BUFFER = 8192;

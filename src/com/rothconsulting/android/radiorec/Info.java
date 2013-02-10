@@ -2,6 +2,7 @@ package com.rothconsulting.android.radiorec;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,6 +17,10 @@ public class Info extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		if (Constants.ROTATION_OFF_VALUE) {
+			// Prevent from Rotation
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		}
 
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.info);
@@ -30,6 +35,7 @@ public class Info extends Activity {
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				finish();
 			}

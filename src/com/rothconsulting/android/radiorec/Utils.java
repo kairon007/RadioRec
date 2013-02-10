@@ -133,6 +133,8 @@ public class Utils {
 		Constants.CLOSE_APP_TIMER_END_VALUE = settings.getBoolean(
 				Constants.CLOSE_APP_TIMER_END_KEY,
 				Constants.CLOSE_APP_TIMER_END_VALUE);
+		Constants.ROTATION_OFF_VALUE = settings.getBoolean(
+				Constants.ROTATION_OFF_KEY, Constants.ROTATION_OFF_VALUE);
 	}
 
 	protected String getAppVersionName(Context context, Class<?> cls) {

@@ -38,6 +38,10 @@ public class FileChooser extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		if (Constants.ROTATION_OFF_VALUE) {
+			// Prevent from Rotation
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		}
 
 		if (Constants.SD_CARD_PATH_VALUE == null) {
 			Utils.log(TAG, "SDCARD_PATH is null!");

@@ -3,6 +3,7 @@ package com.rothconsulting.android.radiorec;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings.SettingNotFoundException;
@@ -31,6 +32,10 @@ public class Settings extends Activity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		if (Constants.ROTATION_OFF_VALUE) {
+			// Prevent from Rotation
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		}
 		setContentView(R.layout.settings);
 
 		// hide keyboard when opening page
@@ -40,6 +45,9 @@ public class Settings extends Activity implements
 		AdMob admob = new AdMob();
 		admob.showRemoveAds(this);
 
+		final SharedPreferences settings = getSharedPreferences(
+				Constants.PREFERENCES_FILE, 0);
+
 		final EditText edittextSdCardPath = (EditText) findViewById(R.id.editTextSdcardPath);
 		edittextSdCardPath.setText(Constants.SD_CARD_PATH_VALUE);
 		final Button saveButtonPath = (Button) findViewById(R.id.buttonSavePath);
@@ -48,8 +56,8 @@ public class Settings extends Activity implements
 			public void onClick(View v) {
 				Constants.SD_CARD_PATH_VALUE = ""
 						+ edittextSdCardPath.getText();
-				SharedPreferences settings = getSharedPreferences(
-						Constants.PREFERENCES_FILE, 0);
+				// SharedPreferences settings = getSharedPreferences(
+				// Constants.PREFERENCES_FILE, 0);
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putString(Constants.SD_CARD_PATH_KEY,
 						Constants.SD_CARD_PATH_VALUE);
@@ -74,16 +82,34 @@ public class Settings extends Activity implements
 		cbAppOffWhenTimerEnds.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				SharedPreferences settings = getSharedPreferences(
-						Constants.PREFERENCES_FILE, 0);
+				// SharedPreferences settings = getSharedPreferences(
+				// Constants.PREFERENCES_FILE, 0);
+				Constants.CLOSE_APP_TIMER_END_VALUE = ((CheckBox) v)
+						.isChecked();
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY,
-						((CheckBox) v).isChecked());
+						Constants.CLOSE_APP_TIMER_END_VALUE);
 				editor.commit();
 			}
 		});
 
 		cbAppOffWhenTimerEnds.setChecked(Constants.CLOSE_APP_TIMER_END_VALUE);
+
+		final CheckBox cbRotationOf = (CheckBox) findViewById(R.id.checkboxRotationOnOff);
+		cbRotationOf.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// SharedPreferences settings = getSharedPreferences(
+				// Constants.PREFERENCES_FILE, 0);
+				Constants.ROTATION_OFF_VALUE = ((CheckBox) v).isChecked();
+				SharedPreferences.Editor editor = settings.edit();
+				editor.putBoolean(Constants.ROTATION_OFF_KEY,
+						Constants.ROTATION_OFF_VALUE);
+				editor.commit();
+			}
+		});
+
+		cbRotationOf.setChecked(Constants.ROTATION_OFF_VALUE);
 
 		final EditText editTextBufferSize = (EditText) findViewById(R.id.editTextBuffer);
 		editTextBufferSize.setText("" + Constants.BUFFER_VALUE);
@@ -101,8 +127,8 @@ public class Settings extends Activity implements
 						throw new NumberFormatException();
 					} else {
 						Constants.BUFFER_VALUE = bufferSize;
-						SharedPreferences settings = getSharedPreferences(
-								Constants.PREFERENCES_FILE, 0);
+						// SharedPreferences settings = getSharedPreferences(
+						// Constants.PREFERENCES_FILE, 0);
 						SharedPreferences.Editor editor = settings.edit();
 						editor.putInt(Constants.BUFFER_KEY,
 								Constants.BUFFER_VALUE);

@@ -50,7 +50,19 @@
 					android:id="@+id/checkboxAppOffAtTimeEnd" android:layout_height="wrap_content"
 					android:layout_width="wrap_content" android:checked="true" />
 			</LinearLayout>
-			
+
+			<LinearLayout android:layout_width="fill_parent"
+				android:orientation="vertical" android:scrollbars="vertical"
+				android:weightSum="1" android:layout_height="fill_parent"
+				android:id="@+id/linearRotationOff">
+				<TextView android:text="@string/rotation" android:id="@+id/textViewTitleRotation"
+					android:layout_width="fill_parent" android:layout_height="wrap_content"
+					android:background="#0000A0" android:textStyle="bold" />
+				<CheckBox android:text="@string/rotationOnOff"
+					android:id="@+id/checkboxRotationOnOff" android:layout_height="wrap_content"
+					android:layout_width="wrap_content" android:checked="true" />
+			</LinearLayout>
+						
 			<TextView android:text="@string/speicherOrt" android:id="@+id/textViewTitleSpeicherOrt"
 				android:layout_width="fill_parent" android:layout_height="wrap_content"
 				android:background="#0000A0" android:textStyle="bold" />
