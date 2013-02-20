@@ -155,6 +155,7 @@ public class Stations {
 	public static final String RADIO_RADIUS = "Radius";
 	public static final String RADIO_LIECHSTENSTEIN = "Liechtenstein";
 	public static final String RADIO_SWISSSOUND = "Swisssound.ch";
+	public static final String RADIO_SWISS_MOUNTAIN_HOLIDAY = "Swiss Mountain Holiday";
 
 	// ***********************************************
 	// DEUTSCHLAND
@@ -1864,6 +1865,19 @@ public class Stations {
 		m.put("homepage", "http://www.swisssound.ch");
 		m.put("webcam", "");
 		m.put("email", "radio@swisssound.ch");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SWISS_MOUNTAIN_HOLIDAY);
+		m.put("icon", R.drawable.radio_swiss_mountain_holiday);
+		m.put("icon_small", R.drawable.radio_swiss_mountain_holiday_small);
+		m.put("stream", "http://s9.pop-stream.de:9600");
+		m.put("homepage", "http://www.swissmountainholidayradio.ch");
+		m.put("webcam", "");
+		m.put("email", "info@swissmountainholidayradio.ch");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
