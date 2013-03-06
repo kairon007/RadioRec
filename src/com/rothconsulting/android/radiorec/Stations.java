@@ -66,6 +66,10 @@ public class Stations {
 	public static final String RADIO_SRF4 = "SRF4 News";
 	public static final String RADIO_SRF_VIRUS = "SRF Virus";
 	public static final String RADIO_SRF_MUSIKWELLE = "SRF Musikwelle";
+	public static final String RADIO_SWISS_CLASSIC = "Swiss Classic";
+	public static final String RADIO_SWISS_JAZZ = "Swiss Jazz";
+	public static final String RADIO_SWISS_POP = "Swiss Pop";
+	public static final String RADIO_WORLDRADIO_SWITZERLAND = "World Radio Switzerland";
 	public static final String RADIO_ENERGY_BERN = "Energy Bern";
 	public static final String RADIO_ENERGY_ZUERICH = "Energy Zürich";
 	public static final String RADIO_ENERGY_BASEL = "Energy Basel";
@@ -75,9 +79,6 @@ public class Stations {
 	public static final String RADIO_ENERGY_80 = "Energy 80s";
 	public static final String RADIO_ENERGY_90 = "Energy 90s";
 	public static final String RADIO_ENERGY_ITALY = "Energy Italy";
-	public static final String RADIO_SWISS_CLASSIC = "Swiss Classic";
-	public static final String RADIO_SWISS_JAZZ = "Swiss Jazz";
-	public static final String RADIO_SWISS_POP = "Swiss Pop";
 	public static final String RADIO_1 = "Radio 1";
 	public static final String RADIO_ZUERISEE = "Zürisee";
 	public static final String RADIO_PILATUS = "Pilatus";
@@ -190,6 +191,8 @@ public class Stations {
 	public static final String RADIO_FFH = "FFH";
 	public static final String RADIO_FFH_LOUNGE = "FFH Lounge";
 	public static final String RADIO_FFH_DEUTSCH_PUR = "FFH Deutsch Pur";
+	public static final String RADIO_FFH_80ER = "FFH 80er";
+	public static final String RADIO_FFH_90ER = "FFH 90er";
 	public static final String RADIO_RT1_HITRADIO = "Rt1 Hitradio";
 	public static final String RADIO_RT1_SUEDSCHWABEN = "Rt1 Südschwaben";
 	public static final String RADIO_RT1_IN_THE_MIX = "Rt1 in the mix";
@@ -209,6 +212,7 @@ public class Stations {
 	public static final String RADIO_REGENBOGEN = "Regenbogen";
 	public static final String RADIO_FANTASY_DANCE = "Fantasy Dance FM";
 	public static final String RADIO_OBERKRAIN = "Oberkrain";
+	public static final String RADIO_SCHWANY_OBERKRAIN = "Schwany Oberkrain";
 	public static final String RADIO_NDR_1_WELLE_NORD = "NDR 1 Welle Nord";
 	public static final String RADIO_NDR_1_NIEDERSACHSEN = "NDR 1 Niedersachsen";
 	public static final String RADIO_NDR_2 = "NDR 2";
@@ -314,6 +318,7 @@ public class Stations {
 	public static final String RADIO_KRONEHIT_90_DANCE = "KroneHit 90s Dance";
 	public static final String RADIO_KRONEHIT_VOLLGAS = "KroneHit Vollgas";
 	public static final String RADIO_KRONEHIT_CLUBLAND = "KroneHit Clubland";
+	public static final String RADIO_KRONEHIT_GREATEST_HITS = "KroneHit Greatest Hits";
 	public static final String RADIO_886 = "88.6";
 	public static final String RADIO_ENRGY_WIEN = "Energy Wien";
 	public static final String RADIO_FRESH_BEATZ = "FreshBeatz.fm";
@@ -380,6 +385,7 @@ public class Stations {
 	public static final String RADIO_DANCE_RADIO_CZ = "Dance Radio CZ";
 	public static final String RADIO_ENERGY_98_USA = "Energy 98 USA";
 	public static final String RADIO_SKY_FM_DANCE_HITS = "Sky FM Dance Hits";
+	public static final String RADIO_SKY_FM_90_S = "Sky FM 90's";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -545,7 +551,7 @@ public class Stations {
 		m.put("name", RADIO_SRF1);
 		m.put("icon", R.drawable.radio_srf_1);
 		m.put("icon_small", R.drawable.radio_srf_1_small);
-		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs1/mp3_128");
+		m.put("stream", "http://streaming.swisstxt.ch/m/drs1/mp3_128");
 		m.put("homepage", "http://www.srf1.ch");
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
 		m.put("email", "http://www.srf.ch/radio-srf-1/mail-ins-studio");
@@ -558,8 +564,7 @@ public class Stations {
 		m.put("name", RADIO_SRF1_AGSO);
 		m.put("icon", R.drawable.radio_srf_1_ag_so);
 		m.put("icon_small", R.drawable.radio_srf_1_small);
-		m.put("stream",
-				"http://glb-stream12.streamserver.ch/1/regi_ag_so/mp3_128");
+		m.put("stream", "http://streaming.swisstxt.ch/m/regi_ag_so/mp3_128");
 		m.put("homepage", "http://www.srf.ch/news/regional/aargau-solothurn");
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
 		m.put("email",
@@ -573,8 +578,7 @@ public class Stations {
 		m.put("name", RADIO_SRF1_BSBL);
 		m.put("icon", R.drawable.radio_srf_1_bs_bl);
 		m.put("icon_small", R.drawable.radio_srf_1_small);
-		m.put("stream",
-				"http://glb-stream12.streamserver.ch/1/regi_bs_bl/mp3_128");
+		m.put("stream", "http://streaming.swisstxt.ch/m/regi_bs_bl/mp3_128");
 		m.put("homepage", "http://www.srf.ch/news/regional/basel-baselland");
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
 		m.put("email",
@@ -588,8 +592,7 @@ public class Stations {
 		m.put("name", RADIO_SRF1_BEFRVS);
 		m.put("icon", R.drawable.radio_srf_1_be_fr_vs);
 		m.put("icon_small", R.drawable.radio_srf_1_small);
-		m.put("stream",
-				"http://glb-stream12.streamserver.ch/1/regi_be_fr_vs/mp3_128");
+		m.put("stream", "http://streaming.swisstxt.ch/m/regi_be_fr_vs/mp3_128");
 		m.put("homepage",
 				"http://www.srf.ch/news/regional/bern-freiburg-wallis");
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
@@ -604,7 +607,7 @@ public class Stations {
 		m.put("name", RADIO_SRF2);
 		m.put("icon", R.drawable.radio_srf_2);
 		m.put("icon_small", R.drawable.radio_srf_2_small);
-		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs2/mp3_128");
+		m.put("stream", "http://streaming.swisstxt.ch/m/drs2/mp3_128");
 		m.put("homepage", "http://www.srf2.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.srf.ch/radio-srf-2-kultur/mail-ins-studio");
@@ -617,7 +620,7 @@ public class Stations {
 		m.put("name", RADIO_SRF3);
 		m.put("icon", R.drawable.radio_srf_3);
 		m.put("icon_small", R.drawable.radio_srf_3_small);
-		m.put("stream", "http://glb-stream12.streamserver.ch/2/drs3/mp3_128");
+		m.put("stream", "http://streaming.swisstxt.ch/m/drs3/mp3_128");
 		m.put("homepage", "http://www.srf3.ch");
 		m.put("webcam", "http://www.drs3.ch/import/webcam/drs3/webdrs3a.jpg");
 		m.put("email", "http://www.srf.ch/radio-srf-3/mail-ins-studio");
@@ -630,8 +633,7 @@ public class Stations {
 		m.put("name", RADIO_SRF4);
 		m.put("icon", R.drawable.radio_srf_4_news);
 		m.put("icon_small", R.drawable.radio_srf_4_news_small);
-		m.put("stream",
-				"http://glb-stream12.streamserver.ch/2/drs4news/mp3_128");
+		m.put("stream", "http://streaming.swisstxt.ch/m/drs4news/mp3_128");
 		m.put("homepage", "http://www.srf4news.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.srf.ch/radio-srf-4-news/mail-ins-studio");
@@ -644,8 +646,7 @@ public class Stations {
 		m.put("name", RADIO_SRF_VIRUS);
 		m.put("icon", R.drawable.radio_srf_virus);
 		m.put("icon_small", R.drawable.radio_srf_virus_small);
-		m.put("stream",
-				"http://glb-stream12.streamserver.ch/2/drsvirus/mp3_128");
+		m.put("stream", "http://streaming.swisstxt.ch/m/drsvirus/mp3_128");
 		m.put("homepage", "http://www.virus.ch");
 		m.put("webcam",
 				"http://www.drs.ch/import/webcam/virus/virus2.jpg?1304112781446");
@@ -659,11 +660,63 @@ public class Stations {
 		m.put("name", RADIO_SRF_MUSIKWELLE);
 		m.put("icon", R.drawable.radio_srf_musikwelle);
 		m.put("icon_small", R.drawable.radio_srf_musikwelle_small);
-		m.put("stream", "http://glb-stream12.streamserver.ch/2/drsmw/mp3_128");
+		m.put("stream", "http://streaming.swisstxt.ch/m/drsmw/mp3_128");
 		m.put("homepage", "http://www.srfmusikwelle.ch");
 		m.put("webcam",
 				"http://www.drsmusikwelle.ch/import/webcam/drsmw/webdrsmwb.jpg");
 		m.put("email", "http://www.srf.ch/radio-srf-musikwelle/mail-ins-studio");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SWISS_CLASSIC);
+		m.put("icon", R.drawable.radio_swiss_classic);
+		m.put("icon_small", R.drawable.radio_swiss_classic_small);
+		m.put("stream", "http://streaming.swisstxt.ch/m/rsc_de/mp3_128");
+		m.put("homepage", "http://www.radioswissclassic.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.radioswissclassic.ch/de/feedback");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SWISS_JAZZ);
+		m.put("icon", R.drawable.radio_swiss_jazz);
+		m.put("icon_small", R.drawable.radio_swiss_jazz_small);
+		m.put("stream", "http://streaming.swisstxt.ch/m/rsj/mp3_128");
+		m.put("homepage", "http://www.radioswissjazz.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.radioswissjazz.ch/de/feedback");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_JAZZ);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SWISS_POP);
+		m.put("icon", R.drawable.radio_swiss_pop);
+		m.put("icon_small", R.drawable.radio_swiss_pop_small);
+		m.put("stream", "http://streaming.swisstxt.ch/m/rsp/mp3_128");
+		m.put("homepage", "http://www.radioswisspop.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.radioswisspop.ch/de/feedback");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_WORLDRADIO_SWITZERLAND);
+		m.put("icon", R.drawable.radio_world_radio_switzerland);
+		m.put("icon_small", R.drawable.radio_world_radio_switzerland_small);
+		m.put("stream", "http://streaming.swisstxt.ch/m/worldradio/mp3_128");
+		m.put("homepage", "http://www.worldradio.ch");
+		m.put("webcam", "");
+		m.put("email", "http://worldradio.ch/wrs/about/contact/");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -789,45 +842,6 @@ public class Stations {
 		m.put("homepage", "http://www.energy.ch/webradios");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_SWISS_CLASSIC);
-		m.put("icon", R.drawable.radio_swiss_classic);
-		m.put("icon_small", R.drawable.radio_swiss_classic_small);
-		m.put("stream", "http://glb-stream12.streamserver.ch/2/rsc_de/mp3_128");
-		m.put("homepage", "http://www.radioswissclassic.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.radioswissclassic.ch/de/feedback");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_SWISS_JAZZ);
-		m.put("icon", R.drawable.radio_swiss_jazz);
-		m.put("icon_small", R.drawable.radio_swiss_jazz_small);
-		m.put("stream", "http://glb-stream12.streamserver.ch/2/rsj/mp3_128");
-		m.put("homepage", "http://www.radioswissjazz.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.radioswissjazz.ch/de/feedback");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_JAZZ);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_SWISS_POP);
-		m.put("icon", R.drawable.radio_swiss_pop);
-		m.put("icon_small", R.drawable.radio_swiss_pop_small);
-		m.put("stream", "http://glb-stream12.streamserver.ch/2/rsp/mp3_128");
-		m.put("homepage", "http://www.radioswisspop.ch");
-		m.put("webcam", "");
-		m.put("email", "http://www.radioswisspop.ch/de/feedback");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -1209,7 +1223,7 @@ public class Stations {
 		m.put("name", RADIO_COULEUR_3);
 		m.put("icon", R.drawable.radio_couleur3);
 		m.put("icon_small", R.drawable.radio_couleur3_small);
-		m.put("stream", "http://broadcast.infomaniak.ch/rsr-couleur3-high.mp3");
+		m.put("stream", "http://streaming.swisstxt.ch/m/couleur3/mp3_128");
 		m.put("homepage", "http://www.couleur3.ch");
 		m.put("webcam", "");
 		m.put("email",
@@ -1249,7 +1263,7 @@ public class Stations {
 		m.put("name", RADIO_RSI_RETE_1);
 		m.put("icon", R.drawable.radio_rete1);
 		m.put("icon_small", R.drawable.radio_rete1_small);
-		m.put("stream", "http://glb-stream12.streamserver.ch/2/reteuno/mp3_128");
+		m.put("stream", "http://streaming.swisstxt.ch/m/reteuno/mp3_128");
 		m.put("homepage", "http://reteuno.rsi.ch");
 		m.put("webcam", "");
 		m.put("email", "reteuno@rsi.ch");
@@ -1262,7 +1276,7 @@ public class Stations {
 		m.put("name", RADIO_RSI_RETE_2);
 		m.put("icon", R.drawable.radio_rete2);
 		m.put("icon_small", R.drawable.radio_rete2_small);
-		m.put("stream", "http://glb-stream12.streamserver.ch/2/retedue/mp3_128");
+		m.put("stream", "http://streaming.swisstxt.ch/m/retedue/mp3_128");
 		m.put("homepage", "http://retedue.rsi.ch");
 		m.put("webcam", "");
 		m.put("email", "retedue@rsi.ch");
@@ -1275,7 +1289,7 @@ public class Stations {
 		m.put("name", RADIO_RSI_RETE_3);
 		m.put("icon", R.drawable.radio_rete3);
 		m.put("icon_small", R.drawable.radio_rete3_small);
-		m.put("stream", "http://glb-stream12.streamserver.ch/1/retetre/mp3_128");
+		m.put("stream", "http://streaming.swisstxt.ch/m/retetre/mp3_128");
 		m.put("homepage", "http://retetre.rtsi.ch.ch");
 		m.put("webcam", "");
 		m.put("email",
@@ -2314,6 +2328,32 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_FFH_80ER);
+		m.put("icon", R.drawable.radio_ffh_80er);
+		m.put("icon_small", R.drawable.radio_ffh_80er_small);
+		m.put("stream", "http://mp3.ffh.de/ffhchannels/hq80er.mp3");
+		m.put("homepage", "http://webradio.ffh.de");
+		m.put("webcam", "http://resource.ffh.de/webcams/ffh/cam1-fullsize.jpg");
+		m.put("email", "http://www.ffh.de/ffh-welt/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_FFH_90ER);
+		m.put("icon", R.drawable.radio_ffh_90er);
+		m.put("icon_small", R.drawable.radio_ffh_90er_small);
+		m.put("stream", "http://mp3.ffh.de/ffhchannels/hqspezial.mp3");
+		m.put("homepage", "http://webradio.ffh.de");
+		m.put("webcam", "http://resource.ffh.de/webcams/ffh/cam1-fullsize.jpg");
+		m.put("email", "http://www.ffh.de/ffh-welt/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_RT1_HITRADIO);
 		m.put("icon", R.drawable.radio_rt1_hitradio);
 		m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
@@ -2580,6 +2620,19 @@ public class Stations {
 		m.put("homepage", "http://www.radio-oberkrain.com/");
 		m.put("webcam", "");
 		m.put("email", "service@radio-oberkrain.de");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_VOLKSTUEMLICH);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SCHWANY_OBERKRAIN);
+		m.put("icon", R.drawable.radio_schwany_oberkrain);
+		m.put("icon_small", R.drawable.radio_schwany_oberkrain_small);
+		m.put("stream", "http://streamplus6.leonex.de:38226");
+		m.put("homepage", "http://www.schwany.de/oberkrain.html");
+		m.put("webcam", "");
+		m.put("email", "http://www.schwany.de/kontakt.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_VOLKSTUEMLICH);
@@ -3175,7 +3228,7 @@ public class Stations {
 		m.put("name", RADIO_SAW);
 		m.put("icon", R.drawable.radio_saw);
 		m.put("icon_small", R.drawable.radio_saw_small);
-		m.put("stream", "http://stream.radiosaw.de");
+		m.put("stream", "http://stream.hoerradar.de/mp3-radiosaw-128");
 		m.put("homepage", "http://www.radiosaw.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
@@ -3190,7 +3243,7 @@ public class Stations {
 		m.put("name", RADIO_SAW_ROCK);
 		m.put("icon", R.drawable.radio_saw_rock);
 		m.put("icon_small", R.drawable.radio_saw_small);
-		m.put("stream", "http://stream.saw-musikwelt.de/saw-rock");
+		m.put("stream", "http://stream.hoerradar.de/sawrock-128");
 		m.put("homepage", "http://www.radiosaw.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
@@ -3203,7 +3256,7 @@ public class Stations {
 		m.put("name", RADIO_SAW_NEUHEITEN);
 		m.put("icon", R.drawable.radio_saw_neuheiten);
 		m.put("icon_small", R.drawable.radio_saw_small);
-		m.put("stream", "http://stream.saw-musikwelt.de/saw-neuheiten");
+		m.put("stream", "http://stream.hoerradar.de/sawneuheiten-128");
 		m.put("homepage", "http://www.radiosaw.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
@@ -3216,7 +3269,7 @@ public class Stations {
 		m.put("name", RADIO_SAW_PARTY);
 		m.put("icon", R.drawable.radio_saw_party);
 		m.put("icon_small", R.drawable.radio_saw_small);
-		m.put("stream", "http://stream.radiosaw.de");
+		m.put("stream", "http://stream.hoerradar.de/sawparty-128");
 		m.put("homepage", "http://www.radiosaw.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
@@ -3229,8 +3282,7 @@ public class Stations {
 		m.put("name", RADIO_SAW_80);
 		m.put("icon", R.drawable.radio_saw_80);
 		m.put("icon_small", R.drawable.radio_saw_small);
-		m.put("stream",
-				"http://stream.radiosaw.de/saw-80er/mp3-128/listenliveeu");
+		m.put("stream", "http://stream.hoerradar.de/saw80er-128");
 		m.put("homepage", "http://www.radiosaw.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
@@ -3243,8 +3295,7 @@ public class Stations {
 		m.put("name", RADIO_SAW_90);
 		m.put("icon", R.drawable.radio_saw_90);
 		m.put("icon_small", R.drawable.radio_saw_small);
-		m.put("stream",
-				"http://stream.radiosaw.de/saw-90er/mp3-128/listenliveeu");
+		m.put("stream", "http://stream.hoerradar.de/saw90er-128");
 		m.put("homepage", "http://www.radiosaw.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiosaw.de/start.php?,kontakt");
@@ -3905,6 +3956,19 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_kronehit_clubland_small);
 		m.put("stream", "http://onair.krone.at/kronehit-clubland.mp3");
 		m.put("homepage", "http://www.kronehit.at/clubland");
+		m.put("webcam", "");
+		m.put("email", "http://www.kronehit.at/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_KRONEHIT_GREATEST_HITS);
+		m.put("icon", R.drawable.radio_kronehit_greatest_hits);
+		m.put("icon_small", R.drawable.radio_kronehit_greatest_hits_small);
+		m.put("stream", "http://onair.krone.at/kronehit-greatesthits.mp3");
+		m.put("homepage", "http://www.kronehit.at/greatesthits");
 		m.put("webcam", "");
 		m.put("email", "http://www.kronehit.at/kontakt");
 		m.put("sprache", SPRACHE_DE);
@@ -4668,9 +4732,22 @@ public class Stations {
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SKY_FM_DANCE_HITS);
-		m.put("icon", R.drawable.radio_sky_fm_dance_hits);
-		m.put("icon_small", R.drawable.radio_sky_fm_dance_hits_small);
+		m.put("icon", R.drawable.radio_sky_fm);
+		m.put("icon_small", R.drawable.radio_sky_fm_small);
 		m.put("stream", "http://pub1.sky.fm:80/sky_dancehits");
+		m.put("homepage", "http://www.sky.fm");
+		m.put("webcam", "");
+		m.put("email", "http://www.sky.fm/contact");
+		m.put("sprache", SPRACHE_EN);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SKY_FM_90_S);
+		m.put("icon", R.drawable.radio_sky_fm);
+		m.put("icon_small", R.drawable.radio_sky_fm_small);
+		m.put("stream", "http://pub1.sky.fm/sky_hit90s");
 		m.put("homepage", "http://www.sky.fm");
 		m.put("webcam", "");
 		m.put("email", "http://www.sky.fm/contact");
