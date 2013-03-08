@@ -4002,19 +4002,19 @@ public class Stations {
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_FRESH_BEATZ);
-		m.put("icon", R.drawable.radio_freshbeatz);
-		m.put("icon_small", R.drawable.radio_freshbeatz_small);
-		m.put("stream", "http://rs2.stream24.org:8300");
-		m.put("homepage", "http://freshbeatz.fm");
-		m.put("webcam", "http://katec.bplaced.net/studiosteyr.jpg");
-		m.put("email",
-				"http://www.pop-tools.de/kundenaddon/Grussbox2.0/?y92V3aaY0rh8i5am0tmakp8=");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_AT);
-		m.put("stil", STIL_POP);
-		setStationlist(stationList, m);
+		// m = new HashMap<String, Object>();
+		// m.put("name", RADIO_FRESH_BEATZ);
+		// m.put("icon", R.drawable.radio_freshbeatz);
+		// m.put("icon_small", R.drawable.radio_freshbeatz_small);
+		// m.put("stream", "http://rs2.stream24.org:8300");
+		// m.put("homepage", "http://freshbeatz.fm");
+		// m.put("webcam", "http://katec.bplaced.net/studiosteyr.jpg");
+		// m.put("email",
+		// "http://www.pop-tools.de/kundenaddon/Grussbox2.0/?y92V3aaY0rh8i5am0tmakp8=");
+		// m.put("sprache", SPRACHE_DE);
+		// m.put("land", LAND_AT);
+		// m.put("stil", STIL_POP);
+		// setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_LIFE_RADIO);
@@ -4643,7 +4643,7 @@ public class Stations {
 		m.put("name", RADIO_TECHNO_4_EVER);
 		m.put("icon", R.drawable.radio_techno_4_ever);
 		m.put("icon_small", R.drawable.radio_techno_4_ever_small);
-		m.put("stream", "http://main01.t4e.dj:12000/high.mp3");
+		m.put("stream", "http://main01.t4e.dj/high.mp3");
 		m.put("homepage", "http://www.techno4ever.fm");
 		m.put("webcam", "");
 		m.put("email", "http://www.techno4ever.fm/Kontakt");
