@@ -104,11 +104,11 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_MARGHERITA);
 		ignoreList.add(Stations.RADIO_TECHNO_4_EVER);
 		ignoreList.add(Stations.RADIO_IBIZA_GLOBAL_RADIO);
-		ignoreList.add(Stations.RADIO_FRESH_BEATZ);
 		ignoreList.add(Stations.RADIO_RTL_IT);
 		ignoreList.add(Stations.RADIO_SOUND_CITY);
 		ignoreList.add(Stations.RADIO_DANCEFOX_RADIO);
 		ignoreList.add(Stations.RADIO_U1_TIROL);
+		ignoreList.add(Stations.RADIO_DANCE_NATION_1);
 
 		return ignoreList;
 	}

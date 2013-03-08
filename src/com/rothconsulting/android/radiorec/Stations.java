@@ -157,6 +157,7 @@ public class Stations {
 	public static final String RADIO_LIECHSTENSTEIN = "Liechtenstein";
 	public static final String RADIO_SWISSSOUND = "Swisssound.ch";
 	public static final String RADIO_SWISS_MOUNTAIN_HOLIDAY = "Swiss Mountain Holiday";
+	public static final String RADIO_DANCE_NATION_1 = "Dance Nation 1";
 
 	// ***********************************************
 	// DEUTSCHLAND
@@ -321,7 +322,6 @@ public class Stations {
 	public static final String RADIO_KRONEHIT_GREATEST_HITS = "KroneHit Greatest Hits";
 	public static final String RADIO_886 = "88.6";
 	public static final String RADIO_ENRGY_WIEN = "Energy Wien";
-	public static final String RADIO_FRESH_BEATZ = "FreshBeatz.fm";
 	public static final String RADIO_LIFE_RADIO = "Life Radio";
 	public static final String RADIO_U1_TIROL = "U1 Tirol";
 	public static final String RADIO_U1_MELODIEN_AUS_DEN_BERGEN = "U1 Melodien aus den Bergen";
@@ -1895,6 +1895,19 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_DANCE_NATION_1);
+		m.put("icon", R.drawable.radio_dance_nation_1);
+		m.put("icon_small", R.drawable.radio_dance_nation_1_small);
+		m.put("stream", "http://stream.dancenationone.fm");
+		m.put("homepage", "http://www.dancenationone.fm");
+		m.put("webcam", "");
+		m.put("email", "http://www.dancenationone.fm/index.php?content=99");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_TRANCE);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
