@@ -241,6 +241,7 @@ public class Stations {
 	public static final String RADIO_JAM_FM_NEW_MUSIC_RADIO = "Jam Fm New Music Radio";
 	public static final String RADIO_KIEPENKERL = "Kiepenkerl";
 	public static final String RADIO_ENERGY_SACHSEN = "Energy Sachsen";
+	public static final String RADIO_ENERGY_BREMEN = "Energy Bremen";
 	public static final String RADIO_FFN_NIEDERSACHSEN = "FFN Niedersachsen";
 	public static final String RADIO_TECHNOBASE_FM = "Technobase FM";
 	public static final String RADIO_HARDBASE_FM = "Hardbase FM";
@@ -3005,6 +3006,20 @@ public class Stations {
 		m.put("webcam",
 				"http://www.energy-sachsen.de/www/extapp/webcam/images/studio.jpg");
 		m.put("email", "hotline@nrjmail.de");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_ENERGY_BREMEN);
+		m.put("icon", R.drawable.radio_energy_bremen);
+		m.put("icon_small", R.drawable.radio_energy_bremen_small);
+		m.put("stream", "http://149.5.240.33/WR-DE-WR56");
+		m.put("homepage", "http://www.energy.de/bremen");
+		m.put("webcam",
+				"http://www.energy.de/fileadmin/images/content/Lokal/Bremen/Webcam/studio000M.jpg");
+		m.put("email", "radio@energy-bremen.de");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
