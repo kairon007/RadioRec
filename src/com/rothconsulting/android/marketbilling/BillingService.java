@@ -30,6 +30,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.vending.billing.IMarketBillingService;
 import com.rothconsulting.android.marketbilling.Constants.PurchaseState;
@@ -385,6 +386,11 @@ public class BillingService extends Service implements ServiceConnection {
 	 *            an identifier for the invocation instance of this service
 	 */
 	public void handleCommand(Intent intent, int startId) {
+		if (intent == null) {
+			Toast.makeText(this, "Oh, oh. Error: intent is null.",
+					Toast.LENGTH_LONG).show();
+			return;
+		}
 		String action = intent.getAction();
 		if (Constants.DEBUG) {
 			Log.i(TAG, "handleCommand() action: " + action);

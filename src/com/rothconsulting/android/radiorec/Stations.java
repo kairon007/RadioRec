@@ -158,6 +158,11 @@ public class Stations {
 	public static final String RADIO_SWISSSOUND = "Swisssound.ch";
 	public static final String RADIO_SWISS_MOUNTAIN_HOLIDAY = "Swiss Mountain Holiday";
 	public static final String RADIO_DANCE_NATION_1 = "Dance Nation 1";
+	public static final String RADIO_CRAZY_CLASSIC = "Crazy Classic";
+	public static final String RADIO_CRAZY_OPERA = "Crazy Opera";
+	public static final String RADIO_CRAZY_SANCTUS = "Crazy Sanctus";
+	public static final String RADIO_CRAZY_JAZZ_SWING = "Crazy Jazz/Swing";
+	public static final String RADIO_CRAZY_MODERN_JAZZ = "Crazy Modern Jazz";
 
 	// ***********************************************
 	// DEUTSCHLAND
@@ -1908,6 +1913,62 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_CRAZY_CLASSIC);
+		m.put("icon", R.drawable.radio_crazy);
+		m.put("icon_small", R.drawable.radio_crazy_small);
+		m.put("stream", "http://stream2137.init7.net");
+		m.put("homepage",
+				"http://www.radiocrazy.ch/menu/discography/klassik/klassik/index.htm");
+		m.put("webcam", "");
+		m.put("email", "info@swissradio.ch");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_KLASSIK);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_CRAZY_OPERA);
+		m.put("icon", R.drawable.radio_crazy);
+		m.put("icon_small", R.drawable.radio_crazy_small);
+		m.put("stream", "http://stream2139.init7.net");
+		m.put("homepage",
+				"http://www.radiocrazy.ch/menu/discography/klassik/opern/index.htm");
+		m.put("webcam", "");
+		m.put("email", "info@swissradio.ch");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_KLASSIK);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_CRAZY_JAZZ_SWING);
+		m.put("icon", R.drawable.radio_crazy);
+		m.put("icon_small", R.drawable.radio_crazy_small);
+		m.put("stream", "http://stream2138.init7.net");
+		m.put("homepage",
+				"http://www.radiocrazy.ch/menu/discography/jazz/jazz/index.htm");
+		m.put("webcam", "");
+		m.put("email", "info@swissradio.ch");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_JAZZ);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_CRAZY_MODERN_JAZZ);
+		m.put("icon", R.drawable.radio_crazy);
+		m.put("icon_small", R.drawable.radio_crazy_small);
+		m.put("stream", "http://stream2140.init7.net");
+		m.put("homepage",
+				"http://www.radiocrazy.ch/menu/discography/jazz/modernjazz/index.htm");
+		m.put("webcam", "");
+		m.put("email", "info@swissradio.ch");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_JAZZ);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();

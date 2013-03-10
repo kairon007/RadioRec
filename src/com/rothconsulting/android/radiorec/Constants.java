@@ -85,6 +85,8 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_GUGGE_SOUND);
 		ignoreList.add(Stations.RADIO_ARABELLA);
 		ignoreList.add(Stations.RADIO_TECHNOBASE_FM);
+		ignoreList.add(Stations.RADIO_HARDBASE_FM);
+		ignoreList.add(Stations.RADIO_HOUSETIME_FM);
 		ignoreList.add(Stations.RADIO_PLANET_FM);
 		ignoreList.add(Stations.RADIO_886);
 		ignoreList.add(Stations.RADIO_SHOUTED_FM);
@@ -109,6 +111,11 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_DANCEFOX_RADIO);
 		ignoreList.add(Stations.RADIO_U1_TIROL);
 		ignoreList.add(Stations.RADIO_DANCE_NATION_1);
+		ignoreList.add(Stations.RADIO_CRAZY_CLASSIC);
+		ignoreList.add(Stations.RADIO_CRAZY_OPERA);
+		ignoreList.add(Stations.RADIO_CRAZY_SANCTUS);
+		ignoreList.add(Stations.RADIO_CRAZY_JAZZ_SWING);
+		ignoreList.add(Stations.RADIO_CRAZY_MODERN_JAZZ);
 
 		return ignoreList;
 	}
