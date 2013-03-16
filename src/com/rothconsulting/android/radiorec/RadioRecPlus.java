@@ -22,6 +22,8 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -88,6 +90,9 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 
 	static Utils utils = new Utils();
 
+	private TelephonyManager tm = null;
+	private PhoneStateListener callStateListener;
+
 	public Spinner getStations() {
 		return spnAllStations;
 	}
@@ -114,6 +119,13 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		}
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		initGui();
+
+		// Detect incoming phone call and register PhoneStateListener
+		callStateListener = new CallStateListener();
+		tm = (TelephonyManager) context
+				.getSystemService(Context.TELEPHONY_SERVICE);
+		tm.listen(callStateListener, PhoneStateListener.LISTEN_CALL_STATE);
+
 	}
 
 	@Override
@@ -242,6 +254,10 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 				return true;
 			} else {
 				stopPlayAndRecord();
+				// Unregister PhoneStateListener
+				if (tm != null) {
+					tm.listen(callStateListener, PhoneStateListener.LISTEN_NONE);
+				}
 				finish();
 			}
 		}
@@ -951,10 +967,34 @@ public class RadioRecPlus extends Activity implements OnClickListener,
 		case -5:
 			Log.i(TAG, "exit");
 			stopPlayAndRecord();
+			// Unregister PhoneStateListener
+			if (tm != null) {
+				tm.listen(callStateListener, PhoneStateListener.LISTEN_NONE);
+			}
 			finish();
 			break;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	/**
+	 * Listener to detect incoming calls.
+	 */
+	private class CallStateListener extends PhoneStateListener {
+		@Override
+		public void onCallStateChanged(int state, String incomingNumber) {
+			switch (state) {
+			case TelephonyManager.CALL_STATE_RINGING:
+				// called when someone is ringing to this phone
+				Toast.makeText(
+						context,
+						getString(R.string.incomingCall) + " \n"
+								+ incomingNumber, Toast.LENGTH_LONG).show();
+				// stop playing
+				stopPlay();
+				break;
+			}
+		}
 	}
 
 }

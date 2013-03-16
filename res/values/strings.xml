@@ -94,5 +94,6 @@
 	<string name="nochKeineFavoriten">You have not defined any favorites yet.\nJust press the star at your favorite stations and it will be added to your Favorites.</string>
 	<string name="rotation">Rotation</string>
 	<string name="rotationOnOff">RadioRec+ always in portrait mode</string>
-					
+	<string name="incomingCall">Stoping. Incoming Call</string>
+						
 </resources>
