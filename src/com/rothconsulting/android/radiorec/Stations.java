@@ -298,6 +298,7 @@ public class Stations {
 	public static final String RADIO_ENNEPE_RUHR = "Ennepe Ruhr";
 	public static final String RADIO_I_LOVE_2_DANCE_LOVE = "I Love 2 Dance - Love Radio";
 	public static final String RADIO_I_LOVE_2_DANCE_RADIO = "I Love 2 Dance - Dance Radio";
+	public static final String RADIO_CHARIVARI_PARTYHITMIX = "Charivari Partyhitmix";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -392,6 +393,8 @@ public class Stations {
 	public static final String RADIO_ENERGY_98_USA = "Energy 98 USA";
 	public static final String RADIO_SKY_FM_DANCE_HITS = "Sky FM Dance Hits";
 	public static final String RADIO_SKY_FM_90_S = "Sky FM 90's";
+	public static final String RADIO_SMOOTH_RIVIERA = "Smooth Riviera";
+	public static final String RADIO_RIVIERA_RADIO = "Riviera Radio";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -3107,6 +3110,20 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_BAMBERG);
+		m.put("icon", R.drawable.radio_bamberg);
+		m.put("icon_small", R.drawable.radio_bamberg_small);
+		m.put("stream", "http://rs1.stream24.net/stream");
+		m.put("homepage", "http://www.radio-bamberg.de");
+		m.put("webcam",
+				"http://www.funkhaus-bamberg.de/ftp/webcam/bamberg1/image.jpg");
+		m.put("email", "http://www.radio-bamberg.de/default.aspx?ID=4321");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_GALAXY_ASCHAFFENBURG);
 		m.put("icon", R.drawable.radio_galaxy);
 		m.put("icon_small", R.drawable.radio_galaxy_small);
@@ -3144,20 +3161,6 @@ public class Stations {
 		m.put("webcam", "");
 		m.put("email",
 				"http://www.radio-galaxy.de/galaxy-cities/bambergcoburg/contact.html");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_DE);
-		m.put("stil", STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_BAMBERG);
-		m.put("icon", R.drawable.radio_bamberg);
-		m.put("icon_small", R.drawable.radio_bamberg_small);
-		m.put("stream", "http://rs1.stream24.net:80/stream");
-		m.put("homepage", "http://www.radio-bamberg.de/");
-		m.put("webcam",
-				"http://www.funkhaus-bamberg.de/ftp/webcam/bamberg1/image.jpg");
-		m.put("email", "http://www.radio-bamberg.de/default.aspx?ID=4321");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -3739,6 +3742,20 @@ public class Stations {
 		m.put("homepage", "http://www.iloveradio.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.iloveradio.de/index.php?id=72");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_CHARIVARI_PARTYHITMIX);
+		m.put("icon", R.drawable.radio_charivari);
+		m.put("icon_small", R.drawable.radio_charivari_small);
+		m.put("stream", "http://rs5.stream24.net:80/stream");
+		m.put("homepage", "http://www.charivari.de");
+		m.put("webcam", "");
+		m.put("email",
+				"http://www.charivari.de/radio/programm/mail-ins-studio.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -4843,6 +4860,33 @@ public class Stations {
 		m.put("sprache", SPRACHE_EN);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SMOOTH_RIVIERA);
+		m.put("icon", R.drawable.radio_smooth_riviera);
+		m.put("icon_small", R.drawable.radio_smooth_riviera_small);
+		m.put("stream", "http://listen.radionomy.com/smooth-riviera");
+		m.put("homepage", "http://smoothriviera.weebly.com");
+		m.put("webcam", "");
+		m.put("email", "https://fr-fr.facebook.com/smoothriviera");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_LOUNGE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RIVIERA_RADIO);
+		m.put("icon", R.drawable.radio_riviera_radio);
+		m.put("icon_small", R.drawable.radio_riviera_radio_small);
+		m.put("stream",
+				"http://rivieraradio.ice.infomaniak.ch/rivieraradio-high");
+		m.put("homepage", "http://www.rivieraradio.mc");
+		m.put("webcam", "");
+		m.put("email", "http://www.rivieraradio.mc/contactus.asp");
+		m.put("sprache", SPRACHE_FR);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_LOUNGE);
 		setStationlist(stationList, m);
 
 		return stationList;
