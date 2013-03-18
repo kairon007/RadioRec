@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
 	android:id="@+id/mainScreen" android:orientation="vertical"
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:background="@drawable/bg_land">
@@ -63,8 +64,7 @@
 		android:layout_width="fill_parent" android:layout_height="77dp"
 		android:layout_gravity="bottom" android:layout_marginBottom="10.0dip">
 
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+		<LinearLayout 
 			android:orientation="vertical" android:layout_width="fill_parent"
 			android:gravity="center" android:layout_height="fill_parent"
 			android:id="@+id/adsLayout">
@@ -137,27 +137,51 @@
 				android:focusableInTouchMode="true" android:text="Ticker... Buffering... 
 				Playing: SomeSong by SomeArtist..." android:gravity="center" android:layout_margin="2dp" 
 				/ -->
-			<LinearLayout android:layout_margin="4dp"
+
+			<!-- For Tablets -->
+			<!-- LinearLayout android:id="@+id/linearLayoutLandscapeTablet" android:visibility="gone" android:layout_margin="2dp"
 				android:layout_height="wrap_content" android:layout_width="fill_parent"
-				android:orientation="horizontal">
-				<ImageButton android:layout_weight="1"
-					android:layout_height="wrap_content" android:src="@drawable/button_play"
-					android:layout_width="wrap_content" android:id="@+id/play" />
-				<ImageButton android:layout_weight="1"
-					android:layout_height="wrap_content" android:src="@drawable/button_record"
-					android:layout_width="wrap_content" android:id="@+id/rec" />
-			</LinearLayout>
-			<LinearLayout android:layout_margin="4dp"
+				android:orientation="vertical">
+				<LinearLayout android:layout_margin="2dp"
+					android:layout_height="wrap_content" android:layout_width="fill_parent"
+					android:orientation="horizontal">
+					<ImageButton android:layout_weight="1"
+						android:layout_height="wrap_content" android:src="@drawable/button_play"
+						android:layout_width="wrap_content" android:id="@+id/play" />
+					<ImageButton android:layout_weight="1"
+						android:layout_height="wrap_content" android:src="@drawable/button_record"
+						android:layout_width="wrap_content" android:id="@+id/rec" />
+				</LinearLayout>
+				<LinearLayout android:layout_margin="2dp"
+					android:layout_height="wrap_content" android:layout_width="fill_parent"
+					android:orientation="horizontal">
+					<ImageButton android:layout_weight="1"
+						android:layout_height="wrap_content" android:src="@drawable/button_backward"
+						android:layout_width="wrap_content" android:id="@+id/back" />
+					<ImageButton android:layout_weight="1"
+						android:layout_height="wrap_content" android:src="@drawable/button_forward"
+						android:layout_width="wrap_content" android:id="@+id/fwd" />
+				</LinearLayout>
+			</LinearLayout -->
+
+			<!-- Not for Tablets -->
+			<LinearLayout android:id="@+id/linearLayoutLandscapeNoTablet" android:layout_margin="2dp"
 				android:layout_height="wrap_content" android:layout_width="fill_parent"
 				android:orientation="horizontal">
 				<ImageButton android:layout_weight="1"
 					android:layout_height="wrap_content" android:src="@drawable/button_backward"
 					android:layout_width="wrap_content" android:id="@+id/back" />
 				<ImageButton android:layout_weight="1"
+					android:layout_height="wrap_content" android:src="@drawable/button_play"
+					android:layout_width="wrap_content" android:id="@+id/play" />
+				<ImageButton android:layout_weight="1"
+					android:layout_height="wrap_content" android:src="@drawable/button_record"
+					android:layout_width="wrap_content" android:id="@+id/rec" />
+				<ImageButton android:layout_weight="1"
 					android:layout_height="wrap_content" android:src="@drawable/button_forward"
 					android:layout_width="wrap_content" android:id="@+id/fwd" />
 			</LinearLayout>
-
+				    
 		</LinearLayout>
 	</LinearLayout>
 </LinearLayout>

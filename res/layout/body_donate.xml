@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent">
 	<ScrollView android:id="@+id/scroll" android:layout_width="fill_parent"
@@ -58,8 +59,7 @@
 				android:layout_marginRight="30dip" android:id="@+id/buttonSaveAntiAdsKey"
 				android:layout_height="wrap_content" android:layout_width="fill_parent"
 				android:text="@string/save" android:layout_gravity="center" />
-			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-				xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+			<LinearLayout 
 				android:orientation="vertical" android:gravity="center"
 				android:layout_width="fill_parent" android:layout_height="wrap_content"
 				android:id="@+id/adsLayout">

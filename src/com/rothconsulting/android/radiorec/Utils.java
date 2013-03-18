@@ -11,12 +11,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 
 public class Utils {
 
@@ -297,4 +299,27 @@ public class Utils {
 		return position;
 	}
 
+	public static boolean isAtLeastHoneycomb() {
+		// Can use static final constants like HONEYCOMB, declared in later
+		// versions
+		// of the OS since they are inlined at compile time. This is guaranteed
+		// behavior.
+		return Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB;
+	}
+
+	public static boolean isTablet(Context context) {
+		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+	}
+
+	public static boolean isAtLeastHoneycombAndTablet(Context context) {
+		return isAtLeastHoneycomb() && isTablet(context);
+	}
+
+	public static boolean isLandscape(Context context) {
+		if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
