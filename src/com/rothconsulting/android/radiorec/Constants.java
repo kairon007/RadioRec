@@ -6,8 +6,7 @@ import java.util.List;
 public class Constants {
 
 	/**
-	 * Shoutcast streams work only with Andorid 2.2 an later. Shoutcast streams
-	 * will be ignored for older Android levels.
+	 * Shoutcast streams work only with Andorid 2.2 an later. Shoutcast streams will be ignored for older Android levels.
 	 * 
 	 * @return
 	 */
@@ -150,19 +149,19 @@ public class Constants {
 	public static final String ROTATION_OFF_KEY = "RotationOff";
 
 	// Settings Values!
-	protected static int SELECTED_STATION_INDEX_VALUE;
-	protected static int SELECTED_STATION_ICON_VALUE;
-	protected static int SELECTED_STATION_ICON_SMALL_VALUE;
-	protected static String SELECTED_STATION_NAME_VALUE;
+	public static int SELECTED_STATION_INDEX_VALUE;
+	public static int SELECTED_STATION_ICON_VALUE;
+	public static int SELECTED_STATION_ICON_SMALL_VALUE;
+	public static String SELECTED_STATION_NAME_VALUE;
 	public static String URL_LIVE_STREAM_VALUE;
-	protected static String URL_HOMEPAGE_VALUE;
-	protected static String URL_WEBCAM_VALUE;
-	protected static String URL_CONTACT_VALUE;
+	public static String URL_HOMEPAGE_VALUE;
+	public static String URL_WEBCAM_VALUE;
+	public static String URL_CONTACT_VALUE;
 	protected static String URL_SONGTICKER_VALUE;
-	protected static String ANTI_ADS_VALUE;
+	public static String ANTI_ADS_VALUE;
 	public static String SD_CARD_PATH_VALUE;
-	protected static int BUFFER_VALUE;
-	protected static boolean CLOSE_APP_TIMER_END_VALUE;
+	public static int BUFFER_VALUE;
+	public static boolean CLOSE_APP_TIMER_END_VALUE;
 	public static boolean ROTATION_OFF_VALUE;
 
 	public static final String DEFAULT_SD_CARD_PATH = "sdcard/RadioRec";
@@ -180,15 +179,16 @@ public class Constants {
 	public static final int NOTIFICATION_ID_RECORDING = -3;
 	public static final int NOTIFICATION_ID_ERROR_CONNECTION = -4;
 	public static final int PRESS_BACK_BUTTON = -10;
-	// public static final int PRESS_EMPTY_FAV = -11;
 	public static final int LIVE_STREAM_STATION = -20;
 
 	public static int SPINNER_SELECTION = -100;
 	public static int SPINNER_ALL_STATIONS = -200;
-	public static int SPINNER_FAVORITEN = -300;
 	public static int SPINNER_LAENDER = -400;
 	public static int SPINNER_ALPHABETISCH = -500;
 	public static int SPINNER_SPRACHE = -600;
+
+	public static String FAV_OFF = "favOff";
+	public static String FAV_ON = "favOn";
 
 	public static Boolean JUNIT_TEST = Boolean.FALSE;
 

@@ -16,9 +16,9 @@ public class Notifications {
 		this.intent = theIntent;
 	}
 
-	protected void showStatusBarNotificationError(int errorRessourceString) {
+	public void showStatusBarNotificationError(int errorRessourceString) {
 
-		// mögliche Notification löschen und danach neu anzeigen
+		// mÃ¶gliche Notification lÃ¶schen und danach neu anzeigen
 		this.hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
 
 		int icon = android.R.drawable.stat_sys_warning;
@@ -37,7 +37,7 @@ public class Notifications {
 				Constants.NOTIFICATION_ID_ERROR_CONNECTION, -1);
 	}
 
-	protected void showStatusBarNotificationIsRunning() {
+	public void showStatusBarNotificationIsRunning() {
 
 		int icon = R.drawable.jukebox;
 		CharSequence tickerText = context.getString(R.string.onAir) + " "
@@ -54,7 +54,7 @@ public class Notifications {
 
 	}
 
-	protected void showStatusBarNotificationRecording() {
+	public void showStatusBarNotificationRecording() {
 
 		int icon = R.drawable.button_record_on;
 		CharSequence tickerText = "Recording... "
@@ -94,7 +94,7 @@ public class Notifications {
 		mNotificationManager.notify(notificationId, notification);
 	}
 
-	protected void hideStatusBarNotification(int notificationId) {
+	public void hideStatusBarNotification(int notificationId) {
 		String ns = Context.NOTIFICATION_SERVICE;
 		NotificationManager mNotificationManager = (NotificationManager) context
 				.getSystemService(ns);

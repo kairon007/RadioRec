@@ -35,14 +35,12 @@ public class Webcam extends Activity {
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
 		setContentView(R.layout.webcam);
-		Utils utils = new Utils();
-		if (!utils.isNetworkAvailable(this, getIntent(), true)) {
+		if (!Utils.isNetworkAvailable(this, getIntent(), true)) {
 			finish();
 			return;
 		}
-		progressDialog = utils.prepareProgressDialog(this);
-		progressDialog.setTitle("Webcam "
-				+ Constants.SELECTED_STATION_NAME_VALUE);
+		progressDialog = Utils.prepareProgressDialog(this);
+		progressDialog.setTitle("Webcam " + Constants.SELECTED_STATION_NAME_VALUE);
 		progressDialog.show();
 		alertDialog = new AlertDialog.Builder(this).create();
 
@@ -72,8 +70,7 @@ public class Webcam extends Activity {
 
 	private void showWebCam() {
 		Utils.log(TAG, "RadioPlayer.URL_WEBCAM=" + Constants.URL_WEBCAM_VALUE);
-		if (Constants.URL_WEBCAM_VALUE != null
-				&& !Constants.URL_WEBCAM_VALUE.equals("")) {
+		if (Constants.URL_WEBCAM_VALUE != null && !Constants.URL_WEBCAM_VALUE.equals("")) {
 			WebView myWebView = new WebView(this);
 			myWebView.clearCache(Boolean.TRUE);
 			myWebView = (WebView) findViewById(R.id.webkitWebViewWebCam);
@@ -103,8 +100,7 @@ public class Webcam extends Activity {
 		public void onPageFinished(WebView view, String url) {
 			Log.i(TAG, "Finished loading URL: " + url);
 			try {
-				if (view != null && progressDialog != null
-						&& progressDialog.isShowing()) {
+				if (view != null && progressDialog != null && progressDialog.isShowing()) {
 					progressDialog.dismiss();
 				}
 			} catch (Exception e) {
@@ -115,11 +111,9 @@ public class Webcam extends Activity {
 		}
 
 		@Override
-		public void onReceivedError(WebView view, int errorCode,
-				String description, String failingUrl) {
+		public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
 			Log.e(TAG, "Error: " + description);
-			Toast.makeText(getApplicationContext(), "Oh no! " + description,
-					Toast.LENGTH_LONG).show();
+			Toast.makeText(getApplicationContext(), "Oh no! " + description, Toast.LENGTH_LONG).show();
 		}
 	}
 

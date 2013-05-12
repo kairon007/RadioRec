@@ -49,7 +49,7 @@ public class RadioPlayer {
 	}
 
 	public void doStopPlay(Context context) {
-		Utils.log(TAG, "doStopPlay()");
+		Utils.log(TAG, "doStopPlay() START");
 		try {
 			if (threadDoStartPlay != null && threadDoStartPlay.isAlive()) {
 				Utils.log(TAG, "++ threadDoStartPlay.interrupt()");
@@ -89,6 +89,7 @@ public class RadioPlayer {
 			getNotifInstance(context).hideStatusBarNotification(
 					Constants.NOTIFICATION_ID_ERROR_CONNECTION);
 		}
+		Utils.log(TAG, "doStopPlay() STOP");
 	}
 
 	private void createThread(final Context context) {

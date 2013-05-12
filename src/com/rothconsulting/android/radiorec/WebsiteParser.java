@@ -12,7 +12,7 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.os.AsyncTask;
-import android.util.Log;
+
 
 public class WebsiteParser extends AsyncTask<String, Void, String> {
 

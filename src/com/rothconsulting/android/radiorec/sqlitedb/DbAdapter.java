@@ -13,7 +13,6 @@ public class DbAdapter {
 	private static final String TAG = "DbAdapter";
 	// Database fields
 	public static final String KEY_ROWID = "_id";
-	public static final String KEY_STATION_ICON_SMALL = "icon_small";
 	public static final String KEY_STATION_NAME = "name";
 	public static final String T_STATION = "station";
 	private final Context context;
@@ -37,13 +36,11 @@ public class DbAdapter {
 	}
 
 	/**
-	 * Create a new station. If the station is successfully created return the
-	 * new rowId for that note, otherwise return a -1 to indicate failure.
+	 * Create a new station. If the station is successfully created return the new rowId for that note, otherwise return a -1 to indicate failure.
 	 */
-	public long insertStation(int iconSmall, String stationName) {
+	public long insertStation(String stationName) {
 
 		ContentValues values = new ContentValues();
-		values.put(KEY_STATION_ICON_SMALL, iconSmall);
 		values.put(KEY_STATION_NAME, stationName);
 
 		return database.insert(T_STATION, null, values);
@@ -54,8 +51,7 @@ public class DbAdapter {
 	 */
 	public int deleteStation(String stationName) {
 		Utils.log(TAG, "delete stationName=" + stationName);
-		int affected = database.delete(T_STATION, KEY_STATION_NAME + "='"
-				+ stationName + "'", null);
+		int affected = database.delete(T_STATION, KEY_STATION_NAME + "='" + stationName + "'", null);
 		Utils.log(TAG, "rows deleted=" + affected);
 
 		return affected;
@@ -80,9 +76,8 @@ public class DbAdapter {
 		}
 
 		Cursor mCursor = null;
-		mCursor = database.query(true, T_STATION, new String[] {
-				KEY_STATION_ICON_SMALL, KEY_STATION_NAME }, KEY_STATION_NAME
-				+ "= '" + stationName + "'", null, null, null, null, null);
+		mCursor = database
+				.query(true, T_STATION, new String[] { KEY_STATION_NAME }, KEY_STATION_NAME + "= '" + stationName + "'", null, null, null, null, null);
 		if (mCursor != null) {
 			mCursor.moveToFirst();
 			Utils.log(TAG, "cursor.getCount()=" + mCursor.getCount());

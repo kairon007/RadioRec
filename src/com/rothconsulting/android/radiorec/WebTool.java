@@ -8,6 +8,7 @@ import org.apache.http.HttpResponse;
 import android.content.Context;
 import android.os.AsyncTask;
 
+
 public class WebTool {
 
 	private static final String TAG = "WebTool";

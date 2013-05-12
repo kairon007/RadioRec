@@ -2,20 +2,21 @@
 
 package com.rothconsulting.android.marketbilling;
 
-import com.rothconsulting.android.marketbilling.BillingService.RequestPurchase;
-import com.rothconsulting.android.marketbilling.BillingService.RestoreTransactions;
-import com.rothconsulting.android.marketbilling.Constants.PurchaseState;
-import com.rothconsulting.android.marketbilling.Constants.ResponseCode;
+import java.lang.reflect.Method;
 
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.app.PendingIntent.CanceledException;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Handler;
 import android.util.Log;
 
-import java.lang.reflect.Method;
+import com.rothconsulting.android.marketbilling.BillingService.RequestPurchase;
+import com.rothconsulting.android.marketbilling.BillingService.RestoreTransactions;
+import com.rothconsulting.android.marketbilling.Constants.PurchaseState;
+import com.rothconsulting.android.marketbilling.Constants.ResponseCode;
 
 /**
  * An interface for observing changes related to purchases. The main application

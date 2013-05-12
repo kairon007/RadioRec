@@ -456,7 +456,7 @@ public class Stations {
 	 * 
 	 * @return
 	 */
-	public ArrayList<HashMap<String, Object>> getAllStations() {
+	public static ArrayList<HashMap<String, Object>> getAllStations() {
 		ArrayList<HashMap<String, Object>> stationList = new ArrayList<HashMap<String, Object>>();
 		HashMap<String, Object> m;
 
@@ -464,10 +464,10 @@ public class Stations {
 		m.put("name", RADIO_32);
 		m.put("icon", R.drawable.radio_32);
 		m.put("icon_small", R.drawable.radio_32_small);
-		m.put("stream", "http://radio32-stream.customer.solnet.ch:8000/radio32");
+		m.put("stream", "http://stream.radio32.ch/radio32_noads");
 		m.put("homepage", "http://www.radio32.ch");
-		m.put("webcam", "http://www.radio32.ch/pages/inc/getcampicfront.cfm");
-		m.put("email", "http://www.radio32.ch/?id=257&rub=55");
+		m.put("webcam", "http://www.radio32.ch/mp3/Webcam/cam.jpg");
+		m.put("email", "http://www.radio32.ch/?rub=67");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -477,11 +477,10 @@ public class Stations {
 		m.put("name", RADIO_32_GOLDIES);
 		m.put("icon", R.drawable.radio_32_goldies);
 		m.put("icon_small", R.drawable.radio_32_goldies_small);
-		m.put("stream",
-				"http://radio32-stream.customer.solnet.ch:8100/radio32goldies");
+		m.put("stream", "http://stream.radio32.ch/radio32goldies");
 		m.put("homepage", "http://www.goldies.ch");
-		m.put("webcam", "http://www.radio32.ch/pages/inc/getcampicfront.cfm");
-		m.put("email", "http://www.radio32.ch/?id=685&rub=124");
+		m.put("webcam", "http://www.radio32.ch/mp3/Webcam/cam.jpg");
+		m.put("email", "http://www.goldies.ch/?rub=82");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -532,10 +531,8 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_24_small);
 		m.put("stream", "http://live.radio24.ch/radio24");
 		m.put("homepage", "http://www.radio24.ch");
-		m.put("webcam",
-				"http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&width=700&quality=80");
-		m.put("email",
-				"http://www.radio24.ch/service/standard/Kontakt/story/17621407");
+		m.put("webcam", "http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&width=700&quality=80");
+		m.put("email", "http://www.radio24.ch/service/standard/Kontakt/story/17621407");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -547,10 +544,8 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_24_rock_small);
 		m.put("stream", "http://live.radio24.ch:80/radio24Rock");
 		m.put("homepage", "http://www.radio24.ch");
-		m.put("webcam",
-				"http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&width=700&quality=80");
-		m.put("email",
-				"http://www.radio24.ch/service/standard/Kontakt/story/17621407");
+		m.put("webcam", "http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&width=700&quality=80");
+		m.put("email", "http://www.radio24.ch/service/standard/Kontakt/story/17621407");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -576,8 +571,7 @@ public class Stations {
 		m.put("stream", "http://streaming.swisstxt.ch/m/regi_ag_so/mp3_128");
 		m.put("homepage", "http://www.srf.ch/news/regional/aargau-solothurn");
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
-		m.put("email",
-				"http://www.srf.ch/sendungen/regionaljournal-aargau-solothurn/kontakt");
+		m.put("email", "http://www.srf.ch/sendungen/regionaljournal-aargau-solothurn/kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -590,8 +584,7 @@ public class Stations {
 		m.put("stream", "http://streaming.swisstxt.ch/m/regi_bs_bl/mp3_128");
 		m.put("homepage", "http://www.srf.ch/news/regional/basel-baselland");
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
-		m.put("email",
-				"http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html");
+		m.put("email", "http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -602,11 +595,9 @@ public class Stations {
 		m.put("icon", R.drawable.radio_srf_1_be_fr_vs);
 		m.put("icon_small", R.drawable.radio_srf_1_small);
 		m.put("stream", "http://streaming.swisstxt.ch/m/regi_be_fr_vs/mp3_128");
-		m.put("homepage",
-				"http://www.srf.ch/news/regional/bern-freiburg-wallis");
+		m.put("homepage", "http://www.srf.ch/news/regional/bern-freiburg-wallis");
 		m.put("webcam", "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
-		m.put("email",
-				"http://www.srf.ch/sendungen/regionaljournal-bern-freiburg-wallis/kontakt");
+		m.put("email", "http://www.srf.ch/sendungen/regionaljournal-bern-freiburg-wallis/kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -657,8 +648,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_srf_virus_small);
 		m.put("stream", "http://streaming.swisstxt.ch/m/drsvirus/mp3_128");
 		m.put("homepage", "http://www.virus.ch");
-		m.put("webcam",
-				"http://www.drs.ch/import/webcam/virus/virus2.jpg?1304112781446");
+		m.put("webcam", "http://www.drs.ch/import/webcam/virus/virus2.jpg?1304112781446");
 		m.put("email", "http://www.virus.ch/virus/kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
@@ -671,8 +661,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_srf_musikwelle_small);
 		m.put("stream", "http://streaming.swisstxt.ch/m/drsmw/mp3_128");
 		m.put("homepage", "http://www.srfmusikwelle.ch");
-		m.put("webcam",
-				"http://www.drsmusikwelle.ch/import/webcam/drsmw/webdrsmwb.jpg");
+		m.put("webcam", "http://www.drsmusikwelle.ch/import/webcam/drsmw/webdrsmwb.jpg");
 		m.put("email", "http://www.srf.ch/radio-srf-musikwelle/mail-ins-studio");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
@@ -735,8 +724,7 @@ public class Stations {
 		m.put("name", RADIO_ENERGY_BERN);
 		m.put("icon", R.drawable.radio_energy_bern);
 		m.put("icon_small", R.drawable.radio_energy_bern_small);
-		m.put("stream",
-				"http://energybern.ice.infomaniak.ch/energybern-high.mp3");
+		m.put("stream", "http://energybern.ice.infomaniak.ch/energybern-high.mp3");
 		m.put("homepage", "http://www.energy.ch/bern");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/bern/inside/kontakt");
@@ -749,8 +737,7 @@ public class Stations {
 		m.put("name", RADIO_ENERGY_ZUERICH);
 		m.put("icon", R.drawable.radio_energy_zurich);
 		m.put("icon_small", R.drawable.radio_energy_zurich_small);
-		m.put("stream",
-				"http://energyzuerich.ice.infomaniak.ch/energyzuerich-high.mp3");
+		m.put("stream", "http://energyzuerich.ice.infomaniak.ch/energyzuerich-high.mp3");
 		m.put("homepage", "http://www.energy.ch/zuerich");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
@@ -763,8 +750,7 @@ public class Stations {
 		m.put("name", RADIO_ENERGY_BASEL);
 		m.put("icon", R.drawable.radio_energy_basel);
 		m.put("icon_small", R.drawable.radio_energy_basel_small);
-		m.put("stream",
-				"http://energybasel.ice.infomaniak.ch/energybasel-high.mp3");
+		m.put("stream", "http://energybasel.ice.infomaniak.ch/energybasel-high.mp3");
 		m.put("homepage", "http://www.energy.ch/basel");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/basel/inside/kontakt");
@@ -777,8 +763,7 @@ public class Stations {
 		m.put("name", RADIO_ENERGY_SWISS);
 		m.put("icon", R.drawable.radio_energy_swiss);
 		m.put("icon_small", R.drawable.radio_energy_swiss_small);
-		m.put("stream",
-				"http://energyswiss.ice.infomaniak.ch:80/energyswiss-high.mp3");
+		m.put("stream", "http://energyswiss.ice.infomaniak.ch:80/energyswiss-high.mp3");
 		m.put("homepage", "http://www.energy.ch/webradios");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
@@ -804,8 +789,7 @@ public class Stations {
 		m.put("name", RADIO_ENERGY_LOVE);
 		m.put("icon", R.drawable.radio_energy_love);
 		m.put("icon_small", R.drawable.radio_energy_love_small);
-		m.put("stream",
-				"http://broadcast.infomaniak.net:80/energylove-high.mp3");
+		m.put("stream", "http://broadcast.infomaniak.net:80/energylove-high.mp3");
 		m.put("homepage", "http://www.energy.ch/webradios");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
@@ -818,8 +802,7 @@ public class Stations {
 		m.put("name", RADIO_ENERGY_80);
 		m.put("icon", R.drawable.radio_energy_80s);
 		m.put("icon_small", R.drawable.radio_energy_80s_small);
-		m.put("stream",
-				"http://energy80s.ice.infomaniak.ch:80/energy80s-high.mp3");
+		m.put("stream", "http://energy80s.ice.infomaniak.ch:80/energy80s-high.mp3");
 		m.put("homepage", "http://www.energy.ch/webradios");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
@@ -832,8 +815,7 @@ public class Stations {
 		m.put("name", RADIO_ENERGY_90);
 		m.put("icon", R.drawable.radio_energy_90s);
 		m.put("icon_small", R.drawable.radio_energy_90s_small);
-		m.put("stream",
-				"http://energy90s.ice.infomaniak.ch:80/energy90s-high.mp3");
+		m.put("stream", "http://energy90s.ice.infomaniak.ch:80/energy90s-high.mp3");
 		m.put("homepage", "http://www.energy.ch/webradios");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
@@ -846,8 +828,7 @@ public class Stations {
 		m.put("name", RADIO_ENERGY_ITALY);
 		m.put("icon", R.drawable.radio_energy_italy);
 		m.put("icon_small", R.drawable.radio_energy_italy_small);
-		m.put("stream",
-				"http://energyitaly.ice.infomaniak.ch:80/energyitaly-high.mp3");
+		m.put("stream", "http://energyitaly.ice.infomaniak.ch:80/energyitaly-high.mp3");
 		m.put("homepage", "http://www.energy.ch/webradios");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
@@ -875,8 +856,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_zuerichsee_small);
 		m.put("stream", "http://mp3.radio.ch:80/radiozuerisee128k");
 		m.put("homepage", "http://www.radio.ch");
-		m.put("webcam",
-				"http://live.radiozurisee.divio.ch//media/external/data_upload/CAM1/SR1_CAM1.jpg");
+		m.put("webcam", "http://live.radiozurisee.divio.ch//media/external/data_upload/CAM1/SR1_CAM1.jpg");
 		m.put("email", "http://www.radio.ch/de/kontakt/mail-ins-studio/");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
@@ -1022,8 +1002,7 @@ public class Stations {
 		m.put("stream", "http://bas-flu-stream-01.datacomm.ch:8000/105classics");
 		m.put("homepage", "http://www.105classics.ch");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.105.ch/channels/radio-105-classic/?article=65");
+		m.put("email", "http://www.105.ch/channels/radio-105-classic/?article=65");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -1140,8 +1119,7 @@ public class Stations {
 		m.put("stream", "http://kaiseregg.ice.infomaniak.ch/stream128k.mp3");
 		m.put("homepage", "http://www.kaiseregg.ch");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.kaiseregg.ch/index.php?option=com_contact&view=contact&id=1&Itemid=7");
+		m.put("email", "http://www.kaiseregg.ch/index.php?option=com_contact&view=contact&id=1&Itemid=7");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -1193,8 +1171,7 @@ public class Stations {
 		m.put("stream", "http://ch3.streamhosting.ch:8080");
 		m.put("homepage", "http://www.lounge-radio.com");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.lounge-radio.com/index.php?option=com_contact&Itemid=42");
+		m.put("email", "http://www.lounge-radio.com/index.php?option=com_contact&Itemid=42");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -1204,8 +1181,7 @@ public class Stations {
 		m.put("name", RADIO_SWISS_GROOVE);
 		m.put("icon", R.drawable.radio_swissgroove);
 		m.put("icon_small", R.drawable.radio_swissgroove_small);
-		m.put("stream",
-				"http://swissgroove.ice.infomaniak.ch:80/swissgroove-128");
+		m.put("stream", "http://swissgroove.ice.infomaniak.ch:80/swissgroove-128");
 		m.put("homepage", "http://www.swissgroove.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.swissgroove.ch/index.php?content=main&id=17");
@@ -1218,8 +1194,7 @@ public class Stations {
 		m.put("name", RADIO_FREIBURG);
 		m.put("icon", R.drawable.radio_fr);
 		m.put("icon_small", R.drawable.radio_fr_small);
-		m.put("stream",
-				"http://radiofreiburg.ice.infomaniak.ch:80/radiofreiburg-high.mp3");
+		m.put("stream", "http://radiofreiburg.ice.infomaniak.ch:80/radiofreiburg-high.mp3");
 		m.put("homepage", "http://www.radiofr.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiofr.ch/de/kontakt.html");
@@ -1235,8 +1210,7 @@ public class Stations {
 		m.put("stream", "http://streaming.swisstxt.ch/m/couleur3/mp3_128");
 		m.put("homepage", "http://www.couleur3.ch");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.rsr.ch/#/corporate/contact/?contact=couleur3");
+		m.put("email", "http://www.rsr.ch/#/corporate/contact/?contact=couleur3");
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -1301,8 +1275,7 @@ public class Stations {
 		m.put("stream", "http://streaming.swisstxt.ch/m/retetre/mp3_128");
 		m.put("homepage", "http://retetre.rtsi.ch.ch");
 		m.put("webcam", "");
-		m.put("email",
-				"http://retetre.rtsi.ch/index.php?option=com_contact&catid=12&Itemid=30");
+		m.put("email", "http://retetre.rtsi.ch/index.php?option=com_contact&catid=12&Itemid=30");
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -1316,8 +1289,7 @@ public class Stations {
 		// m.put("stream", "http://91.208.130.229");
 		m.put("homepage", "http://www.radioticino.com");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.radioticino.com/interna.asp?idarticolo=498046");
+		m.put("email", "http://www.radioticino.com/interna.asp?idarticolo=498046");
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
@@ -1369,8 +1341,7 @@ public class Stations {
 		m.put("stream", "http://mp3.lifechannel.ch/LC128");
 		m.put("homepage", "http://www.lifechannel.ch");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.lifechannel.ch/fenster_zum_sonntag-feedback___kontakt.html");
+		m.put("email", "http://www.lifechannel.ch/fenster_zum_sonntag-feedback___kontakt.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_RELIGION);
@@ -1393,11 +1364,9 @@ public class Stations {
 		m.put("name", RADIO_GELB_SCHWARZ);
 		m.put("icon", R.drawable.radio_gelb_schwarz_yb);
 		m.put("icon_small", R.drawable.radio_gelb_schwarz_yb_small);
-		m.put("stream",
-				"http://radiogelb-schwarz.ice.infomaniak.ch:80/radiogelbschwarz.mp3");
+		m.put("stream", "http://radiogelb-schwarz.ice.infomaniak.ch:80/radiogelbschwarz.mp3");
 		m.put("homepage", "http://www.radio-gelb-schwarz.ch");
-		m.put("webcam",
-				"http://data.bkw-fmb.ch/opd/camPics/Stade-de-suisse.jpg");
+		m.put("webcam", "http://data.bkw-fmb.ch/opd/camPics/Stade-de-suisse.jpg");
 		m.put("email", "rgs@im-stadion.ch");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
@@ -1411,8 +1380,7 @@ public class Stations {
 		m.put("stream", "http://46.4.14.142:8800");
 		m.put("homepage", "http://www.fcbliveradio.ch");
 		m.put("webcam", "");
-		m.put("email",
-				"https://www.facebook.com/pages/FCB-Live-Radio/294028969601");
+		m.put("email", "https://www.facebook.com/pages/FCB-Live-Radio/294028969601");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_SPORT);
@@ -1436,12 +1404,10 @@ public class Stations {
 		m.put("name", RADIO_BACKSTAGE_RADIO);
 		m.put("icon", R.drawable.radio_backstage_radio);
 		m.put("icon_small", R.drawable.radio_backstage_radio_small);
-		m.put("stream",
-				"http://broadcast.infomaniak.ch/backstageradio-high.mp3");
+		m.put("stream", "http://broadcast.infomaniak.ch/backstageradio-high.mp3");
 		m.put("homepage", "http://www.backstageradio.ch");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.facebook.com/apps/application.php?id=194482473899008");
+		m.put("email", "http://www.facebook.com/apps/application.php?id=194482473899008");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -1670,8 +1636,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_grischa_small);
 		m.put("stream", "http://grischa.mp3.green.ch");
 		m.put("homepage", "http://www.radiogrischa.ch");
-		m.put("webcam",
-				"http://www.radiogrischa.ch/sites/default/files/webcams/studio_1.jpg");
+		m.put("webcam", "http://www.radiogrischa.ch/sites/default/files/webcams/studio_1.jpg");
 		m.put("email", "http://www.radiogrischa.ch/adresseanfahrt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
@@ -1686,8 +1651,7 @@ public class Stations {
 		m.put("stream", "http://stream.radiotell.ch/radiotell.mp3");
 		m.put("homepage", "http://www.radiotell.ch");
 		m.put("webcam", "");
-		m.put("email",
-				"http://radiotell.ch/radiotell/module/pages/detail.asp?IDPage=12&PageKatalogeID=10&menuid=10&parentid=&pnx=&TopPnx=10_0&banner=&button=");
+		m.put("email", "http://radiotell.ch/radiotell/module/pages/detail.asp?IDPage=12&PageKatalogeID=10&menuid=10&parentid=&pnx=&TopPnx=10_0&banner=&button=");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_VOLKSTUEMLICH);
@@ -1697,11 +1661,9 @@ public class Stations {
 		m.put("name", RADIO_INDUSTRIE);
 		m.put("icon", R.drawable.radio_industrie);
 		m.put("icon_small", R.drawable.radio_industrie_small);
-		m.put("stream",
-				"http://radioindustrie.ice.infomaniak.ch/radioindustrie-128.mp3");
+		m.put("stream", "http://radioindustrie.ice.infomaniak.ch/radioindustrie-128.mp3");
 		m.put("homepage", "http://www.radioindustrie.ch");
-		m.put("webcam",
-				"http://radioindustrie.dyndns.org:8090/SnapshotJPEG?Resolution=640x480&Quality=Clarity");
+		m.put("webcam", "http://radioindustrie.dyndns.org:8090/SnapshotJPEG?Resolution=640x480&Quality=Clarity");
 		m.put("email", "info@radioindustrie.ch");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
@@ -1725,8 +1687,7 @@ public class Stations {
 		m.put("name", RADIO_PIRATENRADIO);
 		m.put("icon", R.drawable.radio_piratenradio);
 		m.put("icon_small", R.drawable.radio_piratenradio_small);
-		m.put("stream",
-				"http://piratenradioch.ice.infomaniak.ch/piratenradioch-128.mp3");
+		m.put("stream", "http://piratenradioch.ice.infomaniak.ch/piratenradioch-128.mp3");
 		m.put("homepage", "http://www.piratenradio.ch");
 		m.put("webcam", "");
 		m.put("email", "info@piratenradio.ch");
@@ -1743,8 +1704,7 @@ public class Stations {
 		m.put("stream", "http://212.83.60.57:31900");
 		m.put("homepage", "http://www.radio-wave.ch");
 		m.put("webcam", "http://www.radiowave.ch/studio.jpg");
-		m.put("email",
-				"http://www.radio-wave.ch/cms/index.php?section=contact&cmd=8");
+		m.put("email", "http://www.radio-wave.ch/cms/index.php?section=contact&cmd=8");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -1924,8 +1884,7 @@ public class Stations {
 		m.put("icon", R.drawable.radio_crazy);
 		m.put("icon_small", R.drawable.radio_crazy_small);
 		m.put("stream", "http://stream2137.init7.net");
-		m.put("homepage",
-				"http://www.radiocrazy.ch/menu/discography/klassik/klassik/index.htm");
+		m.put("homepage", "http://www.radiocrazy.ch/menu/discography/klassik/klassik/index.htm");
 		m.put("webcam", "");
 		m.put("email", "info@swissradio.ch");
 		m.put("sprache", SPRACHE_DE);
@@ -1938,8 +1897,7 @@ public class Stations {
 		m.put("icon", R.drawable.radio_crazy);
 		m.put("icon_small", R.drawable.radio_crazy_small);
 		m.put("stream", "http://stream2139.init7.net");
-		m.put("homepage",
-				"http://www.radiocrazy.ch/menu/discography/klassik/opern/index.htm");
+		m.put("homepage", "http://www.radiocrazy.ch/menu/discography/klassik/opern/index.htm");
 		m.put("webcam", "");
 		m.put("email", "info@swissradio.ch");
 		m.put("sprache", SPRACHE_DE);
@@ -1952,8 +1910,7 @@ public class Stations {
 		m.put("icon", R.drawable.radio_crazy);
 		m.put("icon_small", R.drawable.radio_crazy_small);
 		m.put("stream", "http://stream2138.init7.net");
-		m.put("homepage",
-				"http://www.radiocrazy.ch/menu/discography/jazz/jazz/index.htm");
+		m.put("homepage", "http://www.radiocrazy.ch/menu/discography/jazz/jazz/index.htm");
 		m.put("webcam", "");
 		m.put("email", "info@swissradio.ch");
 		m.put("sprache", SPRACHE_DE);
@@ -1966,8 +1923,7 @@ public class Stations {
 		m.put("icon", R.drawable.radio_crazy);
 		m.put("icon_small", R.drawable.radio_crazy_small);
 		m.put("stream", "http://stream2140.init7.net");
-		m.put("homepage",
-				"http://www.radiocrazy.ch/menu/discography/jazz/modernjazz/index.htm");
+		m.put("homepage", "http://www.radiocrazy.ch/menu/discography/jazz/modernjazz/index.htm");
 		m.put("webcam", "");
 		m.put("email", "info@swissradio.ch");
 		m.put("sprache", SPRACHE_DE);
@@ -1982,8 +1938,7 @@ public class Stations {
 		m.put("stream", "http://live.radiol.li:8000/live");
 		m.put("homepage", "http://www.radio.li");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.radio.li/hoererservice/mein-musikwunsch.html?type=3");
+		m.put("email", "http://www.radio.li/hoererservice/mein-musikwunsch.html?type=3");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
@@ -2000,8 +1955,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_antenne_bayern_small);
 		m.put("stream", "http://mp3.webradio.antenne.de");
 		m.put("homepage", "http://www.antenne.de");
-		m.put("webcam",
-				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
+		m.put("webcam", "http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
 		m.put("email", "http://www.antenne.de/antenne/radio/kontakt/index.php");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
@@ -2014,8 +1968,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_antenne_chillout_small);
 		m.put("stream", "http://mp3channels.webradio.antenne.de/chillout");
 		m.put("homepage", "http://www.antenne.de");
-		m.put("webcam",
-				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
+		m.put("webcam", "http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
 		m.put("email", "http://www.antenne.de/antenne/radio/kontakt/index.php");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
@@ -2026,11 +1979,9 @@ public class Stations {
 		m.put("name", RADIO_ANTENNE_CLASSIC_ROCK);
 		m.put("icon", R.drawable.radio_antenne_classic_rock);
 		m.put("icon_small", R.drawable.radio_antenne_classic_rock_small);
-		m.put("stream",
-				"http://mp3channels.webradio.antenne.de/classic-rock-live");
+		m.put("stream", "http://mp3channels.webradio.antenne.de/classic-rock-live");
 		m.put("homepage", "http://www.antenne.de");
-		m.put("webcam",
-				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
+		m.put("webcam", "http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
 		m.put("email", "http://www.antenne.de/antenne/radio/kontakt/index.php");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
@@ -2043,8 +1994,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_antenne_rock_small);
 		m.put("stream", "http://mp3.webradio.rockantenne.de:80");
 		m.put("homepage", "http://www.rockantenne.de");
-		m.put("webcam",
-				"http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
+		m.put("webcam", "http://www.antenne.de/antenne/incl/php/thumb.php?image=/webcam/studiocam-b.jpg&y=360&resize=1&thumb_path=/webcam/thumb/440x360");
 		m.put("email", "http://www.rockantenne.de/mailinsstudio");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
@@ -2055,8 +2005,7 @@ public class Stations {
 		m.put("name", RADIO_ANTENNE_ROCK_HEAVY_METAL);
 		m.put("icon", R.drawable.radio_antenne_rock_heavy_metal);
 		m.put("icon_small", R.drawable.radio_antenne_rock_heavy_metal_small);
-		m.put("stream",
-				"http://mp3channels.webradio.rockantenne.de/heavy-metal");
+		m.put("stream", "http://mp3channels.webradio.rockantenne.de/heavy-metal");
 		m.put("homepage", "http://www.rockantenne.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.rockantenne.de/mailinsstudio");
@@ -2071,8 +2020,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_bayern1_small);
 		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w10b");
 		m.put("homepage", "http://www.bayern1.de");
-		m.put("webcam",
-				"http://www.br-online.de/content/import/webcams/bayern1/cam2_pult.jpg");
+		m.put("webcam", "http://www.br-online.de/content/import/webcams/bayern1/cam2_pult.jpg");
 		m.put("email", "studio@bayern1.de");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
@@ -2086,8 +2034,7 @@ public class Stations {
 		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w11b");
 		m.put("homepage", "http://www.bayern2.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.br.de/radio/bayern2/sendungen/land-und-leute/kontakt/index.html");
+		m.put("email", "http://www.br.de/radio/bayern2/sendungen/land-und-leute/kontakt/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2099,10 +2046,8 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_bayern3_small);
 		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w12b");
 		m.put("homepage", "http://www.bayern2.de");
-		m.put("webcam",
-				"http://www.br-online.de/content/import/webcams/bayern3/cam7_gast.jpg");
-		m.put("email",
-				"http://www.br.de/radio/bayern3/service/kontakt/index.html");
+		m.put("webcam", "http://www.br-online.de/content/import/webcams/bayern3/cam7_gast.jpg");
+		m.put("email", "http://www.br.de/radio/bayern3/service/kontakt/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2115,8 +2060,7 @@ public class Stations {
 		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w13a");
 		m.put("homepage", "http://www.bayern4.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.br.de/radio/br-klassik/service/kontakt/br-klassik-kontakt-service100.html");
+		m.put("email", "http://www.br.de/radio/br-klassik/service/kontakt/br-klassik-kontakt-service100.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_KLASSIK);
@@ -2129,8 +2073,7 @@ public class Stations {
 		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_w14a");
 		m.put("homepage", "http://www.bayern5.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.br.de/radio/b5-aktuell/service/kontakt/index.html");
+		m.put("email", "http://www.br.de/radio/b5-aktuell/service/kontakt/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2153,12 +2096,10 @@ public class Stations {
 		m.put("name", RADIO_SWR_1_BW);
 		m.put("icon", R.drawable.radio_swr1);
 		m.put("icon_small", R.drawable.radio_swr1_small);
-		m.put("stream",
-				"http://swr-mp3-m-swr1bw.akacast.akamaistream.net/7/245/137133/v1/gnl.akacast.akamaistream.net/swr-mp3-m-swr1bw");
+		m.put("stream", "http://swr-mp3-m-swr1bw.akacast.akamaistream.net/7/245/137133/v1/gnl.akacast.akamaistream.net/swr-mp3-m-swr1bw");
 		m.put("homepage", "http://www.swr1.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.swr.de/swr1/bw/kontakt/-/id=446430/cf=42/s4inx1/index.html");
+		m.put("email", "http://www.swr.de/swr1/bw/kontakt/-/id=446430/cf=42/s4inx1/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2168,12 +2109,10 @@ public class Stations {
 		m.put("name", RADIO_SWR_1_RP);
 		m.put("icon", R.drawable.radio_swr1);
 		m.put("icon_small", R.drawable.radio_swr1_small);
-		m.put("stream",
-				"http://swr-mp3-m-swr1rp.akacast.akamaistream.net/7/467/137134/v1/gnl.akacast.akamaistream.net/swr-mp3-m-swr1rp");
+		m.put("stream", "http://swr-mp3-m-swr1rp.akacast.akamaistream.net/7/467/137134/v1/gnl.akacast.akamaistream.net/swr-mp3-m-swr1rp");
 		m.put("homepage", "http://www.swr1.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.swr.de/swr1/bw/kontakt/-/id=446430/cf=42/s4inx1/index.html");
+		m.put("email", "http://www.swr.de/swr1/bw/kontakt/-/id=446430/cf=42/s4inx1/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2186,8 +2125,7 @@ public class Stations {
 		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_swr2b");
 		m.put("homepage", "http://www.swr2.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.swr.de/swr2/-/id=7576/vv=email/nid=7576/did=661414/wfs5qs/index.html");
+		m.put("email", "http://www.swr.de/swr2/-/id=7576/vv=email/nid=7576/did=661414/wfs5qs/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2200,8 +2138,7 @@ public class Stations {
 		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_swr3b");
 		m.put("homepage", "http://www.swr3.ch");
 		m.put("webcam", "http://www.swr3.de/studiocam");
-		m.put("email",
-				"http://www.swr3.de/service/kontakt/-/id=49820/nsuyg4/index.html");
+		m.put("email", "http://www.swr3.de/service/kontakt/-/id=49820/nsuyg4/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2214,8 +2151,7 @@ public class Stations {
 		m.put("stream", "http://swr.ic.llnwd.net/stream/swr_mp3_m_swr4bwb");
 		m.put("homepage", "http://www.swr4.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.swr.de/swr4/bw/-/id=233374/vv=email/nid=233374/did=259762/1gqvrz9/index.html");
+		m.put("email", "http://www.swr.de/swr4/bw/-/id=233374/vv=email/nid=233374/did=259762/1gqvrz9/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2241,8 +2177,7 @@ public class Stations {
 		m.put("stream", "http://srv05.bigstreams.de/bigfm-mp3-96");
 		m.put("homepage", "http://www.bigfm.de");
 		m.put("webcam", "http://static.bigfm.de/webcam/cam6/webcam06.jpg");
-		m.put("email",
-				"http://www.bigfm.de/content/html/shared/studiomail/index.html");
+		m.put("email", "http://www.bigfm.de/content/html/shared/studiomail/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2330,8 +2265,7 @@ public class Stations {
 		m.put("name", RADIO_7);
 		m.put("icon", R.drawable.radio_7);
 		m.put("icon_small", R.drawable.radio_7_small);
-		m.put("stream",
-				"http://srv01.radio7.fmstreams.de/stream1/livestream.mp3");
+		m.put("stream", "http://srv01.radio7.fmstreams.de/stream1/livestream.mp3");
 		m.put("homepage", "http://www.radio7.de");
 		m.put("webcam", "");
 		m.put("email", "http://radio7.de/index.php?id=75");
@@ -2435,11 +2369,9 @@ public class Stations {
 		m.put("name", RADIO_RT1_HITRADIO);
 		m.put("icon", R.drawable.radio_rt1_hitradio);
 		m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
-		m.put("stream",
-				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-hitradiort1/livestream.mp3");
+		m.put("stream", "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-hitradiort1/livestream.mp3");
 		m.put("homepage", "http://www.rt1.de");
-		m.put("webcam",
-				"http://www.rt1.de/hitradio/bilder/bilder_webcam/cam1fullsize.jpg");
+		m.put("webcam", "http://www.rt1.de/hitradio/bilder/bilder_webcam/cam1fullsize.jpg");
 		m.put("email", "http://www.rt1.de/index.php?pageid=70&puid=1");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
@@ -2450,14 +2382,12 @@ public class Stations {
 		m.put("name", RADIO_RT1_SUEDSCHWABEN);
 		m.put("icon", R.drawable.radio_rt1_suedschwaben);
 		m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
-		m.put("stream",
-				"http://62.27.47.15:8000/ps-rt1nordschwaben/livestream.mp3");
+		m.put("stream", "http://62.27.47.15:8000/ps-rt1nordschwaben/livestream.mp3");
 		// m.put("stream",
 		// "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-rt1suedschwaben/livestream.mp3");
 		m.put("homepage", "http://www.rt1-suedschwaben.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.rt1-suedschwaben.de/index.php?pageid=174&puid=7");
+		m.put("email", "http://www.rt1-suedschwaben.de/index.php?pageid=174&puid=7");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2467,11 +2397,9 @@ public class Stations {
 		m.put("name", RADIO_RT1_IN_THE_MIX);
 		m.put("icon", R.drawable.radio_rt1_hitradio);
 		m.put("icon_small", R.drawable.radio_rt1_hitradio_small);
-		m.put("stream",
-				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-inthemix/livestream.mp3");
+		m.put("stream", "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-inthemix/livestream.mp3");
 		m.put("homepage", "http://www.rt1.de");
-		m.put("webcam",
-				"http://www.rt1.de/hitradio/bilder/bilder_webcam/cam1fullsize.jpg");
+		m.put("webcam", "http://www.rt1.de/hitradio/bilder/bilder_webcam/cam1fullsize.jpg");
 		m.put("email", "http://www.rt1.de/index.php?pageid=70&puid=1");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
@@ -2482,12 +2410,10 @@ public class Stations {
 		m.put("name", RADIO_HR_2);
 		m.put("icon", R.drawable.radio_hr2);
 		m.put("icon_small", R.drawable.radio_hr2_small);
-		m.put("stream",
-				"http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w68a");
+		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w68a");
 		m.put("homepage", "http://www.hr2.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.hr-online.de/website/radio/hr2/index.jsp?rubrik=3688");
+		m.put("email", "http://www.hr-online.de/website/radio/hr2/index.jsp?rubrik=3688");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_KLASSIK);
@@ -2497,12 +2423,10 @@ public class Stations {
 		m.put("name", RADIO_HR_3);
 		m.put("icon", R.drawable.radio_hr3);
 		m.put("icon_small", R.drawable.radio_hr3_small);
-		m.put("stream",
-				"http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w69b");
+		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w69b");
 		m.put("homepage", "http://www.hr3.de");
 		m.put("webcam", "http://www.hrfoto.dunkel.de/webcams/hr3/studio2.jpg");
-		m.put("email",
-				"http://www.hr-online.de/website/radio/hr3/index.jsp?rubrik=3532");
+		m.put("email", "http://www.hr-online.de/website/radio/hr3/index.jsp?rubrik=3532");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2512,8 +2436,7 @@ public class Stations {
 		m.put("name", RADIO_YOU_FM);
 		m.put("icon", R.drawable.radio_you_fm);
 		m.put("icon_small", R.drawable.radio_you_fm_small);
-		m.put("stream",
-				"http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w72a");
+		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w72a");
 		m.put("homepage", "http://www.you-fm.de");
 		m.put("webcam", "http://www.hrfoto.dunkel.de/webcams/xxl/studio1.jpg");
 		m.put("email", "http://www.you-fm.de/index.jsp?rubrik=12182");
@@ -2526,8 +2449,7 @@ public class Stations {
 		m.put("name", RADIO_1LIVE);
 		m.put("icon", R.drawable.radio_1live);
 		m.put("icon_small", R.drawable.radio_1live_small);
-		m.put("stream",
-				"http://1live.akacast.akamaistream.net/7/706/119434/v1/gnl.akacast.akamaistream.net/1live");
+		m.put("stream", "http://1live.akacast.akamaistream.net/7/706/119434/v1/gnl.akacast.akamaistream.net/1live");
 		m.put("homepage", "http://www.einslive.de");
 		m.put("webcam", "http://www.einslive.de/webcam/studio_a_1.jpg");
 		m.put("email", "http://www.einslive.de/team/kontakt");
@@ -2540,8 +2462,7 @@ public class Stations {
 		m.put("name", RADIO_WDR_2);
 		m.put("icon", R.drawable.radio_wdr2);
 		m.put("icon_small", R.drawable.radio_wdr2_small);
-		m.put("stream",
-				"http://wdr-mp3-m-wdr2-koeln.akacast.akamaistream.net/7/812/119456/v1/gnl.akacast.akamaistream.net/wdr-mp3-m-wdr2-koeln");
+		m.put("stream", "http://wdr-mp3-m-wdr2-koeln.akacast.akamaistream.net/7/812/119456/v1/gnl.akacast.akamaistream.net/wdr-mp3-m-wdr2-koeln");
 		m.put("homepage", "http://www.wdr2.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.wdr2.de/kontakt/kontakt102.html");
@@ -2554,8 +2475,7 @@ public class Stations {
 		m.put("name", RADIO_WDR_3);
 		m.put("icon", R.drawable.radio_wdr3);
 		m.put("icon_small", R.drawable.radio_wdr3_small);
-		m.put("stream",
-				"http://wdr-3-320.akacast.akamaistream.net/7/827/119437/v1/gnl.akacast.akamaistream.net/wdr-3-320");
+		m.put("stream", "http://wdr-3-320.akacast.akamaistream.net/7/827/119437/v1/gnl.akacast.akamaistream.net/wdr-3-320");
 		m.put("homepage", "http://www.wdr3.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.wdr3.de/kontakt.html");
@@ -2568,8 +2488,7 @@ public class Stations {
 		m.put("name", RADIO_WDR_4);
 		m.put("icon", R.drawable.radio_wdr4);
 		m.put("icon_small", R.drawable.radio_wdr4_small);
-		m.put("stream",
-				"http://wdr-4.akacast.akamaistream.net/7/42/119438/v1/gnl.akacast.akamaistream.net/wdr-4");
+		m.put("stream", "http://wdr-4.akacast.akamaistream.net/7/42/119438/v1/gnl.akacast.akamaistream.net/wdr-4");
 		m.put("homepage", "http://www.wdr4.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.wdr4.de/kontakt.html");
@@ -2582,8 +2501,7 @@ public class Stations {
 		m.put("name", RADIO_WDR_5);
 		m.put("icon", R.drawable.radio_wdr5);
 		m.put("icon_small", R.drawable.radio_wdr5_small);
-		m.put("stream",
-				"http://wdr-5.akacast.akamaistream.net/7/41/119439/v1/gnl.akacast.akamaistream.net/wdr-5");
+		m.put("stream", "http://wdr-5.akacast.akamaistream.net/7/41/119439/v1/gnl.akacast.akamaistream.net/wdr-5");
 		m.put("homepage", "http://www.wdr5.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.wdr5.de/nc/kontakt.html");
@@ -2596,8 +2514,7 @@ public class Stations {
 		m.put("name", RADIO_WDR_FUNKHAUS_EUROPA);
 		m.put("icon", R.drawable.radio_wdr_funkhaus_europa);
 		m.put("icon_small", R.drawable.radio_wdr_funkhaus_europa_small);
-		m.put("stream",
-				"http://funkhaus-europa.akacast.akamaistream.net/7/264/119440/v1/gnl.akacast.akamaistream.net/funkhaus-europa");
+		m.put("stream", "http://funkhaus-europa.akacast.akamaistream.net/7/264/119440/v1/gnl.akacast.akamaistream.net/funkhaus-europa");
 		m.put("homepage", "http://www.funkhauseuropa.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.funkhauseuropa.de/kontakt/index.phtml");
@@ -2610,12 +2527,10 @@ public class Stations {
 		m.put("name", RADIO_NORDWESTRADIO);
 		m.put("icon", R.drawable.radio_nordwestradio);
 		m.put("icon_small", R.drawable.radio_nordwestradio_small);
-		m.put("stream",
-				"http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w50b");
+		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w50b");
 		m.put("homepage", "http://www.radiobremen.de/nordwestradio/");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.radiobremen.de/nordwestradio/info/kontakt/kontakt132.html");
+		m.put("email", "http://www.radiobremen.de/nordwestradio/info/kontakt/kontakt132.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2625,12 +2540,10 @@ public class Stations {
 		m.put("name", RADIO_BREMEN_VIER);
 		m.put("icon", R.drawable.radio_bremen_vier);
 		m.put("icon_small", R.drawable.radio_bremen_vier_small);
-		m.put("stream",
-				"http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w49b");
+		m.put("stream", "http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w49b");
 		m.put("homepage", "http://www.radiobremen.de/radio/bremenvier/");
 		m.put("webcam", "http://www.radiobremen.de/bremenvier/cam/rb4cam1.jpg");
-		m.put("email",
-				"http://www.radiobremen.de/bremenvier/ueber-uns/kontakt/index.html");
+		m.put("email", "http://www.radiobremen.de/bremenvier/ueber-uns/kontakt/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2668,10 +2581,8 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_regenbogen_small);
 		m.put("stream", "http://217.151.151.91:80/live");
 		m.put("homepage", "http://www.regenbogen.de");
-		m.put("webcam",
-				"http://www.regenbogen.de/content/html/shared/webcams/index.html");
-		m.put("email",
-				"http://www.regenbogen.de/content/html/shared/studiomail/index.html");
+		m.put("webcam", "http://www.regenbogen.de/content/html/shared/webcams/index.html");
+		m.put("email", "http://www.regenbogen.de/content/html/shared/studiomail/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2720,12 +2631,10 @@ public class Stations {
 		m.put("name", RADIO_NDR_1_WELLE_NORD);
 		m.put("icon", R.drawable.radio_ndr1_welle_nord);
 		m.put("icon_small", R.drawable.radio_ndr1_welle_nord_small);
-		m.put("stream",
-				"http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr1wellenord_hi_mp3");
+		m.put("stream", "http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr1wellenord_hi_mp3");
 		m.put("homepage", "http://www.ndr1.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.ndr.de/wellenord/service/mail_ins_studio/index.html");
+		m.put("email", "http://www.ndr.de/wellenord/service/mail_ins_studio/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -2735,8 +2644,7 @@ public class Stations {
 		m.put("name", RADIO_NDR_1_NIEDERSACHSEN);
 		m.put("icon", R.drawable.radio_ndr1_niedersachsen);
 		m.put("icon_small", R.drawable.radio_ndr1_niedersachsen_small);
-		m.put("stream",
-				"http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr1niedersachsen_hi_mp3");
+		m.put("stream", "http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr1niedersachsen_hi_mp3");
 		m.put("homepage", "http://www.ndr.de/ndr1niedersachsen");
 		m.put("webcam", "");
 		m.put("email", "http://www.ndr.de/ndr1niedersachsen/ndrnds20.html");
@@ -2749,8 +2657,7 @@ public class Stations {
 		m.put("name", RADIO_NDR_2);
 		m.put("icon", R.drawable.radio_ndr2);
 		m.put("icon_small", R.drawable.radio_ndr2_small);
-		m.put("stream",
-				"http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr2_hi_mp3");
+		m.put("stream", "http://ndrstream.ic.llnwd.net/stream/ndrstream_ndr2_hi_mp3");
 		m.put("homepage", "http://www.ndr2.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.ndr.de/ndr2/musik/musikwunsch/index.html");
@@ -2763,8 +2670,7 @@ public class Stations {
 		m.put("name", RADIO_NDR_INFO);
 		m.put("icon", R.drawable.radio_ndr_info);
 		m.put("icon_small", R.drawable.radio_ndr_info_small);
-		m.put("stream",
-				"http://ndrstream.ic.llnwd.net/stream/ndrstream_ndrinfo_hi_mp3");
+		m.put("stream", "http://ndrstream.ic.llnwd.net/stream/ndrstream_ndrinfo_hi_mp3");
 		m.put("homepage", "http://www.ndr.de/info");
 		m.put("webcam", "");
 		m.put("email", "http://www.ndr.de/info/service/kontakt/index.html");
@@ -2777,8 +2683,7 @@ public class Stations {
 		m.put("name", RADIO_NDR_KULTUR);
 		m.put("icon", R.drawable.radio_ndr_kultur);
 		m.put("icon_small", R.drawable.radio_ndr_kultur_small);
-		m.put("stream",
-				"http://ndrstream.ic.llnwd.net/stream/ndrstream_ndrkultur_hi_mp3");
+		m.put("stream", "http://ndrstream.ic.llnwd.net/stream/ndrstream_ndrkultur_hi_mp3");
 		m.put("homepage", "http://www.ndr.de/ndrkultur");
 		m.put("webcam", "");
 		m.put("email", "http://www.ndr.de/ndrkultur/service/kontakt");
@@ -2791,8 +2696,7 @@ public class Stations {
 		m.put("name", RADIO_N_JOY);
 		m.put("icon", R.drawable.radio_n_joy);
 		m.put("icon_small", R.drawable.radio_n_joy_small);
-		m.put("stream",
-				"http://ndrstream.ic.llnwd.net/stream/ndrstream_n-joy_hi_mp3");
+		m.put("stream", "http://ndrstream.ic.llnwd.net/stream/ndrstream_n-joy_hi_mp3");
 		m.put("homepage", "http://www.n-joy.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.n-joy.de/kontakt377.html");
@@ -2857,8 +2761,7 @@ public class Stations {
 		m.put("name", RADIO_KULTURRADIO_RBB);
 		m.put("icon", R.drawable.radio_kulturradio_rbb);
 		m.put("icon_small", R.drawable.radio_kulturradio_rbb_small);
-		m.put("stream",
-				"http://rbb.ic.llnwd.net/stream/rbb_kulturradio_mp3_m_a");
+		m.put("stream", "http://rbb.ic.llnwd.net/stream/rbb_kulturradio_mp3_m_a");
 		m.put("homepage", "http://www.kulturradio.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.kulturradio.de/kontakt/kontakt.html");
@@ -2884,12 +2787,10 @@ public class Stations {
 		m.put("name", RADIO_BERLIN_RBB);
 		m.put("icon", R.drawable.radio_berlin_rbb);
 		m.put("icon_small", R.drawable.radio_berlin_rbb_small);
-		m.put("stream",
-				"http://rbb.ic.llnwd.net/stream/rbb_radioberlin_mp3_m_a");
+		m.put("stream", "http://rbb.ic.llnwd.net/stream/rbb_radioberlin_mp3_m_a");
 		m.put("homepage", "http://www.radioberlin.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.radioberlin.de/kontakt/kontakt/e_mail/index.html");
+		m.put("email", "http://www.radioberlin.de/kontakt/kontakt/e_mail/index.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_KLASSIK);
@@ -2912,7 +2813,7 @@ public class Stations {
 		m.put("name", RADIO_DEUTSCHLANDFUNK);
 		m.put("icon", R.drawable.radio_deutschlandfunk);
 		m.put("icon_small", R.drawable.radio_deutschlandfunk_small);
-		m.put("stream", "http://dradio.ic.llnwd.net/stream/dradio_dlf_m_b");
+		m.put("stream", "http://dradio_mp3_dlf_m.akacast.akamaistream.net/7/249/142684/v1/gnl.akacast.akamaistream.net/dradio_mp3_dlf_m");
 		m.put("homepage", "http://www.dradio.de/dlf");
 		m.put("webcam", "");
 		m.put("email", "http://www.dradio.de/kontakt/");
@@ -2941,8 +2842,7 @@ public class Stations {
 		m.put("stream", "http://85.214.250.73:8000/rdl");
 		m.put("homepage", "http://www.rdl.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.rdl.de/index.php?option=com_content&view=article&id=8825&Itemid=466");
+		m.put("email", "http://www.rdl.de/index.php?option=com_content&view=article&id=8825&Itemid=466");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -3006,8 +2906,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_energy_sachsen_small);
 		m.put("stream", "http://149.5.240.22/WR-DE-WR57");
 		m.put("homepage", "http://www.energy.de/sachsen");
-		m.put("webcam",
-				"http://www.energy-sachsen.de/www/extapp/webcam/images/studio.jpg");
+		m.put("webcam", "http://www.energy-sachsen.de/www/extapp/webcam/images/studio.jpg");
 		m.put("email", "hotline@nrjmail.de");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
@@ -3020,8 +2919,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_energy_bremen_small);
 		m.put("stream", "http://149.5.240.33/WR-DE-WR56");
 		m.put("homepage", "http://www.energy.de/bremen");
-		m.put("webcam",
-				"http://www.energy.de/fileadmin/images/content/Lokal/Bremen/Webcam/studio000M.jpg");
+		m.put("webcam", "http://www.energy.de/fileadmin/images/content/Lokal/Bremen/Webcam/studio000M.jpg");
 		m.put("email", "radio@energy-bremen.de");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
@@ -3032,8 +2930,7 @@ public class Stations {
 		m.put("name", RADIO_FFN_NIEDERSACHSEN);
 		m.put("icon", R.drawable.radio_ffn_niedersachsen);
 		m.put("icon_small", R.drawable.radio_ffn_niedersachsen_small);
-		m.put("stream",
-				"http://ads.radioffn.c.nmdn.net/ps-radioffn/livestream.mp3");
+		m.put("stream", "http://ads.radioffn.c.nmdn.net/ps-radioffn/livestream.mp3");
 		m.put("homepage", "http://www.ffn.de");
 		m.put("webcam", "http://www.ffn.de/fileadmin/content/webcam/studio.jpg");
 		m.put("email", "radio@ffn.de");
@@ -3049,8 +2946,7 @@ public class Stations {
 		m.put("stream", "http://81.169.157.246:8100");
 		m.put("homepage", "http://www.basetrax.fm/Club/");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.basetrax.fm/Club/index.php?option=com_contact&view=contact&id=1&Itemid=83");
+		m.put("email", "http://www.basetrax.fm/Club/index.php?option=com_contact&view=contact&id=1&Itemid=83");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_TRANCE);
@@ -3099,8 +2995,7 @@ public class Stations {
 		m.put("name", RADIO_PLANET_RADIO);
 		m.put("icon", R.drawable.radio_planet_radio);
 		m.put("icon_small", R.drawable.radio_planet_radio_small);
-		m.put("stream",
-				"http://mp3.planetradio.de/planetradio/hqlivestream.mp3");
+		m.put("stream", "http://mp3.planetradio.de/planetradio/hqlivestream.mp3");
 		m.put("homepage", "http://www.planetradio.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.planetradio.de/contact/info.html");
@@ -3115,8 +3010,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_bamberg_small);
 		m.put("stream", "http://rs1.stream24.net/stream");
 		m.put("homepage", "http://www.radio-bamberg.de");
-		m.put("webcam",
-				"http://www.funkhaus-bamberg.de/ftp/webcam/bamberg1/image.jpg");
+		m.put("webcam", "http://www.funkhaus-bamberg.de/ftp/webcam/bamberg1/image.jpg");
 		m.put("email", "http://www.radio-bamberg.de/default.aspx?ID=4321");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
@@ -3128,8 +3022,7 @@ public class Stations {
 		m.put("icon", R.drawable.radio_galaxy);
 		m.put("icon_small", R.drawable.radio_galaxy_small);
 		m.put("stream", "http://62.75.162.209:8000/galaxy");
-		m.put("homepage",
-				"http://www.radio-galaxy.de/home.html?tx_fhgalaxy_pi[gcid]=3");
+		m.put("homepage", "http://www.radio-galaxy.de/home.html?tx_fhgalaxy_pi[gcid]=3");
 		m.put("webcam", "");
 		m.put("email", "http://www.radio-galaxy.de/info/kontakt.html");
 		m.put("sprache", SPRACHE_DE);
@@ -3156,11 +3049,9 @@ public class Stations {
 		m.put("icon", R.drawable.radio_galaxy);
 		m.put("icon_small", R.drawable.radio_galaxy_small);
 		m.put("stream", "http://rs1.stream24.net:8000/stream");
-		m.put("homepage",
-				"http://www.radio-galaxy.de/galaxy-cities/bambergcoburg.html");
+		m.put("homepage", "http://www.radio-galaxy.de/galaxy-cities/bambergcoburg.html");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.radio-galaxy.de/galaxy-cities/bambergcoburg/contact.html");
+		m.put("email", "http://www.radio-galaxy.de/galaxy-cities/bambergcoburg/contact.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -3173,8 +3064,7 @@ public class Stations {
 		m.put("stream", "http://3943.live.streamtheworld.com:80/SPR_AIR_SC");
 		m.put("homepage", "http://www.spreeradio.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.spreeradio.de/content/html/contact/studio.html");
+		m.put("email", "http://www.spreeradio.de/content/html/contact/studio.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -3184,8 +3074,7 @@ public class Stations {
 		m.put("name", RADIO_OSTSEEWELLE);
 		m.put("icon", R.drawable.radio_ostseewelle);
 		m.put("icon_small", R.drawable.radio_ostseewelle_small);
-		m.put("stream",
-				"http://62.27.87.79:8000/ostseewellelive/livestream.mp3");
+		m.put("stream", "http://62.27.87.79:8000/ostseewellelive/livestream.mp3");
 		m.put("homepage", "http://www.ostseewelle.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.ostseewelle.de/kontakt_programm");
@@ -3198,8 +3087,7 @@ public class Stations {
 		m.put("name", RADIO_EUSKIRCHEN);
 		m.put("icon", R.drawable.radio_euskirchen);
 		m.put("icon_small", R.drawable.radio_euskirchen_small);
-		m.put("stream",
-				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radioeuskirchen/livestream.mp3");
+		m.put("stream", "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radioeuskirchen/livestream.mp3");
 		m.put("homepage", "http://www.euskirchen.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radioeuskirchen.de/eus/re/25090/studiomail");
@@ -3238,8 +3126,7 @@ public class Stations {
 		m.put("name", RADIO_DELUXERADIO);
 		m.put("icon", R.drawable.radio_deluexeradio);
 		m.put("icon_small", R.drawable.radio_deluexeradio_small);
-		m.put("stream",
-				"http://radio.cdn.deluxemusic.tv:8000/deluxemusic.tv/mp3");
+		m.put("stream", "http://radio.cdn.deluxemusic.tv:8000/deluxemusic.tv/mp3");
 		m.put("homepage", "http://www.deluexeradio.de");
 		m.put("webcam", "");
 		m.put("email", "http://deluxemusic.tv/service/kontakt/");
@@ -3293,8 +3180,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_psr_small);
 		m.put("stream", "http://stream.hoerradar.de/psr128");
 		m.put("homepage", "http://www.radiopsr.de");
-		m.put("webcam",
-				"http://www.radiopsr.de/images/PSR2010/webcam/webcam.jpg.php?cam=1");
+		m.put("webcam", "http://www.radiopsr.de/images/PSR2010/webcam/webcam.jpg.php?cam=1");
 		m.put("email", "service@radiopsr.de");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
@@ -3305,12 +3191,10 @@ public class Stations {
 		m.put("name", RADIO_KOELN);
 		m.put("icon", R.drawable.radio_koeln);
 		m.put("icon_small", R.drawable.radio_koeln_small);
-		m.put("stream",
-				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radiokoeln/livestream.mp3");
+		m.put("stream", "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radiokoeln/livestream.mp3");
 		m.put("homepage", "http://www.radiokoeln.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://radiokoeln.de/koeln/rk/10871/programm/studiomail");
+		m.put("email", "http://radiokoeln.de/koeln/rk/10871/programm/studiomail");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -3400,8 +3284,7 @@ public class Stations {
 		m.put("name", RADIO_HOCHSTIFT);
 		m.put("icon", R.drawable.radio_hochstift);
 		m.put("icon_small", R.drawable.radio_hochstift_small);
-		m.put("stream",
-				"http://mp3.radiohochstift.c.nmdn.net/ps-radiohochstift/livestream.mp3");
+		m.put("stream", "http://mp3.radiohochstift.c.nmdn.net/ps-radiohochstift/livestream.mp3");
 		m.put("homepage", "http://www.radiohochstift.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiohochstift.de/studiomail.html");
@@ -3453,8 +3336,7 @@ public class Stations {
 		m.put("name", RADIO_ERF_POP);
 		m.put("icon", R.drawable.radio_erf_pop);
 		m.put("icon_small", R.drawable.radio_erf_pop_small);
-		m.put("stream",
-				"http://c14000-l.i.core.cdn.streamfarm.net/14000cina/live/2908erfpop/live_de_96.mp3");
+		m.put("stream", "http://c14000-l.i.core.cdn.streamfarm.net/14000cina/live/2908erfpop/live_de_96.mp3");
 		m.put("homepage", "http://www.erf.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.erf.de/kontakt");
@@ -3467,8 +3349,7 @@ public class Stations {
 		m.put("name", RADIO_BVB_NETRADIO);
 		m.put("icon", R.drawable.radio_bvb_netradio);
 		m.put("icon_small", R.drawable.radio_bvb_netradio_small);
-		m.put("stream",
-				"http://edge.live.mp3.mdn.newmedia.nacamar.net/bvb_mp3/livestream1.mp3");
+		m.put("stream", "http://edge.live.mp3.mdn.newmedia.nacamar.net/bvb_mp3/livestream1.mp3");
 		m.put("homepage", "http://www.bvb.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.bvb.de/kontakt");
@@ -3507,8 +3388,7 @@ public class Stations {
 		m.put("name", RADIO_MDR_INFO);
 		m.put("icon", R.drawable.radio_mdr_info);
 		m.put("icon_small", R.drawable.radio_mdr_info_small);
-		m.put("stream",
-				"http://c22033-l.i.core.cdn.streamfarm.net/22006mdr/live/3087mdr_info/live_de_128.mp3");
+		m.put("stream", "http://c22033-l.i.core.cdn.streamfarm.net/22006mdr/live/3087mdr_info/live_de_128.mp3");
 		m.put("homepage", "http://www.mdr.de/mdr-info/");
 		m.put("webcam", "");
 		m.put("email", "http://www.mdr.de/mdr-info/index.html");
@@ -3521,12 +3401,10 @@ public class Stations {
 		m.put("name", RADIO_MDR_JUMP);
 		m.put("icon", R.drawable.radio_mdr_jump);
 		m.put("icon_small", R.drawable.radio_mdr_jump_small);
-		m.put("stream",
-				"http://c22033-l.i.core.cdn.streamfarm.net/22004mdrjump/live/3087mdr_jump/live_de_128.mp3");
+		m.put("stream", "http://c22033-l.i.core.cdn.streamfarm.net/22004mdrjump/live/3087mdr_jump/live_de_128.mp3");
 		m.put("homepage", "http://www.jumpradio.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.jumpradio.de/web/service/inhalt/hotline.shtml");
+		m.put("email", "http://www.jumpradio.de/web/service/inhalt/hotline.shtml");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -3536,8 +3414,7 @@ public class Stations {
 		m.put("name", RADIO_MDR_SPUTNIK);
 		m.put("icon", R.drawable.radio_mdr_sputnik);
 		m.put("icon_small", R.drawable.radio_mdr_sputnik_small);
-		m.put("stream",
-				"http://c22033-l.i.core.cdn.streamfarm.net/22005mdrsputnik/live/3087mdr_sputnik/live_de_128.mp3");
+		m.put("stream", "http://c22033-l.i.core.cdn.streamfarm.net/22005mdrsputnik/live/3087mdr_sputnik/live_de_128.mp3");
 		m.put("homepage", "http://www.sputnik.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.sputnik.de/kontakt");
@@ -3550,8 +3427,7 @@ public class Stations {
 		m.put("name", RADIO_MDR_FIGARO);
 		m.put("icon", R.drawable.radio_mdr_figaro);
 		m.put("icon_small", R.drawable.radio_mdr_figaro_small);
-		m.put("stream",
-				"http://c22033-l.i.core.cdn.streamfarm.net/22007mdrfigaro/live/3087mdr_figaro/live_de_128.mp3");
+		m.put("stream", "http://c22033-l.i.core.cdn.streamfarm.net/22007mdrfigaro/live/3087mdr_figaro/live_de_128.mp3");
 		m.put("homepage", "http://www.mdr-figaro.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.mdr.de/mdr-figaro/kontakt/index.html");
@@ -3642,12 +3518,10 @@ public class Stations {
 		m.put("name", RADIO_KLASSIK_RADIO);
 		m.put("icon", R.drawable.radio_klassik_radio);
 		m.put("icon_small", R.drawable.radio_klassik_radio_small);
-		m.put("stream",
-				"http://edge.live.mp3.mdn.newmedia.nacamar.net/klassikradio128/livestream.mp3");
+		m.put("stream", "http://edge.live.mp3.mdn.newmedia.nacamar.net/klassikradio128/livestream.mp3");
 		m.put("homepage", "http://www.klassikradio.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.klassikradio.de/kontakt/kontaktieren-sie-klassik-radio/");
+		m.put("email", "http://www.klassikradio.de/kontakt/kontaktieren-sie-klassik-radio/");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_KLASSIK);
@@ -3657,12 +3531,10 @@ public class Stations {
 		m.put("name", RADIO_KLASSIK_RADIO_LOUNGE);
 		m.put("icon", R.drawable.radio_klassik_radio_lounge);
 		m.put("icon_small", R.drawable.radio_klassik_radio_small);
-		m.put("stream",
-				"http://edge.live.mp3.mdn.newmedia.nacamar.net/klassikradiolounge128/livestream.mp3");
+		m.put("stream", "http://edge.live.mp3.mdn.newmedia.nacamar.net/klassikradiolounge128/livestream.mp3");
 		m.put("homepage", "http://www.klassikradio.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.klassikradio.de/kontakt/kontaktieren-sie-klassik-radio/");
+		m.put("email", "http://www.klassikradio.de/kontakt/kontaktieren-sie-klassik-radio/");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_LOUNGE);
@@ -3711,8 +3583,7 @@ public class Stations {
 		m.put("name", RADIO_ENNEPE_RUHR);
 		m.put("icon", R.drawable.radio_ennepe_ruhr);
 		m.put("icon_small", R.drawable.radio_ennepe_ruhr_small);
-		m.put("stream",
-				"http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radioen_mobile_mp3/livestream.mp3");
+		m.put("stream", "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radioen_mobile_mp3/livestream.mp3");
 		m.put("homepage", "http://www.radioenneperuhr.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.radioenneperuhr.de/Kontakt.113.0.html");
@@ -3754,8 +3625,7 @@ public class Stations {
 		m.put("stream", "http://rs5.stream24.net:80/stream");
 		m.put("homepage", "http://www.charivari.de");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.charivari.de/radio/programm/mail-ins-studio.html");
+		m.put("email", "http://www.charivari.de/radio/programm/mail-ins-studio.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
@@ -3926,8 +3796,7 @@ public class Stations {
 		m.put("name", RADIO_STEPHANSDOM);
 		m.put("icon", R.drawable.radio_stephansdom);
 		m.put("icon_small", R.drawable.radio_stephansdom_small);
-		m.put("stream",
-				"http://srvhost24.serverhosting.apa.net:8000/rsdstream128");
+		m.put("stream", "http://srvhost24.serverhosting.apa.net:8000/rsdstream128");
 		m.put("homepage", "http://www.radiostephansdom.at");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiostephansdom.at/kontakt");
@@ -3942,8 +3811,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_antenne_steiermark_small);
 		m.put("stream", "http://streamplus34.leonex.de:32688");
 		m.put("homepage", "http://www.antenne.at");
-		m.put("webcam",
-				"http://www.antenne.at/fileadmin/user_upload/webcam/aswebcam.jpg");
+		m.put("webcam", "http://www.antenne.at/fileadmin/user_upload/webcam/aswebcam.jpg");
 		m.put("email", "http://www.antenne.at/index.php?id=140");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
@@ -3970,8 +3838,7 @@ public class Stations {
 		m.put("stream", "http://streamplus30.leonex.de:14840");
 		m.put("homepage", "http://antennetirol.oe24.at");
 		m.put("webcam", "");
-		m.put("email",
-				"http://antennetirol.oe24.at/service/Antenne-Tirol-Kontakt/5310689");
+		m.put("email", "http://antennetirol.oe24.at/service/Antenne-Tirol-Kontakt/5310689");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
@@ -3984,8 +3851,7 @@ public class Stations {
 		m.put("stream", "http://streamplus14.leonex.de:24950");
 		m.put("homepage", "http://antennesalzburg.oe24.at");
 		m.put("webcam", "");
-		m.put("email",
-				"http://antennesalzburg.oe24.at/service/Antenne-Salzburg-Kontakt/5310673");
+		m.put("email", "http://antennesalzburg.oe24.at/service/Antenne-Salzburg-Kontakt/5310673");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
@@ -4278,8 +4144,7 @@ public class Stations {
 		m.put("stream", "http://ibgr.001.oye.fm:8024");
 		m.put("homepage", "http://www.ibizaglobalradio.com");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.ibizaglobalradio.com/index.php/paginaPie/en/8/contact");
+		m.put("email", "http://www.ibizaglobalradio.com/index.php/paginaPie/en/8/contact");
 		m.put("sprache", SPRACHE_ES);
 		m.put("land", LAND_ES);
 		m.put("stil", STIL_POP);
@@ -4331,8 +4196,7 @@ public class Stations {
 		m.put("stream", "http://stream.pulsradio.com:5000");
 		m.put("homepage", "http://www.pulsradio.com/");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.pulsradio.com/page-dance_trance-contact.html");
+		m.put("email", "http://www.pulsradio.com/page-dance_trance-contact.html");
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);
@@ -4344,8 +4208,7 @@ public class Stations {
 		m.put("icon_small", R.drawable.radio_europe_1_small);
 		m.put("stream", "http://vipicecast.yacast.net/europe1");
 		m.put("homepage", "http://www.europe1.fr");
-		m.put("webcam",
-				"http://http5.europe1.yacast.net/europe1video/webcams/webcam1_c1.jpg");
+		m.put("webcam", "http://http5.europe1.yacast.net/europe1video/webcams/webcam1_c1.jpg");
 		m.put("email", "http://www.europe1.fr/Contacts/");
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
@@ -4359,8 +4222,7 @@ public class Stations {
 		m.put("stream", "http://icy-e-01.sharp-stream.com/hopefm.mp3");
 		m.put("homepage", "http://www.hopefm.org");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.hopefm.org/index2.php?option=com_contact&view=contact&id=1&Itemid=8");
+		m.put("email", "http://www.hopefm.org/index2.php?option=com_contact&view=contact&id=1&Itemid=8");
 		m.put("sprache", SPRACHE_EN);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_RELIGION);
@@ -4425,8 +4287,7 @@ public class Stations {
 		m.put("stream", "http://shoutcast.streamingmedia.it:7072");
 		m.put("homepage", "http://www.radiomargherita.com");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.radiomargherita.com/index.php?option=com_content&view=article&id=51&Itemid=57&lang=it");
+		m.put("email", "http://www.radiomargherita.com/index.php?option=com_content&view=article&id=51&Itemid=57&lang=it");
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
@@ -4465,8 +4326,7 @@ public class Stations {
 		m.put("stream", "http://onair18.xdevel.com:8002");
 		m.put("homepage", "http://www.radiocittafutura.it");
 		m.put("webcam", "");
-		m.put("email",
-				"http://www.radiocittafutura.it/ViewCategory.aspx?catid=61b16947c3384cbe9afefd0aea856145");
+		m.put("email", "http://www.radiocittafutura.it/ViewCategory.aspx?catid=61b16947c3384cbe9afefd0aea856145");
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
@@ -4879,8 +4739,7 @@ public class Stations {
 		m.put("name", RADIO_RIVIERA_RADIO);
 		m.put("icon", R.drawable.radio_riviera_radio);
 		m.put("icon_small", R.drawable.radio_riviera_radio_small);
-		m.put("stream",
-				"http://rivieraradio.ice.infomaniak.ch/rivieraradio-high");
+		m.put("stream", "http://rivieraradio.ice.infomaniak.ch/rivieraradio-high");
 		m.put("homepage", "http://www.rivieraradio.mc");
 		m.put("webcam", "");
 		m.put("email", "http://www.rivieraradio.mc/contactus.asp");
@@ -4892,13 +4751,9 @@ public class Stations {
 		return stationList;
 	}
 
-	private void setStationlist(ArrayList<HashMap<String, Object>> stationList,
-			HashMap<String, Object> m) {
-		if (Build.VERSION.SDK_INT < 8
-				&& Constants.getIgnoreListKleinerAndroid22().contains(
-						m.get("name"))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzuf�gen.
-
+	private static void setStationlist(ArrayList<HashMap<String, Object>> stationList, HashMap<String, Object> m) {
+		if (Build.VERSION.SDK_INT < 8 && Constants.getIgnoreListKleinerAndroid22().contains(m.get("name"))) {
+			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
 		} else {
 			stationList.add(m);
 			// fillLandStilList(m);

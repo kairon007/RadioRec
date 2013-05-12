@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.TreeMap;
 
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
 import android.content.ComponentName;
 import android.content.Context;
@@ -19,6 +21,7 @@ import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.util.Log;
 
 public class Utils {
 
@@ -32,10 +35,8 @@ public class Utils {
 	 * @param showNotification
 	 * @return
 	 */
-	protected boolean isNetworkAvailable(Context context, Intent intent,
-			boolean showNotification) {
-		ConnectivityManager connectivity = (ConnectivityManager) context
-				.getSystemService(Context.CONNECTIVITY_SERVICE);
+	public static boolean isNetworkAvailable(Context context, Intent intent, boolean showNotification) {
+		ConnectivityManager connectivity = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		if (connectivity != null) {
 			NetworkInfo[] infos = connectivity.getAllNetworkInfo();
 			if (infos != null) {
@@ -51,13 +52,12 @@ public class Utils {
 
 		if (showNotification) {
 			Notifications notifications = new Notifications(context, intent);
-			notifications
-					.showStatusBarNotificationError(R.string.networkNotAvailable);
+			notifications.showStatusBarNotificationError(R.string.networkNotAvailable);
 		}
 		return false;
 	}
 
-	protected ProgressDialog prepareProgressDialog(Context context) {
+	public static ProgressDialog prepareProgressDialog(Context context) {
 		ProgressDialog progressDialog = new ProgressDialog(context);
 		progressDialog.setCancelable(true);
 		progressDialog.setMessage(context.getText(R.string.verbinde));
@@ -66,11 +66,11 @@ public class Utils {
 		return progressDialog;
 	}
 
-	protected Notifications getNotifInstance(Context context, Class<?> clss) {
+	public static Notifications getNotifInstance(Context context, Class<?> clss) {
 		return new Notifications(context, new Intent(context, clss));
 	}
 
-	protected boolean hasValidKey() {
+	public static boolean hasValidKey() {
 		String key = Constants.ANTI_ADS_VALUE;
 		if (key != null && key.startsWith("rR+") && key.endsWith("so@p")) {
 			return true;
@@ -78,92 +78,58 @@ public class Utils {
 		return false;
 	}
 
-	protected void storePreferences(Context context) {
-		SharedPreferences settings = context.getSharedPreferences(
-				Constants.PREFERENCES_FILE, 0);
+	public static void storePreferences(Context context) {
+		SharedPreferences settings = context.getSharedPreferences(Constants.PREFERENCES_FILE, 0);
 		SharedPreferences.Editor editor = settings.edit();
-		editor.putInt(Constants.SELECTED_STATION_INDEX_KEY,
-				Constants.SELECTED_STATION_INDEX_VALUE);
-		editor.putInt(Constants.SELECTED_STATION_ICON_KEY,
-				Constants.SELECTED_STATION_ICON_VALUE);
-		editor.putString(Constants.SELECTED_STATION_NAME_KEY,
-				Constants.SELECTED_STATION_NAME_VALUE);
-		editor.putString(Constants.SELECTED_STATION_STREAM_KEY,
-				Constants.URL_LIVE_STREAM_VALUE);
-		editor.putString(Constants.SELECTED_STATION_HOMEPAGE_KEY,
-				Constants.URL_HOMEPAGE_VALUE);
-		editor.putString(Constants.SELECTED_STATION_WEBCAM_KEY,
-				Constants.URL_WEBCAM_VALUE);
-		editor.putString(Constants.SELECTED_STATION_CONTACT_KEY,
-				Constants.URL_CONTACT_VALUE);
+		editor.putInt(Constants.SELECTED_STATION_INDEX_KEY, Constants.SELECTED_STATION_INDEX_VALUE);
+		editor.putInt(Constants.SELECTED_STATION_ICON_KEY, Constants.SELECTED_STATION_ICON_VALUE);
+		editor.putString(Constants.SELECTED_STATION_NAME_KEY, Constants.SELECTED_STATION_NAME_VALUE);
+		editor.putString(Constants.SELECTED_STATION_STREAM_KEY, Constants.URL_LIVE_STREAM_VALUE);
+		editor.putString(Constants.SELECTED_STATION_HOMEPAGE_KEY, Constants.URL_HOMEPAGE_VALUE);
+		editor.putString(Constants.SELECTED_STATION_WEBCAM_KEY, Constants.URL_WEBCAM_VALUE);
+		editor.putString(Constants.SELECTED_STATION_CONTACT_KEY, Constants.URL_CONTACT_VALUE);
 		editor.putString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_VALUE);
-		editor.putString(Constants.SD_CARD_PATH_KEY,
-				Constants.SD_CARD_PATH_VALUE);
+		editor.putString(Constants.SD_CARD_PATH_KEY, Constants.SD_CARD_PATH_VALUE);
 		editor.putInt(Constants.BUFFER_KEY, Constants.BUFFER_VALUE);
-		editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY,
-				Constants.CLOSE_APP_TIMER_END_VALUE);
+		editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
 		editor.commit();
 	}
 
-	protected void getPreferences(Context context) {
+	public static void getPreferences(Context context) {
 		// Restore preferences
-		SharedPreferences settings = context.getSharedPreferences(
-				Constants.PREFERENCES_FILE, 0);
-		Constants.SELECTED_STATION_INDEX_VALUE = settings.getInt(
-				Constants.SELECTED_STATION_INDEX_KEY, -1);
-		Constants.SELECTED_STATION_NAME_VALUE = settings.getString(
-				Constants.SELECTED_STATION_NAME_KEY,
-				Constants.SELECTED_STATION_NAME_VALUE);
-		Constants.URL_LIVE_STREAM_VALUE = settings.getString(
-				Constants.SELECTED_STATION_STREAM_KEY,
-				Constants.URL_LIVE_STREAM_VALUE);
-		Constants.URL_HOMEPAGE_VALUE = settings.getString(
-				Constants.SELECTED_STATION_HOMEPAGE_KEY,
-				Constants.URL_HOMEPAGE_VALUE);
-		Constants.URL_WEBCAM_VALUE = settings.getString(
-				Constants.SELECTED_STATION_WEBCAM_KEY,
-				Constants.URL_WEBCAM_VALUE);
-		Constants.URL_CONTACT_VALUE = settings.getString(
-				Constants.SELECTED_STATION_CONTACT_KEY,
-				Constants.URL_CONTACT_VALUE);
-		Constants.ANTI_ADS_VALUE = settings.getString(Constants.ANTI_ADS_KEY,
-				Constants.ANTI_ADS_VALUE);
-		Constants.SD_CARD_PATH_VALUE = settings.getString(
-				Constants.SD_CARD_PATH_KEY, Constants.DEFAULT_SD_CARD_PATH);
-		Constants.BUFFER_VALUE = settings.getInt(Constants.BUFFER_KEY,
-				Constants.DEFAULT_BUFFER);
-		Constants.CLOSE_APP_TIMER_END_VALUE = settings.getBoolean(
-				Constants.CLOSE_APP_TIMER_END_KEY,
-				Constants.CLOSE_APP_TIMER_END_VALUE);
-		Constants.ROTATION_OFF_VALUE = settings.getBoolean(
-				Constants.ROTATION_OFF_KEY, Constants.ROTATION_OFF_VALUE);
+		SharedPreferences settings = context.getSharedPreferences(Constants.PREFERENCES_FILE, 0);
+		Constants.SELECTED_STATION_INDEX_VALUE = settings.getInt(Constants.SELECTED_STATION_INDEX_KEY, -1);
+		Constants.SELECTED_STATION_NAME_VALUE = settings.getString(Constants.SELECTED_STATION_NAME_KEY, Constants.SELECTED_STATION_NAME_VALUE);
+		Constants.URL_LIVE_STREAM_VALUE = settings.getString(Constants.SELECTED_STATION_STREAM_KEY, Constants.URL_LIVE_STREAM_VALUE);
+		Constants.URL_HOMEPAGE_VALUE = settings.getString(Constants.SELECTED_STATION_HOMEPAGE_KEY, Constants.URL_HOMEPAGE_VALUE);
+		Constants.URL_WEBCAM_VALUE = settings.getString(Constants.SELECTED_STATION_WEBCAM_KEY, Constants.URL_WEBCAM_VALUE);
+		Constants.URL_CONTACT_VALUE = settings.getString(Constants.SELECTED_STATION_CONTACT_KEY, Constants.URL_CONTACT_VALUE);
+		Constants.ANTI_ADS_VALUE = settings.getString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_VALUE);
+		Constants.SD_CARD_PATH_VALUE = settings.getString(Constants.SD_CARD_PATH_KEY, Constants.DEFAULT_SD_CARD_PATH);
+		Constants.BUFFER_VALUE = settings.getInt(Constants.BUFFER_KEY, Constants.DEFAULT_BUFFER);
+		Constants.CLOSE_APP_TIMER_END_VALUE = settings.getBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
+		Constants.ROTATION_OFF_VALUE = settings.getBoolean(Constants.ROTATION_OFF_KEY, Constants.ROTATION_OFF_VALUE);
 	}
 
-	protected String getAppVersionName(Context context, Class<?> cls) {
+	public String getAppVersionName(Context context, Class<?> cls) {
 		try {
 			ComponentName comp = new ComponentName(context, cls);
-			PackageInfo pinfo = context.getPackageManager().getPackageInfo(
-					comp.getPackageName(), 0);
+			PackageInfo pinfo = context.getPackageManager().getPackageInfo(comp.getPackageName(), 0);
 			return pinfo.versionName;
 		} catch (android.content.pm.PackageManager.NameNotFoundException e) {
 			return "";
 		}
 	}
 
-	protected Drawable resizeImage(int resId, Context context, int width,
-			int height) {
-		Bitmap origBitmap = BitmapFactory.decodeResource(
-				context.getResources(), resId);
-		Bitmap resizedBitmap = Bitmap.createScaledBitmap(origBitmap, width,
-				height, false);
+	protected Drawable resizeImage(int resId, Context context, int width, int height) {
+		Bitmap origBitmap = BitmapFactory.decodeResource(context.getResources(), resId);
+		Bitmap resizedBitmap = Bitmap.createScaledBitmap(origBitmap, width, height, false);
 		BitmapDrawable bitmapDrawable = new BitmapDrawable(resizedBitmap);
 		return bitmapDrawable;
 	}
 
-	protected HashMap<String, Object> fillStationHashMap(String stationName,
-			int icon, int iconSmall, String stream, String homepage,
-			String webcam, String contact, String sprache, String land,
-			String stil) {
+	protected HashMap<String, Object> fillStationHashMap(String stationName, int icon, int iconSmall, String stream, String homepage, String webcam,
+			String contact, String sprache, String land, String stil) {
 
 		HashMap<String, Object> m = new HashMap<String, Object>();
 		m.put("name", stationName);
@@ -180,7 +146,7 @@ public class Utils {
 		return m;
 	}
 
-	protected static String getExceptionInfosAsString(Exception e) {
+	public static String getExceptionInfosAsString(Exception e) {
 		// StringWriter sw = new StringWriter();
 		// e.printStackTrace(new PrintWriter(sw));
 		// String exceptionAsString = sw.toString();
@@ -208,7 +174,7 @@ public class Utils {
 	}
 
 	public static void log(String tag, String message) {
-		// Log.d(tag, message);
+		Log.d(tag, message);
 	}
 
 	public static String getHhMmFromMinutes(int minutes) {
@@ -221,8 +187,7 @@ public class Utils {
 		int seconds = (int) (millis / 1000) % 60;
 		int minutes = (int) ((millis / (1000 * 60)) % 60);
 		int hours = (int) ((millis / (1000 * 60 * 60)) % 24);
-		return hours + ":" + getFormatedMinSec(minutes) + ":"
-				+ getFormatedMinSec(seconds);
+		return hours + ":" + getFormatedMinSec(minutes) + ":" + getFormatedMinSec(seconds);
 	}
 
 	public static String getFormatedMinSec(int minSec) {
@@ -233,26 +198,20 @@ public class Utils {
 		}
 	}
 
-	public static List<String> getStationNameList(
-			ArrayList<HashMap<String, Object>> stationList, String searchName) {
+	public static List<String> getStationNameList(ArrayList<HashMap<String, Object>> stationList, String searchName) {
 		return getStationAttributList(stationList, searchName, "name");
 	}
 
-	public static List<String> getStationStreamList(
-			ArrayList<HashMap<String, Object>> stationList, String searchName) {
+	public static List<String> getStationStreamList(ArrayList<HashMap<String, Object>> stationList, String searchName) {
 		return getStationAttributList(stationList, searchName, "stream");
 	}
 
-	private static List<String> getStationAttributList(
-			ArrayList<HashMap<String, Object>> stationList, String searchName,
-			String stationAttribut) {
+	private static List<String> getStationAttributList(ArrayList<HashMap<String, Object>> stationList, String searchName, String stationAttribut) {
 
 		List<String> result = new ArrayList<String>();
 
 		for (HashMap<String, Object> station : stationList) {
-			if (searchName == null
-					|| ((String) station.get(stationAttribut)).toUpperCase()
-							.contains(searchName.toUpperCase())) {
+			if (searchName == null || ((String) station.get(stationAttribut)).toUpperCase().contains(searchName.toUpperCase())) {
 				result.add("" + station.get(stationAttribut));
 			}
 		}
@@ -260,24 +219,19 @@ public class Utils {
 		return result;
 	}
 
-	public static ArrayList<HashMap<String, Object>> sortStationsByName(
-			ArrayList<HashMap<String, Object>> stationList) {
+	public static ArrayList<HashMap<String, Object>> sortStationsByName(ArrayList<HashMap<String, Object>> stationList) {
 
-		TreeMap<String, HashMap<String, Object>> sortedMap = new TreeMap<String, HashMap<String, Object>>(
-				new StringComperator());
+		TreeMap<String, HashMap<String, Object>> sortedMap = new TreeMap<String, HashMap<String, Object>>(new StringComperator());
 		for (HashMap<String, Object> station : stationList) {
 			sortedMap.put((String) station.get("name"), station);
 		}
 		return new ArrayList<HashMap<String, Object>>(sortedMap.values());
 	}
 
-	public static HashMap<String, Object> getFullStation(
-			ArrayList<HashMap<String, Object>> stationList, String searchName) {
+	public static HashMap<String, Object> getFullStation(ArrayList<HashMap<String, Object>> stationList, String searchName) {
 
 		for (HashMap<String, Object> station : stationList) {
-			if (searchName == null
-					|| ((String) station.get("name")).toUpperCase().contains(
-							searchName.toUpperCase())) {
+			if (searchName == null || ((String) station.get("name")).toUpperCase().contains(searchName.toUpperCase())) {
 
 				return station;
 			}
@@ -285,8 +239,7 @@ public class Utils {
 		return null;
 	}
 
-	public static int getSpinnerPosition(
-			ArrayList<HashMap<String, Object>> stationList, String searchName) {
+	public static int getSpinnerPosition(ArrayList<HashMap<String, Object>> stationList, String searchName) {
 
 		int position = 0;
 		for (int i = 0; i < stationList.size(); i++) {
@@ -322,4 +275,15 @@ public class Utils {
 			return false;
 		}
 	}
+
+	public static void showEmptyFavAlertDialog(final Context context) {
+		final Builder b = new AlertDialog.Builder(context);
+		b.setCancelable(true);
+		b.setTitle(R.string.info);
+		String text = context.getString(R.string.nochKeineFavoriten);
+		b.setMessage(text);
+		b.setPositiveButton(android.R.string.ok, null);
+		b.show();
+	}
+
 }

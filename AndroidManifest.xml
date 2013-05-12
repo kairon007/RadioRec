@@ -23,6 +23,7 @@
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
+				<category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
 			</intent-filter>
 		</activity>
 		<activity android:name="com.google.ads.AdActivity"
@@ -31,6 +32,7 @@
 		<activity android:name=".Webcam" android:configChanges="keyboard|keyboardHidden|orientation" />
 		<activity android:name=".Settings" />
 		<activity android:name=".Donate" />
+		<activity android:name=".Favourites" />
 		<activity android:name=".filechooser.FileChooser" />
 		<activity android:name="com.rothconsulting.android.marketbilling.MarketSpende" />
 		
@@ -43,6 +45,14 @@
 				<action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED" />
 			</intent-filter>
 		</receiver>
+
+        <!-- multi window support -->
+		<uses-library android:required="false" android:name="com.sec.android.app.multiwindow" />
+		<meta-data android:name="com.sec.android.support.multiwindow" android:value="true" />
+		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W" android:value="632.0dip" />
+		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:value="598.0dip" />
+		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:value="632.0dip" />
+		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:value="598.0dip" />        	
 
 	</application>
 </manifest>

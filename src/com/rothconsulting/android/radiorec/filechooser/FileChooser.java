@@ -64,16 +64,12 @@ public class FileChooser extends ListActivity {
 				list.setOnItemLongClickListener(new OnItemLongClickListener() {
 
 					@Override
-					public boolean onItemLongClick(AdapterView<?> parent,
-							View view, final int position, long id) {
+					public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
 
-						LinearLayout linearLayout = (LinearLayout) ((LinearLayout) view)
-								.getChildAt(0); // 0 = Das zweite LinearLayout.
+						LinearLayout linearLayout = (LinearLayout) ((LinearLayout) view).getChildAt(0); // 0 = Das zweite LinearLayout.
 
 						// child 1 = Die TextView.
-						final String filename = ""
-								+ ((TextView) linearLayout.getChildAt(1))
-										.getText();
+						final String filename = "" + ((TextView) linearLayout.getChildAt(1)).getText();
 
 						if (isKnownMusicFile(filename)) {
 							deleteFileDialog(filename).show();
@@ -85,8 +81,7 @@ public class FileChooser extends ListActivity {
 					}
 				});
 			} catch (Exception e) {
-				Utils.log(TAG, "Exception! SD_CARD_PATH="
-						+ Constants.SD_CARD_PATH_VALUE + "\nException=\n" + e);
+				Utils.log(TAG, "Exception! SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE + "\nException=\n" + e);
 				pathNotValidDialog().show();
 			}
 		}
@@ -99,22 +94,18 @@ public class FileChooser extends ListActivity {
 
 		try {
 			File[] dirs = f.listFiles();
-			this.setTitle(getString(R.string.musicBrowser) + ", "
-					+ getString(R.string.currentDir) + ": " + f.getName());
+			this.setTitle(getString(R.string.musicBrowser) + ", " + getString(R.string.currentDir) + ": " + f.getName());
 
 			for (File ff : dirs) {
 				if (ff.isDirectory() && !ff.getName().startsWith(".")) {
-					dir.add(new Option(R.drawable.icon_folder, ff.getName(),
-							getString(R.string.folder), ff.getAbsolutePath()));
+					dir.add(new Option(R.drawable.icon_folder, ff.getName(), getString(R.string.folder), ff.getAbsolutePath()));
 				} else if (isKnownMusicFile(ff.getName())) {
 					long fileSize = 0;
 					if (ff.length() > 0) {
 						fileSize = ff.length() / 1000;
 					}
 
-					fls.add(new Option(R.drawable.icon_music, ff.getName(),
-							getString(R.string.fileSize) + ": " + fileSize
-									+ " KB", ff.getAbsolutePath()));
+					fls.add(new Option(R.drawable.icon_music, ff.getName(), getString(R.string.fileSize) + ": " + fileSize + " KB", ff.getAbsolutePath()));
 				}
 			}
 		} catch (Exception e) {
@@ -124,12 +115,10 @@ public class FileChooser extends ListActivity {
 		Collections.sort(fls);
 		dir.addAll(fls);
 		if (!f.getName().equalsIgnoreCase("sdcard")) {
-			dir.add(0, new Option(R.drawable.icon_folder_up, "..",
-					getString(R.string.parentFolder), f.getParent()));
+			dir.add(0, new Option(R.drawable.icon_folder_up, "..", getString(R.string.parentFolder), f.getParent()));
 		}
 
-		adapter = new FileArrayAdapter(FileChooser.this, R.layout.file_view,
-				dir);
+		adapter = new FileArrayAdapter(FileChooser.this, R.layout.file_view, dir);
 		this.setListAdapter(adapter);
 	}
 
@@ -152,62 +141,44 @@ public class FileChooser extends ListActivity {
 
 	private AlertDialog deleteFileDialog(final String filename) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle(getString(R.string.delete) + "?\n")
-				.setMessage(filename)
-				.setCancelable(true)
-				.setIcon(android.R.drawable.ic_delete)
-				.setPositiveButton(getString(R.string.delete),
-						new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int id) {
+		builder.setTitle(getString(R.string.delete) + "?\n").setMessage(filename).setCancelable(true).setIcon(android.R.drawable.ic_delete)
+				.setPositiveButton(getString(R.string.delete), new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int id) {
 
-								File file = new File(currentDir + "/"
-										+ filename);
-								Utils.log(TAG, "File=" + file.getName());
-								file.delete();
-								adapter.notifyDataSetChanged();
-								fill(currentDir);
+						File file = new File(currentDir + "/" + filename);
+						Utils.log(TAG, "File=" + file.getName());
+						file.delete();
+						adapter.notifyDataSetChanged();
+						fill(currentDir);
 
-								Toast.makeText(
-										FileChooser.this,
-										filename + " "
-												+ getString(R.string.deleted),
-										Toast.LENGTH_SHORT).show();
-							}
-						})
-				.setNegativeButton(getString(R.string.neinDanke),
-						new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int id) {
-								dialog.cancel();
-							}
-						});
+						Toast.makeText(FileChooser.this, filename + " " + getString(R.string.deleted), Toast.LENGTH_SHORT).show();
+					}
+				}).setNegativeButton(getString(R.string.neinDanke), new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int id) {
+						dialog.cancel();
+					}
+				});
 		return builder.create();
 	}
 
 	private AlertDialog pathNotValidDialog() {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle(getString(R.string.recordFolderNotFound))
-				.setMessage(getString(R.string.recordFolderNotFoundMessage))
-				.setCancelable(true)
-				.setIcon(android.R.drawable.ic_dialog_alert)
-				.setPositiveButton(getString(R.string.settings),
-						new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int id) {
-								finish();
-								startActivity(new Intent(
-										getApplicationContext(), Settings.class));
-							}
-						})
-				.setNegativeButton(getString(android.R.string.cancel),
-						new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int id) {
-								dialog.cancel();
-								finish();
-							}
-						});
+		builder.setTitle(getString(R.string.recordFolderNotFound)).setMessage(getString(R.string.recordFolderNotFoundMessage)).setCancelable(true)
+				.setIcon(android.R.drawable.ic_dialog_alert).setPositiveButton(getString(R.string.settings), new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int id) {
+						finish();
+						startActivity(new Intent(getApplicationContext(), Settings.class));
+					}
+				}).setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int id) {
+						dialog.cancel();
+						finish();
+					}
+				});
 		return builder.create();
 	}
 
@@ -217,9 +188,7 @@ public class FileChooser extends ListActivity {
 		try {
 			super.onListItemClick(l, v, position, id);
 			Option o = adapter.getItem(position);
-			if (o.getData().equalsIgnoreCase(getString(R.string.folder))
-					|| o.getData().equalsIgnoreCase(
-							getString(R.string.parentFolder))) {
+			if (o.getData().equalsIgnoreCase(getString(R.string.folder)) || o.getData().equalsIgnoreCase(getString(R.string.parentFolder))) {
 				currentDir = new File(o.getPath());
 				fill(currentDir);
 			} else {
@@ -247,6 +216,9 @@ public class FileChooser extends ListActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.backmenu, menu);
+		if (Utils.hasValidKey()) {
+			menu.removeItem(R.id.donate_adfree);
+		}
 		return true;
 	}
 

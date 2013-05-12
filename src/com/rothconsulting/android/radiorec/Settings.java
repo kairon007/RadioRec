@@ -20,8 +20,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class Settings extends Activity implements
-		RadioGroup.OnCheckedChangeListener {
+public class Settings extends Activity implements RadioGroup.OnCheckedChangeListener {
 
 	private static final String TAG = "Settings";
 
@@ -39,14 +38,12 @@ public class Settings extends Activity implements
 		setContentView(R.layout.settings);
 
 		// hide keyboard when opening page
-		getWindow().setSoftInputMode(
-				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
 		AdMob admob = new AdMob();
 		admob.showRemoveAds(this);
 
-		final SharedPreferences settings = getSharedPreferences(
-				Constants.PREFERENCES_FILE, 0);
+		final SharedPreferences settings = getSharedPreferences(Constants.PREFERENCES_FILE, 0);
 
 		final EditText edittextSdCardPath = (EditText) findViewById(R.id.editTextSdcardPath);
 		edittextSdCardPath.setText(Constants.SD_CARD_PATH_VALUE);
@@ -54,19 +51,13 @@ public class Settings extends Activity implements
 		saveButtonPath.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Constants.SD_CARD_PATH_VALUE = ""
-						+ edittextSdCardPath.getText();
+				Constants.SD_CARD_PATH_VALUE = "" + edittextSdCardPath.getText();
 				// SharedPreferences settings = getSharedPreferences(
 				// Constants.PREFERENCES_FILE, 0);
 				SharedPreferences.Editor editor = settings.edit();
-				editor.putString(Constants.SD_CARD_PATH_KEY,
-						Constants.SD_CARD_PATH_VALUE);
+				editor.putString(Constants.SD_CARD_PATH_KEY, Constants.SD_CARD_PATH_VALUE);
 				editor.commit();
-				Toast.makeText(
-						Settings.this,
-						getResources().getString(R.string.save) + " ("
-								+ edittextSdCardPath.getText() + ")",
-						Toast.LENGTH_LONG).show();
+				Toast.makeText(Settings.this, getResources().getString(R.string.save) + " (" + edittextSdCardPath.getText() + ")", Toast.LENGTH_LONG).show();
 			}
 		});
 
@@ -84,11 +75,9 @@ public class Settings extends Activity implements
 			public void onClick(View v) {
 				// SharedPreferences settings = getSharedPreferences(
 				// Constants.PREFERENCES_FILE, 0);
-				Constants.CLOSE_APP_TIMER_END_VALUE = ((CheckBox) v)
-						.isChecked();
+				Constants.CLOSE_APP_TIMER_END_VALUE = ((CheckBox) v).isChecked();
 				SharedPreferences.Editor editor = settings.edit();
-				editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY,
-						Constants.CLOSE_APP_TIMER_END_VALUE);
+				editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
 				editor.commit();
 			}
 		});
@@ -103,8 +92,7 @@ public class Settings extends Activity implements
 				// Constants.PREFERENCES_FILE, 0);
 				Constants.ROTATION_OFF_VALUE = ((CheckBox) v).isChecked();
 				SharedPreferences.Editor editor = settings.edit();
-				editor.putBoolean(Constants.ROTATION_OFF_KEY,
-						Constants.ROTATION_OFF_VALUE);
+				editor.putBoolean(Constants.ROTATION_OFF_KEY, Constants.ROTATION_OFF_VALUE);
 				editor.commit();
 			}
 		});
@@ -121,8 +109,7 @@ public class Settings extends Activity implements
 				editTextBufferSize.setTextColor(Color.BLACK);
 				editTextBufferSize.setBackgroundColor(Color.WHITE);
 				try {
-					int bufferSize = Integer.valueOf(""
-							+ editTextBufferSize.getText());
+					int bufferSize = Integer.valueOf("" + editTextBufferSize.getText());
 					if (bufferSize <= 0 || bufferSize > 1000000) {
 						throw new NumberFormatException();
 					} else {
@@ -130,23 +117,15 @@ public class Settings extends Activity implements
 						// SharedPreferences settings = getSharedPreferences(
 						// Constants.PREFERENCES_FILE, 0);
 						SharedPreferences.Editor editor = settings.edit();
-						editor.putInt(Constants.BUFFER_KEY,
-								Constants.BUFFER_VALUE);
+						editor.putInt(Constants.BUFFER_KEY, Constants.BUFFER_VALUE);
 						editor.commit();
-						Toast.makeText(
-								Settings.this,
-								getResources().getString(R.string.save) + " ("
-										+ editTextBufferSize.getText() + ")",
-								Toast.LENGTH_LONG).show();
+						Toast.makeText(Settings.this, getResources().getString(R.string.save) + " (" + editTextBufferSize.getText() + ")", Toast.LENGTH_LONG)
+								.show();
 					}
 				} catch (Exception e) {
 					editTextBufferSize.setTextColor(Color.WHITE);
 					editTextBufferSize.setBackgroundColor(Color.RED);
-					Toast.makeText(
-							Settings.this,
-							getResources()
-									.getString(R.string.errorZahlEingeben),
-							Toast.LENGTH_LONG).show();
+					Toast.makeText(Settings.this, getResources().getString(R.string.errorZahlEingeben), Toast.LENGTH_LONG).show();
 				}
 			}
 		});
@@ -175,16 +154,12 @@ public class Settings extends Activity implements
 		radioAutomatischAus = (RadioButton) findViewById(R.id.radioAutomatischAus);
 		radioGroup.setOnCheckedChangeListener(this);
 		try {
-			int wifiSleepPolicy = android.provider.Settings.System.getInt(
-					getContentResolver(),
-					android.provider.Settings.System.WIFI_SLEEP_POLICY);
+			int wifiSleepPolicy = android.provider.Settings.System.getInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY);
 
 			setRadioButtons(wifiSleepPolicy);
 
 		} catch (SettingNotFoundException e) {
-			Utils.log(
-					TAG,
-					"SettingNotFoundException: WIFI_SLEEP_POLICY ist noch nicht konfiguriert. Kein Problem!");
+			Utils.log(TAG, "SettingNotFoundException: WIFI_SLEEP_POLICY ist noch nicht konfiguriert. Kein Problem!");
 			radioAutomatischAus.setChecked(true);
 		}
 	}
@@ -202,27 +177,17 @@ public class Settings extends Activity implements
 	@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		if (checkedId == R.id.radioImmerAn) {
-			android.provider.Settings.System.putInt(getContentResolver(),
-					android.provider.Settings.System.WIFI_SLEEP_POLICY,
+			android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
 					android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER);
-			Toast.makeText(this,
-					getResources().getString(R.string.wifiImmerAn),
-					Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, getResources().getString(R.string.wifiImmerAn), Toast.LENGTH_SHORT).show();
 		} else if (checkedId == R.id.radioImmerAnWennStrom) {
-			android.provider.Settings.System
-					.putInt(getContentResolver(),
-							android.provider.Settings.System.WIFI_SLEEP_POLICY,
-							android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED);
-			Toast.makeText(this,
-					getResources().getString(R.string.wifiImmerAnWennAmStrom),
-					Toast.LENGTH_SHORT).show();
+			android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
+					android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED);
+			Toast.makeText(this, getResources().getString(R.string.wifiImmerAnWennAmStrom), Toast.LENGTH_SHORT).show();
 		} else {
-			android.provider.Settings.System.putInt(getContentResolver(),
-					android.provider.Settings.System.WIFI_SLEEP_POLICY,
+			android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
 					android.provider.Settings.System.WIFI_SLEEP_POLICY_DEFAULT);
-			Toast.makeText(this,
-					getResources().getString(R.string.wifiAutomatischAus),
-					Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, getResources().getString(R.string.wifiAutomatischAus), Toast.LENGTH_SHORT).show();
 		}
 	}
 
@@ -233,6 +198,9 @@ public class Settings extends Activity implements
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.backmenu, menu);
+		if (Utils.hasValidKey()) {
+			menu.removeItem(R.id.donate_adfree);
+		}
 		return true;
 	}
 

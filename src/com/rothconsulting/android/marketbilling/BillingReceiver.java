@@ -16,12 +16,12 @@
 
 package com.rothconsulting.android.marketbilling;
 
-import com.rothconsulting.android.marketbilling.Constants.ResponseCode;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+
+import com.rothconsulting.android.marketbilling.Constants.ResponseCode;
 
 /**
  * This class implements the broadcast receiver for in-app billing. All asynchronous messages from

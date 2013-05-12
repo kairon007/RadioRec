@@ -30,8 +30,7 @@ public class Info extends Activity {
 
 		final TextView textViewAppVersion = (TextView) findViewById(R.id.textViewAppVersion);
 		Utils utils = new Utils();
-		textViewAppVersion.setText("Version "
-				+ utils.getAppVersionName(this, Info.class));
+		textViewAppVersion.setText("Version " + utils.getAppVersionName(this, Info.class));
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +70,9 @@ public class Info extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.backmenu, menu);
+		if (Utils.hasValidKey()) {
+			menu.removeItem(R.id.donate_adfree);
+		}
 		return true;
 	}
 
