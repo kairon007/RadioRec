@@ -40,9 +40,6 @@ public class Favourites extends ListActivity {
 
 		context = this;
 
-		String action = getIntent().getAction();
-		String appName = getString(R.string.app_name);
-
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		Utils.getNotifInstance(context, RadioRecPlus.class).hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
 
@@ -66,8 +63,11 @@ public class Favourites extends ListActivity {
 				TextView textViewName = (TextView) ((LinearLayout) view).getChildAt(1); // 1 = Die zweite View (name)
 
 				Utils.log(TAG, "name= " + textViewName.getText());
-				Toast.makeText(context, "Starte: " + textViewName.getText(), Toast.LENGTH_LONG).show();
-				// Utils.play(context, "" + textViewName.getText());
+
+				Intent returnIntent = new Intent();
+				returnIntent.putExtra("stationName", textViewName.getText());
+				setResult(RESULT_OK, returnIntent);
+				finish();
 			}
 		});
 

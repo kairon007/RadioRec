@@ -168,6 +168,7 @@ public class Constants {
 	public static final int DEFAULT_BUFFER = 8192;
 
 	public static final String FROM_NOTIFICATION = "fromNotification";
+	public static final int FROM_FAVOURITES = 99;
 
 	public static String ADMOB_PUBLISHER_ID = "a14dc9885936cd9";
 

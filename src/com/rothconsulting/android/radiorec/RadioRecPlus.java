@@ -351,7 +351,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			this.showTimerbox(showCountdown);
 			break;
 		case R.id.buttonFav:
-			this.startActivity(new Intent(this, Favourites.class));
+			this.startActivityForResult(new Intent(this, Favourites.class), Constants.FROM_FAVOURITES);
 			break;
 		case R.id.buttonAlphabetisch:
 			Constants.SPINNER_SELECTION = Constants.SPINNER_ALPHABETISCH;
@@ -362,6 +362,23 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			break;
 		}
 	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+		if (requestCode == Constants.FROM_FAVOURITES) {
+
+			if (resultCode == RESULT_OK) {
+				String stationName = data.getStringExtra("stationName");
+				Toast.makeText(context, "Station: " + stationName, Toast.LENGTH_LONG).show();
+				Constants.SELECTED_STATION_INDEX_VALUE = Utils.getSpinnerPosition(Stations.getAllStations(), stationName);
+				changeStation();
+			}
+			if (resultCode == RESULT_CANCELED) {
+				// Write your code if there's no result
+			}
+		}
+	}// onActivityResult
 
 	@Override
 	public void onItemSelected(AdapterView<?> spinner, View linearLayout, int selection, long arg3) {
@@ -391,7 +408,6 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			// }
 			spinner.setSelection(Constants.SELECTED_STATION_INDEX_VALUE);
 		} else {
-
 			Constants.SELECTED_STATION_INDEX_VALUE = spinner.getSelectedItemPosition();
 		}
 		Utils.log(TAG, "getSelectedItemPosition2=" + spinner.getSelectedItemPosition());
