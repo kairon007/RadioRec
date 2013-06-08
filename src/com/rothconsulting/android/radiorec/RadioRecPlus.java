@@ -50,6 +50,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.GoogleAnalytics;
+import com.google.analytics.tracking.android.Tracker;
 import com.rothconsulting.android.radiorec.filechooser.FileChooser;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
 import com.rothconsulting.android.radiorec.sqlitedb.DbUtils;
@@ -63,6 +66,8 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 	private static boolean showCountdown;
 	private Context context;
 
+	private Tracker mGaTracker;
+	private GoogleAnalytics mGaInstance;
 	private boolean firstStart;
 	private Spinner spnAlphabetisch;
 	private Spinner spnAllStations;
@@ -114,6 +119,12 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		}
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		initGui();
+
+		// Get the GoogleAnalytics singleton. Note that the SDK uses
+		// the application context to avoid leaking the current context.
+		mGaInstance = GoogleAnalytics.getInstance(this);
+		// Use the GoogleAnalytics singleton to get a Tracker.
+		mGaTracker = mGaInstance.getTracker("UA-38114228-1");
 
 		// Detect incoming phone call and register PhoneStateListener
 		callStateListener = new CallStateListener();
@@ -277,6 +288,10 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		case R.id.homepage:
 			Log.i(TAG, "homepage");
 			if (Constants.URL_HOMEPAGE_VALUE != null && !Constants.URL_HOMEPAGE_VALUE.trim().equals("")) {
+				// Google analytics
+				if (mGaTracker != null) {
+					mGaTracker.sendEvent("ui_action", "click_homepage", "url: " + Constants.URL_HOMEPAGE_VALUE, 0L);
+				}
 				Uri uri = Uri.parse(Constants.URL_HOMEPAGE_VALUE);
 				Intent intentHomepage = new Intent(Intent.ACTION_VIEW, uri);
 				startActivity(intentHomepage);
@@ -284,11 +299,19 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			break;
 		case R.id.webcam:
 			Log.i(TAG, "webcam");
+			// Google analytics
+			if (mGaTracker != null) {
+				mGaTracker.sendEvent("ui_action", "click_webcam", "url: " + Constants.URL_WEBCAM_VALUE, 0L);
+			}
 			Intent intentCam = new Intent(this, Webcam.class);
 			startActivity(intentCam);
 			break;
 		case R.id.mail:
 			Log.i(TAG, "mail");
+			// Google analytics
+			if (mGaTracker != null) {
+				mGaTracker.sendEvent("ui_action", "click_mail", "contact: " + Constants.URL_CONTACT_VALUE, 0L);
+			}
 			if (Constants.URL_CONTACT_VALUE.startsWith("http")) {
 				Intent emailIntent = new Intent(Intent.ACTION_VIEW);
 				emailIntent.setData(Uri.parse(Constants.URL_CONTACT_VALUE));
@@ -304,11 +327,19 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			break;
 		case R.id.search:
 			Log.i(TAG, "search");
+			// Google analytics
+			if (mGaTracker != null) {
+				mGaTracker.sendEvent("ui_action", "click_search", "current_station: " + Constants.SELECTED_STATION_NAME_VALUE, 0L);
+			}
 			prepareSearch();
 			break;
 
 		case R.id.favoriten:
 			Log.i(TAG, "favorit");
+			// Google analytics
+			if (mGaTracker != null) {
+				mGaTracker.sendEvent("ui_action", "click_favoriten", "station: " + Constants.SELECTED_STATION_NAME_VALUE, 0L);
+			}
 			DbUtils.storeRemoveFav(this, favIcon);
 			break;
 		case R.id.back:
@@ -336,6 +367,18 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			if (!recording) {
 				stopRecord();
 			}
+
+			// Google analytics
+			if (recording && mGaTracker != null) {
+				mGaTracker.sendEvent("ui_action", "start_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE,
+						Long.valueOf(Constants.SELECTED_STATION_INDEX_VALUE));
+			}
+			// Google analytics
+			if (!recording && mGaTracker != null) {
+				mGaTracker.sendEvent("ui_action", "stop_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE,
+						Long.valueOf(Constants.SELECTED_STATION_INDEX_VALUE));
+			}
+
 			((ImageButton) v).setImageResource(recording ? R.drawable.button_record_on : R.drawable.button_record);
 			break;
 		case R.id.fwd:
@@ -348,15 +391,29 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			break;
 		case R.id.imageButtonUhr:
 			showCountdown = !showCountdown;
+			// Google analytics
+			if (mGaTracker != null) {
+				mGaTracker.sendEvent("ui_action", "click_imageButtonUhr", "station: " + Constants.SELECTED_STATION_NAME_VALUE, 0L);
+			}
+
 			this.showTimerbox(showCountdown);
 			break;
 		case R.id.buttonFav:
+			// Google analytics
+			if (mGaTracker != null) {
+				mGaTracker.sendEvent("ui_action", "click_buttonFav", "station: " + Constants.SELECTED_STATION_NAME_VALUE, 0L);
+			}
 			this.startActivityForResult(new Intent(this, Favourites.class), Constants.FROM_FAVOURITES);
 			break;
 		case R.id.buttonAlphabetisch:
 			Constants.SPINNER_SELECTION = Constants.SPINNER_ALPHABETISCH;
 
-			Utils.log(TAG, "Button Stil pressed. Firts=" + spnAlphabetisch.getFirstVisiblePosition());
+			// Google analytics
+			if (mGaTracker != null) {
+				mGaTracker.sendEvent("ui_action", "click_buttonAlphabetisch", "current_station: " + Constants.SELECTED_STATION_NAME_VALUE, 0L);
+			}
+
+			Utils.log(TAG, "Button Alphabetisch pressed. Firts=" + spnAlphabetisch.getFirstVisiblePosition());
 
 			spnAlphabetisch.performClick();
 			break;
@@ -463,6 +520,12 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		Utils.log(TAG, "*********** Stream=" + map.get("stream"));
 
 		Constants.SELECTED_STATION_NAME_VALUE = "" + map.get("name");
+
+		// Google analytics
+		if (playing && mGaTracker != null) {
+			mGaTracker.sendEvent("ui_action", "playing", "station: " + Constants.SELECTED_STATION_NAME_VALUE, Long.valueOf(index));
+		}
+
 		Constants.URL_LIVE_STREAM_VALUE = "" + map.get("stream");
 
 		Constants.URL_HOMEPAGE_VALUE = "" + map.get("homepage");
@@ -531,8 +594,8 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		}
 
 		try {
-			outputUrl = new URL("file:///" + Constants.SD_CARD_PATH_VALUE + "/" + Constants.SELECTED_STATION_NAME_VALUE.replaceAll(" ", "") + "-" + dateTime
-					+ ".mp3");
+			outputUrl = new URL("file:///" + Constants.SD_CARD_PATH_VALUE + getSlash() + Constants.SELECTED_STATION_NAME_VALUE.replaceAll(" ", "") + "-"
+					+ dateTime + ".mp3");
 		} catch (MalformedURLException e) {
 			Utils.getNotifInstance(this, RadioRecPlus.class).showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
 		}
@@ -541,6 +604,15 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		Utils.log(TAG, "*********** isRadioRecording2=" + recording);
 
 		return recording;
+	}
+
+	private String getSlash() {
+		if (Constants.SD_CARD_PATH_VALUE != null && Constants.SD_CARD_PATH_VALUE.trim().endsWith("/")) {
+			return "";
+		} else {
+			return "/";
+		}
+
 	}
 
 	protected static void doStopRecording(Context context) {
@@ -707,6 +779,11 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 				autocomplete.setVisibility(View.GONE);
 				spinner.setVisibility(View.VISIBLE);
 
+				// Google analytics
+				if (mGaTracker != null) {
+					mGaTracker.sendEvent("ui_action", "click_searched_station", "station: " + ((TextView) textView).getText(), 0L);
+				}
+
 				spnAllStations.setSelection(Utils.getSpinnerPosition(stationList, "" + ((TextView) textView).getText()));
 			}
 		});
@@ -830,6 +907,20 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		cursor.close();
 		dbadapter.close();
 		Utils.log(TAG, "setFavIconStar STOP");
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		// Google Analytics
+		EasyTracker.getInstance().activityStart(this);
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		// Google Analytics
+		EasyTracker.getInstance().activityStop(this);
 	}
 
 }

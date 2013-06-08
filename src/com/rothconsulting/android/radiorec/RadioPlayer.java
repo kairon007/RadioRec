@@ -94,6 +94,13 @@ public class RadioPlayer {
 				try {
 					doStopPlay(context);
 					mediaPlayer = new MediaPlayer();
+					mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+						@Override
+						public void onPrepared(MediaPlayer mp) {
+							Utils.log(TAG, "start()");
+							mediaPlayer.start();
+						}
+					});
 					Utils.log(TAG, "reset()");
 					mediaPlayer.reset();
 					Utils.log(TAG, "URL: " + Constants.URL_LIVE_STREAM_VALUE);
@@ -103,8 +110,8 @@ public class RadioPlayer {
 					mediaPlayer.setWakeMode(context, PowerManager.PARTIAL_WAKE_LOCK);
 					Utils.log(TAG, "prepare()");
 					mediaPlayer.prepare();
-					Utils.log(TAG, "start()");
-					mediaPlayer.start();
+					// Utils.log(TAG, "start()");
+					// mediaPlayer.start();
 					getNotifInstance(context).showStatusBarNotificationIsRunning();
 
 					// Thread threadSongTicker = new Thread() {
