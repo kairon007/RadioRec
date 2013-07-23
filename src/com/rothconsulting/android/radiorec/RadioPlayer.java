@@ -18,10 +18,6 @@ public class RadioPlayer {
 	ProgressDialog progressDialog;
 	boolean isRunning = false;
 
-	public boolean isRunning() {
-		return isRunning;
-	}
-
 	private Notifications getNotifInstance(Context context) {
 		Intent intent = new Intent(context, Donate.class);
 		intent.putExtra(Constants.FROM_NOTIFICATION, Constants.FROM_NOTIFICATION);
@@ -30,6 +26,9 @@ public class RadioPlayer {
 
 	public boolean doStartPlay(final Context context) {
 		Utils.log(TAG, "doStartPlay()");
+
+		Utils.log(TAG, "hideStatusBarNotification NOTIFICATION_ID_ERROR_CONNECTION");
+		getNotifInstance(context).hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
 
 		createThread(context);
 
@@ -109,7 +108,7 @@ public class RadioPlayer {
 					mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 					mediaPlayer.setWakeMode(context, PowerManager.PARTIAL_WAKE_LOCK);
 					Utils.log(TAG, "prepare()");
-					mediaPlayer.prepare();
+					mediaPlayer.prepareAsync();
 					// Utils.log(TAG, "start()");
 					// mediaPlayer.start();
 					getNotifInstance(context).showStatusBarNotificationIsRunning();
@@ -146,7 +145,7 @@ public class RadioPlayer {
 				} finally {
 					Utils.log(TAG, "createThread in finally");
 					if (!isPlayerPlaying(mediaPlayer)) {
-						getNotifInstance(context).showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
+						// getNotifInstance(context).showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
 						isRunning = false;
 					} else {
 						isRunning = true;
