@@ -108,7 +108,7 @@ public class RadioPlayer {
 					mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
 					mediaPlayer.setWakeMode(context, PowerManager.PARTIAL_WAKE_LOCK);
 					Utils.log(TAG, "prepare()");
-					mediaPlayer.prepareAsync();
+					mediaPlayer.prepare();
 					// Utils.log(TAG, "start()");
 					// mediaPlayer.start();
 					getNotifInstance(context).showStatusBarNotificationIsRunning();
