@@ -8,7 +8,6 @@ import org.apache.http.HttpResponse;
 import android.content.Context;
 import android.os.AsyncTask;
 
-
 public class WebTool {
 
 	private static final String TAG = "WebTool";
@@ -20,30 +19,23 @@ public class WebTool {
 	 */
 	protected String getSongticker(String radioStation, String urlHomepage) {
 
-		String result = new String(
-				"<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /></head><body><center>");
+		String result = new String("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /></head><body><center>");
 
-		String tmpResult = new String(
-				"<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /></head><body><center>");
+		String tmpResult = new String("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /></head><body><center>");
 
 		if (radioStation != null) {
 
 			if (radioStation.equalsIgnoreCase(Stations.RADIO_32)) {
 
-				result += new WebsiteParser().execute(urlHomepage, urlHomepage,
-						"nowplaying", "</div>");
+				result += new WebsiteParser().execute(urlHomepage, urlHomepage, "nowplaying", "</div>");
 			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_32_GOLDIES)) {
-				result += new WebsiteParser().execute(
-						"http://www.radio32.ch/?rub=124", urlHomepage,
-						"nowplaying", "</div>");
-			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_CAPITAL_FM)) {
+				result += new WebsiteParser().execute("http://www.radio32.ch/?rub=124", urlHomepage, "nowplaying", "</div>");
+			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_BERN_1)) {
 
 				// Braucht noch eine style class
-				result = new String(
-						"<html><head><style>.hidden {display:none;}</style></head><body><center>");
+				result = new String("<html><head><style>.hidden {display:none;}</style></head><body><center>");
 
-				result += new WebsiteParser().execute(urlHomepage, urlHomepage,
-						"summary=\"Capital FM Airplay\">", "</table>");
+				result += new WebsiteParser().execute(urlHomepage, urlHomepage, "summary=\"Capital FM Airplay\">", "</table>");
 			} else if (radioStation.equalsIgnoreCase("Radio 24")) {
 				// result += getAktuellerSong(
 				// "http://www.radio24.ch/player/index.html",
@@ -51,14 +43,10 @@ public class WebTool {
 				// "</script>");
 			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_24_ROCK)) {
 
-				result += new WebsiteParser().execute(
-						"http://www.radio24.ch/player/index.html?channel=rock",
-						"", "mainContainer", "</script>");
+				result += new WebsiteParser().execute("http://www.radio24.ch/player/index.html?channel=rock", "", "mainContainer", "</script>");
 			} else if (radioStation.equalsIgnoreCase(Stations.RADIO_RABE)) {
 
-				result += new WebsiteParser().execute(
-						"http://www.rabe.ch/nc/songticker.html", "",
-						"playlist-latest-item", "</div>");
+				result += new WebsiteParser().execute("http://www.rabe.ch/nc/songticker.html", "", "playlist-latest-item", "</div>");
 
 				// result = Constants.URL_SONGTICKER_RABE;
 				// return result;
@@ -70,15 +58,12 @@ public class WebTool {
 				parseResult += new WebsiteParser()
 						.execute(
 								"http://www.drs.ch/lib/player/radio.php?audiourl=http%3A%2F%2Fstream.srg-ssr.ch%2Fdrs3%2Fmp3_128.m3u&stream=drs3&design=drs3&type=popup&type=popup&skin=srdrs",
-								"", "<span class=\"active_with_icon\"",
-								"</span>");
+								"", "<span class=\"active_with_icon\"", "</span>");
 
 				// aus einer langen Zeile den Text rausholen
-				int index1 = parseResult
-						.indexOf("<span class=\"active_with_icon\"");
+				int index1 = parseResult.indexOf("<span class=\"active_with_icon\"");
 				if (index1 >= 0) {
-					parseResult = parseResult.substring(index1 + 50,
-							index1 + 200);
+					parseResult = parseResult.substring(index1 + 50, index1 + 200);
 					Utils.log(TAG, "********* parseResult 1= " + parseResult);
 				}
 				int index2 = parseResult.indexOf("</span");
@@ -97,9 +82,7 @@ public class WebTool {
 
 				String findString = "<td>Current Song:</td>";
 
-				result += new WebsiteParser().execute(
-						"http://icecast.radiotop.ch", null, findString,
-						"</div>");
+				result += new WebsiteParser().execute("http://icecast.radiotop.ch", null, findString, "</div>");
 			}
 		}
 
@@ -149,8 +132,7 @@ public class WebTool {
 			String url = "http://webradio.planetradio.de/planetradio-webradio/wController/Webradio/wAction/showstation/wFormat/ajax/wWebradio/planet/wNewquality/hq/webradioAjax.html";
 			String findString = "'file': '";
 			String endString = "'";
-			AsyncTask<String, Void, String> tokenAsyncTask = new WebsiteParser()
-					.execute(url, null, findString, endString);
+			AsyncTask<String, Void, String> tokenAsyncTask = new WebsiteParser().execute(url, null, findString, endString);
 
 			try {
 				token = tokenAsyncTask.get();
@@ -171,8 +153,7 @@ public class WebTool {
 	}
 
 	/**
-	 * Radio jugglerz.de hat immer Donnerstags eine Live Sendung. Ab Freitag
-	 * kann man diese als mp3 h�ren.
+	 * Radio jugglerz.de hat immer Donnerstags eine Live Sendung. Ab Freitag kann man diese als mp3 h�ren.
 	 * 
 	 * @return Dateiname 'xxxx.mp3'
 	 */
@@ -183,8 +164,7 @@ public class WebTool {
 			String url = "http://www.jugglerz.de/";
 			String findString = "<a href=\"http://www.jugglerz.de/shows/";
 			String endString = ".mp3\"><img ";
-			AsyncTask<String, Void, String> tokenAsyncTask = new WebsiteParser()
-					.execute(url, null, findString, endString);
+			AsyncTask<String, Void, String> tokenAsyncTask = new WebsiteParser().execute(url, null, findString, endString);
 
 			try {
 				token = tokenAsyncTask.get();

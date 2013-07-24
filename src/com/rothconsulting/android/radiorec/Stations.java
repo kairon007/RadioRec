@@ -52,8 +52,7 @@ public class Stations {
 	// ***********************************************
 	public static final String RADIO_32 = "Radio 32";
 	public static final String RADIO_32_GOLDIES = "Radio 32 Goldies";
-	public static final String RADIO_HOCH2 = "Hoch2";
-	public static final String RADIO_CAPITAL_FM = "Capital FM";
+	public static final String RADIO_BERN_1 = "Bern 1";
 	public static final String RADIO_RABE = "RaBe";
 	public static final String RADIO_24 = "Radio 24";
 	public static final String RADIO_24_ROCK = "Radio 24 Rock";
@@ -331,7 +330,6 @@ public class Stations {
 	public static final String RADIO_ENRGY_WIEN = "Energy Wien";
 	public static final String RADIO_LIFE_RADIO = "Life Radio";
 	public static final String RADIO_U1_TIROL = "U1 Tirol";
-	public static final String RADIO_U1_MELODIEN_AUS_DEN_BERGEN = "U1 Melodien aus den Bergen";
 
 	// ***********************************************
 	// ITALIEN
@@ -487,26 +485,13 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put("name", RADIO_HOCH2);
-		m.put("icon", R.drawable.radio_hoch_2);
-		m.put("icon_small", R.drawable.radio_hoch_2_small);
-		m.put("stream", "http://stream1.radiohoch2.ch:80/web");
-		m.put("homepage", "http://www.radiohoch2.ch");
-		m.put("webcam", "http://webcam.radiohoch2.ch/webcam_big.php");
-		m.put("email", "http://radiohoch2.ch/contact");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_CAPITAL_FM);
-		m.put("icon", R.drawable.radio_capital_fm);
-		m.put("icon_small", R.drawable.radio_capital_fm_small);
-		m.put("stream", "http://capitalfm.ice.infomaniak.ch/capitalfm-high.mp3");
-		m.put("homepage", "http://www.capitalfm.ch");
+		m.put("name", RADIO_BERN_1);
+		m.put("icon", R.drawable.radio_bern_1);
+		m.put("icon_small", R.drawable.radio_bern_1_small);
+		m.put("stream", "http://www.radiobern1.ch/webstream.mp3");
+		m.put("homepage", "http://www.radiobern1.ch");
 		m.put("webcam", "");
-		m.put("email", "http://capitalfm.ch/kontakt.html");
+		m.put("email", "studio@radiobern1.ch");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
@@ -3783,9 +3768,9 @@ public class Stations {
 		m.put("name", RADIO_SOUNDPORTAL);
 		m.put("icon", R.drawable.radio_soundportal);
 		m.put("icon_small", R.drawable.radio_soundportal_small);
-		m.put("stream", "http://netradio01.soundportal.at:8100/live160");
+		m.put("stream", "http://rs8.stream24.net:80/stream");
 		m.put("homepage", "http://www.soundportal.at");
-		m.put("webcam", "http://soundportal.at/service/webcam");
+		m.put("webcam", "");
 		m.put("email", "http://soundportal.at/service/musikwunsch/");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
@@ -4006,19 +3991,6 @@ public class Stations {
 		m.put("icon", R.drawable.radio_u1_tirol);
 		m.put("icon_small", R.drawable.radio_u1_tirol_small);
 		m.put("stream", "http://stream.u1-radio.at:10406");
-		m.put("homepage", "http://www.u1-radio.at");
-		m.put("webcam", "");
-		m.put("email", "http://www.u1-radio.at/feedback.0.html");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_AT);
-		m.put("stil", STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_U1_MELODIEN_AUS_DEN_BERGEN);
-		m.put("icon", R.drawable.radio_u1_melodien_aus_den_bergen);
-		m.put("icon_small", R.drawable.radio_u1_tirol_small);
-		m.put("stream", "http://streamplus4.ameus.de:10750");
 		m.put("homepage", "http://www.u1-radio.at");
 		m.put("webcam", "");
 		m.put("email", "http://www.u1-radio.at/feedback.0.html");
@@ -4336,7 +4308,7 @@ public class Stations {
 		m.put("name", RADIO_POPOLARE_ROMA);
 		m.put("icon", R.drawable.radio_popolare_roma);
 		m.put("icon_small", R.drawable.radio_popolare_roma_small);
-		m.put("stream", "http://stream.radiopopolareroma.it:80/bbs");
+		m.put("stream", "http://stream.oscr.it:8000/rpr");
 		m.put("homepage", "http://www.radiopopolareroma.it");
 		m.put("webcam", "");
 		m.put("email", "http://www.radiopopolareroma.it/contatti");
@@ -4609,7 +4581,7 @@ public class Stations {
 		m.put("name", RADIO_TECHNO_4_EVER);
 		m.put("icon", R.drawable.radio_techno_4_ever);
 		m.put("icon_small", R.drawable.radio_techno_4_ever_small);
-		m.put("stream", "http://main01.t4e.dj/high.mp3");
+		m.put("stream", "http://tunein.t4e.dj/main/dsl/mp3");
 		m.put("homepage", "http://www.techno4ever.fm");
 		m.put("webcam", "");
 		m.put("email", "http://www.techno4ever.fm/Kontakt");
@@ -4622,7 +4594,7 @@ public class Stations {
 		m.put("name", RADIO_MRS_905);
 		m.put("icon", R.drawable.radio_mrs_905);
 		m.put("icon_small", R.drawable.radio_mrs_905_small);
-		m.put("stream", "http://radiostreamone.mine.nu:19050");
+		m.put("stream", "http://radiostreamfive.mine.nu:19050");
 		m.put("homepage", "http://www.mrs.se");
 		m.put("webcam", "");
 		m.put("email", "mrs@broadcast.net");

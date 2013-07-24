@@ -18,6 +18,11 @@ public class RadioPlayer {
 	ProgressDialog progressDialog;
 	boolean isRunning = false;
 
+	// For Testing only
+	public boolean isRunning() {
+		return isRunning;
+	}
+
 	private Notifications getNotifInstance(Context context) {
 		Intent intent = new Intent(context, Donate.class);
 		intent.putExtra(Constants.FROM_NOTIFICATION, Constants.FROM_NOTIFICATION);
