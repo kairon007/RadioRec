@@ -20,6 +20,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 public class Settings extends Activity implements RadioGroup.OnCheckedChangeListener {
 
 	private static final String TAG = "Settings";
@@ -217,4 +219,19 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		// Google Analytics
+		EasyTracker.getInstance().activityStart(this);
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		// Google Analytics
+		EasyTracker.getInstance().activityStop(this);
+	}
+
 }

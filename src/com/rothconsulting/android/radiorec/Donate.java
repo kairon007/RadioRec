@@ -19,12 +19,19 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.GoogleAnalytics;
+import com.google.analytics.tracking.android.Tracker;
 import com.rothconsulting.android.marketbilling.MarketSpende;
 
 public class Donate extends Activity {
 
 	private static final String TAG = "Donate";
 
+	private Tracker mGaTracker;
+	private GoogleAnalytics mGaInstance;
+
+	private static final String PAYPAL_URL = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RTHRLLC6NV4NN";
 	/** Bitcoin key. */
 	private static final String BITCOIN_KEY = "1ErTn1kvjprJ9pC6AZKDyDoYLLWtWjaKWR";
 
@@ -38,27 +45,20 @@ public class Donate extends Activity {
 		setContentView(R.layout.donate);
 		Intent fromIntent = getIntent();
 		Utils.log(TAG, "fromIntent=" + fromIntent);
-		Utils utils = new Utils();
 		// if it comes from the notification and isDonator go to the main screen
 		if (fromIntent != null) {
 			Bundle extraBundle = fromIntent.getExtras();
-			if (extraBundle != null
-					&& extraBundle.getString(Constants.FROM_NOTIFICATION) != null
-					&& extraBundle.getString(Constants.FROM_NOTIFICATION)
-							.equals(Constants.FROM_NOTIFICATION)
-					&& utils.hasValidKey()) {
+			if (extraBundle != null && extraBundle.getString(Constants.FROM_NOTIFICATION) != null
+					&& extraBundle.getString(Constants.FROM_NOTIFICATION).equals(Constants.FROM_NOTIFICATION) && Utils.hasValidKey()) {
 				Utils.log(TAG, "*** finish (fromNotification und validKey)");
 				finish();
 			} else {
-				Utils.log(TAG,
-						"*** not fromNotification or not validKey) validKey="
-								+ utils.hasValidKey());
+				Utils.log(TAG, "*** not fromNotification or not validKey) validKey=" + Utils.hasValidKey());
 			}
 		}
 
 		// hide keyboard
-		getWindow().setSoftInputMode(
-				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
 		AdMob admob = new AdMob();
 		admob.showRemoveAds(this);
@@ -68,8 +68,12 @@ public class Donate extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent intentHomepage = new Intent(Intent.ACTION_VIEW);
-				intentHomepage.setData(Uri
-						.parse("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RTHRLLC6NV4NN"));
+				intentHomepage.setData(Uri.parse(PAYPAL_URL));
+				// Google analytics
+				if (mGaTracker != null) {
+					mGaTracker.sendEvent("ui_action", "imageButtonPaypal", "URL = " + PAYPAL_URL, 0L);
+				}
+
 				startActivity(intentHomepage);
 			}
 		});
@@ -78,6 +82,10 @@ public class Donate extends Activity {
 		buttonBitcoin.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				// Google analytics
+				if (mGaTracker != null) {
+					mGaTracker.sendEvent("ui_action", "imageButtonBitcoin", "Start donateBitcoin", 0L);
+				}
 				donateBitcoin();
 			}
 		});
@@ -87,6 +95,10 @@ public class Donate extends Activity {
 		buttonAndroidMarket.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				// Google analytics
+				if (mGaTracker != null) {
+					mGaTracker.sendEvent("ui_action", "imageButtonAndroidMarket", "Start intentSpende", 0L);
+				}
 				startActivity(intentSpende);
 			}
 		});
@@ -100,23 +112,24 @@ public class Donate extends Activity {
 		saveButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Constants.ANTI_ADS_VALUE = "" + edittext.getText();
-				SharedPreferences settings = getSharedPreferences(
-						Constants.PREFERENCES_FILE, 0);
+				if (edittext != null && edittext.getText() != null) {
+					Constants.ANTI_ADS_VALUE = edittext.getText().toString().trim();
+				} else {
+					Constants.ANTI_ADS_VALUE = "ERROR";
+				}
+				SharedPreferences settings = getSharedPreferences(Constants.PREFERENCES_FILE, 0);
 				SharedPreferences.Editor editor = settings.edit();
-				editor.putString(Constants.ANTI_ADS_KEY,
-						Constants.ANTI_ADS_VALUE);
+				editor.putString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_VALUE);
 				editor.commit();
 				if ("".equals(Constants.ANTI_ADS_VALUE)) {
-					Toast.makeText(Donate.this,
-							getResources().getString(R.string.keineEingabe),
-							Toast.LENGTH_SHORT).show();
+					Toast.makeText(Donate.this, getResources().getString(R.string.keineEingabe), Toast.LENGTH_SHORT).show();
 				} else {
-					Toast.makeText(
-							Donate.this,
-							getResources().getString(R.string.danke) + " ("
-									+ edittext.getText() + ")",
-							Toast.LENGTH_LONG).show();
+					Toast.makeText(Donate.this, getResources().getString(R.string.danke) + " (" + edittext.getText() + ")", Toast.LENGTH_LONG).show();
+				}
+
+				// Google analytics
+				if (mGaTracker != null) {
+					mGaTracker.sendEvent("ui_action", "buttonSaveAntiAdsKey", "Key: " + Constants.ANTI_ADS_VALUE, 0L);
 				}
 			}
 		});
@@ -128,6 +141,13 @@ public class Donate extends Activity {
 				finish();
 			}
 		});
+
+		// Get the GoogleAnalytics singleton. Note that the SDK uses
+		// the application context to avoid leaking the current context.
+		mGaInstance = GoogleAnalytics.getInstance(this);
+		// Use the GoogleAnalytics singleton to get a Tracker.
+		mGaTracker = mGaInstance.getTracker("UA-38114228-1");
+
 	}
 
 	private void donateBitcoin() {
@@ -138,27 +158,22 @@ public class Donate extends Activity {
 		s += "\n\n" + BITCOIN_KEY;
 		b.setMessage(s);
 		b.setPositiveButton(R.string.neinDanke, null);
-		b.setNeutralButton(R.string.copy_to_clipboard,
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(final DialogInterface dialog,
-							final int which) {
-						ClipboardManager cbm = (ClipboardManager) //
-						getSystemService(CLIPBOARD_SERVICE);
-						cbm.setText(BITCOIN_KEY);
-					}
-				});
-		final Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("bitcoin:"
-				+ BITCOIN_KEY));
+		b.setNeutralButton(R.string.copy_to_clipboard, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(final DialogInterface dialog, final int which) {
+				ClipboardManager cbm = (ClipboardManager) //
+				getSystemService(CLIPBOARD_SERVICE);
+				cbm.setText(BITCOIN_KEY);
+			}
+		});
+		final Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("bitcoin:" + BITCOIN_KEY));
 		if (i.resolveActivity(this.getPackageManager()) != null) {
-			b.setNegativeButton(R.string.send_now,
-					new DialogInterface.OnClickListener() {
-						@Override
-						public void onClick(final DialogInterface dialog,
-								final int which) {
-							startActivity(i);
-						}
-					});
+			b.setNegativeButton(R.string.send_now, new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(final DialogInterface dialog, final int which) {
+					startActivity(i);
+				}
+			});
 		}
 		b.show();
 	}
@@ -171,8 +186,7 @@ public class Donate extends Activity {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.backmenu, menu);
 		menu.removeItem(R.id.donate_adfree);
-		menu.add(0, -2, 0, this.getResources().getString(R.string.stop))
-				.setIcon(android.R.drawable.ic_menu_close_clear_cancel);
+		menu.add(0, -2, 0, this.getResources().getString(R.string.stop)).setIcon(android.R.drawable.ic_menu_close_clear_cancel);
 		return true;
 	}
 
@@ -192,4 +206,19 @@ public class Donate extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		// Google Analytics
+		EasyTracker.getInstance().activityStart(this);
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		// Google Analytics
+		EasyTracker.getInstance().activityStop(this);
+	}
+
 }

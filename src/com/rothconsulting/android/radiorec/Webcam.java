@@ -21,6 +21,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 public class Webcam extends Activity {
 
 	private final String TAG = this.getClass().getSimpleName();
@@ -147,4 +149,19 @@ public class Webcam extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		// Google Analytics
+		EasyTracker.getInstance().activityStart(this);
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		// Google Analytics
+		EasyTracker.getInstance().activityStop(this);
+	}
+
 }

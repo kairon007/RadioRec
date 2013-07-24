@@ -12,6 +12,8 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 public class Info extends Activity {
 
 	@Override
@@ -89,4 +91,19 @@ public class Info extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		// Google Analytics
+		EasyTracker.getInstance().activityStart(this);
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		// Google Analytics
+		EasyTracker.getInstance().activityStop(this);
+	}
+
 }
