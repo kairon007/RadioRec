@@ -47,6 +47,7 @@ public class RadioPlayer {
 		}
 		Utils.log(TAG, "--- threadDoStartPlay.start()");
 		threadDoStartPlay.start();
+
 		return isRunning;
 	}
 
@@ -134,12 +135,12 @@ public class RadioPlayer {
 					doStopPlay(context);
 				} catch (IllegalStateException e) {
 					Utils.log(TAG, "IllegalStateException 1: " + context.getString(R.string.internetadresseNichtErreichbar));
-					getNotifInstance(context).showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
+					// getNotifInstance(context).showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
 					Utils.log(TAG, "cause=" + e.getCause());
 					if (e.getStackTrace() != null && e.getStackTrace().length >= 2)
 						Utils.log(TAG, "getStackTrace[0]" + e.getStackTrace()[0]);
 					Utils.log(TAG, "getStackTrace[1]" + e.getStackTrace()[1]);
-					doStopPlay(context);
+					// doStopPlay(context);
 				} catch (IOException e) {
 					Utils.log(
 							TAG,
@@ -155,11 +156,18 @@ public class RadioPlayer {
 					} else {
 						isRunning = true;
 					}
+					if (progressDialog != null && progressDialog.isShowing()) {
+						Utils.log(TAG, "progressDialog.dismiss()");
+						progressDialog.dismiss();
+					}
 				}
-				Utils.log(TAG, "progressDialog.dismiss()");
-				progressDialog.dismiss();
+				if (progressDialog != null && progressDialog.isShowing()) {
+					Utils.log(TAG, "progressDialog.cancel()");
+					progressDialog.cancel();
+				}
 			}
 		};
+
 	}
 
 	private boolean isPlayerPlaying(MediaPlayer mediaPlayer) {

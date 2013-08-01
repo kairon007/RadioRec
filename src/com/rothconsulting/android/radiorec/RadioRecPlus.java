@@ -429,7 +429,9 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 				String stationName = data.getStringExtra("stationName");
 				Toast.makeText(context, "Station: " + stationName, Toast.LENGTH_LONG).show();
 				Constants.SELECTED_STATION_INDEX_VALUE = Utils.getSpinnerPosition(Stations.getAllStations(), stationName);
-				changeStation();
+				// .setSelection starts the method onItemSelected(...) and starts it all over
+				spnAllStations.setSelection(Constants.SELECTED_STATION_INDEX_VALUE);
+				// changeStation();
 			}
 			if (resultCode == RESULT_CANCELED) {
 				// Write your code if there's no result
@@ -497,6 +499,10 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 
 		if (Constants.SPINNER_SELECTION == Constants.SPINNER_ALPHABETISCH && alphabeticList != null && alphabeticList.size() >= index) {
 			map = alphabeticList.get(index);
+			// .setSelection starts the method onItemSelected(...) and starts it all over
+			spnAllStations.setSelection(Utils.getSpinnerPosition(stationList, (String) map.get("name")));
+			Constants.SPINNER_SELECTION = Constants.SPINNER_ALL_STATIONS;
+			return;
 		} else {
 			map = stationList.get(index);
 		}
