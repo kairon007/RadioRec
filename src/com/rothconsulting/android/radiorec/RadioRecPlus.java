@@ -427,7 +427,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 
 			if (resultCode == RESULT_OK) {
 				String stationName = data.getStringExtra("stationName");
-				Toast.makeText(context, "Station: " + stationName, Toast.LENGTH_LONG).show();
+				// Toast.makeText(context, "Station: " + stationName, Toast.LENGTH_LONG).show();
 				Constants.SELECTED_STATION_INDEX_VALUE = Utils.getSpinnerPosition(Stations.getAllStations(), stationName);
 				// .setSelection starts the method onItemSelected(...) and starts it all over
 				spnAllStations.setSelection(Constants.SELECTED_STATION_INDEX_VALUE);

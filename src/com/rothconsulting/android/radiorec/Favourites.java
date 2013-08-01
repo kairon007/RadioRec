@@ -43,7 +43,8 @@ public class Favourites extends ListActivity {
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		Utils.getNotifInstance(context, RadioRecPlus.class).hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
 
-		ListView lv = (ListView) findViewById(android.R.id.list); // getListView();
+		// ListView lv = (ListView) findViewById(android.R.id.list); // getListView();
+		ListView lv = getListView();
 		int[] colors = { 0, Color.RED, 0 }; // red for the example
 		lv.setDivider(new GradientDrawable(Orientation.RIGHT_LEFT, colors));
 		lv.setDividerHeight(1);
@@ -59,9 +60,7 @@ public class Favourites extends ListActivity {
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				// When clicked, show a toast with the TextView text
 				TextView textViewName = (TextView) ((LinearLayout) view).getChildAt(1); // 1 = Die zweite View (name)
-
 				Utils.log(TAG, "name= " + textViewName.getText());
 
 				Intent returnIntent = new Intent();
