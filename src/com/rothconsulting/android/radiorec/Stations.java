@@ -303,6 +303,7 @@ public class Stations {
 	public static final String RADIO_RAUTE_MUSIK = "Raute Musik";
 	public static final String RADIO_RSA_SACHSEN = "R.SA Sachsen";
 	public static final String RADIO_HITFM_89 = "Hit FM 89";
+	public static final String RADIO_DEUTSCHLAND_TANZT = "Deutschland Tanzt";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -400,6 +401,8 @@ public class Stations {
 	public static final String RADIO_SMOOTH_RIVIERA = "Smooth Riviera";
 	public static final String RADIO_RIVIERA_RADIO = "Riviera Radio";
 	public static final String RADIO_DI_CHILLOUTDREAMS = "DI Chillout Dreams";
+	public static final String RADIO_10_GOLD_90S = "Radio 10 Gold 90s";
+	public static final String RADIO_10_GOLD_TOP4000 = "Radio 10 Gold Top 4000";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -3688,6 +3691,19 @@ public class Stations {
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_DEUTSCHLAND_TANZT);
+		m.put("icon", R.drawable.radio_deutschland_tanzt);
+		m.put("icon_small", R.drawable.radio_deutschland_tanzt_small);
+		m.put("stream", "http://stream.laut.fm:80/deutschland-tanzt");
+		m.put("homepage", "http://laut.fm/deutschland-tanzt");
+		m.put("webcam", "");
+		m.put("email", "http://deutschlandtanzt.wix.com/home#!kontakt/ServicesPage-bmmaq7o0");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
 		// ******************************************************************************************************
 		// *
 		// * ÖSTERREICH
@@ -4816,6 +4832,32 @@ public class Stations {
 		m.put("sprache", SPRACHE_EN);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_LOUNGE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_10_GOLD_90S);
+		m.put("icon", R.drawable.radio_10_gold_90s);
+		m.put("icon_small", R.drawable.radio_10_gold_90s_small);
+		m.put("stream", "http://82.201.100.10:8000/RD10_Radio10Gold_90s_Hits");
+		m.put("homepage", "http://www.radio10.nl");
+		m.put("webcam", "http://www.radio10gold.nl/players/webcam.html");
+		m.put("email", "http://www.radio10gold.nl/contact/");
+		m.put("sprache", SPRACHE_EN);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_10_GOLD_TOP4000);
+		m.put("icon", R.drawable.radio_10_gold_top4000);
+		m.put("icon_small", R.drawable.radio_10_gold_top4000_small);
+		m.put("stream", "http://82.201.100.10:8000/WEB03");
+		m.put("homepage", "http://www.radio10.nl");
+		m.put("webcam", "http://www.radio10gold.nl/players/webcam.html");
+		m.put("email", "http://www.radio10gold.nl/contact/");
+		m.put("sprache", SPRACHE_EN);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
 		return stationList;
