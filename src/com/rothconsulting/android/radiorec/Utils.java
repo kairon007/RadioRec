@@ -72,7 +72,7 @@ public class Utils {
 
 	public static boolean hasValidKey() {
 		String key = Constants.ANTI_ADS_VALUE;
-		if (key != null && (key.trim().startsWith("rR+") && key.trim().endsWith("so@p")) || (key.trim().startsWith("rr") && key.trim().endsWith("so"))) {
+		if (key != null && ((key.trim().startsWith("rR+") && key.trim().endsWith("so@p")) || (key.trim().startsWith("rr") && key.trim().endsWith("so")))) {
 			return true;
 		}
 		return false;
