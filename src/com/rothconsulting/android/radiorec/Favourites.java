@@ -20,6 +20,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -32,6 +33,7 @@ public class Favourites extends ListActivity {
 
 	private final static String TAG = "Favourites";
 	private Context context;
+	private Button zurueckButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,8 @@ public class Favourites extends ListActivity {
 
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 		Utils.getNotifInstance(context, RadioRecPlus.class).hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
+
+		setTitle(getString(R.string.favoriten));
 
 		// ListView lv = (ListView) findViewById(android.R.id.list); // getListView();
 		ListView lv = getListView();
@@ -84,6 +88,14 @@ public class Favourites extends ListActivity {
 				DbUtils.removeFavourite(context, stationName);
 				updateFavList();
 				return true;
+			}
+		});
+
+		zurueckButton = (Button) findViewById(R.id.buttonZurueck);
+		zurueckButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				finish();
 			}
 		});
 
@@ -135,7 +147,12 @@ public class Favourites extends ListActivity {
 		((ListActivity) context).setListAdapter(adapter);
 
 		if (stationList == null || stationList.size() == 0) {
-			Utils.showEmptyFavAlertDialog(context);
+			if (zurueckButton != null) {
+				zurueckButton.setVisibility(View.VISIBLE);
+				Utils.showEmptyFavAlertDialog(context);
+			}
+		} else if (zurueckButton != null) {
+			zurueckButton.setVisibility(View.GONE);
 		}
 
 	}
