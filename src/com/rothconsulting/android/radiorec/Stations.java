@@ -154,7 +154,7 @@ public class Stations {
 	public static final String RADIO_DELTA_RADIO = "Delta Radio";
 	public static final String RADIO_SECRETTUBE = "Secrettube";
 	public static final String RADIO_H1_RADIO_HITTNAU = "H1 Radio Hittnau";
-	public static final String RADIO_GUGGE_SOUND = "Guggesound";
+	// public static final String RADIO_GUGGE_SOUND = "Guggesound";
 	public static final String RADIO_VOLKSMUSIKNET = "Volksmusiknet";
 	public static final String RADIO_IISCHERS_RADIO = "Iischers Radio";
 	public static final String RADIO_RADIUS = "Radius";
@@ -226,7 +226,7 @@ public class Stations {
 	public static final String RADIO_REGENBOGEN = "Regenbogen";
 	public static final String RADIO_REGENBOGEN_LAUT_FM = "Regenbogen laut.fm";
 	public static final String RADIO_FANTASY_DANCE = "Fantasy Dance FM";
-	public static final String RADIO_OBERKRAIN = "Oberkrain";
+	// public static final String RADIO_OBERKRAIN = "Oberkrain";
 	public static final String RADIO_SCHWANY_OBERKRAIN = "Schwany Oberkrain";
 	public static final String RADIO_NDR_1_WELLE_NORD = "NDR 1 Welle Nord";
 	public static final String RADIO_NDR_1_NIEDERSACHSEN = "NDR 1 Niedersachsen";
@@ -1651,7 +1651,7 @@ public class Stations {
 		m.put("name", RADIO_GRISCHA);
 		m.put("icon", R.drawable.radio_grischa);
 		m.put("icon_small", R.drawable.radio_grischa_small);
-		m.put("stream", "http://grischa.mp3.green.ch");
+		m.put("stream", "http://swisstxt.radiogrischa.ch/m/grischa/mp3_128");
 		m.put("homepage", "http://www.radiogrischa.ch");
 		m.put("webcam", "http://www.radiogrischa.ch/sites/default/files/webcams/studio_1.jpg");
 		m.put("email", "http://www.radiogrischa.ch/adresseanfahrt");
@@ -1792,18 +1792,18 @@ public class Stations {
 		m.put("stil", STIL_ROCK);
 		setStationlist(stationList, m);
 
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_GUGGE_SOUND);
-		m.put("icon", R.drawable.radio_guggesound);
-		m.put("icon_small", R.drawable.radio_guggesound_small);
-		m.put("stream", "http://188.40.107.252:8900");
-		m.put("homepage", "http://www.guggesound.com");
-		m.put("webcam", "");
-		m.put("email", "info@guggesound.com");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_VOLKSTUEMLICH);
-		setStationlist(stationList, m);
+		// m = new HashMap<String, Object>();
+		// m.put("name", RADIO_GUGGE_SOUND);
+		// m.put("icon", R.drawable.radio_guggesound);
+		// m.put("icon_small", R.drawable.radio_guggesound_small);
+		// m.put("stream", "http://188.40.107.252:8900");
+		// m.put("homepage", "http://www.guggesound.com");
+		// m.put("webcam", "");
+		// m.put("email", "info@guggesound.com");
+		// m.put("sprache", SPRACHE_DE);
+		// m.put("land", LAND_CH);
+		// m.put("stil", STIL_VOLKSTUEMLICH);
+		// setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_IISCHERS_RADIO);
@@ -2425,7 +2425,7 @@ public class Stations {
 		m.put("name", RADIO_FFH_EURODANCE);
 		m.put("icon", R.drawable.radio_ffh_eurodance);
 		m.put("icon_small", R.drawable.radio_ffh_eurodance_small);
-		m.put("stream", "http://mp3ad.ffh.c.nmdn.net/fs_ffhchannels/hqeurodance.mp3");
+		m.put("stream", "http://mp3.ffh.de/ffhchannels/hqeurodance.mp3");
 		m.put("homepage", "http://webradio.ffh.de");
 		m.put("webcam", "http://resource.ffh.de/webcams/ffh/cam1-fullsize.jpg");
 		m.put("email", "http://www.ffh.de/ffh-welt/kontakt.html");
@@ -2683,18 +2683,18 @@ public class Stations {
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_OBERKRAIN);
-		m.put("icon", R.drawable.radio_oberkrain);
-		m.put("icon_small", R.drawable.radio_oberkrain_small);
-		m.put("stream", "http://89.149.226.229:80");
-		m.put("homepage", "http://www.radio-oberkrain.com/");
-		m.put("webcam", "");
-		m.put("email", "service@radio-oberkrain.de");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_DE);
-		m.put("stil", STIL_VOLKSTUEMLICH);
-		setStationlist(stationList, m);
+		// m = new HashMap<String, Object>();
+		// m.put("name", RADIO_OBERKRAIN);
+		// m.put("icon", R.drawable.radio_oberkrain);
+		// m.put("icon_small", R.drawable.radio_oberkrain_small);
+		// m.put("stream", "http://89.149.226.229:80");
+		// m.put("homepage", "http://www.radio-oberkrain.com");
+		// m.put("webcam", "");
+		// m.put("email", "service@radio-oberkrain.de");
+		// m.put("sprache", SPRACHE_DE);
+		// m.put("land", LAND_DE);
+		// m.put("stil", STIL_VOLKSTUEMLICH);
+		// setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SCHWANY_OBERKRAIN);
@@ -3182,7 +3182,7 @@ public class Stations {
 		m.put("name", RADIO_APOLLORADIO);
 		m.put("icon", R.drawable.radio_apollo_radio);
 		m.put("icon_small", R.drawable.radio_apollo_radio_small);
-		m.put("stream", "http://217.68.161.222:6300");
+		m.put("stream", "http://apollo-stream.primacom.net:6300");
 		m.put("homepage", "http://www.apolloradio.de");
 		m.put("webcam", "");
 		m.put("email", "http://www.apolloradio.de/kontakt.php");
@@ -4847,7 +4847,7 @@ public class Stations {
 		m.put("name", RADIO_MRS_905);
 		m.put("icon", R.drawable.radio_mrs_905);
 		m.put("icon_small", R.drawable.radio_mrs_905_small);
-		m.put("stream", "http://radiostreamone.mine.nu:19050");
+		m.put("stream", "http://radiostreamtwo.no-ip.org:19050");
 		m.put("homepage", "http://www.mrs.se");
 		m.put("webcam", "");
 		m.put("email", "mrs@broadcast.net");
@@ -5046,19 +5046,6 @@ public class Stations {
 		m.put("homepage", "http://www.juventus.hu");
 		m.put("webcam", "");
 		m.put("email", "online@juventus.hu");
-		m.put("sprache", SPRACHE_HU);
-		m.put("land", LAND_DIV);
-		m.put("stil", STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_1_HU);
-		m.put("icon", R.drawable.radio_1_hu);
-		m.put("icon_small", R.drawable.radio_1_hu_small);
-		m.put("stream", "http://195.70.35.172:8000/radio1.mp3");
-		m.put("homepage", "http://www.radio1.hu");
-		m.put("webcam", "");
-		m.put("email", "");
 		m.put("sprache", SPRACHE_HU);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_POP);

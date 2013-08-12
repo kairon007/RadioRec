@@ -69,7 +69,6 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_PALOMA);
 		ignoreList.add(Stations.RADIO_DREYECKLAND);
 		ignoreList.add(Stations.RADIO_PULS_RADIO);
-		ignoreList.add(Stations.RADIO_OBERKRAIN);
 		ignoreList.add(Stations.RADIO_100_5_DAS_HITRADIO);
 		ignoreList.add(Stations.RADIO_KIEPENKERL);
 		ignoreList.add(Stations.RADIO_HOPE_FM);
@@ -81,7 +80,6 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_H1_RADIO_HITTNAU);
 		ignoreList.add(Stations.RADIO_IISCHERS_RADIO);
 		ignoreList.add(Stations.RADIO_VOLKSMUSIKNET);
-		ignoreList.add(Stations.RADIO_GUGGE_SOUND);
 		ignoreList.add(Stations.RADIO_ARABELLA);
 		ignoreList.add(Stations.RADIO_TECHNOBASE_FM);
 		ignoreList.add(Stations.RADIO_HARDBASE_FM);
