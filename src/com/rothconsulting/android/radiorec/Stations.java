@@ -214,6 +214,7 @@ public class Stations {
 	public static final String RADIO_HR_3 = "HR 3";
 	public static final String RADIO_YOU_FM = "You FM";
 	public static final String RADIO_1LIVE = "1Live";
+	public static final String RADIO_1LIVE_DIGGI = "1Live diggi";
 	public static final String RADIO_WDR_2 = "WDR 2";
 	public static final String RADIO_WDR_3 = "WDR 3";
 	public static final String RADIO_WDR_4 = "WDR 4";
@@ -2522,6 +2523,19 @@ public class Stations {
 		m.put("homepage", "http://www.einslive.de");
 		m.put("webcam", "http://www.einslive.de/webcam/studio_a_1.jpg");
 		m.put("email", "http://www.einslive.de/team/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_1LIVE_DIGGI);
+		m.put("icon", R.drawable.radio_1live_diggi);
+		m.put("icon_small", R.drawable.radio_1live_diggi_small);
+		m.put("stream", "http://1live-diggi.akacast.akamaistream.net/7/965/119435/v1/gnl.akacast.akamaistream.net/1live-diggi");
+		m.put("homepage", "http://www.einslive.de/sendungen/diggi");
+		m.put("webcam", "http://www.einslive.de/webcam/studio_a_1.jpg");
+		m.put("email", "http://www.einslive.de/sendungen/diggi/1live_diggi_kontakt.jsp");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
