@@ -320,6 +320,9 @@ public class Stations {
 	public static final String RADIO_BYTE_FM = "Byte FM";
 	public static final String RADIO_KISS_FM = "Kiss FM";
 	public static final String RADIO_DUBLOVERS = "Dublovers";
+	public static final String RADIO_RS2 = "rs2";
+	public static final String RADIO_RS2_80ER = "rs2 80er";
+	public static final String RADIO_RS2_90ER = "rs2 90er";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -344,6 +347,7 @@ public class Stations {
 	public static final String RADIO_ANTENNE_TIROL = "Antenne Tirol";
 	public static final String RADIO_ANTENNE_VORARLBERG = "Antenne Vorarlberg";
 	public static final String RADIO_ARABELLA = "Arabella";
+	public static final String RADIO_ARABELLA_PARTY = "Arabella Party";
 	public static final String RADIO_KRONEHIT = "KroneHit";
 	public static final String RADIO_KRONEHIT_90_DANCE = "KroneHit 90s Dance";
 	public static final String RADIO_KRONEHIT_VOLLGAS = "KroneHit Vollgas";
@@ -3870,6 +3874,45 @@ public class Stations {
 		m.put("stil", STIL_TRANCE);
 		setStationlist(stationList, m);
 
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RS2);
+		m.put("icon", R.drawable.radio_rs2);
+		m.put("icon_small", R.drawable.radio_rs2_small);
+		m.put("stream", "http://stream.rs2.de/rs2/mp3-128/internetradio");
+		m.put("homepage", "http://www.rs2.de");
+		m.put("webcam", "");
+		m.put("email", "rs2@rs2.de");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RS2_80ER);
+		m.put("icon", R.drawable.radio_rs2);
+		m.put("icon_small", R.drawable.radio_rs2_small);
+		m.put("stream", "http://stream.rs2.de/rs2-80er/mp3-128/internetradio");
+		m.put("homepage", "http://www.rs2.de");
+		m.put("webcam", "");
+		m.put("email", "rs2@rs2.de");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RS2_90ER);
+		m.put("icon", R.drawable.radio_rs2);
+		m.put("icon_small", R.drawable.radio_rs2_small);
+		m.put("stream", "http://stream.rs2.de/rs2-80er/mp3-128/internetradio");
+		m.put("homepage", "http://www.rs2.de");
+		m.put("webcam", "");
+		m.put("email", "rs2@rs2.de");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
 		// ******************************************************************************************************
 		// *
 		// * ÖSTERREICH
@@ -4127,6 +4170,19 @@ public class Stations {
 		m.put("icon", R.drawable.radio_arabella);
 		m.put("icon_small", R.drawable.radio_arabella_small);
 		m.put("stream", "http://stream01.arabella-at.vss.kapper.net:8000");
+		m.put("homepage", "http://www.arabella.at");
+		m.put("webcam", "");
+		m.put("email", "http://www.arabella.at/wien/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_ARABELLA_PARTY);
+		m.put("icon", R.drawable.radio_arabella);
+		m.put("icon_small", R.drawable.radio_arabella_small);
+		m.put("stream", "http://stream07.arabella-at.vss.kapper.net:8000");
 		m.put("homepage", "http://www.arabella.at");
 		m.put("webcam", "");
 		m.put("email", "http://www.arabella.at/wien/kontakt");
