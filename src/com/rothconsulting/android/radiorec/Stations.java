@@ -82,6 +82,7 @@ public class Stations {
 	public static final String RADIO_ENERGY_LOVE = "Energy Love";
 	public static final String RADIO_ENERGY_80 = "Energy 80s";
 	public static final String RADIO_ENERGY_90 = "Energy 90s";
+	public static final String RADIO_ENERGY_00 = "Energy 00s";
 	public static final String RADIO_ENERGY_ITALY = "Energy Italy";
 	public static final String RADIO_1 = "Radio 1";
 	public static final String RADIO_ZUERISEE = "Zürisee";
@@ -295,7 +296,8 @@ public class Stations {
 	public static final String RADIO_FRANK_ZAPPA_STREAM = "Frank Zappa Stream";
 	public static final String RADIO_KRAUTROCK_WORLD = "Krautrock World";
 	// public static final String RADIO_DRAGONDEVIL = "DrAgOnDeViL";
-	public static final String RADIO_890_RTL = "89.0 RTL";
+	public static final String RADIO_890_RTL = "89,0 RTL";
+	public static final String RADIO_1046_RTL = "104,6 RTL Berlin";
 	public static final String RADIO_DANCEFOX_RADIO = "Dancefox Radio";
 	public static final String RADIO_ALEX_BERLIN = "Alex Berlin";
 	public static final String RADIO_KLASSIK_RADIO = "Klassik Radio";
@@ -305,7 +307,6 @@ public class Stations {
 	public static final String RADIO_CLUB_93 = "Club 93";
 	public static final String RADIO_BASETRAX_CLUB = "BaseTrax.FM Club";
 	public static final String RADIO_MUSICBASE_FM_DANCE = "Musicbase.FM - Dance";
-	public static final String RADIO_1046_RTL = "104,6 RTL";
 	public static final String RADIO_ENNEPE_RUHR = "Ennepe Ruhr";
 	public static final String RADIO_I_LOVE_2_DANCE_LOVE = "I Love 2 Dance - Love Radio";
 	public static final String RADIO_I_LOVE_2_DANCE_RADIO = "I Love 2 Dance - Dance Radio";
@@ -374,7 +375,7 @@ public class Stations {
 	public static final String RADIO_M2O = "M2O";
 	public static final String RADIO_RAI_1 = "RAI 1";
 	public static final String RADIO_RAI_2 = "RAI 2";
-	public static final String RADIO_RAI_3 = "RAI 3";
+	public static final String RADIO_105_IT = "105.it";
 
 	// ***********************************************
 	// DIVERSE
@@ -838,6 +839,19 @@ public class Stations {
 		m.put("icon", R.drawable.radio_energy_90s);
 		m.put("icon_small", R.drawable.radio_energy_90s_small);
 		m.put("stream", "http://energy90s.ice.infomaniak.ch:80/energy90s-high.mp3");
+		m.put("homepage", "http://www.energy.ch/webradios");
+		m.put("webcam", "");
+		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_ENERGY_00);
+		m.put("icon", R.drawable.radio_energy_00s);
+		m.put("icon_small", R.drawable.radio_energy_00s_small);
+		m.put("stream", "http://energy00s.ice.infomaniak.ch:80/energy00s-high.mp3");
 		m.put("homepage", "http://www.energy.ch/webradios");
 		m.put("webcam", "");
 		m.put("email", "http://www.energy.ch/zurich/inside/kontakt");
@@ -3602,6 +3616,19 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_1046_RTL);
+		m.put("icon", R.drawable.radio_1046_rtl);
+		m.put("icon_small", R.drawable.radio_1046_rtl_small);
+		m.put("stream", "http://4633.live.streamtheworld.com:80/RTL_AIR_SC");
+		m.put("homepage", "http://www.104.6rtl.com");
+		m.put("webcam", "");
+		m.put("email", "http://www.104.6rtl.com/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_DANCEFOX_RADIO);
 		m.put("icon", R.drawable.radio_dancefox_radio);
 		m.put("icon_small", R.drawable.radio_dancefox_radio_small);
@@ -4674,6 +4701,19 @@ public class Stations {
 		m.put("homepage", "http://www.radio2.rai.it");
 		m.put("webcam", "");
 		m.put("email", "http://www.rai2.rai.it/dl/RaiDue/contatti.html");
+		m.put("sprache", SPRACHE_IT);
+		m.put("land", LAND_IT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_105_IT);
+		m.put("icon", R.drawable.radio_105);
+		m.put("icon_small", R.drawable.radio_105_small);
+		m.put("stream", "http://shoutcast.unitedradio.it:1101");
+		m.put("homepage", "http://www.105.it");
+		m.put("webcam", "");
+		m.put("email", "http://www.105.net/suggerimenti");
 		m.put("sprache", SPRACHE_IT);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
