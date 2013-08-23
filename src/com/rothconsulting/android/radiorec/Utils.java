@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.TreeMap;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
@@ -12,6 +13,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -21,6 +23,7 @@ import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.view.Display;
 
 public class Utils {
 
@@ -283,6 +286,30 @@ public class Utils {
 		b.setMessage(text);
 		b.setPositiveButton(android.R.string.ok, null);
 		b.show();
+	}
+
+	public int getScrOrientation(Activity activity) {
+		Display getOrient = activity.getWindowManager().getDefaultDisplay();
+
+		int orientation = getOrient.getOrientation();
+
+		// Sometimes you may get undefined orientation Value is 0
+		// simple logic solves the problem compare the screen
+		// X,Y Co-ordinates and determine the Orientation in such cases
+		if (orientation != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE && orientation != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
+
+			Configuration config = activity.getResources().getConfiguration();
+			orientation = config.orientation;
+
+			if (orientation != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE && orientation != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
+				if (getOrient.getWidth() <= getOrient.getHeight()) {
+					orientation = Configuration.ORIENTATION_PORTRAIT;
+				} else { // if it is not any of the above it will defineitly be landscape
+					orientation = Configuration.ORIENTATION_LANDSCAPE;
+				}
+			}
+		}
+		return orientation; // return value 1 is portrait and 2 is Landscape Mode
 	}
 
 }
