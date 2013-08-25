@@ -288,7 +288,7 @@ public class Utils {
 		b.show();
 	}
 
-	public int getScrOrientation(Activity activity) {
+	public static int getScrOrientation(Activity activity) {
 		Display getOrient = activity.getWindowManager().getDefaultDisplay();
 
 		int orientation = getOrient.getOrientation();

@@ -65,6 +65,9 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 	public static boolean recording;
 	private static boolean showCountdown;
 	private Context context;
+	private Activity activity;
+	int origOrientation;
+	boolean isOrientationSensorOn;
 
 	private Tracker mGaTracker;
 	private GoogleAnalytics mGaInstance;
@@ -110,6 +113,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		}
 
 		context = this;
+		activity = this;
 		// context.deleteDatabase(DBHelper.DATABASE_NAME);
 		gcCounter = 0;
 		super.onCreate(savedInstanceState);
@@ -119,6 +123,12 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		}
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		initGui();
+
+		if (getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_SENSOR) {
+			isOrientationSensorOn = true;
+		} else {
+			isOrientationSensorOn = false;
+		}
 
 		// Get the GoogleAnalytics singleton. Note that the SDK uses
 		// the application context to avoid leaking the current context.
@@ -223,6 +233,13 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 
 		spnAlphabetisch.setOnItemSelectedListener(this);
 		spnAllStations.setOnItemSelectedListener(this);
+
+		if (Constants.ROTATION_OFF_VALUE) {
+			// Prevent from Rotation
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		} else {
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+		}
 
 		Utils.log(TAG, "++++++++++++ initGui STOP ++++++++++++");
 	}
@@ -356,6 +373,10 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 				playing = false;
 			}
 			((ImageButton) v).setImageResource(playing ? R.drawable.button_stop : R.drawable.button_play);
+			origOrientation = Utils.getScrOrientation(activity);
+			if (!playing && isOrientationSensorOn) {
+				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+			}
 			changeStation();
 			break;
 		case R.id.rec:
@@ -724,12 +745,19 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		if (Constants.ROTATION_OFF_VALUE) {
 			// Prevent from Rotation
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+			return;
 		}
 		if (!playing) {
 			initGui();
 			setSeekBarProgress(countDownTimerTick);
 			mainScreen.refreshDrawableState();
 			showCountdown = false;
+		} else {
+			if (origOrientation == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE) {
+				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+			} else {
+				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+			}
 		}
 	}
 
@@ -892,8 +920,6 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 
 	/**
 	 * 
-	 * @param context
-	 * @param favIcon
 	 */
 	private void setFavIconStar() {
 		Utils.log(TAG, "setFavIconStar START");

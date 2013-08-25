@@ -96,6 +96,11 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putBoolean(Constants.ROTATION_OFF_KEY, Constants.ROTATION_OFF_VALUE);
 				editor.commit();
+				if (Constants.ROTATION_OFF_VALUE) {
+					setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+				} else {
+					setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+				}
 			}
 		});
 

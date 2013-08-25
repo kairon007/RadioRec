@@ -159,7 +159,7 @@ public class Stations {
 	public static final String RADIO_VOLKSMUSIKNET = "Volksmusiknet";
 	public static final String RADIO_IISCHERS_RADIO = "Iischers Radio";
 	public static final String RADIO_RADIUS = "Radius";
-	public static final String RADIO_SWISSSOUND = "Swisssound.ch";
+	// public static final String RADIO_SWISSSOUND = "Swisssound.ch";
 	public static final String RADIO_SWISS_MOUNTAIN_HOLIDAY = "Swiss Mountain Holiday";
 	public static final String RADIO_DANCE_NATION_1 = "Dance Nation 1";
 	public static final String RADIO_CRAZY_CLASSIC = "Crazy Classic";
@@ -324,6 +324,7 @@ public class Stations {
 	public static final String RADIO_RS2 = "rs2";
 	public static final String RADIO_RS2_80ER = "rs2 80er";
 	public static final String RADIO_RS2_90ER = "rs2 90er";
+	public static final String RADIO_SCHLAGER_RADIO = "Schlager Radio";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -431,6 +432,8 @@ public class Stations {
 	public static final String RADIO_HRT_HR_PRVI = "HRT Priv (HR) ";
 	public static final String RADIO_HRT_HR_DRUGI = "HRT Drugi (HR) ";
 	public static final String RADIO_HRT_HR_TRECI = "HRT Treci (HR) ";
+	public static final String RADIO_ABACUS_MOZART_SYMPHONY = "Abacus Mozart Symphony";
+	public static final String RADIO_ABACUS_MOZART_PIANO = "Abacus Mozart Piano";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -916,7 +919,7 @@ public class Stations {
 		m.put("name", RADIO_BEO);
 		m.put("icon", R.drawable.radio_beo);
 		m.put("icon_small", R.drawable.radio_beo_small);
-		m.put("stream", "http://87.237.169.123:8000/radiobeo.mp3");
+		m.put("stream", "http://stream11.radiobeo.ch:8000/radiobeo.mp3");
 		m.put("homepage", "http://www.radiobeo.ch");
 		m.put("webcam", "http://www.radiobeo.ch/webcam/current.jpg");
 		m.put("email", "sendestudio@radiobeo.ch");
@@ -1876,18 +1879,18 @@ public class Stations {
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_SWISSSOUND);
-		m.put("icon", R.drawable.radio_swisssound);
-		m.put("icon_small", R.drawable.radio_swisssound_small);
-		m.put("stream", "http://www.swisssound.ipactive.ch:88/broadwave.mp3");
-		m.put("homepage", "http://www.swisssound.ch");
-		m.put("webcam", "");
-		m.put("email", "radio@swisssound.ch");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_CH);
-		m.put("stil", STIL_POP);
-		setStationlist(stationList, m);
+		// m = new HashMap<String, Object>();
+		// m.put("name", RADIO_SWISSSOUND);
+		// m.put("icon", R.drawable.radio_swisssound);
+		// m.put("icon_small", R.drawable.radio_swisssound_small);
+		// m.put("stream", "http://www.swisssound.ipactive.ch:88/broadwave.mp3");
+		// m.put("homepage", "http://www.swisssound.ch");
+		// m.put("webcam", "");
+		// m.put("email", "radio@swisssound.ch");
+		// m.put("sprache", SPRACHE_DE);
+		// m.put("land", LAND_CH);
+		// m.put("stil", STIL_POP);
+		// setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_SWISS_MOUNTAIN_HOLIDAY);
@@ -3580,7 +3583,7 @@ public class Stations {
 		m.put("name", RADIO_KRAUTROCK_WORLD);
 		m.put("icon", R.drawable.radio_krautrock_world);
 		m.put("icon_small", R.drawable.radio_krautrock_world_small);
-		m.put("stream", "http://80.237.157.67:7592");
+		m.put("stream", "http://176.57.141.208:7592");
 		m.put("homepage", "http://www.krautrock-world.com");
 		m.put("webcam", "");
 		m.put("email", "http://www.krautrock-world.com/impressum.html");
@@ -3938,6 +3941,19 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SCHLAGER_RADIO);
+		m.put("icon", R.drawable.radio_schlager_radio);
+		m.put("icon_small", R.drawable.radio_schlager_radio_small);
+		m.put("stream", "http://stream.laut.fm/schlager-radio");
+		m.put("homepage", "http://www.schlager-radio.org");
+		m.put("webcam", "");
+		m.put("email", "info@schlager-radio.org");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_VOLKSTUEMLICH);
 		setStationlist(stationList, m);
 
 		// ******************************************************************************************************
@@ -4369,6 +4385,19 @@ public class Stations {
 		// ******************************************************************************************************
 
 		m = new HashMap<String, Object>();
+		m.put("name", RADIO_HOLIDAY);
+		m.put("icon", R.drawable.radio_holiday);
+		m.put("icon_small", R.drawable.radio_holiday_small);
+		m.put("stream", "http://server6.digital-webstream.de:18260");
+		m.put("homepage", "http://www.radioholiday.it");
+		m.put("webcam", "");
+		m.put("email", "http://www.radioholiday.it/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_IT);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put("name", RADIO_TIROL_IT);
 		m.put("icon", R.drawable.radio_tirol_it);
 		m.put("icon_small", R.drawable.radio_tirol_it_small);
@@ -4389,19 +4418,6 @@ public class Stations {
 		m.put("homepage", "http://www.suedtirol1.it");
 		m.put("webcam", "");
 		m.put("email", "http://www.facebook.com/suedtirol1");
-		m.put("sprache", SPRACHE_DE);
-		m.put("land", LAND_IT);
-		m.put("stil", STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put("name", RADIO_HOLIDAY);
-		m.put("icon", R.drawable.radio_holiday);
-		m.put("icon_small", R.drawable.radio_holiday_small);
-		m.put("stream", "http://server6.digital-webstream.de:18260");
-		m.put("homepage", "http://www.radioholiday.it");
-		m.put("webcam", "");
-		m.put("email", "http://www.radioholiday.it/kontakt.html");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_IT);
 		m.put("stil", STIL_POP);
@@ -4938,6 +4954,32 @@ public class Stations {
 		m.put("sprache", SPRACHE_FR);
 		m.put("land", LAND_DIV);
 		m.put("stil", STIL_JAZZ);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_ABACUS_MOZART_SYMPHONY);
+		m.put("icon", R.drawable.radio_abacus_mozart_symphony);
+		m.put("icon_small", R.drawable.radio_abacus_mozart_symphony_small);
+		m.put("stream", "http://listen.radionomy.com/abacusfm-mozart-symphony");
+		m.put("homepage", "http://www.abacus.fm");
+		m.put("webcam", "");
+		m.put("email", "http://video.abacus.fm/contact-us.html");
+		m.put("sprache", SPRACHE_EN);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_KLASSIK);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_ABACUS_MOZART_PIANO);
+		m.put("icon", R.drawable.radio_abacus_mozart_piano);
+		m.put("icon_small", R.drawable.radio_abacus_mozart_piano_small);
+		m.put("stream", "http://listen.radionomy.com/abacusfm-mozart-piano");
+		m.put("homepage", "http://www.abacus.fm");
+		m.put("webcam", "");
+		m.put("email", "http://video.abacus.fm/contact-us.html");
+		m.put("sprache", SPRACHE_EN);
+		m.put("land", LAND_DIV);
+		m.put("stil", STIL_KLASSIK);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
