@@ -230,6 +230,7 @@ public class Stations {
 	public static final String RADIO_FANTASY_DANCE = "Fantasy Dance FM";
 	// public static final String RADIO_OBERKRAIN = "Oberkrain";
 	public static final String RADIO_SCHWANY_OBERKRAIN = "Schwany Oberkrain";
+	public static final String RADIO_SCHWANY_VOLKSTUEMLICH = "Schwany Volkstümlich";
 	public static final String RADIO_NDR_1_WELLE_NORD = "NDR 1 Welle Nord";
 	public static final String RADIO_NDR_1_NIEDERSACHSEN = "NDR 1 Niedersachsen";
 	public static final String RADIO_NDR_2 = "NDR 2";
@@ -325,6 +326,7 @@ public class Stations {
 	public static final String RADIO_RS2_80ER = "rs2 80er";
 	public static final String RADIO_RS2_90ER = "rs2 90er";
 	public static final String RADIO_SCHLAGER_RADIO = "Schlager Radio";
+	public static final String RADIO_ARBERWALD_RADIO = "Arberwald Radio";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -2735,8 +2737,21 @@ public class Stations {
 		m.put("name", RADIO_SCHWANY_OBERKRAIN);
 		m.put("icon", R.drawable.radio_schwany_oberkrain);
 		m.put("icon_small", R.drawable.radio_schwany_oberkrain_small);
-		m.put("stream", "http://streamplus6.leonex.de:38226");
+		m.put("stream", "http://streamplus18.leonex.de:11456");
 		m.put("homepage", "http://www.schwany.de/oberkrain.html");
+		m.put("webcam", "");
+		m.put("email", "http://www.schwany.de/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_VOLKSTUEMLICH);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SCHWANY_VOLKSTUEMLICH);
+		m.put("icon", R.drawable.radio_schwany);
+		m.put("icon_small", R.drawable.radio_schwany_small);
+		m.put("stream", "http://streamplus6.leonex.de:38226");
+		m.put("homepage", "http://www.schwany.de/volksmusik.html");
 		m.put("webcam", "");
 		m.put("email", "http://www.schwany.de/kontakt.html");
 		m.put("sprache", SPRACHE_DE);
@@ -3951,6 +3966,19 @@ public class Stations {
 		m.put("homepage", "http://www.schlager-radio.org");
 		m.put("webcam", "");
 		m.put("email", "info@schlager-radio.org");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_VOLKSTUEMLICH);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_ARBERWALD_RADIO);
+		m.put("icon", R.drawable.radio_arberwald_radio);
+		m.put("icon_small", R.drawable.radio_arberwald_radio_small);
+		m.put("stream", "http://streamplus27.leonex.de:36058");
+		m.put("homepage", "http://www.arberwoidradio.com/");
+		m.put("webcam", "");
+		m.put("email", "http://www.arberwoidradio.com/kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_VOLKSTUEMLICH);
