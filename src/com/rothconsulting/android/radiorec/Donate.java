@@ -146,8 +146,7 @@ public class Donate extends Activity {
 		// the application context to avoid leaking the current context.
 		mGaInstance = GoogleAnalytics.getInstance(this);
 		// Use the GoogleAnalytics singleton to get a Tracker.
-		mGaTracker = mGaInstance.getTracker("UA-38114228-1");
-
+		mGaTracker = mGaInstance.getTracker(Constants.ANALYTICS_ID);
 	}
 
 	private void donateBitcoin() {

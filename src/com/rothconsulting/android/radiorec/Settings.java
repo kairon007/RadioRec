@@ -21,6 +21,8 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.GoogleAnalytics;
+import com.google.analytics.tracking.android.Tracker;
 
 public class Settings extends Activity implements RadioGroup.OnCheckedChangeListener {
 
@@ -29,6 +31,8 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 	RadioButton radioImmerAn;
 	RadioButton radioImmerAnWennStrom;
 	RadioButton radioAutomatischAus;
+	private Tracker mGaTracker;
+	private GoogleAnalytics mGaInstance;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,12 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 
 		// hide keyboard when opening page
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+		// Get the GoogleAnalytics singleton. Note that the SDK uses
+		// the application context to avoid leaking the current context.
+		mGaInstance = GoogleAnalytics.getInstance(this);
+		// Use the GoogleAnalytics singleton to get a Tracker.
+		mGaTracker = mGaInstance.getTracker(Constants.ANALYTICS_ID);
 
 		AdMob admob = new AdMob();
 		admob.showRemoveAds(this);
@@ -59,6 +69,9 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putString(Constants.SD_CARD_PATH_KEY, Constants.SD_CARD_PATH_VALUE);
 				editor.commit();
+				if (mGaTracker != null) {
+					mGaTracker.sendEvent("ui_action", "SD_CARD_PATH", "path=" + Constants.SD_CARD_PATH_VALUE, 0L);
+				}
 				Toast.makeText(Settings.this, getResources().getString(R.string.save) + " (" + edittextSdCardPath.getText() + ")", Toast.LENGTH_LONG).show();
 			}
 		});
@@ -81,6 +94,9 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
 				editor.commit();
+				if (mGaTracker != null) {
+					mGaTracker.sendEvent("ui_action", "CLOSE_APP_TIMER_END", "timer close app=" + Constants.CLOSE_APP_TIMER_END_VALUE, 0L);
+				}
 			}
 		});
 
@@ -100,6 +116,9 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 					setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 				} else {
 					setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+				}
+				if (mGaTracker != null) {
+					mGaTracker.sendEvent("ui_action", "ROTATION_OFF click", "rotation=" + Constants.ROTATION_OFF_VALUE, 0L);
 				}
 			}
 		});
@@ -133,6 +152,9 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 					editTextBufferSize.setTextColor(Color.WHITE);
 					editTextBufferSize.setBackgroundColor(Color.RED);
 					Toast.makeText(Settings.this, getResources().getString(R.string.errorZahlEingeben), Toast.LENGTH_LONG).show();
+				}
+				if (mGaTracker != null) {
+					mGaTracker.sendEvent("ui_action", "BUFFER_VALUE", "buffer size=" + Constants.BUFFER_VALUE, 0L);
 				}
 			}
 		});

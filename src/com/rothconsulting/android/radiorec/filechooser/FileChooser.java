@@ -23,6 +23,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.GoogleAnalytics;
+import com.google.analytics.tracking.android.Tracker;
 import com.rothconsulting.android.radiorec.Constants;
 import com.rothconsulting.android.radiorec.Donate;
 import com.rothconsulting.android.radiorec.R;
@@ -35,6 +38,9 @@ public class FileChooser extends ListActivity {
 	private File currentDir;
 	private FileArrayAdapter adapter;
 
+	private Tracker mGaTracker;
+	private GoogleAnalytics mGaInstance;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -42,6 +48,12 @@ public class FileChooser extends ListActivity {
 			// Prevent from Rotation
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
+
+		// Get the GoogleAnalytics singleton. Note that the SDK uses
+		// the application context to avoid leaking the current context.
+		mGaInstance = GoogleAnalytics.getInstance(this);
+		// Use the GoogleAnalytics singleton to get a Tracker.
+		mGaTracker = mGaInstance.getTracker(Constants.ANALYTICS_ID);
 
 		if (Constants.SD_CARD_PATH_VALUE == null) {
 			Utils.log(TAG, "SDCARD_PATH is null!");
@@ -118,6 +130,11 @@ public class FileChooser extends ListActivity {
 			dir.add(0, new Option(R.drawable.icon_folder_up, "..", getString(R.string.parentFolder), f.getParent()));
 		}
 
+		if (mGaTracker != null) {
+			mGaTracker.sendEvent("ui_action", "FileChooser", "currentDir: " + f.getName(), 0L);
+			mGaTracker.sendEvent("ui_action", "FileChooser", "No. files: " + fls.size(), 0L);
+		}
+
 		adapter = new FileArrayAdapter(FileChooser.this, R.layout.file_view, dir);
 		this.setListAdapter(adapter);
 	}
@@ -134,6 +151,18 @@ public class FileChooser extends ListActivity {
 			return true;
 		}
 		if (filename.endsWith(".AAC")) {
+			return true;
+		}
+		if (filename.endsWith(".3ga")) {
+			return true;
+		}
+		if (filename.endsWith(".3GA")) {
+			return true;
+		}
+		if (filename.endsWith(".m4a")) {
+			return true;
+		}
+		if (filename.endsWith(".M4A")) {
 			return true;
 		}
 		return false;
@@ -204,6 +233,9 @@ public class FileChooser extends ListActivity {
 		Intent intent = new Intent();
 		intent.setAction(android.content.Intent.ACTION_VIEW);
 		Utils.log(TAG, "path=" + o.getPath());
+		if (mGaTracker != null) {
+			mGaTracker.sendEvent("ui_action", "FileChooser", "Play file: " + o.getPath(), 0L);
+		}
 		File file = new File(o.getPath());
 		intent.setDataAndType(Uri.fromFile(file), "audio/*");
 		startActivity(intent);
@@ -234,6 +266,20 @@ public class FileChooser extends ListActivity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		// Google Analytics
+		EasyTracker.getInstance().activityStart(this);
+	}
+
+	@Override
+	public void onStop() {
+		super.onStop();
+		// Google Analytics
+		EasyTracker.getInstance().activityStop(this);
 	}
 
 }

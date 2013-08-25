@@ -381,7 +381,7 @@ public class Stations {
 	// ***********************************************
 	// DIVERSE
 	// ***********************************************
-	public static final String RADIO_HOLIDAY = "Holiday";
+	public static final String RADIO_HOLIDAY = "Radio Holiday";
 	public static final String RADIO_SOMA_FM_SOG = "Soma fm - Sound of Goa";
 	public static final String RADIO_SOMA_FM_POPTRON = "Soma fm - Poptron";
 	public static final String RADIO_SOMA_FM_SECRET_AGENT = "Soma fm - Secret Agent";
@@ -4999,7 +4999,7 @@ public class Stations {
 		m.put("name", RADIO_MRS_905);
 		m.put("icon", R.drawable.radio_mrs_905);
 		m.put("icon_small", R.drawable.radio_mrs_905_small);
-		m.put("stream", "http://radiostreamtwo.no-ip.org:19050");
+		m.put("stream", "http://radiostreamone.no-ip.org:19050");
 		m.put("homepage", "http://www.mrs.se");
 		m.put("webcam", "");
 		m.put("email", "mrs@broadcast.net");

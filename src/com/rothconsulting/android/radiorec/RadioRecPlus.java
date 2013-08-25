@@ -134,7 +134,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		// the application context to avoid leaking the current context.
 		mGaInstance = GoogleAnalytics.getInstance(this);
 		// Use the GoogleAnalytics singleton to get a Tracker.
-		mGaTracker = mGaInstance.getTracker("UA-38114228-1");
+		mGaTracker = mGaInstance.getTracker(Constants.ANALYTICS_ID);
 
 		// Detect incoming phone call and register PhoneStateListener
 		callStateListener = new CallStateListener();
