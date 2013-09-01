@@ -126,6 +126,7 @@ public class Stations {
 	public static final String RADIO_GLORIA = "Gloria";
 	public static final String RADIO_GELB_SCHWARZ = "Gelb-Schwarz YB";
 	public static final String RADIO_FCB_LIVE_RADIO = "FC Basel Live Radio";
+	public static final String RADIO_FC_SION_LIVE_RADIO = "FC Sion";
 	public static final String RADIO_FC_ZUERICH = "FC Zürich";
 	public static final String RADIO_BACKSTAGE_RADIO = "Backstage Radio";
 	// public static final String RADIO_RRO = "Radio Rottu Oberwallis";
@@ -1422,6 +1423,19 @@ public class Stations {
 		m.put("homepage", "http://www.fcbliveradio.ch");
 		m.put("webcam", "");
 		m.put("email", "https://www.facebook.com/pages/FCB-Live-Radio/294028969601");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_FC_SION_LIVE_RADIO);
+		m.put("icon", R.drawable.radio_fc_sion);
+		m.put("icon_small", R.drawable.radio_fc_sion_small);
+		m.put("stream", "http://fcsion.stream2net.eu:8220");
+		m.put("homepage", "http://www.fc-sion.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.fc-sion.ch/de/Kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_SPORT);
