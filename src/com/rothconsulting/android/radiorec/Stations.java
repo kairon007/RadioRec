@@ -159,6 +159,9 @@ public class Stations {
 	// public static final String RADIO_GUGGE_SOUND = "Guggesound";
 	public static final String RADIO_VOLKSMUSIKNET = "Volksmusiknet";
 	public static final String RADIO_IISCHERS_RADIO = "Iischers Radio";
+	public static final String RADIO_RRO_OBERWALLIS = "RRO Oberwallis";
+	public static final String RADIO_RRO_MUSIG_PUR = "RRO Müsig pur";
+	public static final String RADIO_RRO_FREAKUENCY = "RRO Freakuency";
 	public static final String RADIO_RADIUS = "Radius";
 	// public static final String RADIO_SWISSSOUND = "Swisssound.ch";
 	public static final String RADIO_SWISS_MOUNTAIN_HOLIDAY = "Swiss Mountain Holiday";
@@ -909,7 +912,7 @@ public class Stations {
 		m.put("name", RADIO_PILATUS);
 		m.put("icon", R.drawable.radio_pilatus);
 		m.put("icon_small", R.drawable.radio_pilatus_small);
-		m.put("stream", "http://media.radiopilatus.ch:80/pilatus128");
+		m.put("stream", "http://radiopilatus.ice.infomaniak.ch/pilatus128.mp3");
 		m.put("homepage", "http://www.radiopilatus.ch");
 		m.put("webcam", "");
 		m.put("email", "http://mobile.radiopilatus.ch/kontakt.php");
@@ -1851,6 +1854,45 @@ public class Stations {
 		m.put("homepage", "http://www.iischers.ch");
 		m.put("webcam", "");
 		m.put("email", "http://www.iischers.ch/feedback/");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RRO_OBERWALLIS);
+		m.put("icon", R.drawable.radio_rro);
+		m.put("icon_small", R.drawable.radio_rro_small);
+		m.put("stream", "http://rro-ober128.mp3.green.ch");
+		m.put("homepage", "http://www.rro.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.rro.ch/cms/?page=kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RRO_MUSIG_PUR);
+		m.put("icon", R.drawable.radio_rro_musig_pur);
+		m.put("icon_small", R.drawable.radio_rro_small);
+		m.put("stream", "http://rro-musi128.mp3.green.ch");
+		m.put("homepage", "http://www.rro.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.rro.ch/cms/?page=kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RRO_FREAKUENCY);
+		m.put("icon", R.drawable.radio_rro_freakuency);
+		m.put("icon_small", R.drawable.radio_rro_small);
+		m.put("stream", "http://rro-freak128.mp3.green.ch");
+		m.put("homepage", "http://www.rro.ch");
+		m.put("webcam", "");
+		m.put("email", "http://www.rro.ch/cms/?page=kontakt");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_POP);
