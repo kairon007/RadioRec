@@ -128,6 +128,7 @@ public class Stations {
 	public static final String RADIO_FCB_LIVE_RADIO = "FC Basel Live Radio";
 	public static final String RADIO_FC_SION_LIVE_RADIO = "FC Sion";
 	public static final String RADIO_FC_ZUERICH = "FC Zürich";
+	public static final String RADIO_EHC_AROSA = "EHC Arosa";
 	public static final String RADIO_BACKSTAGE_RADIO = "Backstage Radio";
 	// public static final String RADIO_RRO = "Radio Rottu Oberwallis";
 	public static final String RADIO_MONTE_CARLO = "Monte Carlo";
@@ -440,6 +441,7 @@ public class Stations {
 	public static final String RADIO_HRT_HR_TRECI = "HRT Treci (HR) ";
 	public static final String RADIO_ABACUS_MOZART_SYMPHONY = "Abacus Mozart Symphony";
 	public static final String RADIO_ABACUS_MOZART_PIANO = "Abacus Mozart Piano";
+	public static final String RADIO_FLAIX = "Flaix";
 
 	// private void fillLandStilList(HashMap<String, Object> m) {
 	// if (m.get("land").equals("ch")) {
@@ -1453,6 +1455,19 @@ public class Stations {
 		m.put("homepage", "http://www.fcz.ch/radio");
 		m.put("webcam", "");
 		m.put("email", "http://www.fcz.ch/tv/fcz_radio_kontakt.htm");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_EHC_AROSA);
+		m.put("icon", R.drawable.radio_ehc_arosa);
+		m.put("icon_small", R.drawable.radio_ehc_arosa_small);
+		m.put("stream", "http://streaming2-boreas.1000mikes.com/ehc_arosa_radiolive_on_air?encoding=mpeg");
+		m.put("homepage", "http://www.ehcarosaradio.ch");
+		m.put("webcam", "");
+		m.put("email", "radio@arosafans-fr.ch");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_SPORT);
@@ -5336,6 +5351,19 @@ public class Stations {
 		m.put("email", "http://www.hrt.hr/index.php?id=186&tx_ttnews[tt_news]=415&tx_ttnews[backPid]=186&cHash=6029a2d56d");
 		m.put("sprache", SPRACHE_HR);
 		m.put("land", LAND_DIV);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_FLAIX);
+		m.put("icon", R.drawable.radio_flaix);
+		m.put("icon_small", R.drawable.radio_flaix_small);
+		m.put("stream", "http://flaix.ondemand.flumotion.com/flaix/ondemand/publi/promoflaixfm128.mp3");
+		m.put("homepage", "http://www.flaixfm.cat");
+		m.put("webcam", "");
+		m.put("email", "webmaster@grupflaix.cat");
+		m.put("sprache", SPRACHE_ES);
+		m.put("land", LAND_ES);
 		m.put("stil", STIL_POP);
 		setStationlist(stationList, m);
 
