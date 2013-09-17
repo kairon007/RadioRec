@@ -129,6 +129,7 @@ public class Stations {
 	public static final String RADIO_FC_SION_LIVE_RADIO = "FC Sion";
 	public static final String RADIO_FC_ZUERICH = "FC Zürich";
 	public static final String RADIO_EHC_AROSA = "EHC Arosa";
+	public static final String RADIO_RWW_EHC_WINTERTHUR = "EHC Winterthur - RWW";
 	public static final String RADIO_BACKSTAGE_RADIO = "Backstage Radio";
 	// public static final String RADIO_RRO = "Radio Rottu Oberwallis";
 	public static final String RADIO_MONTE_CARLO = "Monte Carlo";
@@ -366,6 +367,10 @@ public class Stations {
 	public static final String RADIO_ENRGY_WIEN = "Energy Wien";
 	public static final String RADIO_LIFE_RADIO = "Life Radio";
 	public static final String RADIO_U1_TIROL = "U1 Tirol";
+	public static final String RADIO_FK_AUSTRIA_WIEN = "FK Austria Wien";
+	public static final String RADIO_SK_RAPID_WIEN = "SK Rapid Wien";
+	public static final String RADIO_FC_REDBULL_SALBURG = "FC Red Bull Salzburg";
+	public static final String RADIO_SK_PUNTIGAMER_STURM_FRAZ = "SK Puntigamer Sturm Graz";
 
 	// ***********************************************
 	// ITALIEN
@@ -1468,6 +1473,19 @@ public class Stations {
 		m.put("homepage", "http://www.ehcarosaradio.ch");
 		m.put("webcam", "");
 		m.put("email", "radio@arosafans-fr.ch");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_CH);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_RWW_EHC_WINTERTHUR);
+		m.put("icon", R.drawable.radio_rww_ehc_winterthur);
+		m.put("icon_small", R.drawable.radio_rww_ehc_winterthur_small);
+		m.put("stream", "http://streaming2-boreas.1000mikes.com/radio_rww__das_ehcwfanradio?encoding=mpeg");
+		m.put("homepage", "http://www.radio-rww.ch");
+		m.put("webcam", "");
+		m.put("email", "info@radiorww.ch");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_CH);
 		m.put("stil", STIL_SPORT);
@@ -4475,6 +4493,58 @@ public class Stations {
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_AT);
 		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_FK_AUSTRIA_WIEN);
+		m.put("icon", R.drawable.radio_fk_austria_wien);
+		m.put("icon_small", R.drawable.radio_fk_austria_wien_small);
+		m.put("stream", "http://live.datamatix.at:8016");
+		m.put("homepage", "http://www.fk-austria.at");
+		m.put("webcam", "");
+		m.put("email", "http://www.fk-austria.at/KONTAKT.68.0.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SK_RAPID_WIEN);
+		m.put("icon", R.drawable.radio_sk_rapid_wien);
+		m.put("icon_small", R.drawable.radio_sk_rapid_wien_small);
+		m.put("stream", "http://live.datamatix.at:8010");
+		m.put("homepage", "http://www.skrapid.at");
+		m.put("webcam", "");
+		m.put("email", "http://www.skrapid.at/17746.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_FC_REDBULL_SALBURG);
+		m.put("icon", R.drawable.radio_fc_red_bull_salzburg);
+		m.put("icon_small", R.drawable.radio_fc_red_bull_salzburg_small);
+		m.put("stream", "http://live.datamatix.at:8012");
+		m.put("homepage", "http://redbulls.com/soccer/salzburg/de/home.html");
+		m.put("webcam", "");
+		m.put("email", "http://redbulls.com/soccer/salzburg/de/kontakt.html");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_SK_PUNTIGAMER_STURM_FRAZ);
+		m.put("icon", R.drawable.radio_sk_puntigamer_sturm_graz);
+		m.put("icon_small", R.drawable.radio_sk_puntigamer_sturm_graz_small);
+		m.put("stream", "http://live.datamatix.at:8014");
+		m.put("homepage", "http://www.sksturm.at");
+		m.put("webcam", "");
+		m.put("email", "http://www.sksturm.at/kontakt");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_AT);
+		m.put("stil", STIL_SPORT);
 		setStationlist(stationList, m);
 
 		// ******************************************************************************************************
