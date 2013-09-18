@@ -3162,12 +3162,12 @@ public class Stations {
 
 		m = new HashMap<String, Object>();
 		m.put("name", RADIO_BASETRAX_CLUB);
-		m.put("icon", R.drawable.radio_basetrax_club);
-		m.put("icon_small", R.drawable.radio_basetrax_club_small);
-		m.put("stream", "http://81.169.157.246:8100");
-		m.put("homepage", "http://www.basetrax.fm/Club/");
+		m.put("icon", R.drawable.radio_basetrax_fm);
+		m.put("icon_small", R.drawable.radio_basetrax_fm_small);
+		m.put("stream", "http://87.118.114.180:8000");
+		m.put("homepage", "http://www.basetrax.fm");
 		m.put("webcam", "");
-		m.put("email", "http://www.basetrax.fm/Club/index.php?option=com_contact&view=contact&id=1&Itemid=83");
+		m.put("email", "http://www.basetrax.fm/index.php?site=contact");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_TRANCE);
