@@ -128,7 +128,7 @@ public class Stations {
 	public static final String RADIO_FCB_LIVE_RADIO = "FC Basel Live Radio";
 	public static final String RADIO_FC_SION_LIVE_RADIO = "FC Sion";
 	public static final String RADIO_FC_ZUERICH = "FC Zürich";
-	public static final String RADIO_EHC_AROSA = "EHC Arosa";
+	public static final String RADIO_EHC_AROSA = "EHC Arosa Fanradio";
 	public static final String RADIO_RWW_EHC_WINTERTHUR = "EHC Winterthur - RWW";
 	public static final String RADIO_BACKSTAGE_RADIO = "Backstage Radio";
 	// public static final String RADIO_RRO = "Radio Rottu Oberwallis";
