@@ -201,7 +201,8 @@ public class Stations {
 	public static final String RADIO_BIG_FM = "BigFM";
 	public static final String RADIO_SEEFUNK = "Seefunk";
 	public static final String RADIO_SINE_MUSIC = "Sine-Music";
-	public static final String RADIO_JUGGLERZ = "Jugglerz (KingstonHot)";
+	public static final String RADIO_JUGGLERZ = "Jugglerz (Donnerstag Show)";
+	public static final String RADIO_JUGGLERZ_DANCEHALL = "Jugglerz Dancehall";
 	public static final String RADIO_SUNSHINE_LIVE = "Sunshine-live";
 	public static final String RADIO_ALLGAEUHIT = "AllgäuHIT";
 	public static final String RADIO_TOP100STATION = "Top 100 Station";
@@ -2385,7 +2386,20 @@ public class Stations {
 		m.put("stream", "http://www.jugglerz.de/shows/");
 		m.put("homepage", "http://www.jugglerz.de");
 		m.put("webcam", "");
-		m.put("email", "http://34073.speechbox.de");
+		m.put("email", "http://41861.speechbox.de/login?password=jugglerz&setcookie=1");
+		m.put("sprache", SPRACHE_DE);
+		m.put("land", LAND_DE);
+		m.put("stil", STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put("name", RADIO_JUGGLERZ_DANCEHALL);
+		m.put("icon", R.drawable.radio_jugglerz);
+		m.put("icon_small", R.drawable.radio_jugglerz_small);
+		m.put("stream", "http://stream.jugglerz.de:8000");
+		m.put("homepage", "http://www.jugglerz.de");
+		m.put("webcam", "");
+		m.put("email", "http://41861.speechbox.de/login?password=jugglerz&setcookie=1");
 		m.put("sprache", SPRACHE_DE);
 		m.put("land", LAND_DE);
 		m.put("stil", STIL_POP);
