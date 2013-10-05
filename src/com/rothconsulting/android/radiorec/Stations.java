@@ -67,7 +67,7 @@ public class Stations {
 	public static final String RADIO_SWISS_CLASSIC = "Swiss Classic";
 	public static final String RADIO_SWISS_JAZZ = "Swiss Jazz";
 	public static final String RADIO_SWISS_POP = "Swiss Pop";
-	public static final String RADIO_WORLDRADIO_SWITZERLAND = "World Radio Switzerland";
+	// public static final String RADIO_WORLDRADIO_SWITZERLAND = "World Radio Switzerland";
 	public static final String RADIO_ENERGY_BERN = "Energy Bern";
 	public static final String RADIO_ENERGY_ZUERICH = "Energy Zürich";
 	public static final String RADIO_ENERGY_BASEL = "Energy Basel";
@@ -720,18 +720,18 @@ public class Stations {
 		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
 
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_WORLDRADIO_SWITZERLAND);
-		m.put(ICON, R.drawable.radio_world_radio_switzerland);
-		m.put(ICON_SMALL, R.drawable.radio_world_radio_switzerland_small);
-		m.put(STREAM, "http://streaming.swisstxt.ch/m/worldradio/mp3_128");
-		m.put(HOMEPAGE, "http://www.worldradio.ch");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://worldradio.ch/wrs/about/contact/");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_CH);
-		m.put(STIL, STIL_POP);
-		setStationlist(stationList, m);
+		// m = new HashMap<String, Object>();
+		// m.put(NAME, RADIO_WORLDRADIO_SWITZERLAND);
+		// m.put(ICON, R.drawable.radio_world_radio_switzerland);
+		// m.put(ICON_SMALL, R.drawable.radio_world_radio_switzerland_small);
+		// m.put(STREAM, "http://streaming.swisstxt.ch/m/worldradio/mp3_128");
+		// m.put(HOMEPAGE, "http://www.worldradio.ch");
+		// m.put(WEBCAM, "");
+		// m.put(EMAIL, "http://worldradio.ch/wrs/about/contact/");
+		// m.put(SPRACHE, SPRACHE_DE);
+		// m.put(LAND, LAND_CH);
+		// m.put(STIL, STIL_POP);
+		// setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_ENERGY_BERN);
@@ -1129,7 +1129,7 @@ public class Stations {
 		m.put(NAME, RADIO_LORA);
 		m.put(ICON, R.drawable.radio_lora);
 		m.put(ICON_SMALL, R.drawable.radio_lora_small);
-		m.put(STREAM, "http://livestream.lora.ch/lora-192.mp3");
+		m.put(STREAM, "http://lora.ice.infomaniak.ch/lora.mp3?type=.mp3");
 		m.put(HOMEPAGE, "http://www.lora.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://lora.ch/ueberuns/kontakt");
