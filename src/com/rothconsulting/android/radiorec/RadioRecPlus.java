@@ -221,12 +221,12 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		setFavIconStar();
 
 		alphabeticList = Utils.sortStationsByName(stationList);
-		SimpleAdapter alphabetischAdapter = new SimpleAdapter(this, alphabeticList, R.layout.station_listitem, new String[] { "icon_small", "name" },
-				new int[] { R.id.option_icon, R.id.option_text });
+		SimpleAdapter alphabetischAdapter = new SimpleAdapter(this, alphabeticList, R.layout.station_listitem, new String[] { Stations.ICON_SMALL,
+				Stations.NAME }, new int[] { R.id.option_icon, R.id.option_text });
 		spnAlphabetisch.setAdapter(alphabetischAdapter);
 
-		SimpleAdapter allStationAdapter = new SimpleAdapter(this, stationList, R.layout.station_listitem, new String[] { "icon_small", "name" }, new int[] {
-				R.id.option_icon, R.id.option_text });
+		SimpleAdapter allStationAdapter = new SimpleAdapter(this, stationList, R.layout.station_listitem, new String[] { Stations.ICON_SMALL, Stations.NAME },
+				new int[] { R.id.option_icon, R.id.option_text });
 		spnAllStations.setAdapter(allStationAdapter);
 
 		hideSearch();
@@ -521,18 +521,18 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		if (Constants.SPINNER_SELECTION == Constants.SPINNER_ALPHABETISCH && alphabeticList != null && alphabeticList.size() >= index) {
 			map = alphabeticList.get(index);
 			// .setSelection starts the method onItemSelected(...) and starts it all over
-			spnAllStations.setSelection(Utils.getSpinnerPosition(stationList, (String) map.get("name")));
+			spnAllStations.setSelection(Utils.getSpinnerPosition(stationList, (String) map.get(Stations.NAME)));
 			Constants.SPINNER_SELECTION = Constants.SPINNER_ALL_STATIONS;
 			return;
 		} else {
 			map = stationList.get(index);
 		}
 
-		spnAllStations.setSelection(Utils.getSpinnerPosition(stationList, (String) map.get("name")));
+		spnAllStations.setSelection(Utils.getSpinnerPosition(stationList, (String) map.get(Stations.NAME)));
 
 		Utils.log(TAG, "!!! Sender=" + Constants.SELECTED_STATION_NAME_VALUE);
-		Constants.SELECTED_STATION_ICON_VALUE = (Integer) map.get("icon");
-		Constants.SELECTED_STATION_ICON_SMALL_VALUE = (Integer) map.get("icon_small");
+		Constants.SELECTED_STATION_ICON_VALUE = (Integer) map.get(Stations.ICON);
+		Constants.SELECTED_STATION_ICON_SMALL_VALUE = (Integer) map.get(Stations.ICON_SMALL);
 
 		// avoiding OutOfMemory
 		if (gcCounter % 2 == 0) { // call gc only at even numbers
@@ -544,21 +544,21 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		options.inTempStorage = new byte[16 * 1024];
 
 		logo.setImageBitmap(Images.addReflection(BitmapFactory.decodeResource(getResources(), Constants.SELECTED_STATION_ICON_VALUE, options), 0));
-		Utils.log(TAG, "*********** Stream=" + map.get("stream"));
+		Utils.log(TAG, "*********** Stream=" + map.get(Stations.STREAM));
 
-		Constants.SELECTED_STATION_NAME_VALUE = "" + map.get("name");
+		Constants.SELECTED_STATION_NAME_VALUE = "" + map.get(Stations.NAME);
 
 		// Google analytics
 		if (playing && mGaTracker != null) {
 			mGaTracker.sendEvent("ui_action", "playing", "station: " + Constants.SELECTED_STATION_NAME_VALUE, Long.valueOf(index));
 		}
 
-		Constants.URL_LIVE_STREAM_VALUE = "" + map.get("stream");
+		Constants.URL_LIVE_STREAM_VALUE = "" + map.get(Stations.STREAM);
 
-		Constants.URL_HOMEPAGE_VALUE = "" + map.get("homepage");
-		Constants.URL_WEBCAM_VALUE = "" + map.get("webcam");
+		Constants.URL_HOMEPAGE_VALUE = "" + map.get(Stations.HOMEPAGE);
+		Constants.URL_WEBCAM_VALUE = "" + map.get(Stations.WEBCAM);
 		showHideCam();
-		Constants.URL_CONTACT_VALUE = "" + map.get("email");
+		Constants.URL_CONTACT_VALUE = "" + map.get(Stations.EMAIL);
 
 		setFavIconStar();
 

@@ -130,24 +130,6 @@ public class Utils {
 		return bitmapDrawable;
 	}
 
-	protected HashMap<String, Object> fillStationHashMap(String stationName, int icon, int iconSmall, String stream, String homepage, String webcam,
-			String contact, String sprache, String land, String stil) {
-
-		HashMap<String, Object> m = new HashMap<String, Object>();
-		m.put("name", stationName);
-		m.put("icon", icon);
-		m.put("icon_small", iconSmall);
-		m.put("stream", stream);
-		m.put("homepage", homepage);
-		m.put("webcam", webcam);
-		m.put("email", contact);
-		m.put("sprache", sprache);
-		m.put("land", land);
-		m.put("stil", stil);
-
-		return m;
-	}
-
 	public static String getExceptionInfosAsString(Exception e) {
 		// StringWriter sw = new StringWriter();
 		// e.printStackTrace(new PrintWriter(sw));
@@ -201,11 +183,11 @@ public class Utils {
 	}
 
 	public static List<String> getStationNameList(ArrayList<HashMap<String, Object>> stationList, String searchName) {
-		return getStationAttributList(stationList, searchName, "name");
+		return getStationAttributList(stationList, searchName, Stations.NAME);
 	}
 
 	public static List<String> getStationStreamList(ArrayList<HashMap<String, Object>> stationList, String searchName) {
-		return getStationAttributList(stationList, searchName, "stream");
+		return getStationAttributList(stationList, searchName, Stations.STREAM);
 	}
 
 	private static List<String> getStationAttributList(ArrayList<HashMap<String, Object>> stationList, String searchName, String stationAttribut) {
@@ -225,7 +207,7 @@ public class Utils {
 
 		TreeMap<String, HashMap<String, Object>> sortedMap = new TreeMap<String, HashMap<String, Object>>(new StringComperator());
 		for (HashMap<String, Object> station : stationList) {
-			sortedMap.put((String) station.get("name"), station);
+			sortedMap.put((String) station.get(Stations.NAME), station);
 		}
 		return new ArrayList<HashMap<String, Object>>(sortedMap.values());
 	}
@@ -233,7 +215,7 @@ public class Utils {
 	public static HashMap<String, Object> getFullStation(ArrayList<HashMap<String, Object>> stationList, String searchName) {
 
 		for (HashMap<String, Object> station : stationList) {
-			if (searchName == null || ((String) station.get("name")).toUpperCase().contains(searchName.toUpperCase())) {
+			if (searchName == null || ((String) station.get(Stations.NAME)).toUpperCase().contains(searchName.toUpperCase())) {
 
 				return station;
 			}
@@ -246,7 +228,7 @@ public class Utils {
 		int position = 0;
 		for (int i = 0; i < stationList.size(); i++) {
 			HashMap<String, Object> stationMap = stationList.get(i);
-			String stationName = (String) stationMap.get("name");
+			String stationName = (String) stationMap.get(Stations.NAME);
 			if (stationName.toUpperCase().contains(searchName.toUpperCase())) {
 				return i;
 			}

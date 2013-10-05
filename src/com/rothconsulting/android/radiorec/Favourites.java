@@ -141,7 +141,7 @@ public class Favourites extends ListActivity {
 		ArrayList<HashMap<String, Object>> stationList = DbUtils.getFavListFromDb(context);
 		Utils.log(TAG, "Stations=" + stationList.size());
 
-		SimpleAdapter adapter = new SimpleAdapter(context, stationList, R.layout.favourites_listitem, new String[] { "icon", "name" }, new int[] {
+		SimpleAdapter adapter = new SimpleAdapter(context, stationList, R.layout.favourites_listitem, new String[] { Stations.ICON, Stations.NAME }, new int[] {
 				R.id.favourite_icon, R.id.favourite_text });
 
 		((ListActivity) context).setListAdapter(adapter);
