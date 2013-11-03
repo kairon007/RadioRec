@@ -172,6 +172,7 @@ public class Stations {
 	public static final String RADIO_4_TNG = "Radio 4 TNG";
 	public static final String RADIO_CANAL_3_DE = "Canal 3 - Deutsch";
 	public static final String RADIO_CANAL_3_FR = "Canal 3 - Français";
+	public static final String RADIO_ND_WAVE = "N.D.Wave";
 
 	// ***********************************************
 	// LIECHTENSTEIN
@@ -2108,6 +2109,19 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_ND_WAVE);
+		m.put(ICON, R.drawable.radio_nd_wave);
+		m.put(ICON_SMALL, R.drawable.radio_nd_wave_small);
+		m.put(STREAM, "http://stream.ndwave.ch:8000/ndwave");
+		m.put(HOMEPAGE, "http://www.ndwave.ch");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "dj@ndwave.ch");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_CH);
+		m.put(STIL, STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_LIECHSTENSTEIN);
 		m.put(ICON, R.drawable.radio_li);
 		m.put(ICON_SMALL, R.drawable.radio_li_small);
@@ -3210,7 +3224,7 @@ public class Stations {
 		m.put(NAME, RADIO_ENERGY_SACHSEN);
 		m.put(ICON, R.drawable.radio_energy_sachsen);
 		m.put(ICON_SMALL, R.drawable.radio_energy_sachsen_small);
-		m.put(STREAM, "http://149.5.240.34/WR-DE-WR57");
+		m.put(STREAM, "http://149.5.240.33/WR-DE-WR57");
 		m.put(HOMEPAGE, "http://www.energy.de/sachsen");
 		m.put(WEBCAM, "http://www.energy-sachsen.de/www/extapp/webcam/images/studio.jpg");
 		m.put(EMAIL, "hotline@nrjmail.de");
@@ -3811,7 +3825,7 @@ public class Stations {
 		m.put(NAME, RADIO_1046_RTL);
 		m.put(ICON, R.drawable.radio_1046_rtl);
 		m.put(ICON_SMALL, R.drawable.radio_1046_rtl_small);
-		m.put(STREAM, "http://4633.live.streamtheworld.com:80/RTL_AIR_SC");
+		m.put(STREAM, "http://stream.104.6rtl.com/rtl-live/mp3-128/www.listenlive.eu:pls-rtl_air");
 		m.put(HOMEPAGE, "http://www.104.6rtl.com");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.104.6rtl.com/kontakt");
@@ -5305,7 +5319,7 @@ public class Stations {
 		m.put(NAME, RADIO_RAI_1);
 		m.put(ICON, R.drawable.radio_rai_1);
 		m.put(ICON_SMALL, R.drawable.radio_rai_1_small);
-		m.put(STREAM, "http://212.162.68.230:80/1.mp3");
+		m.put(STREAM, "http://212.162.68.232:80/1.mp3");
 		m.put(HOMEPAGE, "http://www.radio1.rai.it");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.rai1.rai.it/dl/RaiUno/contatti.html");
@@ -5318,7 +5332,7 @@ public class Stations {
 		m.put(NAME, RADIO_RAI_2);
 		m.put(ICON, R.drawable.radio_rai_2);
 		m.put(ICON_SMALL, R.drawable.radio_rai_2_small);
-		m.put(STREAM, "http://212.162.68.230:80/2.mp3");
+		m.put(STREAM, "http://212.162.68.232:80/2.mp3");
 		m.put(HOMEPAGE, "http://www.radio2.rai.it");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.rai2.rai.it/dl/RaiDue/contatti.html");
