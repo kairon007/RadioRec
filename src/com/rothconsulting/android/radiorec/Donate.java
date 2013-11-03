@@ -121,6 +121,7 @@ public class Donate extends Activity {
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_VALUE);
 				editor.commit();
+				editor.clear();
 				if ("".equals(Constants.ANTI_ADS_VALUE)) {
 					Toast.makeText(Donate.this, getResources().getString(R.string.keineEingabe), Toast.LENGTH_SHORT).show();
 				} else {
