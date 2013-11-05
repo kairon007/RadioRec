@@ -361,6 +361,8 @@ public class Stations {
 	public static final String RADIO_SR_1 = "SR 1 Europawelle";
 	public static final String RADIO_SR_2 = "SR 2 Kulturradio";
 	public static final String RADIO_SR_3 = "SR 3 Saarlandwelle";
+	public static final String RADIO_ONKELZ_ROCK_RADIO = "Onkelz Rock Radio";
+	public static final String RADIO_AUF_GUT_FREUNDE = "Auf gute Freunde";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -405,6 +407,11 @@ public class Stations {
 	public static final String RADIO_SUPER_GAUDI = "Super Gaudi";
 	public static final String RADIO_SUPER_GAUDI_HOT = "Super Gaudi Hot";
 	public static final String RADIO_SUPER_GAUDI_ALPENGLUEHN = "Super Gaudi Alpenglühn";
+	public static final String RADIO_WELLE_1 = "Welle 1";
+	public static final String RADIO_WELLE_1_POP = "Welle 1 - Pop";
+	public static final String RADIO_WELLE_1_ROCK = "Welle 1 - Rock";
+	public static final String RADIO_WELLE_1_CLUB = "Welle 1 - Club";
+	public static final String RADIO_WELLE_1_BLACK = "Welle 1 - Black";
 
 	// ***********************************************
 	// ITALIEN
@@ -4397,7 +4404,7 @@ public class Stations {
 		m.put(NAME, RADIO_RTL);
 		m.put(ICON, R.drawable.radio_rtl);
 		m.put(ICON_SMALL, R.drawable.radio_rtl_small);
-		m.put(STREAM, "http://81.92.237.118:8080");
+		m.put(STREAM, "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-rtlradio/livestream.mp3");
 		m.put(HOMEPAGE, "http://www.rtlradio.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.rtlradio.de/Kontakt.2-3-mailinsstudio.html");
@@ -4443,6 +4450,32 @@ public class Stations {
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_ONKELZ_ROCK_RADIO);
+		m.put(ICON, R.drawable.radio_onkelz_rock_radio);
+		m.put(ICON_SMALL, R.drawable.radio_onkelz_rock_radio_small);
+		m.put(STREAM, "http://webhost110.gtk.hu:9008");
+		m.put(HOMEPAGE, "http://www.onkelzradio.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.onkelzradio.de/kontakt.php");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_ROCK);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_AUF_GUT_FREUNDE);
+		m.put(ICON, R.drawable.radio_agf);
+		m.put(ICON_SMALL, R.drawable.radio_agf_small);
+		m.put(STREAM, "http://178.254.20.235:4020");
+		m.put(HOMEPAGE, "http://www.agf-radio.com");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.agf-radio.com/wunschbox");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_ROCK);
 		setStationlist(stationList, m);
 
 		// ******************************************************************************************************
@@ -4995,6 +5028,71 @@ public class Stations {
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_AT);
 		m.put(STIL, STIL_VOLKSTUEMLICH);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_WELLE_1);
+		m.put(ICON, R.drawable.radio_welle_1);
+		m.put(ICON_SMALL, R.drawable.radio_welle_1_small);
+		m.put(STREAM, "http://stream.welle1.com:8000/welle1.mp3");
+		m.put(HOMEPAGE, "http://www.welle1.at");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.welle1.com/sender/kontakt.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_AT);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_WELLE_1_POP);
+		m.put(ICON, R.drawable.radio_welle_1);
+		m.put(ICON_SMALL, R.drawable.radio_welle_1_small);
+		m.put(STREAM, "http://stream.welle1.com:8000/pop");
+		m.put(HOMEPAGE, "http://www.welle1.at");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.welle1.com/sender/kontakt.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_AT);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_WELLE_1_ROCK);
+		m.put(ICON, R.drawable.radio_welle_1);
+		m.put(ICON_SMALL, R.drawable.radio_welle_1_small);
+		m.put(STREAM, "http://stream.welle1.com:8000/rock");
+		m.put(HOMEPAGE, "http://www.welle1.at");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.welle1.com/sender/kontakt.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_AT);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_WELLE_1_CLUB);
+		m.put(ICON, R.drawable.radio_welle_1);
+		m.put(ICON_SMALL, R.drawable.radio_welle_1_small);
+		m.put(STREAM, "http://stream.welle1.com:8000/club");
+		m.put(HOMEPAGE, "http://www.welle1.at");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.welle1.com/sender/kontakt.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_AT);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_WELLE_1_BLACK);
+		m.put(ICON, R.drawable.radio_welle_1);
+		m.put(ICON_SMALL, R.drawable.radio_welle_1_small);
+		m.put(STREAM, "http://stream.welle1.com:8000/black");
+		m.put(HOMEPAGE, "http://www.welle1.at");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.welle1.com/sender/kontakt.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_AT);
+		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
 
 		// ******************************************************************************************************
