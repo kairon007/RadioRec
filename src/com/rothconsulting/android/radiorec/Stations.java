@@ -494,6 +494,7 @@ public class Stations {
 	public static final String RADIO_FLAIX = "Flaix";
 	public static final String RADIO_RECORD_DANCECORE = "Record Dancecore";
 	public static final String RADIO_RECORD_SUPERDISKOTEKA_90 = "Record Superdiskoteka 90's";
+	public static final String RADIO_PURE_FM_DEEP_HOUSE = "Pure.fm Deep House";
 
 	/**
 	 * A stations contains of a...<br>
@@ -1795,9 +1796,9 @@ public class Stations {
 		m.put(ICON_SMALL, R.drawable.radio_wave_small);
 		// m.put(STREAM, "http://212.83.60.57:2100");
 		m.put(STREAM, "http://212.83.60.57:31900");
-		m.put(HOMEPAGE, "http://www.radio-wave.ch");
-		m.put(WEBCAM, "http://www.radiowave.ch/studio.jpg");
-		m.put(EMAIL, "http://www.radio-wave.ch/cms/index.php?section=contact&cmd=8");
+		m.put(HOMEPAGE, "http://radiowave.ch");
+		m.put(WEBCAM, "http://radiowave.ch/studio.jpg");
+		m.put(EMAIL, "http://radiowave.ch/kontakt");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
 		m.put(STIL, STIL_POP);
@@ -6059,6 +6060,19 @@ public class Stations {
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.radiorecord.ru/other/contacts/");
 		m.put(SPRACHE, SPRACHE_RU);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_PURE_FM_DEEP_HOUSE);
+		m.put(ICON, R.drawable.radio_pure_fm_deep_house);
+		m.put(ICON_SMALL, R.drawable.radio_pure_fm_deep_house_small);
+		m.put(STREAM, "http://deephouse.pure.fm");
+		m.put(HOMEPAGE, "http://www.pure.fm");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.pure.fm/about.php");
+		m.put(SPRACHE, SPRACHE_EN);
 		m.put(LAND, LAND_DIV);
 		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
