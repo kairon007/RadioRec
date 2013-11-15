@@ -398,7 +398,8 @@ public class Stations {
 	public static final String RADIO_KRONEHIT_GREATEST_HITS = "KroneHit Greatest Hits";
 	public static final String RADIO_886 = "88.6";
 	public static final String RADIO_ENRGY_WIEN = "Energy Wien";
-	public static final String RADIO_LIFE_RADIO = "Life Radio";
+	public static final String RADIO_LIFE_RADIO_OBEROESTERREICH = "Life Radio OÖ";
+	public static final String RADIO_LIFE_RADIO_TIROL = "Life Radio Tirol";
 	public static final String RADIO_U1_TIROL = "U1 Tirol";
 	public static final String RADIO_FK_AUSTRIA_WIEN = "FK Austria Wien";
 	public static final String RADIO_SK_RAPID_WIEN = "SK Rapid Wien";
@@ -4902,13 +4903,26 @@ public class Stations {
 		// setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_LIFE_RADIO);
+		m.put(NAME, RADIO_LIFE_RADIO_OBEROESTERREICH);
 		m.put(ICON, R.drawable.radio_life_radio);
 		m.put(ICON_SMALL, R.drawable.radio_life_radio_small);
 		m.put(STREAM, "http://liferadio.liwest.at:8000/liferadio2");
-		m.put(HOMEPAGE, "http://www.liferadio.at/index.html");
+		m.put(HOMEPAGE, "http://www.liferadio.at");
 		m.put(WEBCAM, "http://www.liferadio.at/imports/webcam/image.jpg");
 		m.put(EMAIL, "http://www.liferadio.at/programm/mail-ins-studio/");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_AT);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_LIFE_RADIO_TIROL);
+		m.put(ICON, R.drawable.radio_life_radio);
+		m.put(ICON_SMALL, R.drawable.radio_life_radio_small);
+		m.put(STREAM, "http://194.232.200.164:8000");
+		m.put(HOMEPAGE, "http://www.liferadio-tirol.at");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.liferadio-tirol.at/artikel/10006/kontakt.aspx");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_AT);
 		m.put(STIL, STIL_POP);
