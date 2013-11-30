@@ -364,6 +364,7 @@ public class Stations {
 	public static final String RADIO_SR_3 = "SR 3 Saarlandwelle";
 	public static final String RADIO_ONKELZ_ROCK_RADIO = "Onkelz Rock Radio";
 	public static final String RADIO_AUF_GUT_FREUNDE = "Auf gute Freunde";
+	public static final String RADIO_KINDERRADIO = "Kinderradio Kinder Lieder";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -4489,6 +4490,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.agf-radio.com");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.agf-radio.com/wunschbox");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_ROCK);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_KINDERRADIO);
+		m.put(ICON, R.drawable.radio_kinderradio);
+		m.put(ICON_SMALL, R.drawable.radio_kinderradio_small);
+		m.put(STREAM, "http://stream.laut.fm/kinderradio");
+		m.put(HOMEPAGE, "http://laut.fm/kinderradio");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "https://twitter.com/laut_fm");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_ROCK);
