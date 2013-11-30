@@ -173,6 +173,7 @@ public class Stations {
 	public static final String RADIO_CANAL_3_DE = "Canal 3 - Deutsch";
 	public static final String RADIO_CANAL_3_FR = "Canal 3 - Français";
 	public static final String RADIO_ND_WAVE = "N.D.Wave";
+	public static final String RADIO_OPEN_BROADCAST = "Open Broadcast";
 
 	// ***********************************************
 	// LIECHTENSTEIN
@@ -2128,6 +2129,19 @@ public class Stations {
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
 		m.put(STIL, STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_OPEN_BROADCAST);
+		m.put(ICON, R.drawable.radio_open_broadcast);
+		m.put(ICON_SMALL, R.drawable.radio_open_broadcast_small);
+		m.put(STREAM, "http://stream.openbroadcast.ch/openbroadcast");
+		m.put(HOMEPAGE, "http://www.openbroadcast.ch");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://blog.openbroadcast.ch/en/aboutus/contact/");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_CH);
+		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
