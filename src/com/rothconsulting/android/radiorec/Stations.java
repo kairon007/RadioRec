@@ -1422,7 +1422,7 @@ public class Stations {
 		m.put(NAME, RADIO_GELB_SCHWARZ);
 		m.put(ICON, R.drawable.radio_gelb_schwarz_yb);
 		m.put(ICON_SMALL, R.drawable.radio_gelb_schwarz_yb_small);
-		m.put(STREAM, "http://radiogelb-schwarz.ice.infomaniak.ch:80/radiogelbschwarz.mp3");
+		m.put(STREAM, "http://radio-gelb-schwarz.ice.infomaniak.ch/radiogelbschwarz.aac");
 		m.put(HOMEPAGE, "http://www.radio-gelb-schwarz.ch");
 		m.put(WEBCAM, "http://data.bkw-fmb.ch/opd/camPics/Stade-de-suisse.jpg");
 		m.put(EMAIL, "rgs@im-stadion.ch");
