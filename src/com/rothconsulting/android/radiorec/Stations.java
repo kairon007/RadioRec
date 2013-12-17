@@ -196,7 +196,7 @@ public class Stations {
 	public static final String RADIO_BAYERN_4_KLASSIK = "Bayern 4 Klassik";
 	public static final String RADIO_BAYERN_5_AKTUELL = "Bayern 5 Aktuell";
 	public static final String RADIO_BAYERN_PLUS = "Bayern Plus";
-	public static final String RADIO_ON_3 = "On-3";
+	public static final String RADIO_BR_PULS = "BR Puls";
 	public static final String RADIO_SWR_1_BW = "SWR 1 Baden Württemberg";
 	public static final String RADIO_SWR_1_RP = "SWR 1 Rheinland Pfalz";
 	public static final String RADIO_SWR_2 = "SWR 2";
@@ -391,7 +391,7 @@ public class Stations {
 	public static final String RADIO_ANTENNE_VORARLBERG_80ER = "Antenne Vorarlberg 80er";
 	public static final String RADIO_ANTENNE_VORARLBERG_90ER = "Antenne Vorarlberg 90er";
 	public static final String RADIO_ANTENNE_VORARLBERG_LOVE = "Antenne Vorarlberg Love Songs";
-	public static final String RADIO_ARABELLA = "Arabella";
+	public static final String RADIO_ARABELLA_AT = "Arabella 92.9";
 	public static final String RADIO_ARABELLA_PARTY = "Arabella Party";
 	public static final String RADIO_KRONEHIT = "KroneHit";
 	public static final String RADIO_KRONEHIT_90_DANCE = "KroneHit 90s Dance";
@@ -2258,7 +2258,7 @@ public class Stations {
 		m.put(NAME, RADIO_BAYERN_1);
 		m.put(ICON, R.drawable.radio_bayern1);
 		m.put(ICON_SMALL, R.drawable.radio_bayern1_small);
-		m.put(STREAM, "http://gffstream.ic.llnwd.net/stream/gffstream_w10b");
+		m.put(STREAM, "http://br-mp3-bayern1obb-m.akacast.akamaistream.net/7/273/142690/v1/gnl.akacast.akamaistream.net/br_mp3_bayern1obb_m");
 		m.put(HOMEPAGE, "http://www.bayern1.de");
 		m.put(WEBCAM, "http://www.br-online.de/content/import/webcams/bayern1/cam2_pult.jpg");
 		m.put(EMAIL, "studio@bayern1.de");
@@ -2271,7 +2271,7 @@ public class Stations {
 		m.put(NAME, RADIO_BAYERN_2);
 		m.put(ICON, R.drawable.radio_bayern2);
 		m.put(ICON_SMALL, R.drawable.radio_bayern2_small);
-		m.put(STREAM, "http://gffstream.ic.llnwd.net/stream/gffstream_w11b");
+		m.put(STREAM, "http://br-mp3-bayern2sued-m.akacast.akamaistream.net/7/731/256282/v1/gnl.akacast.akamaistream.net/br_mp3_bayern2sued_m");
 		m.put(HOMEPAGE, "http://www.bayern2.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.br.de/radio/bayern2/sendungen/land-und-leute/kontakt/index.html");
@@ -2284,7 +2284,7 @@ public class Stations {
 		m.put(NAME, RADIO_BAYERN_3);
 		m.put(ICON, R.drawable.radio_bayern3);
 		m.put(ICON_SMALL, R.drawable.radio_bayern3_small);
-		m.put(STREAM, "http://gffstream.ic.llnwd.net/stream/gffstream_w12b");
+		m.put(STREAM, "http://br_mp3-bayern3_m.akacast.akamaistream.net/7/442/142692/v1/gnl.akacast.akamaistream.net/br_mp3_bayern3_m");
 		m.put(HOMEPAGE, "http://www.bayern2.de");
 		m.put(WEBCAM, "http://www.br-online.de/content/import/webcams/bayern3/cam7_gast.jpg");
 		m.put(EMAIL, "http://www.br.de/radio/bayern3/service/kontakt/index.html");
@@ -2297,7 +2297,7 @@ public class Stations {
 		m.put(NAME, RADIO_BAYERN_4_KLASSIK);
 		m.put(ICON, R.drawable.radio_bayern4);
 		m.put(ICON_SMALL, R.drawable.radio_bayern4_small);
-		m.put(STREAM, "http://gffstream.ic.llnwd.net/stream/gffstream_w13a");
+		m.put(STREAM, "http://br-mp3-br-klassik-m.akacast.akamaistream.net/7/120/142693/v1/gnl.akacast.akamaistream.net/br_mp3_br-klassik_m");
 		m.put(HOMEPAGE, "http://www.bayern4.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.br.de/radio/br-klassik/service/kontakt/br-klassik-kontakt-service100.html");
@@ -2310,7 +2310,7 @@ public class Stations {
 		m.put(NAME, RADIO_BAYERN_5_AKTUELL);
 		m.put(ICON, R.drawable.radio_bayern5_aktuell);
 		m.put(ICON_SMALL, R.drawable.radio_bayern5_aktuell_small);
-		m.put(STREAM, "http://gffstream.ic.llnwd.net/stream/gffstream_w14a");
+		m.put(STREAM, "http://br-mp3-b5aktuell-m.akacast.akamaistream.net/7/779/142694/v1/gnl.akacast.akamaistream.net/br_mp3_b5aktuell_m");
 		m.put(HOMEPAGE, "http://www.bayern5.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.br.de/radio/b5-aktuell/service/kontakt/index.html");
@@ -2323,7 +2323,7 @@ public class Stations {
 		m.put(NAME, RADIO_BAYERN_PLUS);
 		m.put(ICON, R.drawable.radio_bayern_plus);
 		m.put(ICON_SMALL, R.drawable.radio_bayern_plus_small);
-		m.put(STREAM, "http://gffstream.ic.llnwd.net/stream/gffstream_w16b");
+		m.put(STREAM, "http://br-mp3-bayernplus-m.akacast.akamaistream.net/7/624/142696/v1/gnl.akacast.akamaistream.net/br_mp3_bayernplus_m");
 		m.put(HOMEPAGE, "http://www.br.de/radio/bayern-plus/index.html");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.br.de/radio/bayern-plus/service/kontakt/index.html");
@@ -2333,13 +2333,13 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_ON_3);
-		m.put(ICON, R.drawable.radio_bayern_on3);
-		m.put(ICON_SMALL, R.drawable.radio_bayern_on3_small);
-		m.put(STREAM, "http://gffstream.ic.llnwd.net/stream/gffstream_w9a");
-		m.put(HOMEPAGE, "http://www.on3.de");
+		m.put(NAME, RADIO_BR_PULS);
+		m.put(ICON, R.drawable.radio_br_puls);
+		m.put(ICON_SMALL, R.drawable.radio_br_puls_small);
+		m.put(STREAM, "http://br-mp3-puls-m.akacast.akamaistream.net/7/501/142689/v1/gnl.akacast.akamaistream.net/br_mp3_puls_m");
+		m.put(HOMEPAGE, "http://www.br.de/puls");
 		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://on3.de/focus/29/kontakt");
+		m.put(EMAIL, "https://ssl.br.de/puls/ueber-uns/kontakt/mail-ins-studio-100.html?ssl=true");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
@@ -4800,7 +4800,7 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_ARABELLA);
+		m.put(NAME, RADIO_ARABELLA_AT);
 		m.put(ICON, R.drawable.radio_arabella);
 		m.put(ICON_SMALL, R.drawable.radio_arabella_small);
 		m.put(STREAM, "http://stream01.arabella-at.vss.kapper.net:8000");

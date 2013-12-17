@@ -80,7 +80,7 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_H1_RADIO_HITTNAU);
 		ignoreList.add(Stations.RADIO_IISCHERS_RADIO);
 		ignoreList.add(Stations.RADIO_VOLKSMUSIKNET);
-		ignoreList.add(Stations.RADIO_ARABELLA);
+		ignoreList.add(Stations.RADIO_ARABELLA_AT);
 		ignoreList.add(Stations.RADIO_TECHNOBASE_FM);
 		ignoreList.add(Stations.RADIO_HARDBASE_FM);
 		ignoreList.add(Stations.RADIO_HOUSETIME_FM);
