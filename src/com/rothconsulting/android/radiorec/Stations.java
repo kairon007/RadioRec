@@ -224,6 +224,7 @@ public class Stations {
 	public static final String RADIO_RT1_HITRADIO = "Rt1 Hitradio";
 	public static final String RADIO_RT1_SUEDSCHWABEN = "Rt1 Südschwaben";
 	public static final String RADIO_RT1_IN_THE_MIX = "Rt1 in the mix";
+	public static final String RADIO_HR_1 = "HR 1";
 	public static final String RADIO_HR_2 = "HR 2";
 	public static final String RADIO_HR_3 = "HR 3";
 	public static final String RADIO_YOU_FM = "You FM";
@@ -1941,7 +1942,7 @@ public class Stations {
 		m.put(NAME, RADIO_VOLKSMUSIKNET);
 		m.put(ICON, R.drawable.radio_volksmusiknet);
 		m.put(ICON_SMALL, R.drawable.radio_volksmusiknet_small);
-		m.put(STREAM, "http://50.7.234.130:8188");
+		m.put(STREAM, "http://volksmusiknetradio.ice.infomaniak.ch/volksmusiknetradio-128.mp3");
 		m.put(HOMEPAGE, "http://www.volksmusiknet.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.volksmusiknet.ch/kontakt");
@@ -2699,10 +2700,23 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_HR_1);
+		m.put(ICON, R.drawable.radio_hr1);
+		m.put(ICON_SMALL, R.drawable.radio_hr1_small);
+		m.put(STREAM, "http://hr-mp3-m-h1.akacast.akamaistream.net/7/783/142131/v1/gnl.akacast.akamaistream.net/hr-mp3-m-h1");
+		m.put(HOMEPAGE, "http://www.hr1.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.hr-online.de/website/radio/hr1/index.jsp?rubrik=3664");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_HR_2);
 		m.put(ICON, R.drawable.radio_hr2);
 		m.put(ICON_SMALL, R.drawable.radio_hr2_small);
-		m.put(STREAM, "http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w68a");
+		m.put(STREAM, "http://hr-mp3-m-h2.akacast.akamaistream.net/7/786/142132/v1/gnl.akacast.akamaistream.net/hr-mp3-m-h2");
 		m.put(HOMEPAGE, "http://www.hr2.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.hr-online.de/website/radio/hr2/index.jsp?rubrik=3688");
@@ -2715,7 +2729,7 @@ public class Stations {
 		m.put(NAME, RADIO_HR_3);
 		m.put(ICON, R.drawable.radio_hr3);
 		m.put(ICON_SMALL, R.drawable.radio_hr3_small);
-		m.put(STREAM, "http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w69b");
+		m.put(STREAM, "http://hr-mp3-m-h3.akacast.akamaistream.net/7/785/142133/v1/gnl.akacast.akamaistream.net/hr-mp3-m-h3");
 		m.put(HOMEPAGE, "http://www.hr3.de");
 		m.put(WEBCAM, "http://www.hrfoto.dunkel.de/webcams/hr3/studio2.jpg");
 		m.put(EMAIL, "http://www.hr-online.de/website/radio/hr3/index.jsp?rubrik=3532");
@@ -3287,7 +3301,7 @@ public class Stations {
 		m.put(NAME, RADIO_BASETRAX_CLUB);
 		m.put(ICON, R.drawable.radio_basetrax_fm);
 		m.put(ICON_SMALL, R.drawable.radio_basetrax_fm_small);
-		m.put(STREAM, "http://87.118.114.180:8000");
+		m.put(STREAM, "http://81.169.157.246:8000");
 		m.put(HOMEPAGE, "http://www.basetrax.fm");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.basetrax.fm/index.php?site=contact");
@@ -5035,45 +5049,6 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_SUPER_GAUDI);
-		m.put(ICON, R.drawable.radio_supergaudi);
-		m.put(ICON_SMALL, R.drawable.radio_supergaudi_small);
-		m.put(STREAM, "http://91.121.103.196:8000/Supergaudi.mp3");
-		m.put(HOMEPAGE, "http://www.supergaudi.at");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://www.supergaudi.at/sg01/kontakt");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_AT);
-		m.put(STIL, STIL_VOLKSTUEMLICH);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_SUPER_GAUDI_HOT);
-		m.put(ICON, R.drawable.radio_supergaudi);
-		m.put(ICON_SMALL, R.drawable.radio_supergaudi_small);
-		m.put(STREAM, "http://91.121.103.196:8000/sghot.mp3");
-		m.put(HOMEPAGE, "http://www.supergaudi.at");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://www.supergaudi.at/sg01/kontakt");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_AT);
-		m.put(STIL, STIL_VOLKSTUEMLICH);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_SUPER_GAUDI_ALPENGLUEHN);
-		m.put(ICON, R.drawable.radio_supergaudi);
-		m.put(ICON_SMALL, R.drawable.radio_supergaudi_small);
-		m.put(STREAM, "http://91.121.103.196:8000/sgalpen.mp3");
-		m.put(HOMEPAGE, "http://www.supergaudi.at");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://www.supergaudi.at/sg01/kontakt");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_AT);
-		m.put(STIL, STIL_VOLKSTUEMLICH);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_WELLE_1);
 		m.put(ICON, R.drawable.radio_welle_1);
 		m.put(ICON_SMALL, R.drawable.radio_welle_1_small);
@@ -5460,7 +5435,7 @@ public class Stations {
 		m.put(NAME, RADIO_RAI_1);
 		m.put(ICON, R.drawable.radio_rai_1);
 		m.put(ICON_SMALL, R.drawable.radio_rai_1_small);
-		m.put(STREAM, "http://212.162.68.232:80/1.mp3");
+		m.put(STREAM, "http://icestreaming.rai.it/1.mp3");
 		m.put(HOMEPAGE, "http://www.radio1.rai.it");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.rai1.rai.it/dl/RaiUno/contatti.html");
@@ -5473,7 +5448,7 @@ public class Stations {
 		m.put(NAME, RADIO_RAI_2);
 		m.put(ICON, R.drawable.radio_rai_2);
 		m.put(ICON_SMALL, R.drawable.radio_rai_2_small);
-		m.put(STREAM, "http://212.162.68.232:80/2.mp3");
+		m.put(STREAM, "http://icestreaming.rai.it/2.mp3");
 		m.put(HOMEPAGE, "http://www.radio2.rai.it");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.rai2.rai.it/dl/RaiDue/contatti.html");
@@ -5811,7 +5786,7 @@ public class Stations {
 		m.put(NAME, RADIO_MRS_905);
 		m.put(ICON, R.drawable.radio_mrs_905);
 		m.put(ICON_SMALL, R.drawable.radio_mrs_905_small);
-		m.put(STREAM, "http://radiostreamone.no-ip.org:19050");
+		m.put(STREAM, "http://radiostreamsix.mine.nu:19050");
 		m.put(HOMEPAGE, "http://www.mrs.se");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "mrs@broadcast.net");
