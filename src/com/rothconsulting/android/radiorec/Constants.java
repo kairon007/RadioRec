@@ -174,8 +174,9 @@ public class Constants {
 	public static final String FROM_NOTIFICATION = "fromNotification";
 	public static final int FROM_FAVOURITES = 99;
 
-	public static String ADMOB_PUBLISHER_ID = "a14dc9885936cd9";
-	public static String ANALYTICS_ID = "UA-38114228-1";
+	public static final String ADMOB_PUBLISHER_ID = "a14dc9885936cd9";
+	public static final String ANALYTICS_ID = "UA-38114228-1";
+	public static final String AMAZON_APPLICATION_KEY = "363b43a633564737b350fc0f5c8096f0";
 
 	public static int CURRENT_TAB = 0;
 
