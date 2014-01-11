@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.amazon.device.ads.AdLayout;
-import com.amazon.device.ads.AdRegistration;
 import com.google.ads.AdRequest;
 import com.google.ads.AdSize;
 import com.google.ads.AdView;
@@ -38,17 +36,17 @@ public class AdMob {
 		adView.loadAd(new AdRequest());
 	}
 
-	private void showAmazonAds(Activity context) {
-		AdRegistration.setAppKey(Constants.AMAZON_APPLICATION_KEY);
-		// Programmatically create the AmazonAdLayout
-		AdLayout adView = new AdLayout(context);
-		LinearLayout layout = (LinearLayout) context.findViewById(R.id.adsLayout);
-		// Set the correct width and height of the ad.
-		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-		layout.addView(adView, lp);
-		// If you declared AdLayout in your xml you would instead
-		// replace the 3 lines above with the following line
-		// this.adView = (AdLayout) findViewById( R.id.adview );
-
-	}
+	// private void showAmazonAds(Activity context) {
+	// AdRegistration.setAppKey(Constants.AMAZON_APPLICATION_KEY);
+	// // Programmatically create the AmazonAdLayout
+	// AdLayout adView = new AdLayout(context);
+	// LinearLayout layout = (LinearLayout) context.findViewById(R.id.adsLayout);
+	// // Set the correct width and height of the ad.
+	// LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+	// layout.addView(adView, lp);
+	// // If you declared AdLayout in your xml you would instead
+	// // replace the 3 lines above with the following line
+	// // this.adView = (AdLayout) findViewById( R.id.adview );
+	//
+	// }
 }

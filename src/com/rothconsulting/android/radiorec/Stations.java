@@ -499,6 +499,7 @@ public class Stations {
 	public static final String RADIO_RECORD_DANCECORE = "Record Dancecore";
 	public static final String RADIO_RECORD_SUPERDISKOTEKA_90 = "Record Superdiskoteka 90's";
 	public static final String RADIO_PURE_FM_DEEP_HOUSE = "Pure.fm Deep House";
+	public static final String RADIO_KONI_FM = "KONI 104.7 FM";
 
 	/**
 	 * A stations contains of a...<br>
@@ -1045,7 +1046,7 @@ public class Stations {
 		m.put(NAME, RADIO_105);
 		m.put(ICON, R.drawable.radio_105);
 		m.put(ICON_SMALL, R.drawable.radio_105_small);
-		m.put(STREAM, "http://bas-flu-stream-01.datacomm.ch:8000/105fm");
+		m.put(STREAM, "http://stream.105.ch:8000/105fm");
 		m.put(HOMEPAGE, "http://www.105.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.105.ch/channels/105-fm/?article=65");
@@ -1058,7 +1059,7 @@ public class Stations {
 		m.put(NAME, RADIO_105_CLASSICS);
 		m.put(ICON, R.drawable.radio_105_classics);
 		m.put(ICON_SMALL, R.drawable.radio_105_classics_small);
-		m.put(STREAM, "http://bas-flu-stream-01.datacomm.ch:8000/105classics");
+		m.put(STREAM, "http://stream.105.ch:8000/105classics");
 		m.put(HOMEPAGE, "http://www.105classics.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.105.ch/channels/radio-105-classic/?article=65");
@@ -6089,6 +6090,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.pure.fm");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.pure.fm/about.php");
+		m.put(SPRACHE, SPRACHE_EN);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_KONI_FM);
+		m.put(ICON, R.drawable.radio_koni_fm);
+		m.put(ICON_SMALL, R.drawable.radio_koni_fm_small);
+		m.put(STREAM, "http://ice6.securenetsystems.net:80/KONI");
+		m.put(HOMEPAGE, "http://koni1047.com");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://koni1047.com/contact-us/");
 		m.put(SPRACHE, SPRACHE_EN);
 		m.put(LAND, LAND_DIV);
 		m.put(STIL, STIL_POP);
