@@ -12,7 +12,7 @@
 	<string name="weiterHoeren">Continua ascolto</string>
 	<string name="onAir">In ricezione...</string>
 	<string name="info">Info</string>
-	<string name="info_copyright"> &#169; 2010-2013 by Koni</string>
+	<string name="info_copyright"> &#169; 2010-2014 by Koni</string>
 	<string name="info_design">Grazie a rakudave per il bel GUI !!</string>
     <string name="info_translation_it">Grazie a Manfred M. per la traduzione italiana!</string>
 	<string name="ende">Fine</string>
@@ -95,5 +95,6 @@
 	<string name="rotation">Rotation</string>
 	<string name="rotationOnOff">RadioRec+ sempre in modalità verticale</string>
 	<string name="incomingCall">Stop. Telefonata.</string>
-			
+	<string name="alreadyDonated">Avete già donato. Grazie!</string>
+				
 </resources>

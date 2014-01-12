@@ -43,18 +43,11 @@ public class Donate extends Activity {
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
 		setContentView(R.layout.donate);
-		Intent fromIntent = getIntent();
-		Utils.log(TAG, "fromIntent=" + fromIntent);
+
 		// if it comes from the notification and isDonator go to the main screen
-		if (fromIntent != null) {
-			Bundle extraBundle = fromIntent.getExtras();
-			if (extraBundle != null && extraBundle.getString(Constants.FROM_NOTIFICATION) != null
-					&& extraBundle.getString(Constants.FROM_NOTIFICATION).equals(Constants.FROM_NOTIFICATION) && Utils.hasValidKey()) {
-				Utils.log(TAG, "*** finish (fromNotification und validKey)");
-				finish();
-			} else {
-				Utils.log(TAG, "*** not fromNotification or not validKey) validKey=" + Utils.hasValidKey());
-			}
+		if (Utils.hasValidKey()) {
+			Toast.makeText(this, this.getString(R.string.alreadyDonated), Toast.LENGTH_LONG).show();
+			finish();
 		}
 
 		// hide keyboard

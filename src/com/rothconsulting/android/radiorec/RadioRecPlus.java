@@ -863,7 +863,9 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(0, -1, 0, this.getResources().getString(R.string.info)).setIcon(android.R.drawable.ic_menu_info_details);
 		menu.add(0, -2, 0, this.getResources().getString(R.string.musicBrowser)).setIcon(android.R.drawable.ic_menu_slideshow);
-		menu.add(0, -3, 0, this.getResources().getString(R.string.donate_adfree)).setIcon(android.R.drawable.ic_menu_agenda);
+		if (!Utils.hasValidKey()) {
+			menu.add(0, -3, 0, this.getResources().getString(R.string.donate_adfree)).setIcon(android.R.drawable.ic_menu_agenda);
+		}
 		menu.add(0, -4, 0, this.getResources().getString(R.string.settings)).setIcon(android.R.drawable.ic_menu_preferences);
 		menu.add(0, -5, 0, this.getResources().getString(R.string.ende)).setIcon(android.R.drawable.ic_menu_close_clear_cancel);
 		return super.onCreateOptionsMenu(menu);

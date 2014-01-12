@@ -133,6 +133,9 @@ public class Webcam extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.backmenu, menu);
+		if (Utils.hasValidKey()) {
+			menu.removeItem(R.id.donate_adfree);
+		}
 		return true;
 	}
 
