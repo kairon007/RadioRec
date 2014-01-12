@@ -253,6 +253,8 @@ public class Stations {
 	public static final String RADIO_NDR_KULTUR = "NDR Kultur";
 	public static final String RADIO_N_JOY = "N-Joy";
 	public static final String RADIO_GONG_NUERNBERG = "Gong Nürnberg";
+	public static final String RADIO_CHARIVARI_NUERNBERG = "Charivari 98.6 Nürnberg";
+	public static final String RADIO_HIT_RADIO_N1 = "Hit Radio N1";
 	public static final String RADIO_PALOMA = "Paloma";
 	public static final String RADIO_EINS_RBB = "Eins rbb";
 	public static final String RADIO_INFORADIO_RBB = "Info Radio rbb";
@@ -366,6 +368,7 @@ public class Stations {
 	public static final String RADIO_ONKELZ_ROCK_RADIO = "Onkelz Rock Radio";
 	public static final String RADIO_AUF_GUT_FREUNDE = "Auf gute Freunde";
 	public static final String RADIO_KINDERRADIO = "Kinderradio Kinder Lieder";
+	public static final String RADIO_ENERGY_NUERNBERG = "Energy Nürnberg";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3078,6 +3081,32 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_CHARIVARI_NUERNBERG);
+		m.put(ICON, R.drawable.radio_charivari_nuernberg);
+		m.put(ICON_SMALL, R.drawable.radio_charivari_nuernberg_small);
+		m.put(STREAM, "http://webradio.charivari986.de:8000");
+		m.put(HOMEPAGE, "http://www.charivari986.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.charivari986.de/charivari986.de/kontakt/index.php");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_HIT_RADIO_N1);
+		m.put(ICON, R.drawable.radio_hitradio_n1);
+		m.put(ICON_SMALL, R.drawable.radio_hitradio_n1_small);
+		m.put(STREAM, "http://webradio1.hitradion1.de:8000");
+		m.put(HOMEPAGE, "http://www.hitradion1.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.hitradion1.de/kontakt/index.php");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_PALOMA);
 		m.put(ICON, R.drawable.radio_paloma);
 		m.put(ICON_SMALL, R.drawable.radio_paloma_small);
@@ -3285,6 +3314,18 @@ public class Stations {
 		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
 
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_ENERGY_NUERNBERG);
+		m.put(ICON, R.drawable.radio_energy_nuernberg);
+		m.put(ICON_SMALL, R.drawable.radio_energy_nuernberg_small);
+		m.put(STREAM, "http://149.5.240.33:80/WR-DE-WR54");
+		m.put(HOMEPAGE, "http://www.energy.de/nuernberg");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.energy.de/nuernberg/team/kontakt/");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
 		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_FFN_NIEDERSACHSEN);
 		m.put(ICON, R.drawable.radio_ffn_niedersachsen);
