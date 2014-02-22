@@ -3199,7 +3199,8 @@ public class Stations {
 		m.put(NAME, RADIO_DEUTSCHLANDFUNK);
 		m.put(ICON, R.drawable.radio_deutschlandfunk);
 		m.put(ICON_SMALL, R.drawable.radio_deutschlandfunk_small);
-		m.put(STREAM, "http://dradio_mp3_dlf_m.akacast.akamaistream.net/7/249/142684/v1/gnl.akacast.akamaistream.net/dradio_mp3_dlf_m");
+		// m.put(STREAM, "http://dradio_mp3_dlf_m.akacast.akamaistream.net/7/249/142684/v1/gnl.akacast.akamaistream.net/dradio_mp3_dlf_m");
+		m.put(STREAM, "http://stream.dradio.de/7/249/142684/v1/gnl.akacast.akamaistream.net/dradio_mp3_dlf_m");
 		m.put(HOMEPAGE, "http://www.dradio.de/dlf");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.dradio.de/kontakt/");

@@ -916,6 +916,12 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 				// stop playing
 				stopPlay();
 				break;
+			case TelephonyManager.CALL_STATE_OFFHOOK:
+				// called when starting a phone call from this device
+				Toast.makeText(context, "Stoping RadioRec+", Toast.LENGTH_LONG).show();
+				// stop playing
+				stopPlay();
+				break;
 			}
 		}
 	}
