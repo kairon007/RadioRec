@@ -4,49 +4,42 @@ import android.app.Activity;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
-import com.google.ads.AdView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 
 public class AdMob {
 
 	private final static String TAG = "AdMob";
+	private AdView adView;
 
-	public void showRemoveAds(Activity context) {
-		if (Utils.hasValidKey()) {
+	public AdView showRemoveAds(Activity context) {
+		adView = new AdView(context);
+
+		if (Utils.hasValidKey() || !Utils.isNetworkAvailable(context, null, false)) {
 			LinearLayout adsLayout = (LinearLayout) context.findViewById(R.id.adsLayout);
 			adsLayout.removeAllViews();
 			adsLayout.setVisibility(View.GONE);
 		} else {
-			showGoogleAdMobAds(context);
-			// showAmazonAds(context);
+			return showGoogleAdMobAds(context, adView);
 		}
+		return adView;
 	}
 
-	private void showGoogleAdMobAds(Activity context) {
-		// Create the adView
-		AdView adView = new AdView(context, AdSize.BANNER, Constants.ADMOB_PUBLISHER_ID);
-		Utils.log(TAG, "adView=" + adView);
-		// Lookup your LinearLayout assuming it's been given
-		// the attribute android:id="@+id/mainLayout"
+	private AdView showGoogleAdMobAds(Activity context, AdView adView) {
+
+		adView.setAdUnitId("ca-app-pub-5619114666968507/6860732934");
+		adView.setAdSize(AdSize.BANNER);
+
 		LinearLayout layout = (LinearLayout) context.findViewById(R.id.adsLayout);
 		// Add the adView to it
 		layout.addView(adView);
-		// Initiate a generic request to load it with an ad
-		adView.loadAd(new AdRequest());
+		// Initiate a generic request.
+		AdRequest adRequest = new AdRequest.Builder().build();
+		// Load the adView with the ad request.
+		adView.loadAd(adRequest);
+
+		return adView;
 	}
 
-	// private void showAmazonAds(Activity context) {
-	// AdRegistration.setAppKey(Constants.AMAZON_APPLICATION_KEY);
-	// // Programmatically create the AmazonAdLayout
-	// AdLayout adView = new AdLayout(context);
-	// LinearLayout layout = (LinearLayout) context.findViewById(R.id.adsLayout);
-	// // Set the correct width and height of the ad.
-	// LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-	// layout.addView(adView, lp);
-	// // If you declared AdLayout in your xml you would instead
-	// // replace the 3 lines above with the following line
-	// // this.adView = (AdLayout) findViewById( R.id.adview );
-	//
-	// }
 }

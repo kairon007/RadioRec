@@ -526,7 +526,7 @@ public class Stations {
 		m.put(NAME, RADIO_32);
 		m.put(ICON, R.drawable.radio_32);
 		m.put(ICON_SMALL, R.drawable.radio_32_small);
-		m.put(STREAM, "http://stream.radio32.ch/radio32_noads");
+		m.put(STREAM, "http://stream.radio32.ch/radio32");
 		m.put(HOMEPAGE, "http://www.radio32.ch");
 		m.put(WEBCAM, "http://www.radio32.ch/mp3/Webcam/cam.jpg");
 		m.put(EMAIL, "http://www.radio32.ch/?rub=67");
