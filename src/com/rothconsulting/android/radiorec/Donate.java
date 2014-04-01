@@ -19,21 +19,20 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.google.analytics.tracking.android.EasyTracker;
-import com.google.analytics.tracking.android.GoogleAnalytics;
-import com.google.analytics.tracking.android.Tracker;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.rothconsulting.android.marketbilling.MarketSpende;
+import com.rothconsulting.android.radiorec.ApplicationRadioRec.TrackerName;
 
 public class Donate extends Activity {
 
 	private static final String TAG = "Donate";
 
-	private Tracker mGaTracker;
-	private GoogleAnalytics mGaInstance;
+	private Tracker tracker;
 
 	private static final String PAYPAL_URL = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RTHRLLC6NV4NN";
 	/** Bitcoin key. */
-	private static final String BITCOIN_KEY = "1ErTn1kvjprJ9pC6AZKDyDoYLLWtWjaKWR";
+	private static final String BITCOIN_KEY = "17tqaQXYzg2ANDCLM23X3zaFNH1TZLM35j";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +43,27 @@ public class Donate extends Activity {
 		}
 		setContentView(R.layout.donate);
 
+		// Get GoogleAnalytics tracker
+		tracker = ((ApplicationRadioRec) this.getApplication()).getTracker(TrackerName.APP_TRACKER);
+		// Set screen name.
+		// Where path is a String representing the screen name.
+		tracker.setScreenName("Donate screen");
+		// Send a screen view.
+		tracker.send(new HitBuilders.AppViewBuilder().build());
+
 		// if it comes from the notification and isDonator go to the main screen
 		if (Utils.hasValidKey()) {
 			Toast.makeText(this, this.getString(R.string.alreadyDonated), Toast.LENGTH_LONG).show();
+
+			// Build and send Analytics Event.
+			tracker.send(new HitBuilders.EventBuilder().setCategory("key_validation").setAction("hasValidKey").setLabel("yes isDonator, closing Donate screen")
+					.build());
+
 			finish();
 		}
+		// Build and send Analytics Event.
+		tracker.send(new HitBuilders.EventBuilder().setCategory("key_validation").setAction("hasValidKey").setLabel("no isNotDonator, showing Donate screen")
+				.build());
 
 		// hide keyboard
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -62,10 +77,9 @@ public class Donate extends Activity {
 			public void onClick(View v) {
 				Intent intentHomepage = new Intent(Intent.ACTION_VIEW);
 				intentHomepage.setData(Uri.parse(PAYPAL_URL));
-				// Google analytics
-				if (mGaTracker != null) {
-					mGaTracker.sendEvent("ui_action", "imageButtonPaypal", "URL = " + PAYPAL_URL, 0L);
-				}
+				// Build and send Analytics Event.
+				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("clicked imageButtonPaypal").setLabel("URL = " + PAYPAL_URL)
+						.build());
 
 				startActivity(intentHomepage);
 			}
@@ -75,10 +89,9 @@ public class Donate extends Activity {
 		buttonBitcoin.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// Google analytics
-				if (mGaTracker != null) {
-					mGaTracker.sendEvent("ui_action", "imageButtonBitcoin", "Start donateBitcoin", 0L);
-				}
+				// Build and send Analytics Event.
+				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("clicked imageButtonBitcoin").setLabel("Start donateBitcoin")
+						.build());
 				donateBitcoin();
 			}
 		});
@@ -88,10 +101,9 @@ public class Donate extends Activity {
 		buttonAndroidMarket.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// Google analytics
-				if (mGaTracker != null) {
-					mGaTracker.sendEvent("ui_action", "imageButtonAndroidMarket", "Start intentSpende", 0L);
-				}
+				// Build and send Analytics Event.
+				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("clicked imageButtonAndroidMarket")
+						.setLabel("Start intentSpende").build());
 				startActivity(intentSpende);
 			}
 		});
@@ -121,10 +133,10 @@ public class Donate extends Activity {
 					Toast.makeText(Donate.this, getResources().getString(R.string.danke) + " (" + edittext.getText() + ")", Toast.LENGTH_LONG).show();
 				}
 
-				// Google analytics
-				if (mGaTracker != null) {
-					mGaTracker.sendEvent("ui_action", "buttonSaveAntiAdsKey", "Key: " + Constants.ANTI_ADS_VALUE, 0L);
-				}
+				// Build and send Analytics Event.
+				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("clicked buttonSaveAntiAdsKey")
+						.setLabel("Key: " + Constants.ANTI_ADS_VALUE).build());
+
 			}
 		});
 
@@ -136,11 +148,6 @@ public class Donate extends Activity {
 			}
 		});
 
-		// Get the GoogleAnalytics singleton. Note that the SDK uses
-		// the application context to avoid leaking the current context.
-		mGaInstance = GoogleAnalytics.getInstance(this);
-		// Use the GoogleAnalytics singleton to get a Tracker.
-		mGaTracker = mGaInstance.getTracker(Constants.ANALYTICS_ID);
 	}
 
 	private void donateBitcoin() {
@@ -198,20 +205,6 @@ public class Donate extends Activity {
 			break;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
-	public void onStart() {
-		super.onStart();
-		// Google Analytics
-		EasyTracker.getInstance().activityStart(this);
-	}
-
-	@Override
-	public void onStop() {
-		super.onStop();
-		// Google Analytics
-		EasyTracker.getInstance().activityStop(this);
 	}
 
 }

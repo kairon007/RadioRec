@@ -12,9 +12,13 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.analytics.tracking.android.EasyTracker;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.rothconsulting.android.radiorec.ApplicationRadioRec.TrackerName;
 
 public class Info extends Activity {
+
+	private Tracker tracker;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,14 @@ public class Info extends Activity {
 			// Prevent from Rotation
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
+
+		// Get GoogleAnalytics tracker
+		tracker = ((ApplicationRadioRec) this.getApplication()).getTracker(TrackerName.APP_TRACKER);
+		// Set screen name.
+		// Where path is a String representing the screen name.
+		tracker.setScreenName("Info screen");
+		// Send a screen view.
+		tracker.send(new HitBuilders.AppViewBuilder().build());
 
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.info);
@@ -90,20 +102,6 @@ public class Info extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
-	public void onStart() {
-		super.onStart();
-		// Google Analytics
-		EasyTracker.getInstance().activityStart(this);
-	}
-
-	@Override
-	public void onStop() {
-		super.onStop();
-		// Google Analytics
-		EasyTracker.getInstance().activityStop(this);
 	}
 
 }

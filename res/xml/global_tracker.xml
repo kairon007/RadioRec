@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<integer name="ga_sessionTimeout">300</integer>
+	<bool name="ga_autoActivityTracking">true</bool>
+
+	<screenName name="com.rothconsulting.android.radiorec.RadioRecPlus">
+		Main Screen
+	</screenName>
+	<screenName name="com.rothconsulting.android.radiorec.Donate">
+		Donate Screen
+	</screenName>
+	<screenName name="com.rothconsulting.android.radiorec.Settings">
+		Settings Screen
+	</screenName>
+	<screenName name="com.rothconsulting.android.radiorec.Webcam">
+		Webcam Screen
+	</screenName>
+	<screenName name="com.rothconsulting.android.radiorec.Info">
+		Info Screen
+	</screenName>
+	<screenName name="com.rothconsulting.android.radiorec.filechooser.FileChooser">
+		FileChooser Screen
+	</screenName>
+
+	<!-- The following value should be replaced with correct property id. -->
+	<string name="ga_trackingId">UA-38114228-1</string>
+</resources>

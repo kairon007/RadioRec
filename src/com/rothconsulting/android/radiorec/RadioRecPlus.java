@@ -50,9 +50,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.analytics.tracking.android.EasyTracker;
-import com.google.analytics.tracking.android.GoogleAnalytics;
-import com.google.analytics.tracking.android.Tracker;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.rothconsulting.android.radiorec.ApplicationRadioRec.TrackerName;
 import com.rothconsulting.android.radiorec.filechooser.FileChooser;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
 import com.rothconsulting.android.radiorec.sqlitedb.DbUtils;
@@ -66,11 +66,11 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 	private static boolean showCountdown;
 	private Context context;
 	private Activity activity;
-	int origOrientation;
-	boolean isOrientationSensorOn;
+	private int origOrientation;
+	private boolean isOrientationSensorOn;
 
-	private Tracker mGaTracker;
-	private GoogleAnalytics mGaInstance;
+	private Tracker tracker;
+
 	private boolean firstStart;
 	private Spinner spnAlphabetisch;
 	private Spinner spnAllStations;
@@ -130,11 +130,13 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			isOrientationSensorOn = false;
 		}
 
-		// Get the GoogleAnalytics singleton. Note that the SDK uses
-		// the application context to avoid leaking the current context.
-		mGaInstance = GoogleAnalytics.getInstance(this);
-		// Use the GoogleAnalytics singleton to get a Tracker.
-		mGaTracker = mGaInstance.getTracker(Constants.ANALYTICS_ID);
+		// Get GoogleAnalytics tracker
+		tracker = ((ApplicationRadioRec) this.getApplication()).getTracker(TrackerName.APP_TRACKER);
+		// Set screen name.
+		// Where path is a String representing the screen name.
+		tracker.setScreenName("Main screen");
+		// Send a screen view.
+		tracker.send(new HitBuilders.AppViewBuilder().build());
 
 		// Detect incoming phone call and register PhoneStateListener
 		callStateListener = new CallStateListener();
@@ -305,10 +307,10 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		case R.id.homepage:
 			Log.i(TAG, "homepage");
 			if (Constants.URL_HOMEPAGE_VALUE != null && !Constants.URL_HOMEPAGE_VALUE.trim().equals("")) {
-				// Google analytics
-				if (mGaTracker != null) {
-					mGaTracker.sendEvent("ui_action", "click_homepage", "url: " + Constants.URL_HOMEPAGE_VALUE, 0L);
-				}
+				// Build and send Analytics Event.
+				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_homepage")
+						.setLabel("url: " + Constants.URL_HOMEPAGE_VALUE).build());
+
 				Uri uri = Uri.parse(Constants.URL_HOMEPAGE_VALUE);
 				Intent intentHomepage = new Intent(Intent.ACTION_VIEW, uri);
 				startActivity(intentHomepage);
@@ -316,19 +318,19 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			break;
 		case R.id.webcam:
 			Log.i(TAG, "webcam");
-			// Google analytics
-			if (mGaTracker != null) {
-				mGaTracker.sendEvent("ui_action", "click_webcam", "url: " + Constants.URL_WEBCAM_VALUE, 0L);
-			}
+			// Build and send Analytics Event.
+			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_webcam").setLabel("url: " + Constants.URL_WEBCAM_VALUE)
+					.build());
+
 			Intent intentCam = new Intent(this, Webcam.class);
 			startActivity(intentCam);
 			break;
 		case R.id.mail:
 			Log.i(TAG, "mail");
-			// Google analytics
-			if (mGaTracker != null) {
-				mGaTracker.sendEvent("ui_action", "click_mail", "contact: " + Constants.URL_CONTACT_VALUE, 0L);
-			}
+			// Build and send Analytics Event.
+			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_mail").setLabel("contact: " + Constants.URL_CONTACT_VALUE)
+					.build());
+
 			if (Constants.URL_CONTACT_VALUE.startsWith("http")) {
 				Intent emailIntent = new Intent(Intent.ACTION_VIEW);
 				emailIntent.setData(Uri.parse(Constants.URL_CONTACT_VALUE));
@@ -344,19 +346,18 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			break;
 		case R.id.search:
 			Log.i(TAG, "search");
-			// Google analytics
-			if (mGaTracker != null) {
-				mGaTracker.sendEvent("ui_action", "click_search", "current_station: " + Constants.SELECTED_STATION_NAME_VALUE, 0L);
-			}
+			// Build and send Analytics Event.
+			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_search")
+					.setLabel("selected_station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
+
 			prepareSearch();
 			break;
 
 		case R.id.favoriten:
 			Log.i(TAG, "favorit");
-			// Google analytics
-			if (mGaTracker != null) {
-				mGaTracker.sendEvent("ui_action", "click_favoriten", "station: " + Constants.SELECTED_STATION_NAME_VALUE, 0L);
-			}
+			// Build and send Analytics Event.
+			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_favoriten")
+					.setLabel("station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
 			DbUtils.storeRemoveFav(this, favIcon);
 			break;
 		case R.id.back:
@@ -390,14 +391,16 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			}
 
 			// Google analytics
-			if (recording && mGaTracker != null) {
-				mGaTracker.sendEvent("ui_action", "start_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE,
-						Long.valueOf(Constants.SELECTED_STATION_INDEX_VALUE));
+			if (recording) {
+				// Build and send Analytics Event.
+				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("start_recording")
+						.setLabel("station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
 			}
 			// Google analytics
-			if (!recording && mGaTracker != null) {
-				mGaTracker.sendEvent("ui_action", "stop_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE,
-						Long.valueOf(Constants.SELECTED_STATION_INDEX_VALUE));
+			if (!recording) {
+				// Build and send Analytics Event.
+				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("stop_recording")
+						.setLabel("station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
 			}
 
 			((ImageButton) v).setImageResource(recording ? R.drawable.button_record_on : R.drawable.button_record);
@@ -412,27 +415,23 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			break;
 		case R.id.imageButtonUhr:
 			showCountdown = !showCountdown;
-			// Google analytics
-			if (mGaTracker != null) {
-				mGaTracker.sendEvent("ui_action", "click_imageButtonUhr", "station: " + Constants.SELECTED_STATION_NAME_VALUE, 0L);
-			}
-
+			// Build and send Analytics Event.
+			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_imageButtonUhr")
+					.setLabel("station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
 			this.showTimerbox(showCountdown);
 			break;
 		case R.id.buttonFav:
-			// Google analytics
-			if (mGaTracker != null) {
-				mGaTracker.sendEvent("ui_action", "click_buttonFav", "station: " + Constants.SELECTED_STATION_NAME_VALUE, 0L);
-			}
+			// Build and send Analytics Event.
+			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_buttonFav")
+					.setLabel("station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
 			this.startActivityForResult(new Intent(this, Favourites.class), Constants.FROM_FAVOURITES);
 			break;
 		case R.id.buttonAlphabetisch:
 			Constants.SPINNER_SELECTION = Constants.SPINNER_ALPHABETISCH;
 
-			// Google analytics
-			if (mGaTracker != null) {
-				mGaTracker.sendEvent("ui_action", "click_buttonAlphabetisch", "current_station: " + Constants.SELECTED_STATION_NAME_VALUE, 0L);
-			}
+			// Build and send Analytics Event.
+			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_buttonAlphabetisch")
+					.setLabel("current_station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
 
 			Utils.log(TAG, "Button Alphabetisch pressed. Firts=" + spnAlphabetisch.getFirstVisiblePosition());
 
@@ -548,10 +547,9 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 
 		Constants.SELECTED_STATION_NAME_VALUE = "" + map.get(Stations.NAME);
 
-		// Google analytics
-		if (playing && mGaTracker != null) {
-			mGaTracker.sendEvent("ui_action", "playing", "station: " + Constants.SELECTED_STATION_NAME_VALUE, Long.valueOf(index));
-		}
+		// Build and send Analytics Event.
+		tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("playing").setLabel("station: " + Constants.SELECTED_STATION_NAME_VALUE)
+				.build());
 
 		Constants.URL_LIVE_STREAM_VALUE = "" + map.get(Stations.STREAM);
 
@@ -813,10 +811,9 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 				autocomplete.setVisibility(View.GONE);
 				spinner.setVisibility(View.VISIBLE);
 
-				// Google analytics
-				if (mGaTracker != null) {
-					mGaTracker.sendEvent("ui_action", "click_searched_station", "station: " + ((TextView) textView).getText(), 0L);
-				}
+				// Build and send Analytics Event.
+				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_searched_station")
+						.setLabel("station: " + ((TextView) textView).getText()).build());
 
 				spnAllStations.setSelection(Utils.getSpinnerPosition(stationList, "" + ((TextView) textView).getText()));
 			}
@@ -947,20 +944,6 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		cursor.close();
 		dbadapter.close();
 		Utils.log(TAG, "setFavIconStar STOP");
-	}
-
-	@Override
-	public void onStart() {
-		super.onStart();
-		// Google Analytics
-		EasyTracker.getInstance().activityStart(this);
-	}
-
-	@Override
-	public void onStop() {
-		super.onStop();
-		// Google Analytics
-		EasyTracker.getInstance().activityStop(this);
 	}
 
 }
