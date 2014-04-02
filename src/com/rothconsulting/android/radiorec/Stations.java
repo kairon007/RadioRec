@@ -349,6 +349,7 @@ public class Stations {
 	public static final String RADIO_SCHLAGER_RADIO = "Schlager Radio";
 	public static final String RADIO_ARBERWALD_RADIO = "Arberwald Radio";
 	public static final String RADIO_ABSOLUT_RADIO = "Absolut Radio";
+	public static final String RADIO_ABSOLUT_RELAX = "Absolut Relax";
 	public static final String RADIO_PARADISO = "Paradiso";
 	public static final String RADIO_BROCKEN = "Brocken";
 	public static final String RADIO_ANTENNE_HANNOVER = "Antenne Hannover";
@@ -370,11 +371,10 @@ public class Stations {
 	public static final String RADIO_KINDERRADIO = "Kinderradio Kinder Lieder";
 	public static final String RADIO_ENERGY_NUERNBERG = "Energy Nürnberg";
 	public static final String RADIO_FUNCLUB_80 = "Funclub 80";
-
 	public static final String RADIO_1000_OLDIES = "1000 oldies";
-	public static final String RADIO_HIT_FM = "Hit FM";
+	public static final String RADIO_HIT_FM = "Hit-FM";
 	public static final String RADIO_HITRADIO_D3 = "Hitradio-D3";
-	public static final String RADIO_90_ER = "90er";
+	public static final String RADIO_90_ER = ".90er";
 	public static final String RADIO_BEST_OF_90_S = "Best of 90s";
 	public static final String RADIO_ANTENNENICO = "Antennenico";
 	public static final String RADIO_ALL_MUSIC = "All-Music";
@@ -384,7 +384,6 @@ public class Stations {
 	public static final String RADIO_SUPEROLDIE = "Superoldie";
 	public static final String RADIO_SUPERSCHLAGER = "Superschlager";
 	public static final String RADIO_DIE_NEUE_107_7 = "Die neue 107.7";
-	public static final String RADIO_ABSOLUT_RELAX = "Absolut Relax";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -4325,6 +4324,19 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_ABSOLUT_RELAX);
+		m.put(ICON, R.drawable.radio_absolut_relax);
+		m.put(ICON_SMALL, R.drawable.radio_absolut_relax_small);
+		m.put(STREAM, "http://absolut.hoerradar.de/absolutradio-relax-mp3-128");
+		m.put(HOMEPAGE, "http://www.absolutrelax.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.absolutradio.de/information/sei-mit-dabei.html?ref_page=impressum");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_PARADISO);
 		m.put(ICON, R.drawable.radio_paradiso);
 		m.put(ICON_SMALL, R.drawable.radio_paradiso_small);
@@ -4735,19 +4747,6 @@ public class Stations {
 		m.put(HOMEPAGE, "http://dieneue1077.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://dieneue1077.de/kontakt.html_0");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_DE);
-		m.put(STIL, STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_ABSOLUT_RELAX);
-		m.put(ICON, R.drawable.radio_absolut_relax);
-		m.put(ICON_SMALL, R.drawable.radio_absolut_relax_small);
-		m.put(STREAM, "http://absolut.hoerradar.de/absolutradio-relax-mp3-128");
-		m.put(HOMEPAGE, "http://www.absolutrelax.de");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://www.absolutradio.de/information/sei-mit-dabei.html?ref_page=impressum");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
