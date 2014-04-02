@@ -374,7 +374,7 @@ public class Stations {
 	public static final String RADIO_1000_OLDIES = "1000 oldies";
 	public static final String RADIO_HIT_FM = "Hit-FM";
 	public static final String RADIO_HITRADIO_D3 = "Hitradio-D3";
-	public static final String RADIO_90_ER = ".90er";
+	public static final String RADIO_90_ER = "90'er";
 	public static final String RADIO_BEST_OF_90_S = "Best of 90s";
 	public static final String RADIO_ANTENNENICO = "Antennenico";
 	public static final String RADIO_ALL_MUSIC = "All-Music";
