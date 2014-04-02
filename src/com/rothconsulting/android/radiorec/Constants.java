@@ -33,8 +33,6 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_FCB_LIVE_RADIO);
 		ignoreList.add(Stations.RADIO_FC_ZUERICH);
 		ignoreList.add(Stations.RADIO_BACKSTAGE_RADIO);
-		// ignoreList.add(Stations.RADIO_RRO);
-		ignoreList.add(Stations.RADIO_MONTE_CARLO);
 		ignoreList.add(Stations.RADIO_RASA);
 		ignoreList.add(Stations.RADIO_BLIND_POWER);
 		ignoreList.add(Stations.RADIO_SINE_MUSIC);
@@ -64,7 +62,6 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_BLUE_MARLIN);
 		ignoreList.add(Stations.RADIO_TIROL_IT);
 		ignoreList.add(Stations.RADIO_LEGENDE);
-		ignoreList.add(Stations.RADIO_SECRETTUBE);
 		ignoreList.add(Stations.RADIO_GONG_NUERNBERG);
 		ignoreList.add(Stations.RADIO_PALOMA);
 		ignoreList.add(Stations.RADIO_DREYECKLAND);
