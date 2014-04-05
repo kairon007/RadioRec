@@ -21,16 +21,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
-import com.rothconsulting.android.radiorec.ApplicationRadioRec.TrackerName;
-
 public class Webcam extends Activity {
 
 	private final String TAG = this.getClass().getSimpleName();
 	private ProgressDialog progressDialog;
 	private AlertDialog alertDialog;
-	private Tracker tracker;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -71,13 +66,7 @@ public class Webcam extends Activity {
 			}
 		});
 
-		// Get GoogleAnalytics tracker
-		tracker = ((ApplicationRadioRec) this.getApplication()).getTracker(TrackerName.APP_TRACKER);
-		// Set screen name.
-		// Where path is a String representing the screen name.
-		tracker.setScreenName("Webcam screen");
-		// Send a screen view.
-		tracker.send(new HitBuilders.AppViewBuilder().build());
+		AnalyticsUtil.sendScreen(this, "Webcam screen");
 	}
 
 	private void showWebCam() {

@@ -236,6 +236,16 @@ public class Utils {
 		return position;
 	}
 
+	/**
+	 * Android Platform 2.3.0 = Level 9
+	 */
+	public static boolean isPlatformBelow_2_3_0() {
+		if (Build.VERSION.SDK_INT < 9) {
+			return true;
+		}
+		return false;
+	}
+
 	public static boolean isAtLeastHoneycomb() {
 		// Can use static final constants like HONEYCOMB, declared in later
 		// versions

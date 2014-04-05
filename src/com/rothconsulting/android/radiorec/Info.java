@@ -12,13 +12,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
-import com.rothconsulting.android.radiorec.ApplicationRadioRec.TrackerName;
-
 public class Info extends Activity {
-
-	private Tracker tracker;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +22,7 @@ public class Info extends Activity {
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
 
-		// Get GoogleAnalytics tracker
-		tracker = ((ApplicationRadioRec) this.getApplication()).getTracker(TrackerName.APP_TRACKER);
-		// Set screen name.
-		// Where path is a String representing the screen name.
-		tracker.setScreenName("Info screen");
-		// Send a screen view.
-		tracker.send(new HitBuilders.AppViewBuilder().build());
+		AnalyticsUtil.sendScreen(this, "Info screen");
 
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.info);

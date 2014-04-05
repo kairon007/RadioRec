@@ -19,16 +19,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 import com.rothconsulting.android.marketbilling.MarketSpende;
-import com.rothconsulting.android.radiorec.ApplicationRadioRec.TrackerName;
 
 public class Donate extends Activity {
 
 	private static final String TAG = "Donate";
-
-	private Tracker tracker;
 
 	private static final String PAYPAL_URL = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RTHRLLC6NV4NN";
 	/** Bitcoin key. */
@@ -43,27 +38,18 @@ public class Donate extends Activity {
 		}
 		setContentView(R.layout.donate);
 
-		// Get GoogleAnalytics tracker
-		tracker = ((ApplicationRadioRec) this.getApplication()).getTracker(TrackerName.APP_TRACKER);
-		// Set screen name.
-		// Where path is a String representing the screen name.
-		tracker.setScreenName("Donate screen");
-		// Send a screen view.
-		tracker.send(new HitBuilders.AppViewBuilder().build());
+		AnalyticsUtil.sendScreen(this, "Donate screen");
 
 		// if it comes from the notification and isDonator go to the main screen
 		if (Utils.hasValidKey()) {
 			Toast.makeText(this, this.getString(R.string.alreadyDonated), Toast.LENGTH_LONG).show();
 
-			// Build and send Analytics Event.
-			tracker.send(new HitBuilders.EventBuilder().setCategory("key_validation").setAction("hasValidKey").setLabel("yes isDonator, closing Donate screen")
-					.build());
+			AnalyticsUtil.sendEvent(this, "key_validation", "hasValidKey", "yes isDonator, closing Donate screen");
 
 			finish();
 		}
-		// Build and send Analytics Event.
-		tracker.send(new HitBuilders.EventBuilder().setCategory("key_validation").setAction("hasValidKey").setLabel("no isNotDonator, showing Donate screen")
-				.build());
+
+		AnalyticsUtil.sendEvent(this, "key_validation", "hasValidKey", "no isNotDonator, showing Donate screen");
 
 		// hide keyboard
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -77,9 +63,8 @@ public class Donate extends Activity {
 			public void onClick(View v) {
 				Intent intentHomepage = new Intent(Intent.ACTION_VIEW);
 				intentHomepage.setData(Uri.parse(PAYPAL_URL));
-				// Build and send Analytics Event.
-				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("clicked imageButtonPaypal").setLabel("URL = " + PAYPAL_URL)
-						.build());
+
+				AnalyticsUtil.sendEvent(getParent(), "ui_action", "clicked imageButtonPaypal", "URL = " + PAYPAL_URL);
 
 				startActivity(intentHomepage);
 			}
@@ -89,9 +74,7 @@ public class Donate extends Activity {
 		buttonBitcoin.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// Build and send Analytics Event.
-				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("clicked imageButtonBitcoin").setLabel("Start donateBitcoin")
-						.build());
+				AnalyticsUtil.sendEvent(getParent(), "ui_action", "clicked imageButtonBitcoin", "Start donateBitcoin");
 				donateBitcoin();
 			}
 		});
@@ -101,9 +84,7 @@ public class Donate extends Activity {
 		buttonAndroidMarket.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// Build and send Analytics Event.
-				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("clicked imageButtonAndroidMarket")
-						.setLabel("Start intentSpende").build());
+				AnalyticsUtil.sendEvent(getParent(), "ui_action", "clicked imageButtonAndroidMarket", "Start intentSpende");
 				startActivity(intentSpende);
 			}
 		});
@@ -133,10 +114,7 @@ public class Donate extends Activity {
 					Toast.makeText(Donate.this, getResources().getString(R.string.danke) + " (" + edittext.getText() + ")", Toast.LENGTH_LONG).show();
 				}
 
-				// Build and send Analytics Event.
-				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("clicked buttonSaveAntiAdsKey")
-						.setLabel("Key: " + Constants.ANTI_ADS_VALUE).build());
-
+				AnalyticsUtil.sendEvent(getParent(), "ui_action", "clicked buttonSaveAntiAdsKey", "Key: " + Constants.ANTI_ADS_VALUE);
 			}
 		});
 

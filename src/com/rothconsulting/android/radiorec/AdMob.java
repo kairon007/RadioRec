@@ -16,7 +16,7 @@ public class AdMob {
 	public AdView showRemoveAds(Activity context) {
 		adView = new AdView(context);
 
-		if (Utils.hasValidKey() || !Utils.isNetworkAvailable(context, null, false)) {
+		if (Utils.isPlatformBelow_2_3_0() || Utils.hasValidKey() || !Utils.isNetworkAvailable(context, null, false)) {
 			LinearLayout adsLayout = (LinearLayout) context.findViewById(R.id.adsLayout);
 			adsLayout.removeAllViews();
 			adsLayout.setVisibility(View.GONE);

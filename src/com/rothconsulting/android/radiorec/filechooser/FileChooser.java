@@ -23,10 +23,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
-import com.rothconsulting.android.radiorec.ApplicationRadioRec;
-import com.rothconsulting.android.radiorec.ApplicationRadioRec.TrackerName;
+import com.rothconsulting.android.radiorec.AnalyticsUtil;
 import com.rothconsulting.android.radiorec.Constants;
 import com.rothconsulting.android.radiorec.Donate;
 import com.rothconsulting.android.radiorec.R;
@@ -38,7 +35,6 @@ public class FileChooser extends ListActivity {
 	private final String TAG = this.getClass().getName();
 	private File currentDir;
 	private FileArrayAdapter adapter;
-	private Tracker tracker;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -48,13 +44,7 @@ public class FileChooser extends ListActivity {
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
 
-		// Get GoogleAnalytics tracker
-		tracker = ((ApplicationRadioRec) this.getApplication()).getTracker(TrackerName.APP_TRACKER);
-		// Set screen name.
-		// Where path is a String representing the screen name.
-		tracker.setScreenName("FileChooser screen");
-		// Send a screen view.
-		tracker.send(new HitBuilders.AppViewBuilder().build());
+		AnalyticsUtil.sendScreen(this, "FileChooser screen");
 
 		if (Constants.SD_CARD_PATH_VALUE == null) {
 			Utils.log(TAG, "SDCARD_PATH is null!");
@@ -131,9 +121,8 @@ public class FileChooser extends ListActivity {
 			dir.add(0, new Option(R.drawable.icon_folder_up, "..", getString(R.string.parentFolder), f.getParent()));
 		}
 
-		// Build and send Analytics Event.
-		tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("FileChooser").setLabel("currentDir: " + f.getName()).build());
-		tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("FileChooser").setLabel("No. files: " + fls.size()).build());
+		AnalyticsUtil.sendEvent(this, "ui_action", "FileChooser", "currentDir: " + f.getName());
+		AnalyticsUtil.sendEvent(this, "ui_action", "FileChooser", "No. files: " + fls.size());
 
 		adapter = new FileArrayAdapter(FileChooser.this, R.layout.file_view, dir);
 		this.setListAdapter(adapter);
@@ -234,8 +223,7 @@ public class FileChooser extends ListActivity {
 		intent.setAction(android.content.Intent.ACTION_VIEW);
 		Utils.log(TAG, "path=" + o.getPath());
 
-		// Build and send Analytics Event.
-		tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("FileChooser").setLabel("Play file: " + o.getPath()).build());
+		AnalyticsUtil.sendEvent(this, "ui_action", "FileChooser", "Play file: " + o.getPath());
 
 		File file = new File(o.getPath());
 		intent.setDataAndType(Uri.fromFile(file), "audio/*");

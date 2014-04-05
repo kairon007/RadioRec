@@ -50,9 +50,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
-import com.rothconsulting.android.radiorec.ApplicationRadioRec.TrackerName;
 import com.rothconsulting.android.radiorec.filechooser.FileChooser;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
 import com.rothconsulting.android.radiorec.sqlitedb.DbUtils;
@@ -65,11 +62,8 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 	public static boolean recording;
 	private static boolean showCountdown;
 	private Context context;
-	private Activity activity;
 	private int origOrientation;
 	private boolean isOrientationSensorOn;
-
-	private Tracker tracker;
 
 	private boolean firstStart;
 	private Spinner spnAlphabetisch;
@@ -113,7 +107,6 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		}
 
 		context = this;
-		activity = this;
 		// context.deleteDatabase(DBHelper.DATABASE_NAME);
 		gcCounter = 0;
 		super.onCreate(savedInstanceState);
@@ -130,13 +123,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			isOrientationSensorOn = false;
 		}
 
-		// Get GoogleAnalytics tracker
-		tracker = ((ApplicationRadioRec) this.getApplication()).getTracker(TrackerName.APP_TRACKER);
-		// Set screen name.
-		// Where path is a String representing the screen name.
-		tracker.setScreenName("Main screen");
-		// Send a screen view.
-		tracker.send(new HitBuilders.AppViewBuilder().build());
+		AnalyticsUtil.sendScreen(this, "Main screen");
 
 		// Detect incoming phone call and register PhoneStateListener
 		callStateListener = new CallStateListener();
@@ -307,9 +294,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		case R.id.homepage:
 			Log.i(TAG, "homepage");
 			if (Constants.URL_HOMEPAGE_VALUE != null && !Constants.URL_HOMEPAGE_VALUE.trim().equals("")) {
-				// Build and send Analytics Event.
-				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_homepage")
-						.setLabel("url: " + Constants.URL_HOMEPAGE_VALUE).build());
+				AnalyticsUtil.sendEvent(this, "ui_action", "click_homepage", "url: " + Constants.URL_HOMEPAGE_VALUE);
 
 				Uri uri = Uri.parse(Constants.URL_HOMEPAGE_VALUE);
 				Intent intentHomepage = new Intent(Intent.ACTION_VIEW, uri);
@@ -318,18 +303,14 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			break;
 		case R.id.webcam:
 			Log.i(TAG, "webcam");
-			// Build and send Analytics Event.
-			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_webcam").setLabel("url: " + Constants.URL_WEBCAM_VALUE)
-					.build());
+			AnalyticsUtil.sendEvent(this, "ui_action", "click_webcam", "url: " + Constants.URL_WEBCAM_VALUE);
 
 			Intent intentCam = new Intent(this, Webcam.class);
 			startActivity(intentCam);
 			break;
 		case R.id.mail:
 			Log.i(TAG, "mail");
-			// Build and send Analytics Event.
-			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_mail").setLabel("contact: " + Constants.URL_CONTACT_VALUE)
-					.build());
+			AnalyticsUtil.sendEvent(this, "ui_action", "click_mail", "contact: " + Constants.URL_CONTACT_VALUE);
 
 			if (Constants.URL_CONTACT_VALUE.startsWith("http")) {
 				Intent emailIntent = new Intent(Intent.ACTION_VIEW);
@@ -346,18 +327,14 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			break;
 		case R.id.search:
 			Log.i(TAG, "search");
-			// Build and send Analytics Event.
-			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_search")
-					.setLabel("selected_station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
+			AnalyticsUtil.sendEvent(this, "ui_action", "click_search", "selected_station: " + Constants.SELECTED_STATION_NAME_VALUE);
 
 			prepareSearch();
 			break;
 
 		case R.id.favoriten:
 			Log.i(TAG, "favorit");
-			// Build and send Analytics Event.
-			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_favoriten")
-					.setLabel("station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
+			AnalyticsUtil.sendEvent(this, "ui_action", "click_favoriten", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			DbUtils.storeRemoveFav(this, favIcon);
 			break;
 		case R.id.back:
@@ -374,7 +351,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 				playing = false;
 			}
 			((ImageButton) v).setImageResource(playing ? R.drawable.button_stop : R.drawable.button_play);
-			origOrientation = Utils.getScrOrientation(activity);
+			origOrientation = Utils.getScrOrientation(this);
 			if (!playing && isOrientationSensorOn) {
 				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
 			}
@@ -392,15 +369,11 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 
 			// Google analytics
 			if (recording) {
-				// Build and send Analytics Event.
-				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("start_recording")
-						.setLabel("station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
+				AnalyticsUtil.sendEvent(this, "ui_action", "start_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			}
 			// Google analytics
 			if (!recording) {
-				// Build and send Analytics Event.
-				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("stop_recording")
-						.setLabel("station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
+				AnalyticsUtil.sendEvent(this, "ui_action", "stop_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			}
 
 			((ImageButton) v).setImageResource(recording ? R.drawable.button_record_on : R.drawable.button_record);
@@ -415,24 +388,16 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			break;
 		case R.id.imageButtonUhr:
 			showCountdown = !showCountdown;
-			// Build and send Analytics Event.
-			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_imageButtonUhr")
-					.setLabel("station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
+			AnalyticsUtil.sendEvent(this, "ui_action", "click_imageButtonUhr", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			this.showTimerbox(showCountdown);
 			break;
 		case R.id.buttonFav:
-			// Build and send Analytics Event.
-			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_buttonFav")
-					.setLabel("station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
+			AnalyticsUtil.sendEvent(this, "ui_action", "click_buttonFav", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			this.startActivityForResult(new Intent(this, Favourites.class), Constants.FROM_FAVOURITES);
 			break;
 		case R.id.buttonAlphabetisch:
 			Constants.SPINNER_SELECTION = Constants.SPINNER_ALPHABETISCH;
-
-			// Build and send Analytics Event.
-			tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_buttonAlphabetisch")
-					.setLabel("current_station: " + Constants.SELECTED_STATION_NAME_VALUE).build());
-
+			AnalyticsUtil.sendEvent(this, "ui_action", "click_buttonAlphabetisch", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			Utils.log(TAG, "Button Alphabetisch pressed. Firts=" + spnAlphabetisch.getFirstVisiblePosition());
 
 			spnAlphabetisch.performClick();
@@ -547,9 +512,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 
 		Constants.SELECTED_STATION_NAME_VALUE = "" + map.get(Stations.NAME);
 
-		// Build and send Analytics Event.
-		tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("playing").setLabel("station: " + Constants.SELECTED_STATION_NAME_VALUE)
-				.build());
+		AnalyticsUtil.sendEvent(this, "ui_action", "playing", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 
 		Constants.URL_LIVE_STREAM_VALUE = "" + map.get(Stations.STREAM);
 
@@ -811,9 +774,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 				autocomplete.setVisibility(View.GONE);
 				spinner.setVisibility(View.VISIBLE);
 
-				// Build and send Analytics Event.
-				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("click_searched_station")
-						.setLabel("station: " + ((TextView) textView).getText()).build());
+				AnalyticsUtil.sendEvent(getParent(), "ui_action", "click_searched_station", "station: " + ((TextView) textView).getText());
 
 				spnAllStations.setSelection(Utils.getSpinnerPosition(stationList, "" + ((TextView) textView).getText()));
 			}

@@ -20,10 +20,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
-import com.rothconsulting.android.radiorec.ApplicationRadioRec.TrackerName;
-
 public class Settings extends Activity implements RadioGroup.OnCheckedChangeListener {
 
 	private static final String TAG = "Settings";
@@ -31,7 +27,6 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 	private RadioButton radioImmerAn;
 	private RadioButton radioImmerAnWennStrom;
 	private RadioButton radioAutomatischAus;
-	private Tracker tracker;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +40,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 		// hide keyboard when opening page
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-		// Get GoogleAnalytics tracker
-		tracker = ((ApplicationRadioRec) this.getApplication()).getTracker(TrackerName.APP_TRACKER);
-		// Set screen name.
-		// Where path is a String representing the screen name.
-		tracker.setScreenName("Settings screen");
-		// Send a screen view.
-		tracker.send(new HitBuilders.AppViewBuilder().build());
+		AnalyticsUtil.sendScreen(this, "Settings screen");
 
 		AdMob admob = new AdMob();
 		admob.showRemoveAds(this);
@@ -71,9 +60,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 				editor.putString(Constants.SD_CARD_PATH_KEY, Constants.SD_CARD_PATH_VALUE);
 				editor.commit();
 
-				// Build and send Analytics Event.
-				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("Settings")
-						.setLabel("SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE).build());
+				AnalyticsUtil.sendEvent(getParent(), "ui_action", "Settings", "SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE);
 
 				Toast.makeText(Settings.this, getResources().getString(R.string.save) + " (" + edittextSdCardPath.getText() + ")", Toast.LENGTH_LONG).show();
 			}
@@ -97,9 +84,8 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
 				editor.commit();
-				// Build and send Analytics Event.
-				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("Settings")
-						.setLabel("CLOSE_APP_TIMER_END=" + Constants.CLOSE_APP_TIMER_END_VALUE).build());
+
+				AnalyticsUtil.sendEvent(getParent(), "ui_action", "Settings", "CLOSE_APP_TIMER_END=" + Constants.CLOSE_APP_TIMER_END_VALUE);
 			}
 		});
 
@@ -120,9 +106,8 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 				} else {
 					setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
 				}
-				// Build and send Analytics Event.
-				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("Settings")
-						.setLabel("ROTATION_OFF=" + Constants.ROTATION_OFF_VALUE).build());
+
+				AnalyticsUtil.sendEvent(getParent(), "ui_action", "Settings", "ROTATION_OFF=" + Constants.ROTATION_OFF_VALUE);
 			}
 		});
 
@@ -156,9 +141,8 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 					editTextBufferSize.setBackgroundColor(Color.RED);
 					Toast.makeText(Settings.this, getResources().getString(R.string.errorZahlEingeben), Toast.LENGTH_LONG).show();
 				}
-				// Build and send Analytics Event.
-				tracker.send(new HitBuilders.EventBuilder().setCategory("ui_action").setAction("Settings")
-						.setLabel("BUFFER_VALUE size=" + Constants.BUFFER_VALUE).build());
+
+				AnalyticsUtil.sendEvent(getParent(), "ui_action", "Settings", "BUFFER_VALUE size=" + Constants.BUFFER_VALUE);
 			}
 		});
 
