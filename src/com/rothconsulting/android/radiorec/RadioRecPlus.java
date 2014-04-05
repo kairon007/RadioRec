@@ -65,6 +65,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 	private int origOrientation;
 	private boolean isOrientationSensorOn;
 
+	private Activity activity;
 	private boolean firstStart;
 	private Spinner spnAlphabetisch;
 	private Spinner spnAllStations;
@@ -106,6 +107,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
 
+		activity = this;
 		context = this;
 		// context.deleteDatabase(DBHelper.DATABASE_NAME);
 		gcCounter = 0;
@@ -294,7 +296,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		case R.id.homepage:
 			Log.i(TAG, "homepage");
 			if (Constants.URL_HOMEPAGE_VALUE != null && !Constants.URL_HOMEPAGE_VALUE.trim().equals("")) {
-				AnalyticsUtil.sendEvent(this, "ui_action", "click_homepage", "url: " + Constants.URL_HOMEPAGE_VALUE);
+				AnalyticsUtil.sendEvent(activity, "ui_action", "click_homepage", "url: " + Constants.URL_HOMEPAGE_VALUE);
 
 				Uri uri = Uri.parse(Constants.URL_HOMEPAGE_VALUE);
 				Intent intentHomepage = new Intent(Intent.ACTION_VIEW, uri);
@@ -303,14 +305,14 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			break;
 		case R.id.webcam:
 			Log.i(TAG, "webcam");
-			AnalyticsUtil.sendEvent(this, "ui_action", "click_webcam", "url: " + Constants.URL_WEBCAM_VALUE);
+			AnalyticsUtil.sendEvent(activity, "ui_action", "click_webcam", "url: " + Constants.URL_WEBCAM_VALUE);
 
 			Intent intentCam = new Intent(this, Webcam.class);
 			startActivity(intentCam);
 			break;
 		case R.id.mail:
 			Log.i(TAG, "mail");
-			AnalyticsUtil.sendEvent(this, "ui_action", "click_mail", "contact: " + Constants.URL_CONTACT_VALUE);
+			AnalyticsUtil.sendEvent(activity, "ui_action", "click_mail", "contact: " + Constants.URL_CONTACT_VALUE);
 
 			if (Constants.URL_CONTACT_VALUE.startsWith("http")) {
 				Intent emailIntent = new Intent(Intent.ACTION_VIEW);
@@ -327,14 +329,14 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			break;
 		case R.id.search:
 			Log.i(TAG, "search");
-			AnalyticsUtil.sendEvent(this, "ui_action", "click_search", "selected_station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			AnalyticsUtil.sendEvent(activity, "ui_action", "click_search", "selected_station: " + Constants.SELECTED_STATION_NAME_VALUE);
 
 			prepareSearch();
 			break;
 
 		case R.id.favoriten:
 			Log.i(TAG, "favorit");
-			AnalyticsUtil.sendEvent(this, "ui_action", "click_favoriten", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			AnalyticsUtil.sendEvent(activity, "ui_action", "click_favoriten", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			DbUtils.storeRemoveFav(this, favIcon);
 			break;
 		case R.id.back:
@@ -369,11 +371,11 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 
 			// Google analytics
 			if (recording) {
-				AnalyticsUtil.sendEvent(this, "ui_action", "start_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+				AnalyticsUtil.sendEvent(activity, "ui_action", "start_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			}
 			// Google analytics
 			if (!recording) {
-				AnalyticsUtil.sendEvent(this, "ui_action", "stop_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+				AnalyticsUtil.sendEvent(activity, "ui_action", "stop_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			}
 
 			((ImageButton) v).setImageResource(recording ? R.drawable.button_record_on : R.drawable.button_record);
@@ -388,16 +390,16 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			break;
 		case R.id.imageButtonUhr:
 			showCountdown = !showCountdown;
-			AnalyticsUtil.sendEvent(this, "ui_action", "click_imageButtonUhr", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			AnalyticsUtil.sendEvent(activity, "ui_action", "click_imageButtonUhr", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			this.showTimerbox(showCountdown);
 			break;
 		case R.id.buttonFav:
-			AnalyticsUtil.sendEvent(this, "ui_action", "click_buttonFav", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			AnalyticsUtil.sendEvent(activity, "ui_action", "click_buttonFav", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			this.startActivityForResult(new Intent(this, Favourites.class), Constants.FROM_FAVOURITES);
 			break;
 		case R.id.buttonAlphabetisch:
 			Constants.SPINNER_SELECTION = Constants.SPINNER_ALPHABETISCH;
-			AnalyticsUtil.sendEvent(this, "ui_action", "click_buttonAlphabetisch", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			AnalyticsUtil.sendEvent(activity, "ui_action", "click_buttonAlphabetisch", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			Utils.log(TAG, "Button Alphabetisch pressed. Firts=" + spnAlphabetisch.getFirstVisiblePosition());
 
 			spnAlphabetisch.performClick();
@@ -512,7 +514,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 
 		Constants.SELECTED_STATION_NAME_VALUE = "" + map.get(Stations.NAME);
 
-		AnalyticsUtil.sendEvent(this, "ui_action", "playing", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+		AnalyticsUtil.sendEvent(activity, "ui_action", "playing", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 
 		Constants.URL_LIVE_STREAM_VALUE = "" + map.get(Stations.STREAM);
 
@@ -774,7 +776,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 				autocomplete.setVisibility(View.GONE);
 				spinner.setVisibility(View.VISIBLE);
 
-				AnalyticsUtil.sendEvent(getParent(), "ui_action", "click_searched_station", "station: " + ((TextView) textView).getText());
+				AnalyticsUtil.sendEvent(activity, "ui_action", "click_searched_station", "station: " + ((TextView) textView).getText());
 
 				spnAllStations.setSelection(Utils.getSpinnerPosition(stationList, "" + ((TextView) textView).getText()));
 			}

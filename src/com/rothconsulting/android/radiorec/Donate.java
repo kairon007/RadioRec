@@ -24,7 +24,7 @@ import com.rothconsulting.android.marketbilling.MarketSpende;
 public class Donate extends Activity {
 
 	private static final String TAG = "Donate";
-
+	private Activity activity;
 	private static final String PAYPAL_URL = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RTHRLLC6NV4NN";
 	/** Bitcoin key. */
 	private static final String BITCOIN_KEY = "17tqaQXYzg2ANDCLM23X3zaFNH1TZLM35j";
@@ -38,18 +38,20 @@ public class Donate extends Activity {
 		}
 		setContentView(R.layout.donate);
 
+		activity = this;
+
 		AnalyticsUtil.sendScreen(this, "Donate screen");
 
 		// if it comes from the notification and isDonator go to the main screen
 		if (Utils.hasValidKey()) {
 			Toast.makeText(this, this.getString(R.string.alreadyDonated), Toast.LENGTH_LONG).show();
 
-			AnalyticsUtil.sendEvent(this, "key_validation", "hasValidKey", "yes isDonator, closing Donate screen");
+			AnalyticsUtil.sendEvent(activity, "key_validation", "hasValidKey", "yes isDonator, closing Donate screen");
 
 			finish();
 		}
 
-		AnalyticsUtil.sendEvent(this, "key_validation", "hasValidKey", "no isNotDonator, showing Donate screen");
+		AnalyticsUtil.sendEvent(activity, "key_validation", "hasValidKey", "no isNotDonator, showing Donate screen");
 
 		// hide keyboard
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -64,7 +66,7 @@ public class Donate extends Activity {
 				Intent intentHomepage = new Intent(Intent.ACTION_VIEW);
 				intentHomepage.setData(Uri.parse(PAYPAL_URL));
 
-				AnalyticsUtil.sendEvent(getParent(), "ui_action", "clicked imageButtonPaypal", "URL = " + PAYPAL_URL);
+				AnalyticsUtil.sendEvent(activity, "ui_action", "clicked imageButtonPaypal", "URL = " + PAYPAL_URL);
 
 				startActivity(intentHomepage);
 			}
@@ -74,7 +76,7 @@ public class Donate extends Activity {
 		buttonBitcoin.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				AnalyticsUtil.sendEvent(getParent(), "ui_action", "clicked imageButtonBitcoin", "Start donateBitcoin");
+				AnalyticsUtil.sendEvent(activity, "ui_action", "clicked imageButtonBitcoin", "Start donateBitcoin");
 				donateBitcoin();
 			}
 		});
@@ -84,7 +86,7 @@ public class Donate extends Activity {
 		buttonAndroidMarket.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				AnalyticsUtil.sendEvent(getParent(), "ui_action", "clicked imageButtonAndroidMarket", "Start intentSpende");
+				AnalyticsUtil.sendEvent(activity, "ui_action", "clicked imageButtonAndroidMarket", "Start intentSpende");
 				startActivity(intentSpende);
 			}
 		});
@@ -114,7 +116,7 @@ public class Donate extends Activity {
 					Toast.makeText(Donate.this, getResources().getString(R.string.danke) + " (" + edittext.getText() + ")", Toast.LENGTH_LONG).show();
 				}
 
-				AnalyticsUtil.sendEvent(getParent(), "ui_action", "clicked buttonSaveAntiAdsKey", "Key: " + Constants.ANTI_ADS_VALUE);
+				AnalyticsUtil.sendEvent(activity, "ui_action", "clicked buttonSaveAntiAdsKey", "Key: " + Constants.ANTI_ADS_VALUE);
 			}
 		});
 

@@ -23,7 +23,7 @@ import android.widget.Toast;
 public class Settings extends Activity implements RadioGroup.OnCheckedChangeListener {
 
 	private static final String TAG = "Settings";
-
+	private Activity activity;
 	private RadioButton radioImmerAn;
 	private RadioButton radioImmerAnWennStrom;
 	private RadioButton radioAutomatischAus;
@@ -37,6 +37,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 		}
 		setContentView(R.layout.settings);
 
+		activity = this;
 		// hide keyboard when opening page
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
@@ -60,7 +61,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 				editor.putString(Constants.SD_CARD_PATH_KEY, Constants.SD_CARD_PATH_VALUE);
 				editor.commit();
 
-				AnalyticsUtil.sendEvent(getParent(), "ui_action", "Settings", "SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE);
+				AnalyticsUtil.sendEvent(activity, "ui_action", "Settings", "SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE);
 
 				Toast.makeText(Settings.this, getResources().getString(R.string.save) + " (" + edittextSdCardPath.getText() + ")", Toast.LENGTH_LONG).show();
 			}
@@ -85,7 +86,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 				editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
 				editor.commit();
 
-				AnalyticsUtil.sendEvent(getParent(), "ui_action", "Settings", "CLOSE_APP_TIMER_END=" + Constants.CLOSE_APP_TIMER_END_VALUE);
+				AnalyticsUtil.sendEvent(activity, "ui_action", "Settings", "CLOSE_APP_TIMER_END=" + Constants.CLOSE_APP_TIMER_END_VALUE);
 			}
 		});
 
@@ -107,7 +108,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 					setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
 				}
 
-				AnalyticsUtil.sendEvent(getParent(), "ui_action", "Settings", "ROTATION_OFF=" + Constants.ROTATION_OFF_VALUE);
+				AnalyticsUtil.sendEvent(activity, "ui_action", "Settings", "ROTATION_OFF=" + Constants.ROTATION_OFF_VALUE);
 			}
 		});
 
@@ -142,7 +143,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 					Toast.makeText(Settings.this, getResources().getString(R.string.errorZahlEingeben), Toast.LENGTH_LONG).show();
 				}
 
-				AnalyticsUtil.sendEvent(getParent(), "ui_action", "Settings", "BUFFER_VALUE size=" + Constants.BUFFER_VALUE);
+				AnalyticsUtil.sendEvent(activity, "ui_action", "Settings", "BUFFER_VALUE size=" + Constants.BUFFER_VALUE);
 			}
 		});
 
