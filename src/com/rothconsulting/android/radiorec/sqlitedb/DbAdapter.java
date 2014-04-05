@@ -51,8 +51,8 @@ public class DbAdapter {
 	 */
 	public int deleteStation(String stationName) {
 		Utils.log(TAG, "delete stationName=" + stationName);
-		int affected = database.delete(T_STATION, KEY_STATION_NAME + "='" + stationName + "'", null);
-		Utils.log(TAG, "rows deleted=" + affected);
+		int affected = database.delete(T_STATION, KEY_STATION_NAME + "=\"" + stationName + "\"", null);
+		Utils.log(TAG, "rows deleted=" + affected + " / " + KEY_STATION_NAME + "=\"" + stationName + "\"");
 
 		return affected;
 	}
@@ -70,14 +70,9 @@ public class DbAdapter {
 	 * Return a Cursor positioned at the defined station
 	 */
 	public Cursor fetchStation(String stationName) throws SQLException {
-		// Escaping
-		if (stationName != null) {
-			stationName = stationName.replaceAll("'", "''");
-		}
-
 		Cursor mCursor = null;
-		mCursor = database
-				.query(true, T_STATION, new String[] { KEY_STATION_NAME }, KEY_STATION_NAME + "= '" + stationName + "'", null, null, null, null, null);
+		mCursor = database.query(true, T_STATION, new String[] { KEY_STATION_NAME }, KEY_STATION_NAME + "=\"" + stationName + "\"", null, null, null, null,
+				null);
 		if (mCursor != null) {
 			mCursor.moveToFirst();
 			Utils.log(TAG, "cursor.getCount()=" + mCursor.getCount());
