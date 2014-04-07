@@ -122,7 +122,7 @@ public class Stations {
 	public static final String RADIO_FCB_LIVE_RADIO = "FC Basel Live Radio";
 	public static final String RADIO_FC_SION_LIVE_RADIO = "FC Sion";
 	public static final String RADIO_FC_ZUERICH = "FC Zürich";
-	public static final String RADIO_EHC_AROSA = "EHC Arosa Fanradio";
+	public static final String RADIO_HOCKEY_FANRADIO = "Hockey Fanradio";
 	public static final String RADIO_RWW_EHC_WINTERTHUR = "EHC Winterthur - RWW";
 	public static final String RADIO_BACKSTAGE_RADIO = "Backstage Radio";
 	// public static final String RADIO_MONTE_CARLO = "Monte Carlo";
@@ -1477,13 +1477,13 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_EHC_AROSA);
-		m.put(ICON, R.drawable.radio_ehc_arosa);
-		m.put(ICON_SMALL, R.drawable.radio_ehc_arosa_small);
-		m.put(STREAM, "http://streaming2-boreas.1000mikes.com/ehc_arosa_radiolive_on_air?encoding=mpeg");
-		m.put(HOMEPAGE, "http://www.ehcarosaradio.ch");
+		m.put(NAME, RADIO_HOCKEY_FANRADIO);
+		m.put(ICON, R.drawable.radio_hockey_fanradio);
+		m.put(ICON_SMALL, R.drawable.radio_hockey_fanradio_small);
+		m.put(STREAM, "http://streaming2-boreas.1000mikes.com/hockey_fanradio");
+		m.put(HOMEPAGE, "http://www.hockeyfanradio.ch");
 		m.put(WEBCAM, "");
-		m.put(EMAIL, "radio@arosafans-fr.ch");
+		m.put(EMAIL, "info@hockeyfanradio.ch");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
 		m.put(STIL, STIL_SPORT);
