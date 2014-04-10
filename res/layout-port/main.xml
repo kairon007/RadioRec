@@ -88,7 +88,7 @@
 		android:focusableInTouchMode="true" android:text="Ticker... Buffering... 
 		Playing: SomeSong by SomeArtist..." android:gravity="center" android:layout_margin="2dp" 
 		/ -->
-	<ImageView android:layout_height="0dp" android:src="@drawable/icon"
+	<ImageView android:layout_height="0dp" android:src="@drawable/jukebox"
 		android:id="@+id/logo" android:layout_width="fill_parent"
 		android:layout_weight="1" android:scaleType="centerInside" />
 
