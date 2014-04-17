@@ -538,7 +538,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 				Utils.log(TAG, "*********** new Stream=" + Constants.URL_LIVE_STREAM_VALUE);
 			}
 			getRadioPlayer().doStartPlay(this);
-			getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+			// getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
 		} else {
 			this.stopPlay();

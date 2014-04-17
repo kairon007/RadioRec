@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.rothconsulting.android.billing.BillingHelper;
 
 public class AdMob {
 
@@ -16,7 +17,7 @@ public class AdMob {
 	public AdView showRemoveAds(Activity context) {
 		adView = new AdView(context);
 
-		if (Utils.isPlatformBelow_2_3_0() || Utils.hasValidKey() || !Utils.isNetworkAvailable(context, null, false)) {
+		if (Utils.isPlatformBelow_2_3_0() || Utils.hasValidKey() || !Utils.isNetworkAvailable(context, null, false) || BillingHelper.isDonator()) {
 			LinearLayout adsLayout = (LinearLayout) context.findViewById(R.id.adsLayout);
 			adsLayout.removeAllViews();
 			adsLayout.setVisibility(View.GONE);

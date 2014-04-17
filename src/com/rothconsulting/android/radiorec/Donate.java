@@ -19,7 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.rothconsulting.android.marketbilling.MarketSpende;
+import com.rothconsulting.android.billing.PlayBillingActivity;
 
 public class Donate extends Activity {
 
@@ -82,12 +82,12 @@ public class Donate extends Activity {
 		});
 
 		final ImageButton buttonAndroidMarket = (ImageButton) findViewById(R.id.imageButtonAndroidMarket);
-		final Intent intentSpende = new Intent(this, MarketSpende.class);
+		final Intent intentBillingSpende = new Intent(this, PlayBillingActivity.class);
 		buttonAndroidMarket.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				AnalyticsUtil.sendEvent(activity, "ui_action", "clicked imageButtonAndroidMarket", "Start intentSpende");
-				startActivity(intentSpende);
+				startActivity(intentBillingSpende);
 			}
 		});
 

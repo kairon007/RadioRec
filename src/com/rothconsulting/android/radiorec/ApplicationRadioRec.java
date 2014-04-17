@@ -3,11 +3,23 @@ package com.rothconsulting.android.radiorec;
 import java.util.HashMap;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 
 public class ApplicationRadioRec extends Application {
+
+	private static Context context;
+
+	@Override
+	public void onCreate() {
+		context = getApplicationContext();
+	}
+
+	public static Context getCustomAppContext() {
+		return context;
+	}
 
 	/**
 	 * Enum used to identify the tracker that needs to be used for tracking.

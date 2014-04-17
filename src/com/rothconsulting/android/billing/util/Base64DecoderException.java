@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.rothconsulting.android.marketbilling.util;
+package com.rothconsulting.android.billing.util;
 
 /**
  * Exception thrown when encountering an invalid Base64 input character.
@@ -20,13 +20,13 @@ package com.rothconsulting.android.marketbilling.util;
  * @author nelson
  */
 public class Base64DecoderException extends Exception {
-  public Base64DecoderException() {
-    super();
-  }
+    public Base64DecoderException() {
+        super();
+    }
 
-  public Base64DecoderException(String s) {
-    super(s);
-  }
+    public Base64DecoderException(String s) {
+        super(s);
+    }
 
-  private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 }

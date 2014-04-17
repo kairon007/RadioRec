@@ -48,6 +48,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 
 		final SharedPreferences settings = getSharedPreferences(Constants.PREFERENCES_FILE, 0);
 
+		// SD Card
 		final EditText edittextSdCardPath = (EditText) findViewById(R.id.editTextSdcardPath);
 		edittextSdCardPath.setText(Constants.SD_CARD_PATH_VALUE);
 		final Button saveButtonPath = (Button) findViewById(R.id.buttonSavePath);
@@ -67,6 +68,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 			}
 		});
 
+		// Reset SD Card Path
 		final Button resetButtonPath = (Button) findViewById(R.id.buttonResetPath);
 		resetButtonPath.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -75,6 +77,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 			}
 		});
 
+		// Close app when timer ends
 		final CheckBox cbAppOffWhenTimerEnds = (CheckBox) findViewById(R.id.checkboxAppOffAtTimeEnd);
 		cbAppOffWhenTimerEnds.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -92,6 +95,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 
 		cbAppOffWhenTimerEnds.setChecked(Constants.CLOSE_APP_TIMER_END_VALUE);
 
+		// Rotation on/off
 		final CheckBox cbRotationOf = (CheckBox) findViewById(R.id.checkboxRotationOnOff);
 		cbRotationOf.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -114,6 +118,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 
 		cbRotationOf.setChecked(Constants.ROTATION_OFF_VALUE);
 
+		// Buffer size
 		final EditText editTextBufferSize = (EditText) findViewById(R.id.editTextBuffer);
 		editTextBufferSize.setText("" + Constants.BUFFER_VALUE);
 		editTextBufferSize.setInputType(InputType.TYPE_CLASS_PHONE);
@@ -147,6 +152,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 			}
 		});
 
+		// Reset buffer
 		final Button resetButtonBuffer = (Button) findViewById(R.id.buttonResetBuffer);
 		resetButtonBuffer.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -157,6 +163,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 			}
 		});
 
+		// Back button
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -165,15 +172,20 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 			}
 		});
 
+		// WiFi settings
 		RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroupWifi);
 		radioImmerAn = (RadioButton) findViewById(R.id.radioImmerAn);
 		radioImmerAnWennStrom = (RadioButton) findViewById(R.id.radioImmerAnWennStrom);
 		radioAutomatischAus = (RadioButton) findViewById(R.id.radioAutomatischAus);
 		radioGroup.setOnCheckedChangeListener(this);
 		try {
-			int wifiSleepPolicy = android.provider.Settings.System.getInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY);
-
-			setRadioButtons(wifiSleepPolicy);
+			if (Utils.isPlatformBelow_4_2()) {
+				int wifiSleepPolicy_old = android.provider.Settings.System.getInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY);
+				setRadioButtons_Level17Below(wifiSleepPolicy_old);
+			} else {
+				int wifiSleepPolicy = android.provider.Settings.System.getInt(getContentResolver(), android.provider.Settings.Global.WIFI_SLEEP_POLICY);
+				setRadioButtons_Level17Above(wifiSleepPolicy);
+			}
 
 		} catch (SettingNotFoundException e) {
 			Utils.log(TAG, "SettingNotFoundException: WIFI_SLEEP_POLICY ist noch nicht konfiguriert. Kein Problem!");
@@ -181,7 +193,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 		}
 	}
 
-	private void setRadioButtons(int wifiSleepPolicy) {
+	private void setRadioButtons_Level17Below(int wifiSleepPolicy) {
 		if (wifiSleepPolicy == android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER) {
 			radioImmerAn.setChecked(true);
 		} else if (wifiSleepPolicy == android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED) {
@@ -191,19 +203,44 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 		}
 	}
 
+	private void setRadioButtons_Level17Above(int wifiSleepPolicy) {
+		if (wifiSleepPolicy == android.provider.Settings.Global.WIFI_SLEEP_POLICY_NEVER) {
+			radioImmerAn.setChecked(true);
+		} else if (wifiSleepPolicy == android.provider.Settings.Global.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED) {
+			radioImmerAnWennStrom.setChecked(true);
+		} else {
+			radioAutomatischAus.setChecked(true);
+		}
+	}
+
 	@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		if (checkedId == R.id.radioImmerAn) {
-			android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
-					android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER);
+			if (Utils.isPlatformBelow_4_2()) {
+				android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
+						android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER);
+			} else {
+				android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.Global.WIFI_SLEEP_POLICY,
+						android.provider.Settings.Global.WIFI_SLEEP_POLICY_NEVER);
+			}
 			Toast.makeText(this, getResources().getString(R.string.wifiImmerAn), Toast.LENGTH_SHORT).show();
 		} else if (checkedId == R.id.radioImmerAnWennStrom) {
-			android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
-					android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED);
+			if (Utils.isPlatformBelow_4_2()) {
+				android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
+						android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED);
+			} else {
+				android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.Global.WIFI_SLEEP_POLICY,
+						android.provider.Settings.Global.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED);
+			}
 			Toast.makeText(this, getResources().getString(R.string.wifiImmerAnWennAmStrom), Toast.LENGTH_SHORT).show();
 		} else {
-			android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
-					android.provider.Settings.System.WIFI_SLEEP_POLICY_DEFAULT);
+			if (Utils.isPlatformBelow_4_2()) {
+				android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
+						android.provider.Settings.System.WIFI_SLEEP_POLICY_DEFAULT);
+			} else {
+				android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.Global.WIFI_SLEEP_POLICY,
+						android.provider.Settings.Global.WIFI_SLEEP_POLICY_DEFAULT);
+			}
 			Toast.makeText(this, getResources().getString(R.string.wifiAutomatischAus), Toast.LENGTH_SHORT).show();
 		}
 	}

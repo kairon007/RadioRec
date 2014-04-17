@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.rothconsulting.android.radiorec"
-	android:versionCode="182" android:versionName="1.8.2" android:installLocation="auto">
+	android:versionCode="183" android:versionName="1.8.3" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="7" />
 	<supports-screens android:resizeable="true" android:smallScreens="true" android:normalScreens="true"
 		android:largeScreens="true" android:anyDensity="true" />
@@ -34,17 +34,7 @@
 		<activity android:name=".Donate" />
 		<activity android:name=".Favourites" />
 		<activity android:name=".filechooser.FileChooser" />
-		<activity android:name="com.rothconsulting.android.marketbilling.MarketSpende" />
-
-		<service android:name="com.rothconsulting.android.marketbilling.BillingService" />
-
-		<receiver android:name="com.rothconsulting.android.marketbilling.BillingReceiver">
-			<intent-filter>
-				<action android:name="com.android.vending.billing.IN_APP_NOTIFY" />
-				<action android:name="com.android.vending.billing.RESPONSE_CODE" />
-				<action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED" />
-			</intent-filter>
-		</receiver>
+		<activity android:name="com.rothconsulting.android.billing.PlayBillingActivity" />
 
 		<!-- multi window support -->
 		<uses-library android:required="false" android:name="com.sec.android.app.multiwindow" />
