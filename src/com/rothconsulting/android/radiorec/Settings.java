@@ -1,6 +1,7 @@
 package com.rothconsulting.android.radiorec;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -46,7 +47,7 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 		AdMob admob = new AdMob();
 		admob.showRemoveAds(this);
 
-		final SharedPreferences settings = getSharedPreferences(Constants.PREFERENCES_FILE, 0);
+		final SharedPreferences settings = getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
 
 		// SD Card
 		final EditText edittextSdCardPath = (EditText) findViewById(R.id.editTextSdcardPath);

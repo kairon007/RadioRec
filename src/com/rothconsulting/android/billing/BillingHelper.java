@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -11,6 +12,7 @@ import com.rothconsulting.android.billing.util.IabHelper;
 import com.rothconsulting.android.billing.util.IabResult;
 import com.rothconsulting.android.billing.util.Inventory;
 import com.rothconsulting.android.radiorec.ApplicationRadioRec;
+import com.rothconsulting.android.radiorec.Constants;
 import com.rothconsulting.android.radiorec.Utils;
 
 public class BillingHelper {
@@ -44,22 +46,20 @@ public class BillingHelper {
 	static Context context;
 
 	public static boolean isDonator() {
-		context = ApplicationRadioRec.getCustomAppContext();
-		fillIsDonator(context, iabHelper);
-		if (iabHelper != null) {
-			iabHelper.dispose();
+		if (Constants.IS_DONATOR_VALUE) {
+			return true;
 		}
-		iabHelper = null;
-		return PlayBillingActivity.isDonator;
+		context = ApplicationRadioRec.getCustomAppContext();
+		fillIsDonatorValue(context, iabHelper);
+		return Constants.IS_DONATOR_VALUE;
 	}
 
-	private static void fillIsDonator(Context context, final IabHelper mHelper) {
+	private static void fillIsDonatorValue(Context context, final IabHelper mHelper) {
 
 		if (mHelper != null) {
 			return;
 		}
 
-		iabHelper = mHelper;
 		// Create the helper, passing it our context and the public key to verify signatures with
 		iabHelper = new IabHelper(context, BillingHelper.base64_1 + BillingHelper.base64_2 + BillingHelper.base64_4 + BillingHelper.base64_3);
 
@@ -110,42 +110,23 @@ public class BillingHelper {
 						inventory.hasPurchase(BillingHelper.RR_DONATE_SILVER) || //
 						inventory.hasPurchase(BillingHelper.RR_DONATE_GOLD)) {
 
-					PlayBillingActivity.isDonator = true;
+					Constants.IS_DONATOR_VALUE = true;
+					storeIsDonatorInSharedPrefs();
 				}
 				Utils.log(TAG, "inventory = " + inventory);
 				Toast.makeText(context, "inventory = " + inventory, Toast.LENGTH_LONG).show();
 				Toast.makeText(context, "Purchase Basic = " + inventory.getPurchase(RR_DONATE_BASIC), Toast.LENGTH_LONG).show();
-				Toast.makeText(context, "isDonator = " + PlayBillingActivity.isDonator, Toast.LENGTH_LONG).show();
+				Toast.makeText(context, "isDonator = " + Constants.IS_DONATOR_VALUE, Toast.LENGTH_LONG).show();
 			}
 		};
 	}
 
-	// /**
-	// * Check all the SKU
-	// *
-	// * @param context
-	// * @param inventory
-	// * @return
-	// */
-	// private static boolean isDonator(Context context, Inventory inventory) {
-	//
-	// BillingHelper.context = context;
-	// boolean isDonator = false;
-	//
-	// if (inventory.hasPurchase(BillingHelper.RR_DONATE_BASIC)) {
-	// isDonator = true;
-	// } else if (inventory.hasPurchase(BillingHelper.RR_DONATE_BASIC_PLUS)) {
-	// isDonator = true;
-	// } else if (inventory.hasPurchase(BillingHelper.RR_DONATE_BRONZE)) {
-	// isDonator = true;
-	// } else if (inventory.hasPurchase(BillingHelper.RR_DONATE_SILVER)) {
-	// isDonator = true;
-	// } else if (inventory.hasPurchase(BillingHelper.RR_DONATE_GOLD)) {
-	// isDonator = true;
-	// }
-	// Toast.makeText(context, "Donator = " + isDonator, Toast.LENGTH_LONG).show();
-	//
-	// return isDonator;
-	// }
-
+	public static void storeIsDonatorInSharedPrefs() {
+		// Save in Shared Prefs
+		Constants.IS_DONATOR_VALUE = true;
+		SharedPreferences settings = context.getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putBoolean(Constants.IS_DONATOR_KEY, Constants.IS_DONATOR_VALUE);
+		editor.commit();
+	}
 }

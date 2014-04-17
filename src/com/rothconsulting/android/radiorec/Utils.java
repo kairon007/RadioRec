@@ -81,7 +81,7 @@ public class Utils {
 	}
 
 	public static void storePreferences(Context context) {
-		SharedPreferences settings = context.getSharedPreferences(Constants.PREFERENCES_FILE, 0);
+		SharedPreferences settings = context.getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.putInt(Constants.SELECTED_STATION_INDEX_KEY, Constants.SELECTED_STATION_INDEX_VALUE);
 		editor.putInt(Constants.SELECTED_STATION_ICON_KEY, Constants.SELECTED_STATION_ICON_VALUE);
@@ -94,12 +94,13 @@ public class Utils {
 		editor.putString(Constants.SD_CARD_PATH_KEY, Constants.SD_CARD_PATH_VALUE);
 		editor.putInt(Constants.BUFFER_KEY, Constants.BUFFER_VALUE);
 		editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
+		editor.putBoolean(Constants.IS_DONATOR_KEY, Constants.IS_DONATOR_VALUE);
 		editor.commit();
 	}
 
 	public static void getPreferences(Context context) {
 		// Restore preferences
-		SharedPreferences settings = context.getSharedPreferences(Constants.PREFERENCES_FILE, 0);
+		SharedPreferences settings = context.getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
 		Constants.SELECTED_STATION_INDEX_VALUE = settings.getInt(Constants.SELECTED_STATION_INDEX_KEY, -1);
 		Constants.SELECTED_STATION_NAME_VALUE = settings.getString(Constants.SELECTED_STATION_NAME_KEY, Constants.SELECTED_STATION_NAME_VALUE);
 		Constants.URL_LIVE_STREAM_VALUE = settings.getString(Constants.SELECTED_STATION_STREAM_KEY, Constants.URL_LIVE_STREAM_VALUE);
@@ -111,6 +112,7 @@ public class Utils {
 		Constants.BUFFER_VALUE = settings.getInt(Constants.BUFFER_KEY, Constants.DEFAULT_BUFFER);
 		Constants.CLOSE_APP_TIMER_END_VALUE = settings.getBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
 		Constants.ROTATION_OFF_VALUE = settings.getBoolean(Constants.ROTATION_OFF_KEY, Constants.ROTATION_OFF_VALUE);
+		Constants.IS_DONATOR_VALUE = settings.getBoolean(Constants.IS_DONATOR_KEY, Constants.IS_DONATOR_VALUE);
 	}
 
 	public String getAppVersionName(Context context, Class<?> cls) {

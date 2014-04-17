@@ -36,13 +36,14 @@ import com.rothconsulting.android.billing.util.IabHelper;
 import com.rothconsulting.android.billing.util.IabResult;
 import com.rothconsulting.android.billing.util.Inventory;
 import com.rothconsulting.android.billing.util.Purchase;
+import com.rothconsulting.android.radiorec.Constants;
 import com.rothconsulting.android.radiorec.R;
+import com.rothconsulting.android.radiorec.Utils;
 
 public class PlayBillingActivity extends Activity implements OnItemSelectedListener {
 
 	private final Context context = this;
 	private static final String TAG = "PlayBillingActivity";
-	public static boolean isDonator = false;
 	boolean mBillingServiceReady = false;
 	Spinner mSelectItemSpinner;
 	IabHelper mHelper = null;
@@ -113,8 +114,7 @@ public class PlayBillingActivity extends Activity implements OnItemSelectedListe
 		btnDonator.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				BillingHelper bh = new BillingHelper();
-				boolean isDonator = bh.isDonator();
+				boolean isDonator = BillingHelper.isDonator();
 				Toast.makeText(context, "isDonator = " + isDonator, Toast.LENGTH_LONG).show();
 			}
 		});
@@ -141,10 +141,10 @@ public class PlayBillingActivity extends Activity implements OnItemSelectedListe
 					Log.d(TAG, "In-app Billing setup failed: " + result);
 				} else {
 					Log.d(TAG, "In-app Billing is set up OK");
+					// IAB is fully set up.
+					mBillingServiceReady = true;
 				}
 
-				// IAB is fully set up.
-				mBillingServiceReady = true;
 			}
 		});
 	}
@@ -183,7 +183,16 @@ public class PlayBillingActivity extends Activity implements OnItemSelectedListe
 				Toast.makeText(context, "QueryInventory Failure!", Toast.LENGTH_LONG).show();
 			} else {
 				mHelper.consumeAsync(inventory.getPurchase(mSku), mConsumeFinishedListener);
-				PlayBillingActivity.isDonator = true;
+				Purchase purchase = inventory.getPurchase(mSku);
+				Toast.makeText(context, "purchase=" + purchase, Toast.LENGTH_LONG).show();
+				if (purchase != null) {
+					Toast.makeText(context, "SKU = " + mSku, Toast.LENGTH_LONG).show();
+					Toast.makeText(context, "Purchase DeveloperPayload = " + purchase.getDeveloperPayload(), Toast.LENGTH_LONG).show();
+					Toast.makeText(context, "Purchase ItemType = " + purchase.getItemType(), Toast.LENGTH_LONG).show();
+					Toast.makeText(context, "Purchase OrderId = " + purchase.getOrderId(), Toast.LENGTH_LONG).show();
+					Toast.makeText(context, "Purchase PurchaseState = " + purchase.getPurchaseState(), Toast.LENGTH_LONG).show();
+					Toast.makeText(context, "Purchase SKU = " + purchase.getSku(), Toast.LENGTH_LONG).show();
+				}
 			}
 		}
 	};
@@ -194,6 +203,8 @@ public class PlayBillingActivity extends Activity implements OnItemSelectedListe
 
 			if (result.isSuccess()) {
 				Toast.makeText(context, "Thank you !!", Toast.LENGTH_LONG).show();
+				Constants.IS_DONATOR_VALUE = true;
+				BillingHelper.storeIsDonatorInSharedPrefs();
 			} else {
 				Toast.makeText(context, "ConsumeFinished NOT successful!", Toast.LENGTH_LONG).show();
 				return;
@@ -205,7 +216,11 @@ public class PlayBillingActivity extends Activity implements OnItemSelectedListe
 	public void onDestroy() {
 		super.onDestroy();
 		if (mHelper != null)
-			mHelper.dispose();
+			try {
+				mHelper.dispose();
+			} catch (Exception e) {
+				Utils.log(TAG, "Exception: " + e);
+			}
 		mHelper = null;
 	}
 

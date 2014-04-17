@@ -384,6 +384,7 @@ public class Stations {
 	public static final String RADIO_SUPEROLDIE = "Superoldie";
 	public static final String RADIO_SUPERSCHLAGER = "Superschlager";
 	public static final String RADIO_DIE_NEUE_107_7 = "Die neue 107.7";
+	public static final String RADIO_DRESDEN = "Radio Dresden";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -4747,6 +4748,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://dieneue1077.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://dieneue1077.de/kontakt.html_0");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_DRESDEN);
+		m.put(ICON, R.drawable.radio_dresden);
+		m.put(ICON_SMALL, R.drawable.radio_dresden_small);
+		m.put(STREAM, "http://radiodresden.mp3.green.ch:80");
+		m.put(HOMEPAGE, "http://www.radiodresden.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.radiodresden.de/kontakt/telefonnummer-und-mailadresse-von-st-name/");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);

@@ -2,6 +2,7 @@ package com.rothconsulting.android.radiorec;
 
 import android.app.Activity;
 import android.app.AlertDialog.Builder;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -105,7 +106,7 @@ public class Donate extends Activity {
 				} else {
 					Constants.ANTI_ADS_VALUE = "ERROR";
 				}
-				SharedPreferences settings = getSharedPreferences(Constants.PREFERENCES_FILE, 0);
+				SharedPreferences settings = getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_VALUE);
 				editor.commit();
