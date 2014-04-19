@@ -36,11 +36,11 @@ import com.rothconsulting.android.billing.util.IabHelper;
 import com.rothconsulting.android.billing.util.IabResult;
 import com.rothconsulting.android.billing.util.Inventory;
 import com.rothconsulting.android.billing.util.Purchase;
-import com.rothconsulting.android.radiorec.Constants;
+import com.rothconsulting.android.billing.util.RadioRecBillingHelper;
 import com.rothconsulting.android.radiorec.R;
 import com.rothconsulting.android.radiorec.Utils;
 
-public class PlayBillingActivity extends Activity implements OnItemSelectedListener {
+public class PlayBillingActivity extends Activity {
 
 	private final Context context = this;
 	private static final String TAG = "PlayBillingActivity";
@@ -60,11 +60,11 @@ public class PlayBillingActivity extends Activity implements OnItemSelectedListe
 
 	/** An array of product list entries for the products that can be purchased. */
 	private static final CatalogEntry[] CATALOG = new CatalogEntry[] { //
-	new CatalogEntry(BillingHelper.RR_DONATE_BASIC, R.string.donate_basic),//
-			new CatalogEntry(BillingHelper.RR_DONATE_BASIC_PLUS, R.string.donate_basic_plus),//
-			new CatalogEntry(BillingHelper.RR_DONATE_BRONZE, R.string.donate_bronze),//
-			new CatalogEntry(BillingHelper.RR_DONATE_SILVER, R.string.donate_silver),//
-			new CatalogEntry(BillingHelper.RR_DONATE_GOLD, R.string.donate_gold) };
+	new CatalogEntry(RadioRecBillingHelper.RR_DONATE_BASIC, R.string.donate_basic),//
+			new CatalogEntry(RadioRecBillingHelper.RR_DONATE_BASIC_PLUS, R.string.donate_basic_plus),//
+			new CatalogEntry(RadioRecBillingHelper.RR_DONATE_BRONZE, R.string.donate_bronze),//
+			new CatalogEntry(RadioRecBillingHelper.RR_DONATE_SILVER, R.string.donate_silver),//
+			new CatalogEntry(RadioRecBillingHelper.RR_DONATE_GOLD, R.string.donate_gold) };
 
 	private String mItemName;
 	private String mSku;
@@ -99,12 +99,27 @@ public class PlayBillingActivity extends Activity implements OnItemSelectedListe
 			}
 		});
 
-		// Fill Spinner
+		// Fill and listen Spinner
 		mSelectItemSpinner = (Spinner) findViewById(R.id.item_choices);
 		mCatalogAdapter = new CatalogAdapter(this, CATALOG);
 		mSelectItemSpinner.setAdapter(mCatalogAdapter);
-		mSelectItemSpinner.setSelection(1);
-		mSelectItemSpinner.setOnItemSelectedListener(this);
+		mSelectItemSpinner.setSelection(1); // select second entry
+		mSelectItemSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			/**
+			 * Called when an item in the spinner is selected.
+			 */
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+				mItemName = getString(CATALOG[position].nameId);
+				mSku = CATALOG[position].sku;
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// Do nothing
+			}
+		});
 
 		// Check Play Store
 		initialiseBilling();
@@ -114,7 +129,7 @@ public class PlayBillingActivity extends Activity implements OnItemSelectedListe
 		btnDonator.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				boolean isDonator = BillingHelper.isDonator();
+				boolean isDonator = RadioRecBillingHelper.isDonator();
 				Toast.makeText(context, "isDonator = " + isDonator, Toast.LENGTH_LONG).show();
 			}
 		});
@@ -127,7 +142,8 @@ public class PlayBillingActivity extends Activity implements OnItemSelectedListe
 		}
 
 		// Create the helper, passing it our context and the public key to verify signatures with
-		mHelper = new IabHelper(this, BillingHelper.base64_1 + BillingHelper.base64_2 + BillingHelper.base64_4 + BillingHelper.base64_3);
+		mHelper = new IabHelper(this, RadioRecBillingHelper.base64_1 + RadioRecBillingHelper.base64_2 + RadioRecBillingHelper.base64_4
+				+ RadioRecBillingHelper.base64_3);
 
 		mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
 			@Override
@@ -203,8 +219,7 @@ public class PlayBillingActivity extends Activity implements OnItemSelectedListe
 
 			if (result.isSuccess()) {
 				Toast.makeText(context, "Thank you !!", Toast.LENGTH_LONG).show();
-				Constants.IS_DONATOR_VALUE = true;
-				BillingHelper.storeIsDonatorInSharedPrefs();
+				RadioRecBillingHelper.storeIsDonatorInSharedPrefs();
 			} else {
 				Toast.makeText(context, "ConsumeFinished NOT successful!", Toast.LENGTH_LONG).show();
 				return;
@@ -222,21 +237,6 @@ public class PlayBillingActivity extends Activity implements OnItemSelectedListe
 				Utils.log(TAG, "Exception: " + e);
 			}
 		mHelper = null;
-	}
-
-	/**
-	 * Called when an item in the spinner is selected.
-	 */
-	@Override
-	public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-		mItemName = getString(CATALOG[position].nameId);
-		mSku = CATALOG[position].sku;
-	}
-
-	@Override
-	public void onNothingSelected(AdapterView<?> arg0) {
-		// Do nothing
-
 	}
 
 	/**

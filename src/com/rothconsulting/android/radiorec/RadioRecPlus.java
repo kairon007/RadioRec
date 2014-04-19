@@ -50,6 +50,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.rothconsulting.android.billing.util.RadioRecBillingHelper;
 import com.rothconsulting.android.radiorec.filechooser.FileChooser;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
 import com.rothconsulting.android.radiorec.sqlitedb.DbUtils;
@@ -117,6 +118,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			context.deleteDatabase("webviewCache.db");
 		}
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		RadioRecBillingHelper.isDonator();
 		initGui();
 
 		if (getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_SENSOR) {

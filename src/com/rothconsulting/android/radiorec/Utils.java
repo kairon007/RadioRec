@@ -23,6 +23,7 @@ import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.util.Log;
 import android.view.Display;
 
 public class Utils {
@@ -73,7 +74,9 @@ public class Utils {
 	}
 
 	public static boolean hasValidKey() {
-		String key = Constants.ANTI_ADS_VALUE;
+		// String key = Constants.ANTI_ADS_VALUE;
+		SharedPreferences settings = ApplicationRadioRec.getCustomAppContext().getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
+		String key = settings.getString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_VALUE);
 		if (key != null && ((key.trim().startsWith("rR+") && key.trim().endsWith("so@p")) || (key.trim().startsWith("rr") && key.trim().endsWith("so")))) {
 			return true;
 		}
@@ -94,7 +97,6 @@ public class Utils {
 		editor.putString(Constants.SD_CARD_PATH_KEY, Constants.SD_CARD_PATH_VALUE);
 		editor.putInt(Constants.BUFFER_KEY, Constants.BUFFER_VALUE);
 		editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
-		editor.putBoolean(Constants.IS_DONATOR_KEY, Constants.IS_DONATOR_VALUE);
 		editor.commit();
 	}
 
@@ -112,7 +114,6 @@ public class Utils {
 		Constants.BUFFER_VALUE = settings.getInt(Constants.BUFFER_KEY, Constants.DEFAULT_BUFFER);
 		Constants.CLOSE_APP_TIMER_END_VALUE = settings.getBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
 		Constants.ROTATION_OFF_VALUE = settings.getBoolean(Constants.ROTATION_OFF_KEY, Constants.ROTATION_OFF_VALUE);
-		Constants.IS_DONATOR_VALUE = settings.getBoolean(Constants.IS_DONATOR_KEY, Constants.IS_DONATOR_VALUE);
 	}
 
 	public String getAppVersionName(Context context, Class<?> cls) {
@@ -160,7 +161,7 @@ public class Utils {
 	}
 
 	public static void log(String tag, String message) {
-		// Log.d(tag, message);
+		Log.d(tag, message);
 	}
 
 	public static String getHhMmFromMinutes(int minutes) {

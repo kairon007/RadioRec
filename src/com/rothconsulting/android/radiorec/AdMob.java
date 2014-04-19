@@ -1,15 +1,12 @@
 package com.rothconsulting.android.radiorec;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-import com.rothconsulting.android.billing.BillingHelper;
 
 public class AdMob {
 
@@ -19,8 +16,7 @@ public class AdMob {
 	public AdView showRemoveAds(Activity context) {
 		adView = new AdView(context);
 
-		if (Utils.isPlatformBelow_2_3_0() || Utils.hasValidKey() || !Utils.isNetworkAvailable(context, null, false) || isDonatorInSharedPrefs(context)
-				|| BillingHelper.isDonator()) {
+		if (Utils.isPlatformBelow_2_3_0() || Utils.hasValidKey() || !Utils.isNetworkAvailable(context, null, false)) {
 			LinearLayout adsLayout = (LinearLayout) context.findViewById(R.id.adsLayout);
 			adsLayout.removeAllViews();
 			adsLayout.setVisibility(View.GONE);
@@ -46,10 +42,4 @@ public class AdMob {
 		return adView;
 	}
 
-	private boolean isDonatorInSharedPrefs(Context context) {
-		SharedPreferences settings = context.getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
-		boolean isDonator = settings.getBoolean(Constants.IS_DONATOR_KEY, Constants.IS_DONATOR_VALUE);
-		Utils.log(TAG, "AdMob check isDonator = " + isDonator);
-		return isDonator;
-	}
 }

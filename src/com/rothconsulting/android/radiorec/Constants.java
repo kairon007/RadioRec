@@ -148,7 +148,6 @@ public class Constants {
 	public static final String BUFFER_KEY = "MyBuffer";
 	public static final String CLOSE_APP_TIMER_END_KEY = "CloseAppWhenTimerEnds";
 	public static final String ROTATION_OFF_KEY = "RotationOff";
-	public static final String IS_DONATOR_KEY = "IsDonator";
 
 	// Settings Values!
 	public static int SELECTED_STATION_INDEX_VALUE;
@@ -165,8 +164,8 @@ public class Constants {
 	public static int BUFFER_VALUE;
 	public static boolean CLOSE_APP_TIMER_END_VALUE;
 	public static boolean ROTATION_OFF_VALUE;
-	public static boolean IS_DONATOR_VALUE;
 
+	public static String ANTI_ADS_PLAY_DONATOR_VALUE = "rrplaydonso";
 	public static final String DEFAULT_SD_CARD_PATH = "sdcard/RadioRec";
 	public static final int DEFAULT_BUFFER = 8192;
 
