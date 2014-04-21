@@ -3,6 +3,7 @@ package com.rothconsulting.android.billing.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -48,19 +49,23 @@ public class RadioRecBillingHelper {
 	 * 
 	 * @return
 	 */
-	public static boolean isDonator() {
+	public static boolean isDonator(Activity activity) {
 		iabHelper = null;
 		context = ApplicationRadioRec.getCustomAppContext();
 		if (Utils.hasValidKey()) {
 			isDonator = true;
 		}
-		fillIsDonatorValue();
+		fillIsDonatorValue(activity);
 		return isDonator;
 	}
 
-	private static void fillIsDonatorValue() {
+	private static void fillIsDonatorValue(Activity activity) {
 
 		Utils.log(TAG, "fillIsDonatorValue");
+
+		if (!Utils.isNetworkAvailable(context, null, false)) {
+			return;
+		}
 
 		if (iabHelper != null) {
 			Utils.log(TAG, "iabHelper != null");
@@ -72,7 +77,7 @@ public class RadioRecBillingHelper {
 				+ RadioRecBillingHelper.base64_3);
 
 		// Enable debug logging (for a production application, you should set this to false).
-		iabHelper.enableDebugLogging(true);
+		iabHelper.enableDebugLogging(false);
 
 		iabHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
 			@Override
@@ -85,6 +90,7 @@ public class RadioRecBillingHelper {
 
 				if (!result.isSuccess()) {
 					Log.d(TAG, "In-app Billing setup failed: " + result);
+					return;
 				} else {
 					Log.d(TAG, "In-app Billing is set up OK");
 					// IAB is fully set up.
@@ -105,6 +111,7 @@ public class RadioRecBillingHelper {
 		return new IabHelper.QueryInventoryFinishedListener() {
 			@Override
 			public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
+				Utils.log(TAG, "*** Start onQueryInventoryFinished");
 				// Have we been disposed of in the meantime? If so, quit.
 				if (iabHelper == null) {
 					Utils.log(TAG, "iabHelper == null -> return");
@@ -116,25 +123,40 @@ public class RadioRecBillingHelper {
 					return;
 				}
 
-				if (inventory.hasPurchase(RadioRecBillingHelper.RR_DONATE_BASIC) || //
-						inventory.hasPurchase(RadioRecBillingHelper.RR_DONATE_BASIC_PLUS) || //
-						inventory.hasPurchase(RadioRecBillingHelper.RR_DONATE_BRONZE) || //
-						inventory.hasPurchase(RadioRecBillingHelper.RR_DONATE_SILVER) || //
-						inventory.hasPurchase(RadioRecBillingHelper.RR_DONATE_GOLD)) {
+				String value = null;
+				if (inventory.hasPurchase(RadioRecBillingHelper.RR_DONATE_BASIC)) {
+					value = "rr" + inventory.getPurchase(RR_DONATE_BASIC).getOrderId() + "so";
 
-					storeIsDonatorInSharedPrefs();
+				} else if (inventory.hasPurchase(RadioRecBillingHelper.RR_DONATE_BASIC_PLUS)) {
+					value = "rr" + inventory.getPurchase(RR_DONATE_BASIC_PLUS).getOrderId() + "so";
+
+				} else if (inventory.hasPurchase(RadioRecBillingHelper.RR_DONATE_BRONZE)) {
+					value = "rr" + inventory.getPurchase(RR_DONATE_BRONZE).getOrderId() + "so";
+
+				} else if (inventory.hasPurchase(RadioRecBillingHelper.RR_DONATE_SILVER)) {
+					value = "rr" + inventory.getPurchase(RR_DONATE_SILVER).getOrderId() + "so";
+
+				} else if (inventory.hasPurchase(RadioRecBillingHelper.RR_DONATE_GOLD)) {
+					value = "rr" + inventory.getPurchase(RR_DONATE_GOLD).getOrderId() + "so";
 				}
 
-				debug(result, inventory);
+				Utils.log(TAG, "Donator value = " + value);
+				if (value != null) {
+					isDonator = true;
+					storeIsDonatorInSharedPrefs(value);
+				}
+
+				// debug(result, inventory);
+				Utils.log(TAG, "*** End onQueryInventoryFinished");
 			}
 		};
 	}
 
-	public static void storeIsDonatorInSharedPrefs() {
+	public static void storeIsDonatorInSharedPrefs(String value) {
 		// Save in Shared Prefs
 		SharedPreferences settings = context.getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = settings.edit();
-		Constants.ANTI_ADS_VALUE = Constants.ANTI_ADS_PLAY_DONATOR_VALUE;
+		Constants.ANTI_ADS_VALUE = value;
 		editor.putString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_VALUE);
 		editor.commit();
 	}
@@ -145,7 +167,7 @@ public class RadioRecBillingHelper {
 		Toast.makeText(context, "result = " + result.getMessage(), Toast.LENGTH_LONG).show();
 
 		Utils.log(TAG, "inventory = " + inventory);
-		Toast.makeText(context, "Inventory getPurchase BASIC = " + inventory.getPurchase(RR_DONATE_BASIC), Toast.LENGTH_LONG).show();
+		Toast.makeText(context, "Inventory Purchase BASIC = " + inventory.getPurchase(RR_DONATE_BASIC), Toast.LENGTH_LONG).show();
 
 		List<String> allOwnedSkus = inventory.getAllOwnedSkus();
 		List<String> allOwnedSkusInapp = inventory.getAllOwnedSkus(IabHelper.ITEM_TYPE_INAPP);
@@ -163,15 +185,14 @@ public class RadioRecBillingHelper {
 			allPurchasesSize = allPurchases.size();
 		}
 
-		Utils.log(TAG, "AllOwnedSkus (" + allOwnedSkusSize + ") = " + inventory.getAllOwnedSkus());
-		Toast.makeText(context, "AllOwnedSkus (" + allOwnedSkusSize + ") = " + inventory.getAllOwnedSkus(), Toast.LENGTH_LONG).show();
+		Utils.log(TAG, "AllOwnedSkus (" + allOwnedSkusSize + ") = " + allOwnedSkus);
+		Toast.makeText(context, "AllOwnedSkus (" + allOwnedSkusSize + ") = " + allOwnedSkus, Toast.LENGTH_LONG).show();
 
-		Utils.log(TAG, "AllPurchases (" + allPurchasesSize + ")= " + inventory.getAllPurchases());
-		Toast.makeText(context, "AllPurchases (" + allPurchasesSize + ")= " + inventory.getAllPurchases(), Toast.LENGTH_LONG).show();
+		Utils.log(TAG, "AllPurchases (" + allPurchasesSize + ")= " + allPurchases);
+		Toast.makeText(context, "AllPurchases (" + allPurchasesSize + ")= " + allPurchases, Toast.LENGTH_LONG).show();
 
-		Utils.log(TAG, "AllOwnedSkus of inapp (" + allOwnedSkusInappSize + ") = " + inventory.getAllOwnedSkus(IabHelper.ITEM_TYPE_INAPP));
-		Toast.makeText(context, "AllOwnedSkus of inapp (" + allOwnedSkusInappSize + ") = " + inventory.getAllOwnedSkus(IabHelper.ITEM_TYPE_INAPP),
-				Toast.LENGTH_LONG).show();
+		Utils.log(TAG, "AllOwnedSkus of inapp (" + allOwnedSkusInappSize + ") = " + allOwnedSkusInapp);
+		Toast.makeText(context, "AllOwnedSkus of inapp (" + allOwnedSkusInappSize + ") = " + allOwnedSkusInapp, Toast.LENGTH_LONG).show();
 
 		Utils.log(TAG, "isDonator = " + Constants.ANTI_ADS_VALUE);
 		Toast.makeText(context, "isDonator = " + Constants.ANTI_ADS_VALUE, Toast.LENGTH_LONG).show();

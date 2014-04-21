@@ -63,10 +63,10 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 	public static boolean recording;
 	private static boolean showCountdown;
 	private Context context;
+	private Activity activity;
 	private int origOrientation;
 	private boolean isOrientationSensorOn;
 
-	private Activity activity;
 	private boolean firstStart;
 	private Spinner spnAlphabetisch;
 	private Spinner spnAllStations;
@@ -118,7 +118,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			context.deleteDatabase("webviewCache.db");
 		}
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		RadioRecBillingHelper.isDonator();
+		RadioRecBillingHelper.isDonator(activity);
 		initGui();
 
 		if (getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_SENSOR) {

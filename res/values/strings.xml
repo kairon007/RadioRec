@@ -54,11 +54,11 @@
 	<string name="donate_silver">CHF 20.00 - Silver  Donation</string>
 	<string name="donate_gold">CHF 50.00 - Gold  Donation</string>
     <string name="billing_not_supported_title">Donation not possible at the moment</string>
-    <string name="billing_not_supported_message">The Play Store billing service is not available at this time. Please try later or donate by PayPal or credit card.</string>
-    <string name="cannot_connect_title">Cannot connect to the Play Store</string>
-    <string name="cannot_connect_message">RadioRec+ cannot connect to the Play Store. Your Play Store version is out of date or I cannot find the Play Store app. \nPlease donate by using PayPal or credit card.</string>
-    <string name="help_url" formatted="false">https://support.google.com/googleplay/bin/answer.py?hl=de&amp;answer=1050566</string>
-    <string name="learn_more">More Info</string>
+    <string name="billing_not_supported_message">The Play Store billing service is not available on your device at this time. Please try later or donate by PayPal or credit card.</string>
+	<string name="billing_canceled">Payment canceled</string>
+	<string name="billing_thanks">Thank you !!!</string>
+	<string name="billing_error_consume_finished">Sorry, could not finish transaction !!!</string>
+	<string name="learn_more">More Info</string>
     <string name="restoring_transactions">Restoring transactions</string>
 	<string name="select">Select</string>	
 	<string name="donate_options">Donation Options</string>	

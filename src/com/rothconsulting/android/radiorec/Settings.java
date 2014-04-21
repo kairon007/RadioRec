@@ -194,6 +194,11 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 		}
 	}
 
+	/**
+	 * For Android 4.1 (API Level 16) and older
+	 * 
+	 * @param wifiSleepPolicy
+	 */
 	private void setRadioButtons_Level17Below(int wifiSleepPolicy) {
 		if (wifiSleepPolicy == android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER) {
 			radioImmerAn.setChecked(true);
@@ -204,6 +209,11 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 		}
 	}
 
+	/**
+	 * For Android 4.2 (API Level 17) and newer
+	 * 
+	 * @param wifiSleepPolicy
+	 */
 	private void setRadioButtons_Level17Above(int wifiSleepPolicy) {
 		if (wifiSleepPolicy == android.provider.Settings.Global.WIFI_SLEEP_POLICY_NEVER) {
 			radioImmerAn.setChecked(true);

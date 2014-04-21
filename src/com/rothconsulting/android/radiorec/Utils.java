@@ -23,7 +23,6 @@ import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
-import android.util.Log;
 import android.view.Display;
 
 public class Utils {
@@ -161,7 +160,7 @@ public class Utils {
 	}
 
 	public static void log(String tag, String message) {
-		Log.d(tag, message);
+		// Log.d(tag, message);
 	}
 
 	public static String getHhMmFromMinutes(int minutes) {
@@ -283,11 +282,11 @@ public class Utils {
 		}
 	}
 
-	public static void showEmptyFavAlertDialog(final Context context) {
+	public static void showAlertDialog(final Context context, final int resIdTitle, final int resIdMessage) {
 		final Builder b = new AlertDialog.Builder(context);
 		b.setCancelable(true);
-		b.setTitle(R.string.info);
-		String text = context.getString(R.string.nochKeineFavoriten);
+		b.setTitle(resIdTitle);
+		String text = context.getString(resIdMessage);
 		b.setMessage(text);
 		b.setPositiveButton(android.R.string.ok, null);
 		b.show();

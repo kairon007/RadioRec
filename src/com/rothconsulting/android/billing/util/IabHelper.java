@@ -36,6 +36,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.vending.billing.IInAppBillingService;
+import com.rothconsulting.android.radiorec.Utils;
 
 /**
  * Provides convenience methods for in-app billing. You can create one instance of this class for your application and use it to process in-app billing
@@ -817,6 +818,15 @@ public class IabHelper {
 		do {
 			logDebug("Calling getPurchases with continuation token: " + continueToken);
 			Bundle ownedItems = mService.getPurchases(3, mContext.getPackageName(), itemType, continueToken);
+
+			Utils.log(mDebugTag, "++ --- ownedItems from Service = " + ownedItems);
+			Utils.log(mDebugTag, "++ --- ownedItems itemType = " + itemType);
+			Utils.log(mDebugTag, "++ --- ownedItems keySet  = " + ownedItems.keySet());
+			Utils.log(mDebugTag, "++ --- ownedItems isEmpty = " + ownedItems.isEmpty());
+			Utils.log(mDebugTag, "++ --- ownedItems INAPP_PURCHASE_ITEM_LIST = " + ownedItems.get("INAPP_PURCHASE_ITEM_LIST"));
+			Utils.log(mDebugTag, "++ --- ownedItems INAPP_PURCHASE_DATA_LIST = " + ownedItems.get("INAPP_PURCHASE_DATA_LIST"));
+			Utils.log(mDebugTag, "++ --- ownedItems INAPP_DATA_SIGNATURE_LIST = " + ownedItems.get("INAPP_DATA_SIGNATURE_LIST"));
+			Utils.log(mDebugTag, "++ --- ownedItems RESPONSE_CODE = " + ownedItems.get("RESPONSE_CODE"));
 
 			int response = getResponseCodeFromBundle(ownedItems);
 			logDebug("Owned items response: " + String.valueOf(response));

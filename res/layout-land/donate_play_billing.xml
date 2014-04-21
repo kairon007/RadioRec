@@ -17,9 +17,9 @@
 		<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginLeft="30dip"
 			android:id="@+id/buttonZurueck" android:layout_marginRight="30dip" android:text="@string/zurueck"
 			android:layout_marginTop="0dip" android:layout_gravity="center" />
-		<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginLeft="30dip"
-			android:id="@+id/buttonDonator" android:layout_marginRight="30dip" android:text="@string/donate"
-			android:layout_marginTop="0dip" android:layout_gravity="center" />
+<!-- 		<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginLeft="30dip" -->
+<!-- 			android:id="@+id/buttonDonator" android:layout_marginRight="30dip" android:text="@string/donate" -->
+<!-- 			android:layout_marginTop="0dip" android:layout_gravity="center" /> -->
 	</LinearLayout>
 	<ImageView android:src="@drawable/button_google_play" android:id="@+id/imageAndroidMarket"
 		android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content"

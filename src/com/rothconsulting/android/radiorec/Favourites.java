@@ -149,7 +149,7 @@ public class Favourites extends ListActivity {
 		if (stationList == null || stationList.size() == 0) {
 			if (zurueckButton != null) {
 				zurueckButton.setVisibility(View.VISIBLE);
-				Utils.showEmptyFavAlertDialog(context);
+				Utils.showAlertDialog(context, R.string.info, R.string.nochKeineFavoriten);
 			}
 		} else if (zurueckButton != null) {
 			zurueckButton.setVisibility(View.GONE);

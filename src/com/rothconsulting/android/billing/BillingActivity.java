@@ -37,13 +37,14 @@ import com.rothconsulting.android.billing.util.IabResult;
 import com.rothconsulting.android.billing.util.Inventory;
 import com.rothconsulting.android.billing.util.Purchase;
 import com.rothconsulting.android.billing.util.RadioRecBillingHelper;
+import com.rothconsulting.android.radiorec.AdMob;
 import com.rothconsulting.android.radiorec.R;
 import com.rothconsulting.android.radiorec.Utils;
 
-public class PlayBillingActivity extends Activity {
+public class BillingActivity extends Activity {
 
 	private final Context context = this;
-	private static final String TAG = "PlayBillingActivity";
+	private static final String TAG = "BillingActivity";
 	boolean mBillingServiceReady = false;
 	Spinner mSelectItemSpinner;
 	IabHelper mHelper = null;
@@ -80,12 +81,19 @@ public class PlayBillingActivity extends Activity {
 		btnDonate.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (mBillingServiceReady) {
-					Toast.makeText(context, "Starte Spende !!!", Toast.LENGTH_LONG).show();
-					mHelper.launchPurchaseFlow(PlayBillingActivity.this, mSku, 10001, mPurchaseFinishedListener, mSku);
+				if (Utils.isNetworkAvailable(context, null, false)) {
+					if (mBillingServiceReady) {
+						if (mHelper == null) {
+							initialiseBilling();
+						}
+						// Toast.makeText(context, "Starte Spende !!!", Toast.LENGTH_LONG).show();
+						mHelper.launchPurchaseFlow(BillingActivity.this, mSku, 10001, mPurchaseFinishedListener, mSku);
+					} else {
+						Utils.showAlertDialog(context, R.string.billing_not_supported_title, R.string.billing_not_supported_message);
+						return;
+					}
 				} else {
-					Toast.makeText(context, "Play Billing Service NOT ready !!!", Toast.LENGTH_LONG).show();
-					return;
+					Toast.makeText(context, getString(R.string.networkNotAvailable), Toast.LENGTH_LONG).show();
 				}
 			}
 		});
@@ -124,26 +132,38 @@ public class PlayBillingActivity extends Activity {
 		// Check Play Store
 		initialiseBilling();
 
-		// Button Test Billing -> isDonator
-		Button btnDonator = (Button) findViewById(R.id.buttonDonator);
-		btnDonator.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				boolean isDonator = RadioRecBillingHelper.isDonator();
-				Toast.makeText(context, "isDonator = " + isDonator, Toast.LENGTH_LONG).show();
-			}
-		});
+		AdMob adMob = new AdMob();
+		adMob.showRemoveAds(this);
+
+		// // Button Test Billing -> isDonator
+		// Button btnDonator = (Button) findViewById(R.id.buttonDonator);
+		// btnDonator.setOnClickListener(new View.OnClickListener() {
+		// @Override
+		// public void onClick(View v) {
+		// boolean isDonator = RadioRecBillingHelper.isDonator();
+		// // Toast.makeText(context, "isDonator = " + isDonator, Toast.LENGTH_LONG).show();
+		// }
+		// });
 
 	}
 
 	private void initialiseBilling() {
+
 		if (mHelper != null) {
+			return;
+		}
+
+		if (!Utils.isNetworkAvailable(context, null, false)) {
+			Toast.makeText(context, getString(R.string.networkNotAvailable), Toast.LENGTH_LONG).show();
 			return;
 		}
 
 		// Create the helper, passing it our context and the public key to verify signatures with
 		mHelper = new IabHelper(this, RadioRecBillingHelper.base64_1 + RadioRecBillingHelper.base64_2 + RadioRecBillingHelper.base64_4
 				+ RadioRecBillingHelper.base64_3);
+
+		// Enable debug logging (for a production application, you should set this to false).
+		mHelper.enableDebugLogging(false);
 
 		mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
 			@Override
@@ -155,6 +175,8 @@ public class PlayBillingActivity extends Activity {
 
 				if (!result.isSuccess()) {
 					Log.d(TAG, "In-app Billing setup failed: " + result);
+					Utils.showAlertDialog(context, R.string.billing_not_supported_title, R.string.billing_not_supported_message);
+					return;
 				} else {
 					Log.d(TAG, "In-app Billing is set up OK");
 					// IAB is fully set up.
@@ -177,7 +199,7 @@ public class PlayBillingActivity extends Activity {
 		public void onIabPurchaseFinished(IabResult result, Purchase purchase) {
 			if (result.isFailure()) {
 				// Error
-				Toast.makeText(context, "Purchase NOT successful!", Toast.LENGTH_LONG).show();
+				Toast.makeText(context, getString(R.string.billing_canceled), Toast.LENGTH_LONG).show();
 				return;
 			} else if (purchase.getSku().equals(mSku)) {
 				consumeItem();
@@ -196,19 +218,10 @@ public class PlayBillingActivity extends Activity {
 
 			if (result.isFailure()) {
 				// Error
-				Toast.makeText(context, "QueryInventory Failure!", Toast.LENGTH_LONG).show();
+				Toast.makeText(context, "Play Error: Query Inventory Failure!", Toast.LENGTH_LONG).show();
 			} else {
 				mHelper.consumeAsync(inventory.getPurchase(mSku), mConsumeFinishedListener);
-				Purchase purchase = inventory.getPurchase(mSku);
-				Toast.makeText(context, "purchase=" + purchase, Toast.LENGTH_LONG).show();
-				if (purchase != null) {
-					Toast.makeText(context, "SKU = " + mSku, Toast.LENGTH_LONG).show();
-					Toast.makeText(context, "Purchase DeveloperPayload = " + purchase.getDeveloperPayload(), Toast.LENGTH_LONG).show();
-					Toast.makeText(context, "Purchase ItemType = " + purchase.getItemType(), Toast.LENGTH_LONG).show();
-					Toast.makeText(context, "Purchase OrderId = " + purchase.getOrderId(), Toast.LENGTH_LONG).show();
-					Toast.makeText(context, "Purchase PurchaseState = " + purchase.getPurchaseState(), Toast.LENGTH_LONG).show();
-					Toast.makeText(context, "Purchase SKU = " + purchase.getSku(), Toast.LENGTH_LONG).show();
-				}
+				// debug(inventory.getPurchase(mSku));
 			}
 		}
 	};
@@ -218,10 +231,11 @@ public class PlayBillingActivity extends Activity {
 		public void onConsumeFinished(Purchase purchase, IabResult result) {
 
 			if (result.isSuccess()) {
-				Toast.makeText(context, "Thank you !!", Toast.LENGTH_LONG).show();
-				RadioRecBillingHelper.storeIsDonatorInSharedPrefs();
+				Toast.makeText(context, getString(R.string.billing_thanks), Toast.LENGTH_LONG).show();
+				String value = "rr" + purchase.getOrderId() + "so";
+				RadioRecBillingHelper.storeIsDonatorInSharedPrefs(value);
 			} else {
-				Toast.makeText(context, "ConsumeFinished NOT successful!", Toast.LENGTH_LONG).show();
+				Toast.makeText(context, getString(R.string.billing_error_consume_finished), Toast.LENGTH_LONG).show();
 				return;
 			}
 		}
@@ -288,4 +302,15 @@ public class PlayBillingActivity extends Activity {
 		}
 	}
 
+	private void debug(Purchase purchase) {
+		Toast.makeText(context, "purchase=" + purchase, Toast.LENGTH_LONG).show();
+		if (purchase != null) {
+			Toast.makeText(context, "SKU = " + mSku, Toast.LENGTH_LONG).show();
+			Toast.makeText(context, "Purchase DeveloperPayload = " + purchase.getDeveloperPayload(), Toast.LENGTH_LONG).show();
+			Toast.makeText(context, "Purchase ItemType = " + purchase.getItemType(), Toast.LENGTH_LONG).show();
+			Toast.makeText(context, "Purchase OrderId = " + purchase.getOrderId(), Toast.LENGTH_LONG).show();
+			Toast.makeText(context, "Purchase PurchaseState = " + purchase.getPurchaseState(), Toast.LENGTH_LONG).show();
+			Toast.makeText(context, "Purchase SKU = " + purchase.getSku(), Toast.LENGTH_LONG).show();
+		}
+	}
 }

@@ -55,9 +55,9 @@
 	<string name="donate_gold">CHF 50.00 - Donazione Oro</string>
 	<string name="billing_not_supported_title">Donazione attualmente non possibile</string>
 	<string name="billing_not_supported_message">Il servizio Play Store al momento non é raggiungibile. Riprova più tardi oppure dona tramite PayPal o carta di credito.</string>
-	<string name="cannot_connect_title">Impossibile connettere a Play Store</string>
-	<string name="cannot_connect_message">RadioRec+ non può connettere Play Store. La tua versione Play Store é troppo vecchia oppure il Play Store ɠintrovabile. \nDona tramite PayPal o carta di credito.</string>
-	<string name="help_url" formatted="false">https://support.google.com/googleplay/bin/answer.py?hl=de&amp;answer=1050566</string>
+	<string name="billing_canceled">Pagamento annullata</string>
+	<string name="billing_thanks">Grazie mille !!!</string>
+	<string name="billing_error_consume_finished">Ci dispiace non ho potuto completare la transazione !!!</string>
 	<string name="learn_more">Più informazioni</string>
 	<string name="restoring_transactions">Ripristino transazioni</string>
 	<string name="select">Selezione</string>

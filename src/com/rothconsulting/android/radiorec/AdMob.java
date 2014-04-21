@@ -13,25 +13,25 @@ public class AdMob {
 	private final static String TAG = "AdMob";
 	private AdView adView;
 
-	public AdView showRemoveAds(Activity context) {
-		adView = new AdView(context);
+	public AdView showRemoveAds(Activity activity) {
+		adView = new AdView(activity);
 
-		if (Utils.isPlatformBelow_2_3_0() || Utils.hasValidKey() || !Utils.isNetworkAvailable(context, null, false)) {
-			LinearLayout adsLayout = (LinearLayout) context.findViewById(R.id.adsLayout);
+		if (Utils.isPlatformBelow_2_3_0() || Utils.hasValidKey() || !Utils.isNetworkAvailable(activity, null, false)) {
+			LinearLayout adsLayout = (LinearLayout) activity.findViewById(R.id.adsLayout);
 			adsLayout.removeAllViews();
 			adsLayout.setVisibility(View.GONE);
 		} else {
-			return showGoogleAdMobAds(context, adView);
+			return showGoogleAdMobAds(activity, adView);
 		}
 		return adView;
 	}
 
-	private AdView showGoogleAdMobAds(Activity context, AdView adView) {
+	private AdView showGoogleAdMobAds(Activity activity, AdView adView) {
 
 		adView.setAdUnitId("ca-app-pub-5619114666968507/6860732934");
 		adView.setAdSize(AdSize.BANNER);
 
-		LinearLayout layout = (LinearLayout) context.findViewById(R.id.adsLayout);
+		LinearLayout layout = (LinearLayout) activity.findViewById(R.id.adsLayout);
 		// Add the adView to it
 		layout.addView(adView);
 		// Initiate a generic request.
