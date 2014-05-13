@@ -16,13 +16,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 
+import com.rothconsulting.android.radiorec.network.icy.IcyGetRequest;
 
 public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 
@@ -40,6 +45,10 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 	}
 
 	@Override
+	/**
+	 * urls[0] = input
+	 * urls[1] = output
+	 */
 	protected Long doInBackground(URL... urls) {
 
 		Utils.log(TAG, "startRecording");
@@ -50,23 +59,31 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 		this.publishProgress(1);
 
 		try {
-			File radioRecorderDirectory = new File("/"
-					+ Constants.SD_CARD_PATH_VALUE + "/");
+
+			InputStream inputStream;
+			// IceCast/ShoutCast streams are no more supported from Android 4.4
+			if (Utils.isPlatformBelow_4_4()) {
+				inputStream = urls[0].openStream();
+			} else {
+				// Icy source from: https://gist.github.com/toms972/8842217 (Thanks!)
+				IcyGetRequest request = new IcyGetRequest(urls[0].toString());
+				HttpResponse response = request.get();
+				HttpEntity entity = response.getEntity();
+				inputStream = entity.getContent();
+			}
+
+			File radioRecorderDirectory = new File("/" + Constants.SD_CARD_PATH_VALUE + "/");
 			radioRecorderDirectory.mkdirs();
 			Utils.log(TAG, "Stream Buffer=" + Constants.BUFFER_VALUE);
 			if (Constants.BUFFER_VALUE <= 0) {
 				Constants.BUFFER_VALUE = Constants.DEFAULT_BUFFER;
 			}
-			buffInputStream = new BufferedInputStream(urls[0].openStream(),
-					Constants.BUFFER_VALUE);
+			buffInputStream = new BufferedInputStream(inputStream, Constants.BUFFER_VALUE);
 			Utils.log(TAG, "url.openStream()");
 
-			buffOutputStream = new BufferedOutputStream(new FileOutputStream(
-					urls[1].getFile()), Constants.BUFFER_VALUE);
+			buffOutputStream = new BufferedOutputStream(new FileOutputStream(urls[1].getFile()), Constants.BUFFER_VALUE);
 			Utils.log(TAG, "FileOutputStream: " + urls[1].getFile());
-			Utils utils = new Utils();
-			utils.getNotifInstance(context, RadioRecorder.class)
-					.showStatusBarNotificationRecording();
+			Utils.getNotifInstance(context, RadioRecorder.class).showStatusBarNotificationRecording();
 
 			connectionProgressDialog.dismiss();
 			int c = 0;
@@ -154,8 +171,7 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 	@Override
 	protected void onPreExecute() {
 		Utils.log(TAG, "prepareProgressDialog");
-		Utils utils = new Utils();
-		connectionProgressDialog = utils.prepareProgressDialog(context);
+		connectionProgressDialog = Utils.prepareProgressDialog(context);
 		connectionProgressDialog.show();
 	}
 

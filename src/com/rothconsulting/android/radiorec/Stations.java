@@ -384,7 +384,8 @@ public class Stations {
 	public static final String RADIO_SUPEROLDIE = "Superoldie";
 	public static final String RADIO_SUPERSCHLAGER = "Superschlager";
 	public static final String RADIO_DIE_NEUE_107_7 = "Die neue 107.7";
-	public static final String RADIO_DRESDEN = "Radio Dresden";
+	public static final String RADIO_DRESDEN = "Dresden";
+	public static final String RADIO_GOLD_BERLIN = "Gold Berlin";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3559,7 +3560,7 @@ public class Stations {
 		m.put(NAME, RADIO_ZWICKAU);
 		m.put(ICON, R.drawable.radio_zwickau);
 		m.put(ICON_SMALL, R.drawable.radio_zwickau_small);
-		m.put(STREAM, "http://radiozwickau.mp3.green.ch:80");
+		m.put(STREAM, "http://radiozwickau.mp3.green.ch");
 		m.put(HOMEPAGE, "http://www.radiozwickau.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.radiozwickau.de/?id=1651");
@@ -4757,10 +4758,23 @@ public class Stations {
 		m.put(NAME, RADIO_DRESDEN);
 		m.put(ICON, R.drawable.radio_dresden);
 		m.put(ICON_SMALL, R.drawable.radio_dresden_small);
-		m.put(STREAM, "http://radiodresden.mp3.green.ch:80");
+		m.put(STREAM, "http://radiodresden.mp3.green.ch");
 		m.put(HOMEPAGE, "http://www.radiodresden.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.radiodresden.de/kontakt/telefonnummer-und-mailadresse-von-st-name/");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_GOLD_BERLIN);
+		m.put(ICON, R.drawable.radio_gold);
+		m.put(ICON_SMALL, R.drawable.radio_gold_small);
+		m.put(STREAM, "http://www.digitalradiostream.de:7000");
+		m.put(HOMEPAGE, "http://www.radiogold.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.radiogold.de/menue-3");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);

@@ -258,6 +258,16 @@ public class Utils {
 		return false;
 	}
 
+	/**
+	 * Android Platform 4.4 = Level 19
+	 */
+	public static boolean isPlatformBelow_4_4() {
+		if (Build.VERSION.SDK_INT < 19) {
+			return true;
+		}
+		return false;
+	}
+
 	public static boolean isAtLeastHoneycomb() {
 		// Can use static final constants like HONEYCOMB, declared in later
 		// versions
