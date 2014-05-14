@@ -1,125 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="wrap_content">
-	<ScrollView android:id="@+id/scroll" android:layout_width="fill_parent"
-		android:layout_height="wrap_content">
-		<LinearLayout android:layout_width="fill_parent"
-			android:orientation="vertical" android:scrollbars="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+	android:layout_width="fill_parent" android:layout_height="wrap_content">
+	<ScrollView android:id="@+id/scroll" android:layout_width="fill_parent" android:layout_height="wrap_content">
+		<LinearLayout android:layout_width="fill_parent" android:orientation="vertical" android:scrollbars="vertical"
 			android:weightSum="1" android:layout_height="fill_parent">
-			<EditText android:focusable="true"
-				android:focusableInTouchMode="true" android:layout_width="1px"
+			<EditText android:focusable="true" android:focusableInTouchMode="true" android:layout_width="1px"
 				android:layout_height="1px" />
-			<TextView android:text="@string/settings" android:id="@+id/textViewTitleSetings"
-				android:layout_width="fill_parent" android:layout_height="wrap_content"
-				android:background="#000000" android:textStyle="bold" />
-			<LinearLayout android:layout_width="fill_parent"
-				android:orientation="vertical" android:scrollbars="vertical"
-				android:weightSum="1" android:layout_height="fill_parent"
-				android:id="@+id/linearLayoutWifi">
-				<TextView android:text="@string/wifi" android:id="@+id/textViewTitleWifi"
-					android:layout_width="fill_parent" android:layout_height="wrap_content"
-					android:background="#0000A0" android:textStyle="bold" />
-				<RadioGroup android:id="@+id/radioGroupWifi"
-					android:layout_width="wrap_content" android:layout_height="wrap_content">
-					<RadioButton android:text="@string/wifiImmerAn"
-						android:id="@+id/radioImmerAn" android:layout_height="wrap_content"
+			<TextView android:text="@string/settings" android:id="@+id/textViewTitleSetings" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:background="#000000" android:textStyle="bold" />
+			<LinearLayout android:layout_width="fill_parent" android:orientation="vertical" android:scrollbars="vertical"
+				android:weightSum="1" android:layout_height="fill_parent" android:id="@+id/linearLayoutWifi">
+				<TextView android:text="@string/wifiStandby" android:id="@+id/textViewTitleWifiStandby" android:layout_width="fill_parent"
+					android:layout_height="wrap_content" android:background="#0000A0" android:textStyle="bold" />
+
+				<RadioGroup android:id="@+id/radioGroupWifi" android:layout_width="wrap_content" android:layout_height="wrap_content">
+					<RadioButton android:text="@string/wifiImmerAn" android:id="@+id/radioImmerAn" android:layout_height="wrap_content"
 						android:layout_width="wrap_content" android:checked="true" />
-					<RadioButton android:text="@string/wifiImmerAnWennAmStrom"
-						android:id="@+id/radioImmerAnWennStrom" android:layout_height="wrap_content"
-						android:layout_width="wrap_content" />
-					<RadioButton android:text="@string/wifiAutomatischAus"
-						android:id="@+id/radioAutomatischAus" android:layout_height="wrap_content"
-						android:layout_width="wrap_content" />
+					<RadioButton android:text="@string/wifiImmerAnWennAmStrom" android:id="@+id/radioImmerAnWennStrom"
+						android:layout_height="wrap_content" android:layout_width="wrap_content" />
+					<RadioButton android:text="@string/wifiAutomatischAus" android:id="@+id/radioAutomatischAus"
+						android:layout_height="wrap_content" android:layout_width="wrap_content" />
 				</RadioGroup>
-				<TextView android:layout_height="wrap_content"
-					android:layout_width="wrap_content" android:gravity="center"
-					android:layout_gravity="center" android:text="@string/wifiVorsicht"
-					android:textColor="#FFFFFF" android:textSize="13dip"
+
+				<Button android:layout_marginTop="5dip" android:id="@+id/buttonWifiSettings" android:layout_height="wrap_content"
+					android:layout_width="wrap_content" android:text="@string/wifiSettings" android:layout_gravity="center" />
+
+				<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center"
+					android:layout_gravity="center" android:text="@string/wifiVorsicht" android:textColor="#FFFFFF" android:textSize="13sp"
 					android:layout_margin="10dip" android:id="@+id/textViewWifiVorsicht" />
 			</LinearLayout>
-			
-			<LinearLayout android:layout_width="fill_parent"
-				android:orientation="vertical" android:scrollbars="vertical"
-				android:weightSum="1" android:layout_height="fill_parent"
-				android:id="@+id/linearAppOffAtTimeEnd">
-				<TextView android:text="@string/timer" android:id="@+id/textViewTitleTimer"
-					android:layout_width="fill_parent" android:layout_height="wrap_content"
-					android:background="#0000A0" android:textStyle="bold" />
-				<CheckBox android:text="@string/appOffAtTimerEnd"
-					android:id="@+id/checkboxAppOffAtTimeEnd" android:layout_height="wrap_content"
-					android:layout_width="wrap_content" android:checked="true" />
+
+			<LinearLayout android:layout_width="fill_parent" android:orientation="vertical" android:scrollbars="vertical"
+				android:weightSum="1" android:layout_height="fill_parent" android:id="@+id/linearAppOffAtTimeEnd">
+				<TextView android:text="@string/timer" android:id="@+id/textViewTitleTimer" android:layout_width="fill_parent"
+					android:layout_height="wrap_content" android:background="#0000A0" android:textStyle="bold" />
+				<CheckBox android:text="@string/appOffAtTimerEnd" android:id="@+id/checkboxAppOffAtTimeEnd"
+					android:layout_height="wrap_content" android:layout_width="wrap_content" android:checked="true" />
 			</LinearLayout>
 
-			<LinearLayout android:layout_width="fill_parent"
-				android:orientation="vertical" android:scrollbars="vertical"
-				android:weightSum="1" android:layout_height="fill_parent"
-				android:id="@+id/linearRotationOff">
-				<TextView android:text="@string/rotation" android:id="@+id/textViewTitleRotation"
-					android:layout_width="fill_parent" android:layout_height="wrap_content"
-					android:background="#0000A0" android:textStyle="bold" />
-				<CheckBox android:text="@string/rotationOnOff"
-					android:id="@+id/checkboxRotationOnOff" android:layout_height="wrap_content"
-					android:layout_width="wrap_content" android:checked="true" />
+			<LinearLayout android:layout_width="fill_parent" android:orientation="vertical" android:scrollbars="vertical"
+				android:weightSum="1" android:layout_height="fill_parent" android:id="@+id/linearRotationOff">
+				<TextView android:text="@string/rotation" android:id="@+id/textViewTitleRotation" android:layout_width="fill_parent"
+					android:layout_height="wrap_content" android:background="#0000A0" android:textStyle="bold" />
+				<CheckBox android:text="@string/rotationOnOff" android:id="@+id/checkboxRotationOnOff"
+					android:layout_height="wrap_content" android:layout_width="wrap_content" android:checked="true" />
 			</LinearLayout>
-						
+
 			<TextView android:text="@string/speicherOrt" android:id="@+id/textViewTitleSpeicherOrt"
-				android:layout_width="fill_parent" android:layout_height="wrap_content"
-				android:background="#0000A0" android:textStyle="bold" />
-			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:gravity="center"
-				android:layout_gravity="center" android:text="@string/sdcardPath"
-				android:textColor="#FFFFFF" android:textSize="15dip"
-				android:layout_marginBottom="20dip" android:id="@+id/textViewSdcardPath" />
-			<EditText android:layout_width="fill_parent"
-				android:layout_marginLeft="30dip" android:layout_marginRight="30dip"
-				android:layout_height="wrap_content" android:id="@+id/editTextSdcardPath" />
-			<RelativeLayout android:layout_width="fill_parent"
-				android:id="@+id/relativeLayoutButtonsPath" android:layout_height="wrap_content"
-				android:gravity="center">
-				<Button android:layout_height="wrap_content"
-					android:layout_width="115dp" android:text="@string/save"
-					android:id="@+id/buttonSavePath" android:layout_alignParentTop="true"
-					android:layout_alignParentLeft="true" android:layout_marginRight="15dp" />
-				<Button android:layout_width="115dp" android:layout_height="wrap_content"
-					android:id="@+id/buttonResetPath" android:text="@string/reset"
-					android:layout_alignParentTop="true"
-					android:layout_centerHorizontal="true" />
-			</RelativeLayout>
-
-			<TextView android:text="@string/bufferZwischenspeicher"
-				android:id="@+id/textViewTitleBuffer" android:layout_width="fill_parent"
-				android:layout_height="wrap_content" android:background="#0000A0"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="#0000A0"
 				android:textStyle="bold" />
-			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:gravity="center"
-				android:layout_gravity="center" android:text="@string/bufferText"
-				android:textColor="#FFFFFF" android:textSize="15dip"
-				android:layout_marginBottom="20dip" android:id="@+id/textViewBuffer" />
-			<EditText android:layout_width="fill_parent"
-				android:layout_marginLeft="30dip" android:layout_marginRight="30dip"
-				android:layout_height="wrap_content" android:id="@+id/editTextBuffer" />
-			<RelativeLayout android:layout_width="fill_parent"
-				android:id="@+id/relativeLayoutButtonsBuffer" android:layout_height="wrap_content"
-				android:gravity="center">
-				<Button android:layout_height="wrap_content"
-					android:layout_width="115dp" android:text="@string/save"
-					android:id="@+id/buttonSaveBuffer" android:layout_alignParentTop="true"
-					android:layout_alignParentLeft="true" android:layout_marginRight="15dp" />
-				<Button android:layout_width="115dp" android:layout_height="wrap_content"
-					android:id="@+id/buttonResetBuffer" android:text="@string/reset"
-					android:layout_alignParentTop="true"
-					android:layout_centerHorizontal="true" />
+			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center"
+				android:layout_gravity="center" android:text="@string/sdcardPath" android:textColor="#FFFFFF" android:textSize="15dip"
+				android:layout_marginBottom="20dip" android:id="@+id/textViewSdcardPath" />
+			<EditText android:layout_width="fill_parent" android:layout_marginLeft="30dip" android:layout_marginRight="30dip"
+				android:layout_height="wrap_content" android:id="@+id/editTextSdcardPath" />
+			<RelativeLayout android:layout_width="fill_parent" android:id="@+id/relativeLayoutButtonsPath"
+				android:layout_height="wrap_content" android:gravity="center">
+				<Button android:layout_height="wrap_content" android:layout_width="115dp" android:text="@string/save"
+					android:id="@+id/buttonSavePath" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+					android:layout_marginRight="15dp" />
+				<Button android:layout_width="115dp" android:layout_height="wrap_content" android:id="@+id/buttonResetPath"
+					android:text="@string/reset" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
 			</RelativeLayout>
 
-			<LinearLayout 
-				android:orientation="vertical" android:gravity="center"
-				android:layout_width="fill_parent" android:layout_height="wrap_content"
-				android:id="@+id/adsLayout">
-			</LinearLayout>
-			<Button android:layout_marginTop="5dip" android:id="@+id/buttonZurueck"
-				android:layout_height="wrap_content" android:layout_width="220dp"
-				android:text="@string/zurueck" android:layout_gravity="center" />
+			<TextView android:text="@string/bufferZwischenspeicher" android:id="@+id/textViewTitleBuffer"
+				android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="#0000A0"
+				android:textStyle="bold" />
+			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center"
+				android:layout_gravity="center" android:text="@string/bufferText" android:textColor="#FFFFFF" android:textSize="15dip"
+				android:layout_marginBottom="20dip" android:id="@+id/textViewBuffer" />
+			<EditText android:layout_width="fill_parent" android:layout_marginLeft="30dip" android:layout_marginRight="30dip"
+				android:layout_height="wrap_content" android:id="@+id/editTextBuffer" />
+			<RelativeLayout android:layout_width="fill_parent" android:id="@+id/relativeLayoutButtonsBuffer"
+				android:layout_height="wrap_content" android:gravity="center">
+				<Button android:layout_height="wrap_content" android:layout_width="115dp" android:text="@string/save"
+					android:id="@+id/buttonSaveBuffer" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+					android:layout_marginRight="15dp" />
+				<Button android:layout_width="115dp" android:layout_height="wrap_content" android:id="@+id/buttonResetBuffer"
+					android:text="@string/reset" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+			</RelativeLayout>
+
+			<LinearLayout android:orientation="vertical" android:gravity="center" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:id="@+id/adsLayout" />
+
+			<Button android:layout_marginTop="5dip" android:id="@+id/buttonZurueck" android:layout_height="wrap_content"
+				android:layout_width="220dp" android:text="@string/zurueck" android:layout_gravity="center" />
 		</LinearLayout>
 	</ScrollView>
 </LinearLayout>

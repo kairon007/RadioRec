@@ -36,7 +36,8 @@
 	<string name="sdcardPath">Standardmässig werden die MP3 Aufnahmen auf die SD-Card mit dem Pfad \n \"sdcard/RadioRec\" \ngespeichert. Auf Wunsch kann dieser Pfad hier angepasst werden. \nVorsicht: Pfad zum Speichermedium muss exakt stimmen!</string>
 	<string name="reset">Zurücksetzen</string>
 	<string name="wifiVorsicht">Mit diesen 3 Optionen kannst du das Verhalten des Wireless steuern. Vorsicht: Wenn WiFi immer eingeschaltet ist wird dein Akku mehr belastet. Schalte es hier oder bei den erweiterten WLAN-Einstellungen wieder auf automatisch um Strom zu sparen.</string>
-	<string name="wifi">WiFi</string>
+	<string name="wifiStandby">WiFi Standby Policy</string>
+	<string name="wifiSettings">WLAN Standbymodus</string>
 	<string name="wifiImmerAn"> WiFi nie automatisch aus</string>
 	<string name="wifiImmerAnWennAmStrom"> Wenn am Strom nie automatisch aus</string>
 	<string name="wifiAutomatischAus"> Automatisch aus bei Bildschirm aus</string>

@@ -179,19 +179,34 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 		radioImmerAnWennStrom = (RadioButton) findViewById(R.id.radioImmerAnWennStrom);
 		radioAutomatischAus = (RadioButton) findViewById(R.id.radioAutomatischAus);
 		radioGroup.setOnCheckedChangeListener(this);
+		final Button buttonWifiSettings = (Button) findViewById(R.id.buttonWifiSettings);
 		try {
 			if (Utils.isPlatformBelow_4_2()) {
+
+				buttonWifiSettings.setVisibility(View.GONE);
+
 				int wifiSleepPolicy_old = android.provider.Settings.System.getInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY);
 				setRadioButtons_Level17Below(wifiSleepPolicy_old);
 			} else {
-				int wifiSleepPolicy = android.provider.Settings.System.getInt(getContentResolver(), android.provider.Settings.Global.WIFI_SLEEP_POLICY);
-				setRadioButtons_Level17Above(wifiSleepPolicy);
+
+				radioGroup.setVisibility(View.GONE);
+				radioGroup.removeAllViews();
+
+				// Newer than Android Platform 4.2 (Level 17)
+				buttonWifiSettings.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						startActivity(new Intent(android.provider.Settings.ACTION_WIFI_IP_SETTINGS));
+					}
+				});
+
 			}
 
 		} catch (SettingNotFoundException e) {
 			Utils.log(TAG, "SettingNotFoundException: WIFI_SLEEP_POLICY ist noch nicht konfiguriert. Kein Problem!");
 			radioAutomatischAus.setChecked(true);
 		}
+
 	}
 
 	/**
@@ -209,49 +224,19 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 		}
 	}
 
-	/**
-	 * For Android 4.2 (API Level 17) and newer
-	 * 
-	 * @param wifiSleepPolicy
-	 */
-	private void setRadioButtons_Level17Above(int wifiSleepPolicy) {
-		if (wifiSleepPolicy == android.provider.Settings.Global.WIFI_SLEEP_POLICY_NEVER) {
-			radioImmerAn.setChecked(true);
-		} else if (wifiSleepPolicy == android.provider.Settings.Global.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED) {
-			radioImmerAnWennStrom.setChecked(true);
-		} else {
-			radioAutomatischAus.setChecked(true);
-		}
-	}
-
 	@Override
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		if (checkedId == R.id.radioImmerAn) {
-			if (Utils.isPlatformBelow_4_2()) {
-				android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
-						android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER);
-			} else {
-				android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.Global.WIFI_SLEEP_POLICY,
-						android.provider.Settings.Global.WIFI_SLEEP_POLICY_NEVER);
-			}
+			android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
+					android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER);
 			Toast.makeText(this, getResources().getString(R.string.wifiImmerAn), Toast.LENGTH_SHORT).show();
 		} else if (checkedId == R.id.radioImmerAnWennStrom) {
-			if (Utils.isPlatformBelow_4_2()) {
-				android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
-						android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED);
-			} else {
-				android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.Global.WIFI_SLEEP_POLICY,
-						android.provider.Settings.Global.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED);
-			}
+			android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
+					android.provider.Settings.System.WIFI_SLEEP_POLICY_NEVER_WHILE_PLUGGED);
 			Toast.makeText(this, getResources().getString(R.string.wifiImmerAnWennAmStrom), Toast.LENGTH_SHORT).show();
 		} else {
-			if (Utils.isPlatformBelow_4_2()) {
-				android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
-						android.provider.Settings.System.WIFI_SLEEP_POLICY_DEFAULT);
-			} else {
-				android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.Global.WIFI_SLEEP_POLICY,
-						android.provider.Settings.Global.WIFI_SLEEP_POLICY_DEFAULT);
-			}
+			android.provider.Settings.System.putInt(getContentResolver(), android.provider.Settings.System.WIFI_SLEEP_POLICY,
+					android.provider.Settings.System.WIFI_SLEEP_POLICY_DEFAULT);
 			Toast.makeText(this, getResources().getString(R.string.wifiAutomatischAus), Toast.LENGTH_SHORT).show();
 		}
 	}

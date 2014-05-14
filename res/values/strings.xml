@@ -36,7 +36,8 @@
 	<string name="sdcardPath">By default the MP3 recordings are stored on the SD-Card in the path \"sdcard/RadioRec\".\nHere you can change this path.\nAttention: The path to the storage location must be valid and match exactly!</string>
 	<string name="reset">Reset</string>
 	<string name="wifiVorsicht">With this 3 options you can set the Wireless behavior. Attention: If \'WiFi always on\' your battery will be used more. Switch it off here or at the advanced wireless settings to save power.</string>
-	<string name="wifi">WiFi</string>
+	<string name="wifiStandby">WiFi Standby Policy</string>
+	<string name="wifiSettings">WLAN standby mode</string>
 	<string name="wifiImmerAn"> WiFi never automatically off</string>
 	<string name="wifiImmerAnWennAmStrom"> Keep WiFi on when plugged in</string>
 	<string name="wifiAutomatischAus"> Automatically off when screen turns off</string>

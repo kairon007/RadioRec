@@ -36,7 +36,8 @@
 	<string name="sdcardPath">Normalmente le registrazioni vengono memorizzate sulla SD-Card nel percorso \n \"sdcard/RadioRec\" \n. In caso di bisogno questo può essere cambiato. \nAttenzione: Il percorso deve esser specificato correttamente!</string>
 	<string name="reset">Reimpostare</string>
 	<string name="wifiVorsicht">Con queste 3 opzioni puoi impostare il comportamento su WiFi. Attenzione: Se WiFi é sempre attivo, la tua batteri si scarica più velocemente. Imposta tramite WLAN-Impostazioni/Etese s automatico per risparmiare batteria.</string>
-	<string name="wifi">WiFi</string>
+	<string name="wifiStandby">WiFi Standby Policy</string>
+	<string name="wifiSettings">WLAN modalità standby</string>
 	<string name="wifiImmerAn"> WiFi ma disattivato automaticamente</string>
 	<string name="wifiImmerAnWennAmStrom">Mai disattivare se sotto carica</string>
 	<string name="wifiAutomatischAus"> Disattivare a spegnimento schermo</string>
