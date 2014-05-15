@@ -542,7 +542,7 @@ public class Stations {
 		m.put(NAME, RADIO_32);
 		m.put(ICON, R.drawable.radio_32);
 		m.put(ICON_SMALL, R.drawable.radio_32_small);
-		m.put(STREAM, "http://stream.radio32.ch/radio32");
+		m.put(STREAM, "http://rstreaming.solnet.ch:8000/radio32");
 		m.put(HOMEPAGE, "http://www.radio32.ch");
 		m.put(WEBCAM, "http://www.radio32.ch/mp3/Webcam/cam.jpg");
 		m.put(EMAIL, "http://www.radio32.ch/?rub=67");
@@ -2502,7 +2502,7 @@ public class Stations {
 		m.put(NAME, RADIO_ALLGAEUHIT);
 		m.put(ICON, R.drawable.radio_allgaeuhit);
 		m.put(ICON_SMALL, R.drawable.radio_allgaeuhit_small);
-		m.put(STREAM, "http://81.169.132.81:7000/dsl");
+		m.put(STREAM, "http://allgaeuhit-stream.de/allgaeuhit");
 		m.put(HOMEPAGE, "http://www.allgaeuhit.de");
 		m.put(WEBCAM, "http://www.allgaeuhit.de/webcam.jpg");
 		m.put(EMAIL, "http://www.allgaeuhit.de/wugru.html");
@@ -3285,7 +3285,7 @@ public class Stations {
 		m.put(NAME, RADIO_ENERGY_SACHSEN);
 		m.put(ICON, R.drawable.radio_energy_sachsen);
 		m.put(ICON_SMALL, R.drawable.radio_energy_sachsen_small);
-		m.put(STREAM, "http://95.81.146.20/1UzxpsAEJc9A_JyXZmfrt3Sr8sUTQgu8oTbc=/7813/nrj_150857.mp3");
+		m.put(STREAM, "http://95.81.146.20/1U3VLeQEJlbJ86PZjTZdEg5iAEfwjb_Tj58M=/7813/nrj_150857.mp3");
 		// m.put(STREAM, "http://149.5.240.33/WR-DE-WR57");
 		m.put(HOMEPAGE, "http://www.energy.de/sachsen");
 		m.put(WEBCAM, "http://www.energy-sachsen.de/www/extapp/webcam/images/studio.jpg");
@@ -3770,7 +3770,7 @@ public class Stations {
 		m.put(NAME, RADIO_EGO_FM);
 		m.put(ICON, R.drawable.radio_ego_fm);
 		m.put(ICON_SMALL, R.drawable.radio_ego_fm_small);
-		m.put(STREAM, "http://62.27.26.45:8000/ps-egofm_128/livestream.mp3");
+		m.put(STREAM, "http://edge.live.mp3.mdn.newmedia.nacamar.net/egofm_192/livestream.mp3");
 		m.put(HOMEPAGE, "http://www.egofm.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.egofm.de/default.aspx?ID=6083");
@@ -3848,7 +3848,7 @@ public class Stations {
 		m.put(NAME, RADIO_FRANK_ZAPPA_STREAM);
 		m.put(ICON, R.drawable.radio_frank_zappa_stream);
 		m.put(ICON_SMALL, R.drawable.radio_frank_zappa_stream_small);
-		m.put(STREAM, "http://176.28.48.138:8000/zappa.mp3");
+		m.put(STREAM, "http://streams.norbert.de/zappa.mp3?1400182436901.mp3");
 		m.put(HOMEPAGE, "http://norbert.de/index.php?id=18");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "norbert@norbert.de");
@@ -3861,7 +3861,7 @@ public class Stations {
 		m.put(NAME, RADIO_KRAUTROCK_WORLD);
 		m.put(ICON, R.drawable.radio_krautrock_world);
 		m.put(ICON_SMALL, R.drawable.radio_krautrock_world_small);
-		m.put(STREAM, "http://176.57.141.208:7592");
+		m.put(STREAM, "http://94.249.254.14:7592");
 		m.put(HOMEPAGE, "http://www.krautrock-world.com");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.krautrock-world.com/impressum.html");
@@ -3913,7 +3913,7 @@ public class Stations {
 		m.put(NAME, RADIO_DANCEFOX_RADIO);
 		m.put(ICON, R.drawable.radio_dancefox_radio);
 		m.put(ICON_SMALL, R.drawable.radio_dancefox_radio_small);
-		m.put(STREAM, "http://dancefox.pop-stream.de:9000");
+		m.put(STREAM, "http://188.138.1.220");
 		m.put(HOMEPAGE, "http://www.dancefox-radio.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.dancefox-radio.de/10.html");
@@ -4420,7 +4420,7 @@ public class Stations {
 		m.put(NAME, RADIO_SCHWARZE_WELLE);
 		m.put(ICON, R.drawable.radio_schwarze_welle);
 		m.put(ICON_SMALL, R.drawable.radio_schwarze_welle_small);
-		m.put(STREAM, "http://85.25.149.155:7500");
+		m.put(STREAM, "http://85.25.43.132:7500");
 		m.put(HOMEPAGE, "http://www.schwarze-welle.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.schwarze-welle.de/sendmessage.php");
