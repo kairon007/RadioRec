@@ -8,7 +8,6 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Looper;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,6 +25,7 @@ public class Webcam extends Activity {
 	private final String TAG = this.getClass().getSimpleName();
 	private ProgressDialog progressDialog;
 	private AlertDialog alertDialog;
+	private WebView myWebView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,16 +44,25 @@ public class Webcam extends Activity {
 		progressDialog.show();
 		alertDialog = new AlertDialog.Builder(this).create();
 
-		Thread threadShowWebcam = new Thread() {
+		myWebView = new WebView(this);
+
+		myWebView.post(new Runnable() {
 			@Override
 			public void run() {
-				Looper.myLooper();
-				Looper.prepare();
 				showWebCam();
-				// progressDialog.dismiss();
 			}
-		};
-		threadShowWebcam.start();
+		});
+
+		// Thread threadShowWebcam = new Thread() {
+		// @Override
+		// public void run() {
+		// Looper.myLooper();
+		// Looper.prepare();
+		// showWebCam();
+		// // progressDialog.dismiss();
+		// }
+		// };
+		// threadShowWebcam.start();
 
 		TextView radiostation = (TextView) findViewById(R.id.textViewWebcamRadioStation);
 		radiostation.setText(Constants.SELECTED_STATION_NAME_VALUE);
@@ -72,7 +81,6 @@ public class Webcam extends Activity {
 	private void showWebCam() {
 		Utils.log(TAG, "RadioPlayer.URL_WEBCAM=" + Constants.URL_WEBCAM_VALUE);
 		if (Constants.URL_WEBCAM_VALUE != null && !Constants.URL_WEBCAM_VALUE.equals("")) {
-			WebView myWebView = new WebView(this);
 			myWebView.clearCache(Boolean.TRUE);
 			myWebView = (WebView) findViewById(R.id.webkitWebViewWebCam);
 			myWebView.setWebChromeClient(new WebChromeClient());
