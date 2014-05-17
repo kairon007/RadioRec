@@ -56,6 +56,7 @@ public class Stations {
 	public static final String RADIO_RABE = "RaBe";
 	public static final String RADIO_24 = "Radio 24";
 	public static final String RADIO_24_ROCK = "Radio 24 Rock";
+	public static final String RADIO_24_POP = "Radio 24 Pop";
 	public static final String RADIO_SRF1 = "SRF1";
 	public static final String RADIO_SRF1_AGSO = "SRF1 AG/SO";
 	public static final String RADIO_SRF1_BSBL = "SRF1 BS/BL";
@@ -598,10 +599,11 @@ public class Stations {
 		m.put(NAME, RADIO_24);
 		m.put(ICON, R.drawable.radio_24);
 		m.put(ICON_SMALL, R.drawable.radio_24_small);
-		m.put(STREAM, "http://live.radio24.ch/radio24");
+		// m.put(STREAM, "http://live.radio24.ch/radio24");
+		m.put(STREAM, "http://icecast.radio24.ch/radio24");
 		m.put(HOMEPAGE, "http://www.radio24.ch");
-		m.put(WEBCAM, "http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&width=700&quality=80");
-		m.put(EMAIL, "http://www.radio24.ch/service/standard/Kontakt/story/17621407");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.radio24.ch/kontakt");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
 		m.put(STIL, STIL_POP);
@@ -611,10 +613,24 @@ public class Stations {
 		m.put(NAME, RADIO_24_ROCK);
 		m.put(ICON, R.drawable.radio_24_rock);
 		m.put(ICON_SMALL, R.drawable.radio_24_rock_small);
-		m.put(STREAM, "http://live.radio24.ch:80/radio24Rock");
+		// m.put(STREAM, "http://live.radio24.ch:80/radio24Rock");
+		m.put(STREAM, "http://icecast.radio24.ch/radio24rock");
 		m.put(HOMEPAGE, "http://www.radio24.ch");
-		m.put(WEBCAM, "http://80.86.200.92/ext/webcams/thumb.php?file=webcamS1.jpg&width=700&quality=80");
-		m.put(EMAIL, "http://www.radio24.ch/service/standard/Kontakt/story/17621407");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.radio24.ch/kontakt");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_CH);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_24_POP);
+		m.put(ICON, R.drawable.radio_24_pop);
+		m.put(ICON_SMALL, R.drawable.radio_24_small);
+		m.put(STREAM, "http://icecast.radio24.ch/radio24pop");
+		m.put(HOMEPAGE, "http://www.radio24.ch");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.radio24.ch/kontakt");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
 		m.put(STIL, STIL_POP);
@@ -2595,7 +2611,7 @@ public class Stations {
 		m.put(ICON, R.drawable.radio_rt1_suedschwaben);
 		m.put(ICON_SMALL, R.drawable.radio_rt1_hitradio_small);
 		m.put(STREAM, "http://62.27.47.15:8000/ps-rt1nordschwaben/livestream.mp3");
-		//m.put(STREAM, "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-rt1suedschwaben/livestream.mp3");
+		// m.put(STREAM, "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-rt1suedschwaben/livestream.mp3");
 		m.put(HOMEPAGE, "http://www.rt1-suedschwaben.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.rt1-suedschwaben.de/index.php?pageid=174&puid=7");
@@ -4363,6 +4379,19 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_AUF_GUTE_FREUNDE);
+		m.put(ICON, R.drawable.radio_agf);
+		m.put(ICON_SMALL, R.drawable.radio_agf_small);
+		m.put(STREAM, "http://service.pop-stream.de:4000");
+		m.put(HOMEPAGE, "http://www.agf-radio.com");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.agf-radio.com/wunschbox");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_ROCK);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_EBM_RADIO);
 		m.put(ICON, R.drawable.radio_ebm);
 		m.put(ICON_SMALL, R.drawable.radio_ebm_small);
@@ -4464,19 +4493,6 @@ public class Stations {
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_AUF_GUTE_FREUNDE);
-		m.put(ICON, R.drawable.radio_agf);
-		m.put(ICON_SMALL, R.drawable.radio_agf_small);
-		m.put(STREAM, "http://service.pop-stream.de:4000");
-		m.put(HOMEPAGE, "http://www.agf-radio.com");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://www.agf-radio.com/wunschbox");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_DE);
-		m.put(STIL, STIL_ROCK);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
