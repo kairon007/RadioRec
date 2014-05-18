@@ -23,6 +23,7 @@ import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.util.Log;
 import android.view.Display;
 
 public class Utils {
@@ -160,7 +161,7 @@ public class Utils {
 	}
 
 	public static void log(String tag, String message) {
-		// Log.d(tag, message);
+		Log.d(tag, message);
 	}
 
 	public static String getHhMmFromMinutes(int minutes) {

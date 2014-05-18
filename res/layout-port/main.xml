@@ -1,143 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/mainScreen" android:orientation="vertical"
-	android:layout_width="fill_parent" android:layout_height="fill_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/mainScreen"
+	android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:background="@drawable/bg_port">
 
-    <LinearLayout android:id="@+id/spinnerLinearLayout" android:layout_width="fill_parent" android:layout_height="0dp">
-    <Spinner android:layout_height="0dp" android:padding="0dp" android:prompt="@string/favoriten"
-			android:layout_margin="0dp" android:layout_width="0dp" android:id="@+id/spinnerFav" />
-	<Spinner android:layout_height="wrap_content" android:padding="0dp" android:layout_margin="0dp" android:prompt="@string/alphabetisch"
-			android:layout_width="0dp" android:id="@+id/spinnerAlphabetisch" />
+	<LinearLayout android:id="@+id/spinnerLinearLayout" android:layout_width="fill_parent"
+		android:layout_height="0dp" android:layout_weight="0">
+		<Spinner android:layout_height="wrap_content" android:padding="0dp" android:layout_margin="0dp" android:background="@android:color/white"
+			android:prompt="@string/alphabetisch" android:layout_width="0dp" android:layout_weight="0" android:id="@+id/spinnerAlphabetisch" />
 	</LinearLayout>
-	<TableRow
-        android:id="@+id/toolbar"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" 
-        android:layout_marginBottom= "-7dp">
-        <Button
-            android:id="@+id/buttonFav"
-            android:layout_width="fill_parent"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:layout_marginRight="-4.5dp"
-            android:layout_marginLeft="-5dp"
-            android:text="@string/favoriten"
-            android:textSize="10dp" />
-        <Button
-            android:id="@+id/buttonAlphabetisch"
-            android:layout_width="fill_parent"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:layout_marginRight="-4.5dp"
-            android:layout_marginLeft="-4.5dp"
-            android:textSize="10dp"
-            android:text="@string/alphabetisch" />
-    </TableRow>
-		
-	<RelativeLayout android:id="@+id/relativeLayoutSearchAndSpinner"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:layout_margin="0dp" android:padding="0dp" android:gravity="top" android:layout_gravity="top">
+    
+	<RelativeLayout android:id="@+id/relativeLayoutSearchAndSpinner" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_margin="0dp" android:padding="0dp" android:gravity="top"
+		android:layout_gravity="top">
 
-		<LinearLayout android:orientation="vertical"
-			android:layout_width="fill_parent" android:visibility="gone"
+		<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:visibility="gone"
 			android:layout_height="wrap_content" android:id="@+id/linearLayoutAutocomplete">
 
 			<com.rothconsulting.android.radiorec.SearchAutoCompleteTextView
-				android:layout_width="fill_parent" android:layout_height="wrap_content"
-				android:id="@+id/autocomplete" android:hint="@string/searchHint" />
+				android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/autocomplete" android:hint="@string/searchHint" />
 		</LinearLayout>
 
-		<LinearLayout android:orientation="horizontal"
-			android:background="@color/transparent" android:layout_margin="0dp"
-			android:padding="0dp" android:layout_width="fill_parent"
-			android:layout_height="wrap_content" android:id="@+id/linearLayoutSpinner">
-			<Spinner android:id="@+id/stations" android:prompt="@string/sortByCountry"
-				android:layout_height="wrap_content" android:layout_width="fill_parent"
-				android:layout_margin="0dp" android:padding="0dp" android:gravity="top" />
+		<LinearLayout android:orientation="horizontal" android:background="@color/transparent"
+			android:layout_margin="0dp" android:padding="0dp" android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:id="@+id/linearLayoutSpinner">
+			<Spinner android:id="@+id/stations" android:prompt="@string/sortByCountry" android:layout_height="wrap_content"
+				android:layout_width="fill_parent" android:layout_margin="0dp" android:padding="0dp" android:gravity="top"
+				android:popupBackground="@android:color/white" />
 		</LinearLayout>
 
 	</RelativeLayout>
 
-	<LinearLayout android:layout_width="fill_parent"
-		android:orientation="horizontal" android:layout_height="wrap_content">
-		<TextView android:id="@+id/webcam" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:drawableTop="@android:drawable/ic_menu_camera"
-			android:text="Webcam" android:gravity="center" android:layout_margin="1dp"
-			android:layout_weight="1" />
-		<TextView android:id="@+id/mail" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:drawableTop="@android:drawable/ic_menu_send"
-			android:text="Mail" android:gravity="center" android:layout_margin="1dp"
-			android:layout_weight="1" />
-		<TextView android:id="@+id/homepage" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:drawableTop="@android:drawable/ic_menu_mapmode"
-			android:text="Homepage" android:gravity="center"
+	<LinearLayout android:layout_width="fill_parent" android:orientation="horizontal" android:layout_height="wrap_content">
+		<TextView android:id="@+id/webcam" android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:drawableTop="@android:drawable/ic_menu_camera" android:text="Webcam" android:gravity="center"
 			android:layout_margin="1dp" android:layout_weight="1" />
-		<TextView android:id="@+id/favoriten" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:drawableTop="@android:drawable/star_big_off"
-			android:text="@string/favorit" android:gravity="center"
+		<TextView android:id="@+id/mail" android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:drawableTop="@android:drawable/ic_menu_send" android:text="Mail" android:gravity="center"
+			android:layout_margin="1dp" android:layout_weight="1" />
+		<TextView android:id="@+id/homepage" android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:drawableTop="@android:drawable/ic_menu_mapmode" android:text="Homepage" android:gravity="center"
+			android:layout_margin="1dp" android:layout_weight="1" />
+		<TextView android:id="@+id/favoriten" android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:drawableTop="@android:drawable/star_big_off" android:text="@string/favorit" android:gravity="center"
 			android:layout_margin="1dp" android:layout_weight="1" android:tag="favOff" />
-		<TextView android:id="@+id/search" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:drawableTop="@android:drawable/ic_menu_search"
-			android:text="@string/search" android:gravity="center"
+		<TextView android:id="@+id/search" android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:drawableTop="@android:drawable/ic_menu_search" android:text="@string/search" android:gravity="center"
 			android:layout_margin="1dp" android:layout_weight="1" />
 	</LinearLayout>
-	<!-- TextView android:layout_height="wrap_content" android:layout_width="fill_parent" 
-		android:id="@+id/ticker" android:ellipsize="marquee" android:marqueeRepeatLimit="marquee_forever" 
-		android:scrollHorizontally="true" android:singleLine="true" android:focusable="true" 
-		android:focusableInTouchMode="true" android:text="Ticker... Buffering... 
-		Playing: SomeSong by SomeArtist..." android:gravity="center" android:layout_margin="2dp" 
-		/ -->
-	<ImageView android:layout_height="0dp" android:src="@drawable/jukebox"
-		android:id="@+id/logo" android:layout_width="fill_parent"
-		android:layout_weight="1" android:scaleType="centerInside" />
+	<!-- TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/ticker" android:ellipsize="marquee" 
+		android:marqueeRepeatLimit="marquee_forever" android:scrollHorizontally="true" android:singleLine="true" android:focusable="true" 
+		android:focusableInTouchMode="true" android:text="Ticker... Buffering... Playing: SomeSong by SomeArtist..." android:gravity="center" 
+		android:layout_margin="2dp" / -->
+	<ImageView android:layout_height="0dp" android:src="@drawable/jukebox" android:id="@+id/logo"
+		android:layout_width="fill_parent" android:layout_weight="1" android:scaleType="centerInside" />
 
-	<RelativeLayout android:id="@+id/timerLayoutWhole"
-		android:layout_width="fill_parent" android:layout_height="77dp"
-		android:layout_gravity="bottom" android:layout_marginBottom="10.0dip">
+	<RelativeLayout android:id="@+id/timerLayoutWhole" android:layout_width="fill_parent"
+		android:layout_height="77dp" android:layout_gravity="bottom" android:layout_marginBottom="10.0dip">
 
-		<RelativeLayout android:id="@+id/timerSeekbarLayout"
-			android:layout_width="fill_parent" android:layout_height="75dp"
-			android:layout_gravity="bottom" android:layout_marginBottom="10dp"
-			android:layout_marginLeft="10dp" android:layout_marginRight="64dp"
-			android:background="@color/darkBlue" android:visibility="gone">
+		<RelativeLayout android:id="@+id/timerSeekbarLayout" android:layout_width="fill_parent"
+			android:layout_height="75dp" android:layout_gravity="bottom" android:layout_marginBottom="10dp"
+			android:layout_marginLeft="10dp" android:layout_marginRight="64dp" android:background="@color/darkBlue"
+			android:visibility="gone">
 
-			<TextView android:id="@+id/timerSeekbarText"
-				android:layout_width="wrap_content" android:layout_height="wrap_content"
-				android:layout_marginLeft="30dp" android:textSize="12dp"
-				android:layout_marginTop="10dp" android:visibility="gone"
+			<TextView android:id="@+id/timerSeekbarText" android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_marginLeft="30dp" android:textSize="12dp" android:layout_marginTop="10dp" android:visibility="gone"
 				android:textColor="@android:color/white" android:text="@string/sleepTimerEinstellen" />
-			<SeekBar android:id="@+id/timerSeekbar" android:layout_width="match_parent"
-				android:max="120" android:visibility="gone" android:layout_height="wrap_content"
-				android:layout_marginLeft="10dp" android:layout_marginTop="30dp"
-				android:layout_marginRight="10dp" />
+			<SeekBar android:id="@+id/timerSeekbar" android:layout_width="match_parent" android:max="120"
+				android:visibility="gone" android:layout_height="wrap_content" android:layout_marginLeft="10dp"
+				android:layout_marginTop="30dp" android:layout_marginRight="10dp" />
 		</RelativeLayout>
 
-		<ImageButton android:id="@+id/imageButtonUhr"
-			android:layout_alignParentRight="true" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:contentDescription="Uhr"
-			android:src="@drawable/button_uhr_weiss" android:background="@color/transparent" />
+		<ImageButton android:id="@+id/imageButtonUhr" android:layout_alignParentRight="true" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:contentDescription="Uhr" android:src="@drawable/button_uhr_weiss"
+			android:background="@color/transparent" />
 	</RelativeLayout>
 
-	<LinearLayout 
-		android:orientation="vertical" android:gravity="center"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"
-		android:id="@+id/adsLayout">
-	</LinearLayout>
-	<LinearLayout android:layout_margin="4dp"
-		android:layout_height="wrap_content" android:layout_width="fill_parent"
+	<LinearLayout android:orientation="vertical" android:gravity="center" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:id="@+id/adsLayout" />
+
+	<LinearLayout android:layout_margin="4dp" android:layout_height="wrap_content" android:layout_width="fill_parent"
 		android:orientation="horizontal">
-		<ImageButton android:layout_weight="1"
-			android:layout_height="wrap_content" android:src="@drawable/button_backward"
+		<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_backward"
 			android:layout_width="wrap_content" android:id="@+id/back" />
-		<ImageButton android:layout_weight="1"
-			android:layout_height="wrap_content" android:src="@drawable/button_play"
+		<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_play"
 			android:layout_width="wrap_content" android:id="@+id/play" />
-		<ImageButton android:layout_weight="1"
-			android:layout_height="wrap_content" android:src="@drawable/button_record"
+		<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_record"
 			android:layout_width="wrap_content" android:id="@+id/rec" />
-		<ImageButton android:layout_weight="1"
-			android:layout_height="wrap_content" android:src="@drawable/button_forward"
+		<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_forward"
 			android:layout_width="wrap_content" android:id="@+id/fwd" />
 	</LinearLayout>
 </LinearLayout>

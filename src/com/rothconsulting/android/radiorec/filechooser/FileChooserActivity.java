@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.List;
 
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -23,14 +22,16 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.rothconsulting.android.radiorec.ActionBarListActivity;
+import com.rothconsulting.android.radiorec.AdMob;
 import com.rothconsulting.android.radiorec.AnalyticsUtil;
 import com.rothconsulting.android.radiorec.Constants;
-import com.rothconsulting.android.radiorec.Donate;
+import com.rothconsulting.android.radiorec.DonateActivity;
 import com.rothconsulting.android.radiorec.R;
-import com.rothconsulting.android.radiorec.Settings;
+import com.rothconsulting.android.radiorec.SettingsActivity;
 import com.rothconsulting.android.radiorec.Utils;
 
-public class FileChooser extends ListActivity {
+public class FileChooserActivity extends ActionBarListActivity {
 
 	private final String TAG = this.getClass().getName();
 	private File currentDir;
@@ -39,12 +40,20 @@ public class FileChooser extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.file_list);
+
+		// // Set up the action bar.
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 		if (Constants.ROTATION_OFF_VALUE) {
 			// Prevent from Rotation
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
 
 		AnalyticsUtil.sendScreen(this, "FileChooser screen");
+
+		AdMob admob = new AdMob();
+		admob.showRemoveAds(this);
 
 		if (Constants.SD_CARD_PATH_VALUE == null) {
 			Utils.log(TAG, "SDCARD_PATH is null!");
@@ -53,18 +62,18 @@ public class FileChooser extends ListActivity {
 
 			try {
 				currentDir = new File(Constants.SD_CARD_PATH_VALUE);
-				fill(currentDir);
-				ListView list = getListView();
+				ListView listView = (ListView) findViewById(android.R.id.list);
+				getFileList(currentDir);
 
 				int currentOrient = this.getResources().getConfiguration().orientation;
 
 				if (currentOrient == ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
-					list.setBackgroundResource(R.drawable.bg_port);
+					listView.setBackgroundResource(R.drawable.bg_port);
 				} else {
-					list.setBackgroundResource(R.drawable.bg_land);
+					listView.setBackgroundResource(R.drawable.bg_land);
 				}
 
-				list.setOnItemLongClickListener(new OnItemLongClickListener() {
+				listView.setOnItemLongClickListener(new OnItemLongClickListener() {
 
 					@Override
 					public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
@@ -84,13 +93,13 @@ public class FileChooser extends ListActivity {
 					}
 				});
 			} catch (Exception e) {
-				Utils.log(TAG, "Exception! SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE + "\nException=\n" + e);
+				Utils.log(TAG, "onCreate - Exception! SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE + "\nException=\n" + e);
 				pathNotValidDialog().show();
 			}
 		}
 	}
 
-	private void fill(File f) {
+	private void getFileList(File f) {
 
 		List<Option> dir = new ArrayList<Option>();
 		List<Option> fls = new ArrayList<Option>();
@@ -112,6 +121,7 @@ public class FileChooser extends ListActivity {
 				}
 			}
 		} catch (Exception e) {
+			Utils.log(TAG, "fill - Exception! SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE + "\nException=\n" + e);
 			pathNotValidDialog().show();
 		}
 		Collections.sort(dir);
@@ -124,8 +134,8 @@ public class FileChooser extends ListActivity {
 		AnalyticsUtil.sendEvent(this, "ui_action", "FileChooser", "currentDir: " + f.getName());
 		AnalyticsUtil.sendEvent(this, "ui_action", "FileChooser", "No. files: " + fls.size());
 
-		adapter = new FileArrayAdapter(FileChooser.this, R.layout.file_view, dir);
-		this.setListAdapter(adapter);
+		adapter = new FileArrayAdapter(this, R.layout.file_list_item, dir);
+		setListAdapter(adapter);
 	}
 
 	private boolean isKnownMusicFile(String filename) {
@@ -168,9 +178,9 @@ public class FileChooser extends ListActivity {
 						Utils.log(TAG, "File=" + file.getName());
 						file.delete();
 						adapter.notifyDataSetChanged();
-						fill(currentDir);
+						getFileList(currentDir);
 
-						Toast.makeText(FileChooser.this, filename + " " + getString(R.string.deleted), Toast.LENGTH_SHORT).show();
+						Toast.makeText(FileChooserActivity.this, filename + " " + getString(R.string.deleted), Toast.LENGTH_SHORT).show();
 					}
 				}).setNegativeButton(getString(R.string.neinDanke), new DialogInterface.OnClickListener() {
 					@Override
@@ -188,7 +198,7 @@ public class FileChooser extends ListActivity {
 					@Override
 					public void onClick(DialogInterface dialog, int id) {
 						finish();
-						startActivity(new Intent(getApplicationContext(), Settings.class));
+						startActivity(new Intent(getApplicationContext(), SettingsActivity.class));
 					}
 				}).setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
 					@Override
@@ -208,11 +218,12 @@ public class FileChooser extends ListActivity {
 			Option o = adapter.getItem(position);
 			if (o.getData().equalsIgnoreCase(getString(R.string.folder)) || o.getData().equalsIgnoreCase(getString(R.string.parentFolder))) {
 				currentDir = new File(o.getPath());
-				fill(currentDir);
+				getFileList(currentDir);
 			} else {
 				onFileClick(o);
 			}
 		} catch (Exception e) {
+			Utils.log(TAG, "onListItemClick - Exception! SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE + "\nException=\n" + e);
 			pathNotValidDialog().show();
 		}
 	}
@@ -251,8 +262,11 @@ public class FileChooser extends ListActivity {
 			return true;
 		case R.id.donate_adfree:
 			finish();
-			this.startActivity(new Intent(this, Donate.class));
+			this.startActivity(new Intent(this, DonateActivity.class));
 			return true;
+		case android.R.id.home:
+			onBackPressed();
+			break;
 		}
 		return super.onOptionsItemSelected(item);
 	}

@@ -31,6 +31,6 @@ public class SplashScreen extends Activity {
 	}
 
 	private void startRadioRecPlus() {
-		this.startActivity(new Intent(this, RadioRecPlus.class));
+		this.startActivity(new Intent(this, RadioRecPlusActivity.class));
 	}
 }

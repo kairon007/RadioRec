@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.text.ClipboardManager;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,7 +23,7 @@ import android.widget.Toast;
 
 import com.rothconsulting.android.billing.BillingActivity;
 
-public class Donate extends Activity {
+public class DonateActivity extends ActionBarActivity {
 
 	private static final String TAG = "Donate";
 	private Activity activity;
@@ -33,11 +34,17 @@ public class Donate extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		// Set up the action bar.
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 		if (Constants.ROTATION_OFF_VALUE) {
 			// Prevent from Rotation
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
 		setContentView(R.layout.donate);
+
+		this.setTitle(getString(R.string.donate_adfree));
 
 		activity = this;
 
@@ -112,9 +119,9 @@ public class Donate extends Activity {
 				editor.commit();
 				editor.clear();
 				if ("".equals(Constants.ANTI_ADS_VALUE)) {
-					Toast.makeText(Donate.this, getResources().getString(R.string.keineEingabe), Toast.LENGTH_SHORT).show();
+					Toast.makeText(DonateActivity.this, getResources().getString(R.string.keineEingabe), Toast.LENGTH_SHORT).show();
 				} else {
-					Toast.makeText(Donate.this, getResources().getString(R.string.danke) + " (" + edittext.getText() + ")", Toast.LENGTH_LONG).show();
+					Toast.makeText(DonateActivity.this, getResources().getString(R.string.danke) + " (" + edittext.getText() + ")", Toast.LENGTH_LONG).show();
 				}
 
 				AnalyticsUtil.sendEvent(activity, "ui_action", "clicked buttonSaveAntiAdsKey", "Key: " + Constants.ANTI_ADS_VALUE);
@@ -178,11 +185,14 @@ public class Donate extends Activity {
 			finish();
 			return true;
 		case -2:
-			RadioRecPlus.getRadioPlayer().doStopPlay(this);
-			RadioRecPlus.doStopRecording(this);
-			RadioRecPlus.playing = Boolean.FALSE;
-			RadioRecPlus.recording = Boolean.FALSE;
+			RadioRecPlusActivity.getRadioPlayer().doStopPlay(this);
+			RadioRecPlusActivity.doStopRecording(this);
+			RadioRecPlusActivity.playing = Boolean.FALSE;
+			RadioRecPlusActivity.recording = Boolean.FALSE;
 			finish();
+			break;
+		case android.R.id.home:
+			onBackPressed();
 			break;
 		}
 		return super.onOptionsItemSelected(item);

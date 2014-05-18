@@ -3,8 +3,10 @@ package com.rothconsulting.android.radiorec;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import android.app.ListActivity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -20,7 +22,6 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -29,21 +30,26 @@ import android.widget.Toast;
 
 import com.rothconsulting.android.radiorec.sqlitedb.DbUtils;
 
-public class Favourites extends ListActivity {
+public class FavouritesActivity extends ActionBarListActivity {
 
 	private final static String TAG = "Favourites";
 	private Context context;
-	private Button zurueckButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.favourites);
 
+		// Set up the action bar.
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+		AdMob ads = new AdMob();
+		ads.showRemoveAds(this);
+
 		context = this;
 
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-		Utils.getNotifInstance(context, RadioRecPlus.class).hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
+		Utils.getNotifInstance(context, RadioRecPlusActivity.class).hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
 
 		setTitle(getString(R.string.favoriten));
 
@@ -90,17 +96,6 @@ public class Favourites extends ListActivity {
 				return true;
 			}
 		});
-
-		zurueckButton = (Button) findViewById(R.id.buttonZurueck);
-		zurueckButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				finish();
-			}
-		});
-
-		AdMob ads = new AdMob();
-		ads.showRemoveAds(this);
 	}
 
 	@Override
@@ -144,15 +139,20 @@ public class Favourites extends ListActivity {
 		SimpleAdapter adapter = new SimpleAdapter(context, stationList, R.layout.favourites_listitem, new String[] { Stations.ICON, Stations.NAME }, new int[] {
 				R.id.favourite_icon, R.id.favourite_text });
 
-		((ListActivity) context).setListAdapter(adapter);
+		setListAdapter(adapter);
 
 		if (stationList == null || stationList.size() == 0) {
-			if (zurueckButton != null) {
-				zurueckButton.setVisibility(View.VISIBLE);
-				Utils.showAlertDialog(context, R.string.info, R.string.nochKeineFavoriten);
-			}
-		} else if (zurueckButton != null) {
-			zurueckButton.setVisibility(View.GONE);
+			final Builder b = new AlertDialog.Builder(context);
+			b.setCancelable(true);
+			b.setTitle(R.string.info);
+			b.setMessage(R.string.nochKeineFavoriten);
+			b.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int id) {
+					finish();
+				}
+			});
+			b.show();
 		}
 
 	}
@@ -173,13 +173,16 @@ public class Favourites extends ListActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
+		case R.id.donate_adfree:
+			finish();
+			this.startActivity(new Intent(this, DonateActivity.class));
+			return true;
 		case R.id.zurueck:
 			finish();
 			return true;
-		case R.id.donate_adfree:
-			finish();
-			this.startActivity(new Intent(this, Donate.class));
-			return true;
+		case android.R.id.home:
+			onBackPressed();
+			break;
 		}
 		return super.onOptionsItemSelected(item);
 	}

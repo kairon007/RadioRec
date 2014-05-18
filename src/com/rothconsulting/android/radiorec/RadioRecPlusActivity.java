@@ -23,6 +23,10 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBar.Tab;
+import android.support.v7.app.ActionBarActivity;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -31,14 +35,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -51,11 +53,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rothconsulting.android.billing.util.RadioRecBillingHelper;
-import com.rothconsulting.android.radiorec.filechooser.FileChooser;
+import com.rothconsulting.android.radiorec.filechooser.FileChooserActivity;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
 import com.rothconsulting.android.radiorec.sqlitedb.DbUtils;
 
-public class RadioRecPlus extends Activity implements OnClickListener, OnItemSelectedListener, OnSeekBarChangeListener {
+public class RadioRecPlusActivity extends ActionBarActivity implements OnClickListener, OnItemSelectedListener, OnSeekBarChangeListener, ActionBar.TabListener {
 
 	private static final String TAG = "RadioRecPlus";
 
@@ -90,6 +92,8 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 	private int countDownTimerTick = 0;
 	private int gcCounter;
 
+	private SimpleAdapter allStationAdapter;
+
 	private TelephonyManager tm = null;
 	private PhoneStateListener callStateListener;
 
@@ -117,9 +121,21 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			context.deleteDatabase("webview.db");
 			context.deleteDatabase("webviewCache.db");
 		}
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+		// // Set up the action bar.
+		final ActionBar actionBar = getSupportActionBar();
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+		// For each of the sections in the app, add a tab to the action bar.
+		actionBar.addTab(actionBar.newTab().setText(R.string.sortByCountry).setTabListener(this));
+		actionBar.addTab(actionBar.newTab().setText(R.string.alphabetisch).setTabListener(this));
+		actionBar.addTab(actionBar.newTab().setText(R.string.favoriten).setTabListener(this));
+
+		// requestWindowFeature(Window.FEATURE_NO_TITLE);
 		RadioRecBillingHelper.isDonator(activity);
 		initGui();
+
+		actionBar.setListNavigationCallbacks(allStationAdapter, null);
 
 		if (getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_SENSOR) {
 			isOrientationSensorOn = true;
@@ -150,9 +166,9 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		firstStart = true;
 		// get components and register clicks
 		spnAllStations = (Spinner) findViewById(R.id.stations);
+		spnAllStations.setBackgroundColor(getResources().getColor(android.R.color.white));
 		spnAlphabetisch = (Spinner) findViewById(R.id.spinnerAlphabetisch);
-		((Button) findViewById(R.id.buttonFav)).setOnClickListener(this);
-		((Button) findViewById(R.id.buttonAlphabetisch)).setOnClickListener(this);
+		spnAlphabetisch.setBackgroundColor(getResources().getColor(android.R.color.white));
 		mainScreen = (LinearLayout) findViewById(R.id.mainScreen);
 		autocomplete = (LinearLayout) findViewById(R.id.linearLayoutAutocomplete);
 		spinner = (LinearLayout) findViewById(R.id.linearLayoutSpinner);
@@ -218,8 +234,8 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 				Stations.NAME }, new int[] { R.id.option_icon, R.id.option_text });
 		spnAlphabetisch.setAdapter(alphabetischAdapter);
 
-		SimpleAdapter allStationAdapter = new SimpleAdapter(this, stationList, R.layout.station_listitem, new String[] { Stations.ICON_SMALL, Stations.NAME },
-				new int[] { R.id.option_icon, R.id.option_text });
+		allStationAdapter = new SimpleAdapter(this, stationList, R.layout.station_listitem, new String[] { Stations.ICON_SMALL, Stations.NAME }, new int[] {
+				R.id.option_icon, R.id.option_text });
 		spnAllStations.setAdapter(allStationAdapter);
 
 		hideSearch();
@@ -252,7 +268,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 				finish();
 			}
 		}
-		Utils.getNotifInstance(this, RadioRecPlus.class).hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
+		Utils.getNotifInstance(this, RadioRecPlusActivity.class).hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
 		return super.onKeyDown(keyCode, event);
 	}
 
@@ -309,7 +325,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			Log.i(TAG, "webcam");
 			AnalyticsUtil.sendEvent(activity, "ui_action", "click_webcam", "url: " + Constants.URL_WEBCAM_VALUE);
 
-			Intent intentCam = new Intent(this, Webcam.class);
+			Intent intentCam = new Intent(this, WebcamActivity.class);
 			startActivity(intentCam);
 			break;
 		case R.id.mail:
@@ -394,17 +410,6 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			showCountdown = !showCountdown;
 			AnalyticsUtil.sendEvent(activity, "ui_action", "click_imageButtonUhr", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			this.showTimerbox(showCountdown);
-			break;
-		case R.id.buttonFav:
-			AnalyticsUtil.sendEvent(activity, "ui_action", "click_buttonFav", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
-			this.startActivityForResult(new Intent(this, Favourites.class), Constants.FROM_FAVOURITES);
-			break;
-		case R.id.buttonAlphabetisch:
-			Constants.SPINNER_SELECTION = Constants.SPINNER_ALPHABETISCH;
-			AnalyticsUtil.sendEvent(activity, "ui_action", "click_buttonAlphabetisch", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
-			Utils.log(TAG, "Button Alphabetisch pressed. Firts=" + spnAlphabetisch.getFirstVisiblePosition());
-
-			spnAlphabetisch.performClick();
 			break;
 		}
 	}
@@ -582,14 +587,14 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 			Utils.log(TAG, "Constants.URL_LIVE_STREAM_VALUE=" + Constants.URL_LIVE_STREAM_VALUE);
 			inputUrl = new URL(Constants.URL_LIVE_STREAM_VALUE);
 		} catch (MalformedURLException e) {
-			Utils.getNotifInstance(this, RadioRecPlus.class).showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
+			Utils.getNotifInstance(this, RadioRecPlusActivity.class).showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
 		}
 
 		try {
 			outputUrl = new URL("file:///" + Constants.SD_CARD_PATH_VALUE + getSlash() + Constants.SELECTED_STATION_NAME_VALUE.replaceAll(" ", "") + "-"
 					+ dateTime + ".mp3");
 		} catch (MalformedURLException e) {
-			Utils.getNotifInstance(this, RadioRecPlus.class).showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
+			Utils.getNotifInstance(this, RadioRecPlusActivity.class).showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
 		}
 
 		recordTask = new RadioRecorder(this, this.getIntent()).execute(inputUrl, outputUrl);
@@ -610,7 +615,7 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 	protected static void doStopRecording(Context context) {
 		if (recordTask != null) {
 			recordTask.cancel(true);
-			Utils.getNotifInstance(context, RadioRecPlus.class).hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
+			Utils.getNotifInstance(context, RadioRecPlusActivity.class).hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
 			recording = false;
 		}
 	}
@@ -823,36 +828,41 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 	// ------------------------------------------------------------
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, -1, 0, this.getResources().getString(R.string.info)).setIcon(android.R.drawable.ic_menu_info_details);
-		menu.add(0, -2, 0, this.getResources().getString(R.string.musicBrowser)).setIcon(android.R.drawable.ic_menu_slideshow);
-		if (!Utils.hasValidKey()) {
-			menu.add(0, -3, 0, this.getResources().getString(R.string.donate_adfree)).setIcon(android.R.drawable.ic_menu_agenda);
+		super.onCreateOptionsMenu(menu);
+		getMenuInflater().inflate(R.menu.activity_main, menu);
+
+		// Chromecast
+		// MenuItem mediaRouteMenuItem = menu.findItem(R.id.media_route_menu_item);
+		// MediaRouteActionProvider mediaRouteActionProvider = (MediaRouteActionProvider) MenuItemCompat.getActionProvider(mediaRouteMenuItem);
+		// mediaRouteActionProvider.setRouteSelector(mediaRouteSelector);
+
+		if (Utils.hasValidKey()) {
+			menu.removeItem(R.id.action_donate);
 		}
-		menu.add(0, -4, 0, this.getResources().getString(R.string.settings)).setIcon(android.R.drawable.ic_menu_preferences);
-		menu.add(0, -5, 0, this.getResources().getString(R.string.ende)).setIcon(android.R.drawable.ic_menu_close_clear_cancel);
+
 		return super.onCreateOptionsMenu(menu);
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case -1:
+		case R.id.action_info:
 			Log.i(TAG, "info");
-			this.startActivity(new Intent(this, Info.class));
+			this.startActivity(new Intent(this, InfoActivity.class));
 			break;
-		case -2:
+		case R.id.action_musicbrowser:
 			Log.i(TAG, "file chooser");
-			this.startActivity(new Intent(this, FileChooser.class));
+			this.startActivity(new Intent(this, FileChooserActivity.class));
 			break;
-		case -3:
+		case R.id.action_donate:
 			Log.i(TAG, "spende");
-			this.startActivity(new Intent(this, Donate.class));
+			this.startActivity(new Intent(this, DonateActivity.class));
 			break;
-		case -4:
+		case R.id.action_settings:
 			Log.i(TAG, "settings");
-			this.startActivity(new Intent(this, Settings.class));
+			this.startActivity(new Intent(this, SettingsActivity.class));
 			break;
-		case -5:
+		case R.id.action_end:
 			Log.i(TAG, "exit");
 			stopPlayAndRecord();
 			// Unregister PhoneStateListener
@@ -911,4 +921,43 @@ public class RadioRecPlus extends Activity implements OnClickListener, OnItemSel
 		Utils.log(TAG, "setFavIconStar STOP");
 	}
 
+	@Override
+	public void onTabReselected(Tab tab, FragmentTransaction ft) {
+		Utils.log(TAG, "------- onTabReselected: " + (tab.getPosition()));
+		performTabClick(tab);
+	}
+
+	@Override
+	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		// Toast.makeText(this, "Clicked: " + (tab.getPosition() + 1), Toast.LENGTH_SHORT).show();
+		Utils.log(TAG, "------- onTabSelected: " + (tab.getPosition()));
+		performTabClick(tab);
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+		Utils.log(TAG, "------- onTabUnselected: " + (tab.getPosition()));
+	}
+
+	private void performTabClick(Tab tab) {
+		switch (tab.getPosition()) {
+		case 0:
+			if (spnAllStations != null) {
+				spnAllStations.performClick();
+			}
+			break;
+		case 1:
+			Constants.SPINNER_SELECTION = Constants.SPINNER_ALPHABETISCH;
+			AnalyticsUtil.sendEvent(activity, "ui_action", "click_buttonAlphabetisch", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			Utils.log(TAG, "Button Alphabetisch pressed. Firts=" + spnAlphabetisch.getFirstVisiblePosition());
+			spnAlphabetisch.performClick();
+			break;
+		case 2:
+			AnalyticsUtil.sendEvent(activity, "ui_action", "click_buttonFav", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			this.startActivityForResult(new Intent(this, FavouritesActivity.class), Constants.FROM_FAVOURITES);
+			break;
+		default:
+			break;
+		}
+	}
 }

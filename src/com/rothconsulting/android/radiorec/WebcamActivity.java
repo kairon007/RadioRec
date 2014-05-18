@@ -1,6 +1,5 @@
 package com.rothconsulting.android.radiorec;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -8,6 +7,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,7 +20,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Webcam extends Activity {
+public class WebcamActivity extends ActionBarActivity {
 
 	private final String TAG = this.getClass().getSimpleName();
 	private ProgressDialog progressDialog;
@@ -30,6 +30,10 @@ public class Webcam extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		// Set up the action bar.
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 		if (Constants.ROTATION_OFF_VALUE) {
 			// Prevent from Rotation
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -154,8 +158,11 @@ public class Webcam extends Activity {
 			return true;
 		case R.id.donate_adfree:
 			finish();
-			this.startActivity(new Intent(this, Donate.class));
+			this.startActivity(new Intent(this, DonateActivity.class));
 			return true;
+		case android.R.id.home:
+			onBackPressed();
+			break;
 		}
 		return super.onOptionsItemSelected(item);
 	}

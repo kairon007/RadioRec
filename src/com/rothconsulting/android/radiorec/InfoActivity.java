@@ -1,22 +1,25 @@
 package com.rothconsulting.android.radiorec;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Info extends Activity {
+public class InfoActivity extends ActionBarActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		// Set up the action bar.
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 		if (Constants.ROTATION_OFF_VALUE) {
 			// Prevent from Rotation
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -24,7 +27,7 @@ public class Info extends Activity {
 
 		AnalyticsUtil.sendScreen(this, "Info screen");
 
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		this.setTitle(getString(R.string.info));
 		setContentView(R.layout.info);
 
 		AdMob admob = new AdMob();
@@ -32,7 +35,7 @@ public class Info extends Activity {
 
 		final TextView textViewAppVersion = (TextView) findViewById(R.id.textViewAppVersion);
 		Utils utils = new Utils();
-		textViewAppVersion.setText("Version " + utils.getAppVersionName(this, Info.class));
+		textViewAppVersion.setText("Version " + utils.getAppVersionName(this, InfoActivity.class));
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
@@ -86,8 +89,11 @@ public class Info extends Activity {
 			return true;
 		case R.id.donate_adfree:
 			finish();
-			this.startActivity(new Intent(this, Donate.class));
+			this.startActivity(new Intent(this, DonateActivity.class));
 			return true;
+		case android.R.id.home:
+			onBackPressed();
+			break;
 		}
 		return super.onOptionsItemSelected(item);
 	}

@@ -6,8 +6,6 @@
 			android:weightSum="1" android:layout_height="fill_parent">
 			<EditText android:focusable="true" android:focusableInTouchMode="true" android:layout_width="1px"
 				android:layout_height="1px" />
-			<TextView android:text="@string/settings" android:id="@+id/textViewTitleSetings" android:layout_width="fill_parent"
-				android:layout_height="wrap_content" android:background="#000000" android:textStyle="bold" />
 			<LinearLayout android:layout_width="fill_parent" android:orientation="vertical" android:scrollbars="vertical"
 				android:weightSum="1" android:layout_height="fill_parent" android:id="@+id/linearLayoutWifi">
 				<TextView android:text="@string/wifiStandby" android:id="@+id/textViewTitleWifiStandby" android:layout_width="fill_parent"
@@ -50,16 +48,16 @@
 				android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="#0000A0"
 				android:textStyle="bold" />
 			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center"
-				android:layout_gravity="center" android:text="@string/sdcardPath" android:textColor="#FFFFFF" android:textSize="15dip"
+				android:layout_gravity="center" android:text="@string/sdcardPath" android:textColor="#FFFFFF" android:textSize="15sp"
 				android:layout_marginBottom="20dip" android:id="@+id/textViewSdcardPath" />
 			<EditText android:layout_width="fill_parent" android:layout_marginLeft="30dip" android:layout_marginRight="30dip"
-				android:layout_height="wrap_content" android:id="@+id/editTextSdcardPath" />
+				android:layout_height="wrap_content" android:id="@+id/editTextSdcardPath" android:inputType="text" />
 			<RelativeLayout android:layout_width="fill_parent" android:id="@+id/relativeLayoutButtonsPath"
 				android:layout_height="wrap_content" android:gravity="center">
-				<Button android:layout_height="wrap_content" android:layout_width="115dp" android:text="@string/save"
+				<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/save"
 					android:id="@+id/buttonSavePath" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
 					android:layout_marginRight="15dp" />
-				<Button android:layout_width="115dp" android:layout_height="wrap_content" android:id="@+id/buttonResetPath"
+				<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/buttonResetPath"
 					android:text="@string/reset" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
 			</RelativeLayout>
 
@@ -67,16 +65,16 @@
 				android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="#0000A0"
 				android:textStyle="bold" />
 			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center"
-				android:layout_gravity="center" android:text="@string/bufferText" android:textColor="#FFFFFF" android:textSize="15dip"
+				android:layout_gravity="center" android:text="@string/bufferText" android:textColor="#FFFFFF" android:textSize="15sp"
 				android:layout_marginBottom="20dip" android:id="@+id/textViewBuffer" />
 			<EditText android:layout_width="fill_parent" android:layout_marginLeft="30dip" android:layout_marginRight="30dip"
-				android:layout_height="wrap_content" android:id="@+id/editTextBuffer" />
+				android:layout_height="wrap_content" android:id="@+id/editTextBuffer"  android:inputType="number"/>
 			<RelativeLayout android:layout_width="fill_parent" android:id="@+id/relativeLayoutButtonsBuffer"
 				android:layout_height="wrap_content" android:gravity="center">
-				<Button android:layout_height="wrap_content" android:layout_width="115dp" android:text="@string/save"
+				<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/save"
 					android:id="@+id/buttonSaveBuffer" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
 					android:layout_marginRight="15dp" />
-				<Button android:layout_width="115dp" android:layout_height="wrap_content" android:id="@+id/buttonResetBuffer"
+				<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/buttonResetBuffer"
 					android:text="@string/reset" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
 			</RelativeLayout>
 

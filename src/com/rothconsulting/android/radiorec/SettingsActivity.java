@@ -8,6 +8,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings.SettingNotFoundException;
+import android.support.v7.app.ActionBarActivity;
 import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -21,7 +22,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class Settings extends Activity implements RadioGroup.OnCheckedChangeListener {
+public class SettingsActivity extends ActionBarActivity implements RadioGroup.OnCheckedChangeListener {
 
 	private static final String TAG = "Settings";
 	private Activity activity;
@@ -32,11 +33,17 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		// Set up the action bar.
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 		if (Constants.ROTATION_OFF_VALUE) {
 			// Prevent from Rotation
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
 		setContentView(R.layout.settings);
+
+		this.setTitle(getString(R.string.settings));
 
 		activity = this;
 		// hide keyboard when opening page
@@ -65,7 +72,8 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 
 				AnalyticsUtil.sendEvent(activity, "ui_action", "Settings", "SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE);
 
-				Toast.makeText(Settings.this, getResources().getString(R.string.save) + " (" + edittextSdCardPath.getText() + ")", Toast.LENGTH_LONG).show();
+				Toast.makeText(SettingsActivity.this, getResources().getString(R.string.save) + " (" + edittextSdCardPath.getText() + ")", Toast.LENGTH_LONG)
+						.show();
 			}
 		});
 
@@ -140,13 +148,13 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 						SharedPreferences.Editor editor = settings.edit();
 						editor.putInt(Constants.BUFFER_KEY, Constants.BUFFER_VALUE);
 						editor.commit();
-						Toast.makeText(Settings.this, getResources().getString(R.string.save) + " (" + editTextBufferSize.getText() + ")", Toast.LENGTH_LONG)
-								.show();
+						Toast.makeText(SettingsActivity.this, getResources().getString(R.string.save) + " (" + editTextBufferSize.getText() + ")",
+								Toast.LENGTH_LONG).show();
 					}
 				} catch (Exception e) {
 					editTextBufferSize.setTextColor(Color.WHITE);
 					editTextBufferSize.setBackgroundColor(Color.RED);
-					Toast.makeText(Settings.this, getResources().getString(R.string.errorZahlEingeben), Toast.LENGTH_LONG).show();
+					Toast.makeText(SettingsActivity.this, getResources().getString(R.string.errorZahlEingeben), Toast.LENGTH_LONG).show();
 				}
 
 				AnalyticsUtil.sendEvent(activity, "ui_action", "Settings", "BUFFER_VALUE size=" + Constants.BUFFER_VALUE);
@@ -262,8 +270,11 @@ public class Settings extends Activity implements RadioGroup.OnCheckedChangeList
 			return true;
 		case R.id.donate_adfree:
 			finish();
-			this.startActivity(new Intent(this, Donate.class));
+			this.startActivity(new Intent(this, DonateActivity.class));
 			return true;
+		case android.R.id.home:
+			onBackPressed();
+			break;
 		}
 		return super.onOptionsItemSelected(item);
 	}

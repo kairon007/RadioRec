@@ -24,7 +24,7 @@ public class RadioPlayer {
 	}
 
 	private Notifications getNotifInstance(Context context) {
-		Intent intent = new Intent(context, Donate.class);
+		Intent intent = new Intent(context, DonateActivity.class);
 		intent.putExtra(Constants.FROM_NOTIFICATION, Constants.FROM_NOTIFICATION);
 		return new Notifications(context, intent);
 	}

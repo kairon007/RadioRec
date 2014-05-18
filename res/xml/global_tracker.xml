@@ -3,22 +3,22 @@
 	<integer name="ga_sessionTimeout">300</integer>
 	<bool name="ga_autoActivityTracking">true</bool>
 
-	<screenName name="com.rothconsulting.android.radiorec.RadioRecPlus">
+	<screenName name="com.rothconsulting.android.radiorec.RadioRecPlusActivity">
 		Main Screen
 	</screenName>
-	<screenName name="com.rothconsulting.android.radiorec.Donate">
+	<screenName name="com.rothconsulting.android.radiorec.DonateActivity">
 		Donate Screen
 	</screenName>
-	<screenName name="com.rothconsulting.android.radiorec.Settings">
+	<screenName name="com.rothconsulting.android.radiorec.SettingsActivity">
 		Settings Screen
 	</screenName>
-	<screenName name="com.rothconsulting.android.radiorec.Webcam">
+	<screenName name="com.rothconsulting.android.radiorec.WebcamActivity">
 		Webcam Screen
 	</screenName>
-	<screenName name="com.rothconsulting.android.radiorec.Info">
+	<screenName name="com.rothconsulting.android.radiorec.InfoActivity">
 		Info Screen
 	</screenName>
-	<screenName name="com.rothconsulting.android.radiorec.filechooser.FileChooser">
+	<screenName name="com.rothconsulting.android.radiorec.filechooser.FileChooserActivity">
 		FileChooser Screen
 	</screenName>
 
