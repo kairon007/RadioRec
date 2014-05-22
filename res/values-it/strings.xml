@@ -77,7 +77,7 @@
 	<string name="folder">Cartella</string>
 	<string name="fileSize">Dimensione file</string>
 	<string name="parentFolder">Cartella superiore</string>
-	<string name="musicBrowser">Browser musicale</string>
+	<string name="recordings">Registrato</string>
 	<string name="delete">Eliminare</string>
 	<string name="deleted">eliminato</string>
 	<string name="recordFolderNotFound">Percorso di registrazione introvabile!</string>
@@ -97,5 +97,6 @@
 	<string name="rotationOnOff">RadioRec+ sempre in modalità verticale</string>
 	<string name="incomingCall">Stop. Telefonata.</string>
 	<string name="alreadyDonated">Avete già donato. Grazie!</string>
-				
+	<string name="stations">Stazioni</string>
+					
 </resources>

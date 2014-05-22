@@ -77,7 +77,7 @@
 	<string name="folder">Verzeichnis</string>
 	<string name="fileSize">Datei Grösse</string>
 	<string name="parentFolder">Übergeordnetes Verzeichnis</string>
-	<string name="musicBrowser">Musik Browser</string>
+	<string name="recordings">Aufnahmen</string>
 	<string name="delete">Löschen</string>
 	<string name="deleted">gelöscht</string>
 	<string name="recordFolderNotFound">Verzeichnis mit Aufnahmen nicht gefunden!</string>
@@ -97,5 +97,6 @@
 	<string name="rotationOnOff">RadioRec+ immer im Hochformat</string>
 	<string name="incomingCall">Stoppe. Anruf!</string>
 	<string name="alreadyDonated">Du hast schon gespendet. Danke!</string>
-					
+	<string name="stations">Sender</string>
+						
 </resources>

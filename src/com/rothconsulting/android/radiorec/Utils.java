@@ -250,6 +250,16 @@ public class Utils {
 	}
 
 	/**
+	 * Android Platform 4.1 = Level 16
+	 */
+	public static boolean isPlatformBelow_4_1() {
+		if (Build.VERSION.SDK_INT < 16) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * Android Platform 4.2 = Level 17
 	 */
 	public static boolean isPlatformBelow_4_2() {
@@ -269,21 +279,21 @@ public class Utils {
 		return false;
 	}
 
-	public static boolean isAtLeastHoneycomb() {
-		// Can use static final constants like HONEYCOMB, declared in later
-		// versions
-		// of the OS since they are inlined at compile time. This is guaranteed
-		// behavior.
-		return Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB;
-	}
+	// public static boolean isAtLeastHoneycomb() {
+	// // Can use static final constants like HONEYCOMB, declared in later
+	// // versions
+	// // of the OS since they are inlined at compile time. This is guaranteed
+	// // behavior.
+	// return Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB;
+	// }
 
-	public static boolean isTablet(Context context) {
-		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
-	}
-
-	public static boolean isAtLeastHoneycombAndTablet(Context context) {
-		return isAtLeastHoneycomb() && isTablet(context);
-	}
+	// public static boolean isTablet(Context context) {
+	// return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+	// }
+	//
+	// public static boolean isAtLeastHoneycombAndTablet(Context context) {
+	// return isAtLeastHoneycomb() && isTablet(context);
+	// }
 
 	public static boolean isLandscape(Context context) {
 		if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {

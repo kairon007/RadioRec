@@ -16,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -73,6 +74,20 @@ public class FileChooserActivity extends ActionBarListActivity {
 					listView.setBackgroundResource(R.drawable.bg_land);
 				}
 
+				listView.setOnItemClickListener(new OnItemClickListener() {
+
+					@Override
+					public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
+						Option o = adapter.getItem(position);
+						try {
+							onFileClick(o);
+						} catch (Exception e) {
+							Utils.log(TAG, "onListItemClick - Exception! SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE + "\nException=\n" + e);
+							pathNotValidDialog().show();
+						}
+					}
+				});
+
 				listView.setOnItemLongClickListener(new OnItemLongClickListener() {
 
 					@Override
@@ -106,7 +121,7 @@ public class FileChooserActivity extends ActionBarListActivity {
 
 		try {
 			File[] dirs = f.listFiles();
-			this.setTitle(getString(R.string.musicBrowser) + ", " + getString(R.string.currentDir) + ": " + f.getName());
+			this.setTitle(getString(R.string.recordings) + ", " + getString(R.string.currentDir) + ": " + f.getName());
 
 			for (File ff : dirs) {
 				if (ff.isDirectory() && !ff.getName().startsWith(".")) {
@@ -127,9 +142,9 @@ public class FileChooserActivity extends ActionBarListActivity {
 		Collections.sort(dir);
 		Collections.sort(fls);
 		dir.addAll(fls);
-		if (!f.getName().equalsIgnoreCase("sdcard")) {
-			dir.add(0, new Option(R.drawable.icon_folder_up, "..", getString(R.string.parentFolder), f.getParent()));
-		}
+		// if (!f.getName().equalsIgnoreCase("sdcard")) {
+		// dir.add(0, new Option(R.drawable.icon_folder_up, "..", getString(R.string.parentFolder), f.getParent()));
+		// }
 
 		AnalyticsUtil.sendEvent(this, "ui_action", "FileChooser", "currentDir: " + f.getName());
 		AnalyticsUtil.sendEvent(this, "ui_action", "FileChooser", "No. files: " + fls.size());
@@ -210,23 +225,23 @@ public class FileChooserActivity extends ActionBarListActivity {
 		return builder.create();
 	}
 
-	@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
-
-		try {
-			super.onListItemClick(l, v, position, id);
-			Option o = adapter.getItem(position);
-			if (o.getData().equalsIgnoreCase(getString(R.string.folder)) || o.getData().equalsIgnoreCase(getString(R.string.parentFolder))) {
-				currentDir = new File(o.getPath());
-				getFileList(currentDir);
-			} else {
-				onFileClick(o);
-			}
-		} catch (Exception e) {
-			Utils.log(TAG, "onListItemClick - Exception! SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE + "\nException=\n" + e);
-			pathNotValidDialog().show();
-		}
-	}
+	// @Override
+	// protected void onListItemClick(ListView l, View v, int position, long id) {
+	//
+	// try {
+	// super.onListItemClick(l, v, position, id);
+	// Option o = adapter.getItem(position);
+	// if (o.getData().equalsIgnoreCase(getString(R.string.folder)) || o.getData().equalsIgnoreCase(getString(R.string.parentFolder))) {
+	// currentDir = new File(o.getPath());
+	// getFileList(currentDir);
+	// } else {
+	// onFileClick(o);
+	// }
+	// } catch (Exception e) {
+	// Utils.log(TAG, "onListItemClick - Exception! SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE + "\nException=\n" + e);
+	// pathNotValidDialog().show();
+	// }
+	// }
 
 	private void onFileClick(Option o) throws Exception {
 		// opens a music player on the device

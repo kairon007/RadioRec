@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -24,9 +25,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.MediaRouteActionProvider;
+import android.support.v7.media.MediaRouteSelector;
+import android.support.v7.media.MediaRouter;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -52,6 +57,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.cast.CastDevice;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.rothconsulting.android.billing.util.RadioRecBillingHelper;
 import com.rothconsulting.android.radiorec.filechooser.FileChooserActivity;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
@@ -97,6 +104,13 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	private TelephonyManager tm = null;
 	private PhoneStateListener callStateListener;
 
+	// Chromecast
+	public static MediaRouter mediaRouter;
+	public static MediaRouteSelector mediaRouteSelector;
+	public static CastDevice selectedDevice;
+	public static GoogleApiClient apiClient;
+	public static boolean castApplicationStarted;
+
 	public Spinner getStations() {
 		return spnAllStations;
 	}
@@ -127,9 +141,9 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		// For each of the sections in the app, add a tab to the action bar.
-		actionBar.addTab(actionBar.newTab().setText(R.string.sortByCountry).setTabListener(this));
-		actionBar.addTab(actionBar.newTab().setText(R.string.alphabetisch).setTabListener(this));
+		actionBar.addTab(actionBar.newTab().setText(R.string.stations).setTabListener(this));
 		actionBar.addTab(actionBar.newTab().setText(R.string.favoriten).setTabListener(this));
+		actionBar.addTab(actionBar.newTab().setText(R.string.recordings).setTabListener(this));
 
 		// requestWindowFeature(Window.FEATURE_NO_TITLE);
 		RadioRecBillingHelper.isDonator(activity);
@@ -152,12 +166,23 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 
 		Utils.log(TAG, "++++++++++++ onCreate STOP ++++++++++++");
 
+		// Chromecast
+		CastHelper.init();
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
+		mediaRouter.addCallback(mediaRouteSelector, CastHelper.mediaRouterCallback, MediaRouter.CALLBACK_FLAG_PERFORM_ACTIVE_SCAN);
 		hideSearch();
+	}
+
+	@Override
+	protected void onPause() {
+		if (isFinishing()) {
+			mediaRouter.removeCallback(CastHelper.mediaRouterCallback);
+		}
+		super.onPause();
 	}
 
 	private void initGui() {
@@ -168,7 +193,6 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		spnAllStations = (Spinner) findViewById(R.id.stations);
 		spnAllStations.setBackgroundColor(getResources().getColor(android.R.color.white));
 		spnAlphabetisch = (Spinner) findViewById(R.id.spinnerAlphabetisch);
-		spnAlphabetisch.setBackgroundColor(getResources().getColor(android.R.color.white));
 		mainScreen = (LinearLayout) findViewById(R.id.mainScreen);
 		autocomplete = (LinearLayout) findViewById(R.id.linearLayoutAutocomplete);
 		spinner = (LinearLayout) findViewById(R.id.linearLayoutSpinner);
@@ -532,24 +556,33 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 
 		setFavIconStar();
 
-		if (!firstStart && playing) {
-			if (Constants.getLiveStreamStations().contains(Constants.SELECTED_STATION_NAME_VALUE)) {
-				Utils.log(TAG, "------ ist Fussball Radio");
-				showDialog(Constants.LIVE_STREAM_STATION);
+		if (CastHelper.isClientConnected()) {
+			if (playing) {
+				CastHelper.play(Constants.SELECTED_STATION_NAME_VALUE, Constants.URL_LIVE_STREAM_VALUE, "");
+			} else {
+				CastHelper.stop();
 			}
-			if (Constants.SELECTED_STATION_NAME_VALUE.equalsIgnoreCase(Stations.RADIO_JUGGLERZ)) {
-				// jugglerz.de hat immer Donnerstags eine Live Sendung.
-				// Ab Freitag kann man diese als mp3 hören. Daher ist die URL dynamisch.
-				WebTool webtool = new WebTool();
-				Constants.URL_LIVE_STREAM_VALUE = Constants.URL_LIVE_STREAM_VALUE + webtool.getJugglerzFileName(this);
-				Utils.log(TAG, "*********** new Stream=" + Constants.URL_LIVE_STREAM_VALUE);
-			}
-			getRadioPlayer().doStartPlay(this);
-			// getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
 		} else {
-			this.stopPlay();
+			if (!firstStart && playing) {
+				if (Constants.getLiveStreamStations().contains(Constants.SELECTED_STATION_NAME_VALUE)) {
+					Utils.log(TAG, "------ ist Fussball Radio");
+					showDialog(Constants.LIVE_STREAM_STATION);
+				}
+				if (Constants.SELECTED_STATION_NAME_VALUE.equalsIgnoreCase(Stations.RADIO_JUGGLERZ)) {
+					// jugglerz.de hat immer Donnerstags eine Live Sendung.
+					// Ab Freitag kann man diese als mp3 hören. Daher ist die URL dynamisch.
+					WebTool webtool = new WebTool();
+					Constants.URL_LIVE_STREAM_VALUE = Constants.URL_LIVE_STREAM_VALUE + webtool.getJugglerzFileName(this);
+					Utils.log(TAG, "*********** new Stream=" + Constants.URL_LIVE_STREAM_VALUE);
+				}
+				getRadioPlayer().doStartPlay(this);
+				// getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+			} else {
+				this.stopPlay();
+			}
 		}
+
 		buttonBack.setEnabled(index > 0);
 		buttonFwd.setEnabled(index < stationList.size() - 1);
 
@@ -832,9 +865,9 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 
 		// Chromecast
-		// MenuItem mediaRouteMenuItem = menu.findItem(R.id.media_route_menu_item);
-		// MediaRouteActionProvider mediaRouteActionProvider = (MediaRouteActionProvider) MenuItemCompat.getActionProvider(mediaRouteMenuItem);
-		// mediaRouteActionProvider.setRouteSelector(mediaRouteSelector);
+		MenuItem mediaRouteMenuItem = menu.findItem(R.id.media_route_menu_item);
+		MediaRouteActionProvider mediaRouteActionProvider = (MediaRouteActionProvider) MenuItemCompat.getActionProvider(mediaRouteMenuItem);
+		mediaRouteActionProvider.setRouteSelector(mediaRouteSelector);
 
 		if (Utils.hasValidKey()) {
 			menu.removeItem(R.id.action_donate);
@@ -843,6 +876,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		return super.onCreateOptionsMenu(menu);
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -850,9 +884,15 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			Log.i(TAG, "info");
 			this.startActivity(new Intent(this, InfoActivity.class));
 			break;
-		case R.id.action_musicbrowser:
-			Log.i(TAG, "file chooser");
-			this.startActivity(new Intent(this, FileChooserActivity.class));
+		case R.id.action_alphabetisch:
+			Log.i(TAG, "menu alphabetisch");
+			Constants.SPINNER_SELECTION = Constants.SPINNER_ALPHABETISCH;
+			AnalyticsUtil.sendEvent(activity, "ui_action", "click_menu_alphabetisch", "actual station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			Utils.log(TAG, "Button Alphabetisch pressed. Firts=" + spnAlphabetisch.getFirstVisiblePosition());
+			if (!Utils.isPlatformBelow_4_1()) {
+				spnAlphabetisch.setPopupBackgroundResource(android.R.color.white);
+			}
+			spnAlphabetisch.performClick();
 			break;
 		case R.id.action_donate:
 			Log.i(TAG, "spende");
@@ -947,14 +987,12 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			}
 			break;
 		case 1:
-			Constants.SPINNER_SELECTION = Constants.SPINNER_ALPHABETISCH;
-			AnalyticsUtil.sendEvent(activity, "ui_action", "click_buttonAlphabetisch", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
-			Utils.log(TAG, "Button Alphabetisch pressed. Firts=" + spnAlphabetisch.getFirstVisiblePosition());
-			spnAlphabetisch.performClick();
+			AnalyticsUtil.sendEvent(activity, "ui_action", "click_tab_favourites", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			this.startActivityForResult(new Intent(this, FavouritesActivity.class), Constants.FROM_FAVOURITES);
 			break;
 		case 2:
-			AnalyticsUtil.sendEvent(activity, "ui_action", "click_buttonFav", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
-			this.startActivityForResult(new Intent(this, FavouritesActivity.class), Constants.FROM_FAVOURITES);
+			AnalyticsUtil.sendEvent(activity, "ui_action", "click_musicBrowser", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			this.startActivity(new Intent(this, FileChooserActivity.class));
 			break;
 		default:
 			break;

@@ -77,7 +77,7 @@
 	<string name="folder">Folder</string>
 	<string name="fileSize">File Size</string>
 	<string name="parentFolder">Parent Folder</string>
-	<string name="musicBrowser">Music Browser</string>
+	<string name="recordings">Recordings</string>
 	<string name="delete">Delete</string>
 	<string name="deleted">deleted</string>
 	<string name="recordFolderNotFound">Record-Folder Not Found!</string>
@@ -97,5 +97,7 @@
 	<string name="rotationOnOff">RadioRec+ always in portrait mode</string>
 	<string name="incomingCall">Stoping. Incoming Call</string>
 	<string name="alreadyDonated">You have already donated. Thank you!</string>
-							
+	<string name="media_route_menu_title">Play on&#8230;</string>
+	<string name="stations">Stations</string>
+					
 </resources>

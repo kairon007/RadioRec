@@ -5,7 +5,7 @@
 
 	<LinearLayout android:id="@+id/spinnerLinearLayout" android:layout_width="fill_parent"
 		android:layout_height="0dp" android:layout_weight="0">
-		<Spinner android:layout_height="wrap_content" android:padding="0dp" android:layout_margin="0dp" android:background="@android:color/white"
+		<Spinner android:layout_height="wrap_content" android:padding="0dp" android:layout_margin="0dp" android:popupBackground="@android:color/white"
 			android:prompt="@string/alphabetisch" android:layout_width="0dp" android:layout_weight="0" android:id="@+id/spinnerAlphabetisch" />
 	</LinearLayout>
 
@@ -19,11 +19,11 @@
 				android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/autocomplete" android:hint="@string/searchHint" />
 		</LinearLayout>
 
-		<LinearLayout android:orientation="horizontal" android:background="@color/transparent"
+		<LinearLayout android:orientation="horizontal"
 			android:paddingLeft="0dp" android:paddingTop="0dp" android:paddingRight="0dp" android:paddingBottom="0dp"
 			android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/linearLayoutSpinner">
 			<Spinner android:id="@+id/stations" android:prompt="@string/sortByCountry" android:layout_height="wrap_content"
-				android:layout_width="fill_parent" android:layout_marginTop="2dp" android:background="@android:color/white" />
+				android:layout_width="fill_parent" android:layout_marginTop="2dp" android:popupBackground="@android:color/white" />
 		</LinearLayout>
 	</RelativeLayout>
 

@@ -91,6 +91,7 @@ public class Stations {
 	public static final String RADIO_ARGOVIA = "Argovia";
 	public static final String RADIO_ARGOVIA_HITMIX = "Argovia Hitmix";
 	public static final String RADIO_ARGOVIA_CLASSIC_ROCK = "Argovia Classic Rock";
+	public static final String RADIO_ARGOVIA_COMEDY = "Argovia Comedy";
 	public static final String RADIO_105 = "105";
 	public static final String RADIO_FM1 = "FM1";
 	public static final String RADIO_FM1_MELODY = "FM1 Melody";
@@ -148,6 +149,7 @@ public class Stations {
 	public static final String RADIO_PIRATENRADIO = "Piratenradio";
 	public static final String RADIO_WAVE = "Wave";
 	public static final String RADIO_BASEL_EINS = "Basel Eins";
+	public static final String RADIO_BASILISK = "Basilisk";
 	public static final String RADIO_ROCK_STATION = "Rockstation";
 	public static final String RADIO_TRANCERADIO = "TranceRadio";
 	public static final String RADIO_DELTA_RADIO = "Delta Radio";
@@ -233,6 +235,7 @@ public class Stations {
 	public static final String RADIO_WDR_3 = "WDR 3";
 	public static final String RADIO_WDR_4 = "WDR 4";
 	public static final String RADIO_WDR_5 = "WDR 5";
+	public static final String RADIO_WDR_KIRAKA = "WDR Kiraka";
 	public static final String RADIO_WDR_FUNKHAUS_EUROPA = "Funkhaus Europa";
 	public static final String RADIO_NORDWESTRADIO = "Nordwestradio";
 	public static final String RADIO_BREMEN_VIER = "Bremen Vier";
@@ -390,6 +393,9 @@ public class Stations {
 	public static final String RADIO_DRESDEN = "Dresden";
 	public static final String RADIO_GOLD_BERLIN = "Gold Berlin";
 	public static final String RADIO_HITSTATION_FM = "Hit Station-FM";
+	public static final String RADIO_HITSTATION_FM_90 = "Hit Station-FM 90s";
+	public static final String RADIO_NEANDERTAL = "Neandertal";
+	public static final String RADIO_RPR1 = "RPR1.";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -1032,7 +1038,8 @@ public class Stations {
 		m.put(NAME, RADIO_ARGOVIA);
 		m.put(ICON, R.drawable.radio_argovia);
 		m.put(ICON_SMALL, R.drawable.radio_argovia_small);
-		m.put(STREAM, "http://shoutcast.argovia.ch");
+		// m.put(STREAM, "http://shoutcast.argovia.ch");
+		m.put(STREAM, "http://icecastgreen.argovia.ch/argovia128");
 		m.put(HOMEPAGE, "http://www.argovia.ch");
 		m.put(WEBCAM, "http://www.argovia.ch/live/");
 		m.put(EMAIL, "http://www.argovia.ch/ajax/studiomail");
@@ -1045,7 +1052,8 @@ public class Stations {
 		m.put(NAME, RADIO_ARGOVIA_HITMIX);
 		m.put(ICON, R.drawable.radio_argovia_hitmix);
 		m.put(ICON_SMALL, R.drawable.radio_argovia_hitmix_small);
-		m.put(STREAM, "http://shoutcast.argovia.ch:8095");
+		// m.put(STREAM, "http://shoutcast.argovia.ch:8095");
+		m.put(STREAM, "http://icecast.argovia.ch/argoviahitmix");
 		m.put(HOMEPAGE, "http://www.argovia.ch");
 		m.put(WEBCAM, "http://www.argovia.ch/live/");
 		m.put(EMAIL, "http://www.argovia.ch/ajax/studiomail");
@@ -1058,7 +1066,21 @@ public class Stations {
 		m.put(NAME, RADIO_ARGOVIA_CLASSIC_ROCK);
 		m.put(ICON, R.drawable.radio_argovia_swissclassicrock);
 		m.put(ICON_SMALL, R.drawable.radio_argovia_swissclassicrock_small);
-		m.put(STREAM, "http://shoutcast.argovia.ch:8090");
+		// m.put(STREAM, "http://shoutcast.argovia.ch:8090");
+		m.put(STREAM, "http://icecast.argovia.ch/argoviacr128");
+		m.put(HOMEPAGE, "http://www.argovia.ch");
+		m.put(WEBCAM, "http://www.argovia.ch/live/");
+		m.put(EMAIL, "http://www.argovia.ch/ajax/studiomail");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_CH);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_ARGOVIA_COMEDY);
+		m.put(ICON, R.drawable.radio_argovia_comedy);
+		m.put(ICON_SMALL, R.drawable.radio_argovia_comedy_small);
+		m.put(STREAM, "http://icecastgreen.argovia.ch/aco-mp3-srp");
 		m.put(HOMEPAGE, "http://www.argovia.ch");
 		m.put(WEBCAM, "http://www.argovia.ch/live/");
 		m.put(EMAIL, "http://www.argovia.ch/ajax/studiomail");
@@ -1779,6 +1801,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://radiobaseleins.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://radiobaseleins.ch/rb1/index.php/uns");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_CH);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_BASILISK);
+		m.put(ICON, R.drawable.radio_basilisk);
+		m.put(ICON_SMALL, R.drawable.radio_basilisk_small);
+		m.put(STREAM, "http://ohnewerbung.ice.infomaniak.ch/radiobasilisk-64-128-0.mp3");
+		m.put(HOMEPAGE, "http://www.basilisk.ch");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.basilisk.ch/unternehmen/mail-ins-studio.html");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
 		m.put(STIL, STIL_POP);
@@ -2758,6 +2793,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.wdr5.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.wdr5.de/nc/kontakt.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_WDR_KIRAKA);
+		m.put(ICON, R.drawable.radio_wdr_kiraka);
+		m.put(ICON_SMALL, R.drawable.radio_wdr_kiraka);
+		m.put(STREAM, "http://kiraka.akacast.akamaistream.net/7/285/119443/v1/gnl.akacast.akamaistream.net/kiraka");
+		m.put(HOMEPAGE, "http://www.kiraka.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.kiraka.de/kontakt");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
@@ -4711,6 +4759,45 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.hitstation.fm");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.hitstation.fm/index.php?option=com_contact&view=contact&id=1&Itemid=201");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_HITSTATION_FM_90);
+		m.put(ICON, R.drawable.radio_hitstation_fm);
+		m.put(ICON_SMALL, R.drawable.radio_hitstation_fm_small);
+		m.put(STREAM, "http://80.237.157.97:9000");
+		m.put(HOMEPAGE, "http://www.hitstation.fm");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.hitstation.fm/index.php?option=com_contact&view=contact&id=1&Itemid=201");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_NEANDERTAL);
+		m.put(ICON, R.drawable.radio_neandertal);
+		m.put(ICON_SMALL, R.drawable.radio_neandertal_small);
+		m.put(STREAM, "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-neandertal/livestream.mp3");
+		m.put(HOMEPAGE, "http://www.radioneandertal.de");
+		m.put(WEBCAM, "http://www.radioneandertal.de/webcam/studio01.jpg");
+		m.put(EMAIL, "http://www.radioneandertal.de/sender/kontakt/impressum.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_RPR1);
+		m.put(ICON, R.drawable.radio_rpr1);
+		m.put(ICON_SMALL, R.drawable.radio_rpr1_small);
+		m.put(STREAM, "http://srv01.rpr1.fmstreams.de/stream1");
+		m.put(HOMEPAGE, "http://www.rpr1.de");
+		m.put(WEBCAM, "http://static.rpr1.de/webcam/cam1/webcam01.jpg");
+		m.put(EMAIL, "http://www.rpr1.de/content/html/shared/studiomail/index.html");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
