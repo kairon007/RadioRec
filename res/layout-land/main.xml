@@ -23,7 +23,7 @@
 			android:paddingLeft="0dp" android:paddingTop="0dp" android:paddingRight="0dp" android:paddingBottom="0dp"
 			android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/linearLayoutSpinner">
 			<Spinner android:id="@+id/stations" android:prompt="@string/sortByCountry" android:layout_height="wrap_content"
-				android:layout_width="fill_parent" android:layout_marginTop="2dp" android:popupBackground="@android:color/white" />
+				android:layout_width="fill_parent" android:layout_margin="2dp" android:padding="2dp" android:popupBackground="@drawable/colors_list" />
 		</LinearLayout>
 	</RelativeLayout>
 
@@ -50,7 +50,7 @@
 
 		<ImageButton android:id="@+id/imageButtonUhr" android:layout_alignParentRight="true" android:layout_width="wrap_content"
 			android:layout_height="wrap_content" android:contentDescription="@string/timer" android:src="@drawable/button_uhr_weiss"
-			android:background="@color/transparent" />
+			android:background="@drawable/colors_transparent_button" />
 
 	</RelativeLayout>
 
@@ -96,14 +96,14 @@
 			<!-- Not for Tablets -->
 			<LinearLayout android:id="@+id/linearLayoutLandscapeNoTablet" android:layout_margin="2dp"
 				android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="horizontal">
-				<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_backward"
-					android:layout_width="wrap_content" android:id="@+id/back" />
-				<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_play"
-					android:layout_width="wrap_content" android:id="@+id/play" />
-				<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_record"
-					android:layout_width="wrap_content" android:id="@+id/rec" />
-				<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_forward"
-					android:layout_width="wrap_content" android:id="@+id/fwd" />
+				<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_backward" android:layout_margin="2dp"
+					android:layout_width="wrap_content" android:id="@+id/back" android:background="@drawable/colors_list" />
+				<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_play" android:layout_margin="2dp"
+					android:layout_width="wrap_content" android:id="@+id/play" android:background="@drawable/colors_list" />
+				<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_record" android:layout_margin="2dp"
+					android:layout_width="wrap_content" android:id="@+id/rec" android:background="@drawable/colors_list" />
+				<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_forward" android:layout_margin="2dp"
+					android:layout_width="wrap_content" android:id="@+id/fwd" android:background="@drawable/colors_list" />
 			</LinearLayout>
 
 		</LinearLayout>

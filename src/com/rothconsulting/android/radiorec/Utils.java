@@ -1,7 +1,9 @@
 package com.rothconsulting.android.radiorec;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -337,4 +339,23 @@ public class Utils {
 		return orientation; // return value 1 is portrait and 2 is Landscape Mode
 	}
 
+	/**
+	 * @return ID and NAME of the drawables
+	 */
+	public static Hashtable<Integer, String> getAllDrawables() {
+		Hashtable<Integer, String> dl = new Hashtable<Integer, String>();
+		Field[] drawables = R.drawable.class.getFields();
+		for (Field f : drawables) {
+			try {
+				String drawableName = f.getName();
+				if (drawableName.startsWith("radio_") && !drawableName.endsWith("small")) {
+					Utils.log(TAG, "R.drawable: ID=" + f.getInt(f.getName()) + " / NAME=" + f.getName());
+					dl.put(f.getInt(f.getName()), f.getName());
+				}
+			} catch (Exception e) {
+				Utils.log(TAG, "Cannot get drawables ! " + e);
+			}
+		}
+		return dl;
+	}
 }

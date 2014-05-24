@@ -225,24 +225,6 @@ public class FileChooserActivity extends ActionBarListActivity {
 		return builder.create();
 	}
 
-	// @Override
-	// protected void onListItemClick(ListView l, View v, int position, long id) {
-	//
-	// try {
-	// super.onListItemClick(l, v, position, id);
-	// Option o = adapter.getItem(position);
-	// if (o.getData().equalsIgnoreCase(getString(R.string.folder)) || o.getData().equalsIgnoreCase(getString(R.string.parentFolder))) {
-	// currentDir = new File(o.getPath());
-	// getFileList(currentDir);
-	// } else {
-	// onFileClick(o);
-	// }
-	// } catch (Exception e) {
-	// Utils.log(TAG, "onListItemClick - Exception! SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE + "\nException=\n" + e);
-	// pathNotValidDialog().show();
-	// }
-	// }
-
 	private void onFileClick(Option o) throws Exception {
 		// opens a music player on the device
 		Intent intent = new Intent();

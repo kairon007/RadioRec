@@ -103,6 +103,24 @@ public class DonateActivity extends ActionBarActivity {
 		if (Constants.ANTI_ADS_VALUE != null) {
 			edittext.setText(Constants.ANTI_ADS_VALUE);
 		}
+		edittext.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				String text = "" + edittext.getText();
+				if (edittext != null && edittext.getText() != null && text.equals(activity.getString(R.string.antiWerbungKey))) {
+					edittext.setText("");
+				}
+			}
+		});
+		edittext.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+			@Override
+			public void onFocusChange(View arg0, boolean arg1) {
+				String text = "" + edittext.getText();
+				if (edittext != null && edittext.getText() != null && text.equals(activity.getString(R.string.antiWerbungKey))) {
+					edittext.setText("");
+				}
+			}
+		});
 
 		final Button saveButton = (Button) findViewById(R.id.buttonSaveAntiAdsKey);
 		saveButton.setOnClickListener(new View.OnClickListener() {
@@ -113,16 +131,18 @@ public class DonateActivity extends ActionBarActivity {
 				} else {
 					Constants.ANTI_ADS_VALUE = "ERROR";
 				}
+				if ("".equals(Constants.ANTI_ADS_VALUE) || Constants.ANTI_ADS_VALUE.equals(activity.getString(R.string.antiWerbungKey))) {
+					Constants.ANTI_ADS_VALUE = "";
+					Toast.makeText(DonateActivity.this, getResources().getString(R.string.keineEingabe), Toast.LENGTH_SHORT).show();
+				} else {
+					Toast.makeText(DonateActivity.this, getResources().getString(R.string.danke) + " (" + edittext.getText() + ")", Toast.LENGTH_LONG).show();
+				}
+
 				SharedPreferences settings = getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_VALUE);
 				editor.commit();
 				editor.clear();
-				if ("".equals(Constants.ANTI_ADS_VALUE)) {
-					Toast.makeText(DonateActivity.this, getResources().getString(R.string.keineEingabe), Toast.LENGTH_SHORT).show();
-				} else {
-					Toast.makeText(DonateActivity.this, getResources().getString(R.string.danke) + " (" + edittext.getText() + ")", Toast.LENGTH_LONG).show();
-				}
 
 				AnalyticsUtil.sendEvent(activity, "ui_action", "clicked buttonSaveAntiAdsKey", "Key: " + Constants.ANTI_ADS_VALUE);
 			}

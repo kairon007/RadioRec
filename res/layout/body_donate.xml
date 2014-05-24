@@ -52,8 +52,8 @@
 				android:textSize="15dip" android:layout_margin="10dip"
 				android:id="@+id/textViewAntiAdsKeyHere" />
 			<EditText android:layout_width="fill_parent"
-				android:layout_marginLeft="30dip" android:layout_marginRight="30dip"
-				android:layout_height="wrap_content" android:id="@+id/editTextAntiAdsKey" />
+				android:layout_marginLeft="30dip" android:layout_marginRight="30dip" android:padding="5sp" android:text="@string/antiWerbungKey"
+				android:layout_height="wrap_content" android:id="@+id/editTextAntiAdsKey" android:background="@android:color/black" />
 			<Button android:layout_marginLeft="30dip"
 				android:layout_marginRight="30dip" android:id="@+id/buttonSaveAntiAdsKey"
 				android:layout_height="wrap_content" android:layout_width="fill_parent"

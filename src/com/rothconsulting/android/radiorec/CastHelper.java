@@ -1,6 +1,7 @@
 package com.rothconsulting.android.radiorec;
 
 import java.io.IOException;
+import java.util.Hashtable;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -27,10 +28,18 @@ public class CastHelper {
 
 	private static final String TAG = "CastHelper";
 
-	private static final String CAST_APP_ID = CastMediaControlIntent.DEFAULT_MEDIA_RECEIVER_APPLICATION_ID;
+	// private static final String CAST_APP_ID = CastMediaControlIntent.DEFAULT_MEDIA_RECEIVER_APPLICATION_ID;
+	private static final String CAST_APP_ID = "55A3A008";
+
 	private static final String CAST_NAMESPACE = "urn:x-cast:koni.mobi.radiorec";
+	private static final String IMAGE_BASE_DIR = "http://koni.mobi/radio/chromecast/images/";
 
 	private static RemoteMediaPlayer mRemoteMediaPlayer;
+	private static GoogleApiClient apiClient;
+	private static CastDevice selectedDevice;
+	private static boolean castApplicationStarted;
+
+	public static Hashtable<Integer, String> allDrawables;
 
 	// *****************************************
 	// Public
@@ -42,23 +51,29 @@ public class CastHelper {
 		initRemoteMediaPlayer();
 	}
 
-	public static void play(String stationName, String stationUrl, String imageUrl) {
-		imageUrl = "https://lh3.ggpht.com/2ivJrbp65Ke0SvS9yW4PpWYBiGSHglNMDQXSuI-GjVH13Bsw4GR_FuR8i9mcOizY5ys=w300";
+	public static void play(String stationName, String stationUrl, int imageResId) {
+		if (allDrawables == null) {
+			allDrawables = Utils.getAllDrawables();
+		}
+		Utils.log(TAG, "imageResId=" + imageResId + " / stationName=" + stationName);
+		String imageUrl = IMAGE_BASE_DIR + allDrawables.get(imageResId) + ".png";
+		Utils.log(TAG, "imageUrl=" + imageUrl);
 		MediaMetadata mediaMetadata = new MediaMetadata(MediaMetadata.MEDIA_TYPE_MUSIC_TRACK);
 		mediaMetadata.putString(MediaMetadata.KEY_TITLE, stationName);
 		mediaMetadata.addImage(new WebImage(Uri.parse(imageUrl)));
 		MediaInfo mediaInfo = new MediaInfo.Builder(stationUrl).setContentType("audio/mp3").setStreamType(MediaInfo.STREAM_TYPE_BUFFERED)
 				.setMetadata(mediaMetadata).build();
 		try {
-			mRemoteMediaPlayer.load(RadioRecPlusActivity.apiClient, mediaInfo, true).setResultCallback(
-					new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
-						@Override
-						public void onResult(MediaChannelResult result) {
-							if (result.getStatus().isSuccess()) {
-								Log.d(TAG, "Media loaded successfully");
-							}
-						}
-					});
+			mRemoteMediaPlayer.load(apiClient, mediaInfo, true).setResultCallback(new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
+				@Override
+				public void onResult(MediaChannelResult result) {
+					if (result.getStatus().isSuccess()) {
+						Utils.log(TAG, "Media loaded successfully: " + result.getStatus());
+					} else {
+						Utils.log(TAG, "Media NOT(?) successfully: " + result.getStatus());
+					}
+				}
+			});
 		} catch (IllegalStateException e) {
 			Log.e(TAG, "Problem occurred with media during loading", e);
 		} catch (Exception e) {
@@ -67,42 +82,30 @@ public class CastHelper {
 	}
 
 	public static void stop() {
+		Utils.log(TAG, "START stop");
 		try {
-			mRemoteMediaPlayer.requestStatus(RadioRecPlusActivity.apiClient).setResultCallback(new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
+			mRemoteMediaPlayer.requestStatus(apiClient).setResultCallback(new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
+
 				@Override
 				public void onResult(RemoteMediaPlayer.MediaChannelResult mediaChannelResult) {
-					Status stat = mediaChannelResult.getStatus();
-					if (stat.isSuccess()) {
-						Log.d("----Chromecast----", "mMediaPlayer getMediaStatus success");
-
-						mRemoteMediaPlayer.stop(RadioRecPlusActivity.apiClient).setResultCallback(new ResultCallback<MediaChannelResult>() {
-							@Override
-							public void onResult(MediaChannelResult result) {
-								Status status = result.getStatus();
-								if (!status.isSuccess()) {
-									Log.w(TAG, "Unable to stop: " + status.getStatusCode());
-								}
-							}
-						});
-
+					Status status = mediaChannelResult.getStatus();
+					if (!status.isSuccess()) {
+						Utils.log(TAG, "Unable to get requestStatus: Code=" + status.getStatusCode() + " / Status=" + status.getStatus());
 					} else {
-						Log.d("----Chromecast----", "mMediaPlayer getMediaStatus failure");
-						// Disable controls and handle failure
+						Utils.log(TAG, "Success to get requestStatus: Code=" + status.getStatusCode() + " / Status=" + status.getStatus());
+					}
+
+					try {
+						mRemoteMediaPlayer.stop(apiClient);
+					} catch (Exception e) {
+						Utils.log(TAG, "Sorry, cannot stop: " + e);
 					}
 				}
 			});
-			// mRemoteMediaPlayer.stop(RadioRecPlusActivity.apiClient).setResultCallback(new ResultCallback<MediaChannelResult>() {
-			// @Override
-			// public void onResult(MediaChannelResult result) {
-			// Status status = result.getStatus();
-			// if (!status.isSuccess()) {
-			// Log.w(TAG, "Unable to stop: " + status.getStatusCode());
-			// }
-			// }
-			// });
 		} catch (Exception e) {
-			Utils.log(TAG, "cannot stop: " + e);
+			Utils.log(TAG, "Error while requestStatus: " + e);
 		}
+		Utils.log(TAG, "END stop");
 	}
 
 	public static final MediaRouter.Callback mediaRouterCallback = new MediaRouter.Callback() {
@@ -119,7 +122,7 @@ public class CastHelper {
 	};
 
 	public static boolean isClientConnected() {
-		if (RadioRecPlusActivity.apiClient != null && RadioRecPlusActivity.apiClient.isConnected()) {
+		if (apiClient != null && apiClient.isConnected()) {
 			return true;
 		}
 		return false;
@@ -150,11 +153,11 @@ public class CastHelper {
 	}
 
 	private static void setSelectedDevice(CastDevice device) {
-		Log.d(TAG, "setSelectedDevice: " + device);
+		Utils.log(TAG, "setSelectedDevice: " + device);
 
-		RadioRecPlusActivity.selectedDevice = device;
+		selectedDevice = device;
 
-		if (RadioRecPlusActivity.selectedDevice != null) {
+		if (selectedDevice != null) {
 			try {
 				stopApplication();
 				disconnectApiClient();
@@ -164,7 +167,7 @@ public class CastHelper {
 				disconnectApiClient();
 			}
 		} else {
-			if (RadioRecPlusActivity.apiClient != null) {
+			if (apiClient != null) {
 				disconnectApiClient();
 			}
 
@@ -179,7 +182,7 @@ public class CastHelper {
 			Utils.log(TAG, "----- Cast.Listener - onApplicationDisconnected - statusCode = " + statusCode);
 
 			try {
-				Cast.CastApi.removeMessageReceivedCallbacks(RadioRecPlusActivity.apiClient, CastHelper.CAST_NAMESPACE);
+				Cast.CastApi.removeMessageReceivedCallbacks(apiClient, CastHelper.CAST_NAMESPACE);
 			} catch (IOException e) {
 				Log.w(TAG, "Exception while launching application", e);
 			}
@@ -189,8 +192,8 @@ public class CastHelper {
 
 		@Override
 		public void onVolumeChanged() {
-			if (RadioRecPlusActivity.apiClient != null) {
-				Utils.log(TAG, "----- onVolumeChanged: " + Cast.CastApi.getVolume(RadioRecPlusActivity.apiClient));
+			if (apiClient != null) {
+				Utils.log(TAG, "----- onVolumeChanged: " + Cast.CastApi.getVolume(apiClient));
 			}
 		}
 	};
@@ -202,11 +205,11 @@ public class CastHelper {
 			Utils.log(TAG, "----- ResultCallback - onResult - status = " + status);
 			Utils.log(TAG, "----- ResultCallback - onResult - status.isSuccess() = " + status.isSuccess());
 			if (status.isSuccess()) {
-				RadioRecPlusActivity.castApplicationStarted = true;
+				castApplicationStarted = true;
 
 				try {
 					Utils.log(TAG, "----- try setMessageReceivedCallbacks= " + status);
-					Cast.CastApi.setMessageReceivedCallbacks(RadioRecPlusActivity.apiClient, CastHelper.CAST_NAMESPACE, incomingMsgHandler);
+					Cast.CastApi.setMessageReceivedCallbacks(apiClient, CastHelper.CAST_NAMESPACE, incomingMsgHandler);
 				} catch (IOException e) {
 					Log.e(TAG, "Exception while creating channel", e);
 				}
@@ -223,7 +226,7 @@ public class CastHelper {
 		public void onConnected(Bundle bundle) {
 			Utils.log(TAG, "----- GoogleApiClient.ConnectionCallbacks - onConnected - bundle = " + bundle);
 			try {
-				Cast.CastApi.launchApplication(RadioRecPlusActivity.apiClient, CastHelper.CAST_APP_ID, false).setResultCallback(connectionResultCallback);
+				Cast.CastApi.launchApplication(apiClient, CastHelper.CAST_APP_ID, false).setResultCallback(connectionResultCallback);
 			} catch (Exception e) {
 				Log.e(TAG, "Failed to launch application", e);
 			}
@@ -237,10 +240,10 @@ public class CastHelper {
 
 	private static void connectApiClient() {
 		Utils.log(TAG, "----- connectApiClient()");
-		Cast.CastOptions apiOptions = Cast.CastOptions.builder(RadioRecPlusActivity.selectedDevice, castClientListener).build();
-		RadioRecPlusActivity.apiClient = new GoogleApiClient.Builder(ApplicationRadioRec.getCustomAppContext()).addApi(Cast.API, apiOptions)
+		Cast.CastOptions apiOptions = Cast.CastOptions.builder(selectedDevice, castClientListener).build();
+		apiClient = new GoogleApiClient.Builder(ApplicationRadioRec.getCustomAppContext()).addApi(Cast.API, apiOptions)
 				.addConnectionCallbacks(connectionCallback).addOnConnectionFailedListener(connectionFailedListener).build();
-		RadioRecPlusActivity.apiClient.connect();
+		apiClient.connect();
 	}
 
 	private final static GoogleApiClient.OnConnectionFailedListener connectionFailedListener = new GoogleApiClient.OnConnectionFailedListener() {
@@ -253,23 +256,23 @@ public class CastHelper {
 	};
 
 	private static void disconnectApiClient() {
-		Utils.log(TAG, "----- disconnectApiClient - apiClient: " + RadioRecPlusActivity.apiClient);
-		if (RadioRecPlusActivity.apiClient != null) {
-			RadioRecPlusActivity.apiClient.disconnect();
-			RadioRecPlusActivity.apiClient = null;
+		Utils.log(TAG, "----- disconnectApiClient - apiClient: " + apiClient);
+		if (apiClient != null) {
+			apiClient.disconnect();
+			apiClient = null;
 		}
-		RadioRecPlusActivity.castApplicationStarted = false;
+		castApplicationStarted = false;
 	}
 
 	private static void stopApplication() {
 		Utils.log(TAG, "----- stopApplication");
-		if (RadioRecPlusActivity.apiClient == null)
+		if (apiClient == null)
 			return;
 
-		Utils.log(TAG, "----- applicationStarted = " + RadioRecPlusActivity.castApplicationStarted);
-		if (RadioRecPlusActivity.castApplicationStarted) {
-			Cast.CastApi.stopApplication(RadioRecPlusActivity.apiClient);
-			RadioRecPlusActivity.castApplicationStarted = false;
+		Utils.log(TAG, "----- applicationStarted = " + castApplicationStarted);
+		if (castApplicationStarted) {
+			Cast.CastApi.stopApplication(apiClient);
+			castApplicationStarted = false;
 		}
 	}
 

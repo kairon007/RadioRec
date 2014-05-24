@@ -57,8 +57,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.cast.CastDevice;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.rothconsulting.android.billing.util.RadioRecBillingHelper;
 import com.rothconsulting.android.radiorec.filechooser.FileChooserActivity;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
@@ -107,9 +105,6 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	// Chromecast
 	public static MediaRouter mediaRouter;
 	public static MediaRouteSelector mediaRouteSelector;
-	public static CastDevice selectedDevice;
-	public static GoogleApiClient apiClient;
-	public static boolean castApplicationStarted;
 
 	public Spinner getStations() {
 		return spnAllStations;
@@ -164,10 +159,9 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
 		tm.listen(callStateListener, PhoneStateListener.LISTEN_CALL_STATE);
 
-		Utils.log(TAG, "++++++++++++ onCreate STOP ++++++++++++");
-
 		// Chromecast
 		CastHelper.init();
+		Utils.log(TAG, "++++++++++++ onCreate END ++++++++++++");
 	}
 
 	@Override
@@ -391,6 +385,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			break;
 		case R.id.play:
 			playing = !playing;
+			Utils.log(TAG, "playing: " + playing);
 			if (playing && !Utils.isNetworkAvailable(this, getIntent(), true)) {
 				playing = false;
 			}
@@ -399,6 +394,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			if (!playing && isOrientationSensorOn) {
 				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
 			}
+			Utils.log(TAG, "playing: " + playing);
 			changeStation();
 			break;
 		case R.id.rec:
@@ -555,17 +551,20 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		Constants.URL_CONTACT_VALUE = "" + map.get(Stations.EMAIL);
 
 		setFavIconStar();
-
+		Utils.log(TAG, "CastHelper.isClientConnected() = " + CastHelper.isClientConnected());
 		if (CastHelper.isClientConnected()) {
+			Utils.log(TAG, "Playing: " + playing);
 			if (playing) {
-				CastHelper.play(Constants.SELECTED_STATION_NAME_VALUE, Constants.URL_LIVE_STREAM_VALUE, "");
+				int imgRes = (Integer) map.get(Stations.ICON);
+				CastHelper.play(Constants.SELECTED_STATION_NAME_VALUE, Constants.URL_LIVE_STREAM_VALUE, imgRes);
 			} else {
+				Utils.log(TAG, "CastHelper.stop()");
 				CastHelper.stop();
 			}
 		} else {
 			if (!firstStart && playing) {
 				if (Constants.getLiveStreamStations().contains(Constants.SELECTED_STATION_NAME_VALUE)) {
-					Utils.log(TAG, "------ ist Fussball Radio");
+					Utils.log(TAG, "------ ist Fussball/Live Radio");
 					showDialog(Constants.LIVE_STREAM_STATION);
 				}
 				if (Constants.SELECTED_STATION_NAME_VALUE.equalsIgnoreCase(Stations.RADIO_JUGGLERZ)) {
