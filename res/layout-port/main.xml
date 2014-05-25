@@ -80,13 +80,13 @@
 
 	<LinearLayout android:layout_margin="4dp" android:layout_height="wrap_content" android:layout_width="fill_parent"
 		android:orientation="horizontal">
-		<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_backward" android:layout_margin="5dp"
+		<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_backward" android:layout_margin="3dp"
 			android:layout_width="wrap_content" android:id="@+id/back" android:background="@drawable/colors_list" />
-		<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_play" android:layout_margin="5dp"
+		<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_play" android:layout_margin="3dp"
 			android:layout_width="wrap_content" android:id="@+id/play" android:background="@drawable/colors_list" />
-		<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_record" android:layout_margin="5dp"
+		<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_record" android:layout_margin="3dp"
 			android:layout_width="wrap_content" android:id="@+id/rec" android:background="@drawable/colors_list" />
-		<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_forward" android:layout_margin="5dp"
+		<ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:src="@drawable/button_forward" android:layout_margin="3dp"
 			android:layout_width="wrap_content" android:id="@+id/fwd" android:background="@drawable/colors_list" />
 	</LinearLayout>
 </LinearLayout>

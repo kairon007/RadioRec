@@ -167,20 +167,34 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	@Override
 	protected void onResume() {
 		super.onResume();
+		Utils.log(TAG, "--- onResume()");
 		mediaRouter.addCallback(mediaRouteSelector, CastHelper.mediaRouterCallback, MediaRouter.CALLBACK_FLAG_PERFORM_ACTIVE_SCAN);
 		hideSearch();
 	}
 
 	@Override
 	protected void onPause() {
+		Utils.log(TAG, "--- onPause()");
 		if (isFinishing()) {
 			mediaRouter.removeCallback(CastHelper.mediaRouterCallback);
 		}
 		super.onPause();
 	}
 
+	@Override
+	protected void onStop() {
+		Utils.log(TAG, "--- onStop()");
+		super.onStop();
+	}
+
+	@Override
+	protected void onRestart() {
+		Utils.log(TAG, "--- onRestart()");
+		super.onRestart();
+	}
+
 	private void initGui() {
-		Utils.log(TAG, "++++++++++++ initGui START ++++++++++++");
+		Utils.log(TAG, "++++++++++++ START initGui ++++++++++++");
 		setContentView(R.layout.main);
 		firstStart = true;
 		// get components and register clicks
@@ -267,8 +281,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		} else {
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
 		}
-
-		Utils.log(TAG, "++++++++++++ initGui STOP ++++++++++++");
+		Utils.log(TAG, "++++++++++++ END initGui ++++++++++++++");
 	}
 
 	@Override
@@ -555,6 +568,9 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		if (CastHelper.isClientConnected()) {
 			Utils.log(TAG, "Playing: " + playing);
 			if (playing) {
+				Utils.log(TAG, "CastHelper.play(...)");
+				// if local player is playing - stop it
+				getRadioPlayer().doStopPlay(this);
 				int imgRes = (Integer) map.get(Stations.ICON);
 				CastHelper.play(Constants.SELECTED_STATION_NAME_VALUE, Constants.URL_LIVE_STREAM_VALUE, imgRes);
 			} else {
@@ -888,9 +904,6 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			Constants.SPINNER_SELECTION = Constants.SPINNER_ALPHABETISCH;
 			AnalyticsUtil.sendEvent(activity, "ui_action", "click_menu_alphabetisch", "actual station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			Utils.log(TAG, "Button Alphabetisch pressed. Firts=" + spnAlphabetisch.getFirstVisiblePosition());
-			if (!Utils.isPlatformBelow_4_1()) {
-				spnAlphabetisch.setPopupBackgroundResource(android.R.color.white);
-			}
 			spnAlphabetisch.performClick();
 			break;
 		case R.id.action_donate:

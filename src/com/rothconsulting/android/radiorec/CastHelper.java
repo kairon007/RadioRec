@@ -52,6 +52,8 @@ public class CastHelper {
 	}
 
 	public static void play(String stationName, String stationUrl, int imageResId) {
+		Utils.log(TAG, "START play(...)");
+
 		if (allDrawables == null) {
 			allDrawables = Utils.getAllDrawables();
 		}
@@ -61,7 +63,7 @@ public class CastHelper {
 		MediaMetadata mediaMetadata = new MediaMetadata(MediaMetadata.MEDIA_TYPE_MUSIC_TRACK);
 		mediaMetadata.putString(MediaMetadata.KEY_TITLE, stationName);
 		mediaMetadata.addImage(new WebImage(Uri.parse(imageUrl)));
-		MediaInfo mediaInfo = new MediaInfo.Builder(stationUrl).setContentType("audio/mp3").setStreamType(MediaInfo.STREAM_TYPE_BUFFERED)
+		final MediaInfo mediaInfo = new MediaInfo.Builder(stationUrl).setContentType("audio/mp3").setStreamType(MediaInfo.STREAM_TYPE_LIVE)
 				.setMetadata(mediaMetadata).build();
 		try {
 			mRemoteMediaPlayer.load(apiClient, mediaInfo, true).setResultCallback(new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
@@ -70,7 +72,7 @@ public class CastHelper {
 					if (result.getStatus().isSuccess()) {
 						Utils.log(TAG, "Media loaded successfully: " + result.getStatus());
 					} else {
-						Utils.log(TAG, "Media NOT(?) successfully: " + result.getStatus());
+						Utils.log(TAG, "Media loaded NOT successfully: " + result.getStatus());
 					}
 				}
 			});
@@ -79,33 +81,31 @@ public class CastHelper {
 		} catch (Exception e) {
 			Log.e(TAG, "Problem opening media during loading", e);
 		}
+		Utils.log(TAG, "END play(...)");
 	}
 
 	public static void stop() {
-		Utils.log(TAG, "START stop");
+		Utils.log(TAG, "START stop()");
 		try {
 			mRemoteMediaPlayer.requestStatus(apiClient).setResultCallback(new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
 
 				@Override
 				public void onResult(RemoteMediaPlayer.MediaChannelResult mediaChannelResult) {
 					Status status = mediaChannelResult.getStatus();
-					if (!status.isSuccess()) {
-						Utils.log(TAG, "Unable to get requestStatus: Code=" + status.getStatusCode() + " / Status=" + status.getStatus());
-					} else {
-						Utils.log(TAG, "Success to get requestStatus: Code=" + status.getStatusCode() + " / Status=" + status.getStatus());
-					}
-
+					Utils.log(TAG, "RemoteMediaPlayer requestStatus: Status=" + status.getStatus());
 					try {
 						mRemoteMediaPlayer.stop(apiClient);
 					} catch (Exception e) {
-						Utils.log(TAG, "Sorry, cannot stop: " + e);
+						Log.e(TAG, "Exception while stopping GoogleApiClient. ", e);
 					}
 				}
 			});
+		} catch (IllegalStateException e) {
+			Log.e(TAG, "Problem occurred while geting requestStatus", e);
 		} catch (Exception e) {
-			Utils.log(TAG, "Error while requestStatus: " + e);
+			Log.e(TAG, "Exception while geting requestStatus. ", e);
 		}
-		Utils.log(TAG, "END stop");
+		Utils.log(TAG, "END stop()");
 	}
 
 	public static final MediaRouter.Callback mediaRouterCallback = new MediaRouter.Callback() {
@@ -138,8 +138,9 @@ public class CastHelper {
 			@Override
 			public void onStatusUpdated() {
 				MediaStatus mediaStatus = mRemoteMediaPlayer.getMediaStatus();
-				Utils.log(TAG, "mediaStatus=" + mediaStatus);
+				Utils.log(TAG, "OnStatusUpdatedListener onStatusUpdated mediaStatus=" + mediaStatus);
 				boolean isPlaying = mediaStatus.getPlayerState() == MediaStatus.PLAYER_STATE_PLAYING;
+				Utils.log(TAG, "isPlaying=" + isPlaying);
 			}
 		});
 
@@ -148,6 +149,7 @@ public class CastHelper {
 			public void onMetadataUpdated() {
 				MediaInfo mediaInfo = mRemoteMediaPlayer.getMediaInfo();
 				MediaMetadata metadata = mediaInfo.getMetadata();
+				Utils.log(TAG, "setOnMetadataUpdatedListener onMetadataUpdated metadata=" + metadata);
 			}
 		});
 	}
@@ -170,7 +172,6 @@ public class CastHelper {
 			if (apiClient != null) {
 				disconnectApiClient();
 			}
-
 			RadioRecPlusActivity.mediaRouter.selectRoute(RadioRecPlusActivity.mediaRouter.getDefaultRoute());
 		}
 	}
@@ -238,14 +239,6 @@ public class CastHelper {
 		}
 	};
 
-	private static void connectApiClient() {
-		Utils.log(TAG, "----- connectApiClient()");
-		Cast.CastOptions apiOptions = Cast.CastOptions.builder(selectedDevice, castClientListener).build();
-		apiClient = new GoogleApiClient.Builder(ApplicationRadioRec.getCustomAppContext()).addApi(Cast.API, apiOptions)
-				.addConnectionCallbacks(connectionCallback).addOnConnectionFailedListener(connectionFailedListener).build();
-		apiClient.connect();
-	}
-
 	private final static GoogleApiClient.OnConnectionFailedListener connectionFailedListener = new GoogleApiClient.OnConnectionFailedListener() {
 		@Override
 		public void onConnectionFailed(ConnectionResult connectionResult) {
@@ -254,6 +247,14 @@ public class CastHelper {
 			setSessionStarted(false);
 		}
 	};
+
+	private static void connectApiClient() {
+		Utils.log(TAG, "----- connectApiClient()");
+		Cast.CastOptions apiOptions = Cast.CastOptions.builder(selectedDevice, castClientListener).build();
+		apiClient = new GoogleApiClient.Builder(ApplicationRadioRec.getCustomAppContext()).addApi(Cast.API, apiOptions)
+				.addConnectionCallbacks(connectionCallback).addOnConnectionFailedListener(connectionFailedListener).build();
+		apiClient.connect();
+	}
 
 	private static void disconnectApiClient() {
 		Utils.log(TAG, "----- disconnectApiClient - apiClient: " + apiClient);
@@ -277,7 +278,7 @@ public class CastHelper {
 	}
 
 	private static void setSessionStarted(boolean enabled) {
-		Toast.makeText(ApplicationRadioRec.getCustomAppContext(), "setSessionStarted = " + enabled, Toast.LENGTH_LONG).show();
+		Toast.makeText(ApplicationRadioRec.getCustomAppContext(), "Cast session started = " + enabled, Toast.LENGTH_SHORT).show();
 	}
 
 	private final static Cast.MessageReceivedCallback incomingMsgHandler = new Cast.MessageReceivedCallback() {
