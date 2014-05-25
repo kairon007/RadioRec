@@ -33,9 +33,10 @@ public class CastHelper {
 
 	private static final String CAST_NAMESPACE = "urn:x-cast:koni.mobi.radiorec";
 	private static final String IMAGE_BASE_DIR = "http://koni.mobi/radio/chromecast/images/";
+	private static final double VOLUME_INCREMENT = 0.1;
 
 	private static RemoteMediaPlayer mRemoteMediaPlayer;
-	private static GoogleApiClient apiClient;
+	private static GoogleApiClient mApiClient;
 	private static CastDevice selectedDevice;
 	private static boolean castApplicationStarted;
 
@@ -66,7 +67,7 @@ public class CastHelper {
 		final MediaInfo mediaInfo = new MediaInfo.Builder(stationUrl).setContentType("audio/mp3").setStreamType(MediaInfo.STREAM_TYPE_LIVE)
 				.setMetadata(mediaMetadata).build();
 		try {
-			mRemoteMediaPlayer.load(apiClient, mediaInfo, true).setResultCallback(new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
+			mRemoteMediaPlayer.load(mApiClient, mediaInfo, true).setResultCallback(new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
 				@Override
 				public void onResult(MediaChannelResult result) {
 					if (result.getStatus().isSuccess()) {
@@ -87,14 +88,14 @@ public class CastHelper {
 	public static void stop() {
 		Utils.log(TAG, "START stop()");
 		try {
-			mRemoteMediaPlayer.requestStatus(apiClient).setResultCallback(new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
+			mRemoteMediaPlayer.requestStatus(mApiClient).setResultCallback(new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
 
 				@Override
 				public void onResult(RemoteMediaPlayer.MediaChannelResult mediaChannelResult) {
 					Status status = mediaChannelResult.getStatus();
 					Utils.log(TAG, "RemoteMediaPlayer requestStatus: Status=" + status.getStatus());
 					try {
-						mRemoteMediaPlayer.stop(apiClient);
+						mRemoteMediaPlayer.stop(mApiClient);
 					} catch (Exception e) {
 						Log.e(TAG, "Exception while stopping GoogleApiClient. ", e);
 					}
@@ -122,11 +123,42 @@ public class CastHelper {
 	};
 
 	public static boolean isClientConnected() {
-		if (apiClient != null && apiClient.isConnected()) {
+		if (mApiClient != null && mApiClient.isConnected()) {
 			return true;
 		}
 		return false;
 
+	}
+
+	public static void volumeUp() {
+		if (mRemoteMediaPlayer != null) {
+			double currentVolume = Cast.CastApi.getVolume(mApiClient);
+			if (currentVolume < 1.0) {
+				try {
+					Cast.CastApi.setVolume(mApiClient, Math.min(currentVolume + VOLUME_INCREMENT, 1.0));
+				} catch (Exception e) {
+					Log.e(TAG, "unable to set volume", e);
+				}
+			}
+		} else {
+			Log.e(TAG, "dispatchKeyEvent - volume up");
+		}
+
+	}
+
+	public static void volumeDown() {
+		if (mRemoteMediaPlayer != null) {
+			double currentVolume = Cast.CastApi.getVolume(mApiClient);
+			if (currentVolume > 0.0) {
+				try {
+					Cast.CastApi.setVolume(mApiClient, Math.max(currentVolume - VOLUME_INCREMENT, 0.0));
+				} catch (Exception e) {
+					Log.e(TAG, "unable to set volume", e);
+				}
+			}
+		} else {
+			Log.e(TAG, "dispatchKeyEvent - volume down");
+		}
 	}
 
 	// *****************************************
@@ -169,7 +201,7 @@ public class CastHelper {
 				disconnectApiClient();
 			}
 		} else {
-			if (apiClient != null) {
+			if (mApiClient != null) {
 				disconnectApiClient();
 			}
 			RadioRecPlusActivity.mediaRouter.selectRoute(RadioRecPlusActivity.mediaRouter.getDefaultRoute());
@@ -183,7 +215,7 @@ public class CastHelper {
 			Utils.log(TAG, "----- Cast.Listener - onApplicationDisconnected - statusCode = " + statusCode);
 
 			try {
-				Cast.CastApi.removeMessageReceivedCallbacks(apiClient, CastHelper.CAST_NAMESPACE);
+				Cast.CastApi.removeMessageReceivedCallbacks(mApiClient, CastHelper.CAST_NAMESPACE);
 			} catch (IOException e) {
 				Log.w(TAG, "Exception while launching application", e);
 			}
@@ -193,8 +225,8 @@ public class CastHelper {
 
 		@Override
 		public void onVolumeChanged() {
-			if (apiClient != null) {
-				Utils.log(TAG, "----- onVolumeChanged: " + Cast.CastApi.getVolume(apiClient));
+			if (mApiClient != null) {
+				Utils.log(TAG, "----- onVolumeChanged: " + Cast.CastApi.getVolume(mApiClient));
 			}
 		}
 	};
@@ -210,7 +242,7 @@ public class CastHelper {
 
 				try {
 					Utils.log(TAG, "----- try setMessageReceivedCallbacks= " + status);
-					Cast.CastApi.setMessageReceivedCallbacks(apiClient, CastHelper.CAST_NAMESPACE, incomingMsgHandler);
+					Cast.CastApi.setMessageReceivedCallbacks(mApiClient, CastHelper.CAST_NAMESPACE, incomingMsgHandler);
 				} catch (IOException e) {
 					Log.e(TAG, "Exception while creating channel", e);
 				}
@@ -227,7 +259,7 @@ public class CastHelper {
 		public void onConnected(Bundle bundle) {
 			Utils.log(TAG, "----- GoogleApiClient.ConnectionCallbacks - onConnected - bundle = " + bundle);
 			try {
-				Cast.CastApi.launchApplication(apiClient, CastHelper.CAST_APP_ID, false).setResultCallback(connectionResultCallback);
+				Cast.CastApi.launchApplication(mApiClient, CastHelper.CAST_APP_ID, false).setResultCallback(connectionResultCallback);
 			} catch (Exception e) {
 				Log.e(TAG, "Failed to launch application", e);
 			}
@@ -251,28 +283,29 @@ public class CastHelper {
 	private static void connectApiClient() {
 		Utils.log(TAG, "----- connectApiClient()");
 		Cast.CastOptions apiOptions = Cast.CastOptions.builder(selectedDevice, castClientListener).build();
-		apiClient = new GoogleApiClient.Builder(ApplicationRadioRec.getCustomAppContext()).addApi(Cast.API, apiOptions)
+		mApiClient = new GoogleApiClient.Builder(ApplicationRadioRec.getCustomAppContext()).addApi(Cast.API, apiOptions)
 				.addConnectionCallbacks(connectionCallback).addOnConnectionFailedListener(connectionFailedListener).build();
-		apiClient.connect();
+		mApiClient.connect();
 	}
 
 	private static void disconnectApiClient() {
-		Utils.log(TAG, "----- disconnectApiClient - apiClient: " + apiClient);
-		if (apiClient != null) {
-			apiClient.disconnect();
-			apiClient = null;
+		Utils.log(TAG, "----- disconnectApiClient - apiClient: " + mApiClient);
+		if (mApiClient != null) {
+			mApiClient.disconnect();
+			mApiClient = null;
 		}
 		castApplicationStarted = false;
 	}
 
 	private static void stopApplication() {
 		Utils.log(TAG, "----- stopApplication");
-		if (apiClient == null)
+		RadioRecPlusActivity.getRadioPlayer().doStopPlay(ApplicationRadioRec.getCustomAppContext());
+		if (mApiClient == null)
 			return;
 
 		Utils.log(TAG, "----- applicationStarted = " + castApplicationStarted);
 		if (castApplicationStarted) {
-			Cast.CastApi.stopApplication(apiClient);
+			Cast.CastApi.stopApplication(mApiClient);
 			castApplicationStarted = false;
 		}
 	}
@@ -289,5 +322,4 @@ public class CastHelper {
 			Utils.log(TAG, "----- onMessageReceived message   : " + message);
 		}
 	};
-
 }

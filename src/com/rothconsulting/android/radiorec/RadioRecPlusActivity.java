@@ -788,7 +788,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		stopRecord();
 	}
 
-	private void stopPlay() {
+	public void stopPlay() {
 		getRadioPlayer().doStopPlay(this);
 		playing = Boolean.FALSE;
 		((ImageButton) findViewById(R.id.play)).setImageResource(R.drawable.button_play);
@@ -1009,5 +1009,27 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		default:
 			break;
 		}
+	}
+
+	// Chromecast
+	@Override
+	public boolean dispatchKeyEvent(KeyEvent event) {
+		if (CastHelper.isClientConnected()) {
+			int action = event.getAction();
+			int keyCode = event.getKeyCode();
+			switch (keyCode) {
+			case KeyEvent.KEYCODE_VOLUME_UP:
+				if (action == KeyEvent.ACTION_UP) {
+					CastHelper.volumeUp();
+				}
+				return true;
+			case KeyEvent.KEYCODE_VOLUME_DOWN:
+				if (action == KeyEvent.ACTION_DOWN) {
+					CastHelper.volumeDown();
+				}
+				return true;
+			}
+		}
+		return super.dispatchKeyEvent(event);
 	}
 }
