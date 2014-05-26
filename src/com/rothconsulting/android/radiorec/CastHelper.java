@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.media.MediaRouteSelector;
 import android.support.v7.media.MediaRouter;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.android.gms.cast.Cast;
 import com.google.android.gms.cast.CastDevice;
@@ -29,7 +28,8 @@ public class CastHelper {
 	private static final String TAG = "CastHelper";
 
 	// private static final String CAST_APP_ID = CastMediaControlIntent.DEFAULT_MEDIA_RECEIVER_APPLICATION_ID;
-	private static final String CAST_APP_ID = "55A3A008";
+	private static final String CAST_APP_ID = "55A3A008"; // Styled Media Receiver
+	// private static final String CAST_APP_ID = "E5EC9D08"; // My Custom Receiver
 
 	private static final String CAST_NAMESPACE = "urn:x-cast:koni.mobi.radiorec";
 	private static final String IMAGE_BASE_DIR = "http://koni.mobi/radio/chromecast/images/";
@@ -60,11 +60,12 @@ public class CastHelper {
 		}
 		Utils.log(TAG, "imageResId=" + imageResId + " / stationName=" + stationName);
 		String imageUrl = IMAGE_BASE_DIR + allDrawables.get(imageResId) + ".png";
-		Utils.log(TAG, "imageUrl=" + imageUrl);
+		Utils.log(TAG, "imageUrl  =" + imageUrl);
+		Utils.log(TAG, "stationUrl=" + stationUrl);
 		MediaMetadata mediaMetadata = new MediaMetadata(MediaMetadata.MEDIA_TYPE_MUSIC_TRACK);
 		mediaMetadata.putString(MediaMetadata.KEY_TITLE, stationName);
 		mediaMetadata.addImage(new WebImage(Uri.parse(imageUrl)));
-		final MediaInfo mediaInfo = new MediaInfo.Builder(stationUrl).setContentType("audio/mp3").setStreamType(MediaInfo.STREAM_TYPE_LIVE)
+		final MediaInfo mediaInfo = new MediaInfo.Builder(stationUrl).setContentType("audio/mp3").setStreamType(MediaInfo.STREAM_TYPE_BUFFERED)
 				.setMetadata(mediaMetadata).build();
 		try {
 			mRemoteMediaPlayer.load(mApiClient, mediaInfo, true).setResultCallback(new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
@@ -311,7 +312,7 @@ public class CastHelper {
 	}
 
 	private static void setSessionStarted(boolean enabled) {
-		Toast.makeText(ApplicationRadioRec.getCustomAppContext(), "Cast session started = " + enabled, Toast.LENGTH_SHORT).show();
+		// Toast.makeText(ApplicationRadioRec.getCustomAppContext(), "Cast session started = " + enabled, Toast.LENGTH_SHORT).show();
 	}
 
 	private final static Cast.MessageReceivedCallback incomingMsgHandler = new Cast.MessageReceivedCallback() {
