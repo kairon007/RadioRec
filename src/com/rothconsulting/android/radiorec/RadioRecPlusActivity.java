@@ -882,9 +882,11 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 
 		// Chromecast
-		MenuItem mediaRouteMenuItem = menu.findItem(R.id.media_route_menu_item);
-		MediaRouteActionProvider mediaRouteActionProvider = (MediaRouteActionProvider) MenuItemCompat.getActionProvider(mediaRouteMenuItem);
-		mediaRouteActionProvider.setRouteSelector(castHelper.mediaRouteSelector);
+		if (Utils.isGooglePlayServicesAvailable(context)) {
+			MenuItem mediaRouteMenuItem = menu.findItem(R.id.media_route_menu_item);
+			MediaRouteActionProvider mediaRouteActionProvider = (MediaRouteActionProvider) MenuItemCompat.getActionProvider(mediaRouteMenuItem);
+			mediaRouteActionProvider.setRouteSelector(castHelper.mediaRouteSelector);
+		}
 
 		if (Utils.hasValidKey()) {
 			menu.removeItem(R.id.action_donate);

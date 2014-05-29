@@ -25,7 +25,10 @@ import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.util.Log;
 import android.view.Display;
+
+import com.google.android.gms.common.GooglePlayServicesUtil;
 
 public class Utils {
 
@@ -162,7 +165,7 @@ public class Utils {
 	}
 
 	public static void log(String tag, String message) {
-		// Log.d(tag, message);
+		Log.d(tag, message);
 	}
 
 	public static String getHhMmFromMinutes(int minutes) {
@@ -356,5 +359,13 @@ public class Utils {
 			}
 		}
 		return dl;
+	}
+
+	public static boolean isGooglePlayServicesAvailable(Context context) {
+		final int connectionStatusCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(context);
+		if (GooglePlayServicesUtil.isUserRecoverableError(connectionStatusCode)) {
+			return false;
+		}
+		return true;
 	}
 }
