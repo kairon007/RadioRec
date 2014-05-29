@@ -18,11 +18,14 @@ package com.rothconsulting.android.billing;
 import java.util.HashSet;
 import java.util.Set;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -38,10 +41,11 @@ import com.rothconsulting.android.billing.util.Inventory;
 import com.rothconsulting.android.billing.util.Purchase;
 import com.rothconsulting.android.billing.util.RadioRecBillingHelper;
 import com.rothconsulting.android.radiorec.AdMob;
+import com.rothconsulting.android.radiorec.AnalyticsUtil;
 import com.rothconsulting.android.radiorec.R;
 import com.rothconsulting.android.radiorec.Utils;
 
-public class BillingActivity extends Activity {
+public class BillingActivity extends ActionBarActivity {
 
 	private final Context context = this;
 	private static final String TAG = "BillingActivity";
@@ -75,6 +79,13 @@ public class BillingActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.donate_play_billing);
+
+		// Set up the action bar.
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+		this.setTitle(getString(R.string.google_play_store));
+
+		AnalyticsUtil.sendScreen(this, "Google Billing Screen");
 
 		// Button Donate
 		Button btnDonate = (Button) findViewById(R.id.buttonDonate);
@@ -313,4 +324,29 @@ public class BillingActivity extends Activity {
 			Toast.makeText(context, "Purchase SKU = " + purchase.getSku(), Toast.LENGTH_LONG).show();
 		}
 	}
+
+	// ------------------------------------------------------------
+	// Menu Stuff
+	// ------------------------------------------------------------
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.backmenu, menu);
+		menu.removeItem(R.id.donate_adfree);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.zurueck:
+			finish();
+			return true;
+		case android.R.id.home:
+			onBackPressed();
+			break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
 }

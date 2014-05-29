@@ -9,6 +9,9 @@
 	<screenName name="com.rothconsulting.android.radiorec.DonateActivity">
 		Donate Screen
 	</screenName>
+	<screenName name="com.rothconsulting.android.billing.BillingActivity">
+		Google Billing Screen
+	</screenName>
 	<screenName name="com.rothconsulting.android.radiorec.SettingsActivity">
 		Settings Screen
 	</screenName>

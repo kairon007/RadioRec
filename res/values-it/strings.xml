@@ -42,8 +42,9 @@
 	<string name="wifiImmerAnWennAmStrom">Mai disattivare se sotto carica</string>
 	<string name="wifiAutomatischAus"> Disattivare a spegnimento schermo</string>
 	<string name="wifiSleepNotYetDefined">WiFi non ancora impostato	(Default).</string>
+	<string name="google_play_store">Google Play Store</string>
 	<string name="donate_paypal_cc">Donare con PayPal o carta di credito</string>
-	<string name="donate_android_market">Donare tramite Play Store</string>
+	<string name="donate_google_play_store">Donare tramite Play Store</string>
 	<string name="donate_bitcoin">Donare tramite Bitcoin</string>
 	<string name="donate_bitcoin_text">Invia semplicemente qualche BTC all\'indirizzo indicato sotto und ed informami tramite email.</string>
 	<string name="copy_to_clipboard">Copiare su Clipboard</string>

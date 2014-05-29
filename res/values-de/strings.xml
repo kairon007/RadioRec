@@ -42,8 +42,9 @@
 	<string name="wifiImmerAnWennAmStrom"> Wenn am Strom nie automatisch aus</string>
 	<string name="wifiAutomatischAus"> Automatisch aus bei Bildschirm aus</string>
 	<string name="wifiSleepNotYetDefined">WiFi Policy noch nicht gesetzt (Default).</string>
+	<string name="google_play_store">Google Play Store</string>
 	<string name="donate_paypal_cc">Spende via PayPal oder Keditkarte</string>
-	<string name="donate_android_market">Spende via Google Play Store</string>
+	<string name="donate_google_play_store">Spende via Google Play Store</string>
 	<string name="donate_bitcoin">Spende via Bitcoin</string>
 	<string name="donate_bitcoin_text">Sende einfach ein paar BTC an die unten stehende Adresse und gib mir per E-Mail Bescheid.</string>
 	<string name="copy_to_clipboard">In die Zwischenablage kopieren</string>

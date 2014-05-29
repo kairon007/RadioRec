@@ -22,25 +22,25 @@
 			<ImageButton android:src="@drawable/button_paypal_donate_cc_lg" android:contentDescription="@string/donate_paypal_cc"
 				android:id="@+id/imageButtonPaypal" android:layout_gravity="center"
 				android:layout_width="fill_parent" android:layout_margin="5dip"
-				android:background="@android:color/transparent"
+				android:background="@drawable/colors_transparent_button"
 				android:layout_height="wrap_content" android:layout_weight="0.20" />
-			<TextView android:text="@string/donate_android_market"
+			<TextView android:text="@string/donate_google_play_store"
 				android:id="@+id/textViewTitleAndroidMarket" android:layout_width="fill_parent"
 				android:layout_height="wrap_content" android:background="#0000A0"
 				android:textStyle="bold" android:gravity="center" />
-			<ImageButton android:src="@drawable/button_google_play" android:contentDescription="@string/donate_android_market"
+			<ImageButton android:src="@drawable/button_google_play" android:contentDescription="@string/donate_google_play_store"
 				android:id="@+id/imageButtonAndroidMarket" android:layout_gravity="center"
 				android:layout_width="fill_parent" android:layout_margin="5dip"
-				android:background="@android:color/transparent"
+				android:background="@drawable/colors_transparent_button"
 				android:layout_height="wrap_content" android:layout_weight="0.20" />
 			<TextView android:text="@string/donate_bitcoin"
 				android:gravity="center" android:id="@+id/textViewTitleBitcoin"
 				android:layout_width="fill_parent" android:layout_height="wrap_content"
 				android:background="#0000A0" android:textStyle="bold" />
-			<ImageButton android:src="@drawable/button_bitcoin"
+			<ImageButton android:src="@drawable/button_bitcoin" android:contentDescription="@string/donate_bitcoin"
 				android:id="@+id/imageButtonBitcoin" android:layout_gravity="center"
 				android:layout_width="fill_parent" android:layout_margin="5dip"
-				android:background="@android:color/transparent"
+				android:background="@drawable/colors_transparent_button"
 				android:layout_height="wrap_content" android:layout_weight="0.20" />
 			<TextView android:text="@string/antiWerbungKey"
 				android:gravity="center" android:id="@+id/textViewTitleAntiAds"
@@ -51,7 +51,7 @@
 				android:text="@string/antiAdsKeyHere" android:textColor="#FFFFFF"
 				android:textSize="15dip" android:layout_margin="10dip"
 				android:id="@+id/textViewAntiAdsKeyHere" />
-			<EditText android:layout_width="fill_parent"
+			<EditText android:layout_width="fill_parent" android:inputType="text"
 				android:layout_marginLeft="30dip" android:layout_marginRight="30dip" android:padding="5sp" android:text="@string/antiWerbungKey"
 				android:layout_height="wrap_content" android:id="@+id/editTextAntiAdsKey" android:background="@android:color/black" />
 			<Button android:layout_marginLeft="30dip"

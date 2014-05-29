@@ -42,8 +42,9 @@
 	<string name="wifiImmerAnWennAmStrom"> Keep WiFi on when plugged in</string>
 	<string name="wifiAutomatischAus"> Automatically off when screen turns off</string>
 	<string name="wifiSleepNotYetDefined">WiFi Policy not set yet (Default).</string>
+	<string name="google_play_store">Google Play Store</string>
 	<string name="donate_paypal_cc">Donate via PayPal or credit card</string>
-	<string name="donate_android_market">Donate via Google Play Store</string>
+	<string name="donate_google_play_store">Donate via Google Play Store</string>
 	<string name="donate_bitcoin">Donate via Bitcoin</string>
 	<string name="donate_bitcoin_text">Simply send some BTC to the following address and drop me an email.</string>
 	<string name="copy_to_clipboard">Copy to clipboard</string>
