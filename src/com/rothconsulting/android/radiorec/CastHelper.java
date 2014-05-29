@@ -33,7 +33,7 @@ public class CastHelper {
 
 	private static final String CAST_NAMESPACE = "urn:x-cast:com.google.cast.media";
 	private static final String IMAGE_BASE_DIR = "http://koni.mobi/radio/chromecast/images/";
-	private static final double VOLUME_INCREMENT = 0.01;
+	private static final double VOLUME_INCREMENT = 0.1;
 
 	final MediaRouter mediaRouter;
 	final MediaRouteSelector mediaRouteSelector;

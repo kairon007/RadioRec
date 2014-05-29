@@ -25,7 +25,6 @@ import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
-import android.util.Log;
 import android.view.Display;
 
 public class Utils {
@@ -47,13 +46,13 @@ public class Utils {
 			if (infos != null) {
 				for (NetworkInfo ni : infos) {
 					if (ni.getState() == NetworkInfo.State.CONNECTED) {
-						Utils.log(TAG, "Wir sind connected!");
+						log(TAG, "Wir sind connected!");
 						return true;
 					}
 				}
 			}
 		}
-		Utils.log(TAG, "Keine Connectivity");
+		log(TAG, "Keine Connectivity");
 
 		if (showNotification) {
 			Notifications notifications = new Notifications(context, intent);
@@ -163,7 +162,7 @@ public class Utils {
 	}
 
 	public static void log(String tag, String message) {
-		Log.d(tag, message);
+		// Log.d(tag, message);
 	}
 
 	public static String getHhMmFromMinutes(int minutes) {
@@ -349,11 +348,11 @@ public class Utils {
 			try {
 				String drawableName = f.getName();
 				if (drawableName.startsWith("radio_") && !drawableName.endsWith("small")) {
-					Utils.log(TAG, "R.drawable: ID=" + f.getInt(f.getName()) + " / NAME=" + f.getName());
+					log(TAG, "R.drawable: ID=" + f.getInt(f.getName()) + " / NAME=" + f.getName());
 					dl.put(f.getInt(f.getName()), f.getName());
 				}
 			} catch (Exception e) {
-				Utils.log(TAG, "Cannot get drawables ! " + e);
+				log(TAG, "Cannot get drawables ! " + e);
 			}
 		}
 		return dl;

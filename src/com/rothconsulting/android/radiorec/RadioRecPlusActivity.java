@@ -1018,7 +1018,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	// --------------------------------------------------
 	@Override
 	public boolean dispatchKeyEvent(KeyEvent event) {
-		if (castHelper.isConnected()) {
+		if (castHelper.isConnected() && playing) {
 			int action = event.getAction();
 			int keyCode = event.getKeyCode();
 			switch (keyCode) {
