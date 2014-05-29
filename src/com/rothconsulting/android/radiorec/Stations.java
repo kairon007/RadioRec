@@ -126,6 +126,7 @@ public class Stations {
 	public static final String RADIO_FC_ZUERICH = "FC Zürich";
 	public static final String RADIO_HOCKEY_FANRADIO = "Hockey Fanradio";
 	public static final String RADIO_RWW_EHC_WINTERTHUR = "EHC Winterthur - RWW";
+	public static final String RADIO_LAUSANNE_HC = "Lausanne HC";
 	public static final String RADIO_BACKSTAGE_RADIO = "Backstage Radio";
 	// public static final String RADIO_MONTE_CARLO = "Monte Carlo";
 	public static final String RADIO_RASA = "RaSa";
@@ -1515,6 +1516,19 @@ public class Stations {
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "info@radiorww.ch");
 		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_CH);
+		m.put(STIL, STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_LAUSANNE_HC);
+		m.put(ICON, R.drawable.radio_lausanne_hc);
+		m.put(ICON_SMALL, R.drawable.radio_lausanne_hc_small);
+		m.put(STREAM, "http://lausannehockeyclubradio.ice.infomaniak.ch/lausannehockeyclubradio-128.mp3");
+		m.put(HOMEPAGE, "http://www.lausannehc.ch");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "contact@lausannehc.ch");
+		m.put(SPRACHE, SPRACHE_FR);
 		m.put(LAND, LAND_CH);
 		m.put(STIL, STIL_SPORT);
 		setStationlist(stationList, m);
