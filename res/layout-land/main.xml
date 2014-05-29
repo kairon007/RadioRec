@@ -36,7 +36,7 @@
 
 		<RelativeLayout android:id="@+id/timerSeekbarLayout" android:layout_width="fill_parent"
 			android:layout_height="77dp" android:layout_gravity="bottom" android:layout_marginBottom="10dp"
-			android:layout_marginLeft="10dp" android:layout_marginRight="64dp" android:background="@color/darkBlue"
+			android:layout_marginLeft="10dp" android:layout_marginRight="64dp" android:background="@color/blueDark"
 			android:visibility="gone">
 
 			<SeekBar android:id="@+id/timerSeekbar" android:layout_width="match_parent" android:max="120"
