@@ -30,7 +30,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.MediaRouteActionProvider;
-import android.support.v7.media.MediaRouteSelector;
 import android.support.v7.media.MediaRouter;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
@@ -103,8 +102,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	private PhoneStateListener callStateListener;
 
 	// Chromecast
-	public static MediaRouter mediaRouter;
-	public static MediaRouteSelector mediaRouteSelector;
+	private CastHelper castHelper;
 
 	public Spinner getStations() {
 		return spnAllStations;
@@ -159,8 +157,9 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
 		tm.listen(callStateListener, PhoneStateListener.LISTEN_CALL_STATE);
 
-		// Chromecast
-		CastHelper.init();
+		// Chromecast initialize
+		castHelper = new CastHelper();
+
 		Utils.log(TAG, "++++++++++++ onCreate END ++++++++++++");
 	}
 
@@ -168,7 +167,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	protected void onResume() {
 		super.onResume();
 		Utils.log(TAG, "--- onResume()");
-		mediaRouter.addCallback(mediaRouteSelector, CastHelper.mediaRouterCallback, MediaRouter.CALLBACK_FLAG_PERFORM_ACTIVE_SCAN);
+		castHelper.mediaRouter.addCallback(castHelper.mediaRouteSelector, castHelper.mediaRouterCallback, MediaRouter.CALLBACK_FLAG_PERFORM_ACTIVE_SCAN);
 		hideSearch();
 	}
 
@@ -176,7 +175,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	protected void onPause() {
 		Utils.log(TAG, "--- onPause()");
 		if (isFinishing()) {
-			mediaRouter.removeCallback(CastHelper.mediaRouterCallback);
+			castHelper.mediaRouter.removeCallback(castHelper.mediaRouterCallback);
 		}
 		super.onPause();
 	}
@@ -564,18 +563,21 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		Constants.URL_CONTACT_VALUE = "" + map.get(Stations.EMAIL);
 
 		setFavIconStar();
-		Utils.log(TAG, "CastHelper.isClientConnected() = " + CastHelper.isClientConnected());
-		if (CastHelper.isClientConnected()) {
+
+		Utils.log(TAG, "castHelper.isConnected() = " + castHelper.isConnected());
+		if (castHelper.isConnected()) {
 			Utils.log(TAG, "Playing: " + playing);
+			// stop local playing in all cases
+			getRadioPlayer().doStopPlay(this);
+
 			if (playing) {
 				Utils.log(TAG, "CastHelper.play(...)");
 				// if local player is playing - stop it
-				getRadioPlayer().doStopPlay(this);
 				int imgRes = (Integer) map.get(Stations.ICON);
-				CastHelper.play(Constants.SELECTED_STATION_NAME_VALUE, Constants.URL_LIVE_STREAM_VALUE, imgRes);
+				castHelper.play(Constants.SELECTED_STATION_NAME_VALUE, Constants.URL_LIVE_STREAM_VALUE, imgRes);
 			} else {
-				Utils.log(TAG, "CastHelper.stop()");
-				CastHelper.stop();
+				Utils.log(TAG, "Cast pause()");
+				castHelper.pause();
 			}
 		} else {
 			if (!firstStart && playing) {
@@ -882,7 +884,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		// Chromecast
 		MenuItem mediaRouteMenuItem = menu.findItem(R.id.media_route_menu_item);
 		MediaRouteActionProvider mediaRouteActionProvider = (MediaRouteActionProvider) MenuItemCompat.getActionProvider(mediaRouteMenuItem);
-		mediaRouteActionProvider.setRouteSelector(mediaRouteSelector);
+		mediaRouteActionProvider.setRouteSelector(castHelper.mediaRouteSelector);
 
 		if (Utils.hasValidKey()) {
 			menu.removeItem(R.id.action_donate);
@@ -1011,21 +1013,23 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		}
 	}
 
+	// --------------------------------------------------
 	// Chromecast
+	// --------------------------------------------------
 	@Override
 	public boolean dispatchKeyEvent(KeyEvent event) {
-		if (CastHelper.isClientConnected()) {
+		if (castHelper.isConnected()) {
 			int action = event.getAction();
 			int keyCode = event.getKeyCode();
 			switch (keyCode) {
 			case KeyEvent.KEYCODE_VOLUME_UP:
 				if (action == KeyEvent.ACTION_UP) {
-					CastHelper.volumeUp();
+					castHelper.volumeUp();
 				}
 				return true;
 			case KeyEvent.KEYCODE_VOLUME_DOWN:
 				if (action == KeyEvent.ACTION_DOWN) {
-					CastHelper.volumeDown();
+					castHelper.volumeDown();
 				}
 				return true;
 			}
