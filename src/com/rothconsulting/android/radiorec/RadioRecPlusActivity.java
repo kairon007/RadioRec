@@ -158,7 +158,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		tm.listen(callStateListener, PhoneStateListener.LISTEN_CALL_STATE);
 
 		// Chromecast initialize
-		castHelper = new CastHelper();
+		castHelper = new CastHelper(this);
 
 		Utils.log(TAG, "++++++++++++ onCreate END ++++++++++++");
 	}
@@ -167,7 +167,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	protected void onResume() {
 		super.onResume();
 		Utils.log(TAG, "--- onResume()");
-		castHelper.mediaRouter.addCallback(castHelper.mediaRouteSelector, castHelper.mediaRouterCallback, MediaRouter.CALLBACK_FLAG_PERFORM_ACTIVE_SCAN);
+		castHelper.mMediaRouter.addCallback(castHelper.mMediaRouteSelector, castHelper.mediaRouterCallback, MediaRouter.CALLBACK_FLAG_PERFORM_ACTIVE_SCAN);
 		hideSearch();
 	}
 
@@ -175,7 +175,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	protected void onPause() {
 		Utils.log(TAG, "--- onPause()");
 		if (isFinishing()) {
-			castHelper.mediaRouter.removeCallback(castHelper.mediaRouterCallback);
+			castHelper.mMediaRouter.removeCallback(castHelper.mediaRouterCallback);
 		}
 		super.onPause();
 	}
@@ -640,9 +640,12 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			Utils.getNotifInstance(this, RadioRecPlusActivity.class).showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
 		}
 
+		String filename = "Unknown";
+		if (Constants.SELECTED_STATION_NAME_VALUE != null) {
+			filename = Constants.SELECTED_STATION_NAME_VALUE.replaceAll(" ", "");
+		}
 		try {
-			outputUrl = new URL("file:///" + Constants.SD_CARD_PATH_VALUE + getSlash() + Constants.SELECTED_STATION_NAME_VALUE.replaceAll(" ", "") + "-"
-					+ dateTime + ".mp3");
+			outputUrl = new URL("file:///" + Constants.SD_CARD_PATH_VALUE + getSlash() + filename.replaceAll("/", "") + "-" + dateTime + ".mp3");
 		} catch (MalformedURLException e) {
 			Utils.getNotifInstance(this, RadioRecPlusActivity.class).showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
 		}
@@ -885,7 +888,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		if (Utils.isGooglePlayServicesAvailable(context)) {
 			MenuItem mediaRouteMenuItem = menu.findItem(R.id.media_route_menu_item);
 			MediaRouteActionProvider mediaRouteActionProvider = (MediaRouteActionProvider) MenuItemCompat.getActionProvider(mediaRouteMenuItem);
-			mediaRouteActionProvider.setRouteSelector(castHelper.mediaRouteSelector);
+			mediaRouteActionProvider.setRouteSelector(castHelper.mMediaRouteSelector);
 		}
 
 		if (Utils.hasValidKey()) {

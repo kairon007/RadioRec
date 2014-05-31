@@ -649,7 +649,7 @@ public class Stations {
 		m.put(ICON_SMALL, R.drawable.radio_srf_1_small);
 		m.put(STREAM, "http://streaming.swisstxt.ch/m/drs1/mp3_128");
 		m.put(HOMEPAGE, "http://www.srf1.ch");
-		m.put(WEBCAM, "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
+		m.put(WEBCAM, "http://www.srf.ch/webcams/radio-srf-1");
 		m.put(EMAIL, "http://www.srf.ch/radio-srf-1/mail-ins-studio");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
@@ -662,7 +662,7 @@ public class Stations {
 		m.put(ICON_SMALL, R.drawable.radio_srf_1_small);
 		m.put(STREAM, "http://streaming.swisstxt.ch/m/regi_ag_so/mp3_128");
 		m.put(HOMEPAGE, "http://www.srf.ch/news/regional/aargau-solothurn");
-		m.put(WEBCAM, "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
+		m.put(WEBCAM, "http://www.srf.ch/webcams/radio-srf-1");
 		m.put(EMAIL, "http://www.srf.ch/sendungen/regionaljournal-aargau-solothurn/kontakt");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
@@ -675,7 +675,7 @@ public class Stations {
 		m.put(ICON_SMALL, R.drawable.radio_srf_1_small);
 		m.put(STREAM, "http://streaming.swisstxt.ch/m/regi_bs_bl/mp3_128");
 		m.put(HOMEPAGE, "http://www.srf.ch/news/regional/basel-baselland");
-		m.put(WEBCAM, "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
+		m.put(WEBCAM, "http://www.srf.ch/webcams/radio-srf-1");
 		m.put(EMAIL, "http://www.drs1.ch/www/de/drs1/kontakt/mail-ins-studio.html");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
@@ -688,7 +688,7 @@ public class Stations {
 		m.put(ICON_SMALL, R.drawable.radio_srf_1_small);
 		m.put(STREAM, "http://streaming.swisstxt.ch/m/regi_be_fr_vs/mp3_128");
 		m.put(HOMEPAGE, "http://www.srf.ch/news/regional/bern-freiburg-wallis");
-		m.put(WEBCAM, "http://www.drs1.ch/import/webcam/drs1/webdrs1a.jpg");
+		m.put(WEBCAM, "http://www.srf.ch/webcams/radio-srf-1");
 		m.put(EMAIL, "http://www.srf.ch/sendungen/regionaljournal-bern-freiburg-wallis/kontakt");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
@@ -714,7 +714,7 @@ public class Stations {
 		m.put(ICON_SMALL, R.drawable.radio_srf_3_small);
 		m.put(STREAM, "http://streaming.swisstxt.ch/m/drs3/mp3_128");
 		m.put(HOMEPAGE, "http://www.srf3.ch");
-		m.put(WEBCAM, "http://www.drs3.ch/import/webcam/drs3/webdrs3a.jpg");
+		m.put(WEBCAM, "http://www.srf.ch/webcams/radio-srf-3");
 		m.put(EMAIL, "http://www.srf.ch/radio-srf-3/mail-ins-studio");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
