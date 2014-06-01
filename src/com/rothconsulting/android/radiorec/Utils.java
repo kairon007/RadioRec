@@ -133,35 +133,8 @@ public class Utils {
 	protected Drawable resizeImage(int resId, Context context, int width, int height) {
 		Bitmap origBitmap = BitmapFactory.decodeResource(context.getResources(), resId);
 		Bitmap resizedBitmap = Bitmap.createScaledBitmap(origBitmap, width, height, false);
-		BitmapDrawable bitmapDrawable = new BitmapDrawable(resizedBitmap);
+		BitmapDrawable bitmapDrawable = new BitmapDrawable(context.getResources(), resizedBitmap);
 		return bitmapDrawable;
-	}
-
-	public static String getExceptionInfosAsString(Exception e) {
-		// StringWriter sw = new StringWriter();
-		// e.printStackTrace(new PrintWriter(sw));
-		// String exceptionAsString = sw.toString();
-
-		String result = "***** Exception-Info Start *****\n";
-		if (e != null && e.getStackTrace() != null) {
-			result += "--- Stacktrace Start ---\n";
-			for (StackTraceElement ste : e.getStackTrace()) {
-				result += "\n  " + ste;
-			}
-			result += "\n--- Stacktrace End ---\n";
-		}
-		result += "\n--- ";
-		result += "Message=" + e.getMessage();
-		result += "\n--- ";
-		result += "LocalizedMessage=" + e.getLocalizedMessage();
-		result += "\n--- ";
-		result += "Cause=" + e.getCause();
-		result += "\n--- ";
-		result += "toString=" + e.toString();
-		result += "\n--- ";
-		result += "\n***** Exception-Info End *****\n";
-
-		return result;
 	}
 
 	public static void log(String tag, String message) {
@@ -318,9 +291,9 @@ public class Utils {
 	}
 
 	public static int getScrOrientation(Activity activity) {
-		Display getOrient = activity.getWindowManager().getDefaultDisplay();
 
-		int orientation = getOrient.getOrientation();
+		Display display = activity.getWindowManager().getDefaultDisplay();
+		int orientation = display.getOrientation();
 
 		// Sometimes you may get undefined orientation Value is 0
 		// simple logic solves the problem compare the screen
@@ -331,7 +304,7 @@ public class Utils {
 			orientation = config.orientation;
 
 			if (orientation != ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE && orientation != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
-				if (getOrient.getWidth() <= getOrient.getHeight()) {
+				if (display.getWidth() <= display.getHeight()) {
 					orientation = Configuration.ORIENTATION_PORTRAIT;
 				} else { // if it is not any of the above it will defineitly be landscape
 					orientation = Configuration.ORIENTATION_LANDSCAPE;

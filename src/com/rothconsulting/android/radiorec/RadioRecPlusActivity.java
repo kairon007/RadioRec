@@ -569,10 +569,17 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			getRadioPlayer().doStopPlay(this);
 
 			if (playing) {
-				Utils.log(TAG, "CastHelper.play(...)");
+				Utils.log(TAG, "castHelper.play(...)");
 				// if local player is playing - stop it
 				int imgRes = (Integer) map.get(Stations.ICON);
 				castHelper.play(Constants.SELECTED_STATION_NAME_VALUE, Constants.URL_LIVE_STREAM_VALUE, imgRes);
+
+				Utils.log(TAG, "castHelper.play(...) - show statusbar info");
+				Intent intent = new Intent(context, DonateActivity.class);
+				intent.putExtra(Constants.FROM_NOTIFICATION, Constants.FROM_NOTIFICATION);
+				Notifications notification = new Notifications(context, intent);
+				notification.hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
+				notification.showStatusBarNotificationIsRunning(true);
 			} else {
 				Utils.log(TAG, "Cast pause()");
 				castHelper.pause();

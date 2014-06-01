@@ -100,5 +100,6 @@
 	<string name="alreadyDonated">You have already donated. Thank you!</string>
 	<string name="media_route_menu_title">Play on&#8230;</string>
 	<string name="stations">Stations</string>
-					
+	<string name="casting">Casting</string>
+						
 </resources>

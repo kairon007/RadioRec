@@ -80,10 +80,10 @@ public class CastHelper {
 		Utils.log(TAG, "--- END  Constructor CastHelper()");
 	}
 
-	public void play(String stationName, String stationUrl, int imageResId) {
+	public void play(final String stationName, String stationUrl, int imageResId) {
 		Utils.log(TAG, "--- START play(...)");
 
-		Toast.makeText(getContext(), "Casting " + stationName, Toast.LENGTH_LONG).show();
+		Toast.makeText(getContext(), getContext().getString(R.string.casting) + " " + stationName, Toast.LENGTH_LONG).show();
 
 		AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "CastHelper.play", "cast play: " + stationName);
 
@@ -111,6 +111,7 @@ public class CastHelper {
 						Utils.log(TAG, "Media loaded successfully: StatusCode=" + result.getStatus().getStatusCode());
 					} else {
 						Utils.log(TAG, "Media loaded NOT successfully StatusCode=" + result.getStatus().getStatusCode());
+						clearNotification();
 					}
 				}
 			});
@@ -250,10 +251,12 @@ public class CastHelper {
 			} catch (IllegalStateException e) {
 				Log.w(TAG, "Exception while connecting API client", e);
 				disconnectApiClient();
+				clearNotification();
 			}
 		} else {
 			if (mApiClient != null) {
 				disconnectApiClient();
+				clearNotification();
 			}
 			mMediaRouter.selectRoute(mMediaRouter.getDefaultRoute());
 		}
@@ -565,6 +568,12 @@ public class CastHelper {
 		} else {
 			return ApplicationRadioRec.getAppContext();
 		}
+	}
+
+	private void clearNotification() {
+		Notifications notification = new Notifications(context, null);
+		notification.hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
+		notification.hideStatusBarNotification(Constants.NOTIFICATION_ID_RADIO_IS_PLAYING);
 	}
 
 }

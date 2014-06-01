@@ -33,50 +33,44 @@ public class Notifications {
 			contentText = context.getString(R.string.verbindeInternet);
 		}
 
-		showStatusBarNotification(icon, tickerText, contentTitle, contentText,
-				Constants.NOTIFICATION_ID_ERROR_CONNECTION, -1);
+		showStatusBarNotification(icon, tickerText, contentTitle, contentText, Constants.NOTIFICATION_ID_ERROR_CONNECTION, -1);
 	}
 
-	public void showStatusBarNotificationIsRunning() {
+	public void showStatusBarNotificationIsRunning(boolean casting) {
 
-		int icon = R.drawable.jukebox;
-		CharSequence tickerText = context.getString(R.string.onAir) + " "
-				+ Constants.SELECTED_STATION_NAME_VALUE;
+		int text1Id = R.string.onAir;
+		if (casting) {
+			text1Id = R.string.casting;
+		}
+		CharSequence tickerText = context.getString(text1Id) + " " + Constants.SELECTED_STATION_NAME_VALUE;
 
 		// int notificationFlags = Notification.FLAG_ONGOING_EVENT;
 
 		CharSequence contentTitle = context.getString(R.string.app_name);
-		CharSequence contentText = context.getString(R.string.onAir) + " "
-				+ Constants.SELECTED_STATION_NAME_VALUE;
+		CharSequence contentText = context.getString(text1Id) + " " + Constants.SELECTED_STATION_NAME_VALUE;
 
-		showStatusBarNotification(icon, tickerText, contentTitle, contentText,
-				Constants.NOTIFICATION_ID_RADIO_IS_PLAYING, -1);
+		showStatusBarNotification(R.drawable.jukebox, tickerText, contentTitle, contentText, Constants.NOTIFICATION_ID_RADIO_IS_PLAYING, -1);
 
 	}
 
 	public void showStatusBarNotificationRecording() {
 
 		int icon = R.drawable.button_record_on;
-		CharSequence tickerText = "Recording... "
-				+ Constants.SELECTED_STATION_NAME_VALUE;
+		CharSequence tickerText = "Recording... " + Constants.SELECTED_STATION_NAME_VALUE;
 
 		// int notificationFlags = Notification.FLAG_ONGOING_EVENT;
 
 		CharSequence contentTitle = "Recording...";
-		CharSequence contentText = "Recording "
-				+ Constants.SELECTED_STATION_NAME_VALUE;
+		CharSequence contentText = "Recording " + Constants.SELECTED_STATION_NAME_VALUE;
 
-		showStatusBarNotification(icon, tickerText, contentTitle, contentText,
-				Constants.NOTIFICATION_ID_RECORDING, -1);
+		showStatusBarNotification(icon, tickerText, contentTitle, contentText, Constants.NOTIFICATION_ID_RECORDING, -1);
 	}
 
-	private void showStatusBarNotification(int icon, CharSequence tickerText,
-			CharSequence contentTitle, CharSequence contentText,
-			int notificationId, int notificationFlags) {
+	private void showStatusBarNotification(int icon, CharSequence tickerText, CharSequence contentTitle, CharSequence contentText, int notificationId,
+			int notificationFlags) {
 
 		String ns = Context.NOTIFICATION_SERVICE;
-		NotificationManager mNotificationManager = (NotificationManager) context
-				.getSystemService(ns);
+		NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(ns);
 
 		long when = System.currentTimeMillis();
 
@@ -85,19 +79,18 @@ public class Notifications {
 			notification.flags += notificationFlags;
 		}
 
-		PendingIntent contentIntent = PendingIntent.getActivity(context, 0,
-				intent, 0);
-
-		notification.setLatestEventInfo(context, contentTitle, contentText,
-				contentIntent);
+		if (intent != null) {
+			PendingIntent contentIntent = PendingIntent.getActivity(context, 0, intent, 0);
+			notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+		}
 
 		mNotificationManager.notify(notificationId, notification);
 	}
 
 	public void hideStatusBarNotification(int notificationId) {
 		String ns = Context.NOTIFICATION_SERVICE;
-		NotificationManager mNotificationManager = (NotificationManager) context
-				.getSystemService(ns);
+		NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(ns);
 		mNotificationManager.cancel(notificationId);
 	}
+
 }

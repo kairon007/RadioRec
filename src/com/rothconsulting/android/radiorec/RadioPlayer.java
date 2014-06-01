@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.PowerManager;
+import android.util.Log;
 
 public class RadioPlayer {
 
@@ -117,7 +118,7 @@ public class RadioPlayer {
 					mediaPlayer.prepare();
 					// Utils.log(TAG, "start()");
 					// mediaPlayer.start();
-					getNotifInstance(context).showStatusBarNotificationIsRunning();
+					getNotifInstance(context).showStatusBarNotificationIsRunning(false);
 
 					// Thread threadSongTicker = new Thread() {
 					// @Override
@@ -142,10 +143,7 @@ public class RadioPlayer {
 					Utils.log(TAG, "getStackTrace[1]" + e.getStackTrace()[1]);
 					// doStopPlay(context);
 				} catch (IOException e) {
-					Utils.log(
-							TAG,
-							"doStartPlay - IOException: " + context.getString(R.string.internetadresseNichtErreichbar) + "\n---\n"
-									+ Utils.getExceptionInfosAsString(e));
+					Log.e(TAG, "doStartPlay - IOException: " + context.getString(R.string.internetadresseNichtErreichbar), e);
 					getNotifInstance(context).showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
 					doStopPlay(context);
 				} finally {
