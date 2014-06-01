@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -69,7 +68,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	public static boolean recording;
 	private static boolean showCountdown;
 	private Context context;
-	private Activity activity;
+	// private Activity activity;
 	private int origOrientation;
 	private boolean isOrientationSensorOn;
 
@@ -119,7 +118,6 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
 
-		activity = this;
 		context = this;
 		// context.deleteDatabase(DBHelper.DATABASE_NAME);
 		gcCounter = 0;
@@ -139,7 +137,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		actionBar.addTab(actionBar.newTab().setText(R.string.recordings).setTabListener(this));
 
 		// requestWindowFeature(Window.FEATURE_NO_TITLE);
-		RadioRecBillingHelper.isDonator(activity);
+		RadioRecBillingHelper.isDonator();
 		initGui();
 
 		actionBar.setListNavigationCallbacks(allStationAdapter, null);
@@ -150,7 +148,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			isOrientationSensorOn = false;
 		}
 
-		AnalyticsUtil.sendScreen(this, "Main screen");
+		AnalyticsUtil.sendScreen("Main screen");
 
 		// Detect incoming phone call and register PhoneStateListener
 		callStateListener = new CallStateListener();
@@ -344,7 +342,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		case R.id.homepage:
 			Log.i(TAG, "homepage");
 			if (Constants.URL_HOMEPAGE_VALUE != null && !Constants.URL_HOMEPAGE_VALUE.trim().equals("")) {
-				AnalyticsUtil.sendEvent(activity, "ui_action", "click_homepage", "url: " + Constants.URL_HOMEPAGE_VALUE);
+				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "click_homepage", "url: " + Constants.URL_HOMEPAGE_VALUE);
 
 				Uri uri = Uri.parse(Constants.URL_HOMEPAGE_VALUE);
 				Intent intentHomepage = new Intent(Intent.ACTION_VIEW, uri);
@@ -353,14 +351,14 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			break;
 		case R.id.webcam:
 			Log.i(TAG, "webcam");
-			AnalyticsUtil.sendEvent(activity, "ui_action", "click_webcam", "url: " + Constants.URL_WEBCAM_VALUE);
+			AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "click_webcam", "url: " + Constants.URL_WEBCAM_VALUE);
 
 			Intent intentCam = new Intent(this, WebcamActivity.class);
 			startActivity(intentCam);
 			break;
 		case R.id.mail:
 			Log.i(TAG, "mail");
-			AnalyticsUtil.sendEvent(activity, "ui_action", "click_mail", "contact: " + Constants.URL_CONTACT_VALUE);
+			AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "click_mail", "contact: " + Constants.URL_CONTACT_VALUE);
 
 			if (Constants.URL_CONTACT_VALUE.startsWith("http")) {
 				Intent emailIntent = new Intent(Intent.ACTION_VIEW);
@@ -377,14 +375,14 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			break;
 		case R.id.search:
 			Log.i(TAG, "search");
-			AnalyticsUtil.sendEvent(activity, "ui_action", "click_search", "selected_station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "click_search", "selected_station: " + Constants.SELECTED_STATION_NAME_VALUE);
 
 			prepareSearch();
 			break;
 
 		case R.id.favoriten:
 			Log.i(TAG, "favorit");
-			AnalyticsUtil.sendEvent(activity, "ui_action", "click_favoriten", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "click_favoriten", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			DbUtils.storeRemoveFav(this, favIcon);
 			break;
 		case R.id.back:
@@ -421,11 +419,11 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 
 			// Google analytics
 			if (recording) {
-				AnalyticsUtil.sendEvent(activity, "ui_action", "start_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "start_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			}
 			// Google analytics
 			if (!recording) {
-				AnalyticsUtil.sendEvent(activity, "ui_action", "stop_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "stop_recording", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			}
 
 			((ImageButton) v).setImageResource(recording ? R.drawable.button_record_on : R.drawable.button_record);
@@ -440,7 +438,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			break;
 		case R.id.imageButtonUhr:
 			showCountdown = !showCountdown;
-			AnalyticsUtil.sendEvent(activity, "ui_action", "click_imageButtonUhr", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "click_imageButtonUhr", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			this.showTimerbox(showCountdown);
 			break;
 		}
@@ -553,7 +551,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 
 		Constants.SELECTED_STATION_NAME_VALUE = "" + map.get(Stations.NAME);
 
-		AnalyticsUtil.sendEvent(activity, "ui_action", "playing", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+		AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "playing", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 
 		Constants.URL_LIVE_STREAM_VALUE = "" + map.get(Stations.STREAM);
 
@@ -836,7 +834,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 				autocomplete.setVisibility(View.GONE);
 				spinner.setVisibility(View.VISIBLE);
 
-				AnalyticsUtil.sendEvent(activity, "ui_action", "click_searched_station", "station: " + ((TextView) textView).getText());
+				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "click_searched_station", "station: " + ((TextView) textView).getText());
 
 				spnAllStations.setSelection(Utils.getSpinnerPosition(stationList, "" + ((TextView) textView).getText()));
 			}
@@ -909,7 +907,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		case R.id.action_alphabetisch:
 			Log.i(TAG, "menu alphabetisch");
 			Constants.SPINNER_SELECTION = Constants.SPINNER_ALPHABETISCH;
-			AnalyticsUtil.sendEvent(activity, "ui_action", "click_menu_alphabetisch", "actual station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "click_menu_alphabetisch", "actual station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			Utils.log(TAG, "Button Alphabetisch pressed. Firts=" + spnAlphabetisch.getFirstVisiblePosition());
 			spnAlphabetisch.performClick();
 			break;
@@ -1006,11 +1004,11 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			}
 			break;
 		case 1:
-			AnalyticsUtil.sendEvent(activity, "ui_action", "click_tab_favourites", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "click_tab_favourites", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			this.startActivityForResult(new Intent(this, FavouritesActivity.class), Constants.FROM_FAVOURITES);
 			break;
 		case 2:
-			AnalyticsUtil.sendEvent(activity, "ui_action", "click_musicBrowser", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
+			AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "click_musicBrowser", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			this.startActivity(new Intent(this, FileChooserActivity.class));
 			break;
 		default:

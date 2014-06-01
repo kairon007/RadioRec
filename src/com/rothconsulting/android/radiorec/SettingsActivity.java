@@ -49,7 +49,7 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 		// hide keyboard when opening page
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-		AnalyticsUtil.sendScreen(this, "Settings screen");
+		AnalyticsUtil.sendScreen("Settings screen");
 
 		AdMob admob = new AdMob();
 		admob.showRemoveAds(this);
@@ -70,7 +70,7 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 				editor.putString(Constants.SD_CARD_PATH_KEY, Constants.SD_CARD_PATH_VALUE);
 				editor.commit();
 
-				AnalyticsUtil.sendEvent(activity, "ui_action", "Settings", "SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE);
+				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "Settings", "SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE);
 
 				Toast.makeText(SettingsActivity.this, getResources().getString(R.string.save) + " (" + edittextSdCardPath.getText() + ")", Toast.LENGTH_LONG)
 						.show();
@@ -98,7 +98,7 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 				editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
 				editor.commit();
 
-				AnalyticsUtil.sendEvent(activity, "ui_action", "Settings", "CLOSE_APP_TIMER_END=" + Constants.CLOSE_APP_TIMER_END_VALUE);
+				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "Settings", "CLOSE_APP_TIMER_END=" + Constants.CLOSE_APP_TIMER_END_VALUE);
 			}
 		});
 
@@ -121,7 +121,7 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 					setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
 				}
 
-				AnalyticsUtil.sendEvent(activity, "ui_action", "Settings", "ROTATION_OFF=" + Constants.ROTATION_OFF_VALUE);
+				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "Settings", "ROTATION_OFF=" + Constants.ROTATION_OFF_VALUE);
 			}
 		});
 
@@ -157,7 +157,7 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 					Toast.makeText(SettingsActivity.this, getResources().getString(R.string.errorZahlEingeben), Toast.LENGTH_LONG).show();
 				}
 
-				AnalyticsUtil.sendEvent(activity, "ui_action", "Settings", "BUFFER_VALUE size=" + Constants.BUFFER_VALUE);
+				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "Settings", "BUFFER_VALUE size=" + Constants.BUFFER_VALUE);
 			}
 		});
 

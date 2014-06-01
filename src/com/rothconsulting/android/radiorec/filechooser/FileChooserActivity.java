@@ -51,7 +51,7 @@ public class FileChooserActivity extends ActionBarListActivity {
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
 
-		AnalyticsUtil.sendScreen(this, "FileChooser screen");
+		AnalyticsUtil.sendScreen("FileChooser screen");
 
 		AdMob admob = new AdMob();
 		admob.showRemoveAds(this);
@@ -146,8 +146,8 @@ public class FileChooserActivity extends ActionBarListActivity {
 		// dir.add(0, new Option(R.drawable.icon_folder_up, "..", getString(R.string.parentFolder), f.getParent()));
 		// }
 
-		AnalyticsUtil.sendEvent(this, "ui_action", "FileChooser", "currentDir: " + f.getName());
-		AnalyticsUtil.sendEvent(this, "ui_action", "FileChooser", "No. files: " + fls.size());
+		AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "FileChooser", "currentDir: " + f.getName());
+		AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "FileChooser", "No. files: " + fls.size());
 
 		adapter = new FileArrayAdapter(this, R.layout.file_list_item, dir);
 		setListAdapter(adapter);
@@ -231,7 +231,7 @@ public class FileChooserActivity extends ActionBarListActivity {
 		intent.setAction(android.content.Intent.ACTION_VIEW);
 		Utils.log(TAG, "path=" + o.getPath());
 
-		AnalyticsUtil.sendEvent(this, "ui_action", "FileChooser", "Play file: " + o.getPath());
+		AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "FileChooser", "Play file: " + o.getPath());
 
 		File file = new File(o.getPath());
 		intent.setDataAndType(Uri.fromFile(file), "audio/*");

@@ -44,7 +44,8 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 	}
 
 	/**
-	 * urls[0] = input urls[1] = output
+	 * urls[0] = input<br>
+	 * urls[1] = output
 	 */
 	@Override
 	protected Long doInBackground(URL... urls) {
@@ -64,15 +65,16 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 				Constants.BUFFER_VALUE = Constants.DEFAULT_BUFFER;
 			}
 			if (Utils.isPlatformBelow_4_4()) {
+				Utils.log(TAG, "No Icy: buffInputStream -> url.openStream()");
 				buffInputStream = new BufferedInputStream(urls[0].openStream(), Constants.BUFFER_VALUE);
 			} else {
+				Utils.log(TAG, "Icy: buffInputStream -> entity.getContent()");
 				// Icy source from: https://gist.github.com/toms972/8842217 (Thanks!)
 				IcyGetRequest request = new IcyGetRequest(urls[0].toString());
 				HttpResponse response = request.get();
 				HttpEntity entity = response.getEntity();
 				buffInputStream = new BufferedInputStream(entity.getContent(), Constants.BUFFER_VALUE);
 			}
-			Utils.log(TAG, "url.openStream()");
 
 			buffOutputStream = new BufferedOutputStream(new FileOutputStream(urls[1].getFile()), Constants.BUFFER_VALUE);
 			Utils.log(TAG, "FileOutputStream: " + urls[1].getFile());

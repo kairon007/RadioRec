@@ -85,7 +85,7 @@ public class BillingActivity extends ActionBarActivity {
 
 		this.setTitle(getString(R.string.google_play_store));
 
-		AnalyticsUtil.sendScreen(this, "Google Billing Screen");
+		AnalyticsUtil.sendScreen("Google Billing screen");
 
 		// Button Donate
 		Button btnDonate = (Button) findViewById(R.id.buttonDonate);

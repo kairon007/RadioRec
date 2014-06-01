@@ -67,6 +67,8 @@ public class FavouritesActivity extends ActionBarListActivity {
 			lv.setBackgroundResource(R.drawable.bg_land);
 		}
 
+		AnalyticsUtil.sendScreen("Favourites screen");
+
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

@@ -79,7 +79,7 @@ public class WebcamActivity extends ActionBarActivity {
 			}
 		});
 
-		AnalyticsUtil.sendScreen(this, "Webcam screen");
+		AnalyticsUtil.sendScreen("Webcam screen");
 	}
 
 	private void showWebCam() {

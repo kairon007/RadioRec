@@ -1,22 +1,22 @@
 package com.rothconsulting.android.radiorec;
 
-import android.app.Activity;
-
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.rothconsulting.android.radiorec.ApplicationRadioRec.TrackerName;
 
 public class AnalyticsUtil {
+
+	public static final String UI_ACTION = "ui_action";
+	public static final String KEY_VALIDATION = "key_validation";
+
 	/**
 	 * Build and send Analytics Event.
-	 * 
-	 * @param activity
 	 */
-	public static void sendEvent(Activity activity, String category, String action, String label) {
+	public static void sendEvent(String category, String action, String label) {
 
 		if (!Utils.isPlatformBelow_2_3_0()) {
 			// Build and send Analytics Event.
-			getTracker(activity).send(new HitBuilders.EventBuilder().setCategory(category).setAction(action).setLabel(label).build());
+			getTracker().send(new HitBuilders.EventBuilder().setCategory(category).setAction(action).setLabel(label).build());
 		}
 
 	}
@@ -24,28 +24,26 @@ public class AnalyticsUtil {
 	/**
 	 * Build and send Analytics Screen.
 	 * 
-	 * @param activity
 	 * @param screenName
 	 */
-	public static void sendScreen(Activity activity, String screenName) {
+	public static void sendScreen(String screenName) {
 
 		if (!Utils.isPlatformBelow_2_3_0()) {
 			// Set screen name.
 			// Where path is a String representing the screen name.
-			getTracker(activity).setScreenName(screenName);
+			getTracker().setScreenName(screenName);
 			// Send a screen view.
-			getTracker(activity).send(new HitBuilders.AppViewBuilder().build());
+			getTracker().send(new HitBuilders.AppViewBuilder().build());
 		}
 	}
 
 	/**
 	 * Get Analytics Tracker
 	 * 
-	 * @param activity
 	 * @return
 	 */
-	public static Tracker getTracker(Activity activity) {
+	private static Tracker getTracker() {
 		// Get GoogleAnalytics tracker
-		return ((ApplicationRadioRec) activity.getApplication()).getTracker(TrackerName.APP_TRACKER);
+		return ApplicationRadioRec.getApplication().getTracker(TrackerName.APP_TRACKER);
 	}
 }

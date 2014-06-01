@@ -25,7 +25,7 @@ public class InfoActivity extends ActionBarActivity {
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		}
 
-		AnalyticsUtil.sendScreen(this, "Info screen");
+		AnalyticsUtil.sendScreen("Info screen");
 
 		this.setTitle(getString(R.string.info));
 		setContentView(R.layout.info);

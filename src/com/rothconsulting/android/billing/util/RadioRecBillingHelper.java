@@ -3,7 +3,6 @@ package com.rothconsulting.android.billing.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -49,17 +48,17 @@ public class RadioRecBillingHelper {
 	 * 
 	 * @return
 	 */
-	public static boolean isDonator(Activity activity) {
+	public static boolean isDonator() {
 		iabHelper = null;
-		context = ApplicationRadioRec.getCustomAppContext();
+		context = ApplicationRadioRec.getAppContext();
 		if (Utils.hasValidKey()) {
 			isDonator = true;
 		}
-		fillIsDonatorValue(activity);
+		fillIsDonatorValue();
 		return isDonator;
 	}
 
-	private static void fillIsDonatorValue(Activity activity) {
+	private static void fillIsDonatorValue() {
 
 		Utils.log(TAG, "fillIsDonatorValue");
 

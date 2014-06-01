@@ -17,8 +17,14 @@ public class ApplicationRadioRec extends Application {
 		context = getApplicationContext();
 	}
 
-	public static Context getCustomAppContext() {
+	public static Context getAppContext() {
 		return context;
+	}
+
+	public static ApplicationRadioRec getApplication() {
+		Application application = (Application) ApplicationRadioRec.getAppContext();
+		ApplicationRadioRec app = (ApplicationRadioRec) application;
+		return app;
 	}
 
 	/**

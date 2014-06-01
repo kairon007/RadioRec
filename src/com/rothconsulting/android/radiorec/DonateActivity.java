@@ -48,18 +48,18 @@ public class DonateActivity extends ActionBarActivity {
 
 		activity = this;
 
-		AnalyticsUtil.sendScreen(this, "Donate screen");
+		AnalyticsUtil.sendScreen("Donate screen");
 
 		// if it comes from the notification and isDonator go to the main screen
 		if (Utils.hasValidKey()) {
 			Toast.makeText(this, this.getString(R.string.alreadyDonated), Toast.LENGTH_LONG).show();
 
-			AnalyticsUtil.sendEvent(activity, "key_validation", "hasValidKey", "yes isDonator, closing Donate screen");
+			AnalyticsUtil.sendEvent(AnalyticsUtil.KEY_VALIDATION, "hasValidKey", "yes isDonator, closing Donate screen");
 
 			finish();
 		}
 
-		AnalyticsUtil.sendEvent(activity, "key_validation", "hasValidKey", "no isNotDonator, showing Donate screen");
+		AnalyticsUtil.sendEvent(AnalyticsUtil.KEY_VALIDATION, "hasValidKey", "no isNotDonator, showing Donate screen");
 
 		// hide keyboard
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -74,7 +74,7 @@ public class DonateActivity extends ActionBarActivity {
 				Intent intentHomepage = new Intent(Intent.ACTION_VIEW);
 				intentHomepage.setData(Uri.parse(PAYPAL_URL));
 
-				AnalyticsUtil.sendEvent(activity, "ui_action", "clicked imageButtonPaypal", "URL = " + PAYPAL_URL);
+				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "clicked imageButtonPaypal", "URL = " + PAYPAL_URL);
 
 				startActivity(intentHomepage);
 			}
@@ -84,7 +84,7 @@ public class DonateActivity extends ActionBarActivity {
 		buttonBitcoin.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				AnalyticsUtil.sendEvent(activity, "ui_action", "clicked imageButtonBitcoin", "Start donateBitcoin");
+				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "clicked imageButtonBitcoin", "Start donateBitcoin");
 				donateBitcoin();
 			}
 		});
@@ -94,7 +94,7 @@ public class DonateActivity extends ActionBarActivity {
 		buttonAndroidMarket.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				AnalyticsUtil.sendEvent(activity, "ui_action", "clicked imageButtonAndroidMarket", "Start intentSpende");
+				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "clicked imageButtonAndroidMarket", "Start intentSpende");
 				startActivity(intentBillingSpende);
 			}
 		});
@@ -144,7 +144,7 @@ public class DonateActivity extends ActionBarActivity {
 				editor.commit();
 				editor.clear();
 
-				AnalyticsUtil.sendEvent(activity, "ui_action", "clicked buttonSaveAntiAdsKey", "Key: " + Constants.ANTI_ADS_VALUE);
+				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "clicked buttonSaveAntiAdsKey", "Key: " + Constants.ANTI_ADS_VALUE);
 			}
 		});
 

@@ -4,25 +4,28 @@
 	<bool name="ga_autoActivityTracking">true</bool>
 
 	<screenName name="com.rothconsulting.android.radiorec.RadioRecPlusActivity">
-		Main Screen
+		Main screen
 	</screenName>
 	<screenName name="com.rothconsulting.android.radiorec.DonateActivity">
-		Donate Screen
+		Donate screen
 	</screenName>
 	<screenName name="com.rothconsulting.android.billing.BillingActivity">
-		Google Billing Screen
+		Google Billing screen
 	</screenName>
 	<screenName name="com.rothconsulting.android.radiorec.SettingsActivity">
-		Settings Screen
+		Settings screen
 	</screenName>
 	<screenName name="com.rothconsulting.android.radiorec.WebcamActivity">
-		Webcam Screen
+		Webcam screen
 	</screenName>
 	<screenName name="com.rothconsulting.android.radiorec.InfoActivity">
-		Info Screen
+		Info screen
 	</screenName>
-	<screenName name="com.rothconsulting.android.radiorec.filechooser.FileChooserActivity">
-		FileChooser Screen
+	<screenName name="com.rothconsulting.android.radiorec.FavouritesActivity">
+		Favourites screen
+	</screenName>
+		<screenName name="com.rothconsulting.android.radiorec.filechooser.FileChooserActivity">
+		FileChooser screen
 	</screenName>
 
 	<!-- The following value should be replaced with correct property id. -->

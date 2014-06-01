@@ -79,7 +79,7 @@ public class Utils {
 
 	public static boolean hasValidKey() {
 		// String key = Constants.ANTI_ADS_VALUE;
-		SharedPreferences settings = ApplicationRadioRec.getCustomAppContext().getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
+		SharedPreferences settings = ApplicationRadioRec.getAppContext().getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
 		String key = settings.getString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_VALUE);
 		if (key != null && ((key.trim().startsWith("rR+") && key.trim().endsWith("so@p")) || (key.trim().startsWith("rr") && key.trim().endsWith("so")))) {
 			return true;

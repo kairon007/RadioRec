@@ -85,6 +85,8 @@ public class CastHelper {
 
 		Toast.makeText(getContext(), "Casting " + stationName, Toast.LENGTH_LONG).show();
 
+		AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "CastHelper.play", "cast play: " + stationName);
+
 		attachMediaChannel();
 
 		if (allDrawables == null) {
@@ -561,7 +563,7 @@ public class CastHelper {
 		if (context != null) {
 			return context;
 		} else {
-			return ApplicationRadioRec.getCustomAppContext();
+			return ApplicationRadioRec.getAppContext();
 		}
 	}
 
