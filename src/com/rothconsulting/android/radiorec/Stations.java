@@ -265,6 +265,7 @@ public class Stations {
 	public static final String RADIO_KULTURRADIO_RBB = "Kulturradio rbb";
 	public static final String RADIO_FRITZ_VOM_RBB = "Fritz vom rbb";
 	public static final String RADIO_BERLIN_RBB = "Berlin rbb";
+	public static final String RADIO_ANTENNE_BRANDENBURG_RBB = "Antenne Brandenburg rbb";
 	public static final String RADIO_DEUTSCHLANDRADIO_KULTUR = "Deutschlandradio Kultur";
 	public static final String RADIO_DEUTSCHLANDFUNK = "Deutschlandfunk";
 	public static final String RADIO_DRADIO_WISSEN = "DRadio Wissen";
@@ -3174,6 +3175,19 @@ public class Stations {
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_KLASSIK);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_ANTENNE_BRANDENBURG_RBB);
+		m.put(ICON, R.drawable.radio_antenne_brandenburg_rbb);
+		m.put(ICON_SMALL, R.drawable.radio_antenne_brandenburg_rbb_small);
+		m.put(STREAM, "http://rbb.ic.llnwd.net/stream/rbb_antennebrandenburg_mp3_m_a");
+		m.put(HOMEPAGE, "http://www.antennebrandenburg.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.antennebrandenburg.de/kontakt/index.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
