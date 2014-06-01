@@ -398,6 +398,7 @@ public class Stations {
 	public static final String RADIO_HITSTATION_FM_90 = "Hit Station-FM 90s";
 	public static final String RADIO_NEANDERTAL = "Neandertal";
 	public static final String RADIO_RPR1 = "RPR1.";
+	public static final String RADIO_BB_RADIO = "BB Radio";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -4826,6 +4827,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.rpr1.de");
 		m.put(WEBCAM, "http://static.rpr1.de/webcam/cam1/webcam01.jpg");
 		m.put(EMAIL, "http://www.rpr1.de/content/html/shared/studiomail/index.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_BB_RADIO);
+		m.put(ICON, R.drawable.radio_bb_radio);
+		m.put(ICON_SMALL, R.drawable.radio_bb_radio_small);
+		m.put(STREAM, "http://streams.ir-media-tec.com:80/bbradio.mp3");
+		m.put(HOMEPAGE, "http://www.bbradio.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "info@bbradio.de");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
