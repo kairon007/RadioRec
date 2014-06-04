@@ -985,6 +985,9 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		Utils.log(TAG, "setFavIconStar STOP");
 	}
 
+	// ------------------------------------------
+	// Tabs
+	// ------------------------------------------
 	@Override
 	public void onTabReselected(Tab tab, FragmentTransaction ft) {
 		Utils.log(TAG, "------- onTabReselected: " + (tab.getPosition()));
@@ -1017,6 +1020,12 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		case 2:
 			AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "click_musicBrowser", "station: " + Constants.SELECTED_STATION_NAME_VALUE);
 			this.startActivity(new Intent(this, FileChooserActivity.class));
+
+			// Fragments
+			// FragmentManager fm = getSupportFragmentManager();
+			// FileChooserFragment fileList = new FileChooserFragment();
+			// fm.beginTransaction().replace(android.R.id.content, fileList).commit();
+
 			break;
 		default:
 			break;
