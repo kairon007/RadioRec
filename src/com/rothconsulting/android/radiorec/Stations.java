@@ -5037,7 +5037,7 @@ public class Stations {
 		m.put(NAME, RADIO_STEPHANSDOM);
 		m.put(ICON, R.drawable.radio_stephansdom);
 		m.put(ICON_SMALL, R.drawable.radio_stephansdom_small);
-		m.put(STREAM, "http://srvhost24.serverhosting.apa.net:8000/rsdstream128");
+		m.put(STREAM, "http://live56.radiostephansdom.at:8000/live56");
 		m.put(HOMEPAGE, "http://www.radiostephansdom.at");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.radiostephansdom.at/kontakt");
