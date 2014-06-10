@@ -1,7 +1,6 @@
-package com.rothconsulting.android.radiorec;
+package com.rothconsulting.android.cast;
 
 import java.io.IOException;
-import java.util.Hashtable;
 import java.util.List;
 
 import android.annotation.SuppressLint;
@@ -32,6 +31,12 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.images.WebImage;
+import com.rothconsulting.android.radiorec.AnalyticsUtil;
+import com.rothconsulting.android.radiorec.ApplicationRadioRec;
+import com.rothconsulting.android.radiorec.Constants;
+import com.rothconsulting.android.radiorec.Notifications;
+import com.rothconsulting.android.radiorec.R;
+import com.rothconsulting.android.radiorec.Utils;
 
 public class CastHelper {
 
@@ -41,13 +46,13 @@ public class CastHelper {
 	private static final String CAST_APP_ID = "55A3A008"; // Styled Media Receiver
 
 	private static final String CAST_NAMESPACE = "urn:x-cast:com.google.cast.media";
-	private static final String IMAGE_BASE_DIR = "http://koni.mobi/radio/chromecast/images/";
 	private static final double VOLUME_INCREMENT = 0.1;
 	private static final String PREFS_KEY_SESSION_ID = "cast-session-id";
 	private static final String PREFS_KEY_ROUTE_ID = "cast-route-id";
 
-	protected final MediaRouter mMediaRouter;
-	protected final MediaRouteSelector mMediaRouteSelector;
+	public static final String IMAGE_BASE_DIR = "http://koni.mobi/radio/chromecast/images/";
+	public final MediaRouter mMediaRouter;
+	public final MediaRouteSelector mMediaRouteSelector;
 
 	private final Context context;
 
@@ -57,8 +62,6 @@ public class CastHelper {
 	private boolean castApplicationStarted;
 	private AsyncTask<Void, Integer, Integer> mReconnectionTask;
 	private ReconnectionStatus mReconnectionStatus;
-
-	private Hashtable<Integer, String> allDrawables;
 
 	/**
 	 * Enumerates various stages during a session recovery
@@ -80,23 +83,16 @@ public class CastHelper {
 		Utils.log(TAG, "--- END  Constructor CastHelper()");
 	}
 
-	public void play(final String stationName, String stationUrl, int imageResId) {
+	public void play(final String stationName, String stationUrl, String imageUrl) {
 		Utils.log(TAG, "--- START play(...)");
-
-		Toast.makeText(getContext(), getContext().getString(R.string.casting) + " " + stationName, Toast.LENGTH_LONG).show();
 
 		AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "CastHelper.play", "cast play: " + stationName);
 
 		attachMediaChannel();
 
-		if (allDrawables == null) {
-			allDrawables = Utils.getAllDrawables();
-		}
-
-		Utils.log(TAG, "imageResId=" + imageResId + " / stationName=" + stationName);
-		String imageUrl = IMAGE_BASE_DIR + allDrawables.get(imageResId) + ".png";
-		Utils.log(TAG, "imageUrl  =" + imageUrl);
+		Utils.log(TAG, "stationName=" + stationName);
 		Utils.log(TAG, "stationUrl=" + stationUrl);
+		Utils.log(TAG, "imageUrl  =" + imageUrl);
 		MediaMetadata mediaMetadata = new MediaMetadata(MediaMetadata.MEDIA_TYPE_MUSIC_TRACK);
 		mediaMetadata.putString(MediaMetadata.KEY_TITLE, stationName);
 		mediaMetadata.addImage(new WebImage(Uri.parse(imageUrl)));
@@ -104,6 +100,7 @@ public class CastHelper {
 				.setMetadata(mediaMetadata).build();
 
 		try {
+			Utils.log(TAG, "play() -> mApiClient=" + mApiClient);
 			mRemoteMediaPlayer.load(mApiClient, mediaInfo, true).setResultCallback(new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
 				@Override
 				public void onResult(MediaChannelResult result) {
@@ -115,6 +112,9 @@ public class CastHelper {
 					}
 				}
 			});
+
+			Toast.makeText(getContext(), getContext().getString(R.string.casting) + " " + stationName, Toast.LENGTH_LONG).show();
+
 		} catch (IllegalStateException e) {
 			Log.e(TAG, "Problem occurred with media during loading", e);
 		} catch (Exception e) {
@@ -126,19 +126,21 @@ public class CastHelper {
 	public void pause() {
 		Utils.log(TAG, "--- START pause()");
 		try {
-			mRemoteMediaPlayer.requestStatus(mApiClient).setResultCallback(new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
+			if (mRemoteMediaPlayer != null) {
+				mRemoteMediaPlayer.requestStatus(mApiClient).setResultCallback(new ResultCallback<RemoteMediaPlayer.MediaChannelResult>() {
 
-				@Override
-				public void onResult(RemoteMediaPlayer.MediaChannelResult mediaChannelResult) {
-					Status status = mediaChannelResult.getStatus();
-					Utils.log(TAG, "RemoteMediaPlayer requestStatus: StatusCode=" + status.getStatusCode());
-					try {
-						mRemoteMediaPlayer.pause(mApiClient);
-					} catch (Exception e) {
-						Log.e(TAG, "Exception while stopping GoogleApiClient. ", e);
+					@Override
+					public void onResult(RemoteMediaPlayer.MediaChannelResult mediaChannelResult) {
+						Status status = mediaChannelResult.getStatus();
+						Utils.log(TAG, "RemoteMediaPlayer requestStatus: StatusCode=" + status.getStatusCode());
+						try {
+							mRemoteMediaPlayer.pause(mApiClient);
+						} catch (Exception e) {
+							Log.e(TAG, "Exception while stopping GoogleApiClient. ", e);
+						}
 					}
-				}
-			});
+				});
+			}
 		} catch (IllegalStateException e) {
 			Log.e(TAG, "Problem occurred while geting requestStatus", e);
 		} catch (Exception e) {

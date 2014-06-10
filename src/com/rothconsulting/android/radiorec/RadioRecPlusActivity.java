@@ -56,6 +56,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.rothconsulting.android.billing.util.RadioRecBillingHelper;
+import com.rothconsulting.android.cast.CastHelper;
 import com.rothconsulting.android.radiorec.filechooser.FileChooserActivity;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
 import com.rothconsulting.android.radiorec.sqlitedb.DbUtils;
@@ -571,8 +572,8 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			if (playing) {
 				Utils.log(TAG, "castHelper.play(...)");
 				// if local player is playing - stop it
-				int imgRes = (Integer) map.get(Stations.ICON);
-				castHelper.play(Constants.SELECTED_STATION_NAME_VALUE, Constants.URL_LIVE_STREAM_VALUE, imgRes);
+				int imageResId = (Integer) map.get(Stations.ICON);
+				castHelper.play(Constants.SELECTED_STATION_NAME_VALUE, Constants.URL_LIVE_STREAM_VALUE, Utils.getCastImageUrl(imageResId));
 
 				Utils.log(TAG, "castHelper.play(...) - show statusbar info");
 				Intent intent = new Intent(context, DonateActivity.class);

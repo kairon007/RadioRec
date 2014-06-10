@@ -29,10 +29,12 @@ import android.util.Log;
 import android.view.Display;
 
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.rothconsulting.android.cast.CastHelper;
 
 public class Utils {
 
 	private static final String TAG = Utils.class.getSimpleName();
+	private static Hashtable<Integer, String> allDrawables;
 
 	/**
 	 * Wenn showNotification false, kann der Intent null sein!
@@ -317,7 +319,7 @@ public class Utils {
 	/**
 	 * @return ID and NAME of the drawables
 	 */
-	public static Hashtable<Integer, String> getAllDrawables() {
+	private static Hashtable<Integer, String> getAllDrawables() {
 		Hashtable<Integer, String> dl = new Hashtable<Integer, String>();
 		Field[] drawables = R.drawable.class.getFields();
 		for (Field f : drawables) {
@@ -332,6 +334,17 @@ public class Utils {
 			}
 		}
 		return dl;
+	}
+
+	public static String getCastImageUrl(int imageResId) {
+		if (allDrawables == null) {
+			allDrawables = getAllDrawables();
+		}
+
+		Utils.log(TAG, "imageResId=" + imageResId);
+		String imageUrl = CastHelper.IMAGE_BASE_DIR + allDrawables.get(imageResId) + ".png";
+		Utils.log(TAG, "imageUrl=" + imageUrl);
+		return imageUrl;
 	}
 
 	public static boolean isGooglePlayServicesAvailable(Context context) {
