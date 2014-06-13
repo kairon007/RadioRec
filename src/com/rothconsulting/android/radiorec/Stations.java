@@ -319,6 +319,7 @@ public class Stations {
 	public static final String RADIO_MDR_JUMP = "MDR Jump";
 	public static final String RADIO_MDR_SPUTNIK = "MDR Sputnik";
 	public static final String RADIO_MDR_FIGARO = "MDR Figaro";
+	public static final String RADIO_MDR_SACHSEN_ANHALT = "MDR Sachsen Anhalt";
 	public static final String RADIO_FRANK_ZAPPA_STREAM = "Frank Zappa Stream";
 	public static final String RADIO_KRAUTROCK_WORLD = "Krautrock World";
 	// public static final String RADIO_DRAGONDEVIL = "DrAgOnDeViL";
@@ -340,6 +341,7 @@ public class Stations {
 	public static final String RADIO_CHARIVARI_LIVE = "Charivari Live-Hits";
 	public static final String RADIO_CHARIVARI_EURODANCE = "Charivari Euro-Dance";
 	public static final String RADIO_CHARIVARI_LOUNGE = "Charivari Lounge";
+	public static final String RADIO_CHARIVARI_PARTY_HITMIX = "Charivari Party Hitmix";
 	public static final String RADIO_WUNSCHRADIO_90ER = "Wunschradio 90er";
 	public static final String RADIO_STAR_SAT = "Star Sat Radio";
 	public static final String RADIO_RAUTE_MUSIK = "Raute Musik";
@@ -400,6 +402,7 @@ public class Stations {
 	public static final String RADIO_NEANDERTAL = "Neandertal";
 	public static final String RADIO_RPR1 = "RPR1.";
 	public static final String RADIO_BB_RADIO = "BB Radio";
+	public static final String RADIO_REVIVAL_KULT = "RevivalKult";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -3885,6 +3888,19 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_MDR_SACHSEN_ANHALT);
+		m.put(ICON, R.drawable.radio_mdr_sachsen_anhalt);
+		m.put(ICON_SMALL, R.drawable.radio_mdr_sachsen_anhalt_small);
+		m.put(STREAM, "http://c22033-ls.i.core.cdn.streamfarm.net/Z0nRRFVT49922033/22033mdr/live/app2128740352/w2128904198/live_de_128.mp3");
+		m.put(HOMEPAGE, "http://www.mdr.de/mdr-sachsen-anhalt");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.mdr.de/mdr-sachsen-anhalt/artikel50618.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_FRANK_ZAPPA_STREAM);
 		m.put(ICON, R.drawable.radio_frank_zappa_stream);
 		m.put(ICON_SMALL, R.drawable.radio_frank_zappa_stream_small);
@@ -4097,6 +4113,19 @@ public class Stations {
 		m.put(ICON, R.drawable.radio_charivari);
 		m.put(ICON_SMALL, R.drawable.radio_charivari_small);
 		m.put(STREAM, "http://rs24.stream24.net/eurodance");
+		m.put(HOMEPAGE, "http://www.charivari.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.charivari.de/radio/programm/mail-ins-studio.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_CHARIVARI_PARTY_HITMIX);
+		m.put(ICON, R.drawable.radio_charivari);
+		m.put(ICON_SMALL, R.drawable.radio_charivari_small);
+		m.put(STREAM, "http://rs5.stream24.net:8000/stream");
 		m.put(HOMEPAGE, "http://www.charivari.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.charivari.de/radio/programm/mail-ins-studio.html");
@@ -4857,6 +4886,19 @@ public class Stations {
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_REVIVAL_KULT);
+		m.put(ICON, R.drawable.radio_revival_kult);
+		m.put(ICON_SMALL, R.drawable.radio_revival_kult_small);
+		m.put(STREAM, "http://85.214.64.213:8060");
+		m.put(HOMEPAGE, "http://www.revivalkult.de");
+		m.put(WEBCAM, "http://www.revivalkult.de/live-cam/");
+		m.put(EMAIL, "http://www.revivalkult.de/kontakt/");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_TRANCE);
 		setStationlist(stationList, m);
 
 		// ******************************************************************************************************
