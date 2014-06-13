@@ -1162,7 +1162,7 @@ public class Stations {
 		m.put(NAME, RADIO_KANAL_K);
 		m.put(ICON, R.drawable.radio_kanal_k);
 		m.put(ICON_SMALL, R.drawable.radio_kanal_k_small);
-		m.put(STREAM, "http://82.197.165.150");
+		m.put(STREAM, "http://82.197.165.150:80");
 		m.put(HOMEPAGE, "http://www.kanalk.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.kanalk.ch/ueber-uns/kontakt/");

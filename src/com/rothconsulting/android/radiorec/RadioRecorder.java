@@ -78,7 +78,7 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 
 			buffOutputStream = new BufferedOutputStream(new FileOutputStream(urls[1].getFile()), Constants.BUFFER_VALUE);
 			Utils.log(TAG, "FileOutputStream: " + urls[1].getFile());
-			Utils.getNotifInstance(context, RadioRecorder.class).showStatusBarNotificationRecording();
+			Notifications.getNotifInstance(context, RadioRecorder.class).showStatusBarNotificationRecording();
 
 			connectionProgressDialog.dismiss();
 			int c = 0;

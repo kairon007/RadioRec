@@ -63,7 +63,7 @@ import com.rothconsulting.android.radiorec.sqlitedb.DbUtils;
 
 public class RadioRecPlusActivity extends ActionBarActivity implements OnClickListener, OnItemSelectedListener, OnSeekBarChangeListener, ActionBar.TabListener {
 
-	private static final String TAG = "RadioRecPlus";
+	private static final String TAG = "RadioRecPlusActivity";
 
 	public static boolean playing;
 	public static boolean recording;
@@ -297,7 +297,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 				finish();
 			}
 		}
-		Utils.getNotifInstance(this, RadioRecPlusActivity.class).hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
+		Notifications.getNotifInstance(this, RadioRecPlusActivity.class).hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
 		return super.onKeyDown(keyCode, event);
 	}
 
@@ -643,7 +643,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			Utils.log(TAG, "Constants.URL_LIVE_STREAM_VALUE=" + Constants.URL_LIVE_STREAM_VALUE);
 			inputUrl = new URL(Constants.URL_LIVE_STREAM_VALUE);
 		} catch (MalformedURLException e) {
-			Utils.getNotifInstance(this, RadioRecPlusActivity.class).showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
+			Notifications.getNotifInstance(this, RadioRecPlusActivity.class).showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
 		}
 
 		String filename = "Unknown";
@@ -653,7 +653,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		try {
 			outputUrl = new URL("file:///" + Constants.SD_CARD_PATH_VALUE + getSlash() + filename.replaceAll("/", "") + "-" + dateTime + ".mp3");
 		} catch (MalformedURLException e) {
-			Utils.getNotifInstance(this, RadioRecPlusActivity.class).showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
+			Notifications.getNotifInstance(this, RadioRecPlusActivity.class).showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
 		}
 
 		recordTask = new RadioRecorder(this, this.getIntent()).execute(inputUrl, outputUrl);
@@ -674,7 +674,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	protected static void doStopRecording(Context context) {
 		if (recordTask != null) {
 			recordTask.cancel(true);
-			Utils.getNotifInstance(context, RadioRecPlusActivity.class).hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
+			Notifications.getNotifInstance(context, RadioRecPlusActivity.class).hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
 			recording = false;
 		}
 	}

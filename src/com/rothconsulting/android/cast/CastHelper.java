@@ -34,7 +34,6 @@ import com.google.android.gms.common.images.WebImage;
 import com.rothconsulting.android.radiorec.AnalyticsUtil;
 import com.rothconsulting.android.radiorec.ApplicationRadioRec;
 import com.rothconsulting.android.radiorec.Constants;
-import com.rothconsulting.android.radiorec.Notifications;
 import com.rothconsulting.android.radiorec.R;
 import com.rothconsulting.android.radiorec.Utils;
 
@@ -49,10 +48,12 @@ public class CastHelper {
 	private static final double VOLUME_INCREMENT = 0.1;
 	private static final String PREFS_KEY_SESSION_ID = "cast-session-id";
 	private static final String PREFS_KEY_ROUTE_ID = "cast-route-id";
+	private static final String MIME_AUDIO_MP3 = "audio/mp3";
 
 	public static final String IMAGE_BASE_DIR = "http://koni.mobi/radio/chromecast/images/";
-	public final MediaRouter mMediaRouter;
-	public final MediaRouteSelector mMediaRouteSelector;
+
+	public MediaRouter mMediaRouter;
+	public MediaRouteSelector mMediaRouteSelector;
 
 	private final Context context;
 
@@ -79,7 +80,6 @@ public class CastHelper {
 		this.context = context;
 		mMediaRouter = MediaRouter.getInstance(getContext());
 		mMediaRouteSelector = new MediaRouteSelector.Builder().addControlCategory(CastMediaControlIntent.categoryForCast(CAST_APP_ID)).build();
-		// reconnectSessionIfPossible(context, true, 10);
 		Utils.log(TAG, "--- END  Constructor CastHelper()");
 	}
 
@@ -93,10 +93,12 @@ public class CastHelper {
 		Utils.log(TAG, "stationName=" + stationName);
 		Utils.log(TAG, "stationUrl=" + stationUrl);
 		Utils.log(TAG, "imageUrl  =" + imageUrl);
+		stationUrl = handleShoutcast(stationName, stationUrl);
+		Utils.log(TAG, "stationUrl (SHOUTcast?) =" + stationUrl);
 		MediaMetadata mediaMetadata = new MediaMetadata(MediaMetadata.MEDIA_TYPE_MUSIC_TRACK);
 		mediaMetadata.putString(MediaMetadata.KEY_TITLE, stationName);
 		mediaMetadata.addImage(new WebImage(Uri.parse(imageUrl)));
-		MediaInfo mediaInfo = new MediaInfo.Builder(stationUrl).setContentType("audio/mp3").setStreamType(MediaInfo.STREAM_TYPE_BUFFERED)
+		MediaInfo mediaInfo = new MediaInfo.Builder(stationUrl).setContentType(MIME_AUDIO_MP3).setStreamType(MediaInfo.STREAM_TYPE_BUFFERED)
 				.setMetadata(mediaMetadata).build();
 
 		try {
@@ -108,7 +110,7 @@ public class CastHelper {
 						Utils.log(TAG, "Media loaded successfully: StatusCode=" + result.getStatus().getStatusCode());
 					} else {
 						Utils.log(TAG, "Media loaded NOT successfully StatusCode=" + result.getStatus().getStatusCode());
-						clearNotification();
+						Utils.clearPlayingNotification(getContext());
 					}
 				}
 			});
@@ -152,22 +154,28 @@ public class CastHelper {
 	public final MediaRouter.Callback mediaRouterCallback = new MediaRouter.Callback() {
 		@Override
 		public void onRouteSelected(MediaRouter router, MediaRouter.RouteInfo routeInfo) {
-			Utils.log(TAG, "mediaRouterCallback onRouteSelected: router=" + router + " / route=" + routeInfo + "/ routeId=" + routeInfo.getId());
+			Utils.log(TAG, "mediaRouterCallback onRouteSelected:...");
+			Utils.log(TAG, " - router=" + router);
+			Utils.log(TAG, " - route=" + routeInfo);
+			Utils.log(TAG, " - routeId=" + routeInfo.getId());
 			storeToDefaultSharedPreferences(context, PREFS_KEY_ROUTE_ID, routeInfo.getId());
 			CastDevice device = CastDevice.getFromBundle(routeInfo.getExtras());
 			setSelectedDevice(device);
 		}
 
 		@Override
-		public void onRouteUnselected(MediaRouter router, MediaRouter.RouteInfo route) {
-			Utils.log(TAG, "mediaRouterCallback onRouteUnselected: router=" + router + " / route=" + route);
+		public void onRouteUnselected(MediaRouter router, MediaRouter.RouteInfo routeInfo) {
+			Utils.log(TAG, "mediaRouterCallback onRouteUnselected:...");
+			Utils.log(TAG, " - router=" + router);
+			Utils.log(TAG, " - route=" + routeInfo);
+			Utils.log(TAG, " - routeId=" + routeInfo.getId());
 			setSelectedDevice(null);
 		}
 	};
 
 	public boolean isConnected() {
 		boolean isConnected = mApiClient != null && mApiClient.isConnected();
-		Utils.log(TAG, "isConnected=" + isConnected);
+		Utils.log(TAG, "*** isConnected=" + isConnected);
 		return isConnected;
 	}
 
@@ -206,15 +214,23 @@ public class CastHelper {
 	// Private
 	// *****************************************
 	private void attachMediaChannel() {
+		Utils.log(TAG, "attachMediaChannel() - mRemoteMediaPlayer=" + mRemoteMediaPlayer);
 
+		if (mRemoteMediaPlayer != null) {
+			return;
+		}
 		mRemoteMediaPlayer = new RemoteMediaPlayer();
 		mRemoteMediaPlayer.setOnStatusUpdatedListener(new RemoteMediaPlayer.OnStatusUpdatedListener() {
 			@Override
 			public void onStatusUpdated() {
 				MediaStatus mediaStatus = mRemoteMediaPlayer.getMediaStatus();
-				Utils.log(TAG, "OnStatusUpdatedListener onStatusUpdated mediaStatus=" + mediaStatus.getPlayerState());
-				boolean isPlaying = mediaStatus.getPlayerState() == MediaStatus.PLAYER_STATE_PLAYING;
-				Utils.log(TAG, "isPlaying=" + isPlaying);
+				if (mediaStatus != null) {
+					Utils.log(TAG, "OnStatusUpdatedListener onStatusUpdated mediaStatus = " + mediaStatus.getPlayerState());
+					boolean isPlaying = mediaStatus.getPlayerState() == MediaStatus.PLAYER_STATE_PLAYING;
+					Utils.log(TAG, "isPlaying=" + isPlaying);
+				} else {
+					Utils.log(TAG, "OnStatusUpdatedListener onStatusUpdated mediaStatus = null");
+				}
 			}
 		});
 
@@ -253,12 +269,12 @@ public class CastHelper {
 			} catch (IllegalStateException e) {
 				Log.w(TAG, "Exception while connecting API client", e);
 				disconnectApiClient();
-				clearNotification();
+				Utils.clearPlayingNotification(getContext());
 			}
 		} else {
 			if (mApiClient != null) {
 				disconnectApiClient();
-				clearNotification();
+				Utils.clearPlayingNotification(getContext());
 			}
 			mMediaRouter.selectRoute(mMediaRouter.getDefaultRoute());
 		}
@@ -296,9 +312,35 @@ public class CastHelper {
 				castApplicationStarted = true;
 
 				try {
+
+					// Joining sessions: https://developers.google.com/cast/docs/android_sender
+
+					// Cast.CastApi.joinApplication() with both an application ID and a session ID will only succeed if that particular instance of that
+					// application is still running.
+					// String sessionId = getFromDefaultSharedPreferences(context, PREFS_KEY_SESSION_ID);
+					// if (!isConnected() && sessionId != null) {
+					// Utils.log(TAG, "joinApplication() -> start");
+					// Cast.CastApi.joinApplication(mApiClient, CAST_APP_ID, sessionId).setResultCallback(
+					// new ResultCallback<Cast.ApplicationConnectionResult>() {
+					//
+					// @Override
+					// public void onResult(ApplicationConnectionResult result) {
+					// if (result.getStatus().isSuccess()) {
+					// Utils.log(TAG, "joinApplication() -> success");
+					// // onApplicationConnected(result.getApplicationMetadata(), result.getApplicationStatus(), result.getSessionId(),
+					// // result.getWasLaunched());
+					// } else {
+					// Utils.log(TAG, "joinApplication() -> failure");
+					// // onApplicationConnectionFailed(result.getStatus().getStatusCode());
+					// }
+					// }
+					// });
+					// } else {
+
 					Utils.log(TAG, "----- try setMessageReceivedCallbacks. StatusCode=" + status.getStatusCode() + " / namespace=" + CAST_NAMESPACE);
 					storeToDefaultSharedPreferences(context, PREFS_KEY_SESSION_ID, result.getSessionId());
 					Cast.CastApi.setMessageReceivedCallbacks(mApiClient, CAST_NAMESPACE, incomingMsgHandler);
+					// }
 				} catch (IOException e) {
 					Log.e(TAG, "Exception while creating channel", e);
 				}
@@ -311,6 +353,8 @@ public class CastHelper {
 		public void onConnected(Bundle bundle) {
 			Utils.log(TAG, "----- GoogleApiClient.ConnectionCallbacks - onConnected - bundle = " + bundle);
 			try {
+
+				Utils.log(TAG, "----- GoogleApiClient.ConnectionCallbacks - launchApplication - mApiClient = " + mApiClient);
 				Cast.CastApi.launchApplication(mApiClient, CAST_APP_ID, false).setResultCallback(connectionResultCallback);
 			} catch (Exception e) {
 				Log.e(TAG, "Failed to launch application", e);
@@ -544,7 +588,9 @@ public class CastHelper {
 	// ----------------------
 	@SuppressLint("NewApi")
 	private void storeToDefaultSharedPreferences(Context context, String key, String value) {
-		Utils.log(TAG, "----------- storeToDefaultSharedPreferences, key=" + key + " / value=" + value);
+		Utils.log(TAG, "----------- storeToDefaultSharedPreferences...");
+		Utils.log(TAG, "-- key   = " + key);
+		Utils.log(TAG, "-- value = " + value);
 		SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
 		if (null == value) {
 			// we want to remove
@@ -556,8 +602,10 @@ public class CastHelper {
 
 	private String getFromDefaultSharedPreferences(Context context, String key) {
 		SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
-		String value = pref.getString(key, "DefaultCastPrefs");
-		Utils.log(TAG, "----------- getFromDefaultSharedPreferences, key=" + key + " / value=" + value);
+		String value = pref.getString(key, "DummyDefaultCastPrefs");
+		Utils.log(TAG, "----------- getFromDefaultSharedPreferences...");
+		Utils.log(TAG, "-- key   = " + key);
+		Utils.log(TAG, "-- value = " + value);
 		return value;
 	}
 
@@ -572,10 +620,35 @@ public class CastHelper {
 		}
 	}
 
-	private void clearNotification() {
-		Notifications notification = new Notifications(context, null);
-		notification.hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
-		notification.hideStatusBarNotification(Constants.NOTIFICATION_ID_RADIO_IS_PLAYING);
+	/**
+	 * If it is a IP Address, most of the time it is a SHOUTcast or ICEcast stream.<br>
+	 * In this case append "/;" for streaming to chromecast.<br>
+	 * See http://stackoverflow.com/questions/23934513/how-to-stream-shoutcast-radio-streams-on-chromecast-receiver/24208569#24208569
+	 * 
+	 * @param url
+	 */
+	private String handleShoutcast(String stationName, String url) {
+		Utils.log(TAG, "handleShoutcastIPAdress 1: " + url);
+		int index = url.lastIndexOf(":");
+		String tmp = url.substring(index - 4, index).replace(".", "");
+		if (isNumber(tmp) || url.contains("shoutcast") || Constants.getIgnoreListKleinerAndroid22().contains(stationName)) {
+			if (url != null && url.endsWith("/")) {
+				url = url + ";";
+			} else {
+				url = url + "/;";
+			}
+		}
+		Utils.log(TAG, "handleShoutcastIPAdress 2: " + url);
+		return url;
+	}
+
+	private boolean isNumber(String string) {
+		try {
+			Integer.valueOf(string);
+			return true;
+		} catch (NumberFormatException e) {
+			return false;
+		}
 	}
 
 }

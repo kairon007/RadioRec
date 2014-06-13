@@ -16,6 +16,21 @@ public class Notifications {
 		this.intent = theIntent;
 	}
 
+	/**
+	 * clss may be null
+	 * 
+	 * @param context
+	 * @param clss
+	 * @return
+	 */
+	public static Notifications getNotifInstance(Context context, Class<?> clss) {
+		if (clss != null) {
+			return new Notifications(context, new Intent(context, clss));
+		} else {
+			return new Notifications(context, null);
+		}
+	}
+
 	public void showStatusBarNotificationError(int errorRessourceString) {
 
 		// mögliche Notification löschen und danach neu anzeigen

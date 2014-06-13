@@ -75,12 +75,12 @@ public class Utils {
 		return progressDialog;
 	}
 
-	public static Notifications getNotifInstance(Context context, Class<?> clss) {
-		return new Notifications(context, new Intent(context, clss));
+	public static void clearPlayingNotification(Context context) {
+		Notifications.getNotifInstance(context, null).hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
+		Notifications.getNotifInstance(context, null).hideStatusBarNotification(Constants.NOTIFICATION_ID_RADIO_IS_PLAYING);
 	}
 
 	public static boolean hasValidKey() {
-		// String key = Constants.ANTI_ADS_VALUE;
 		SharedPreferences settings = ApplicationRadioRec.getAppContext().getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
 		String key = settings.getString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_VALUE);
 		if (key != null && ((key.trim().startsWith("rR+") && key.trim().endsWith("so@p")) || (key.trim().startsWith("rr") && key.trim().endsWith("so")))) {
@@ -330,7 +330,7 @@ public class Utils {
 					dl.put(f.getInt(f.getName()), f.getName());
 				}
 			} catch (Exception e) {
-				log(TAG, "Cannot get drawables ! " + e);
+				Log.e(TAG, "Cannot get drawables ! ", e);
 			}
 		}
 		return dl;
