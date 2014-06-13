@@ -89,6 +89,7 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_CRAZY_SANCTUS);
 		ignoreList.add(Stations.RADIO_CRAZY_JAZZ_SWING);
 		ignoreList.add(Stations.RADIO_CRAZY_MODERN_JAZZ);
+		ignoreList.add(Stations.RADIO_FC_SION_LIVE_RADIO);
 
 		return ignoreList;
 	}
