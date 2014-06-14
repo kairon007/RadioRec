@@ -8,9 +8,9 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.rothconsulting.android.radiorec.ApplicationRadioRec;
+import com.rothconsulting.android.common.CustomApplication;
+import com.rothconsulting.android.common.Utils;
 import com.rothconsulting.android.radiorec.Constants;
-import com.rothconsulting.android.radiorec.Utils;
 
 public class RadioRecBillingHelper {
 
@@ -50,7 +50,7 @@ public class RadioRecBillingHelper {
 	 */
 	public static boolean isDonator() {
 		iabHelper = null;
-		context = ApplicationRadioRec.getAppContext();
+		context = CustomApplication.getAppContext();
 		if (Utils.hasValidKey()) {
 			isDonator = true;
 		}

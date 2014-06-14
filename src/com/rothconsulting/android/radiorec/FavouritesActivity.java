@@ -28,6 +28,9 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.rothconsulting.android.common.AdMob;
+import com.rothconsulting.android.common.AnalyticsUtil;
+import com.rothconsulting.android.common.Utils;
 import com.rothconsulting.android.radiorec.sqlitedb.DbUtils;
 
 public class FavouritesActivity extends ActionBarListActivity {

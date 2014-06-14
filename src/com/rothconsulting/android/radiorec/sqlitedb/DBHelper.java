@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.rothconsulting.android.radiorec.Utils;
+import com.rothconsulting.android.common.Utils;
 
 public class DBHelper extends SQLiteOpenHelper {
 

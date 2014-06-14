@@ -1,8 +1,8 @@
-package com.rothconsulting.android.radiorec;
+package com.rothconsulting.android.common;
 
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
-import com.rothconsulting.android.radiorec.ApplicationRadioRec.TrackerName;
+import com.rothconsulting.android.common.CustomApplication.TrackerName;
 
 public class AnalyticsUtil {
 
@@ -44,6 +44,6 @@ public class AnalyticsUtil {
 	 */
 	private static Tracker getTracker() {
 		// Get GoogleAnalytics tracker
-		return ApplicationRadioRec.getApplication().getTracker(TrackerName.APP_TRACKER);
+		return CustomApplication.getApplication().getTracker(TrackerName.APP_TRACKER);
 	}
 }

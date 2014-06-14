@@ -10,8 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.rothconsulting.android.common.Utils;
 import com.rothconsulting.android.radiorec.R;
-import com.rothconsulting.android.radiorec.Utils;
 
 public class FileArrayAdapter extends ArrayAdapter<Option> {
 

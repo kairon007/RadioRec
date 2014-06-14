@@ -1,4 +1,4 @@
-package com.rothconsulting.android.radiorec;
+package com.rothconsulting.android.common;
 
 import android.app.Activity;
 import android.view.View;
@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
+import com.rothconsulting.android.radiorec.R;
 
 public class AdMob {
 

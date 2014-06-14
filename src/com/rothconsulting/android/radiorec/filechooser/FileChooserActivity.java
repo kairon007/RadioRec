@@ -23,14 +23,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.rothconsulting.android.common.AdMob;
+import com.rothconsulting.android.common.AnalyticsUtil;
+import com.rothconsulting.android.common.Utils;
 import com.rothconsulting.android.radiorec.ActionBarListActivity;
-import com.rothconsulting.android.radiorec.AdMob;
-import com.rothconsulting.android.radiorec.AnalyticsUtil;
 import com.rothconsulting.android.radiorec.Constants;
 import com.rothconsulting.android.radiorec.DonateActivity;
 import com.rothconsulting.android.radiorec.R;
 import com.rothconsulting.android.radiorec.SettingsActivity;
-import com.rothconsulting.android.radiorec.Utils;
 
 public class FileChooserActivity extends ActionBarListActivity {
 

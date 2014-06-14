@@ -40,10 +40,10 @@ import com.rothconsulting.android.billing.util.IabResult;
 import com.rothconsulting.android.billing.util.Inventory;
 import com.rothconsulting.android.billing.util.Purchase;
 import com.rothconsulting.android.billing.util.RadioRecBillingHelper;
-import com.rothconsulting.android.radiorec.AdMob;
-import com.rothconsulting.android.radiorec.AnalyticsUtil;
+import com.rothconsulting.android.common.AdMob;
+import com.rothconsulting.android.common.AnalyticsUtil;
+import com.rothconsulting.android.common.Utils;
 import com.rothconsulting.android.radiorec.R;
-import com.rothconsulting.android.radiorec.Utils;
 
 public class BillingActivity extends ActionBarActivity {
 

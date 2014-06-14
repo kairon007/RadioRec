@@ -5,6 +5,8 @@ import java.util.concurrent.ExecutionException;
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 
+import com.rothconsulting.android.common.Utils;
+
 import android.content.Context;
 import android.os.AsyncTask;
 
@@ -128,7 +130,7 @@ public class WebTool {
 	protected String getPlanetradioToken(Context context) {
 		Utils utils = new Utils();
 		String token = "";
-		if (utils.isNetworkAvailable(context, null, false)) {
+		if (Utils.isNetworkAvailable(context, null, false)) {
 			String url = "http://webradio.planetradio.de/planetradio-webradio/wController/Webradio/wAction/showstation/wFormat/ajax/wWebradio/planet/wNewquality/hq/webradioAjax.html";
 			String findString = "'file': '";
 			String endString = "'";
@@ -160,7 +162,7 @@ public class WebTool {
 	protected String getJugglerzFileName(Context context) {
 		Utils utils = new Utils();
 		String token = "";
-		if (utils.isNetworkAvailable(context, null, false)) {
+		if (Utils.isNetworkAvailable(context, null, false)) {
 			String url = "http://www.jugglerz.de/";
 			String findString = "<a href=\"http://www.jugglerz.de/shows/";
 			String endString = ".mp3\"><img ";

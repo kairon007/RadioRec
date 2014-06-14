@@ -2,6 +2,8 @@ package com.rothconsulting.android.radiorec;
 
 import java.io.IOException;
 
+import com.rothconsulting.android.common.Utils;
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;

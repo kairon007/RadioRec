@@ -7,9 +7,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.widget.TextView;
 
+import com.rothconsulting.android.common.Utils;
 import com.rothconsulting.android.radiorec.Constants;
 import com.rothconsulting.android.radiorec.Stations;
-import com.rothconsulting.android.radiorec.Utils;
 
 public class DbUtils {
 

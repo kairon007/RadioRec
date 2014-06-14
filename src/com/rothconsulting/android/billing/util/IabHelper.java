@@ -36,7 +36,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.vending.billing.IInAppBillingService;
-import com.rothconsulting.android.radiorec.Utils;
+import com.rothconsulting.android.common.Utils;
 
 /**
  * Provides convenience methods for in-app billing. You can create one instance of this class for your application and use it to process in-app billing

@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.rothconsulting.android.radiorec.Utils;
+import com.rothconsulting.android.common.Utils;
 
 public class DbAdapter {
 

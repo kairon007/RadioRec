@@ -31,11 +31,11 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.images.WebImage;
-import com.rothconsulting.android.radiorec.AnalyticsUtil;
-import com.rothconsulting.android.radiorec.ApplicationRadioRec;
+import com.rothconsulting.android.common.AnalyticsUtil;
+import com.rothconsulting.android.common.CustomApplication;
+import com.rothconsulting.android.common.Utils;
 import com.rothconsulting.android.radiorec.Constants;
 import com.rothconsulting.android.radiorec.R;
-import com.rothconsulting.android.radiorec.Utils;
 
 public class CastHelper {
 
@@ -491,7 +491,7 @@ public class CastHelper {
 							mReconnectionTask.cancel(true);
 						}
 					});
-					dlg.setButton(ProgressDialog.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
+					dlg.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
 
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
@@ -616,7 +616,7 @@ public class CastHelper {
 		if (context != null) {
 			return context;
 		} else {
-			return ApplicationRadioRec.getAppContext();
+			return CustomApplication.getAppContext();
 		}
 	}
 

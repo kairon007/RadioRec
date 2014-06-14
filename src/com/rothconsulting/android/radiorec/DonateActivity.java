@@ -22,6 +22,9 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.rothconsulting.android.billing.BillingActivity;
+import com.rothconsulting.android.common.AdMob;
+import com.rothconsulting.android.common.AnalyticsUtil;
+import com.rothconsulting.android.common.Utils;
 
 public class DonateActivity extends ActionBarActivity {
 

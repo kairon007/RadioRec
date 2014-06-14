@@ -1,4 +1,4 @@
-package com.rothconsulting.android.radiorec;
+package com.rothconsulting.android.common;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -30,6 +30,11 @@ import android.view.Display;
 
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.rothconsulting.android.cast.CastHelper;
+import com.rothconsulting.android.radiorec.Constants;
+import com.rothconsulting.android.radiorec.Notifications;
+import com.rothconsulting.android.radiorec.R;
+import com.rothconsulting.android.radiorec.Stations;
+import com.rothconsulting.android.radiorec.StringComperator;
 
 public class Utils {
 
@@ -81,7 +86,7 @@ public class Utils {
 	}
 
 	public static boolean hasValidKey() {
-		SharedPreferences settings = ApplicationRadioRec.getAppContext().getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
+		SharedPreferences settings = CustomApplication.getAppContext().getSharedPreferences(Constants.PREFERENCES_FILE, Context.MODE_PRIVATE);
 		String key = settings.getString(Constants.ANTI_ADS_KEY, Constants.ANTI_ADS_VALUE);
 		if (key != null && ((key.trim().startsWith("rR+") && key.trim().endsWith("so@p")) || (key.trim().startsWith("rr") && key.trim().endsWith("so")))) {
 			return true;

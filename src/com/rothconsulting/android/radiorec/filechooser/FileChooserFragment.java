@@ -23,13 +23,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.rothconsulting.android.radiorec.AdMob;
-import com.rothconsulting.android.radiorec.AnalyticsUtil;
-import com.rothconsulting.android.radiorec.ApplicationRadioRec;
+import com.rothconsulting.android.common.AdMob;
+import com.rothconsulting.android.common.AnalyticsUtil;
+import com.rothconsulting.android.common.CustomApplication;
+import com.rothconsulting.android.common.Utils;
 import com.rothconsulting.android.radiorec.Constants;
 import com.rothconsulting.android.radiorec.R;
 import com.rothconsulting.android.radiorec.SettingsActivity;
-import com.rothconsulting.android.radiorec.Utils;
 
 public class FileChooserFragment extends ListFragment {
 
@@ -101,7 +101,7 @@ public class FileChooserFragment extends ListFragment {
 		adapter.notifyDataSetChanged();
 		getFileList(currentDir);
 
-		Toast.makeText(ApplicationRadioRec.getAppContext(), filename + " " + getString(R.string.deleted), Toast.LENGTH_SHORT).show();
+		Toast.makeText(CustomApplication.getAppContext(), filename + " " + getString(R.string.deleted), Toast.LENGTH_SHORT).show();
 	}
 
 	@Override
@@ -145,7 +145,7 @@ public class FileChooserFragment extends ListFragment {
 		AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "FileChooser", "currentDir: " + f.getName());
 		AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "FileChooser", "No. files: " + fls.size());
 
-		adapter = new FileArrayAdapter(ApplicationRadioRec.getAppContext(), R.layout.file_list_item, dir);
+		adapter = new FileArrayAdapter(CustomApplication.getAppContext(), R.layout.file_list_item, dir);
 		setListAdapter(adapter);
 	}
 
@@ -163,7 +163,7 @@ public class FileChooserFragment extends ListFragment {
 						@Override
 						public void onClick(DialogInterface dialog, int id) {
 							deleteFile(fileToDelete);
-							Toast.makeText(ApplicationRadioRec.getAppContext(), fileToDelete + " " + getString(R.string.deleted), Toast.LENGTH_SHORT).show();
+							Toast.makeText(CustomApplication.getAppContext(), fileToDelete + " " + getString(R.string.deleted), Toast.LENGTH_SHORT).show();
 							Utils.log(TAG, "Delete file: " + fileToDelete);
 						}
 					}).setNegativeButton(getString(R.string.neinDanke), new DialogInterface.OnClickListener() {
@@ -185,7 +185,7 @@ public class FileChooserFragment extends ListFragment {
 					.setIcon(android.R.drawable.ic_dialog_alert).setPositiveButton(getString(R.string.settings), new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int id) {
-							startActivity(new Intent(ApplicationRadioRec.getAppContext(), SettingsActivity.class));
+							startActivity(new Intent(CustomApplication.getAppContext(), SettingsActivity.class));
 						}
 					}).setNegativeButton(getString(android.R.string.cancel), new DialogInterface.OnClickListener() {
 						@Override

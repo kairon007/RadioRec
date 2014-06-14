@@ -1,4 +1,4 @@
-package com.rothconsulting.android.radiorec;
+package com.rothconsulting.android.common;
 
 import java.util.HashMap;
 
@@ -7,8 +7,10 @@ import android.content.Context;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
+import com.rothconsulting.android.radiorec.Constants;
+import com.rothconsulting.android.radiorec.R;
 
-public class ApplicationRadioRec extends Application {
+public class CustomApplication extends Application {
 
 	private static Context context;
 
@@ -21,9 +23,9 @@ public class ApplicationRadioRec extends Application {
 		return context;
 	}
 
-	public static ApplicationRadioRec getApplication() {
-		Application application = (Application) ApplicationRadioRec.getAppContext();
-		ApplicationRadioRec app = (ApplicationRadioRec) application;
+	public static CustomApplication getApplication() {
+		Application application = (Application) CustomApplication.getAppContext();
+		CustomApplication app = (CustomApplication) application;
 		return app;
 	}
 
