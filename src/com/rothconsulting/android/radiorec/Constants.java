@@ -10,7 +10,7 @@ public class Constants {
 	 * 
 	 * @return
 	 */
-	public static final List<String> getIgnoreListKleinerAndroid22() {
+	public static final List<String> getIgnoreListShoutcast() {
 		List<String> ignoreList = new ArrayList<String>();
 		ignoreList.add(Stations.RADIO_KANAL_K);
 		ignoreList.add(Stations.RADIO_SEEFUNK);
@@ -27,8 +27,16 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_CENTRAL);
 		ignoreList.add(Stations.RADIO_CENTRAL_ROCK);
 		ignoreList.add(Stations.RADIO_CENTRAL_SWISS);
+		ignoreList.add(Stations.RADIO_CENTRAL_LAENDLER);
+		ignoreList.add(Stations.RADIO_CENTRAL_COUNTRY);
+		ignoreList.add(Stations.RADIO_CENTRAL_DANCE);
+		ignoreList.add(Stations.RADIO_CENTRAL_CHARTS);
+		ignoreList.add(Stations.RADIO_CENTRAL_HIP_HOP);
+		ignoreList.add(Stations.RADIO_CENTRAL_JAZZ);
+		ignoreList.add(Stations.RADIO_CENTRAL_FUNK);
+		ignoreList.add(Stations.RADIO_CENTRAL_SPEZIAL);
 		ignoreList.add(Stations.RADIO_EVIVA);
-		ignoreList.add(Stations.RADIO_GRISCHA);
+		// ignoreList.add(Stations.RADIO_GRISCHA);
 		ignoreList.add(Stations.RADIO_OE1);
 		ignoreList.add(Stations.RADIO_OE3);
 		ignoreList.add(Stations.RADIO_FM4);
@@ -39,7 +47,7 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_OBEROESTERREICH);
 		ignoreList.add(Stations.RADIO_NIEDEROESTERREICH);
 		ignoreList.add(Stations.RADIO_WAVE);
-		ignoreList.add(Stations.RADIO_TOP100STATION);
+		// ignoreList.add(Stations.RADIO_TOP100STATION);
 		ignoreList.add(Stations.RADIO_ROCK_STATION);
 		ignoreList.add(Stations.RADIO_STAR_FM);
 		ignoreList.add(Stations.RADIO_STAR_FM_FROM_HELL);
@@ -48,7 +56,7 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_LEGENDE);
 		ignoreList.add(Stations.RADIO_GONG_NUERNBERG);
 		ignoreList.add(Stations.RADIO_PALOMA);
-		ignoreList.add(Stations.RADIO_DREYECKLAND);
+		// ignoreList.add(Stations.RADIO_DREYECKLAND);
 		ignoreList.add(Stations.RADIO_PULS_RADIO);
 		ignoreList.add(Stations.RADIO_100_5_DAS_HITRADIO);
 		ignoreList.add(Stations.RADIO_KIEPENKERL);
@@ -60,16 +68,15 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_H1_RADIO_HITTNAU);
 		ignoreList.add(Stations.RADIO_IISCHERS_RADIO);
 		ignoreList.add(Stations.RADIO_ARABELLA_AT);
-		ignoreList.add(Stations.RADIO_TECHNOBASE_FM);
-		ignoreList.add(Stations.RADIO_HARDBASE_FM);
 		ignoreList.add(Stations.RADIO_HOUSETIME_FM);
 		ignoreList.add(Stations.RADIO_PLANET_FM);
 		ignoreList.add(Stations.RADIO_886);
 		ignoreList.add(Stations.RADIO_SHOUTED_FM);
-		ignoreList.add(Stations.RADIO_SHOUTED_FM_BREAK);
 		ignoreList.add(Stations.RADIO_SHOUTED_FM_CLUB);
 		ignoreList.add(Stations.RADIO_SHOUTED_FM_ELECTRO);
+		ignoreList.add(Stations.RADIO_SHOUTED_FM_BREAK);
 		ignoreList.add(Stations.RADIO_SHOUTED_FM_HOUSE);
+		ignoreList.add(Stations.RADIO_SHOUTED_FM_ALTERNATIVE);
 		ignoreList.add(Stations.RADIO_RTL_LUXEMBOURG);
 		ignoreList.add(Stations.RADIO_OTTO_FM);
 		ignoreList.add(Stations.RADIO_ZWICKAU);
@@ -91,6 +98,23 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_CRAZY_MODERN_JAZZ);
 		ignoreList.add(Stations.RADIO_FC_SION_LIVE_RADIO);
 		ignoreList.add(Stations.RADIO_REVIVAL_KULT);
+		ignoreList.add(Stations.RADIO_SWISS_MOUNTAIN_HOLIDAY);
+		ignoreList.add(Stations.RADIO_JUGGLERZ_DANCEHALL);
+		ignoreList.add(Stations.RADIO_SCHWANY_OBERKRAIN);
+		ignoreList.add(Stations.RADIO_SCHWANY_VOLKSTUEMLICH);
+		ignoreList.add(Stations.RADIO_CHARIVARI_NUERNBERG);
+		ignoreList.add(Stations.RADIO_HIT_RADIO_N1);
+		ignoreList.add(Stations.RADIO_HITRADIO_RTL_SACHSEN);
+		ignoreList.add(Stations.RADIO_MUSICBASE_FM_DANCE);
+		ignoreList.add(Stations.RADIO_FK_AUSTRIA_WIEN);
+		ignoreList.add(Stations.RADIO_SK_RAPID_WIEN);
+		ignoreList.add(Stations.RADIO_FC_REDBULL_SALBURG);
+		ignoreList.add(Stations.RADIO_SK_PUNTIGAMER_STURM_GRAZ);
+		ignoreList.add(Stations.RADIO_MUSICBASE_FM_DANCE);
+		ignoreList.add(Stations.RADIO_HOLIDAY);
+		ignoreList.add(Stations.RADIO_CITTA_FUTURA);
+		ignoreList.add(Stations.RADIO_MRS_905);
+		ignoreList.add(Stations.RADIO_ENERGY_98_USA);
 
 		return ignoreList;
 	}
@@ -108,7 +132,7 @@ public class Constants {
 		liveStreamStationList.add(Stations.RADIO_BVB_NETRADIO);
 		liveStreamStationList.add(Stations.RADIO_FK_AUSTRIA_WIEN);
 		liveStreamStationList.add(Stations.RADIO_SK_RAPID_WIEN);
-		liveStreamStationList.add(Stations.RADIO_SK_PUNTIGAMER_STURM_FRAZ);
+		liveStreamStationList.add(Stations.RADIO_SK_PUNTIGAMER_STURM_GRAZ);
 		liveStreamStationList.add(Stations.RADIO_FC_REDBULL_SALBURG);
 		liveStreamStationList.add(Stations.RADIO_HOCKEY_FANRADIO);
 		liveStreamStationList.add(Stations.RADIO_RWW_EHC_WINTERTHUR);

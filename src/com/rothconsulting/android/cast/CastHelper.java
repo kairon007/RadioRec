@@ -19,6 +19,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.cast.Cast;
+import com.google.android.gms.cast.Cast.ApplicationConnectionResult;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.cast.CastMediaControlIntent;
 import com.google.android.gms.cast.MediaInfo;
@@ -169,6 +170,8 @@ public class CastHelper {
 			Utils.log(TAG, " - router=" + router);
 			Utils.log(TAG, " - route=" + routeInfo);
 			Utils.log(TAG, " - routeId=" + routeInfo.getId());
+			storeToDefaultSharedPreferences(context, PREFS_KEY_ROUTE_ID, null);
+			storeToDefaultSharedPreferences(context, PREFS_KEY_SESSION_ID, null);
 			setSelectedDevice(null);
 		}
 	};
@@ -274,6 +277,9 @@ public class CastHelper {
 		} else {
 			if (mApiClient != null) {
 				disconnectApiClient();
+				storeToDefaultSharedPreferences(context, PREFS_KEY_SESSION_ID, null);
+				storeToDefaultSharedPreferences(context, PREFS_KEY_ROUTE_ID, null);
+
 				Utils.clearPlayingNotification(getContext());
 			}
 			mMediaRouter.selectRoute(mMediaRouter.getDefaultRoute());
@@ -287,6 +293,7 @@ public class CastHelper {
 			Utils.log(TAG, "----- Cast.Listener - onApplicationDisconnected - statusCode = " + statusCode);
 			try {
 				Utils.log(TAG, "----- Cast.Listener - onApplicationDisconnected - removeMessageReceivedCallbacks - namespace = " + CAST_NAMESPACE);
+
 				Cast.CastApi.removeMessageReceivedCallbacks(mApiClient, CAST_NAMESPACE);
 			} catch (IOException e) {
 				Log.w(TAG, "Exception while launching application", e);
@@ -312,31 +319,6 @@ public class CastHelper {
 				castApplicationStarted = true;
 
 				try {
-
-					// Joining sessions: https://developers.google.com/cast/docs/android_sender
-
-					// Cast.CastApi.joinApplication() with both an application ID and a session ID will only succeed if that particular instance of that
-					// application is still running.
-					// String sessionId = getFromDefaultSharedPreferences(context, PREFS_KEY_SESSION_ID);
-					// if (!isConnected() && sessionId != null) {
-					// Utils.log(TAG, "joinApplication() -> start");
-					// Cast.CastApi.joinApplication(mApiClient, CAST_APP_ID, sessionId).setResultCallback(
-					// new ResultCallback<Cast.ApplicationConnectionResult>() {
-					//
-					// @Override
-					// public void onResult(ApplicationConnectionResult result) {
-					// if (result.getStatus().isSuccess()) {
-					// Utils.log(TAG, "joinApplication() -> success");
-					// // onApplicationConnected(result.getApplicationMetadata(), result.getApplicationStatus(), result.getSessionId(),
-					// // result.getWasLaunched());
-					// } else {
-					// Utils.log(TAG, "joinApplication() -> failure");
-					// // onApplicationConnectionFailed(result.getStatus().getStatusCode());
-					// }
-					// }
-					// });
-					// } else {
-
 					Utils.log(TAG, "----- try setMessageReceivedCallbacks. StatusCode=" + status.getStatusCode() + " / namespace=" + CAST_NAMESPACE);
 					storeToDefaultSharedPreferences(context, PREFS_KEY_SESSION_ID, result.getSessionId());
 					Cast.CastApi.setMessageReceivedCallbacks(mApiClient, CAST_NAMESPACE, incomingMsgHandler);
@@ -348,14 +330,40 @@ public class CastHelper {
 		}
 	};
 
-	private final GoogleApiClient.ConnectionCallbacks connectionCallback = new GoogleApiClient.ConnectionCallbacks() {
+	private final GoogleApiClient.ConnectionCallbacks connectionCallback = new GoogleApiClient.ConnectionCallbacks() {//
+
+		// Joining sessions: https://developers.google.com/cast/docs/android_sender
+		// Cast.CastApi.joinApplication() with both an application ID and a session ID will only succeed if that particular instance of that application is
+		// still running.
+
 		@Override
 		public void onConnected(Bundle bundle) {
 			Utils.log(TAG, "----- GoogleApiClient.ConnectionCallbacks - onConnected - bundle = " + bundle);
 			try {
 
-				Utils.log(TAG, "----- GoogleApiClient.ConnectionCallbacks - launchApplication - mApiClient = " + mApiClient);
-				Cast.CastApi.launchApplication(mApiClient, CAST_APP_ID, false).setResultCallback(connectionResultCallback);
+				String sessionId = getFromDefaultSharedPreferences(context, PREFS_KEY_SESSION_ID);
+				if (!isConnected() && sessionId != null) {
+
+					Utils.log(TAG, "joinApplication() -> start");
+					Cast.CastApi.joinApplication(mApiClient, CAST_APP_ID, sessionId).setResultCallback(new ResultCallback<Cast.ApplicationConnectionResult>() {
+
+						@Override
+						public void onResult(ApplicationConnectionResult result) {
+							if (result.getStatus().isSuccess()) {
+								Utils.log(TAG, "joinApplication() -> success");
+								// onApplicationConnected(result.getApplicationMetadata(), result.getApplicationStatus(), result.getSessionId(),
+								// result.getWasLaunched());
+							} else {
+								Utils.log(TAG, "joinApplication() -> failure");
+								// onApplicationConnectionFailed(result.getStatus().getStatusCode());
+							}
+						}
+					});
+				} else {
+					Utils.log(TAG, "----- GoogleApiClient.ConnectionCallbacks - launchApplication - mApiClient = " + mApiClient);
+					Cast.CastApi.launchApplication(mApiClient, CAST_APP_ID, false).setResultCallback(connectionResultCallback);
+				}
+
 			} catch (Exception e) {
 				Log.e(TAG, "Failed to launch application", e);
 			}
@@ -629,9 +637,7 @@ public class CastHelper {
 	 */
 	private String handleShoutcast(String stationName, String url) {
 		Utils.log(TAG, "handleShoutcastIPAdress 1: " + url);
-		int index = url.lastIndexOf(":");
-		String tmp = url.substring(index - 4, index).replace(".", "");
-		if (isNumber(tmp) || url.contains("shoutcast") || Constants.getIgnoreListKleinerAndroid22().contains(stationName)) {
+		if (url.contains("shoutcast") || Constants.getIgnoreListShoutcast().contains(stationName)) {
 			if (url != null && url.endsWith("/")) {
 				url = url + ";";
 			} else {
@@ -640,15 +646,6 @@ public class CastHelper {
 		}
 		Utils.log(TAG, "handleShoutcastIPAdress 2: " + url);
 		return url;
-	}
-
-	private boolean isNumber(String string) {
-		try {
-			Integer.valueOf(string);
-			return true;
-		} catch (NumberFormatException e) {
-			return false;
-		}
 	}
 
 }

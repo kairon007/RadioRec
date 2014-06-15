@@ -177,7 +177,10 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	protected void onPause() {
 		Utils.log(TAG, "--- onPause()");
 		if (isFinishing()) {
+			Utils.log(TAG, "isFinishing -> removeCallback");
 			castHelper.mMediaRouter.removeCallback(castHelper.mediaRouterCallback);
+		} else {
+			Utils.log(TAG, "is NOT Finishing -> doing nothing");
 		}
 		super.onPause();
 	}
@@ -567,27 +570,8 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		setFavIconStar();
 
 		Utils.log(TAG, "castHelper.isConnected() = " + castHelper.isConnected());
-		if (castHelper.isConnected()) {
-			Utils.log(TAG, "Playing: " + playing);
-			// stop local playing in all cases
-			getRadioPlayer().doStopPlay(this);
-
-			if (playing) {
-				Utils.log(TAG, "castHelper.play(...)");
-				// if local player is playing - stop it
-				int imageResId = (Integer) map.get(Stations.ICON);
-				castHelper.play(Constants.SELECTED_STATION_NAME_VALUE, Constants.URL_LIVE_STREAM_VALUE, Utils.getCastImageUrl(imageResId));
-
-				Utils.log(TAG, "castHelper.play(...) - show statusbar info");
-				Intent intent = new Intent(context, DonateActivity.class);
-				intent.putExtra(Constants.FROM_NOTIFICATION, Constants.FROM_NOTIFICATION);
-				Notifications notification = new Notifications(context, intent);
-				notification.hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
-				notification.showStatusBarNotificationIsRunning(true);
-			} else {
-				Utils.log(TAG, "Cast pause()");
-				castHelper.pause();
-			}
+		if (castHelper.isConnected() && !Constants.SELECTED_STATION_NAME_VALUE.equalsIgnoreCase(Stations.RADIO_JUGGLERZ)) {
+			handleCast((Integer) map.get(Stations.ICON));
 		} else {
 			if (!firstStart && playing) {
 				if (Constants.getLiveStreamStations().contains(Constants.SELECTED_STATION_NAME_VALUE)) {
@@ -601,8 +585,12 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 					Constants.URL_LIVE_STREAM_VALUE = Constants.URL_LIVE_STREAM_VALUE + webtool.getJugglerzFileName(this);
 					Utils.log(TAG, "*********** new Stream=" + Constants.URL_LIVE_STREAM_VALUE);
 				}
-				getRadioPlayer().doStartPlay(this);
-				// getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+				if (castHelper.isConnected()) {
+					handleCast((Integer) map.get(Stations.ICON));
+				} else {
+					getRadioPlayer().doStartPlay(this);
+					// getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+				}
 
 			} else {
 				this.stopPlay();
@@ -618,6 +606,28 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		Utils.storePreferences(this);
 
 		Utils.log(TAG, "++ changeStation STOP");
+	}
+
+	private void handleCast(int imageResId) {
+		Utils.log(TAG, "Playing: " + playing);
+		// stop local playing in all cases
+		getRadioPlayer().doStopPlay(this);
+
+		if (playing) {
+			Utils.log(TAG, "castHelper.play(...)");
+			// if local player is playing - stop it
+			castHelper.play(Constants.SELECTED_STATION_NAME_VALUE, Constants.URL_LIVE_STREAM_VALUE, Utils.getCastImageUrl(imageResId));
+
+			Utils.log(TAG, "castHelper.play(...) - show statusbar info");
+			Intent intent = new Intent(context, DonateActivity.class);
+			intent.putExtra(Constants.FROM_NOTIFICATION, Constants.FROM_NOTIFICATION);
+			Notifications notification = new Notifications(context, intent);
+			notification.hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
+			notification.showStatusBarNotificationIsRunning(true);
+		} else {
+			Utils.log(TAG, "Cast pause()");
+			castHelper.pause();
+		}
 	}
 
 	protected static RadioPlayer getRadioPlayer() {

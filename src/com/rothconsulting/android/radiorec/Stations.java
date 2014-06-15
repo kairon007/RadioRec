@@ -444,7 +444,7 @@ public class Stations {
 	public static final String RADIO_FK_AUSTRIA_WIEN = "FK Austria Wien";
 	public static final String RADIO_SK_RAPID_WIEN = "SK Rapid Wien";
 	public static final String RADIO_FC_REDBULL_SALBURG = "FC Red Bull Salzburg";
-	public static final String RADIO_SK_PUNTIGAMER_STURM_FRAZ = "SK Puntigamer Sturm Graz";
+	public static final String RADIO_SK_PUNTIGAMER_STURM_GRAZ = "SK Puntigamer Sturm Graz";
 	public static final String RADIO_SUPER_GAUDI = "Super Gaudi";
 	public static final String RADIO_SUPER_GAUDI_HOT = "Super Gaudi Hot";
 	public static final String RADIO_SUPER_GAUDI_ALPENGLUEHN = "Super Gaudi Alpenglühn";
@@ -2535,7 +2535,7 @@ public class Stations {
 		m.put(NAME, RADIO_TOP100STATION);
 		m.put(ICON, R.drawable.radio_top100station);
 		m.put(ICON_SMALL, R.drawable.radio_top100station_small);
-		m.put(STREAM, "http://87.230.101.49:80");
+		m.put(STREAM, "http://87.230.101.49");
 		m.put(HOMEPAGE, "http://www.top100station.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://mobile.top100station.de/index.php?mobilesite=20");
@@ -2574,7 +2574,7 @@ public class Stations {
 		m.put(NAME, RADIO_SALUE);
 		m.put(ICON, R.drawable.radio_salue);
 		m.put(ICON_SMALL, R.drawable.radio_salue_small);
-		m.put(STREAM, "http://62.27.26.45/radiosalue/livestream64m.mp3");
+		m.put(STREAM, "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radiosalue/livestream.mp3");
 		m.put(HOMEPAGE, "http://www.radiosalue.de");
 		m.put(WEBCAM, "http://www.salue.de/img2/studio.jpg");
 		m.put(EMAIL, "http://www.salue.de/inside/kontakt.phtml");
@@ -2678,8 +2678,8 @@ public class Stations {
 		m.put(NAME, RADIO_RT1_SUEDSCHWABEN);
 		m.put(ICON, R.drawable.radio_rt1_suedschwaben);
 		m.put(ICON_SMALL, R.drawable.radio_rt1_hitradio_small);
-		m.put(STREAM, "http://62.27.47.15:8000/ps-rt1nordschwaben/livestream.mp3");
-		// m.put(STREAM, "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-rt1suedschwaben/livestream.mp3");
+		// m.put(STREAM, "http://62.27.47.15:8000/ps-rt1nordschwaben/livestream.mp3");
+		m.put(STREAM, "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-rt1suedschwaben/livestream.mp3");
 		m.put(HOMEPAGE, "http://www.rt1-suedschwaben.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.rt1-suedschwaben.de/index.php?pageid=174&puid=7");
@@ -2913,7 +2913,8 @@ public class Stations {
 		m.put(NAME, RADIO_REGENBOGEN);
 		m.put(ICON, R.drawable.radio_regenbogen);
 		m.put(ICON_SMALL, R.drawable.radio_regenbogen_small);
-		m.put(STREAM, "http://217.151.151.91:80/live");
+		// m.put(STREAM, "http://217.151.151.91:80/live");
+		m.put(STREAM, "http://srv01.regenbogen.fmstreams.de/live");
 		m.put(HOMEPAGE, "http://www.regenbogen.de");
 		m.put(WEBCAM, "http://www.regenbogen.de/content/html/shared/webcams/index.html");
 		m.put(EMAIL, "http://www.regenbogen.de/content/html/shared/studiomail/index.html");
@@ -3317,7 +3318,7 @@ public class Stations {
 		m.put(NAME, RADIO_ENERGY_SACHSEN);
 		m.put(ICON, R.drawable.radio_energy_sachsen);
 		m.put(ICON_SMALL, R.drawable.radio_energy_sachsen_small);
-		m.put(STREAM, "http://95.81.146.20/1U3VLeQEJlbJ86PZjTZdEg5iAEfwjb_Tj58M=/7813/nrj_150857.mp3");
+		m.put(STREAM, "http://95.81.146.25/1U55DjgEJMRGt1t880cIwxT0qON8Bml2XrMU=/8915/nrj_163388.mp3");
 		// m.put(STREAM, "http://149.5.240.33/WR-DE-WR57");
 		m.put(HOMEPAGE, "http://www.energy.de/sachsen");
 		m.put(WEBCAM, "http://www.energy-sachsen.de/www/extapp/webcam/images/studio.jpg");
@@ -5353,7 +5354,7 @@ public class Stations {
 		m.put(NAME, RADIO_U1_TIROL);
 		m.put(ICON, R.drawable.radio_u1_tirol);
 		m.put(ICON_SMALL, R.drawable.radio_u1_tirol_small);
-		m.put(STREAM, "http://streamplus4.ameus.de:10406");
+		m.put(STREAM, "http://streamplus42.leonex.de:24332");
 		m.put(HOMEPAGE, "http://www.u1-radio.at");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.u1-radio.at/feedback.0.html");
@@ -5415,7 +5416,7 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_SK_PUNTIGAMER_STURM_FRAZ);
+		m.put(NAME, RADIO_SK_PUNTIGAMER_STURM_GRAZ);
 		m.put(ICON, R.drawable.radio_sk_puntigamer_sturm_graz);
 		m.put(ICON_SMALL, R.drawable.radio_sk_puntigamer_sturm_graz_small);
 		m.put(STREAM, "http://live.datamatix.at:8014");
@@ -6269,7 +6270,8 @@ public class Stations {
 		m.put(NAME, RADIO_DI_CHILLOUTDREAMS);
 		m.put(ICON, R.drawable.radio_di_chilloutdream);
 		m.put(ICON_SMALL, R.drawable.radio_di_chilloutdream_small);
-		m.put(STREAM, "http://88.191.128.47:6334");
+		// m.put(STREAM, "http://88.191.128.47:6334");
+		m.put(STREAM, "http://pub7.di.fm/di_chilloutdreams_aac?type=.mp3");
 		m.put(HOMEPAGE, "http://www.di.fm/chilloutdreams");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "https://diradio.uservoice.com/clients/widgets/classic_widget?mode=full&forum_id=183400");
@@ -6386,7 +6388,7 @@ public class Stations {
 		m.put(NAME, RADIO_FLAIX);
 		m.put(ICON, R.drawable.radio_flaix);
 		m.put(ICON_SMALL, R.drawable.radio_flaix_small);
-		m.put(STREAM, "http://195.10.10.222/flaix/flaixfmnopub.mp3");
+		m.put(STREAM, "http://195.10.10.220/flaix/flaixfmnopub.mp3");
 		m.put(HOMEPAGE, "http://www.flaixfm.cat");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "webmaster@grupflaix.cat");
@@ -6477,7 +6479,7 @@ public class Stations {
 	}
 
 	private static void setStationlist(ArrayList<HashMap<String, Object>> stationList, HashMap<String, Object> m) {
-		if (Build.VERSION.SDK_INT < 8 && Constants.getIgnoreListKleinerAndroid22().contains(m.get(NAME))) {
+		if (Build.VERSION.SDK_INT < 8 && Constants.getIgnoreListShoutcast().contains(m.get(NAME))) {
 			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
 		} else {
 			stationList.add(m);
