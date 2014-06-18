@@ -2289,7 +2289,7 @@ public class Stations {
 		m.put(ICON, R.drawable.radio_bayern3);
 		m.put(ICON_SMALL, R.drawable.radio_bayern3_small);
 		m.put(STREAM, "http://br_mp3-bayern3_m.akacast.akamaistream.net/7/442/142692/v1/gnl.akacast.akamaistream.net/br_mp3_bayern3_m");
-		m.put(HOMEPAGE, "http://www.bayern2.de");
+		m.put(HOMEPAGE, "http://www.bayern3.de");
 		m.put(WEBCAM, "http://www.br-online.de/content/import/webcams/bayern3/cam7_gast.jpg");
 		m.put(EMAIL, "http://www.br.de/radio/bayern3/service/kontakt/index.html");
 		m.put(SPRACHE, SPRACHE_DE);
@@ -5568,7 +5568,7 @@ public class Stations {
 		m.put(NAME, RADIO_BLUE_MARLIN);
 		m.put(ICON, R.drawable.radio_bluemarlin);
 		m.put(ICON_SMALL, R.drawable.radio_bluemarlin_small);
-		m.put(STREAM, "http://159.253.145.177:8635");
+		m.put(STREAM, "http://s3.viastreaming.net:8635");
 		m.put(HOMEPAGE, "http://www.bluemarlinibiza.com");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.bluemarlinibiza.com/contact/contact");

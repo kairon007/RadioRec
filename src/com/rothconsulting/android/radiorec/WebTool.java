@@ -5,10 +5,11 @@ import java.util.concurrent.ExecutionException;
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 
-import com.rothconsulting.android.common.Utils;
-
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
+
+import com.rothconsulting.android.common.Utils;
 
 public class WebTool {
 
@@ -128,7 +129,6 @@ public class WebTool {
 	// }
 
 	protected String getPlanetradioToken(Context context) {
-		Utils utils = new Utils();
 		String token = "";
 		if (Utils.isNetworkAvailable(context, null, false)) {
 			String url = "http://webradio.planetradio.de/planetradio-webradio/wController/Webradio/wAction/showstation/wFormat/ajax/wWebradio/planet/wNewquality/hq/webradioAjax.html";
@@ -139,11 +139,9 @@ public class WebTool {
 			try {
 				token = tokenAsyncTask.get();
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				Log.e(TAG, "InterruptedException :-( ", e);
 			} catch (ExecutionException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				Log.e(TAG, "ExecutionException :-( ", e);
 			}
 			if (!token.equals("") && token.length() > 92) { // 93-1=92
 				token = token.trim();
@@ -160,7 +158,6 @@ public class WebTool {
 	 * @return Dateiname 'xxxx.mp3'
 	 */
 	protected String getJugglerzFileName(Context context) {
-		Utils utils = new Utils();
 		String token = "";
 		if (Utils.isNetworkAvailable(context, null, false)) {
 			String url = "http://www.jugglerz.de/";
@@ -172,11 +169,9 @@ public class WebTool {
 				token = tokenAsyncTask.get();
 				Utils.log(TAG, "++++++++++++ Token found =" + token);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				Log.e(TAG, "InterruptedException :-( ", e);
 			} catch (ExecutionException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				Log.e(TAG, "ExecutionException :-( ", e);
 			}
 			if (!token.equals("") && token.length() > 10) {
 				int index = token.indexOf(findString);

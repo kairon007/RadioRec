@@ -19,7 +19,6 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.cast.Cast;
-import com.google.android.gms.cast.Cast.ApplicationConnectionResult;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.cast.CastMediaControlIntent;
 import com.google.android.gms.cast.MediaInfo;
@@ -78,9 +77,15 @@ public class CastHelper {
 	// Constructor
 	public CastHelper(Context context) {
 		Utils.log(TAG, "--- START Constructor CastHelper(): mediaRouter and mediaRouteSelector and attachMediaChannel");
+		Utils.log(TAG, "context=" + this.context);
 		this.context = context;
+		Utils.log(TAG, "context=" + this.context);
+		Utils.log(TAG, "mMediaRouter=" + mMediaRouter);
 		mMediaRouter = MediaRouter.getInstance(getContext());
+		Utils.log(TAG, "mMediaRouter=" + mMediaRouter);
+		Utils.log(TAG, "mMediaRouteSelector=" + mMediaRouteSelector);
 		mMediaRouteSelector = new MediaRouteSelector.Builder().addControlCategory(CastMediaControlIntent.categoryForCast(CAST_APP_ID)).build();
+		Utils.log(TAG, "mMediaRouteSelector=" + mMediaRouteSelector);
 		Utils.log(TAG, "--- END  Constructor CastHelper()");
 	}
 
@@ -177,7 +182,7 @@ public class CastHelper {
 	};
 
 	public boolean isConnected() {
-		boolean isConnected = mApiClient != null && mApiClient.isConnected();
+		boolean isConnected = (mApiClient != null) && mApiClient.isConnected();
 		Utils.log(TAG, "*** isConnected=" + isConnected);
 		return isConnected;
 	}
@@ -219,7 +224,9 @@ public class CastHelper {
 	private void attachMediaChannel() {
 		Utils.log(TAG, "attachMediaChannel() - mRemoteMediaPlayer=" + mRemoteMediaPlayer);
 
+		Utils.log(TAG, "mRemoteMediaPlayer: " + mRemoteMediaPlayer);
 		if (mRemoteMediaPlayer != null) {
+			Utils.log(TAG, "mRemoteMediaPlayer != null -> return, doing nothing");
 			return;
 		}
 		mRemoteMediaPlayer = new RemoteMediaPlayer();
@@ -228,11 +235,11 @@ public class CastHelper {
 			public void onStatusUpdated() {
 				MediaStatus mediaStatus = mRemoteMediaPlayer.getMediaStatus();
 				if (mediaStatus != null) {
-					Utils.log(TAG, "OnStatusUpdatedListener onStatusUpdated mediaStatus = " + mediaStatus.getPlayerState());
+					Utils.log(TAG, "** OnStatusUpdatedListener onStatusUpdated mediaStatus = " + mediaStatus);
 					boolean isPlaying = mediaStatus.getPlayerState() == MediaStatus.PLAYER_STATE_PLAYING;
-					Utils.log(TAG, "isPlaying=" + isPlaying);
+					Utils.log(TAG, "** isPlaying=" + isPlaying);
 				} else {
-					Utils.log(TAG, "OnStatusUpdatedListener onStatusUpdated mediaStatus = null");
+					Utils.log(TAG, "** OnStatusUpdatedListener onStatusUpdated mediaStatus = null");
 				}
 			}
 		});
@@ -282,7 +289,9 @@ public class CastHelper {
 
 				Utils.clearPlayingNotification(getContext());
 			}
-			mMediaRouter.selectRoute(mMediaRouter.getDefaultRoute());
+			if (null != mMediaRouter) {
+				mMediaRouter.selectRoute(mMediaRouter.getDefaultRoute());
+			}
 		}
 	}
 
@@ -313,8 +322,8 @@ public class CastHelper {
 		@Override
 		public void onResult(Cast.ApplicationConnectionResult result) {
 			Status status = result.getStatus();
-			Utils.log(TAG, "----- ResultCallback - onResult - statusCode = " + status.getStatusCode());
-			Utils.log(TAG, "----- ResultCallback - onResult - status.isSuccess() = " + status.isSuccess());
+			Utils.log(TAG, "----- ResultCallback - onResult - result = " + result);
+			Utils.log(TAG, "----- ResultCallback - onResult - status = " + status);
 			if (status.isSuccess()) {
 				castApplicationStarted = true;
 
@@ -342,23 +351,27 @@ public class CastHelper {
 			try {
 
 				String sessionId = getFromDefaultSharedPreferences(context, PREFS_KEY_SESSION_ID);
-				if (!isConnected() && sessionId != null) {
+				if (sessionId != null) {
 
 					Utils.log(TAG, "joinApplication() -> start");
-					Cast.CastApi.joinApplication(mApiClient, CAST_APP_ID, sessionId).setResultCallback(new ResultCallback<Cast.ApplicationConnectionResult>() {
+					Cast.CastApi.joinApplication(mApiClient, CAST_APP_ID, sessionId).setResultCallback(connectionResultCallback);
 
-						@Override
-						public void onResult(ApplicationConnectionResult result) {
-							if (result.getStatus().isSuccess()) {
-								Utils.log(TAG, "joinApplication() -> success");
-								// onApplicationConnected(result.getApplicationMetadata(), result.getApplicationStatus(), result.getSessionId(),
-								// result.getWasLaunched());
-							} else {
-								Utils.log(TAG, "joinApplication() -> failure");
-								// onApplicationConnectionFailed(result.getStatus().getStatusCode());
-							}
-						}
-					});
+					// Cast.CastApi.joinApplication(mApiClient, CAST_APP_ID, sessionId).setResultCallback(new ResultCallback<Cast.ApplicationConnectionResult>()
+					// {
+					//
+					// @Override
+					// public void onResult(ApplicationConnectionResult result) {
+					// if (result.getStatus().isSuccess()) {
+					// Utils.log(TAG, "joinApplication() -> success");
+					// // onApplicationConnected(result.getApplicationMetadata(), result.getApplicationStatus(), result.getSessionId(),
+					// // result.getWasLaunched());
+					// } else {
+					// Utils.log(TAG, "joinApplication() -> failure");
+					// // onApplicationConnectionFailed(result.getStatus().getStatusCode());
+					// }
+					// }
+					// });
+
 				} else {
 					Utils.log(TAG, "----- GoogleApiClient.ConnectionCallbacks - launchApplication - mApiClient = " + mApiClient);
 					Cast.CastApi.launchApplication(mApiClient, CAST_APP_ID, false).setResultCallback(connectionResultCallback);
@@ -388,6 +401,7 @@ public class CastHelper {
 		Cast.CastOptions apiOptions = Cast.CastOptions.builder(selectedDevice, castClientListener).build();
 		mApiClient = new GoogleApiClient.Builder(getContext()).addApi(Cast.API, apiOptions).addConnectionCallbacks(connectionCallback)
 				.addOnConnectionFailedListener(connectionFailedListener).build();
+
 		Utils.log(TAG, "----- connectApiClient() - apiClient: " + mApiClient);
 		mApiClient.connect();
 	}
@@ -610,7 +624,7 @@ public class CastHelper {
 
 	private String getFromDefaultSharedPreferences(Context context, String key) {
 		SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
-		String value = pref.getString(key, "DummyDefaultCastPrefs");
+		String value = pref.getString(key, null);
 		Utils.log(TAG, "----------- getFromDefaultSharedPreferences...");
 		Utils.log(TAG, "-- key   = " + key);
 		Utils.log(TAG, "-- value = " + value);

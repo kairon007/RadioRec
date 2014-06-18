@@ -25,6 +25,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.rothconsulting.android.common.Utils;
 import com.rothconsulting.android.radiorec.network.icy.IcyGetRequest;
@@ -106,12 +107,12 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 			Notifications not = new Notifications(this.context, intent);
 			not.showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
 			not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
-			fnfe.printStackTrace();
+			Log.e(TAG, "FileNotFoundException :-(", fnfe);
 		} catch (IOException e) {
 			Notifications not = new Notifications(this.context, intent);
 			not.showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
 			not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
-			e.printStackTrace();
+			Log.e(TAG, "IOException :-(", e);
 		} finally {
 			try {
 				if (buffInputStream != null) {
@@ -125,12 +126,12 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 				Notifications not = new Notifications(this.context, intent);
 				not.showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
 				not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
-				fnfe.printStackTrace();
+				Log.e(TAG, "FileNotFoundException :-(", fnfe);
 			} catch (IOException e) {
 				Notifications not = new Notifications(this.context, intent);
 				not.showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
 				not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
-				e.printStackTrace();
+				Log.e(TAG, "IOException :-(", e);
 			}
 			connectionProgressDialog.dismiss();
 		}

@@ -11,10 +11,10 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-import com.rothconsulting.android.common.Utils;
-
 import android.os.AsyncTask;
+import android.util.Log;
 
+import com.rothconsulting.android.common.Utils;
 
 public class WebsiteParser extends AsyncTask<String, Void, String> {
 
@@ -51,8 +51,7 @@ public class WebsiteParser extends AsyncTask<String, Void, String> {
 			httpUriRequest.setHeader("User-Agent", userAgent);
 			response = httpClient.execute(httpUriRequest);
 			// getHeaders(response);
-			DataInputStream inputStream = new DataInputStream(response
-					.getEntity().getContent());
+			DataInputStream inputStream = new DataInputStream(response.getEntity().getContent());
 
 			// Webseite parsen
 			scanner = new Scanner(inputStream);
@@ -67,8 +66,7 @@ public class WebsiteParser extends AsyncTask<String, Void, String> {
 				int index = line.indexOf(findString);
 				if (index >= 0) {
 					hasTreffer = true;
-					Utils.log(TAG, "TREFFER!!! lineNr=" + lineNr + " / line="
-							+ line);
+					Utils.log(TAG, "TREFFER!!! lineNr=" + lineNr + " / line=" + line);
 				}
 				if (hasTreffer) {
 					if (line.indexOf(endStringOrTagAfterMatch) >= 0) {
@@ -84,14 +82,11 @@ public class WebsiteParser extends AsyncTask<String, Void, String> {
 				}
 			}
 		} catch (ClientProtocolException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Log.e(TAG, "ClientProtocolException :-( ", e);
 		} catch (IllegalStateException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Log.e(TAG, "IllegalStateException :-( ", e);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Log.e(TAG, "IOException :-( ", e);
 		} finally {
 			if (scanner != null) {
 				scanner.close();

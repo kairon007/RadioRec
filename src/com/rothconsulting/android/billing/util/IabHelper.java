@@ -61,6 +61,8 @@ import com.rothconsulting.android.common.Utils;
  * 
  */
 public class IabHelper {
+
+	private static final String TAG = "IabHelper";
 	// Is debug logging enabled?
 	boolean mDebugLog = false;
 	String mDebugTag = "IabHelper";
@@ -241,7 +243,7 @@ public class IabHelper {
 					if (listener != null) {
 						listener.onIabSetupFinished(new IabResult(IABHELPER_REMOTE_EXCEPTION, "RemoteException while setting up in-app billing."));
 					}
-					e.printStackTrace();
+					Log.e(TAG, "RemoteException :-( ", e);
 					return;
 				}
 
@@ -387,7 +389,7 @@ public class IabHelper {
 					Integer.valueOf(0));
 		} catch (SendIntentException e) {
 			logError("SendIntentException while launching purchase flow for sku " + sku);
-			e.printStackTrace();
+			Log.e(TAG, "SendIntentException :-( ", e);
 			flagEndAsync();
 
 			result = new IabResult(IABHELPER_SEND_INTENT_FAILED, "Failed to send intent.");
@@ -395,7 +397,7 @@ public class IabHelper {
 				listener.onIabPurchaseFinished(result, null);
 		} catch (RemoteException e) {
 			logError("RemoteException while launching purchase flow for sku " + sku);
-			e.printStackTrace();
+			Log.e(TAG, "RemoteException :-( ", e);
 			flagEndAsync();
 
 			result = new IabResult(IABHELPER_REMOTE_EXCEPTION, "Remote exception while starting purchase flow");
@@ -472,7 +474,7 @@ public class IabHelper {
 				logDebug("Purchase signature successfully verified.");
 			} catch (JSONException e) {
 				logError("Failed to parse purchase data.");
-				e.printStackTrace();
+				Log.e(TAG, "JSONException :-( ", e);
 				result = new IabResult(IABHELPER_BAD_RESPONSE, "Failed to parse purchase data.");
 				if (mPurchaseListener != null)
 					mPurchaseListener.onIabPurchaseFinished(result, null);
