@@ -403,6 +403,7 @@ public class Stations {
 	public static final String RADIO_RPR1 = "RPR1.";
 	public static final String RADIO_BB_RADIO = "BB Radio";
 	public static final String RADIO_REVIVAL_KULT = "RevivalKult";
+	public static final String RADIO_HANNOVER_876 = "Hannover 87,6";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -4900,6 +4901,19 @@ public class Stations {
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_TRANCE);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_HANNOVER_876);
+		m.put(ICON, R.drawable.radio_hannover_876);
+		m.put(ICON_SMALL, R.drawable.radio_hannover_876_small);
+		m.put(STREAM, "http://xapp2154659840c40000.f.l.i.lb.core-cdn.net/40000mb/live/app2154659840/w2153906178/live_de_192.mp3");
+		m.put(HOMEPAGE, "http://www.radio-hannover.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.radio-hannover.de/ihr-direkter-kontakt-ins-studio.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
 
 		// ******************************************************************************************************
