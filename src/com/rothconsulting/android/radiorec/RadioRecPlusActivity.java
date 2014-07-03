@@ -160,7 +160,9 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		tm.listen(callStateListener, PhoneStateListener.LISTEN_CALL_STATE);
 
 		// Chromecast initialize
-		castHelper = new CastHelper(this);
+		if (!Utils.isPlatformBelow_2_3_0()) {
+			castHelper = new CastHelper(this);
+		}
 
 		Utils.log(TAG, "++++++++++++ onCreate END ++++++++++++");
 	}
@@ -169,7 +171,9 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	protected void onResume() {
 		super.onResume();
 		Utils.log(TAG, "--- onResume()");
-		castHelper.mMediaRouter.addCallback(castHelper.mMediaRouteSelector, castHelper.mediaRouterCallback, MediaRouter.CALLBACK_FLAG_PERFORM_ACTIVE_SCAN);
+		if (!Utils.isPlatformBelow_2_3_0()) {
+			castHelper.mMediaRouter.addCallback(castHelper.mMediaRouteSelector, castHelper.mediaRouterCallback, MediaRouter.CALLBACK_FLAG_PERFORM_ACTIVE_SCAN);
+		}
 		hideSearch();
 	}
 
@@ -178,7 +182,9 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		Utils.log(TAG, "--- onPause()");
 		if (isFinishing()) {
 			Utils.log(TAG, "isFinishing -> removeCallback");
-			castHelper.mMediaRouter.removeCallback(castHelper.mediaRouterCallback);
+			if (!Utils.isPlatformBelow_2_3_0()) {
+				castHelper.mMediaRouter.removeCallback(castHelper.mediaRouterCallback);
+			}
 		} else {
 			Utils.log(TAG, "is NOT Finishing -> doing nothing");
 		}
@@ -569,10 +575,11 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 
 		setFavIconStar();
 
-		Utils.log(TAG, "castHelper.isConnected() = " + castHelper.isConnected());
-		if (castHelper.isConnected() && !Constants.SELECTED_STATION_NAME_VALUE.equalsIgnoreCase(Stations.RADIO_JUGGLERZ)) {
+		if (castHelper != null && castHelper.isConnected() && !Constants.SELECTED_STATION_NAME_VALUE.equalsIgnoreCase(Stations.RADIO_JUGGLERZ)) {
+			Utils.log(TAG, "castHelper.isConnected() = " + castHelper.isConnected());
 			handleCast((Integer) map.get(Stations.ICON));
 		} else {
+			Utils.log(TAG, "castHelper.isConnected() = false");
 			if (!firstStart && playing) {
 				if (Constants.getLiveStreamStations().contains(Constants.SELECTED_STATION_NAME_VALUE)) {
 					Utils.log(TAG, "------ ist Fussball/Live Radio");
@@ -585,7 +592,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 					Constants.URL_LIVE_STREAM_VALUE = Constants.URL_LIVE_STREAM_VALUE + webtool.getJugglerzFileName(this);
 					Utils.log(TAG, "*********** new Stream=" + Constants.URL_LIVE_STREAM_VALUE);
 				}
-				if (castHelper.isConnected()) {
+				if (castHelper != null && castHelper.isConnected()) {
 					handleCast((Integer) map.get(Stations.ICON));
 				} else {
 					getRadioPlayer().doStartPlay(this);
@@ -609,6 +616,10 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	}
 
 	private void handleCast(int imageResId) {
+		if (Utils.isPlatformBelow_2_3_0()) {
+			Utils.log(TAG, "Cannot handleCast. Platform is below 2.3");
+			return;
+		}
 		Utils.log(TAG, "Playing: " + playing);
 		// stop local playing in all cases
 		getRadioPlayer().doStopPlay(this);
@@ -617,7 +628,6 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			Utils.log(TAG, "castHelper.play(...)");
 			// if local player is playing - stop it
 			castHelper.play(Constants.SELECTED_STATION_NAME_VALUE, Constants.URL_LIVE_STREAM_VALUE, Utils.getCastImageUrl(imageResId));
-
 			Utils.log(TAG, "castHelper.play(...) - show statusbar info");
 			Intent intent = new Intent(context, DonateActivity.class);
 			intent.putExtra(Constants.FROM_NOTIFICATION, Constants.FROM_NOTIFICATION);
@@ -904,7 +914,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 
 		// Chromecast
-		if (Utils.isGooglePlayServicesAvailable(context)) {
+		if (castHelper != null && Utils.isGooglePlayServicesAvailable(context)) {
 			MenuItem mediaRouteMenuItem = menu.findItem(R.id.media_route_menu_item);
 			MediaRouteActionProvider mediaRouteActionProvider = (MediaRouteActionProvider) MenuItemCompat.getActionProvider(mediaRouteMenuItem);
 			mediaRouteActionProvider.setRouteSelector(castHelper.mMediaRouteSelector);
@@ -1051,7 +1061,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	// --------------------------------------------------
 	@Override
 	public boolean dispatchKeyEvent(KeyEvent event) {
-		if (castHelper.isConnected() && playing) {
+		if (castHelper != null && castHelper.isConnected() && playing) {
 			int action = event.getAction();
 			int keyCode = event.getKeyCode();
 			switch (keyCode) {

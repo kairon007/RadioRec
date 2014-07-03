@@ -74,9 +74,13 @@ public class CastHelper {
 	// *****************************************
 	// Public
 	// *****************************************
-	// Constructor
+	/**
+	 * Constructor: Google Cast needs Android 2.3 or higher (minSdkVersion = 9)
+	 * 
+	 * @param context
+	 */
 	public CastHelper(Context context) {
-		Utils.log(TAG, "--- START Constructor CastHelper(): mediaRouter and mediaRouteSelector and attachMediaChannel");
+		Utils.log(TAG, "--- START Constructor CastHelper(): mediaRouter and mediaRouteSelector");
 		Utils.log(TAG, "context=" + this.context);
 		this.context = context;
 		Utils.log(TAG, "context=" + this.context);
@@ -599,6 +603,7 @@ public class CastHelper {
 		String sessionId = getFromDefaultSharedPreferences(context, PREFS_KEY_SESSION_ID);
 		String routeId = getFromDefaultSharedPreferences(context, PREFS_KEY_ROUTE_ID);
 		if (null == sessionId || null == routeId) {
+			Utils.log(TAG, "Not found session info in the preferences, so proceed with normal connect");
 			return false;
 		}
 		Utils.log(TAG, "Found session info in the preferences, so proceed with an attempt to reconnect if possible");

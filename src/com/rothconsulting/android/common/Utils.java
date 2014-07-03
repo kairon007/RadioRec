@@ -353,10 +353,14 @@ public class Utils {
 	}
 
 	public static boolean isGooglePlayServicesAvailable(Context context) {
-		final int connectionStatusCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(context);
-		if (GooglePlayServicesUtil.isUserRecoverableError(connectionStatusCode)) {
+		if (Utils.isPlatformBelow_2_3_0()) {
 			return false;
+		} else {
+			final int connectionStatusCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(context);
+			if (GooglePlayServicesUtil.isUserRecoverableError(connectionStatusCode)) {
+				return false;
+			}
+			return true;
 		}
-		return true;
 	}
 }
