@@ -478,6 +478,7 @@ public class Stations {
 	public static final String RADIO_SOMA_FM_SOG = "Soma fm - Sound of Goa";
 	public static final String RADIO_SOMA_FM_POPTRON = "Soma fm - Poptron";
 	public static final String RADIO_SOMA_FM_SECRET_AGENT = "Soma fm - Secret Agent";
+	public static final String RADIO_SOMA_FM_GROOVE_SALAD = "Soma fm - Groove Salad";
 	public static final String RADIO_IBIZA_SONICA = "Ibiza Sonica";
 	public static final String RADIO_IBIZA_GLOBAL_RADIO = "Ibiza Global Radio";
 	public static final String RADIO_BLUE_MARLIN = "Blue Marlin Ibiza";
@@ -5532,7 +5533,7 @@ public class Stations {
 		m.put(ICON, R.drawable.radio_somafm_sgoa);
 		m.put(ICON_SMALL, R.drawable.radio_somafm_sgoa_small);
 		m.put(STREAM, "http://ice.somafm.com/suburbsofgoa");
-		m.put(HOMEPAGE, "http://www.somafm.com");
+		m.put(HOMEPAGE, "http://www.somafm.com/suburbsofgoa");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://somafm.com/contact");
 		m.put(SPRACHE, SPRACHE_EN);
@@ -5545,7 +5546,7 @@ public class Stations {
 		m.put(ICON, R.drawable.radio_somafm_poptron);
 		m.put(ICON_SMALL, R.drawable.radio_somafm_poptron_small);
 		m.put(STREAM, "http://ice.somafm.com/poptron");
-		m.put(HOMEPAGE, "http://www.somafm.com");
+		m.put(HOMEPAGE, "http://www.somafm.com/poptron");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://somafm.com/contact");
 		m.put(SPRACHE, SPRACHE_EN);
@@ -5558,7 +5559,20 @@ public class Stations {
 		m.put(ICON, R.drawable.radio_somafm_secretagent);
 		m.put(ICON_SMALL, R.drawable.radio_somafm_secretagent_small);
 		m.put(STREAM, "http://ice.somafm.com/secretagent");
-		m.put(HOMEPAGE, "http://www.somafm.com");
+		m.put(HOMEPAGE, "http://www.somafm.com/secretagent");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://somafm.com/contact");
+		m.put(SPRACHE, SPRACHE_EN);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_SOMA_FM_GROOVE_SALAD);
+		m.put(ICON, R.drawable.radio_somafm_groovesalad);
+		m.put(ICON_SMALL, R.drawable.radio_somafm_groovesalad_small);
+		m.put(STREAM, "http://ice.somafm.com/groovesalad");
+		m.put(HOMEPAGE, "http://www.somafm.com/groovesalad");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://somafm.com/contact");
 		m.put(SPRACHE, SPRACHE_EN);
