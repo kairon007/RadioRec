@@ -404,6 +404,7 @@ public class Stations {
 	public static final String RADIO_BB_RADIO = "BB Radio";
 	public static final String RADIO_REVIVAL_KULT = "RevivalKult";
 	public static final String RADIO_HANNOVER_876 = "Hannover 87,6";
+	public static final String RADIO_BASSLOVER = "Basslover";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -4911,6 +4912,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.radio-hannover.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.radio-hannover.de/ihr-direkter-kontakt-ins-studio.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_BASSLOVER);
+		m.put(ICON, R.drawable.radio_basslover);
+		m.put(ICON_SMALL, R.drawable.radio_basslover_small);
+		m.put(STREAM, "http://s4.relay-basslover.de:9000");
+		m.put(HOMEPAGE, "http://www.basslover.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.basslover.de/kontakt.de.php");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
