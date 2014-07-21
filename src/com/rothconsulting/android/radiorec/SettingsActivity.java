@@ -1,10 +1,5 @@
 package com.rothconsulting.android.radiorec;
 
-import com.rothconsulting.android.common.AdMob;
-import com.rothconsulting.android.common.AnalyticsUtil;
-import com.rothconsulting.android.common.Utils;
-
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -26,10 +21,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.rothconsulting.android.common.AdMob;
+import com.rothconsulting.android.common.AnalyticsUtil;
+import com.rothconsulting.android.common.Utils;
+
 public class SettingsActivity extends ActionBarActivity implements RadioGroup.OnCheckedChangeListener {
 
 	private static final String TAG = "Settings";
-	private Activity activity;
 	private RadioButton radioImmerAn;
 	private RadioButton radioImmerAnWennStrom;
 	private RadioButton radioAutomatischAus;
@@ -49,7 +47,6 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 
 		this.setTitle(getString(R.string.settings));
 
-		activity = this;
 		// hide keyboard when opening page
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 

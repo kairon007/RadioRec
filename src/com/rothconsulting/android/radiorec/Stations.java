@@ -539,6 +539,7 @@ public class Stations {
 	public static final String RADIO_KONI_FM = "KONI 104.7 FM";
 	public static final String RADIO_LA_LLAVE = "La Llave";
 	public static final String RADIO_SLAM_FM = "SLAM!FM";
+	public static final String RADIO_ZEN_FM = "Zen FM";
 
 	/**
 	 * A stations contains of a...<br>
@@ -6515,6 +6516,19 @@ public class Stations {
 		m.put(SPRACHE, SPRACHE_NL);
 		m.put(LAND, LAND_DIV);
 		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_ZEN_FM);
+		m.put(ICON, R.drawable.radio_zen_fm);
+		m.put(ICON_SMALL, R.drawable.radio_zen_fm_small);
+		m.put(STREAM, "http://lb.zenfm.be/zenfm.mp3");
+		m.put(HOMEPAGE, "http://www.zenfm.be");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.zenfm.be/content/contact-us");
+		m.put(SPRACHE, SPRACHE_NL);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_LOUNGE);
 		setStationlist(stationList, m);
 
 		return stationList;
