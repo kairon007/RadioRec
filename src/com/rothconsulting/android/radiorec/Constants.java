@@ -36,7 +36,6 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_CENTRAL_FUNK);
 		ignoreList.add(Stations.RADIO_CENTRAL_SPEZIAL);
 		ignoreList.add(Stations.RADIO_EVIVA);
-		// ignoreList.add(Stations.RADIO_GRISCHA);
 		ignoreList.add(Stations.RADIO_OE1);
 		ignoreList.add(Stations.RADIO_OE3);
 		ignoreList.add(Stations.RADIO_FM4);
@@ -46,8 +45,6 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_SALZBURG);
 		ignoreList.add(Stations.RADIO_OBEROESTERREICH);
 		ignoreList.add(Stations.RADIO_NIEDEROESTERREICH);
-		ignoreList.add(Stations.RADIO_WAVE);
-		// ignoreList.add(Stations.RADIO_TOP100STATION);
 		ignoreList.add(Stations.RADIO_ROCK_STATION);
 		ignoreList.add(Stations.RADIO_STAR_FM);
 		ignoreList.add(Stations.RADIO_STAR_FM_FROM_HELL);
@@ -56,7 +53,6 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_LEGENDE);
 		ignoreList.add(Stations.RADIO_GONG_NUERNBERG);
 		ignoreList.add(Stations.RADIO_PALOMA);
-		// ignoreList.add(Stations.RADIO_DREYECKLAND);
 		ignoreList.add(Stations.RADIO_PULS_RADIO);
 		ignoreList.add(Stations.RADIO_100_5_DAS_HITRADIO);
 		ignoreList.add(Stations.RADIO_KIEPENKERL);
@@ -96,7 +92,6 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_CRAZY_SANCTUS);
 		ignoreList.add(Stations.RADIO_CRAZY_JAZZ_SWING);
 		ignoreList.add(Stations.RADIO_CRAZY_MODERN_JAZZ);
-		ignoreList.add(Stations.RADIO_FC_SION_LIVE_RADIO);
 		ignoreList.add(Stations.RADIO_REVIVAL_KULT);
 		ignoreList.add(Stations.RADIO_SWISS_MOUNTAIN_HOLIDAY);
 		ignoreList.add(Stations.RADIO_JUGGLERZ_DANCEHALL);

@@ -87,7 +87,6 @@ public class Stations {
 	public static final String RADIO_TOP = "Top";
 	public static final String RADIO_TOP_TWO = "Top Two";
 	public static final String RADIO_NEO_1 = "Neo 1";
-	public static final String RADIO_NEO_ZWEI = "Neo zwei";
 	public static final String RADIO_ARGOVIA = "Argovia";
 	public static final String RADIO_ARGOVIA_HITMIX = "Argovia Hitmix";
 	public static final String RADIO_ARGOVIA_CLASSIC_ROCK = "Argovia Classic Rock";
@@ -123,7 +122,7 @@ public class Stations {
 	public static final String RADIO_GLORIA = "Gloria";
 	public static final String RADIO_GELB_SCHWARZ = "Gelb-Schwarz YB";
 	public static final String RADIO_FCB_LIVE_RADIO = "FC Basel Live Radio";
-	public static final String RADIO_FC_SION_LIVE_RADIO = "FC Sion";
+	public static final String RADIO_RHONE_FM = "Rhône FM";
 	public static final String RADIO_FC_ZUERICH = "FC Zürich";
 	public static final String RADIO_HOCKEY_FANRADIO = "Hockey Fanradio";
 	public static final String RADIO_RWW_EHC_WINTERTHUR = "EHC Winterthur - RWW";
@@ -131,7 +130,6 @@ public class Stations {
 	public static final String RADIO_BACKSTAGE_RADIO = "Backstage Radio";
 	// public static final String RADIO_MONTE_CARLO = "Monte Carlo";
 	public static final String RADIO_RASA = "RaSa";
-	public static final String RADIO_BLIND_POWER = "Blind Power";
 	public static final String RADIO_CENTRAL = "Central";
 	public static final String RADIO_CENTRAL_ROCK = "Central Rock";
 	public static final String RADIO_CENTRAL_SWISS = "Central Swiss";
@@ -149,7 +147,6 @@ public class Stations {
 	public static final String RADIO_INDUSTRIE = "Industrie";
 	public static final String RADIO_AUDIOASYL = "Audioasyl";
 	public static final String RADIO_PIRATENRADIO = "Piratenradio";
-	public static final String RADIO_WAVE = "Wave";
 	public static final String RADIO_BASEL_EINS = "Basel Eins";
 	public static final String RADIO_BASILISK = "Basilisk";
 	public static final String RADIO_ROCK_STATION = "Rockstation";
@@ -1023,23 +1020,8 @@ public class Stations {
 		m.put(ICON_SMALL, R.drawable.radio_neo_1_small);
 		m.put(STREAM, "http://stream-02.neo1.ch:80/neo1");
 		m.put(HOMEPAGE, "http://www.neo1.ch");
-		m.put(WEBCAM,
-				"http://www.neo1.ch/index.php?eID=tx_cms_showpic&file=fileadmin%2Fuser_upload%2Fwebcam%2Fwebcam.jpg&md5=94dde500b68cb331ee6493b0e7f2604282c29723&parameters[0]=YTo0OntzOjU6IndpZHRoIjtzOjM6IjYwMCI7czo2OiJoZWlnaHQiO3M6MzoiNjAw&parameters[1]=IjtzOjc6ImJvZHlUYWciO3M6NjoiPGJvZHk%2BIjtzOjQ6IndyYXAiO3M6MzU6Ijxh&parameters[2]=IGhyZWY9ImphdmFzY3JpcHQ6Y2xvc2UoKTsiPnw8L2E%2BIjt9");
+		m.put(WEBCAM, "http://www.neo1.ch/fileadmin/tools/webcam/webcam.jpg");
 		m.put(EMAIL, "http://www.neo1.ch/studiomail.html");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_CH);
-		m.put(STIL, STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_NEO_ZWEI);
-		m.put(ICON, R.drawable.radio_neo_2);
-		m.put(ICON_SMALL, R.drawable.radio_neo_2_small);
-		m.put(STREAM, "http://stream-02.neo1.ch:80/neo2");
-		m.put(HOMEPAGE, "http://www.neozwei.ch");
-		m.put(WEBCAM,
-				"http://www.neo1.ch/index.php?eID=tx_cms_showpic&file=fileadmin%2Fuser_upload%2Fwebcam%2Fwebcam.jpg&md5=94dde500b68cb331ee6493b0e7f2604282c29723&parameters[0]=YTo0OntzOjU6IndpZHRoIjtzOjM6IjYwMCI7czo2OiJoZWlnaHQiO3M6MzoiNjAw&parameters[1]=IjtzOjc6ImJvZHlUYWciO3M6NjoiPGJvZHk%2BIjtzOjQ6IndyYXAiO3M6MzU6Ijxh&parameters[2]=IGhyZWY9ImphdmFzY3JpcHQ6Y2xvc2UoKTsiPnw8L2E%2BIjt9");
-		m.put(EMAIL, "http://www.neozwei.ch/index.php?id=314");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
 		m.put(STIL, STIL_POP);
@@ -1491,19 +1473,6 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_FC_SION_LIVE_RADIO);
-		m.put(ICON, R.drawable.radio_fc_sion);
-		m.put(ICON_SMALL, R.drawable.radio_fc_sion_small);
-		m.put(STREAM, "http://fcsion.stream2net.eu:8220");
-		m.put(HOMEPAGE, "http://www.fc-sion.ch");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://www.fc-sion.ch/de/Kontakt");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_CH);
-		m.put(STIL, STIL_SPORT);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_FC_ZUERICH);
 		m.put(ICON, R.drawable.radio_fc_zuerich);
 		m.put(ICON_SMALL, R.drawable.radio_fc_zuerich_small);
@@ -1557,6 +1526,19 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_RHONE_FM);
+		m.put(ICON, R.drawable.radio_rhone_fm);
+		m.put(ICON_SMALL, R.drawable.radio_rhone_fm_small);
+		m.put(STREAM, "http://rhonefm.ice.infomaniak.ch/rhonefm-high.mp3");
+		m.put(HOMEPAGE, "http://www.rhonefm.ch");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.rhonefm.ch/fr/page/contact-rhone-fm-42890");
+		m.put(SPRACHE, SPRACHE_FR);
+		m.put(LAND, LAND_CH);
+		m.put(STIL, STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_BACKSTAGE_RADIO);
 		m.put(ICON, R.drawable.radio_backstage_radio);
 		m.put(ICON_SMALL, R.drawable.radio_backstage_radio_small);
@@ -1577,19 +1559,6 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.rasa.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.rasa.ch/feedback.php");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_CH);
-		m.put(STIL, STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_BLIND_POWER);
-		m.put(ICON, R.drawable.radio_blindpower);
-		m.put(ICON_SMALL, R.drawable.radio_blindpower_small);
-		m.put(STREAM, "http://rs2.myradio24.de:8210/stream");
-		m.put(HOMEPAGE, "http://www.radioblindpower.ch");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://www.radioblindpower.ch/studio/studiomail.php");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
 		m.put(STIL, STIL_POP);
@@ -1812,19 +1781,6 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.piratenradio.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "info@piratenradio.ch");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_CH);
-		m.put(STIL, STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_WAVE);
-		m.put(ICON, R.drawable.radio_wave);
-		m.put(ICON_SMALL, R.drawable.radio_wave_small);
-		m.put(STREAM, "http://stream.coldserver.de:11400");
-		m.put(HOMEPAGE, "http://radiowave.ch");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://radiowave.ch");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
 		m.put(STIL, STIL_POP);
@@ -3322,8 +3278,7 @@ public class Stations {
 		m.put(NAME, RADIO_ENERGY_SACHSEN);
 		m.put(ICON, R.drawable.radio_energy_sachsen);
 		m.put(ICON_SMALL, R.drawable.radio_energy_sachsen_small);
-		m.put(STREAM, "http://95.81.146.25/1U55DjgEJMRGt1t880cIwxT0qON8Bml2XrMU=/8915/nrj_163388.mp3");
-		// m.put(STREAM, "http://149.5.240.33/WR-DE-WR57");
+		m.put(STREAM, "http://radio.nrj.net/Sachsen/mp3");
 		m.put(HOMEPAGE, "http://www.energy.de/sachsen");
 		m.put(WEBCAM, "http://www.energy-sachsen.de/www/extapp/webcam/images/studio.jpg");
 		m.put(EMAIL, "hotline@nrjmail.de");
@@ -3336,7 +3291,7 @@ public class Stations {
 		m.put(NAME, RADIO_ENERGY_BREMEN);
 		m.put(ICON, R.drawable.radio_energy_bremen);
 		m.put(ICON_SMALL, R.drawable.radio_energy_bremen_small);
-		m.put(STREAM, "http://adwzg4.tdf-cdn.com/8916/nrj_168141.mp3");
+		m.put(STREAM, "http://radio.nrj.net/Bremen/mp3");
 		m.put(HOMEPAGE, "http://www.energy.de/bremen");
 		m.put(WEBCAM, "http://www.energy.de/fileadmin/images/content/Lokal/Bremen/Webcam/studio000M.jpg");
 		m.put(EMAIL, "radio@energy-bremen.de");
@@ -3349,7 +3304,7 @@ public class Stations {
 		m.put(NAME, RADIO_ENERGY_NUERNBERG);
 		m.put(ICON, R.drawable.radio_energy_nuernberg);
 		m.put(ICON_SMALL, R.drawable.radio_energy_nuernberg_small);
-		m.put(STREAM, "http://149.5.240.33:80/WR-DE-WR54");
+		m.put(STREAM, "http://radio.nrj.net/Nurnberg/mp3");
 		m.put(HOMEPAGE, "http://www.energy.de/nuernberg");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.energy.de/nuernberg/team/kontakt/");
@@ -3491,7 +3446,7 @@ public class Stations {
 		m.put(NAME, RADIO_OSTSEEWELLE);
 		m.put(ICON, R.drawable.radio_ostseewelle);
 		m.put(ICON_SMALL, R.drawable.radio_ostseewelle_small);
-		m.put(STREAM, "http://62.27.87.79:8000/ostseewellelive/livestream.mp3");
+		m.put(STREAM, "http://62.27.47.224:8000/ostseewellelive/livestream.mp3");
 		m.put(HOMEPAGE, "http://www.ostseewelle.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.ostseewelle.de/kontakt_programm");
