@@ -544,7 +544,8 @@ public class Stations {
 	public static final String RADIO_LA_LLAVE = "La Llave";
 	public static final String RADIO_SLAM_FM = "SLAM!FM";
 	public static final String RADIO_ZEN_FM = "Zen FM";
-	public static final String RADIO_HITRADIO_FM_CZ = "Hitrádio FM (CZ)";
+	public static final String RADIO_HITRADIO_80_CZ = "Hitrádio 80tka (CZ)";
+	public static final String RADIO_HITRADIO_90_CZ = "Hitrádio 90tka (CZ)";
 
 	/**
 	 * A stations contains of a...<br>
@@ -6572,10 +6573,23 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_HITRADIO_FM_CZ);
+		m.put(NAME, RADIO_HITRADIO_80_CZ);
 		m.put(ICON, R.drawable.radio_hitradio_fm_cz);
 		m.put(ICON_SMALL, R.drawable.radio_hitradio_fm_cz_small);
-		m.put(STREAM, "http://ice.abradio.cz/hitradiofm128.mp3");
+		m.put(STREAM, "http://ice.abradio.cz/hit80128.mp3");
+		m.put(HOMEPAGE, "http://www.hitradiofm.cz");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.hitradiofm.cz/clanek/kontakt");
+		m.put(SPRACHE, SPRACHE_CZ);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_HITRADIO_90_CZ);
+		m.put(ICON, R.drawable.radio_hitradio_fm_cz);
+		m.put(ICON_SMALL, R.drawable.radio_hitradio_fm_cz_small);
+		m.put(STREAM, "http://ice.abradio.cz/hit90128.mp3");
 		m.put(HOMEPAGE, "http://www.hitradiofm.cz");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.hitradiofm.cz/clanek/kontakt");
