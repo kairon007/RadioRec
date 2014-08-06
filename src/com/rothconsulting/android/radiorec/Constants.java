@@ -111,6 +111,8 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_MRS_905);
 		ignoreList.add(Stations.RADIO_ENERGY_98_USA);
 		ignoreList.add(Stations.RADIO_BASSLOVER);
+		ignoreList.add(Stations.RADIO_HITSTATION_FM);
+		ignoreList.add(Stations.RADIO_HITSTATION_FM_80);
 
 		return ignoreList;
 	}
