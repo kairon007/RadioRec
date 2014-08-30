@@ -105,7 +105,6 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_SK_RAPID_WIEN);
 		ignoreList.add(Stations.RADIO_FC_REDBULL_SALBURG);
 		ignoreList.add(Stations.RADIO_SK_PUNTIGAMER_STURM_GRAZ);
-		ignoreList.add(Stations.RADIO_MUSICBASE_FM_DANCE);
 		ignoreList.add(Stations.RADIO_HOLIDAY);
 		ignoreList.add(Stations.RADIO_CITTA_FUTURA);
 		ignoreList.add(Stations.RADIO_MRS_905);

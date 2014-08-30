@@ -101,5 +101,7 @@
 	<string name="media_route_menu_title">Play on&#8230;</string>
 	<string name="stations">Stations</string>
 	<string name="casting">Casting</string>
-						
+	<string name="multi_window">Multi Window</string>
+	<string name="position">Position</string>
+							
 </resources>

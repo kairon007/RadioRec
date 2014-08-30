@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.rothconsulting.android.radiorec"
-	android:versionCode="202" android:versionName="2.0.2" android:installLocation="auto">
+	android:versionCode="210" android:versionName="2.1.0-S" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="7" android:targetSdkVersion="19" />
 	<supports-screens android:resizeable="true" android:smallScreens="true" android:normalScreens="true"
 		android:largeScreens="true" android:anyDensity="true" />
@@ -14,9 +14,11 @@
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
 	<uses-permission android:name="android.permission.WRITE_SETTINGS" />
 	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
 
-	<application android:label="@string/app_name" android:icon="@drawable/jukebox" android:name="com.rothconsulting.android.common.CustomApplication"
-		android:allowBackup="true" android:theme="@style/Theme.AppCompat">
+
+	<application android:label="@string/app_name" android:icon="@drawable/jukebox"
+		android:name="com.rothconsulting.android.common.CustomApplication" android:allowBackup="true" android:theme="@style/Theme.AppCompat">
 		<activity android:name="com.rothconsulting.android.radiorec.RadioRecPlusActivity" android:label="@string/app_name"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
 			<intent-filter>
@@ -45,6 +47,10 @@
 		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:value="598.0dip" />
 		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:value="632.0dip" />
 		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:value="598.0dip" />
+
+		<meta-data android:name="com.samsung.android.sdk.multiwindow.enable" android:value="true" />
+		<meta-data android:name="com.samsung.android.sdk.multiwindow.multiinstance.enable" android:value="true" />
+		<meta-data android:name="com.sec.android.multiwindow.STYLE" android:value="fixedRatio" />
 
 	</application>
 </manifest>

@@ -363,4 +363,13 @@ public class Utils {
 			return true;
 		}
 	}
+
+	public static boolean isSamsungDevice() {
+		String manufacturer = android.os.Build.MANUFACTURER;
+		if (manufacturer != null && (manufacturer.toUpperCase().contains("SAMSUNG"))) {
+			return true;
+		}
+		return false;
+	}
+
 }

@@ -59,6 +59,7 @@ import com.rothconsulting.android.billing.util.RadioRecBillingHelper;
 import com.rothconsulting.android.cast.CastHelper;
 import com.rothconsulting.android.common.AdMob;
 import com.rothconsulting.android.common.AnalyticsUtil;
+import com.rothconsulting.android.common.MultiWindowFunction;
 import com.rothconsulting.android.common.Utils;
 import com.rothconsulting.android.radiorec.filechooser.FileChooserActivity;
 import com.rothconsulting.android.radiorec.sqlitedb.DbAdapter;
@@ -106,6 +107,8 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 
 	// Chromecast
 	private CastHelper castHelper;
+
+	private MultiWindowFunction multiWindow;
 
 	public Spinner getStations() {
 		return spnAllStations;
@@ -924,6 +927,15 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			menu.removeItem(R.id.action_donate);
 		}
 
+		if (!Utils.isSamsungDevice()) {
+			menu.removeItem(R.id.action_multiwindow);
+		} else {
+			multiWindow = new MultiWindowFunction(this);
+			if (!multiWindow.isMultiWindowSupported()) {
+				menu.removeItem(R.id.action_multiwindow);
+			}
+		}
+
 		return super.onCreateOptionsMenu(menu);
 	}
 
@@ -945,6 +957,11 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		case R.id.action_donate:
 			Log.i(TAG, "spende");
 			this.startActivity(new Intent(this, DonateActivity.class));
+			break;
+		case R.id.action_multiwindow: //
+			if (multiWindow != null) {
+				multiWindow.displayAppList();
+			}
 			break;
 		case R.id.action_settings:
 			Log.i(TAG, "settings");

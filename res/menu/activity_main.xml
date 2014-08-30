@@ -14,10 +14,13 @@
 	<item android:id="@+id/action_donate" android:title="@string/donate_adfree" android:icon="@android:drawable/ic_menu_agenda"
 		app:showAsAction="ifRoom" />
 
+	<item android:id="@+id/action_info" android:title="@string/info" android:icon="@android:drawable/ic_menu_info_details"
+		app:showAsAction="ifRoom" />
+
 	<item android:id="@+id/action_settings" android:title="@string/settings" android:icon="@android:drawable/ic_menu_preferences"
 		app:showAsAction="ifRoom" />
 
-	<item android:id="@+id/action_info" android:title="@string/info" android:icon="@android:drawable/ic_menu_info_details"
+	<item android:id="@+id/action_multiwindow" android:title="@string/multi_window" android:icon="@android:drawable/ic_menu_view"
 		app:showAsAction="ifRoom" />
 
 	<item android:id="@+id/action_end" android:title="@string/ende" android:icon="@android:drawable/ic_menu_close_clear_cancel"

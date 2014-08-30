@@ -546,6 +546,8 @@ public class Stations {
 	public static final String RADIO_ZEN_FM = "Zen FM";
 	public static final String RADIO_HITRADIO_80_CZ = "Hitrádio 80tka (CZ)";
 	public static final String RADIO_HITRADIO_90_CZ = "Hitrádio 90tka (CZ)";
+	public static final String RADIO_POP_FOR_YOU = "Pop For You";
+	public static final String RADIO_ZEN_FOR_YOU = "Zen For You";
 
 	/**
 	 * A stations contains of a...<br>
@@ -1499,7 +1501,7 @@ public class Stations {
 		m.put(NAME, RADIO_HOCKEY_FANRADIO);
 		m.put(ICON, R.drawable.radio_hockey_fanradio);
 		m.put(ICON_SMALL, R.drawable.radio_hockey_fanradio_small);
-		m.put(STREAM, "http://streaming2-boreas.1000mikes.com/hockey_fanradio");
+		m.put(STREAM, "http://streaming4-boreas.1000mikes.com/hockey_fanradio_2");
 		m.put(HOMEPAGE, "http://www.hockeyfanradio.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "info@hockeyfanradio.ch");
@@ -5413,7 +5415,8 @@ public class Stations {
 		m.put(NAME, RADIO_MUSICBASE_FM_DANCE);
 		m.put(ICON, R.drawable.radio_musicbase_fm);
 		m.put(ICON_SMALL, R.drawable.radio_musicbase_fm_small);
-		m.put(STREAM, "http://stream.clubsection.fm");
+		m.put(STREAM, "http://89.31.134.140");
+		// m.put(STREAM, "http://stream.clubsection.fm");
 		m.put(HOMEPAGE, "http://www.musicbase.fm");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "info@musicbase.fm");
@@ -6594,6 +6597,32 @@ public class Stations {
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.hitradiofm.cz/clanek/kontakt");
 		m.put(SPRACHE, SPRACHE_CZ);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_POP_FOR_YOU);
+		m.put(ICON, R.drawable.radio_pop_for_you);
+		m.put(ICON_SMALL, R.drawable.radio_pop_for_you_small);
+		m.put(STREAM, "http://streaming.radionomy.com/POP-FOR-YOU");
+		m.put(HOMEPAGE, "http://pop-for-you.playtheradio.com");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://pop-for-you.playtheradio.com/contact.cfm");
+		m.put(SPRACHE, SPRACHE_FR);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_ZEN_FOR_YOU);
+		m.put(ICON, R.drawable.radio_zen_for_you);
+		m.put(ICON_SMALL, R.drawable.radio_zen_for_you_small);
+		m.put(STREAM, "http://streaming.radionomy.com/ZEN-FOR-YOU");
+		m.put(HOMEPAGE, "http://zen-for-you.playtheradio.com");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://zen-for-you.playtheradio.com/contact.cfm");
+		m.put(SPRACHE, SPRACHE_FR);
 		m.put(LAND, LAND_DIV);
 		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
