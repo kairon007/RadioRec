@@ -409,6 +409,7 @@ public class Stations {
 	public static final String RADIO_BASSLOVER = "Basslover";
 	public static final String RADIO_KULTURRADIO_FM = "Kultur Radio FM";
 	public static final String RADIO_GAY_FM = "Gay FM";
+	public static final String RADIO_91_2 = "Radio 91,2";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -4973,6 +4974,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.gayfm.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.gayfm.de/kontakt.asp");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_91_2);
+		m.put(ICON, R.drawable.radio_91_2);
+		m.put(ICON_SMALL, R.drawable.radio_91_2_small);
+		m.put(STREAM, "http://85.13.133.235:8004");
+		m.put(HOMEPAGE, "http://www.radio912.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.radio912.de/sonstiges/kontakt/art1259,21");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
