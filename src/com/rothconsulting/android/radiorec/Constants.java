@@ -132,7 +132,8 @@ public class Constants {
 		liveStreamStationList.add(Stations.RADIO_SK_RAPID_WIEN);
 		liveStreamStationList.add(Stations.RADIO_SK_PUNTIGAMER_STURM_GRAZ);
 		liveStreamStationList.add(Stations.RADIO_FC_REDBULL_SALBURG);
-		liveStreamStationList.add(Stations.RADIO_HOCKEY_FANRADIO);
+		liveStreamStationList.add(Stations.RADIO_HOCKEY_FANRADIO_1);
+		liveStreamStationList.add(Stations.RADIO_HOCKEY_FANRADIO_2);
 		liveStreamStationList.add(Stations.RADIO_RWW_EHC_WINTERTHUR);
 		return liveStreamStationList;
 	}
