@@ -407,6 +407,7 @@ public class Stations {
 	public static final String RADIO_HANNOVER_876 = "Hannover 87,6";
 	public static final String RADIO_BASSLOVER = "Basslover";
 	public static final String RADIO_KULTURRADIO_FM = "Kultur Radio FM";
+	public static final String RADIO_GAY_FM = "Gay FM";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -525,8 +526,8 @@ public class Stations {
 	public static final String RADIO_DI_CHILLOUTDREAMS = "DI Chillout Dreams";
 	public static final String RADIO_DI_CLASSIC_EURODANCE = "DI Classic Eurodance";
 	public static final String RADIO_DI_EURODANCE = "DI Eurodance";
-	public static final String RADIO_10_GOLD_90S = "Radio 10 Gold 90s";
-	public static final String RADIO_10_GOLD_TOP4000 = "Radio 10 Gold Top 4000";
+	public static final String RADIO_10_90S = "Radio 10 90s";
+	public static final String RADIO_10_DICO_CLASSICS = "Radio 10 Disco Classics";
 	public static final String RADIO_CLASS_FM = "Class FM (HU)";
 	public static final String RADIO_JUVENTUS_RADIO = "Juventus Radio (HU)";
 	public static final String RADIO_1_HU = "Radio 1 (HU)";
@@ -2924,7 +2925,7 @@ public class Stations {
 		m.put(NAME, RADIO_FANTASY_DANCE);
 		m.put(ICON, R.drawable.radio_fantasy_dance);
 		m.put(ICON_SMALL, R.drawable.radio_fantasy_dance_small);
-		m.put(STREAM, "http://dancefmwebradio.de:8000/dsl_stream.mp3");
+		m.put(STREAM, "http://fantasydancefm.de:8000/dsl_stream.mp3");
 		m.put(HOMEPAGE, "http://www.fantasy967.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.fantasy967.de/index.php?id=88");
@@ -4950,6 +4951,19 @@ public class Stations {
 		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
 
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_GAY_FM);
+		m.put(ICON, R.drawable.radio_gayfm);
+		m.put(ICON_SMALL, R.drawable.radio_gayfm_small);
+		m.put(STREAM, "http://tuner.gayfm.de");
+		m.put(HOMEPAGE, "http://www.gayfm.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.gayfm.de/kontakt.asp");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
 		// ******************************************************************************************************
 		// *
 		// ÖSTERREICH
@@ -6277,32 +6291,6 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_SKY_FM_DANCE_HITS);
-		m.put(ICON, R.drawable.radio_sky_fm);
-		m.put(ICON_SMALL, R.drawable.radio_sky_fm_small);
-		m.put(STREAM, "http://pub1.sky.fm:80/sky_dancehits");
-		m.put(HOMEPAGE, "http://www.sky.fm");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://www.sky.fm/contact");
-		m.put(SPRACHE, SPRACHE_EN);
-		m.put(LAND, LAND_DIV);
-		m.put(STIL, STIL_TRANCE);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_SKY_FM_90_S);
-		m.put(ICON, R.drawable.radio_sky_fm);
-		m.put(ICON_SMALL, R.drawable.radio_sky_fm_small);
-		m.put(STREAM, "http://pub1.sky.fm/sky_hit90s");
-		m.put(HOMEPAGE, "http://www.sky.fm");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://www.sky.fm/contact");
-		m.put(SPRACHE, SPRACHE_EN);
-		m.put(LAND, LAND_DIV);
-		m.put(STIL, STIL_TRANCE);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_SMOOTH_RIVIERA);
 		m.put(ICON, R.drawable.radio_smooth_riviera);
 		m.put(ICON_SMALL, R.drawable.radio_smooth_riviera_small);
@@ -6345,7 +6333,7 @@ public class Stations {
 		m.put(NAME, RADIO_DI_EURODANCE);
 		m.put(ICON, R.drawable.radio_di_eurodance);
 		m.put(ICON_SMALL, R.drawable.radio_di_eurodance_small);
-		m.put(STREAM, "http://pub7.di.fm/di_eurodance_aac?type=.mp3");
+		m.put(STREAM, "http://pub8.di.fm/di_eurodance_aac?type=.mp3");
 		m.put(HOMEPAGE, "http://www.di.fm/eurodance");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "https://diradio.uservoice.com/clients/widgets/classic_widget?mode=full&forum_id=183400");
@@ -6368,10 +6356,10 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_10_GOLD_90S);
+		m.put(NAME, RADIO_10_90S);
 		m.put(ICON, R.drawable.radio_10_gold_90s);
 		m.put(ICON_SMALL, R.drawable.radio_10_gold_90s_small);
-		m.put(STREAM, "http://82.201.100.10:8000/RD10_Radio10Gold_90s_Hits");
+		m.put(STREAM, "http://stream.radiocorp.nl/r10_90s_mp3");
 		m.put(HOMEPAGE, "http://www.radio10.nl");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.radio10gold.nl/contact/");
@@ -6381,10 +6369,10 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_10_GOLD_TOP4000);
+		m.put(NAME, RADIO_10_DICO_CLASSICS);
 		m.put(ICON, R.drawable.radio_10_gold_top4000);
 		m.put(ICON_SMALL, R.drawable.radio_10_gold_top4000_small);
-		m.put(STREAM, "http://82.201.100.10:8000/WEB03");
+		m.put(STREAM, "http://stream.radiocorp.nl/r10_Disco_mp3");
 		m.put(HOMEPAGE, "http://www.radio10.nl");
 		m.put(WEBCAM, "http://www.radio10gold.nl/players/webcam.html");
 		m.put(EMAIL, "http://www.radio10gold.nl/contact/");
@@ -6397,7 +6385,7 @@ public class Stations {
 		m.put(NAME, RADIO_CLASS_FM);
 		m.put(ICON, R.drawable.radio_class_fm);
 		m.put(ICON_SMALL, R.drawable.radio_class_fm_small);
-		m.put(STREAM, "http://87.229.103.52:7058/CLASS_FM");
+		m.put(STREAM, "http://109.199.57.90/4784/live.mp3");
 		m.put(HOMEPAGE, "http://classfm.hu");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "classfm@classfm.hu");
@@ -6475,7 +6463,7 @@ public class Stations {
 		m.put(NAME, RADIO_FLAIX);
 		m.put(ICON, R.drawable.radio_flaix);
 		m.put(ICON_SMALL, R.drawable.radio_flaix_small);
-		m.put(STREAM, "http://195.10.10.220/flaix/flaixfmnopub.mp3");
+		m.put(STREAM, "http://195.10.10.219/flaix/shoutcastmp3.mp3");
 		m.put(HOMEPAGE, "http://www.flaixfm.cat");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "webmaster@grupflaix.cat");
