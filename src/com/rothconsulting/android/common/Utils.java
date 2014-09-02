@@ -346,9 +346,9 @@ public class Utils {
 			allDrawables = getAllDrawables();
 		}
 
-		Utils.log(TAG, "imageResId=" + imageResId);
+		log(TAG, "imageResId=" + imageResId);
 		String imageUrl = CastHelper.IMAGE_BASE_DIR + allDrawables.get(imageResId) + ".png";
-		Utils.log(TAG, "imageUrl=" + imageUrl);
+		log(TAG, "imageUrl=" + imageUrl);
 		return imageUrl;
 	}
 
