@@ -422,6 +422,7 @@ public class Stations {
 	public static final String RADIO_KAERNTEN = "Kärnten - ORF";
 	public static final String RADIO_SALZBURG = "Salzburg - ORF";
 	public static final String RADIO_STEIERMARK = "Steiermark - ORF";
+	public static final String RADIO_BURGENLAND = "Burgenland - ORF";
 	public static final String RADIO_OBEROESTERREICH = "Oberösterreich - ORF";
 	public static final String RADIO_NIEDEROESTERREICH = "Niederösterreich - ORF";
 	public static final String RADIO_VORARLBERG = "Vorarlberg - ORF";
@@ -3551,7 +3552,7 @@ public class Stations {
 		m.put(NAME, RADIO_BALLERMANN_RADIO);
 		m.put(ICON, R.drawable.radio_ballermann);
 		m.put(ICON_SMALL, R.drawable.radio_ballermann_small);
-		m.put(STREAM, "http://party.bmr-radio.de:8100");
+		m.put(STREAM, "http://stream.bmr-radio.de");
 		m.put(HOMEPAGE, "http://www.ballermann-radio.com");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "info@ballermann-radio.com");
@@ -5083,6 +5084,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://salzburg.orf.at");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "publikumsservice.salzburg@orf.at");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_AT);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_BURGENLAND);
+		m.put(ICON, R.drawable.radio_orf_burgenland);
+		m.put(ICON_SMALL, R.drawable.radio_orf_burgenland_small);
+		m.put(STREAM, "http://194.232.200.146:8000");
+		m.put(HOMEPAGE, "http://burgenland.orf.at");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://burgenland.orf.at/studio/stories/kontakt/");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_AT);
 		m.put(STIL, STIL_POP);
