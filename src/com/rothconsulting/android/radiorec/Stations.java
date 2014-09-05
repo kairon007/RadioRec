@@ -458,6 +458,7 @@ public class Stations {
 	public static final String RADIO_SUPER_GAUDI_ALPENGLUEHN = "Super Gaudi Alpenglühn";
 	public static final String RADIO_WELLE_1 = "Welle 1";
 	public static final String RADIO_WELLE_1_BLACK = "Welle 1 - Black";
+	public static final String RADIO_UNO_AT = "Radio Uno";
 
 	// ***********************************************
 	// ITALIEN
@@ -5554,6 +5555,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.welle1.at");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.welle1.com/sender/kontakt.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_AT);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_UNO_AT);
+		m.put(ICON, R.drawable.radio_uno_at);
+		m.put(ICON_SMALL, R.drawable.radio_uno_at_small);
+		m.put(STREAM, "http://host6.cartwall.at:8888");
+		m.put(HOMEPAGE, "http://www.radiouno.at");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "info@radiouno.at");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_AT);
 		m.put(STIL, STIL_POP);
