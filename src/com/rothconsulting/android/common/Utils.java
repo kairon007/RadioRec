@@ -2,6 +2,8 @@ package com.rothconsulting.android.common;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
@@ -234,6 +236,16 @@ public class Utils {
 	}
 
 	/**
+	 * Android Platform 4.0 = Level 14
+	 */
+	public static boolean isPlatformBelow_4_0() {
+		if (Build.VERSION.SDK_INT < 14) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * Android Platform 4.1 = Level 16
 	 */
 	public static boolean isPlatformBelow_4_1() {
@@ -370,6 +382,20 @@ public class Utils {
 			return true;
 		}
 		return false;
+	}
+
+	public static final Date today = new Date();
+	// GregorianCalendar(2013, 8, 10) = 10.9.2013
+	public static final GregorianCalendar border = new GregorianCalendar(2013, 8, 27);
+
+	public static boolean isBorderOver() {
+		// return true;
+		if (today.getTime() > border.getTimeInMillis()) {
+			return true;
+
+		} else {
+			return false;
+		}
 	}
 
 }

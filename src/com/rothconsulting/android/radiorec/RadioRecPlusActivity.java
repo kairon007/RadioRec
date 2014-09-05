@@ -923,11 +923,11 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			mediaRouteActionProvider.setRouteSelector(castHelper.mMediaRouteSelector);
 		}
 
-		if (Utils.hasValidKey()) {
+		if (Utils.hasValidKey() || !Utils.isBorderOver()) {
 			menu.removeItem(R.id.action_donate);
 		}
 
-		if (!Utils.isSamsungDevice()) {
+		if (!Utils.isSamsungDevice() || Utils.isPlatformBelow_4_0()) {
 			menu.removeItem(R.id.action_multiwindow);
 		} else {
 			multiWindow = new MultiWindowFunction(this);
