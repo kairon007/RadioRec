@@ -116,6 +116,11 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_91_2);
 		ignoreList.add(Stations.RADIO_BURGENLAND);
 		ignoreList.add(Stations.RADIO_UNO_AT);
+		ignoreList.add(Stations.RADIO_SUPEROLDIE);
+		ignoreList.add(Stations.RADIO_SUPERSCHLAGER);
+		ignoreList.add(Stations.RADIO_SW_RADIO);
+		ignoreList.add(Stations.RADIO_GOLD_BERLIN);
+		ignoreList.add(Stations.RADIO_DRESDEN);
 
 		return ignoreList;
 	}
@@ -202,5 +207,7 @@ public class Constants {
 	public static String FAV_ON = "favOn";
 
 	public static Boolean JUNIT_TEST = Boolean.FALSE;
+
+	public static String BASE_STREAM_URL = "http://koni.mobi/radiorec/streams.php?streamName=";
 
 }
