@@ -553,6 +553,7 @@ public class Stations {
 	public static final String RADIO_HITRADIO_90_CZ = "Hitrádio 90tka (CZ)";
 	public static final String RADIO_POP_FOR_YOU = "Pop For You";
 	public static final String RADIO_ZEN_FOR_YOU = "Zen For You";
+	public static final String RADIO_DIRTY_SOUTH = "Ditry South";
 
 	/**
 	 * A stations contains of a...<br>
@@ -6667,6 +6668,19 @@ public class Stations {
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://zen-for-you.playtheradio.com/contact.cfm");
 		m.put(SPRACHE, SPRACHE_FR);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_DIRTY_SOUTH);
+		m.put(ICON, R.drawable.radio_dirty_south);
+		m.put(ICON_SMALL, R.drawable.radio_dirty_south_small);
+		m.put(STREAM, "http://174.37.110.72:8010");
+		m.put(HOMEPAGE, "http://www.dirtysouthradioonline.com");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.dirtysouthradioonline.com/dsrmedia/contact-us");
+		m.put(SPRACHE, SPRACHE_EN);
 		m.put(LAND, LAND_DIV);
 		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
