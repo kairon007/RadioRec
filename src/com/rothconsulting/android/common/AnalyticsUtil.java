@@ -44,6 +44,8 @@ public class AnalyticsUtil {
 	 */
 	private static Tracker getTracker() {
 		// Get GoogleAnalytics tracker
-		return CustomApplication.getApplication().getTracker(TrackerName.APP_TRACKER);
+		Tracker t = CustomApplication.getApplication().getTracker(TrackerName.APP_TRACKER);
+		t.enableAdvertisingIdCollection(true);
+		return t;
 	}
 }
