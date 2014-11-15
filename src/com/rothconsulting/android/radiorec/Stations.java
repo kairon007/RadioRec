@@ -176,6 +176,7 @@ public class Stations {
 	public static final String RADIO_CANAL_3_FR = "Canal 3 - Français";
 	public static final String RADIO_ND_WAVE = "N.D.Wave";
 	public static final String RADIO_OPEN_BROADCAST = "Open Broadcast";
+	public static final String RADIO_SMASH = "Radio Smash";
 
 	// ***********************************************
 	// LIECHTENSTEIN
@@ -554,6 +555,7 @@ public class Stations {
 	public static final String RADIO_POP_FOR_YOU = "Pop For You";
 	public static final String RADIO_ZEN_FOR_YOU = "Zen For You";
 	public static final String RADIO_DIRTY_SOUTH = "Ditry South";
+	public static final String RADIO_NOSTALGIE = "Nostalgie";
 
 	/**
 	 * A stations contains of a...<br>
@@ -2136,6 +2138,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.openbroadcast.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://blog.openbroadcast.ch/en/aboutus/contact/");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_CH);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_SMASH);
+		m.put(ICON, R.drawable.radio_smash);
+		m.put(ICON_SMALL, R.drawable.radio_smash_small);
+		m.put(STREAM, "http://stream.radio-smash.ch:8055/live-stream");
+		m.put(HOMEPAGE, "http://radio-smash.ch");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://radio-smash.ch/kontakt/");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
 		m.put(STIL, STIL_POP);
@@ -6680,6 +6695,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.dirtysouthradioonline.com");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.dirtysouthradioonline.com/dsrmedia/contact-us");
+		m.put(SPRACHE, SPRACHE_EN);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_NOSTALGIE);
+		m.put(ICON, R.drawable.radio_nostalgie);
+		m.put(ICON_SMALL, R.drawable.radio_nostalgie_small);
+		m.put(STREAM, "http://95.81.155.10/5010/nrj_121955.mp3");
+		m.put(HOMEPAGE, "http://www.nostalgie.fr");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.nostalgie.fr/contact/");
 		m.put(SPRACHE, SPRACHE_EN);
 		m.put(LAND, LAND_DIV);
 		m.put(STIL, STIL_POP);
