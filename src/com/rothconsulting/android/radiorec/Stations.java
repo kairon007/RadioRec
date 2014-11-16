@@ -411,6 +411,7 @@ public class Stations {
 	public static final String RADIO_KULTURRADIO_FM = "Kultur Radio FM";
 	public static final String RADIO_GAY_FM = "Gay FM";
 	public static final String RADIO_91_2 = "Radio 91,2";
+	public static final String RADIO_INSELRADIO = "Inselradio";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -5007,6 +5008,19 @@ public class Stations {
 		m.put(EMAIL, "http://www.radio912.de/sonstiges/kontakt/art1259,21");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_INSELRADIO);
+		m.put(ICON, R.drawable.radio_inselradio);
+		m.put(ICON_SMALL, R.drawable.radio_inselradio_small);
+		m.put(STREAM, "http://www.mallorcaradiogroup.com/inselradio.mp3");
+		m.put(HOMEPAGE, "http://www.inselradio.com");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "https://www.inselradio.com/kontakt.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_ES);
 		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
 
