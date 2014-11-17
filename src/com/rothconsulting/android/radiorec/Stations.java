@@ -347,7 +347,11 @@ public class Stations {
 	public static final String RADIO_WUNSCHRADIO_SCHLAGER = "Wunschradio Schlager";
 	public static final String RADIO_WUNSCHRADIO_DANCE = "Wunschradio Dance";
 	public static final String RADIO_STAR_SAT = "Star Sat Radio";
-	public static final String RADIO_RAUTE_MUSIK = "Raute Musik";
+	public static final String RADIO_RAUTE_MUSIK_MAIN = "Raute Musik Main";
+	public static final String RADIO_RAUTE_MUSIK_CLUB = "Raute Musik Club";
+	public static final String RADIO_RAUTE_MUSIK_CHART = "Raute Musik ChartHits";
+	public static final String RADIO_RAUTE_MUSIK_DRUMSTEP = "Raute Musik DrupStep";
+	public static final String RADIO_RAUTE_MUSIK_DEUTSCHRAP = "Raute Musik Deutschrap";
 	public static final String RADIO_RSA_SACHSEN = "R.SA Sachsen";
 	public static final String RADIO_HITFM_89 = "Hit FM 89";
 	public static final String RADIO_DEUTSCHLAND_TANZT = "Deutschland Tanzt";
@@ -412,6 +416,7 @@ public class Stations {
 	public static final String RADIO_GAY_FM = "Gay FM";
 	public static final String RADIO_91_2 = "Radio 91,2";
 	public static final String RADIO_INSELRADIO = "Inselradio";
+	public static final String RADIO_WEB_HIT_RADIO = "Web Hit-Radio";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -4206,10 +4211,62 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_RAUTE_MUSIK);
+		m.put(NAME, RADIO_RAUTE_MUSIK_MAIN);
 		m.put(ICON, R.drawable.radio_raute_musik);
 		m.put(ICON_SMALL, R.drawable.radio_raute_musik_small);
 		m.put(STREAM, "http://main-high.rautemusik.fm");
+		m.put(HOMEPAGE, "http://www.rautemusik.fm");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.rautemusik.fm/service/feedback/");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_RAUTE_MUSIK_CLUB);
+		m.put(ICON, R.drawable.radio_raute_musik);
+		m.put(ICON_SMALL, R.drawable.radio_raute_musik_small);
+		m.put(STREAM, "http://club-high.rautemusik.fm/;stream.nsv");
+		m.put(HOMEPAGE, "http://www.rautemusik.fm");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.rautemusik.fm/service/feedback/");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_RAUTE_MUSIK_CHART);
+		m.put(ICON, R.drawable.radio_raute_musik);
+		m.put(ICON_SMALL, R.drawable.radio_raute_musik_small);
+		m.put(STREAM, "http://charthits-high.rautemusik.fm/;stream.nsv");
+		m.put(HOMEPAGE, "http://www.rautemusik.fm");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.rautemusik.fm/service/feedback/");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_RAUTE_MUSIK_DRUMSTEP);
+		m.put(ICON, R.drawable.radio_raute_musik);
+		m.put(ICON_SMALL, R.drawable.radio_raute_musik_small);
+		m.put(STREAM, "http://drumstep-high.rautemusik.fm/;stream.nsv");
+		m.put(HOMEPAGE, "http://www.rautemusik.fm");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.rautemusik.fm/service/feedback/");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_RAUTE_MUSIK_DEUTSCHRAP);
+		m.put(ICON, R.drawable.radio_raute_musik);
+		m.put(ICON_SMALL, R.drawable.radio_raute_musik_small);
+		m.put(STREAM, "http://deutschrap-high.rautemusik.fm/listen.pls/;stream.nsv");
 		m.put(HOMEPAGE, "http://www.rautemusik.fm");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.rautemusik.fm/service/feedback/");
@@ -5021,6 +5078,19 @@ public class Stations {
 		m.put(EMAIL, "https://www.inselradio.com/kontakt.html");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_ES);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_WEB_HIT_RADIO);
+		m.put(ICON, R.drawable.radio_web_hitradio);
+		m.put(ICON_SMALL, R.drawable.radio_web_hitradio_small);
+		m.put(STREAM, "http://88.198.38.107:8050/live.mp3");
+		m.put(HOMEPAGE, "http://www.webhitradio.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "webhitradio@webhitradio.de");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
 
