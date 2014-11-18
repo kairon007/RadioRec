@@ -136,8 +136,13 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 
 		// // Set up the action bar.
 		final ActionBar actionBar = getSupportActionBar();
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		actionBar.setHomeButtonEnabled(true);
+		actionBar.setDisplayShowHomeEnabled(true);
+		actionBar.setDisplayUseLogoEnabled(true);
+		actionBar.setLogo(R.drawable.jukebox);
+		actionBar.setDisplayShowTitleEnabled(true); // optional
 
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		// For each of the sections in the app, add a tab to the action bar.
 		actionBar.addTab(actionBar.newTab().setText(R.string.stations).setTabListener(this));
 		actionBar.addTab(actionBar.newTab().setText(R.string.favoriten).setTabListener(this));

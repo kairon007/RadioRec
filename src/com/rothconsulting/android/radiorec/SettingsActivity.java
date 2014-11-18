@@ -7,6 +7,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.provider.Settings.SettingNotFoundException;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.text.InputType;
 import android.view.Menu;
@@ -37,7 +38,13 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 		super.onCreate(savedInstanceState);
 
 		// Set up the action bar.
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		final ActionBar actionBar = getSupportActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setHomeButtonEnabled(true);
+		actionBar.setDisplayShowHomeEnabled(true);
+		actionBar.setDisplayUseLogoEnabled(true);
+		actionBar.setLogo(R.drawable.jukebox);
+		actionBar.setDisplayShowTitleEnabled(true); // optional
 
 		if (Constants.ROTATION_OFF_VALUE) {
 			// Prevent from Rotation

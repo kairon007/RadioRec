@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.text.ClipboardManager;
 import android.view.Menu;
@@ -39,7 +40,13 @@ public class DonateActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 
 		// Set up the action bar.
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		final ActionBar actionBar = getSupportActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setHomeButtonEnabled(true);
+		actionBar.setDisplayShowHomeEnabled(true);
+		actionBar.setDisplayUseLogoEnabled(true);
+		actionBar.setLogo(R.drawable.jukebox);
+		actionBar.setDisplayShowTitleEnabled(true); // optional
 
 		if (Constants.ROTATION_OFF_VALUE) {
 			// Prevent from Rotation

@@ -11,11 +11,11 @@
 			android:layout_marginLeft="5dip" />
 		<TextView android:text="@+id/TextViewFilename" android:id="@+id/TextViewFilename"
 			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:textStyle="bold" android:layout_marginTop="5dip"
+			android:textStyle="bold" android:layout_marginTop="5dip" android:textColor="#000000"
 			android:layout_marginLeft="5dip" android:gravity="bottom" />
 	</LinearLayout>
 
 	<TextView android:text="@+id/TextViewFiletypeSize" android:id="@+id/TextViewFiletypeSize"
 		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:layout_marginLeft="10dip" />
+		android:layout_marginLeft="10dip" android:textColor="@android:color/darker_gray"/>
 </LinearLayout>

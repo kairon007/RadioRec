@@ -13,6 +13,7 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.GradientDrawable.Orientation;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -44,7 +45,13 @@ public class FavouritesActivity extends ActionBarListActivity {
 		setContentView(R.layout.favourites);
 
 		// Set up the action bar.
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		final ActionBar actionBar = getSupportActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setHomeButtonEnabled(true);
+		actionBar.setDisplayShowHomeEnabled(true);
+		actionBar.setDisplayUseLogoEnabled(true);
+		actionBar.setLogo(R.drawable.jukebox);
+		actionBar.setDisplayShowTitleEnabled(true); // optional
 
 		AdMob ads = new AdMob();
 		ads.showRemoveAds(this);

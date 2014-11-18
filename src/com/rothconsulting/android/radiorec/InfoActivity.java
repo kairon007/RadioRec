@@ -1,12 +1,9 @@
 package com.rothconsulting.android.radiorec;
 
-import com.rothconsulting.android.common.AdMob;
-import com.rothconsulting.android.common.AnalyticsUtil;
-import com.rothconsulting.android.common.Utils;
-
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,6 +12,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.rothconsulting.android.common.AdMob;
+import com.rothconsulting.android.common.AnalyticsUtil;
+import com.rothconsulting.android.common.Utils;
+
 public class InfoActivity extends ActionBarActivity {
 
 	@Override
@@ -22,7 +23,13 @@ public class InfoActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 
 		// Set up the action bar.
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		final ActionBar actionBar = getSupportActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
+		actionBar.setHomeButtonEnabled(true);
+		actionBar.setDisplayShowHomeEnabled(true);
+		actionBar.setDisplayUseLogoEnabled(true);
+		actionBar.setLogo(R.drawable.jukebox);
+		actionBar.setDisplayShowTitleEnabled(true); // optional
 
 		if (Constants.ROTATION_OFF_VALUE) {
 			// Prevent from Rotation

@@ -236,6 +236,16 @@ public class Utils {
 	}
 
 	/**
+	 * Android Platform 3.0 = Level 11
+	 */
+	public static boolean isPlatformBelow_3_0() {
+		if (Build.VERSION.SDK_INT < 11) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * Android Platform 4.0 = Level 14
 	 */
 	public static boolean isPlatformBelow_4_0() {
