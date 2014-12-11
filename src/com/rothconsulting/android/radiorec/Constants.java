@@ -122,6 +122,7 @@ public class Constants {
 		ignoreList.add(Stations.RADIO_GOLD_BERLIN);
 		ignoreList.add(Stations.RADIO_DRESDEN);
 		ignoreList.add(Stations.RADIO_DIRTY_SOUTH);
+		ignoreList.add(Stations.RADIO_LA_LLAVE);
 
 		return ignoreList;
 	}
