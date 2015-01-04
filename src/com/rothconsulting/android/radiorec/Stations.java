@@ -3,8 +3,6 @@ package com.rothconsulting.android.radiorec;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import android.os.Build;
-
 public class Stations {
 
 	public static final String NAME = "name";
@@ -4057,7 +4055,7 @@ public class Stations {
 		m.put(NAME, RADIO_JUST_90);
 		m.put(ICON, R.drawable.radio_just_90s);
 		m.put(ICON_SMALL, R.drawable.radio_just_90s_small);
-		m.put(STREAM, "http://www.laut.fm/just90s");
+		m.put(STREAM, "http://stream3.laut.fm/just90s");
 		m.put(HOMEPAGE, "http://www.just90s.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.just90s.de/impr.htm");
@@ -4538,7 +4536,7 @@ public class Stations {
 		m.put(NAME, RADIO_ANTENNE_MASCHSEE);
 		m.put(ICON, R.drawable.radio_antenne_maschsee);
 		m.put(ICON_SMALL, R.drawable.radio_antenne_maschsee_small);
-		m.put(STREAM, "http://81.95.4.70:8080/antenne-maschsee?type=.mp3");
+		m.put(STREAM, "http://stream.laut.fm/antenne-maschsee");
 		m.put(HOMEPAGE, "http://laut.fm/antenne-maschsee");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "");
@@ -4603,7 +4601,7 @@ public class Stations {
 		m.put(NAME, RADIO_DUNKLE_WELLE);
 		m.put(ICON, R.drawable.radio_dunkle_welle);
 		m.put(ICON_SMALL, R.drawable.radio_dunkle_welle_small);
-		m.put(STREAM, "http://stream.dunklewelle.de:80");
+		m.put(STREAM, "http://stream.dunklewelle.de");
 		m.put(HOMEPAGE, "http://www.dunklewelle.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.dunklewelle.de/impressum");
@@ -4785,8 +4783,8 @@ public class Stations {
 		m.put(NAME, RADIO_HITRADIO_D3);
 		m.put(ICON, R.drawable.radio_hitradio_d3);
 		m.put(ICON_SMALL, R.drawable.radio_hitradio_d3_small);
-		m.put(STREAM, "http://stream.laut.fm/hitfm");
-		m.put(HOMEPAGE, "http://laut.fm/hitfm");
+		m.put(STREAM, "http://stream.laut.fm/hitradio-d3?type=.mp3");
+		m.put(HOMEPAGE, "http://laut.fm/hitradio-d3");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "https://twitter.com/laut_fm");
 		m.put(SPRACHE, SPRACHE_DE);
@@ -4902,7 +4900,7 @@ public class Stations {
 		m.put(NAME, RADIO_SUPERSCHLAGER);
 		m.put(ICON, R.drawable.radio_superschlager);
 		m.put(ICON_SMALL, R.drawable.radio_superschlager_small);
-		m.put(STREAM, "http://radio.radiosuperoldie.com:8899");
+		m.put(STREAM, "http://radio.radiosuperoldie.com:8888");
 		m.put(HOMEPAGE, "http://www.radiosuperschlager.com");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "kontakt@radiosuperoldie.com");
@@ -5636,7 +5634,7 @@ public class Stations {
 		m.put(NAME, RADIO_LIFE_RADIO_OBEROESTERREICH);
 		m.put(ICON, R.drawable.radio_life_radio);
 		m.put(ICON_SMALL, R.drawable.radio_life_radio_small);
-		m.put(STREAM, "http://liferadio.liwest.at:8000/liferadio2");
+		m.put(STREAM, "http://stream1.liferadio.at");
 		m.put(HOMEPAGE, "http://www.liferadio.at");
 		m.put(WEBCAM, "http://www.liferadio.at/imports/webcam/image.jpg");
 		m.put(EMAIL, "http://www.liferadio.at/programm/mail-ins-studio/");
@@ -5786,7 +5784,7 @@ public class Stations {
 		m.put(NAME, RADIO_HOLIDAY);
 		m.put(ICON, R.drawable.radio_holiday);
 		m.put(ICON_SMALL, R.drawable.radio_holiday_small);
-		m.put(STREAM, "http://server6.digital-webstream.de:18260");
+		m.put(STREAM, "http://stream.radioholiday.it:8000");
 		m.put(HOMEPAGE, "http://www.radioholiday.it");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.radioholiday.it/kontakt.html");
@@ -6254,7 +6252,7 @@ public class Stations {
 		m.put(NAME, RADIO_JAZZ_WELT);
 		m.put(ICON, R.drawable.radio_jazz_welt);
 		m.put(ICON_SMALL, R.drawable.radio_jazz_welt_small);
-		m.put(STREAM, "http://www.laut.fm/jazzwelt");
+		m.put(STREAM, "http://stream.laut.fm/jazzwelt");
 		m.put(HOMEPAGE, "http://www.laut.fm/jazzwelt");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.jrsk.de");
@@ -6787,7 +6785,7 @@ public class Stations {
 		m.put(NAME, RADIO_FLAIX);
 		m.put(ICON, R.drawable.radio_flaix);
 		m.put(ICON_SMALL, R.drawable.radio_flaix_small);
-		m.put(STREAM, "http://195.10.10.219/flaix/shoutcastmp3.mp3");
+		m.put(STREAM, "http://195.10.10.221/flaix/shoutcastmp3.mp3");
 		m.put(HOMEPAGE, "http://www.flaixfm.cat");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "webmaster@grupflaix.cat");
@@ -6969,12 +6967,30 @@ public class Stations {
 	}
 
 	private static void setStationlist(ArrayList<HashMap<String, Object>> stationList, HashMap<String, Object> m) {
-		if (Build.VERSION.SDK_INT < 8 && Constants.getIgnoreListShoutcast().contains(m.get(NAME))) {
-			// wenn kleiner 2.1 und in ignoreList, dann nicht hinzufügen.
-		} else {
-			stationList.add(m);
-			// fillLandStilList(m);
+		if (Constants.getShoutcastStations().contains(m.get(NAME))) {
+			m.put(STREAM, m.put(STREAM, handleShoutcast("" + m.get(NAME), "" + m.get(STREAM))));
+			// wenn in Shoutcast list, dann /; hinzufügen.
 		}
+		stationList.add(m);
+		// fillLandStilList(m);
+	}
+
+	/**
+	 * If it is a IP Address, most of the time it is a SHOUTcast or ICEcast stream.<br>
+	 * In this case append "/;" for streaming to chromecast.<br>
+	 * See http://stackoverflow.com/questions/23934513/how-to-stream-shoutcast-radio-streams-on-chromecast-receiver/24208569#24208569
+	 * 
+	 * @param url
+	 */
+	public static String handleShoutcast(String stationName, String url) {
+		if (url != null && ((Constants.getShoutcastStations().contains(stationName) && !url.endsWith("/;")) || url.contains("shoutcast"))) {
+			if (url.endsWith("/")) {
+				url = url + ";";
+			} else {
+				url = url + "/;";
+			}
+		}
+		return url;
 	}
 
 }

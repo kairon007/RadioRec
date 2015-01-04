@@ -15,7 +15,6 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.net.URL;
 
 import org.apache.http.HttpEntity;
@@ -108,11 +107,11 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 			not.showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
 			not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
 			Log.e(TAG, "FileNotFoundException :-(", fnfe);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			Notifications not = new Notifications(this.context, intent);
 			not.showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
 			not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
-			Log.e(TAG, "IOException :-(", e);
+			Log.e(TAG, "Exception :-(", e);
 		} finally {
 			try {
 				if (buffInputStream != null) {
@@ -127,11 +126,11 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 				not.showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
 				not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
 				Log.e(TAG, "FileNotFoundException :-(", fnfe);
-			} catch (IOException e) {
+			} catch (Exception e) {
 				Notifications not = new Notifications(this.context, intent);
 				not.showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
 				not.hideStatusBarNotification(Constants.NOTIFICATION_ID_RECORDING);
-				Log.e(TAG, "IOException :-(", e);
+				Log.e(TAG, "Exception :-(", e);
 			}
 			connectionProgressDialog.dismiss();
 		}

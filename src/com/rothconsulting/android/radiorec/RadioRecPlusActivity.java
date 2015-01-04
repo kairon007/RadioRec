@@ -683,12 +683,16 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		}
 		try {
 			outputUrl = new URL("file:///" + Constants.SD_CARD_PATH_VALUE + getSlash() + filename.replaceAll("/", "") + "-" + dateTime + ".mp3");
-		} catch (MalformedURLException e) {
+		} catch (Exception e) {
 			Notifications.getNotifInstance(this, RadioRecPlusActivity.class).showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
 		}
 
-		recordTask = new RadioRecorder(this, this.getIntent()).execute(inputUrl, outputUrl);
-		Utils.log(TAG, "*********** isRadioRecording2=" + recording);
+		try {
+			recordTask = new RadioRecorder(this, this.getIntent()).execute(inputUrl, outputUrl);
+			Utils.log(TAG, "*********** isRadioRecording2=" + recording);
+		} catch (Exception e) {
+			Notifications.getNotifInstance(this, RadioRecPlusActivity.class).showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
+		}
 
 		return recording;
 	}

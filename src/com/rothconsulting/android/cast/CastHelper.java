@@ -34,8 +34,8 @@ import com.google.android.gms.common.images.WebImage;
 import com.rothconsulting.android.common.AnalyticsUtil;
 import com.rothconsulting.android.common.CustomApplication;
 import com.rothconsulting.android.common.Utils;
-import com.rothconsulting.android.radiorec.Constants;
 import com.rothconsulting.android.radiorec.R;
+import com.rothconsulting.android.radiorec.Stations;
 
 public class CastHelper {
 
@@ -103,7 +103,7 @@ public class CastHelper {
 		Utils.log(TAG, "stationName=" + stationName);
 		Utils.log(TAG, "stationUrl=" + stationUrl);
 		Utils.log(TAG, "imageUrl  =" + imageUrl);
-		stationUrl = handleShoutcast(stationName, stationUrl);
+		stationUrl = Stations.handleShoutcast(stationName, stationUrl);
 		Utils.log(TAG, "stationUrl (SHOUTcast?) =" + stationUrl);
 		MediaMetadata mediaMetadata = new MediaMetadata(MediaMetadata.MEDIA_TYPE_MUSIC_TRACK);
 		mediaMetadata.putString(MediaMetadata.KEY_TITLE, stationName);
@@ -120,7 +120,7 @@ public class CastHelper {
 						Utils.log(TAG, "Media loaded successfully: StatusCode=" + result.getStatus().getStatusCode());
 					} else {
 						Utils.log(TAG, "Media loaded NOT successfully StatusCode=" + result.getStatus().getStatusCode());
-						Utils.clearPlayingNotification(getContext());
+						// Utils.clearPlayingNotification(getContext());
 					}
 				}
 			});
@@ -646,25 +646,4 @@ public class CastHelper {
 			return CustomApplication.getAppContext();
 		}
 	}
-
-	/**
-	 * If it is a IP Address, most of the time it is a SHOUTcast or ICEcast stream.<br>
-	 * In this case append "/;" for streaming to chromecast.<br>
-	 * See http://stackoverflow.com/questions/23934513/how-to-stream-shoutcast-radio-streams-on-chromecast-receiver/24208569#24208569
-	 * 
-	 * @param url
-	 */
-	private String handleShoutcast(String stationName, String url) {
-		Utils.log(TAG, "handleShoutcastIPAdress 1: " + url);
-		if (url.contains("shoutcast") || Constants.getIgnoreListShoutcast().contains(stationName)) {
-			if (url != null && url.endsWith("/")) {
-				url = url + ";";
-			} else {
-				url = url + "/;";
-			}
-		}
-		Utils.log(TAG, "handleShoutcastIPAdress 2: " + url);
-		return url;
-	}
-
 }
