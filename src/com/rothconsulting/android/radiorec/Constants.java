@@ -106,7 +106,6 @@ public class Constants {
 		scList.add(Stations.RADIO_91_2);
 		scList.add(Stations.RADIO_UNO_AT);
 		scList.add(Stations.RADIO_SUPEROLDIE);
-		scList.add(Stations.RADIO_SUPERSCHLAGER);
 		scList.add(Stations.RADIO_SW_RADIO);
 		scList.add(Stations.RADIO_GOLD_BERLIN);
 		scList.add(Stations.RADIO_DRESDEN);
@@ -137,6 +136,8 @@ public class Constants {
 		scList.add(Stations.RADIO_NIEDEROESTERREICH);
 		scList.add(Stations.RADIO_VORARLBERG);
 		scList.add(Stations.RADIO_FLAIX);
+		scList.add(Stations.RADIO_MK);
+		scList.add(Stations.RADIO_DEFIANT);
 
 		return scList;
 	}

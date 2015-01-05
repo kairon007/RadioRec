@@ -335,6 +335,7 @@ public class Stations {
 	public static final String RADIO_BASETRAX_CLUB = "BaseTrax.FM Club";
 	public static final String RADIO_MUSICBASE_FM_DANCE = "Musicbase.FM - Dance";
 	public static final String RADIO_ENNEPE_RUHR = "Ennepe Ruhr";
+	public static final String RADIO_ESSEN = "Essen";
 	public static final String RADIO_I_LOVE_2_DANCE_LOVE = "I Love 2 Dance - Love Radio";
 	public static final String RADIO_I_LOVE_2_DANCE_RADIO = "I Love 2 Dance - Dance Radio";
 	public static final String RADIO_CHARIVARI_OHRWUERMCHEN = "Charivari Ohrwürmchen";
@@ -352,6 +353,7 @@ public class Stations {
 	public static final String RADIO_RAUTE_MUSIK_DRUMSTEP = "Raute Musik DrupStep";
 	public static final String RADIO_RAUTE_MUSIK_DEUTSCHRAP = "Raute Musik Deutschrap";
 	public static final String RADIO_RSA_SACHSEN = "R.SA Sachsen";
+	public static final String RADIO_RSH = "R.SH Schleswig-Holstein";
 	public static final String RADIO_HITFM_89 = "Hit FM 89";
 	public static final String RADIO_DEUTSCHLAND_TANZT = "Deutschland Tanzt";
 	public static final String RADIO_NORA = "Nora";
@@ -387,6 +389,7 @@ public class Stations {
 	public static final String RADIO_AUF_GUTE_FREUNDE = "Auf gute Freunde";
 	public static final String RADIO_KINDERRADIO = "Kinderradio Kinder Lieder";
 	public static final String RADIO_ENERGY_NUERNBERG = "Energy Nürnberg";
+	public static final String RADIO_ENERGY_MUENCHEN = "Energy München";
 	public static final String RADIO_FUNCLUB_80 = "Funclub 80";
 	public static final String RADIO_1000_OLDIES = "1000 oldies";
 	public static final String RADIO_HIT_FM = "Hit-FM";
@@ -399,7 +402,6 @@ public class Stations {
 	public static final String RADIO_DAS_EURADIO = "Das Euradio";
 	public static final String RADIO_SW_RADIO = "Segenswelle SW Radio";
 	public static final String RADIO_SUPEROLDIE = "Superoldie";
-	public static final String RADIO_SUPERSCHLAGER = "Superschlager";
 	public static final String RADIO_DIE_NEUE_107_7 = "Die neue 107.7";
 	public static final String RADIO_DRESDEN = "Dresden";
 	public static final String RADIO_GOLD_BERLIN = "Gold Berlin";
@@ -422,6 +424,9 @@ public class Stations {
 	public static final String RADIO_HIRSCHMILCH_PROGRESSIVE = "Hirschmilch Progressive";
 	public static final String RADIO_HIRSCHMILCH_PSYTRANCE = "Hirschmilch Psytrance";
 	public static final String RADIO_ANTENNE_NIEDERSACHSEN = "Antenne Niedersachsen";
+	public static final String RADIO_LIMIT_FM = "Limit FM";
+	public static final String RADIO_2DAY = "Radio 2Day";
+	public static final String RADIO_MK = "Radio MK";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -572,6 +577,7 @@ public class Stations {
 	public static final String RADIO_ZEN_FOR_YOU = "Zen For You";
 	public static final String RADIO_DIRTY_SOUTH = "Ditry South";
 	public static final String RADIO_NOSTALGIE = "Nostalgie";
+	public static final String RADIO_DEFIANT = "Defiant";
 
 	/**
 	 * A stations contains of a...<br>
@@ -3386,6 +3392,20 @@ public class Stations {
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_ENERGY_MUENCHEN);
+		m.put(ICON, R.drawable.radio_energy_muenchen);
+		m.put(ICON_SMALL, R.drawable.radio_energy_muenchen_small);
+		m.put(STREAM, "http://radio.nrj.net/Muenchen/mp3");
+		m.put(HOMEPAGE, "http://www.energy.de/muenchen");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "studio-muenchen@energy.de");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
 		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_FFN_NIEDERSACHSEN);
 		m.put(ICON, R.drawable.radio_ffn_niedersachsen);
@@ -4091,6 +4111,19 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_ESSEN);
+		m.put(ICON, R.drawable.radio_essen);
+		m.put(ICON_SMALL, R.drawable.radio_essen_small);
+		m.put(STREAM, "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-radioessen/livestream.mp3");
+		m.put(HOMEPAGE, "http://www.radioessen.de");
+		m.put(WEBCAM, "http://www.radioessen.de/cam/cam.jpg");
+		m.put(EMAIL, "http://www.radioessen.de/ueber-uns/kontakt.html");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_I_LOVE_2_DANCE_RADIO);
 		m.put(ICON, R.drawable.radio_i_love_2_dance_radio);
 		m.put(ICON_SMALL, R.drawable.radio_i_love_2_dance_small);
@@ -4306,6 +4339,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.rsa-sachsen.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.rautemusik.fm/service/feedback/");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_RSH);
+		m.put(ICON, R.drawable.radio_rsh);
+		m.put(ICON_SMALL, R.drawable.radio_rsh_small);
+		m.put(STREAM, "http://regiocast.hoerradar.de/rsh128");
+		m.put(HOMEPAGE, "http://www.rsh.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.rsh.de/2207830/infos_kontakt_wissenswertes_wir_ueber_uns.html");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
@@ -4897,19 +4943,6 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_SUPERSCHLAGER);
-		m.put(ICON, R.drawable.radio_superschlager);
-		m.put(ICON_SMALL, R.drawable.radio_superschlager_small);
-		m.put(STREAM, "http://radio.radiosuperoldie.com:8888");
-		m.put(HOMEPAGE, "http://www.radiosuperschlager.com");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "kontakt@radiosuperoldie.com");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_DE);
-		m.put(STIL, STIL_VOLKSTUEMLICH);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_DIE_NEUE_107_7);
 		m.put(ICON, R.drawable.radio_die_neue_107_7);
 		m.put(ICON_SMALL, R.drawable.radio_die_neue_107_7_small);
@@ -5190,6 +5223,45 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.antenne.com");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "studio@antenne.com");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_LIMIT_FM);
+		m.put(ICON, R.drawable.radio_limit_fm);
+		m.put(ICON_SMALL, R.drawable.radio_limit_fm_small);
+		m.put(STREAM, "http://46.4.79.108:8000");
+		m.put(HOMEPAGE, "http://limit.fm");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.limit.fm/contact");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_2DAY);
+		m.put(ICON, R.drawable.radio_2day);
+		m.put(ICON_SMALL, R.drawable.radio_2day_small);
+		m.put(STREAM, "http://stream.radio2day.ip-streaming.net:8200/radio2day");
+		m.put(HOMEPAGE, "http://www.radio2day.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.radio2day.de/kontakt.php");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_MK);
+		m.put(ICON, R.drawable.radio_mk);
+		m.put(ICON_SMALL, R.drawable.radio_mk_small);
+		m.put(STREAM, "http://dd28838.kasserver.com:8000");
+		m.put(HOMEPAGE, "http://www.radio-mk.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.radio-mk.de/index.php?id=691");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
@@ -6958,6 +7030,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.nostalgie.fr");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.nostalgie.fr/contact/");
+		m.put(SPRACHE, SPRACHE_EN);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_DEFIANT);
+		m.put(ICON, R.drawable.radio_defiant);
+		m.put(ICON_SMALL, R.drawable.radio_defiant_small);
+		m.put(STREAM, "http://83.170.89.19:9862");
+		m.put(HOMEPAGE, "http://www.defiantradio.co.uk");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "defiantradiouk@hotmail.co.uk");
 		m.put(SPRACHE, SPRACHE_EN);
 		m.put(LAND, LAND_DIV);
 		m.put(STIL, STIL_POP);
