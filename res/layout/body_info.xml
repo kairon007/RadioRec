@@ -24,9 +24,9 @@
 				android:text="@string/info_design" android:id="@+id/textViewDesign"
 				android:layout_margin="5dip" />
 			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:layout_gravity="center_horizontal"
+				android:layout_width="wrap_content" android:layout_gravity="center"
 				android:text="@string/info_translation_it" android:id="@+id/textViewTranslationIt"
-				android:layout_margin="5dip" />
+				android:gravity="center" android:layout_margin="5dip" />
 			<TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:layout_gravity="center"
 				android:id="@+id/textViewInfoSDCard" android:layout_margin="10dip"
