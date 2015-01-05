@@ -254,6 +254,7 @@ public class Stations {
 	public static final String RADIO_NDR_903 = "NDR 90,3";
 	public static final String RADIO_NDR_INFO = "NDR Info";
 	public static final String RADIO_NDR_KULTUR = "NDR Kultur";
+	public static final String RADIO_NDR_KULTUR_BELCANTO = "NDR Kultur Belcanto";
 	public static final String RADIO_NDR_BLUE = "NDR Blue";
 	public static final String RADIO_N_JOY = "N-Joy";
 	public static final String RADIO_GONG_NUERNBERG = "Gong Nürnberg";
@@ -3086,6 +3087,19 @@ public class Stations {
 		m.put(ICON_SMALL, R.drawable.radio_ndr_kultur_small);
 		m.put(STREAM, "http://ndr-ndrkultur-mp3.akacast.akamaistream.net/7/527/273758/v1/gnl.akacast.akamaistream.net/ndr_ndrkultur_mp3");
 		m.put(HOMEPAGE, "http://www.ndr.de/ndrkultur");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.ndr.de/ndrkultur/service/kontakt");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_KLASSIK);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_NDR_KULTUR_BELCANTO);
+		m.put(ICON, R.drawable.radio_ndr_kultur);
+		m.put(ICON_SMALL, R.drawable.radio_ndr_kultur_small);
+		m.put(STREAM, "http://ndr-ndrloop2-hi-mp3.akacast.akamaistream.net/7/262/160823/v1/gnl.akacast.akamaistream.net/ndr_ndrloop2_hi_mp3");
+		m.put(HOMEPAGE, "https://www.ndr.de/ndrkultur/sendungen/belcanto/index.html");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.ndr.de/ndrkultur/service/kontakt");
 		m.put(SPRACHE, SPRACHE_DE);
