@@ -103,5 +103,6 @@
 	<string name="casting">Casting</string>
 	<string name="multi_window">Multi Window</string>
 	<string name="position">Position</string>
-							
+	<string name="ClearCannotFindStation">Sorry cannot find station. Please delete your data and try again</string>
+								
 </resources>

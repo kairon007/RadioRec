@@ -579,6 +579,9 @@ public class Stations {
 	public static final String RADIO_DIRTY_SOUTH = "Ditry South";
 	public static final String RADIO_NOSTALGIE = "Nostalgie";
 	public static final String RADIO_DEFIANT = "Defiant";
+	public static final String RADIO_MITM = "Martini In The Morning";
+	public static final String RADIO_THE_PENTHOUSE = "The Penthouse";
+	public static final String RADIO_1FM_ADORE_JAZZ = "1 FM Adore Jazz";
 
 	/**
 	 * A stations contains of a...<br>
@@ -6663,10 +6666,10 @@ public class Stations {
 		m.put(NAME, RADIO_DI_CHILLOUT);
 		m.put(ICON, R.drawable.radio_di_chillout);
 		m.put(ICON_SMALL, R.drawable.radio_di_chillout_small);
-		m.put(STREAM, "http://pub2.di.fm/di_chillout_aac?type=.mp3");
+		m.put(STREAM, "http://pub7.di.fm/di_chillout");
 		m.put(HOMEPAGE, "http://www.di.fm/chillout");
 		m.put(WEBCAM, "");
-		m.put(EMAIL, "https://diradio.uservoice.com/clients/widgets/classic_widget?mode=full&forum_id=183400");
+		m.put(EMAIL, "http://www.di.fm/contact#form");
 		m.put(SPRACHE, SPRACHE_EN);
 		m.put(LAND, LAND_DIV);
 		m.put(STIL, STIL_LOUNGE);
@@ -6676,10 +6679,10 @@ public class Stations {
 		m.put(NAME, RADIO_DI_CHILLOUTDREAMS);
 		m.put(ICON, R.drawable.radio_di_chilloutdream);
 		m.put(ICON_SMALL, R.drawable.radio_di_chilloutdream_small);
-		m.put(STREAM, "http://pub2.di.fm/di_chilloutdreams_aac?type=.mp3");
+		m.put(STREAM, "http://pub7.di.fm/di_chilloutdreams");
 		m.put(HOMEPAGE, "http://www.di.fm/chilloutdreams");
 		m.put(WEBCAM, "");
-		m.put(EMAIL, "https://diradio.uservoice.com/clients/widgets/classic_widget?mode=full&forum_id=183400");
+		m.put(EMAIL, "http://www.di.fm/contact#form");
 		m.put(SPRACHE, SPRACHE_EN);
 		m.put(LAND, LAND_DIV);
 		m.put(STIL, STIL_LOUNGE);
@@ -6689,10 +6692,10 @@ public class Stations {
 		m.put(NAME, RADIO_DI_DOWNTEMPO_LOUNGE);
 		m.put(ICON, R.drawable.radio_di_downtempo_lounge);
 		m.put(ICON_SMALL, R.drawable.radio_di_downtempo_lounge_small);
-		m.put(STREAM, "http://pub5.di.fm/di_downtempolounge_aac?type=.mp3");
+		m.put(STREAM, "http://pub7.di.fm/di_downtempolounge");
 		m.put(HOMEPAGE, "http://www.di.fm/downtempolounge");
 		m.put(WEBCAM, "");
-		m.put(EMAIL, "https://diradio.uservoice.com/clients/widgets/classic_widget?mode=full&forum_id=183400");
+		m.put(EMAIL, "http://www.di.fm/contact#form");
 		m.put(SPRACHE, SPRACHE_EN);
 		m.put(LAND, LAND_DIV);
 		m.put(STIL, STIL_LOUNGE);
@@ -6702,10 +6705,10 @@ public class Stations {
 		m.put(NAME, RADIO_DI_EURODANCE);
 		m.put(ICON, R.drawable.radio_di_eurodance);
 		m.put(ICON_SMALL, R.drawable.radio_di_eurodance_small);
-		m.put(STREAM, "http://pub8.di.fm/di_eurodance_aac?type=.mp3");
+		m.put(STREAM, "http://pub7.di.fm/di_eurodance");
 		m.put(HOMEPAGE, "http://www.di.fm/eurodance");
 		m.put(WEBCAM, "");
-		m.put(EMAIL, "https://diradio.uservoice.com/clients/widgets/classic_widget?mode=full&forum_id=183400");
+		m.put(EMAIL, "http://www.di.fm/contact#form");
 		m.put(SPRACHE, SPRACHE_EN);
 		m.put(LAND, LAND_DIV);
 		m.put(STIL, STIL_LOUNGE);
@@ -6715,10 +6718,10 @@ public class Stations {
 		m.put(NAME, RADIO_DI_CLASSIC_EURODANCE);
 		m.put(ICON, R.drawable.radio_di_classic_eurodance);
 		m.put(ICON_SMALL, R.drawable.radio_di_classic_eurodance_small);
-		m.put(STREAM, "http://pub7.di.fm/di_classiceurodance_aac?type=.mp3");
+		m.put(STREAM, "http://pub7.di.fm/di_classiceurodance");
 		m.put(HOMEPAGE, "http://www.di.fm/classiceurodance");
 		m.put(WEBCAM, "");
-		m.put(EMAIL, "https://diradio.uservoice.com/clients/widgets/classic_widget?mode=full&forum_id=183400");
+		m.put(EMAIL, "http://www.di.fm/contact#form");
 		m.put(SPRACHE, SPRACHE_EN);
 		m.put(LAND, LAND_DIV);
 		m.put(STIL, STIL_LOUNGE);
@@ -7057,6 +7060,45 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.defiantradio.co.uk");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "defiantradiouk@hotmail.co.uk");
+		m.put(SPRACHE, SPRACHE_EN);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_MITM);
+		m.put(ICON, R.drawable.radio_mitm);
+		m.put(ICON_SMALL, R.drawable.radio_mitm_small);
+		m.put(STREAM, "http: // mitm.digistream.info:8052");
+		m.put(HOMEPAGE, "http://martiniinthemorning.com");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://martiniinthemorning.com/?page_id=110");
+		m.put(SPRACHE, SPRACHE_EN);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_1FM_ADORE_JAZZ);
+		m.put(ICON, R.drawable.radio_1fm);
+		m.put(ICON_SMALL, R.drawable.radio_1fm_small);
+		m.put(STREAM, "http://sc1c-sjc.1.fm:5084");
+		m.put(HOMEPAGE, "http://www.1.fm/station/ajazz");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.1.fm/help");
+		m.put(SPRACHE, SPRACHE_EN);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_THE_PENTHOUSE);
+		m.put(ICON, R.drawable.radio_the_penthouse);
+		m.put(ICON_SMALL, R.drawable.radio_the_penthouse_small);
+		m.put(STREAM, "http://streaming.streamonomy.com/penthouse");
+		m.put(HOMEPAGE, "http://www.thepenthouse.fm");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.thepenthouse.fm/contact.html");
 		m.put(SPRACHE, SPRACHE_EN);
 		m.put(LAND, LAND_DIV);
 		m.put(STIL, STIL_POP);

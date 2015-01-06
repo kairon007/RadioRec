@@ -473,7 +473,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			if (resultCode == RESULT_OK) {
 				String stationName = data.getStringExtra("stationName");
 				// Toast.makeText(context, "Station: " + stationName, Toast.LENGTH_LONG).show();
-				Constants.SELECTED_STATION_INDEX_VALUE = Utils.getSpinnerPosition(Stations.getAllStations(), stationName);
+				Constants.SELECTED_STATION_INDEX_VALUE = Utils.getSpinnerPosition(this, Stations.getAllStations(), stationName);
 				// .setSelection starts the method onItemSelected(...) and starts it all over
 				spnAllStations.setSelection(Constants.SELECTED_STATION_INDEX_VALUE);
 				// changeStation();
@@ -545,14 +545,14 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		if (Constants.SPINNER_SELECTION == Constants.SPINNER_ALPHABETISCH && alphabeticList != null && alphabeticList.size() >= index) {
 			map = alphabeticList.get(index);
 			// .setSelection starts the method onItemSelected(...) and starts it all over
-			spnAllStations.setSelection(Utils.getSpinnerPosition(stationList, (String) map.get(Stations.NAME)));
+			spnAllStations.setSelection(Utils.getSpinnerPosition(this, stationList, (String) map.get(Stations.NAME)));
 			Constants.SPINNER_SELECTION = Constants.SPINNER_ALL_STATIONS;
 			return;
 		} else {
 			map = stationList.get(index);
 		}
 
-		spnAllStations.setSelection(Utils.getSpinnerPosition(stationList, (String) map.get(Stations.NAME)));
+		spnAllStations.setSelection(Utils.getSpinnerPosition(this, stationList, (String) map.get(Stations.NAME)));
 
 		Utils.log(TAG, "!!! Sender=" + Constants.SELECTED_STATION_NAME_VALUE);
 		Constants.SELECTED_STATION_ICON_VALUE = (Integer) map.get(Stations.ICON);
@@ -879,7 +879,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 
 				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "click_searched_station", "station: " + ((TextView) textView).getText());
 
-				spnAllStations.setSelection(Utils.getSpinnerPosition(stationList, "" + ((TextView) textView).getText()));
+				spnAllStations.setSelection(Utils.getSpinnerPosition(getParent(), stationList, "" + ((TextView) textView).getText()));
 			}
 		});
 

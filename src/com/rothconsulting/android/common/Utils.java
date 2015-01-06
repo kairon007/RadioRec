@@ -29,6 +29,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.util.Log;
 import android.view.Display;
+import android.widget.Toast;
 
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.rothconsulting.android.cast.CastHelper;
@@ -212,17 +213,21 @@ public class Utils {
 		return null;
 	}
 
-	public static int getSpinnerPosition(ArrayList<HashMap<String, Object>> stationList, String searchName) {
+	public static int getSpinnerPosition(Activity activity, ArrayList<HashMap<String, Object>> stationList, String searchName) {
 
-		int position = 0;
-		for (int i = 0; i < stationList.size(); i++) {
-			HashMap<String, Object> stationMap = stationList.get(i);
-			String stationName = (String) stationMap.get(Stations.NAME);
-			if (stationName.toUpperCase().contains(searchName.toUpperCase())) {
-				return i;
+		try {
+			for (int i = 0; i < stationList.size(); i++) {
+				HashMap<String, Object> stationMap = stationList.get(i);
+				String stationName = (String) stationMap.get(Stations.NAME);
+				if (stationName != null && searchName != null & stationName.toUpperCase().contains(searchName.toUpperCase())) {
+					return i;
+				}
 			}
+			Toast.makeText(activity, activity.getString(R.string.clearCannotFindStation), Toast.LENGTH_LONG).show();
+		} catch (Exception e) {
+			Toast.makeText(CustomApplication.getAppContext(), "Sorry cannot find station. Please delete your data and try again", Toast.LENGTH_LONG).show();
 		}
-		return position;
+		return 0; // position = 0;
 	}
 
 	/**

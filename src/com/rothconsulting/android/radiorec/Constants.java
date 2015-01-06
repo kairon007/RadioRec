@@ -138,6 +138,8 @@ public class Constants {
 		scList.add(Stations.RADIO_FLAIX);
 		scList.add(Stations.RADIO_MK);
 		scList.add(Stations.RADIO_DEFIANT);
+		scList.add(Stations.RADIO_MITM);
+		scList.add(Stations.RADIO_1FM_ADORE_JAZZ);
 
 		return scList;
 	}

@@ -99,5 +99,6 @@
 	<string name="incomingCall">Stoppe. Anruf!</string>
 	<string name="alreadyDonated">Du hast schon gespendet. Danke!</string>
 	<string name="stations">Sender</string>
-						
+	<string name="clearCannotFindStation">Entschuldigung kann die Station nicht finden. Bitte lösche deine Daten und versuche es erneut</string>
+	
 </resources>
