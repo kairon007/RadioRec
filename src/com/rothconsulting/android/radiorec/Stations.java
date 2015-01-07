@@ -6835,7 +6835,7 @@ public class Stations {
 		m.put(NAME, RADIO_HRT_HR_PRVI);
 		m.put(ICON, R.drawable.radio_hrt1_hr);
 		m.put(ICON_SMALL, R.drawable.radio_hrt1_hr);
-		m.put(STREAM, "http://5293.live.streamtheworld.com:80/PROGRAM1AAC_SC");
+		m.put(STREAM, "http://5243.live.streamtheworld.com/PROGRAM1AAC");
 		m.put(HOMEPAGE, "http://radio.hrt.hr");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.hrt.hr/index.php?id=186&tx_ttnews[tt_news]=415&tx_ttnews[backPid]=186&cHash=6029a2d56d");
@@ -6848,7 +6848,7 @@ public class Stations {
 		m.put(NAME, RADIO_HRT_HR_DRUGI);
 		m.put(ICON, R.drawable.radio_hrt2_hr);
 		m.put(ICON_SMALL, R.drawable.radio_hrt2_hr);
-		m.put(STREAM, "http://4123.live.streamtheworld.com:80/PROGRAM2AAC_SC");
+		m.put(STREAM, "http://4123.live.streamtheworld.com/PROGRAM2AAC");
 		m.put(HOMEPAGE, "http://radio.hrt.hr");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.hrt.hr/index.php?id=186&tx_ttnews[tt_news]=415&tx_ttnews[backPid]=186&cHash=6029a2d56d");
@@ -6861,7 +6861,7 @@ public class Stations {
 		m.put(NAME, RADIO_HRT_HR_TRECI);
 		m.put(ICON, R.drawable.radio_hrt3_hr);
 		m.put(ICON_SMALL, R.drawable.radio_hrt3_hr);
-		m.put(STREAM, "http://5293.live.streamtheworld.com:80/PROGRAM3AAC_SC");
+		m.put(STREAM, "http://4123.live.streamtheworld.com/PROGRAM3AAC");
 		m.put(HOMEPAGE, "http://radio.hrt.hr");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.hrt.hr/index.php?id=186&tx_ttnews[tt_news]=415&tx_ttnews[backPid]=186&cHash=6029a2d56d");
@@ -7069,7 +7069,7 @@ public class Stations {
 		m.put(NAME, RADIO_MITM);
 		m.put(ICON, R.drawable.radio_mitm);
 		m.put(ICON_SMALL, R.drawable.radio_mitm_small);
-		m.put(STREAM, "http: // mitm.digistream.info:8052");
+		m.put(STREAM, "http://mitm.digistream.info:8052");
 		m.put(HOMEPAGE, "http://martiniinthemorning.com");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://martiniinthemorning.com/?page_id=110");
@@ -7082,7 +7082,8 @@ public class Stations {
 		m.put(NAME, RADIO_1FM_ADORE_JAZZ);
 		m.put(ICON, R.drawable.radio_1fm);
 		m.put(ICON_SMALL, R.drawable.radio_1fm_small);
-		m.put(STREAM, "http://sc1c-sjc.1.fm:5084");
+		// m.put(STREAM, "http://sc1c-sjc.1.fm:5084");
+		m.put(STREAM, "http://205.164.36.21");
 		m.put(HOMEPAGE, "http://www.1.fm/station/ajazz");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.1.fm/help");
@@ -7101,9 +7102,9 @@ public class Stations {
 		m.put(EMAIL, "http://www.thepenthouse.fm/contact.html");
 		m.put(SPRACHE, SPRACHE_EN);
 		m.put(LAND, LAND_DIV);
-		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
 
+		m.put(STIL, STIL_POP);
 		return stationList;
 	}
 

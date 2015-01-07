@@ -215,19 +215,25 @@ public class Utils {
 
 	public static int getSpinnerPosition(Activity activity, ArrayList<HashMap<String, Object>> stationList, String searchName) {
 
+		int initPosition = 0;
 		try {
 			for (int i = 0; i < stationList.size(); i++) {
 				HashMap<String, Object> stationMap = stationList.get(i);
 				String stationName = (String) stationMap.get(Stations.NAME);
-				if (stationName != null && searchName != null & stationName.toUpperCase().contains(searchName.toUpperCase())) {
+				// debug
+				if (stationName == null || searchName == null) {
+					AnalyticsUtil.sendEvent(AnalyticsUtil.ERROR, "Utils.getSpinnerPosition", "stationName=" + stationName + "searchName=" + searchName);
+				}
+				if (stationName.toUpperCase().contains(searchName.toUpperCase())) {
 					return i;
 				}
 			}
 			Toast.makeText(activity, activity.getString(R.string.clearCannotFindStation), Toast.LENGTH_LONG).show();
 		} catch (Exception e) {
 			Toast.makeText(CustomApplication.getAppContext(), "Sorry cannot find station. Please delete your data and try again", Toast.LENGTH_LONG).show();
+			return initPosition;
 		}
-		return 0; // position = 0;
+		return initPosition;
 	}
 
 	/**

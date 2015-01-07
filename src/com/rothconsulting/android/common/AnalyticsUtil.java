@@ -8,6 +8,7 @@ public class AnalyticsUtil {
 
 	public static final String UI_ACTION = "ui_action";
 	public static final String KEY_VALIDATION = "key_validation";
+	public static final String ERROR = "Error";
 
 	/**
 	 * Build and send Analytics Event.
