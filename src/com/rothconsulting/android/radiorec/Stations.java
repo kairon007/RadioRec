@@ -582,6 +582,7 @@ public class Stations {
 	public static final String RADIO_MITM = "Martini In The Morning";
 	public static final String RADIO_THE_PENTHOUSE = "The Penthouse";
 	public static final String RADIO_1FM_ADORE_JAZZ = "1 FM Adore Jazz";
+	public static final String RADIO_LIVE_IRELAND = "Live Ireland";
 
 	/**
 	 * A stations contains of a...<br>
@@ -7100,6 +7101,18 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.thepenthouse.fm");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.thepenthouse.fm/contact.html");
+		m.put(SPRACHE, SPRACHE_EN);
+		m.put(LAND, LAND_DIV);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_LIVE_IRELAND);
+		m.put(ICON, R.drawable.radio_live_ireland);
+		m.put(ICON_SMALL, R.drawable.radio_live_ireland_small);
+		m.put(STREAM, "http://66.90.73.250:8080");
+		m.put(HOMEPAGE, "http://my.liveireland.com");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://my.liveireland.com/page/contact-1");
 		m.put(SPRACHE, SPRACHE_EN);
 		m.put(LAND, LAND_DIV);
 		setStationlist(stationList, m);
