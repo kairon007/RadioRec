@@ -116,7 +116,6 @@ public class Constants {
 		scList.add(Stations.RADIO_STAR_SAT);
 		scList.add(Stations.RADIO_BYTE_FM);
 		scList.add(Stations.RADIO_ARBERWALD_RADIO);
-		scList.add(Stations.RADIO_BROCKEN);
 		scList.add(Stations.RADIO_RMN_RADIO_FM);
 		scList.add(Stations.RADIO_LIFE_RADIO_TIROL);
 		scList.add(Stations.RADIO_SCHWARZE_WELLE);
@@ -141,6 +140,7 @@ public class Constants {
 		scList.add(Stations.RADIO_MITM);
 		scList.add(Stations.RADIO_1FM_ADORE_JAZZ);
 		scList.add(Stations.RADIO_LIVE_IRELAND);
+		scList.add(Stations.RADIO_SCHLAGERTEMPEL);
 
 		return scList;
 	}

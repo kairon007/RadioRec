@@ -2,8 +2,6 @@ package com.rothconsulting.android.radiorec;
 
 import java.io.IOException;
 
-import com.rothconsulting.android.common.Utils;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +9,8 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.PowerManager;
 import android.util.Log;
+
+import com.rothconsulting.android.common.Utils;
 
 public class RadioPlayer {
 
@@ -26,7 +26,7 @@ public class RadioPlayer {
 		return isRunning;
 	}
 
-	private Notifications getNotifInstance(Context context) {
+	private static Notifications getNotifInstance(Context context) {
 		Intent intent = new Intent(context, DonateActivity.class);
 		intent.putExtra(Constants.FROM_NOTIFICATION, Constants.FROM_NOTIFICATION);
 		return new Notifications(context, intent);
@@ -170,7 +170,7 @@ public class RadioPlayer {
 
 	}
 
-	private boolean isPlayerPlaying(MediaPlayer mediaPlayer) {
+	private static boolean isPlayerPlaying(MediaPlayer mediaPlayer) {
 		boolean result = false;
 		try {
 			if (mediaPlayer != null && mediaPlayer.isPlaying()) {

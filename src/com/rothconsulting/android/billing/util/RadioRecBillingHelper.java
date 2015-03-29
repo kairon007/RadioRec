@@ -29,7 +29,7 @@ public class RadioRecBillingHelper {
 	public static final String RR_DONATE_SILVER = "rr_donate_silver";
 	public static final String RR_DONATE_GOLD = "rr_donate_gold";
 
-	private List<String> getAllSku() {
+	private static List<String> getAllSku() {
 		List<String> suks = new ArrayList<String>();
 		suks.add(RR_DONATE_BASIC);
 		suks.add(RR_DONATE_BASIC_PLUS);

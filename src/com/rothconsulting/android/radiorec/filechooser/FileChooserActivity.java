@@ -160,7 +160,7 @@ public class FileChooserActivity extends ActionBarListActivity {
 		setListAdapter(adapter);
 	}
 
-	private boolean isKnownMusicFile(String filename) {
+	private static boolean isKnownMusicFile(String filename) {
 
 		if (filename.endsWith(".mp3")) {
 			return true;

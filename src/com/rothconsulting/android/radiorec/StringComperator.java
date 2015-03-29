@@ -10,10 +10,9 @@ public class StringComperator implements Comparator<String> {
 		return (0 != i) ? i : s1.compareTo(s2);
 	}
 
-	private String prepareForCompare(Object o) {
-		return ((String) o).toLowerCase().replace('ä', 'a').replace('ö', 'o')
-				.replace('ü', 'u').replace('ß', 's').replace('é', 'e')
-				.replace('è', 'e').replace('à', 'a');
+	private static String prepareForCompare(Object o) {
+		return ((String) o).toLowerCase().replace('ä', 'a').replace('ö', 'o').replace('ü', 'u').replace('ß', 's').replace('é', 'e').replace('è', 'e')
+				.replace('à', 'a');
 	}
 
 }

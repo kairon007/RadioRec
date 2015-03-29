@@ -14,7 +14,7 @@ import org.apache.http.util.CharArrayBuffer;
 public class IcyLineParser extends BasicLineParser {
 	@Override
 	public Header parseHeader(CharArrayBuffer buffer) throws ParseException {
-		return super.parseHeader(this.meltBuffer(buffer));
+		return super.parseHeader(meltBuffer(buffer));
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class IcyLineParser extends BasicLineParser {
 		return super.parseStatusLine(meltedBuffer, cursor);
 	}
 
-	private CharArrayBuffer meltBuffer(CharArrayBuffer buffer) {
+	private static CharArrayBuffer meltBuffer(CharArrayBuffer buffer) {
 		if (buffer.length() >= 4 && buffer.charAt(0) == 'I' && buffer.charAt(1) == 'C' && buffer.charAt(2) == 'Y' && buffer.charAt(3) == ' '
 				&& Character.isDigit(buffer.charAt(4))) {
 			CharArrayBuffer fixedBuffer = new CharArrayBuffer(buffer.capacity() + 5);
@@ -53,7 +53,7 @@ public class IcyLineParser extends BasicLineParser {
 		return buffer;
 	}
 
-	private ParserCursor meltCursor(CharArrayBuffer meltedBuffer, CharArrayBuffer buffer, ParserCursor cursor) {
+	private static ParserCursor meltCursor(CharArrayBuffer meltedBuffer, CharArrayBuffer buffer, ParserCursor cursor) {
 		if (meltedBuffer.length() != buffer.length()) {
 			// Create a new cursor if the new buffer size has changed
 			return new ParserCursor(0, meltedBuffer.length());

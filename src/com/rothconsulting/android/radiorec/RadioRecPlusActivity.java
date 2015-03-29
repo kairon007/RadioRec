@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -664,7 +665,9 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 			Notifications noti = new Notifications(this, getIntent());
 			noti.hideStatusBarNotification(Constants.NOTIFICATION_ID_ERROR_CONNECTION);
 		}
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd_HHmmss");
+
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+
 		String dateTime = formatter.format(new Date());
 
 		URL inputUrl = null;
@@ -697,7 +700,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		return recording;
 	}
 
-	private String getSlash() {
+	private static String getSlash() {
 		if (Constants.SD_CARD_PATH_VALUE != null && Constants.SD_CARD_PATH_VALUE.trim().endsWith("/")) {
 			return "";
 		} else {
@@ -844,12 +847,6 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		doStopRecording(this);
 		recording = Boolean.FALSE;
 		((ImageButton) findViewById(R.id.rec)).setImageResource(R.drawable.button_record);
-	}
-
-	private void startPlay() {
-		getRadioPlayer().doStartPlay(this);
-		playing = Boolean.TRUE;
-		((ImageButton) findViewById(R.id.play)).setImageResource(R.drawable.button_stop);
 	}
 
 	private void showHideCam() {

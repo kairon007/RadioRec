@@ -1,9 +1,5 @@
 package com.rothconsulting.android.radiorec;
 
-import com.rothconsulting.android.common.AnalyticsUtil;
-import com.rothconsulting.android.common.Utils;
-
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -23,11 +19,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.rothconsulting.android.common.AnalyticsUtil;
+import com.rothconsulting.android.common.Utils;
+
 public class WebcamActivity extends ActionBarActivity {
 
 	private final String TAG = this.getClass().getSimpleName();
 	private ProgressDialog progressDialog;
-	private AlertDialog alertDialog;
 	private WebView myWebView;
 
 	@Override
@@ -49,7 +47,6 @@ public class WebcamActivity extends ActionBarActivity {
 		progressDialog = Utils.prepareProgressDialog(this);
 		progressDialog.setTitle("Webcam " + Constants.SELECTED_STATION_NAME_VALUE);
 		progressDialog.show();
-		alertDialog = new AlertDialog.Builder(this).create();
 
 		myWebView = new WebView(this);
 

@@ -104,7 +104,7 @@ public class WebTool {
 
 	}
 
-	private String getHeaders(HttpResponse response) {
+	private static String getHeaders(HttpResponse response) {
 		String ret = "headers:";
 		for (Header h : response.getAllHeaders()) {
 			ret += "\n" + h.getName() + ": " + h.getValue();

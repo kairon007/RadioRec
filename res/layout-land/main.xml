@@ -39,7 +39,7 @@
 			android:layout_marginLeft="10dp" android:layout_marginRight="64dp" android:background="@color/blueDark"
 			android:visibility="gone">
 
-			<SeekBar android:id="@+id/timerSeekbar" android:layout_width="match_parent" android:max="120"
+			<SeekBar android:id="@+id/timerSeekbar" android:layout_width="match_parent" android:max="240"
 				android:visibility="gone" android:layout_height="wrap_content" android:layout_marginLeft="10dp"
 				android:layout_marginRight="10dp" />
 			<TextView android:id="@+id/timerSeekbarText" android:layout_width="wrap_content" android:layout_height="wrap_content"
