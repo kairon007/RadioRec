@@ -229,6 +229,7 @@ public class Stations {
 	public static final String RADIO_HR_1 = "HR 1";
 	public static final String RADIO_HR_2 = "HR 2";
 	public static final String RADIO_HR_3 = "HR 3";
+	public static final String RADIO_HR_4 = "HR 4";
 	public static final String RADIO_YOU_FM = "You FM";
 	public static final String RADIO_1LIVE = "1Live";
 	public static final String RADIO_1LIVE_DIGGI = "1Live diggi";
@@ -296,6 +297,9 @@ public class Stations {
 	public static final String RADIO_PARTYRADIO_24 = "Partyradio 24";
 	public static final String RADIO_ZWICKAU = "Zwickau";
 	public static final String RADIO_PSR = "PSR";
+	public static final String RADIO_PSR_PARTYMIX = "PSR Partymix";
+	public static final String RADIO_PSR_80 = "PSR 80.er";
+	public static final String RADIO_PSR_90 = "PSR 90.er";
 	public static final String RADIO_KOELN = "Köln";
 	public static final String RADIO_SAW = "SAW";
 	public static final String RADIO_SAW_ROCK = "SAW Rock";
@@ -435,6 +439,9 @@ public class Stations {
 	public static final String RADIO_BLITZMUSIC = "Blitzmusic";
 	public static final String RADIO_SCHLAGERTEMPEL = "Schlagertempel";
 	public static final String RADIO_DANCEMIXRADIO = "Dancemixradio";
+	public static final String RADIO_ANTENNE_LANDAU = "Antenne Landau";
+	public static final String RADIO_ANTENNE_Pfalz = "Antenne Pfalz";
+	public static final String RADIO_ROCKLAND = "Rockland";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -516,7 +523,12 @@ public class Stations {
 	public static final String RADIO_BLUE_MARLIN = "Blue Marlin Ibiza";
 	public static final String RADIO_LEGENDE = "Legende";
 	public static final String RADIO_NOVAPLANET = "Novaplanet";
-	public static final String RADIO_PULS_RADIO = "Puls'Radio";
+	public static final String RADIO_PULS_RADIO_DANCE = "Puls'Radio Dance";
+	public static final String RADIO_PULS_RADIO_TRANCE = "Puls'Radio Trance";
+	public static final String RADIO_PULS_RADIO_CLUB = "Puls'Radio Club";
+	public static final String RADIO_PULS_RADIO_LOUNGE = "Puls'Radio Lounge";
+	public static final String RADIO_PULS_RADIO_HITS = "Puls'Radio Hits";
+	public static final String RADIO_PULS_RADIO_HARD = "Puls'Radio Hard";
 	public static final String RADIO_EUROPE_1 = "Europe 1";
 	public static final String RADIO_HOPE_FM = "Hope FM";
 	public static final String RADIO_RTL_LUXEMBOURG = "RTL Luxembourg";
@@ -2832,6 +2844,19 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_HR_4);
+		m.put(ICON, R.drawable.radio_hr4);
+		m.put(ICON_SMALL, R.drawable.radio_hr4_small);
+		m.put(STREAM, "http://hr-mp3-m-h4.akacast.akamaistream.net/7/780/142134/v1/gnl.akacast.akamaistream.net/hr-mp3-m-h4");
+		m.put(HOMEPAGE, "http://www.hr4.de");
+		m.put(WEBCAM, "http://www.hrfoto.dunkel.de/webcams/hr4/selbstfahrer.jpg");
+		m.put(EMAIL, "http://www.hr-online.de/website/radio/hr4/index.jsp?rubrik=4716");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_YOU_FM);
 		m.put(ICON, R.drawable.radio_you_fm);
 		m.put(ICON_SMALL, R.drawable.radio_you_fm_small);
@@ -3710,7 +3735,46 @@ public class Stations {
 		m.put(ICON_SMALL, R.drawable.radio_psr_small);
 		m.put(STREAM, "http://stream.hoerradar.de/psr128");
 		m.put(HOMEPAGE, "http://www.radiopsr.de");
-		m.put(WEBCAM, "http://www.radiopsr.de/images/PSR2010/webcam/webcam.jpg.php?cam=1");
+		m.put(WEBCAM, "http://www.radiopsr.de/images/PSR2012/webcam/full.jpg");
+		m.put(EMAIL, "service@radiopsr.de");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_PSR_PARTYMIX);
+		m.put(ICON, R.drawable.radio_psr);
+		m.put(ICON_SMALL, R.drawable.radio_psr_small);
+		m.put(STREAM, "http://regiocast.hoerradar.de/psr-partymix-mp3-mq");
+		m.put(HOMEPAGE, "http://www.radiopsr.de");
+		m.put(WEBCAM, "http://www.radiopsr.de/images/PSR2012/webcam/full.jpg");
+		m.put(EMAIL, "service@radiopsr.de");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_PSR_80);
+		m.put(ICON, R.drawable.radio_psr);
+		m.put(ICON_SMALL, R.drawable.radio_psr_small);
+		m.put(STREAM, "http://regiocast.hoerradar.de/psr-80er-mp3-mq");
+		m.put(HOMEPAGE, "http://www.radiopsr.de");
+		m.put(WEBCAM, "http://www.radiopsr.de/images/PSR2012/webcam/full.jpg");
+		m.put(EMAIL, "service@radiopsr.de");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_PSR_90);
+		m.put(ICON, R.drawable.radio_psr);
+		m.put(ICON_SMALL, R.drawable.radio_psr_small);
+		m.put(STREAM, "http://regiocast.hoerradar.de/psr-90er-mp3-mq");
+		m.put(HOMEPAGE, "http://www.radiopsr.de");
+		m.put(WEBCAM, "http://www.radiopsr.de/images/PSR2012/webcam/full.jpg");
 		m.put(EMAIL, "service@radiopsr.de");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
@@ -5422,6 +5486,46 @@ public class Stations {
 		m.put(STIL, STIL_POP);
 		setStationlist(stationList, m);
 
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_ANTENNE_LANDAU);
+		m.put(ICON, R.drawable.radio_antenne_landau);
+		m.put(ICON_SMALL, R.drawable.radio_antenne_landau_small);
+		// m.put(STREAM, "http://edge.live.mp3.mdn.newmedia.nacamar.net/fs_antennelandau/livestream.mp3?token=b54470bbc6d0cacdb719683d0d0dcaf8");
+		m.put(STREAM, "http://stream.telvi.de:8000/antenne_landau");
+		m.put(HOMEPAGE, "http://antenne-landau.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://antenne-landau.de/kontakt");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_ANTENNE_Pfalz);
+		m.put(ICON, R.drawable.radio_antenne_pfalz);
+		m.put(ICON_SMALL, R.drawable.radio_antenne_pfalz_small);
+		m.put(STREAM, "http://stream.telvi.de:8000/antenne_pfalz");
+		m.put(HOMEPAGE, "http://antenne-pfalz.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://antenne-pfalz.de/kontakt");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_ROCKLAND);
+		m.put(ICON, R.drawable.radio_rockland);
+		m.put(ICON_SMALL, R.drawable.radio_rockland_small);
+		m.put(STREAM, "http://stream.hoerradar.de/rockland-128");
+		m.put(HOMEPAGE, "http://www.rockland.fm");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "studio@rockland.fm");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_ROCK);
+		setStationlist(stationList, m);
+
 		// ******************************************************************************************************
 		// *
 		// ÖSTERREICH
@@ -6164,10 +6268,75 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_PULS_RADIO);
-		m.put(ICON, R.drawable.radio_puls_radio);
-		m.put(ICON_SMALL, R.drawable.radio_puls_radio_small);
+		m.put(NAME, RADIO_PULS_RADIO_DANCE);
+		m.put(ICON, R.drawable.radio_pulsradio_dance);
+		m.put(ICON_SMALL, R.drawable.radio_pulsradio_dance_small);
 		m.put(STREAM, "http://stream.pulsradio.com:5000");
+		m.put(HOMEPAGE, "http://www.pulsradio.com/");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.pulsradio.com/page-dance_trance-contact.html");
+		m.put(SPRACHE, SPRACHE_FR);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_PULS_RADIO_TRANCE);
+		m.put(ICON, R.drawable.radio_pulsradio_trance);
+		m.put(ICON_SMALL, R.drawable.radio_pulsradio_trance_small);
+		m.put(STREAM, "http://icecast.pulsradio.com/pulstranceHD.mp3");
+		m.put(HOMEPAGE, "http://www.pulsradio.com/");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.pulsradio.com/page-dance_trance-contact.html");
+		m.put(SPRACHE, SPRACHE_FR);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_PULS_RADIO_CLUB);
+		m.put(ICON, R.drawable.radio_pulsradio_club);
+		m.put(ICON_SMALL, R.drawable.radio_pulsradio_club_small);
+		m.put(STREAM, "http://icecast.pulsradio.com/mxHD.mp3");
+		m.put(HOMEPAGE, "http://www.pulsradio.com/");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.pulsradio.com/page-dance_trance-contact.html");
+		m.put(SPRACHE, SPRACHE_FR);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_PULS_RADIO_LOUNGE);
+		m.put(ICON, R.drawable.radio_pulsradio_lounge);
+		m.put(ICON_SMALL, R.drawable.radio_pulsradio_lounge_small);
+		m.put(STREAM, "http://icecast.pulsradio.com/relaxHD.mp3");
+		m.put(HOMEPAGE, "http://www.pulsradio.com/");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.pulsradio.com/page-dance_trance-contact.html");
+		m.put(SPRACHE, SPRACHE_FR);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_PULS_RADIO_HITS);
+		m.put(ICON, R.drawable.radio_pulsradio_hits);
+		m.put(ICON_SMALL, R.drawable.radio_pulsradio_hits_small);
+		m.put(STREAM, "http://icecast1.pulsradio.com/hitpartyHD.mp3");
+		m.put(HOMEPAGE, "http://www.pulsradio.com/");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.pulsradio.com/page-dance_trance-contact.html");
+		m.put(SPRACHE, SPRACHE_FR);
+		m.put(LAND, LAND_DIV);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_PULS_RADIO_HARD);
+		m.put(ICON, R.drawable.radio_pulsradio_hard);
+		m.put(ICON_SMALL, R.drawable.radio_pulsradio_hard_small);
+		m.put(STREAM, "http://icecast.pulsradio.com/pulshardHD.mp3");
 		m.put(HOMEPAGE, "http://www.pulsradio.com/");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.pulsradio.com/page-dance_trance-contact.html");
