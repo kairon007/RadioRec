@@ -71,7 +71,7 @@ public class Stations {
 	public static final String RADIO_ENERGY_BERN = "Energy Bern";
 	public static final String RADIO_ENERGY_ZUERICH = "Energy Zürich";
 	public static final String RADIO_ENERGY_BASEL = "Energy Basel";
-	public static final String RADIO_ENERGY_LEMAN = "Energy Leman";
+	public static final String RADIO_ENERGY_LEMAN = "Energy Léman";
 	public static final String RADIO_ENERGY_SWISS = "Energy Swiss";
 	public static final String RADIO_ENERGY_CHARTS = "Energy Charts";
 	public static final String RADIO_ENERGY_LOVE = "Energy Love";
@@ -439,8 +439,6 @@ public class Stations {
 	public static final String RADIO_BLITZMUSIC = "Blitzmusic";
 	public static final String RADIO_SCHLAGERTEMPEL = "Schlagertempel";
 	public static final String RADIO_DANCEMIXRADIO = "Dancemixradio";
-	public static final String RADIO_ANTENNE_LANDAU = "Antenne Landau";
-	public static final String RADIO_ANTENNE_Pfalz = "Antenne Pfalz";
 	public static final String RADIO_ROCKLAND = "Rockland";
 
 	// ***********************************************
@@ -914,7 +912,7 @@ public class Stations {
 		m.put(NAME, RADIO_ENERGY_LEMAN);
 		m.put(ICON, R.drawable.radio_energy_leman);
 		m.put(ICON_SMALL, R.drawable.radio_energy_leman_small);
-		m.put(STREAM, "http://adwzg.tdf-cdn.com/6278/nrj_105709.mp3");
+		m.put(STREAM, "http://ice15.infomaniak.ch:80/nrj-high.mp3");
 		m.put(HOMEPAGE, "http://www.nrjleman.com");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "info@nrj.ch");
@@ -5481,33 +5479,6 @@ public class Stations {
 		m.put(HOMEPAGE, "http://laut.fm/dancemixradio");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://laut.fm/dancemixradio");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_DE);
-		m.put(STIL, STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_ANTENNE_LANDAU);
-		m.put(ICON, R.drawable.radio_antenne_landau);
-		m.put(ICON_SMALL, R.drawable.radio_antenne_landau_small);
-		// m.put(STREAM, "http://edge.live.mp3.mdn.newmedia.nacamar.net/fs_antennelandau/livestream.mp3?token=b54470bbc6d0cacdb719683d0d0dcaf8");
-		m.put(STREAM, "http://stream.telvi.de:8000/antenne_landau");
-		m.put(HOMEPAGE, "http://antenne-landau.de");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://antenne-landau.de/kontakt");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_DE);
-		m.put(STIL, STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_ANTENNE_Pfalz);
-		m.put(ICON, R.drawable.radio_antenne_pfalz);
-		m.put(ICON_SMALL, R.drawable.radio_antenne_pfalz_small);
-		m.put(STREAM, "http://stream.telvi.de:8000/antenne_pfalz");
-		m.put(HOMEPAGE, "http://antenne-pfalz.de");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://antenne-pfalz.de/kontakt");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
