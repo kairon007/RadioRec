@@ -111,6 +111,7 @@ public class Utils {
 		editor.putString(Constants.SD_CARD_PATH_KEY, Constants.SD_CARD_PATH_VALUE);
 		editor.putInt(Constants.BUFFER_KEY, Constants.BUFFER_VALUE);
 		editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
+		editor.putBoolean(Constants.WRITE_TO_EXT_STORAGE_KEY, Constants.WRITE_TO_EXT_STORAGE_VALUE);
 		editor.commit();
 	}
 
@@ -128,6 +129,7 @@ public class Utils {
 		Constants.BUFFER_VALUE = settings.getInt(Constants.BUFFER_KEY, Constants.DEFAULT_BUFFER);
 		Constants.CLOSE_APP_TIMER_END_VALUE = settings.getBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
 		Constants.ROTATION_OFF_VALUE = settings.getBoolean(Constants.ROTATION_OFF_KEY, Constants.ROTATION_OFF_VALUE);
+		Constants.WRITE_TO_EXT_STORAGE_VALUE = settings.getBoolean(Constants.WRITE_TO_EXT_STORAGE_KEY, Constants.WRITE_TO_EXT_STORAGE_VALUE);
 	}
 
 	public String getAppVersionName(Context context, Class<?> cls) {
@@ -148,7 +150,7 @@ public class Utils {
 	}
 
 	public static void log(String tag, String message) {
-		// Log.d(tag, message);
+		Log.d(tag, message);
 	}
 
 	public static String getHhMmFromMinutes(int minutes) {

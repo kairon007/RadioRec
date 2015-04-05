@@ -77,7 +77,6 @@ public class Constants {
 		scList.add(Stations.RADIO_SOUND_CITY);
 		scList.add(Stations.RADIO_DANCEFOX_RADIO);
 		scList.add(Stations.RADIO_U1_TIROL);
-		scList.add(Stations.RADIO_DANCE_NATION_1);
 		scList.add(Stations.RADIO_CRAZY_CLASSIC);
 		scList.add(Stations.RADIO_CRAZY_OPERA);
 		scList.add(Stations.RADIO_CRAZY_SANCTUS);
@@ -89,7 +88,6 @@ public class Constants {
 		scList.add(Stations.RADIO_SCHWANY_OBERKRAIN);
 		scList.add(Stations.RADIO_SCHWANY_VOLKSTUEMLICH);
 		scList.add(Stations.RADIO_CHARIVARI_NUERNBERG);
-		scList.add(Stations.RADIO_HIT_RADIO_N1);
 		scList.add(Stations.RADIO_HITRADIO_RTL_SACHSEN);
 		scList.add(Stations.RADIO_MUSICBASE_FM_DANCE);
 		scList.add(Stations.RADIO_FK_AUSTRIA_WIEN);
@@ -180,6 +178,7 @@ public class Constants {
 	public static final String BUFFER_KEY = "MyBuffer";
 	public static final String CLOSE_APP_TIMER_END_KEY = "CloseAppWhenTimerEnds";
 	public static final String ROTATION_OFF_KEY = "RotationOff";
+	public static final String WRITE_TO_EXT_STORAGE_KEY = "WriteToExtStorage";
 
 	// Settings Values!
 	public static int SELECTED_STATION_INDEX_VALUE;
@@ -196,6 +195,7 @@ public class Constants {
 	public static int BUFFER_VALUE;
 	public static boolean CLOSE_APP_TIMER_END_VALUE;
 	public static boolean ROTATION_OFF_VALUE;
+	public static boolean WRITE_TO_EXT_STORAGE_VALUE;
 
 	public static String ANTI_ADS_PLAY_DONATOR_VALUE = "rrplaydonso";
 	public static final String DEFAULT_SD_CARD_PATH = "sdcard/RadioRec";

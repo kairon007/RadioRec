@@ -12,6 +12,7 @@ import com.rothconsulting.android.radiorec.R;
 public class AdMob {
 
 	private final static String TAG = "AdMob";
+	private final static String TESTDEVICE_SGS5 = "7DF02C6F61A0D7D11D4ECAFAA29F242C";
 	private AdView adView = null;
 
 	public AdView showRemoveAds(Activity activity) {
@@ -36,11 +37,10 @@ public class AdMob {
 		// Add the adView to it
 		layout.addView(adView);
 		// Initiate a generic request.
-		AdRequest adRequest = new AdRequest.Builder().build();
+		AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).addTestDevice(TESTDEVICE_SGS5).build();
 		// Load the adView with the ad request.
 		adView.loadAd(adRequest);
 
 		return adView;
 	}
-
 }

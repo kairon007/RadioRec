@@ -85,6 +85,21 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 			}
 		});
 
+		// Wrtite to External SD Card
+		final CheckBox cbWriteToExtSdCard = (CheckBox) findViewById(R.id.checkboxWriteToExtSdCard);
+		cbWriteToExtSdCard.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Constants.WRITE_TO_EXT_STORAGE_VALUE = ((CheckBox) v).isChecked();
+				SharedPreferences.Editor editor = settings.edit();
+				editor.putBoolean(Constants.WRITE_TO_EXT_STORAGE_KEY, Constants.WRITE_TO_EXT_STORAGE_VALUE);
+				editor.commit();
+
+				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "Settings", "WRITE_TO_EXT_STORAGE=" + Constants.WRITE_TO_EXT_STORAGE_VALUE);
+			}
+		});
+		cbWriteToExtSdCard.setChecked(Constants.WRITE_TO_EXT_STORAGE_VALUE);
+
 		// Reset SD Card Path
 		final Button resetButtonPath = (Button) findViewById(R.id.buttonResetPath);
 		resetButtonPath.setOnClickListener(new View.OnClickListener() {
@@ -109,7 +124,6 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "Settings", "CLOSE_APP_TIMER_END=" + Constants.CLOSE_APP_TIMER_END_VALUE);
 			}
 		});
-
 		cbAppOffWhenTimerEnds.setChecked(Constants.CLOSE_APP_TIMER_END_VALUE);
 
 		// Rotation on/off

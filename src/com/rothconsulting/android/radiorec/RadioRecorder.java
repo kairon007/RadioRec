@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.net.URL;
+import java.util.Arrays;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -24,7 +25,10 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Environment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.rothconsulting.android.common.Utils;
 import com.rothconsulting.android.radiorec.network.icy.IcyGetRequest;
@@ -52,6 +56,8 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 	protected Long doInBackground(URL... urls) {
 
 		Utils.log(TAG, "startRecording");
+		Utils.log(TAG, "url 0: " + urls[0].toString());
+		Utils.log(TAG, "url 1: " + urls[1].toString());
 		BufferedInputStream buffInputStream = null;
 		BufferedOutputStream buffOutputStream = null;
 		bytesRead = 0;
@@ -59,7 +65,33 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 		this.publishProgress(1);
 
 		try {
-			File radioRecorderDirectory = new File("/" + Constants.SD_CARD_PATH_VALUE + "/");
+			File radioRecorderDirectory;
+			Utils.log(TAG, "WRITE_TO_EXT_STORAGE_VALUE=" + Constants.WRITE_TO_EXT_STORAGE_VALUE);
+			if (Constants.WRITE_TO_EXT_STORAGE_VALUE) {
+				if (!isExternalStorageWritable()) {
+					Utils.log(TAG, "ERROR: External SD Card is not writable!!!");
+					Toast.makeText(context, "ERROR: External SD Card not writable!!!", Toast.LENGTH_LONG).show();
+					return Long.valueOf(0);
+				} else {
+					Utils.log(TAG, "OK: External SD Card is writable!!!");
+				}
+				Utils.log(TAG, "getExternalStorageDirectory: " + Environment.getExternalStorageDirectory().toString());
+				Utils.log(TAG, "getExternalStoragePublicDirectory: " + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC).toString());
+				Utils.log(
+						TAG,
+						"ContextCompat.getExternalFilesDirs(context, RadioRec)"
+								+ Arrays.asList(ContextCompat.getExternalFilesDirs(context, Environment.DIRECTORY_MUSIC)));
+				Utils.log(TAG, "ContextCompat.getExternalCacheDirs(context)" + Arrays.asList(ContextCompat.getExternalCacheDirs(context)));
+				Utils.log(TAG, "ContextCompat.getObbDirs(context)" + Arrays.asList(ContextCompat.getObbDirs(context)));
+
+				File extSdCard = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC);
+				Utils.log(TAG, "extSdCard.getAbsolutePath(): " + extSdCard.getAbsolutePath().toString());
+				// radioRecorderDirectory = new File(extSdCard.getAbsolutePath());
+				radioRecorderDirectory = ContextCompat.getExternalFilesDirs(context, Environment.DIRECTORY_MUSIC)[1];
+			} else {
+				radioRecorderDirectory = new File("/" + Constants.SD_CARD_PATH_VALUE + "/");
+			}
+
 			radioRecorderDirectory.mkdirs();
 			Utils.log(TAG, "Stream Buffer=" + Constants.BUFFER_VALUE);
 			if (Constants.BUFFER_VALUE <= 0) {
@@ -76,8 +108,10 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 				HttpEntity entity = response.getEntity();
 				buffInputStream = new BufferedInputStream(entity.getContent(), Constants.BUFFER_VALUE);
 			}
-
-			buffOutputStream = new BufferedOutputStream(new FileOutputStream(urls[1].getFile()), Constants.BUFFER_VALUE);
+			Utils.log(TAG, "urls[1].getFile(): " + urls[1].getFile());
+			// buffOutputStream = new BufferedOutputStream(new FileOutputStream(urls[1].getFile()), Constants.BUFFER_VALUE);
+			buffOutputStream = new BufferedOutputStream(new FileOutputStream(
+					ContextCompat.getExternalFilesDirs(context, Environment.DIRECTORY_MUSIC)[1].getName()), Constants.BUFFER_VALUE);
 			Utils.log(TAG, "FileOutputStream: " + urls[1].getFile());
 			Notifications.getNotifInstance(context, RadioRecorder.class).showStatusBarNotificationRecording();
 
@@ -169,6 +203,30 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 		Utils.log(TAG, "prepareProgressDialog");
 		connectionProgressDialog = Utils.prepareProgressDialog(context);
 		connectionProgressDialog.show();
+	}
+
+	/* **************************************************** */
+	/* EXTERNAL STORAGE STUFF */
+	/* **************************************************** */
+
+	/* Checks if external storage is available for read and write */
+	public boolean isExternalStorageWritable() {
+		String state = Environment.getExternalStorageState();
+		Utils.log(TAG, "getExternalStorageState: " + state);
+		if (Environment.MEDIA_MOUNTED.equals(state)) {
+			return true;
+		}
+		return false;
+	}
+
+	/* Checks if external storage is available to at least read */
+	public boolean isExternalStorageReadable() {
+		String state = Environment.getExternalStorageState();
+		Utils.log(TAG, "getExternalStorageState: " + state);
+		if (Environment.MEDIA_MOUNTED.equals(state) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+			return true;
+		}
+		return false;
 	}
 
 }

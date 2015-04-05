@@ -147,7 +147,6 @@ public class Stations {
 	public static final String RADIO_INDUSTRIE = "Industrie";
 	public static final String RADIO_AUDIOASYL = "Audioasyl";
 	public static final String RADIO_PIRATENRADIO = "Piratenradio";
-	public static final String RADIO_BASEL_EINS = "Basel Eins";
 	public static final String RADIO_BASILISK = "Basilisk";
 	public static final String RADIO_ROCK_STATION = "Rockstation";
 	public static final String RADIO_TRANCERADIO = "TranceRadio";
@@ -158,10 +157,10 @@ public class Stations {
 	public static final String RADIO_RRO_OBERWALLIS = "RRO Oberwallis";
 	public static final String RADIO_RRO_MUSIG_PUR = "RRO Müsig pur";
 	public static final String RADIO_RRO_FREAKUENCY = "RRO Freakuency";
+	public static final String RADIO_RRO_SWISS_MELODY = "RRO Swiss Melody";
 	public static final String RADIO_RADIUS = "Radius";
 	// public static final String RADIO_SWISSSOUND = "Swisssound.ch";
 	public static final String RADIO_SWISS_MOUNTAIN_HOLIDAY = "Swiss Mountain Holiday";
-	public static final String RADIO_DANCE_NATION_1 = "Dance Nation 1";
 	public static final String RADIO_CRAZY_CLASSIC = "Crazy Classic";
 	public static final String RADIO_CRAZY_OPERA = "Crazy Opera";
 	public static final String RADIO_CRAZY_SANCTUS = "Crazy Sanctus";
@@ -273,8 +272,9 @@ public class Stations {
 	public static final String RADIO_DRADIO_WISSEN = "DRadio Wissen";
 	public static final String RADIO_DREYECKLAND = "Dreyeckland";
 	public static final String RADIO_100_5_DAS_HITRADIO = "100'5 Das Hitradio";
-	public static final String RADIO_JAM_FM_BLACK_N_DANCE = "Jam Fm Black & Dance";
+	public static final String RADIO_JAM_FM = "Jam Fm";
 	public static final String RADIO_JAM_FM_NEW_MUSIC_RADIO = "Jam Fm New Music Radio";
+	public static final String RADIO_JAM_FM_BLACK_LABEL = "Jam Fm Black Label";
 	public static final String RADIO_KIEPENKERL = "Kiepenkerl";
 	public static final String RADIO_ENERGY_SACHSEN = "Energy Sachsen";
 	public static final String RADIO_ENERGY_BREMEN = "Energy Bremen";
@@ -1889,19 +1889,6 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_BASEL_EINS);
-		m.put(ICON, R.drawable.radio_basel_eins);
-		m.put(ICON_SMALL, R.drawable.radio_basel_eins_small);
-		m.put(STREAM, "http://212.83.60.57:12800");
-		m.put(HOMEPAGE, "http://radiobaseleins.ch");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://radiobaseleins.ch/rb1/index.php/uns");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_CH);
-		m.put(STIL, STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
 		m.put(NAME, RADIO_BASILISK);
 		m.put(ICON, R.drawable.radio_basilisk);
 		m.put(ICON_SMALL, R.drawable.radio_basilisk_small);
@@ -1983,7 +1970,7 @@ public class Stations {
 		m.put(NAME, RADIO_RRO_OBERWALLIS);
 		m.put(ICON, R.drawable.radio_rro);
 		m.put(ICON_SMALL, R.drawable.radio_rro_small);
-		m.put(STREAM, "http://rro-ober128.mp3.green.ch");
+		m.put(STREAM, "http://rottu.mp3.green.ch/rro");
 		m.put(HOMEPAGE, "http://www.rro.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.rro.ch/cms/?page=kontakt");
@@ -1996,7 +1983,7 @@ public class Stations {
 		m.put(NAME, RADIO_RRO_MUSIG_PUR);
 		m.put(ICON, R.drawable.radio_rro_musig_pur);
 		m.put(ICON_SMALL, R.drawable.radio_rro_small);
-		m.put(STREAM, "http://rro-musi128.mp3.green.ch");
+		m.put(STREAM, "http://rottu.mp3.green.ch/muesigpur");
 		m.put(HOMEPAGE, "http://www.rro.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.rro.ch/cms/?page=kontakt");
@@ -2009,13 +1996,26 @@ public class Stations {
 		m.put(NAME, RADIO_RRO_FREAKUENCY);
 		m.put(ICON, R.drawable.radio_rro_freakuency);
 		m.put(ICON_SMALL, R.drawable.radio_rro_small);
-		m.put(STREAM, "http://rro-freak128.mp3.green.ch");
+		m.put(STREAM, "http://rottu.mp3.green.ch/freakuency");
 		m.put(HOMEPAGE, "http://www.rro.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.rro.ch/cms/?page=kontakt");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
 		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_RRO_SWISS_MELODY);
+		m.put(ICON, R.drawable.radio_rro_swissmelody);
+		m.put(ICON_SMALL, R.drawable.radio_rro_swissmelody_small);
+		m.put(STREAM, "http://radiorottuoberwallis.ice.infomaniak.ch/swissmelody.mp3");
+		m.put(HOMEPAGE, "http://www.rro.ch");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.rro.ch/swissmelody/#contact");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_CH);
+		m.put(STIL, STIL_VOLKSTUEMLICH);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
@@ -2068,19 +2068,6 @@ public class Stations {
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_CH);
 		m.put(STIL, STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_DANCE_NATION_1);
-		m.put(ICON, R.drawable.radio_dance_nation_1);
-		m.put(ICON_SMALL, R.drawable.radio_dance_nation_1_small);
-		m.put(STREAM, "http://stream.dancenationone.fm");
-		m.put(HOMEPAGE, "http://www.dancenationone.fm");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://www.dancenationone.fm/index.php?content=99");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_CH);
-		m.put(STIL, STIL_TRANCE);
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
@@ -2858,7 +2845,7 @@ public class Stations {
 		m.put(NAME, RADIO_YOU_FM);
 		m.put(ICON, R.drawable.radio_you_fm);
 		m.put(ICON_SMALL, R.drawable.radio_you_fm_small);
-		m.put(STREAM, "http://gffstream.ic.llnwd.net/stream/gffstream_mp3_w72a");
+		m.put(STREAM, "http://hr-mp3-m-youfm.akacast.akamaistream.net/7/246/142136/v1/gnl.akacast.akamaistream.net/hr-mp3-m-youfm");
 		m.put(HOMEPAGE, "http://www.you-fm.de");
 		m.put(WEBCAM, "http://www.hrfoto.dunkel.de/webcams/xxl/studio1.jpg");
 		m.put(EMAIL, "http://www.you-fm.de/index.jsp?rubrik=12182");
@@ -3236,7 +3223,7 @@ public class Stations {
 		m.put(NAME, RADIO_HIT_RADIO_N1);
 		m.put(ICON, R.drawable.radio_hitradio_n1);
 		m.put(ICON_SMALL, R.drawable.radio_hitradio_n1_small);
-		m.put(STREAM, "http://webradio1.hitradion1.de:8000");
+		m.put(STREAM, "http://webstream.hitradion1.de/hitradion1");
 		m.put(HOMEPAGE, "http://www.hitradion1.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.hitradion1.de/kontakt/index.php");
@@ -3262,7 +3249,7 @@ public class Stations {
 		m.put(NAME, RADIO_EINS_RBB);
 		m.put(ICON, R.drawable.radio_eins_rbb);
 		m.put(ICON_SMALL, R.drawable.radio_eins_rbb_small);
-		m.put(STREAM, "http://rbb.ic.llnwd.net/stream/rbb_radioeins_mp3_m_a");
+		m.put(STREAM, "http://rbb-mp3-radioeins-m.akacast.akamaistream.net/7/854/292097/v1/gnl.akacast.akamaistream.net/rbb_mp3_radioeins_m");
 		m.put(HOMEPAGE, "http://www.radioeins.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.radioeins.de/kontakt/index.html");
@@ -3275,7 +3262,7 @@ public class Stations {
 		m.put(NAME, RADIO_INFORADIO_RBB);
 		m.put(ICON, R.drawable.radio_inforadio_rbb);
 		m.put(ICON_SMALL, R.drawable.radio_inforadio_rbb_small);
-		m.put(STREAM, "http://rbb.ic.llnwd.net/stream/rbb_inforadio_mp3_m_a");
+		m.put(STREAM, "http://rbb-mp3-inforadio-m.akacast.akamaistream.net/7/134/292094/v1/gnl.akacast.akamaistream.net/rbb_mp3_inforadio_m");
 		m.put(HOMEPAGE, "http://www.inforadio.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.inforadio.de/kontakt/index.html");
@@ -3403,10 +3390,10 @@ public class Stations {
 		setStationlist(stationList, m);
 
 		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_JAM_FM_BLACK_N_DANCE);
+		m.put(NAME, RADIO_JAM_FM);
 		m.put(ICON, R.drawable.radio_jam_fm_bnd);
 		m.put(ICON_SMALL, R.drawable.radio_jam_fm_bnd_small);
-		m.put(STREAM, "http://static.src.88.cdn.3qsdn.com/jam-bnd-mp3");
+		m.put(STREAM, "http://jamfm.hoerradar.de/jamfm-mp3-128");
 		m.put(HOMEPAGE, "http://www.jam.fm");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.jam.fm/kontakt");
@@ -3419,7 +3406,20 @@ public class Stations {
 		m.put(NAME, RADIO_JAM_FM_NEW_MUSIC_RADIO);
 		m.put(ICON, R.drawable.radio_jam_fm_nmr);
 		m.put(ICON_SMALL, R.drawable.radio_jam_fm_nmr_small);
-		m.put(STREAM, "http://static.src.88.cdn.3qsdn.com/jam-nmr-mp3");
+		m.put(STREAM, "http://jamfm.hoerradar.de/jamfm-new-musicradio-mp3-128");
+		m.put(HOMEPAGE, "http://www.jam.fm");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.jam.fm/kontakt");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_POP);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_JAM_FM_BLACK_LABEL);
+		m.put(ICON, R.drawable.radio_jam_fm_bnd);
+		m.put(ICON_SMALL, R.drawable.radio_jam_fm_nmr_small);
+		m.put(STREAM, "http://jamfm.hoerradar.de/jamfm-blacklabel-mp3-128");
 		m.put(HOMEPAGE, "http://www.jam.fm");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.jam.fm/kontakt");
@@ -3705,7 +3705,7 @@ public class Stations {
 		m.put(NAME, RADIO_PARTYRADIO_24);
 		m.put(ICON, R.drawable.radio_partyradio24);
 		m.put(ICON_SMALL, R.drawable.radio_partyradio24_small);
-		m.put(STREAM, "http://212.48.110.70:8070");
+		m.put(STREAM, "http://91.250.77.9:8070");
 		m.put(HOMEPAGE, "http://www.partyradio24.de/");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "");
@@ -4149,7 +4149,7 @@ public class Stations {
 		m.put(NAME, RADIO_890_RTL);
 		m.put(ICON, R.drawable.radio_890_rtl);
 		m.put(ICON_SMALL, R.drawable.radio_890_rtl_small);
-		m.put(STREAM, "http://80.237.158.40/890rtl-128.mp3");
+		m.put(STREAM, "http://xapp2278162432c40000.f.l.i.lb.core-cdn.net/40000mb/live/app2278162432/w2288975872/live_de_128.mp3");
 		m.put(HOMEPAGE, "http://www.89.0rtl.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.89.0rtl.de/formular/mail-ins-studio");
@@ -4578,7 +4578,7 @@ public class Stations {
 		m.put(NAME, RADIO_KISS_FM);
 		m.put(ICON, R.drawable.radio_kiss_fm);
 		m.put(ICON_SMALL, R.drawable.radio_kiss_fm_small);
-		m.put(STREAM, "http://stream.hoerradar.de/kissfm-mp3");
+		m.put(STREAM, "http://193.34.51.160/kissfm_128");
 		m.put(HOMEPAGE, "http://www.kissfm.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.kissfm.de/#/content/display/key/kontakt");

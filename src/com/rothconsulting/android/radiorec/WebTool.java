@@ -124,7 +124,7 @@ public class WebTool {
 	protected String getJugglerzFileName(Context context) {
 		String token = "";
 		if (Utils.isNetworkAvailable(context, null, false)) {
-			String url = "http://www.jugglerz.de/category/archiv/";
+			String url = "http://www.jugglerz.de";
 			String findString = "<a href=\"http://www.jugglerz.de/shows/";
 			String endString = ".mp3\"><img ";
 			AsyncTask<String, Void, String> tokenAsyncTask = new WebsiteParser().execute(url, null, findString, endString);

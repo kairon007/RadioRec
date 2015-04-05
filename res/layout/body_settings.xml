@@ -43,15 +43,18 @@
 				<CheckBox android:text="@string/rotationOnOff" android:id="@+id/checkboxRotationOnOff"
 					android:layout_height="wrap_content" android:layout_width="wrap_content" android:checked="true" />
 			</LinearLayout>
-
+			
 			<TextView android:text="@string/speicherOrt" android:id="@+id/textViewTitleSpeicherOrt"
 				android:layout_width="fill_parent" android:layout_height="wrap_content" android:background="#0000A0"
 				android:textStyle="bold" />
+			
 			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center"
 				android:layout_gravity="center" android:text="@string/sdcardPath" android:textColor="#FFFFFF" android:textSize="15sp"
 				android:layout_marginBottom="20dip" android:id="@+id/textViewSdcardPath" />
 			<EditText android:layout_width="fill_parent" android:layout_marginLeft="30dip" android:layout_marginRight="30dip"
 				android:layout_height="wrap_content" android:id="@+id/editTextSdcardPath" android:inputType="text" />
+			<CheckBox android:text="@string/useExtSdCard" android:id="@+id/checkboxWriteToExtSdCard"
+					android:layout_height="wrap_content" android:layout_width="wrap_content" android:checked="false" />
 			<RelativeLayout android:layout_width="fill_parent" android:id="@+id/relativeLayoutButtonsPath"
 				android:layout_height="wrap_content" android:gravity="center">
 				<Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/save"
