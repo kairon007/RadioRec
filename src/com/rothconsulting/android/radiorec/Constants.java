@@ -139,6 +139,7 @@ public class Constants {
 		scList.add(Stations.RADIO_1FM_ADORE_JAZZ);
 		scList.add(Stations.RADIO_LIVE_IRELAND);
 		scList.add(Stations.RADIO_SCHLAGERTEMPEL);
+		scList.add(Stations.RADIO_LIMIT_FM);
 
 		return scList;
 	}

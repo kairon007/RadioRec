@@ -85,9 +85,14 @@ public class FileChooserActivity extends ActionBarListActivity {
 
 					@Override
 					public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
-						Option o = adapter.getItem(position);
 						try {
-							onFileClick(o);
+							Option o = adapter.getItem(position);
+							if (o.getData().equalsIgnoreCase(getString(R.string.folder)) || o.getData().equalsIgnoreCase(getString(R.string.parentFolder))) {
+								currentDir = new File(o.getPath());
+								getFileList(currentDir);
+							} else {
+								onFileClick(o);
+							}
 						} catch (Exception e) {
 							Utils.log(TAG, "onListItemClick - Exception! SD_CARD_PATH=" + Constants.SD_CARD_PATH_VALUE + "\nException=\n" + e);
 							pathNotValidDialog().show();
@@ -149,9 +154,9 @@ public class FileChooserActivity extends ActionBarListActivity {
 		Collections.sort(dir);
 		Collections.sort(fls);
 		dir.addAll(fls);
-		// if (!f.getName().equalsIgnoreCase("sdcard")) {
-		// dir.add(0, new Option(R.drawable.icon_folder_up, "..", getString(R.string.parentFolder), f.getParent()));
-		// }
+		if (!f.getName().equalsIgnoreCase("sdcard")) {
+			dir.add(0, new Option(R.drawable.icon_folder_up, "..", getString(R.string.parentFolder), f.getParent()));
+		}
 
 		AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "FileChooser", "currentDir: " + f.getName());
 		AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "FileChooser", "No. files: " + fls.size());

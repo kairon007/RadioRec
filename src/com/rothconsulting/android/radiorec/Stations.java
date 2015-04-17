@@ -2022,7 +2022,7 @@ public class Stations {
 		m.put(NAME, RADIO_VOLKSMUSIKNET);
 		m.put(ICON, R.drawable.radio_volksmusiknet);
 		m.put(ICON_SMALL, R.drawable.radio_volksmusiknet_small);
-		m.put(STREAM, "http://volksmusiknetradio.ice.infomaniak.ch/volksmusiknetradio-128.mp3");
+		m.put(STREAM, "http://radiorottuoberwallis.bcast.infomaniak.ch/swissmelody.mp3?listenerid=1429212381128_0.6679173384406948");
 		m.put(HOMEPAGE, "http://www.volksmusiknet.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.volksmusiknet.ch/kontakt");
@@ -4591,7 +4591,7 @@ public class Stations {
 		m.put(NAME, RADIO_DUBLOVERS);
 		m.put(ICON, R.drawable.radio_dublovers);
 		m.put(ICON_SMALL, R.drawable.radio_dublovers_small);
-		m.put(STREAM, "http://85.131.130.211:80/stream/1/");
+		m.put(STREAM, "http://stream1.ml0.t4e.dj:80/dublovers_high.mp3");
 		m.put(HOMEPAGE, "http://dublovers.mlc.fm");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://dublovers.mlc.fm/shoutbox/index/DubLovers");
@@ -4604,7 +4604,7 @@ public class Stations {
 		m.put(NAME, RADIO_RS2);
 		m.put(ICON, R.drawable.radio_rs2);
 		m.put(ICON_SMALL, R.drawable.radio_rs2_small);
-		m.put(STREAM, "http://stream.rs2.de/rs2/mp3-128/internetradio");
+		m.put(STREAM, "http://stream.rs2.de/rs2/mp3-128/radioplayerde/;stream.nsv");
 		m.put(HOMEPAGE, "http://www.rs2.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "rs2@rs2.de");
@@ -4617,7 +4617,7 @@ public class Stations {
 		m.put(NAME, RADIO_RS2_80ER);
 		m.put(ICON, R.drawable.radio_rs2);
 		m.put(ICON_SMALL, R.drawable.radio_rs2_small);
-		m.put(STREAM, "http://stream.rs2.de/rs2-80er/mp3-128/internetradio");
+		m.put(STREAM, "http://stream.rs2.de/rs2-80er/mp3-128/internetradio/;stream.nsv");
 		m.put(HOMEPAGE, "http://www.rs2.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "rs2@rs2.de");
@@ -4630,7 +4630,7 @@ public class Stations {
 		m.put(NAME, RADIO_RS2_90ER);
 		m.put(ICON, R.drawable.radio_rs2);
 		m.put(ICON_SMALL, R.drawable.radio_rs2_small);
-		m.put(STREAM, "http://stream.rs2.de/rs2-90er/mp3-128/internetradio");
+		m.put(STREAM, "http://stream.rs2.de/rs2-90er/mp3-128/internetradio/;stream.nsv");
 		m.put(HOMEPAGE, "http://www.rs2.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "rs2@rs2.de");
@@ -4643,20 +4643,7 @@ public class Stations {
 		m.put(NAME, RADIO_RS2_RELAX);
 		m.put(ICON, R.drawable.radio_rs2);
 		m.put(ICON_SMALL, R.drawable.radio_rs2_small);
-		m.put(STREAM, "http://stream.rs2.de/rs2-relax/mp3-128/relax");
-		m.put(HOMEPAGE, "http://www.rs2.de");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "rs2@rs2.de");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_DE);
-		m.put(STIL, STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_RS2_KIDS);
-		m.put(ICON, R.drawable.radio_rs2);
-		m.put(ICON_SMALL, R.drawable.radio_rs2_small);
-		m.put(STREAM, "http://stream.rs2.de/rs2-kids/mp3-128/kids");
+		m.put(STREAM, "http://stream.rs2.de/rs2-relax/mp3-128/relax/;stream.nsv");
 		m.put(HOMEPAGE, "http://www.rs2.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "rs2@rs2.de");
@@ -4751,19 +4738,6 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.radiobrocken.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.radiobrocken.de/kontakt");
-		m.put(SPRACHE, SPRACHE_DE);
-		m.put(LAND, LAND_DE);
-		m.put(STIL, STIL_POP);
-		setStationlist(stationList, m);
-
-		m = new HashMap<String, Object>();
-		m.put(NAME, RADIO_ANTENNE_MASCHSEE);
-		m.put(ICON, R.drawable.radio_antenne_maschsee);
-		m.put(ICON_SMALL, R.drawable.radio_antenne_maschsee_small);
-		m.put(STREAM, "http://stream.laut.fm/antenne-maschsee");
-		m.put(HOMEPAGE, "http://laut.fm/antenne-maschsee");
-		m.put(WEBCAM, "");
-		m.put(EMAIL, "");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
@@ -4919,7 +4893,7 @@ public class Stations {
 		m.put(STREAM, "http://edge.live.mp3.mdn.newmedia.nacamar.net/ps-rtlradio/livestream.mp3");
 		m.put(HOMEPAGE, "http://www.rtlradio.de");
 		m.put(WEBCAM, "");
-		m.put(EMAIL, "http://www.rtlradio.de/Kontakt.2-3-mailinsstudio.html");
+		m.put(EMAIL, "http://rtlradio.de/mail-ins-studio/");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_POP);
@@ -5345,7 +5319,7 @@ public class Stations {
 		m.put(NAME, RADIO_HIRSCHMILCH_ELECTRONIC);
 		m.put(ICON, R.drawable.radio_hirschmilch);
 		m.put(ICON_SMALL, R.drawable.radio_hirschmilch_small);
-		m.put(STREAM, "http://hirschmilch.de:7000/electronic.mp3");
+		m.put(STREAM, "http://relay1.hirschmilch.de:7100/electronic.mp3");
 		m.put(HOMEPAGE, "http://hirschmilch.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "radio@hirschmilch.de");

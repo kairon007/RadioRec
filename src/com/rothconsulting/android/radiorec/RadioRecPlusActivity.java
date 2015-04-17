@@ -1,7 +1,5 @@
 package com.rothconsulting.android.radiorec;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -87,7 +85,7 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 	private TextView favIcon;
 	private ImageButton buttonBack, buttonFwd, buttonRec, buttonPlay;
 	private static RadioPlayer radioPlayer;
-	private static AsyncTask<URL, Integer, Long> recordTask;
+	private static AsyncTask<String, Integer, Long> recordTask;
 	private LinearLayout mainScreen;
 	private LinearLayout autocomplete;
 	private LinearLayout spinner;
@@ -667,46 +665,25 @@ public class RadioRecPlusActivity extends ActionBarActivity implements OnClickLi
 		}
 
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
-
 		String dateTime = formatter.format(new Date());
 
-		URL inputUrl = null;
-		URL outputUrl = null;
-
-		try {
-			Utils.log(TAG, "Constants.URL_LIVE_STREAM_VALUE=" + Constants.URL_LIVE_STREAM_VALUE);
-			inputUrl = new URL(Constants.URL_LIVE_STREAM_VALUE);
-		} catch (MalformedURLException e) {
-			Notifications.getNotifInstance(this, RadioRecPlusActivity.class).showStatusBarNotificationError(R.string.internetadresseNichtErreichbar);
-		}
+		Utils.log(TAG, "Constants.URL_LIVE_STREAM_VALUE=" + Constants.URL_LIVE_STREAM_VALUE);
+		String inputUrl = Constants.URL_LIVE_STREAM_VALUE;
 
 		String filename = "Unknown";
 		if (Constants.SELECTED_STATION_NAME_VALUE != null) {
 			filename = Constants.SELECTED_STATION_NAME_VALUE.replaceAll(" ", "");
 		}
-		try {
-			outputUrl = new URL("file:///" + Constants.SD_CARD_PATH_VALUE + getSlash() + filename.replaceAll("/", "") + "-" + dateTime + ".mp3");
-		} catch (Exception e) {
-			Notifications.getNotifInstance(this, RadioRecPlusActivity.class).showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
-		}
+		String outputFileName = filename.replaceAll("/", "") + "-" + dateTime + ".mp3";
 
 		try {
-			recordTask = new RadioRecorder(this, this.getIntent()).execute(inputUrl, outputUrl);
+			recordTask = new RadioRecorder(this, this.getIntent()).execute(inputUrl, outputFileName);
 			Utils.log(TAG, "*********** isRadioRecording2=" + recording);
 		} catch (Exception e) {
 			Notifications.getNotifInstance(this, RadioRecPlusActivity.class).showStatusBarNotificationError(R.string.kannNichtAufSdCardSchreiben);
 		}
 
 		return recording;
-	}
-
-	private static String getSlash() {
-		if (Constants.SD_CARD_PATH_VALUE != null && Constants.SD_CARD_PATH_VALUE.trim().endsWith("/")) {
-			return "";
-		} else {
-			return "/";
-		}
-
 	}
 
 	protected static void doStopRecording(Context context) {

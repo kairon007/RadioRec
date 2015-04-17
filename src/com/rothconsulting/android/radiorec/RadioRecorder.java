@@ -33,7 +33,7 @@ import android.widget.Toast;
 import com.rothconsulting.android.common.Utils;
 import com.rothconsulting.android.radiorec.network.icy.IcyGetRequest;
 
-public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
+public class RadioRecorder extends AsyncTask<String, Integer, Long> {
 
 	private final String TAG = this.getClass().getSimpleName();
 
@@ -42,6 +42,7 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 	private Context context = null;
 	private Intent intent = null;
 	private ProgressDialog connectionProgressDialog;
+	private static final String RECORDS_DIR = "Records";
 
 	public RadioRecorder(Context theContext, Intent theIntent) {
 		this.context = theContext;
@@ -53,11 +54,11 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 	 * urls[1] = output
 	 */
 	@Override
-	protected Long doInBackground(URL... urls) {
+	protected Long doInBackground(String... urls) {
 
 		Utils.log(TAG, "startRecording");
-		Utils.log(TAG, "url 0: " + urls[0].toString());
-		Utils.log(TAG, "url 1: " + urls[1].toString());
+		Utils.log(TAG, "url 0: " + urls[0]);
+		Utils.log(TAG, "url 1: " + urls[1]);
 		BufferedInputStream buffInputStream = null;
 		BufferedOutputStream buffOutputStream = null;
 		bytesRead = 0;
@@ -65,57 +66,53 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 		this.publishProgress(1);
 
 		try {
-			File radioRecorderDirectory;
-			Utils.log(TAG, "WRITE_TO_EXT_STORAGE_VALUE=" + Constants.WRITE_TO_EXT_STORAGE_VALUE);
-			if (Constants.WRITE_TO_EXT_STORAGE_VALUE) {
-				if (!isExternalStorageWritable()) {
-					Utils.log(TAG, "ERROR: External SD Card is not writable!!!");
-					Toast.makeText(context, "ERROR: External SD Card not writable!!!", Toast.LENGTH_LONG).show();
-					return Long.valueOf(0);
-				} else {
-					Utils.log(TAG, "OK: External SD Card is writable!!!");
-				}
-				Utils.log(TAG, "getExternalStorageDirectory: " + Environment.getExternalStorageDirectory().toString());
-				Utils.log(TAG, "getExternalStoragePublicDirectory: " + Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC).toString());
-				Utils.log(
-						TAG,
-						"ContextCompat.getExternalFilesDirs(context, RadioRec)"
-								+ Arrays.asList(ContextCompat.getExternalFilesDirs(context, Environment.DIRECTORY_MUSIC)));
-				Utils.log(TAG, "ContextCompat.getExternalCacheDirs(context)" + Arrays.asList(ContextCompat.getExternalCacheDirs(context)));
-				Utils.log(TAG, "ContextCompat.getObbDirs(context)" + Arrays.asList(ContextCompat.getObbDirs(context)));
-
-				File extSdCard = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC);
-				Utils.log(TAG, "extSdCard.getAbsolutePath(): " + extSdCard.getAbsolutePath().toString());
-				// radioRecorderDirectory = new File(extSdCard.getAbsolutePath());
-				radioRecorderDirectory = ContextCompat.getExternalFilesDirs(context, Environment.DIRECTORY_MUSIC)[1];
-			} else {
-				radioRecorderDirectory = new File("/" + Constants.SD_CARD_PATH_VALUE + "/");
+			// Prepare recording directory
+			// ---------------------------
+			File radioRecordingDirectory = getRadioRecordingDirectory();
+			if (radioRecordingDirectory == null) {
+				return Long.valueOf(0);
 			}
+			radioRecordingDirectory.mkdirs();
 
-			radioRecorderDirectory.mkdirs();
+			// Prepare InputStream
+			// -------------------
 			Utils.log(TAG, "Stream Buffer=" + Constants.BUFFER_VALUE);
 			if (Constants.BUFFER_VALUE <= 0) {
 				Constants.BUFFER_VALUE = Constants.DEFAULT_BUFFER;
 			}
 			if (Utils.isPlatformBelow_4_4()) {
 				Utils.log(TAG, "No Icy: buffInputStream -> url.openStream()");
-				buffInputStream = new BufferedInputStream(urls[0].openStream(), Constants.BUFFER_VALUE);
+				buffInputStream = new BufferedInputStream(new URL(urls[0]).openStream(), Constants.BUFFER_VALUE);
 			} else {
 				Utils.log(TAG, "Icy: buffInputStream -> entity.getContent()");
 				// Icy source from: https://gist.github.com/toms972/8842217 (Thanks!)
-				IcyGetRequest request = new IcyGetRequest(urls[0].toString());
+				IcyGetRequest request = new IcyGetRequest(urls[0]);
 				HttpResponse response = request.get();
 				HttpEntity entity = response.getEntity();
 				buffInputStream = new BufferedInputStream(entity.getContent(), Constants.BUFFER_VALUE);
 			}
-			Utils.log(TAG, "urls[1].getFile(): " + urls[1].getFile());
-			// buffOutputStream = new BufferedOutputStream(new FileOutputStream(urls[1].getFile()), Constants.BUFFER_VALUE);
-			buffOutputStream = new BufferedOutputStream(new FileOutputStream(
-					ContextCompat.getExternalFilesDirs(context, Environment.DIRECTORY_MUSIC)[1].getName()), Constants.BUFFER_VALUE);
-			Utils.log(TAG, "FileOutputStream: " + urls[1].getFile());
-			Notifications.getNotifInstance(context, RadioRecorder.class).showStatusBarNotificationRecording();
 
+			// Prepare OutputStream
+			// --------------------
+			if (!Utils.isPlatformBelow_4_4() && Constants.WRITE_TO_EXT_STORAGE_VALUE) {
+				Utils.log(TAG, "radioRecordingDirectory" + radioRecordingDirectory + "/" + urls[1]);
+				buffOutputStream = new BufferedOutputStream(new FileOutputStream(ContextCompat.getExternalFilesDirs(context, RECORDS_DIR)[1] + "/" + urls[1]),
+						Constants.BUFFER_VALUE);
+			} else {
+				Utils.log(TAG, "urls[1]: " + urls[1]);
+				URL outputUrl = new URL("file:///" + Constants.SD_CARD_PATH_VALUE + getSlash() + urls[1]);
+				Utils.log(TAG, "outputUrl: " + outputUrl);
+				buffOutputStream = new BufferedOutputStream(new FileOutputStream(outputUrl.getFile()), Constants.BUFFER_VALUE);
+			}
+
+			// Prepare Notifications
+			// ---------------------
+			Notifications.getNotifInstance(context, RadioRecorder.class).showStatusBarNotificationRecording();
+			Utils.log(TAG, "Notifications");
 			connectionProgressDialog.dismiss();
+
+			// Start writing File
+			// ------------------
 			int c = 0;
 			while ((c = buffInputStream.read()) != -1 && !isCancelled()) {
 				// Utils.log(LOG_TAG, "bytesRead=" + bytesRead);
@@ -227,6 +224,41 @@ public class RadioRecorder extends AsyncTask<URL, Integer, Long> {
 			return true;
 		}
 		return false;
+	}
+
+	private File getRadioRecordingDirectory() {
+		File radioRecorderDirectory;
+		if (!Utils.isPlatformBelow_4_4() && Constants.WRITE_TO_EXT_STORAGE_VALUE) {
+			if (!isExternalStorageWritable()) {
+				Utils.log(TAG, "ERROR: External SD Card is not writable!!!");
+				Toast.makeText(context, "ERROR: External SD Card not writable!!!", Toast.LENGTH_LONG).show();
+				return null;
+			} else {
+				Utils.log(TAG, "OK: External SD Card is writable!!!");
+				// Toast.makeText(context, "OK: External SD Card is writable!!!", Toast.LENGTH_LONG).show();
+			}
+			Utils.log(TAG, "ContextCompat.getExternalFilesDirs(context, Records)" + Arrays.asList(ContextCompat.getExternalFilesDirs(context, RECORDS_DIR)));
+			Utils.log(TAG, "ContextCompat.getExternalCacheDirs(context)" + Arrays.asList(ContextCompat.getExternalCacheDirs(context)));
+			Utils.log(TAG, "ContextCompat.getObbDirs(context)" + Arrays.asList(ContextCompat.getObbDirs(context)));
+
+			File extSdCard = Environment.getExternalStoragePublicDirectory(RECORDS_DIR);
+			Utils.log(TAG, "extSdCard.getAbsolutePath(): " + extSdCard.getAbsolutePath().toString());
+			// radioRecorderDirectory = new File(extSdCard.getAbsolutePath());
+			Utils.log(TAG, "getExternalFilesDirs(context, RECORDS_DIR)[1]: " + ContextCompat.getExternalFilesDirs(context, RECORDS_DIR)[1]);
+			radioRecorderDirectory = ContextCompat.getExternalFilesDirs(context, RECORDS_DIR)[1];
+		} else {
+			radioRecorderDirectory = new File("/" + Constants.SD_CARD_PATH_VALUE + "/");
+		}
+		return radioRecorderDirectory;
+	}
+
+	private static String getSlash() {
+		if (Constants.SD_CARD_PATH_VALUE != null && Constants.SD_CARD_PATH_VALUE.trim().endsWith("/")) {
+			return "";
+		} else {
+			return "/";
+		}
+
 	}
 
 }
