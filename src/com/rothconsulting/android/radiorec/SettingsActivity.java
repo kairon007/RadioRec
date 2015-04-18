@@ -87,10 +87,28 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 
 		// Wrtite to External SD Card
 		final CheckBox cbWriteToExtSdCard = (CheckBox) findViewById(R.id.checkboxWriteToExtSdCard);
+		if (Utils.isPlatformBelow_4_4()) {
+			cbWriteToExtSdCard.setVisibility(View.GONE);
+		} else {
+			if (Constants.WRITE_TO_EXT_STORAGE_VALUE) {
+				edittextSdCardPath.setEnabled(false);
+			} else {
+				edittextSdCardPath.setEnabled(true);
+			}
+		}
 		cbWriteToExtSdCard.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Constants.WRITE_TO_EXT_STORAGE_VALUE = ((CheckBox) v).isChecked();
+				if (Constants.WRITE_TO_EXT_STORAGE_VALUE) {
+					edittextSdCardPath.setText(R.string.externalCard);
+					Constants.SD_CARD_PATH_VALUE = getString(R.string.externalCard);
+					edittextSdCardPath.setEnabled(false);
+				} else {
+					edittextSdCardPath.setEnabled(true);
+					Constants.SD_CARD_PATH_VALUE = Constants.DEFAULT_SD_CARD_PATH;
+					edittextSdCardPath.setText(Constants.SD_CARD_PATH_VALUE);
+				}
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putBoolean(Constants.WRITE_TO_EXT_STORAGE_KEY, Constants.WRITE_TO_EXT_STORAGE_VALUE);
 				editor.commit();
@@ -106,6 +124,9 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 			@Override
 			public void onClick(View v) {
 				edittextSdCardPath.setText(Constants.DEFAULT_SD_CARD_PATH);
+				edittextSdCardPath.setEnabled(true);
+				cbWriteToExtSdCard.setChecked(false);
+				Constants.WRITE_TO_EXT_STORAGE_VALUE = false;
 			}
 		});
 

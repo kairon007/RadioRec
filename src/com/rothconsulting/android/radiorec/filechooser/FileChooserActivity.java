@@ -69,9 +69,11 @@ public class FileChooserActivity extends ActionBarListActivity {
 		} else {
 
 			try {
-				currentDir = new File(Constants.SD_CARD_PATH_VALUE);
+				currentDir = FileUtils.getRadioRecordingDirectory(this);
 				ListView listView = (ListView) findViewById(android.R.id.list);
 				getFileList(currentDir);
+
+				Toast.makeText(this, getString(R.string.folder) + ": " + currentDir.getPath(), Toast.LENGTH_LONG).show();
 
 				int currentOrient = this.getResources().getConfiguration().orientation;
 

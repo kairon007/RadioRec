@@ -30,6 +30,7 @@
 	<string name="danke">Thank you !!!</string>
 	<string name="infoSDCard">Your recorded files are on your SD-Card.\nYou\'ll find them in the default directory \"RadioRec\". In the Settings you can change this path.</string>
 	<string name="useExtSdCard">Use external SD-Card</string>
+	<string name="externalCard">External SD-Card</string>
 	<string name="infoFeatureEmail">Is your station or a feature missing? Or do you have any comment? Click this email address and share your comment with me. \n\n---  androider@wolke7.net  ---</string>
 	<string name="infoDatenverbrauchFrage">How much data is used while listening with RadioRec+ ?? </string>
 	<string name="infoDatenverbrauchAntwort">Answer: Around 60MB/h. The Radio stations are streaming with 128kbps. So calculate : 128\'000 Bit/s : 8 = 16\'000 Byte/s. It is 57.6 MB/hour (16\'000x3200 : 1\'000\'000). Tip: Use WLAN, so data consumption is no problem :-)</string>
