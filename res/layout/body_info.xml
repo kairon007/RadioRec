@@ -1,61 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
-	<ScrollView android:id="@+id/scroll" android:layout_width="fill_parent"
-		android:layout_height="wrap_content">
-		<LinearLayout android:layout_width="fill_parent"
-			android:orientation="vertical" android:layout_height="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+	<ScrollView android:id="@+id/scroll" android:layout_width="fill_parent" android:layout_height="wrap_content">
+		<LinearLayout android:layout_width="fill_parent" android:orientation="vertical" android:layout_height="wrap_content"
 			android:scrollbars="vertical">
-			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:layout_gravity="center"
-				android:text="@string/app_name" android:textColor="#BA002B"
-				android:textSize="20dip" android:layout_margin="10dip"
+			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center"
+				android:text="@string/app_name" android:textColor="#BA002B" android:textSize="20dip" android:layout_margin="10dip"
 				android:id="@+id/textViewAppName" />
-			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:layout_gravity="center"
+			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center"
 				android:id="@+id/textViewAppVersion" />
-			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:layout_gravity="center"
-				android:text="@string/info_copyright" android:id="@+id/textViewCopyright"
+			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center"
+				android:text="@string/info_copyright" android:id="@+id/textViewCopyright" android:layout_margin="5dip" />
+			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center"
+				android:text="@string/info_design" android:id="@+id/textViewDesign" android:layout_margin="5dip" />
+			<TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center"
+				android:text="@string/info_translation_it" android:id="@+id/textViewTranslationIt" android:gravity="center"
 				android:layout_margin="5dip" />
-			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:layout_gravity="center"
-				android:text="@string/info_design" android:id="@+id/textViewDesign"
-				android:layout_margin="5dip" />
-			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:layout_gravity="center"
-				android:text="@string/info_translation_it" android:id="@+id/textViewTranslationIt"
-				android:gravity="center" android:layout_margin="5dip" />
-			<TextView android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:layout_gravity="center"
-				android:id="@+id/textViewInfoSDCard" android:layout_margin="10dip"
-				android:gravity="center" android:text="@string/infoSDCard" />
-			<LinearLayout 
-				android:orientation="vertical" android:gravity="center"
-				android:layout_width="fill_parent" android:layout_height="wrap_content"
-				android:id="@+id/adsLayout">
-			</LinearLayout>
-<!-- 			<TextView android:layout_height="wrap_content" -->
-<!-- 				android:layout_width="wrap_content" android:gravity="center" -->
-<!-- 				android:layout_gravity="center" android:id="@+id/textViewFeatureEmail" -->
-<!-- 				android:layout_marginTop="5dip" android:text="@string/infoFeatureEmail" /> -->
-			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:layout_gravity="center"
-				android:gravity="center" android:text="@string/infoDatenverbrauchFrage"
-				android:id="@+id/textViewDatenverbrauchFrage"
-				android:layout_marginLeft="10dip" android:layout_marginRight="10dip"
-				android:layout_marginTop="20dip" android:textColor="#FFFFFF" />
-			<TextView android:layout_height="wrap_content"
-				android:layout_width="wrap_content" android:layout_gravity="center"
-				android:gravity="center" android:text="@string/infoDatenverbrauchAntwort"
-				android:id="@+id/textViewDatenverbrauchAntwort"
-				android:layout_marginLeft="10dip" android:textColor="#FFFFFF"
-				android:layout_marginRight="10dip" android:layout_marginTop="2dip"
-				android:layout_marginBottom="40dip" />
-			<Button android:layout_margin="30dip" android:id="@+id/buttonZurueck"
-				android:layout_height="wrap_content" android:layout_width="fill_parent"
-				android:text="@string/zurueck" android:layout_gravity="left" />
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center"
+				android:id="@+id/textViewInfoSDCard" android:layout_margin="10dip" android:gravity="center" android:text="@string/infoSDCard" />
+			<LinearLayout android:orientation="vertical" android:gravity="center" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:id="@+id/adsLayout" />
+
+			<!-- <TextView android:layout_height="wrap_content" -->
+			<!-- android:layout_width="wrap_content" android:gravity="center" -->
+			<!-- android:layout_gravity="center" android:id="@+id/textViewFeatureEmail" -->
+			<!-- android:layout_marginTop="5dip" android:text="@string/infoFeatureEmail" /> -->
+			<TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center"
+				android:gravity="center" android:text="@string/infoDatenverbrauchFrage" android:id="@+id/textViewDatenverbrauchFrage"
+				android:layout_marginLeft="10dip" android:layout_marginRight="10dip" android:layout_marginTop="20dip"
+				android:textColor="#FFFFFF" android:background="@color/blueDark" />
+			<TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center"
+				android:gravity="center" android:text="@string/infoDatenverbrauchAntwort" android:id="@+id/textViewDatenverbrauchAntwort"
+				android:layout_marginLeft="10dip" android:textColor="#FFFFFF" android:background="@color/blueDark"
+				android:layout_marginRight="10dip" android:layout_marginTop="2dip" android:layout_marginBottom="40dip" />
+
+			<TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center"
+				android:gravity="center" android:text="@string/infoSdCardAndroid44Title" android:id="@+id/textViewSdCardAndroid44Title"
+				android:layout_marginLeft="10dip" android:layout_marginRight="10dip" android:layout_marginTop="20dip"
+				android:textColor="#FFFFFF" android:background="@color/blueDark" />
+			<TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center"
+				android:gravity="center" android:text="@string/infoSdCardAndroid44Text" android:id="@+id/textViewSdCardAndroid44Text"
+				android:layout_marginLeft="10dip" android:textColor="#FFFFFF" android:background="@color/blueDark"
+				android:layout_marginRight="10dip" android:layout_marginTop="2dip" android:layout_marginBottom="40dip" />
+			
+			<Button android:layout_margin="30dip" android:id="@+id/buttonZurueck" android:layout_height="wrap_content"
+				android:layout_width="fill_parent" android:text="@string/zurueck" android:layout_gravity="left" />
 		</LinearLayout>
 	</ScrollView>
 </LinearLayout>

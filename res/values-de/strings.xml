@@ -29,11 +29,13 @@
 	<string name="keineEingabe">Keine Eingabe ??</string>
 	<string name="danke">Danke !!!</string>
 	<string name="infoSDCard">Beim aufnehmen werden die Dateien auf die SD-Card gespeichert.\nDu findest sie standardmässig im Verzeichnis \"RadioRec\". In den Einstellungen kannst du diesen Pfad ändern.</string>
-	<string name="useExtSdCard">SD-Card verwenden</string>
+	<string name="useExtSdCard">Externe SD-Card verwenden</string>
 	<string name="externalCard">Externe SD-Card</string>
 	<string name="infoFeatureEmail">Fehlt dir ein Sender, ein Feature oder hast du sonst Anregungen? Klick auf folgende E-Mail-Adresse und teile mir dein Anliegen mit. \n\n---  androider@wolke7.net  ---</string>
 	<string name="infoDatenverbrauchFrage">Folgende Frage wurde mir gestellt: Wieviel Daten werden verbraucht beim Radio hören mit RadioRec+ ?? </string>
 	<string name="infoDatenverbrauchAntwort">Antwort: Knapp 60MB/Std. Die Radio-Sender streamen mit 128kbps. Daraus rechnet sich der Verbrauch folgendermassen: 128\'000 Bit/s : 8 = 16\'000 Byte/s. Das entspricht 57.6 MB/Stunde (16\'000x3200 : 1\'000\'000). Tipp: Verwende WLAN, dann ist der Datenverbrauch kein Thema :-)</string>
+	<string name="infoSdCardAndroid44Title">Externe SD Card ab Android 4.4</string>
+	<string name="infoSdCardAndroid44Text">Seit Android 4.4+ erlaubt Google es nicht mehr auf einen beliebigen Ort einer externen SD Card zu speichern. Falls du eine auswechselbare externe SD Karte in deinem Gerät hast und in den RadioRec+ Einstellungen \'Externe SD Card verwenden\' eingestellt hast, werden die Aufnahmen automatisch an etwa folgenden Ort gespeichert: \n /storage/extSdCard/Android/data/com.rothconsulting.andorid.radiorec/files/RadioRec</string>
 	<string name="speicherOrt">Speicher-Ort</string>
 	<string name="sdcardPath">Standardmässig werden die MP3 Aufnahmen auf die SD-Card mit dem Pfad \n \"sdcard/RadioRec\" \ngespeichert. Auf Wunsch kann dieser Pfad hier angepasst werden. \nVorsicht: Pfad zum Speichermedium muss exakt stimmen!</string>
 	<string name="reset">Zurücksetzen</string>

@@ -34,6 +34,8 @@
 	<string name="infoFeatureEmail">Is your station or a feature missing? Or do you have any comment? Click this email address and share your comment with me. \n\n---  androider@wolke7.net  ---</string>
 	<string name="infoDatenverbrauchFrage">How much data is used while listening with RadioRec+ ?? </string>
 	<string name="infoDatenverbrauchAntwort">Answer: Around 60MB/h. The Radio stations are streaming with 128kbps. So calculate : 128\'000 Bit/s : 8 = 16\'000 Byte/s. It is 57.6 MB/hour (16\'000x3200 : 1\'000\'000). Tip: Use WLAN, so data consumption is no problem :-)</string>
+	<string name="infoSdCardAndroid44Title">External SD Card from Android 4.4+</string>
+	<string name="infoSdCardAndroid44Text">Since Android 4.4+ Google forces every app to save files to an external sd card in a spezial place. If you have chosen \'Use external SD-Card\' in the settings then it is: \n /storage/extSdCard/Android/data/com.rothconsulting.andorid.radiorec/files/RadioRec</string>
 	<string name="speicherOrt">Save location</string>
 	<string name="sdcardPath">By default the MP3 recordings are stored on the SD-Card in the path \"sdcard/RadioRec\".\nHere you can change this path.\nAttention: The path to the storage location must be valid and match exactly!</string>
 	<string name="reset">Reset</string>

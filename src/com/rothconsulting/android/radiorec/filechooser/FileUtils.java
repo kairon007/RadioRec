@@ -3,6 +3,7 @@ package com.rothconsulting.android.radiorec.filechooser;
 import java.io.File;
 import java.util.Arrays;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Environment;
 import android.support.v4.content.ContextCompat;
@@ -15,8 +16,9 @@ public class FileUtils {
 
 	private static final String TAG = "FileUtils";
 
-	public static final String RECORDS_DIR = "Records";
+	public static final String RECORDS_DIR = "RadioRec";
 
+	@SuppressLint("NewApi")
 	public static File getRadioRecordingDirectory(Context context) {
 		File radioRecorderDirectory;
 		if (!Utils.isPlatformBelow_4_4() && Constants.WRITE_TO_EXT_STORAGE_VALUE) {
@@ -26,17 +28,23 @@ public class FileUtils {
 				return null;
 			} else {
 				Utils.log(TAG, "OK: External SD Card is writable!!!");
-				// Toast.makeText(context, "OK: External SD Card is writable!!!", Toast.LENGTH_LONG).show();
 			}
-			Utils.log(TAG, "ContextCompat.getExternalFilesDirs(context, Records)" + Arrays.asList(ContextCompat.getExternalFilesDirs(context, RECORDS_DIR)));
-			Utils.log(TAG, "ContextCompat.getExternalCacheDirs(context)" + Arrays.asList(ContextCompat.getExternalCacheDirs(context)));
-			Utils.log(TAG, "ContextCompat.getObbDirs(context)" + Arrays.asList(ContextCompat.getObbDirs(context)));
+			File[] externalFilesDirs = ContextCompat.getExternalFilesDirs(context, RECORDS_DIR);
+			Utils.log(TAG, "ContextCompat.getExternalFilesDirs(context, " + RECORDS_DIR + "): " + Arrays.asList(externalFilesDirs));
+			Utils.log(TAG, "ContextCompat.getExternalCacheDirs(context): " + Arrays.asList(ContextCompat.getExternalCacheDirs(context)));
+			Utils.log(TAG, "ContextCompat.getObbDirs(context): " + Arrays.asList(ContextCompat.getObbDirs(context)));
 
-			File extSdCard = Environment.getExternalStoragePublicDirectory(RECORDS_DIR);
-			Utils.log(TAG, "extSdCard.getAbsolutePath(): " + extSdCard.getAbsolutePath().toString());
-			// radioRecorderDirectory = new File(extSdCard.getAbsolutePath());
-			Utils.log(TAG, "getExternalFilesDirs(context, RECORDS_DIR)[1]: " + ContextCompat.getExternalFilesDirs(context, RECORDS_DIR)[1]);
-			radioRecorderDirectory = ContextCompat.getExternalFilesDirs(context, RECORDS_DIR)[1];
+			if (externalFilesDirs != null && externalFilesDirs.length > 0) {
+				Utils.log(
+						TAG,
+						"getExternalFilesDirs(context, RECORDS_DIR)[" + (externalFilesDirs.length - 1) + "]: "
+								+ ContextCompat.getExternalFilesDirs(context, RECORDS_DIR)[externalFilesDirs.length - 1]);
+				radioRecorderDirectory = ContextCompat.getExternalFilesDirs(context, RECORDS_DIR)[externalFilesDirs.length - 1];
+			} else {
+				Utils.log(TAG, "Environment.getExternalStoragePublicDirectory(RECORDS_DIR): "
+						+ Environment.getExternalStoragePublicDirectory(RECORDS_DIR).getName());
+				radioRecorderDirectory = Environment.getExternalStoragePublicDirectory(RECORDS_DIR);
+			}
 		} else {
 			radioRecorderDirectory = new File("/" + Constants.SD_CARD_PATH_VALUE + "/");
 		}

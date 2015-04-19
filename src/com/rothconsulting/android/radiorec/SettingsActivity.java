@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.rothconsulting.android.common.AdMob;
 import com.rothconsulting.android.common.AnalyticsUtil;
 import com.rothconsulting.android.common.Utils;
+import com.rothconsulting.android.radiorec.filechooser.FileUtils;
 
 public class SettingsActivity extends ActionBarActivity implements RadioGroup.OnCheckedChangeListener {
 
@@ -32,6 +33,7 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 	private RadioButton radioImmerAn;
 	private RadioButton radioImmerAnWennStrom;
 	private RadioButton radioAutomatischAus;
+	private Context context;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 		actionBar.setDisplayUseLogoEnabled(true);
 		actionBar.setLogo(R.drawable.jukebox);
 		actionBar.setDisplayShowTitleEnabled(true); // optional
+
+		context = this;
 
 		if (Constants.ROTATION_OFF_VALUE) {
 			// Prevent from Rotation
@@ -72,8 +76,6 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 			@Override
 			public void onClick(View v) {
 				Constants.SD_CARD_PATH_VALUE = "" + edittextSdCardPath.getText();
-				// SharedPreferences settings = getSharedPreferences(
-				// Constants.PREFERENCES_FILE, 0);
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putString(Constants.SD_CARD_PATH_KEY, Constants.SD_CARD_PATH_VALUE);
 				editor.commit();
@@ -101,16 +103,16 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 			public void onClick(View v) {
 				Constants.WRITE_TO_EXT_STORAGE_VALUE = ((CheckBox) v).isChecked();
 				if (Constants.WRITE_TO_EXT_STORAGE_VALUE) {
-					edittextSdCardPath.setText(R.string.externalCard);
-					Constants.SD_CARD_PATH_VALUE = getString(R.string.externalCard);
+					Constants.SD_CARD_PATH_VALUE = FileUtils.getRadioRecordingDirectory(context).getAbsolutePath();
 					edittextSdCardPath.setEnabled(false);
 				} else {
-					edittextSdCardPath.setEnabled(true);
 					Constants.SD_CARD_PATH_VALUE = Constants.DEFAULT_SD_CARD_PATH;
-					edittextSdCardPath.setText(Constants.SD_CARD_PATH_VALUE);
+					edittextSdCardPath.setEnabled(true);
 				}
+				edittextSdCardPath.setText(Constants.SD_CARD_PATH_VALUE);
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putBoolean(Constants.WRITE_TO_EXT_STORAGE_KEY, Constants.WRITE_TO_EXT_STORAGE_VALUE);
+				editor.putString(Constants.SD_CARD_PATH_KEY, Constants.SD_CARD_PATH_VALUE);
 				editor.commit();
 
 				AnalyticsUtil.sendEvent(AnalyticsUtil.UI_ACTION, "Settings", "WRITE_TO_EXT_STORAGE=" + Constants.WRITE_TO_EXT_STORAGE_VALUE);
@@ -135,8 +137,6 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 		cbAppOffWhenTimerEnds.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// SharedPreferences settings = getSharedPreferences(
-				// Constants.PREFERENCES_FILE, 0);
 				Constants.CLOSE_APP_TIMER_END_VALUE = ((CheckBox) v).isChecked();
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putBoolean(Constants.CLOSE_APP_TIMER_END_KEY, Constants.CLOSE_APP_TIMER_END_VALUE);
@@ -152,8 +152,6 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 		cbRotationOf.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// SharedPreferences settings = getSharedPreferences(
-				// Constants.PREFERENCES_FILE, 0);
 				Constants.ROTATION_OFF_VALUE = ((CheckBox) v).isChecked();
 				SharedPreferences.Editor editor = settings.edit();
 				editor.putBoolean(Constants.ROTATION_OFF_KEY, Constants.ROTATION_OFF_VALUE);
@@ -186,8 +184,6 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 						throw new NumberFormatException();
 					} else {
 						Constants.BUFFER_VALUE = bufferSize;
-						// SharedPreferences settings = getSharedPreferences(
-						// Constants.PREFERENCES_FILE, 0);
 						SharedPreferences.Editor editor = settings.edit();
 						editor.putInt(Constants.BUFFER_KEY, Constants.BUFFER_VALUE);
 						editor.commit();

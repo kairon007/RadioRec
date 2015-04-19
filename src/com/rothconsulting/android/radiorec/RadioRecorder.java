@@ -24,7 +24,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import com.rothconsulting.android.common.Utils;
@@ -63,14 +62,6 @@ public class RadioRecorder extends AsyncTask<String, Integer, Long> {
 		this.publishProgress(1);
 
 		try {
-			// Prepare recording directory
-			// ---------------------------
-			File radioRecordingDirectory = FileUtils.getRadioRecordingDirectory(context);
-			if (radioRecordingDirectory == null) {
-				return Long.valueOf(0);
-			}
-			radioRecordingDirectory.mkdirs();
-
 			// Prepare InputStream
 			// -------------------
 			Utils.log(TAG, "Stream Buffer=" + Constants.BUFFER_VALUE);
@@ -89,18 +80,21 @@ public class RadioRecorder extends AsyncTask<String, Integer, Long> {
 				buffInputStream = new BufferedInputStream(entity.getContent(), Constants.BUFFER_VALUE);
 			}
 
+			// Prepare recording directory
+			// ---------------------------
+			File radioRecordingDirectory = FileUtils.getRadioRecordingDirectory(context);
+			if (radioRecordingDirectory == null) {
+				return Long.valueOf(0);
+			}
+			radioRecordingDirectory.mkdirs();
+
 			// Prepare OutputStream
 			// --------------------
-			if (!Utils.isPlatformBelow_4_4() && Constants.WRITE_TO_EXT_STORAGE_VALUE) {
-				Utils.log(TAG, "radioRecordingDirectory" + radioRecordingDirectory + "/" + urls[1]);
-				buffOutputStream = new BufferedOutputStream(new FileOutputStream(ContextCompat.getExternalFilesDirs(context, FileUtils.RECORDS_DIR)[1] + "/"
-						+ urls[1]), Constants.BUFFER_VALUE);
-			} else {
-				Utils.log(TAG, "urls[1]: " + urls[1]);
-				URL outputUrl = new URL("file:///" + Constants.SD_CARD_PATH_VALUE + getSlash() + urls[1]);
-				Utils.log(TAG, "outputUrl: " + outputUrl);
-				buffOutputStream = new BufferedOutputStream(new FileOutputStream(outputUrl.getFile()), Constants.BUFFER_VALUE);
-			}
+			Utils.log(TAG, "urls[1]: " + urls[1]);
+			Utils.log(TAG, "radioRecordingDirectory" + radioRecordingDirectory + "/" + urls[1]);
+			buffOutputStream = new BufferedOutputStream(new FileOutputStream(FileUtils.getRadioRecordingDirectory(context) + "/" + urls[1]),
+					Constants.BUFFER_VALUE);
+			Utils.log(TAG, "buffOutputStream: " + buffOutputStream);
 
 			// Prepare Notifications
 			// ---------------------

@@ -19,6 +19,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -132,12 +133,14 @@ public class Utils {
 		Constants.WRITE_TO_EXT_STORAGE_VALUE = settings.getBoolean(Constants.WRITE_TO_EXT_STORAGE_KEY, Constants.WRITE_TO_EXT_STORAGE_VALUE);
 	}
 
-	public String getAppVersionName(Context context, Class<?> cls) {
+	public static String getAppVersionName(Context context, Class<?> cls) {
 		try {
 			ComponentName comp = new ComponentName(context, cls);
 			PackageInfo pinfo = context.getPackageManager().getPackageInfo(comp.getPackageName(), 0);
 			return pinfo.versionName;
-		} catch (android.content.pm.PackageManager.NameNotFoundException e) {
+		} catch (NameNotFoundException e) {
+			return "";
+		} catch (Exception e) {
 			return "";
 		}
 	}

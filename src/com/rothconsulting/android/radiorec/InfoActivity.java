@@ -45,8 +45,7 @@ public class InfoActivity extends ActionBarActivity {
 		admob.showRemoveAds(this);
 
 		final TextView textViewAppVersion = (TextView) findViewById(R.id.textViewAppVersion);
-		Utils utils = new Utils();
-		textViewAppVersion.setText("Version " + utils.getAppVersionName(this, InfoActivity.class));
+		textViewAppVersion.setText("Version " + Utils.getAppVersionName(this, InfoActivity.class));
 
 		final Button zurueckButton = (Button) findViewById(R.id.buttonZurueck);
 		zurueckButton.setOnClickListener(new View.OnClickListener() {
