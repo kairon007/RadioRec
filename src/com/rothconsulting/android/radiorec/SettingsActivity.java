@@ -70,13 +70,14 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 
 		// SD Card
 		final EditText edittextSdCardPath = (EditText) findViewById(R.id.editTextSdcardPath);
-		edittextSdCardPath.setText(Constants.SD_CARD_PATH_VALUE);
+		edittextSdCardPath.setText(settings.getString(Constants.SD_CARD_PATH_KEY, Constants.SD_CARD_PATH_VALUE));
 		final Button saveButtonPath = (Button) findViewById(R.id.buttonSavePath);
 		saveButtonPath.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Constants.SD_CARD_PATH_VALUE = "" + edittextSdCardPath.getText();
 				SharedPreferences.Editor editor = settings.edit();
+				editor.putBoolean(Constants.WRITE_TO_EXT_STORAGE_KEY, Constants.WRITE_TO_EXT_STORAGE_VALUE);
 				editor.putString(Constants.SD_CARD_PATH_KEY, Constants.SD_CARD_PATH_VALUE);
 				editor.commit();
 
