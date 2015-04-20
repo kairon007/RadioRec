@@ -3354,7 +3354,7 @@ public class Stations {
 		m.put(NAME, RADIO_DRADIO_WISSEN);
 		m.put(ICON, R.drawable.radio_dradio_wissen);
 		m.put(ICON_SMALL, R.drawable.radio_dradio_wissen_small);
-		m.put(STREAM, "http://dradio.ic.llnwd.net/stream/dradio_dwissen_m_a");
+		m.put(STREAM, "http://dradio_mp3_dwissen_m.akacast.akamaistream.net/7/728/142684/v1/gnl.akacast.akamaistream.net/dradio_mp3_dwissen_m");
 		m.put(HOMEPAGE, "http://wissen.dradio.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://wissen.dradio.de/kontakt.17.de.html");
@@ -3666,7 +3666,7 @@ public class Stations {
 		m.put(NAME, RADIO_DEFJAY);
 		m.put(ICON, R.drawable.radio_defjay);
 		m.put(ICON_SMALL, R.drawable.radio_defjay_small);
-		m.put(STREAM, "http://he-srv2.defjay.de");
+		m.put(STREAM, "http://tuner.defjay.de");
 		m.put(HOMEPAGE, "http://www.defjay.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://defjay.de/anschrift.asp");
@@ -4123,7 +4123,7 @@ public class Stations {
 		m.put(NAME, RADIO_FRANK_ZAPPA_STREAM);
 		m.put(ICON, R.drawable.radio_frank_zappa_stream);
 		m.put(ICON_SMALL, R.drawable.radio_frank_zappa_stream_small);
-		m.put(STREAM, "http://streams.norbert.de/zappa.mp3?1400182436901.mp3");
+		m.put(STREAM, "http://176.28.48.138:8000/zappa.mp3");
 		m.put(HOMEPAGE, "http://norbert.de/index.php?id=18");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "norbert@norbert.de");
@@ -4669,7 +4669,7 @@ public class Stations {
 		m.put(NAME, RADIO_ARBERWALD_RADIO);
 		m.put(ICON, R.drawable.radio_arberwald_radio);
 		m.put(ICON_SMALL, R.drawable.radio_arberwald_radio_small);
-		m.put(STREAM, "http://streamplus27.leonex.de:36058");
+		m.put(STREAM, "http://streamplus4.leonex.de:36058");
 		m.put(HOMEPAGE, "http://www.arberwoidradio.com");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.arberwoidradio.com/kontakt");

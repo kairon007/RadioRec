@@ -130,6 +130,10 @@ public class SettingsActivity extends ActionBarActivity implements RadioGroup.On
 				edittextSdCardPath.setEnabled(true);
 				cbWriteToExtSdCard.setChecked(false);
 				Constants.WRITE_TO_EXT_STORAGE_VALUE = false;
+				SharedPreferences.Editor editor = settings.edit();
+				editor.putBoolean(Constants.WRITE_TO_EXT_STORAGE_KEY, false);
+				editor.putString(Constants.SD_CARD_PATH_KEY, Constants.DEFAULT_SD_CARD_PATH);
+				editor.commit();
 			}
 		});
 
