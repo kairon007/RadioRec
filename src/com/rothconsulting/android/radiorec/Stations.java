@@ -440,6 +440,7 @@ public class Stations {
 	public static final String RADIO_SCHLAGERTEMPEL = "Schlagertempel";
 	public static final String RADIO_DANCEMIXRADIO = "Dancemixradio";
 	public static final String RADIO_ROCKLAND = "Rockland";
+	public static final String RADIO_HAMBURG = "Hamburg";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -5466,6 +5467,19 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.rockland.fm");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "studio@rockland.fm");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_ROCK);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_HAMBURG);
+		m.put(ICON, R.drawable.radio_hamburg);
+		m.put(ICON_SMALL, R.drawable.radio_hamburg_small);
+		m.put(STREAM, "http://radiohamburg.hoerradar.de/radiohamburg-live-mp3-128");
+		m.put(HOMEPAGE, "http://www.radiohamburg.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "http://www.radiohamburg.de/Kontakt/Allgemein/Telefonnummern-E-Mail-Adresse-So-erreicht-Ihr-uns");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_ROCK);
