@@ -441,6 +441,8 @@ public class Stations {
 	public static final String RADIO_DANCEMIXRADIO = "Dancemixradio";
 	public static final String RADIO_ROCKLAND = "Rockland";
 	public static final String RADIO_HAMBURG = "Hamburg";
+	public static final String RADIO_KIM_90 = "KIM 90";
+	public static final String RADIO_KIM_NOUGHTIES = "KIM noughties";
 
 	// ***********************************************
 	// ÖSTERREICH
@@ -5480,6 +5482,32 @@ public class Stations {
 		m.put(HOMEPAGE, "http://www.radiohamburg.de");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "http://www.radiohamburg.de/Kontakt/Allgemein/Telefonnummern-E-Mail-Adresse-So-erreicht-Ihr-uns");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_ROCK);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_KIM_90);
+		m.put(ICON, R.drawable.radio_kim);
+		m.put(ICON_SMALL, R.drawable.radio_kim_small);
+		m.put(STREAM, "http://5.9.204.3:8019/stream");
+		m.put(HOMEPAGE, "https://radiokim.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "hallo@radiokim.de");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_DE);
+		m.put(STIL, STIL_ROCK);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_KIM_NOUGHTIES);
+		m.put(ICON, R.drawable.radio_kim);
+		m.put(ICON_SMALL, R.drawable.radio_kim_small);
+		m.put(STREAM, "http://5.9.204.3:8027/stream");
+		m.put(HOMEPAGE, "https://radiokim.de");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "hallo@radiokim.de");
 		m.put(SPRACHE, SPRACHE_DE);
 		m.put(LAND, LAND_DE);
 		m.put(STIL, STIL_ROCK);
