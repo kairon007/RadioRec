@@ -125,6 +125,7 @@ public class Stations {
 	public static final String RADIO_HOCKEY_FANRADIO_1 = "Hockey Fanradio 1";
 	public static final String RADIO_HOCKEY_FANRADIO_2 = "Hockey Fanradio 2";
 	public static final String RADIO_HOCKEY_FANRADIO_3 = "Hockey Fanradio 3";
+	public static final String RADIO_HOCKEY_FANRADIO_4 = "Hockey Fanradio 4";
 	public static final String RADIO_RWW_EHC_WINTERTHUR = "EHC Winterthur - RWW";
 	public static final String RADIO_LAUSANNE_HC = "Lausanne HC";
 	public static final String RADIO_BACKSTAGE_RADIO = "Backstage Radio";
@@ -1596,6 +1597,19 @@ public class Stations {
 		m.put(ICON, R.drawable.radio_hockey_fanradio);
 		m.put(ICON_SMALL, R.drawable.radio_hockey_fanradio_small);
 		m.put(STREAM, "http://streaming1-aphrodite.1000mikes.com/hfr3_on_air?encoding=mpeg");
+		m.put(HOMEPAGE, "http://www.hockeyfanradio.ch");
+		m.put(WEBCAM, "");
+		m.put(EMAIL, "info@hockeyfanradio.ch");
+		m.put(SPRACHE, SPRACHE_DE);
+		m.put(LAND, LAND_CH);
+		m.put(STIL, STIL_SPORT);
+		setStationlist(stationList, m);
+
+		m = new HashMap<String, Object>();
+		m.put(NAME, RADIO_HOCKEY_FANRADIO_4);
+		m.put(ICON, R.drawable.radio_hockey_fanradio);
+		m.put(ICON_SMALL, R.drawable.radio_hockey_fanradio_small);
+		m.put(STREAM, "http://streaming1-aphrodite.1000mikes.com/hfr4_on_air?encoding=mpeg");
 		m.put(HOMEPAGE, "http://www.hockeyfanradio.ch");
 		m.put(WEBCAM, "");
 		m.put(EMAIL, "info@hockeyfanradio.ch");
